@@ -23,22 +23,19 @@ Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.c
 
 ## ⬇️ 下载与使用
 
-前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载与你的 Windows 设备匹配的版本。**目前提供的发布形式为单文件 Portable EXE**，无需安装，也无需另装 .NET 运行时。
+前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载适合你设备的便携版 ZIP。解压后直接运行其中的 `EndfieldChargePlus.exe`，无需安装，也无需另装 .NET 运行时。
 
 | 下载文件 | 适用设备 |
 | :-- | :-- |
-| `EndfieldChargePlus-v0.1.0-win-x64-portable.exe` | 常见 Intel / AMD 64 位 Windows 电脑 |
-| `EndfieldChargePlus-v0.1.0-win-x86-portable.exe` | 32 位 Windows 设备 |
-| `EndfieldChargePlus-v0.1.0-win-arm64-portable.exe` | Windows on ARM 设备 |
-
-> 下载链接将在对应版本的 Release 发布后提供；上述文件名用于辨认架构。各架构以实际发布页面为准。
+| `EndfieldChargePlus-v0.1.0-win-x64-portable.zip` | 常见 Intel / AMD 64 位 Windows 电脑（推荐） |
+| `EndfieldChargePlus-v0.1.0-win-x86-portable.zip` | 适用于 32 位 Windows 设备 |
 
 **首次使用只需几步：**
 
-1. 下载并运行对应架构的 EXE；程序通过系统托盘驻留。
+1. 下载对应架构的 ZIP，解压到一个固定目录，运行 `EndfieldChargePlus.exe`；程序通过系统托盘驻留。
 2. 从托盘菜单打开**设置**，在「显示与位置」中选择目标显示器、HUD 位置和显示方式。
 3. 进入「HUD 内容与数据」，选择内置方案，或创建自己的 HUD；点击**预览**查看效果。
-4. 点击右上角**保存并应用**。配置自动保存，重新启动后继续使用；可按需开启 Windows 开机启动。
+4. 点击**保存并应用**。配置自动保存，重新启动后继续使用；可按需开启 Windows 开机启动。
 
 默认会以**系统 - 内存**方案启动；首次界面语言跟随 Windows：中文系统使用简体中文，其他系统使用 English，也可以手动切换。
 
@@ -77,8 +74,8 @@ DeepSeek API 需要用户自行提供 Key；HTTP/JSON 接口由用户自行配�
 
 ## 💻 运行要求与源码构建
 
-- **系统：** Windows 10 / 11；提供 x64、x86、ARM64 构建目标。
-- **官方 Portable 构建：** 自包含单文件 EXE，不需要另行安装 .NET。
+- **系统：** Windows 10 / 11，支持 x64 和 x86。
+- **Portable 包：** ZIP 内为自包含单文件 EXE，不需要另行安装 .NET。
 - **自行编译：** Windows 环境及 [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)。
 
 ```powershell
@@ -86,10 +83,10 @@ DeepSeek API 需要用户自行提供 Key；HTTP/JSON 接口由用户自行配�
 dotnet build EndfieldChargePlus.csproj -c Release
 
 # 示例：发布 x64 自包含单文件版本
-dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
+dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
 ```
 
-其他架构将 `win-x64` 换为 `win-x86` 或 `win-arm64`，并在相应 Windows 设备上测试。
+构建 x86 时将 `win-x64` 换为 `win-x86`。
 
 ## 📄 来源与许可
 

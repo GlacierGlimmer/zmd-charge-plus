@@ -73,6 +73,13 @@ public partial class HudWindow : Window
         // 临时 HUD 保持原行为：始终置顶。
         // 常驻 HUD 可以选择置顶，或作为普通非置顶窗口留在桌面层。
         Topmost = !persistent || _settings.PersistentLayer == PersistentHudLayer.Topmost;
+        // Avalonia can update HWND styles after a layer change. Keep the HUD
+        // mouse-through in both persistent (topmost/normal) and transient modes.
+        if (IsVisible)
+        {
+            EnsureInputHitTest();
+            Dispatcher.UIThread.Post(EnsureInputHitTest, DispatcherPriority.Loaded);
+        }
     }
 
     public async Task ShowCustomAsync(
@@ -649,15 +656,18 @@ public partial class HudWindow : Window
         // Avalonia may refresh native HWND extended styles after Show(), Topmost changes
         // or other window-state transitions. Re-apply click-through every time the HUD
         // is presented instead of assuming a one-time style write remains forever.
-        if (_hitTest is not null)
-        {
-            _hitTest.Reapply();
-            return;
-        }
-
         var handle = this.TryGetPlatformHandle();
         if (handle is null || handle.Handle == IntPtr.Zero) return;
-        _hitTest = WindowsHudHitTest.TryAttach(handle.Handle, IsPointInsideVisibleHud);
+
+        if (_hitTest is not null && _hitTest.Handle != handle.Handle)
+        {
+            _hitTest.Dispose();
+            _hitTest = null;
+        }
+
+        if (_hitTest is null)
+            _hitTest = WindowsHudHitTest.TryAttach(handle.Handle, IsPointInsideVisibleHud);
+
         _hitTest?.Reapply();
     }
 

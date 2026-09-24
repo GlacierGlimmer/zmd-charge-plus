@@ -23,19 +23,16 @@ Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modificati
 
 ## ⬇️ Download & first run
 
-Get the build for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). The planned distribution format is a **self-contained single-file Portable EXE**: no installer and no separate .NET runtime required.
+Get the Portable ZIP for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract it to a folder and run `EndfieldChargePlus.exe`. No installer or separately installed .NET runtime is required.
 
 | Download | Device |
 | :-- | :-- |
-| `EndfieldChargePlus-v0.1.0-win-x64-portable.exe` | Most 64-bit Intel / AMD Windows PCs |
-| `EndfieldChargePlus-v0.1.0-win-x86-portable.exe` | 32-bit Windows PCs |
-| `EndfieldChargePlus-v0.1.0-win-arm64-portable.exe` | Windows on ARM devices |
-
-> Download files become available when the corresponding Release is published. Check the actual release page for available architectures.
+| `EndfieldChargePlus-v0.1.0-win-x64-portable.zip` | Common Intel / AMD 64-bit Windows PCs (recommended) |
+| `EndfieldChargePlus-v0.1.0-win-x86-portable.zip` | For 32-bit Windows devices |
 
 **Getting started:**
 
-1. Run the EXE for your architecture; ECP stays available in the system tray.
+1. Download and extract the correct ZIP, then run `EndfieldChargePlus.exe`; ECP stays available in the system tray.
 2. Open **Settings** from the tray. Choose the display, position and visibility mode under **Display & Position**.
 3. Under **HUD Content & Data**, select a built-in profile or make your own, then use **Preview**.
 4. Click **Save & Apply**. Settings persist across restarts; enable Windows auto-start if you want it.
@@ -77,8 +74,8 @@ DeepSeek requires your API key; custom HTTP/JSON requests target endpoints you c
 
 ## 💻 Requirements & build
 
-- **OS:** Windows 10 / 11; build targets for x64, x86 and ARM64.
-- **Official Portable builds:** self-contained EXEs; no separately installed .NET runtime.
+- **OS:** Windows 10 / 11, x64 and x86.
+- **Portable packages:** each ZIP contains a self-contained EXE; no separately installed .NET runtime.
 - **Building:** Windows and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 
 ```powershell
@@ -86,10 +83,10 @@ DeepSeek requires your API key; custom HTTP/JSON requests target endpoints you c
 dotnet build EndfieldChargePlus.csproj -c Release
 
 # Example: publish a self-contained x64 single-file EXE
-dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
+dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
 ```
 
-Replace `win-x64` with `win-x86` or `win-arm64` for other architectures and test on the relevant Windows hardware.
+Replace `win-x64` with `win-x86` to publish the x86 build.
 
 ## 📄 Origin & license
 
