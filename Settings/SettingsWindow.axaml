@@ -1,0 +1,304 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:custom="clr-namespace:EndfieldChargePlus.Customization"
+        x:Class="EndfieldChargePlus.Settings.SettingsWindow"
+        Width="1120" Height="790"
+        MinWidth="940" MinHeight="680"
+        Title="Endfield Charge Plus 设置"
+        Background="#19191B"
+        WindowStartupLocation="CenterScreen">
+  <Grid RowDefinitions="Auto,*">
+    <Border Grid.Row="0" Background="#222224" Padding="24,16" BorderBrush="#343438" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="*,Auto,Auto">
+        <StackPanel Spacing="3">
+          <TextBlock Text="ENDFIELD CHARGE PLUS" FontSize="16" FontWeight="SemiBold" Foreground="White" LetterSpacing="1.2"/>
+          <TextBlock Text="HUD SETTINGS" FontSize="12" Foreground="#8E8E94"/>
+        </StackPanel>
+
+        <Border Grid.Column="1"
+                Width="186" Height="38"
+                CornerRadius="7"
+                Background="#2B2B2E"
+                BorderBrush="#4A4A4F"
+                BorderThickness="1"
+                VerticalAlignment="Center"
+                Margin="16,0,0,0"
+                ClipToBounds="True">
+          <!--
+            Two true 50/50 segments. The previous *,1,* grid left 183 px to be
+            split by the star columns, producing two 91.5 px columns and visible
+            half-pixel asymmetry. The divider now overlays the exact center so
+            both language buttons always receive the same width.
+          -->
+          <Grid ColumnDefinitions="*,*">
+            <Button x:Name="LanguageChineseBtn"
+                    Grid.Column="0"
+                    Content="简体中文"
+                    Height="36"
+                    MinWidth="0"
+                    Margin="0"
+                    Padding="10,5"
+                    CornerRadius="6,0,0,6"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Button x:Name="LanguageEnglishBtn"
+                    Grid.Column="1"
+                    Content="English"
+                    Height="36"
+                    MinWidth="0"
+                    Margin="0"
+                    Padding="10,5"
+                    CornerRadius="0,6,6,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Border Grid.ColumnSpan="2"
+                    Width="1"
+                    Background="#55555A"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    Margin="0,7"
+                    IsHitTestVisible="False"/>
+          </Grid>
+        </Border>
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Margin="10,0,0,0">
+          <Button x:Name="OpenSettingsFolderBtn" Content="配置文件夹" Height="38" MinWidth="100" Padding="14,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+          <Button x:Name="SaveBtn" Content="保存并应用" Height="38" MinWidth="108" Padding="16,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#C6CA4C" Foreground="#171719" FontWeight="SemiBold"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <TabControl Grid.Row="1" Margin="18,14,18,18">
+      <TabItem Header="显示与位置">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+          <StackPanel Margin="4,12,4,18" Spacing="12">
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <StackPanel Spacing="14">
+                <Grid ColumnDefinitions="*,Auto">
+                  <StackPanel Spacing="3" Margin="0,0,18,0">
+                    <TextBlock Text="HUD 总开关" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                    <TextBlock Text="控制 HUD 的全部显示功能。" FontSize="11" Foreground="#85858B"/>
+                  </StackPanel>
+                  <ToggleSwitch x:Name="HudEnabledSwitch" Grid.Column="1" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Border Height="1" Background="#343438"/>
+
+                <Grid ColumnDefinitions="*,Auto">
+                  <StackPanel Spacing="3" Margin="0,0,18,0">
+                    <TextBlock Text="开机启动" FontSize="12" Foreground="#E7E7E9"/>
+                    <TextBlock Text="登录 Windows 后自动启动 Endfield Charge Plus。" FontSize="11" Foreground="#7F7F85"/>
+                  </StackPanel>
+                  <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center"/>
+                </Grid>
+              </StackPanel>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <StackPanel Spacing="14">
+                <TextBlock Text="显示方式" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                <Grid ColumnDefinitions="*,150,260" RowDefinitions="Auto,Auto">
+                  <StackPanel Grid.RowSpan="2" Spacing="2" Margin="0,0,18,0" VerticalAlignment="Center">
+                    <TextBlock Text="一直显示" FontSize="12" Foreground="#E7E7E9"/>
+                    <TextBlock Text="开启：HUD 持续显示。&#10;关闭：电源插拔显示电池；鼠标移到目标屏幕顶部中央可唤出当前方案。" FontSize="13" Foreground="#C6CA4C" TextWrapping="Wrap" LineHeight="19" Margin="0,3,0,0"/>
+                  </StackPanel>
+                  <TextBlock Grid.Column="1" Text="常驻状态" FontSize="11" Foreground="#85858B" Margin="0,0,18,4"/>
+                  <TextBlock Grid.Column="2" Text="显示层级" FontSize="11" Foreground="#85858B" Margin="0,0,0,4"/>
+                  <ToggleSwitch x:Name="AlwaysVisibleSwitch" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,18,0"/>
+                  <ComboBox x:Name="PersistentLayerCombo" Grid.Row="1" Grid.Column="2" Height="34"/>
+                </Grid>
+              </StackPanel>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <Grid ColumnDefinitions="220,*,64" RowDefinitions="Auto,Auto">
+                <StackPanel Grid.RowSpan="2" Spacing="3" Margin="0,0,18,0" VerticalAlignment="Center">
+                  <TextBlock Text="HUD 不透明度" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                  <TextBlock Text="100% 为完全不透明。" FontSize="11" Foreground="#85858B"/>
+                </StackPanel>
+                <Slider x:Name="HudOpacitySlider" Grid.Column="1" Grid.RowSpan="2" Minimum="10" Maximum="100" TickFrequency="1" VerticalAlignment="Center" Margin="0,0,14,0"/>
+                <TextBlock x:Name="HudOpacityValueText" Grid.Column="2" Grid.RowSpan="2" Text="100%" FontSize="13" FontWeight="SemiBold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+              </Grid>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <StackPanel Spacing="14">
+                <TextBlock Text="位置" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+
+                <Grid ColumnDefinitions="*,*">
+                  <StackPanel Spacing="4" Margin="0,0,6,0">
+                    <TextBlock Text="目标显示器" FontSize="11" Foreground="#85858B"/>
+                    <ComboBox x:Name="MonitorCombo" Height="34"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="1" Spacing="4" Margin="6,0,0,0">
+                    <TextBlock Text="定位方式" FontSize="11" Foreground="#85858B"/>
+                    <ComboBox x:Name="PositionModeCombo" Height="34"/>
+                  </StackPanel>
+                </Grid>
+
+                <Border x:Name="PresetPositionPanel" Background="#1E1E20" CornerRadius="8" Padding="14">
+                  <StackPanel Spacing="10">
+                    <Grid ColumnDefinitions="*,150,150">
+                      <StackPanel Spacing="4" Margin="0,0,8,0">
+                        <TextBlock Text="预设位置" FontSize="11" Foreground="#85858B"/>
+                        <ComboBox x:Name="PositionCombo" Height="34"/>
+                      </StackPanel>
+                      <StackPanel Grid.Column="1" Spacing="4" Margin="8,0">
+                        <TextBlock Text="X 微调 / px" FontSize="11" Foreground="#85858B"/>
+                        <NumericUpDown x:Name="OffsetXBox" Minimum="-10000" Maximum="10000" Increment="1"/>
+                      </StackPanel>
+                      <StackPanel Grid.Column="2" Spacing="4" Margin="8,0,0,0">
+                        <TextBlock Text="Y 微调 / px" FontSize="11" Foreground="#85858B"/>
+                        <NumericUpDown x:Name="OffsetYBox" Minimum="-10000" Maximum="10000" Increment="1"/>
+                      </StackPanel>
+                    </Grid>
+                    <TextBlock Text="X 向右为正，Y 向下为正。" FontSize="11" Foreground="#6F6F74"/>
+                  </StackPanel>
+                </Border>
+
+                <Border x:Name="CustomPositionPanel" Background="#1E1E20" CornerRadius="8" Padding="14">
+                  <Grid ColumnDefinitions="*,*">
+                    <StackPanel Spacing="4" Margin="0,0,6,0">
+                      <TextBlock Text="X 坐标 / px" FontSize="11" Foreground="#85858B"/>
+                      <NumericUpDown x:Name="CustomXBox" Minimum="-10000" Maximum="20000" Increment="1"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Spacing="4" Margin="6,0,0,0">
+                      <TextBlock Text="Y 坐标 / px" FontSize="11" Foreground="#85858B"/>
+                      <NumericUpDown x:Name="CustomYBox" Minimum="-10000" Maximum="20000" Increment="1"/>
+                    </StackPanel>
+                  </Grid>
+                </Border>
+              </StackPanel>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <StackPanel Spacing="14">
+                <Grid ColumnDefinitions="*,Auto">
+                  <TextBlock Text="尺寸与动画" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C" VerticalAlignment="Center"/>
+                  <Button x:Name="ResetSizeAnimationBtn" Grid.Column="1" Content="恢复默认" Height="32" MinWidth="86" Padding="12,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid ColumnDefinitions="*,*,*,*,*">
+                  <StackPanel Spacing="4" Margin="0,0,5,0">
+                    <TextBlock Text="HUD 缩放" FontSize="11" Foreground="#85858B"/>
+                    <NumericUpDown x:Name="ScaleBox" Minimum="0.4" Maximum="1.4" Increment="0.05" FormatString="0.00"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="1" Spacing="4" Margin="5,0">
+                    <TextBlock Text="总时长 / 秒" FontSize="11" Foreground="#85858B"/>
+                    <NumericUpDown x:Name="DurationBox" Minimum="3" Maximum="10" Increment="0.25" FormatString="0.00"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="2" Spacing="4" Margin="5,0">
+                    <TextBlock Text="回弹强度" FontSize="11" Foreground="#85858B"/>
+                    <NumericUpDown x:Name="BounceBox" Minimum="0" Maximum="0.5" Increment="0.025" FormatString="0.000"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="3" Spacing="4" Margin="5,0">
+                    <TextBlock Text="波纹强度" FontSize="11" Foreground="#85858B"/>
+                    <NumericUpDown x:Name="RippleIntensityBox" Minimum="0" Maximum="2" Increment="0.05" FormatString="0.00"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="4" Spacing="4" Margin="5,0,0,0">
+                    <TextBlock Text="波纹幅度" FontSize="11" Foreground="#85858B"/>
+                    <NumericUpDown x:Name="RippleSpreadBox" Minimum="0.5" Maximum="1.5" Increment="0.05" FormatString="0.00"/>
+                  </StackPanel>
+                </Grid>
+              </StackPanel>
+            </Border>
+
+
+          </StackPanel>
+        </ScrollViewer>
+      </TabItem>
+
+      <TabItem Header="HUD 内容与数据">
+        <custom:HudCustomizerView x:Name="Customizer" Margin="4,12,4,4"/>
+      </TabItem>
+
+      <TabItem Header="关于">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+          <StackPanel Margin="4,12,4,18" Spacing="12">
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="24,22">
+              <Grid ColumnDefinitions="96,*,320">
+                <Border Width="76" Height="76" CornerRadius="18" Background="#1E1E20" BorderBrush="#39393D" BorderThickness="1" VerticalAlignment="Top">
+                  <Image Source="avares://EndfieldChargePlus/Assets/tray_bolt.png" Width="66" Height="66" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+
+                <StackPanel Grid.Column="1" Spacing="5" Margin="18,0,24,0">
+                  <TextBlock Text="Endfield Charge Plus" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                  <TextBlock Text="终末地风格状态栏 HUD" FontSize="14" Foreground="#D2D2D6"/>
+                  <TextBlock x:Name="AboutArchitectureText" Text="Windows · x64" FontSize="12" Foreground="#8E8E94" Margin="0,1,0,0"/>
+                  <StackPanel Orientation="Horizontal" Spacing="18" Margin="0,7,0,0">
+                    <TextBlock x:Name="AboutVersionText" Text="v0.1.0" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                    <TextBlock Text="构建日期  2026.09.23" FontSize="13" Foreground="#D2D2D6"/>
+                  </StackPanel>
+                </StackPanel>
+
+                <Border Grid.Column="2" Background="#1E1E20" BorderBrush="#343438" BorderThickness="1" CornerRadius="8" Padding="14,12">
+                  <Grid ColumnDefinitions="96,*" VerticalAlignment="Center">
+                    <Button x:Name="CheckUpdateBtn"
+                            Grid.Column="0"
+                            Content="检查更新"
+                            Width="84"
+                            Height="36"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Background="#C6CA4C"
+                            Foreground="#171719"
+                            FontWeight="SemiBold"/>
+                    <StackPanel Grid.Column="1" Spacing="6" VerticalAlignment="Center">
+                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.0" FontSize="12" Foreground="#D2D2D6"/>
+                      <TextBlock x:Name="UpdateLatestVersionText" Text="最新版本：尚未获取" FontSize="12" Foreground="#D2D2D6"/>
+                      <TextBlock x:Name="UpdateStatusText" Text="状态：尚未检查" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
+                    </StackPanel>
+                  </Grid>
+                </Border>
+              </Grid>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="20,18">
+              <StackPanel Spacing="12">
+                <TextBlock Text="项目与协议" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                <Grid ColumnDefinitions="128,*,80" RowDefinitions="Auto,Auto,Auto,Auto">
+                  <TextBlock Text="开源协议" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
+                  <TextBlock Grid.Column="1" Text="MIT" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
+
+                  <TextBlock Grid.Row="1" Text="本项目 GitHub" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
+                  <TextBlock Grid.Row="1" Grid.Column="1" Text="github.com/GlacierGlimmer/zmd-charge-plus" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
+                  <Button x:Name="OpenProjectGithubBtn" Grid.Row="1" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                  <TextBlock Grid.Row="2" Text="原项目 GitHub" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
+                  <TextBlock Grid.Row="2" Grid.Column="1" Text="github.com/QinAnze/zmd-charge" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
+                  <Button x:Name="OpenUpstreamBtn" Grid.Row="2" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                  <TextBlock Grid.Row="3" Text="项目网站" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Row="3" Grid.Column="1" Text="zmd-bar.x-neko.com" FontSize="13" Foreground="White" VerticalAlignment="Center"/>
+                  <Button x:Name="OpenWebsiteBtn" Grid.Row="3" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Grid>
+              </StackPanel>
+            </Border>
+
+            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="20,18">
+              <StackPanel Spacing="12">
+                <TextBlock Text="配置与维护" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                <WrapPanel Orientation="Horizontal">
+                  <Button x:Name="ExportSettingsBtn" Content="导出配置" Height="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                  <Button x:Name="ImportSettingsBtn" Content="导入配置" Height="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                  <Button x:Name="BackupSettingsBtn" Content="备份当前配置" Height="34" MinWidth="112" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                  <Button x:Name="OpenLogsFolderBtn" Content="日志文件夹" Height="34" MinWidth="98" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                  <Button x:Name="ResetAllSettingsBtn" Content="恢复全部默认" Height="34" MinWidth="112" Padding="14,5" Margin="0,0,0,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </WrapPanel>
+                <TextBlock x:Name="MaintenanceStatusText" Text="" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
+              </StackPanel>
+            </Border>
+
+            <TextBlock Text="© 2026 GlacierGlimmer_冰川雪貓" FontSize="13" Foreground="#7F7F85" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+          </StackPanel>
+        </ScrollViewer>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</Window>

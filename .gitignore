@@ -1,0 +1,47 @@
+# Build and release outputs (GitHub Releases will hold the binaries)
+[Bb]in/
+[Oo]bj/
+publish/
+dist/
+installer-output/
+artifacts/
+TestResults/
+
+# Local IDE/user state
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.userprefs
+
+# Runtime logs and transient data
+*.log
+*.tmp
+*.temp
+*.bak
+*.stackdump
+*.dmp
+*.mdmp
+
+# Do not accidentally publish local credentials or signing material
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+*.snk
+*.cer
+*.crt
+*.pubxml.user
+settings.json
+settings.*.json
+
+# Operating system
+.DS_Store
+Thumbs.db
+Desktop.ini

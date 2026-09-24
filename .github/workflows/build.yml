@@ -1,0 +1,29 @@
+name: Windows source build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Verify variable producers
+        shell: pwsh
+        run: ./verify-variable-coverage.ps1
+      - name: Restore packages
+        run: dotnet restore EndfieldChargePlus.csproj
+      - name: Build Release (source validation only)
+        run: dotnet build EndfieldChargePlus.csproj -c Release --no-restore

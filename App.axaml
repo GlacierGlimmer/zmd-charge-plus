@@ -1,0 +1,101 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="EndfieldChargePlus.App"
+             RequestedThemeVariant="Dark">
+  <Application.Styles>
+    <FluentTheme />
+
+    <!--
+      Interactive control states
+      Enabled controls must look clearly interactive. Only truly disabled
+      controls are dimmed. Local per-control colors (accent buttons, etc.)
+      still override these defaults.
+    -->
+    <Style Selector="ComboBox">
+      <Setter Property="Background" Value="#29292C"/>
+      <Setter Property="Foreground" Value="#F4F4F6"/>
+      <Setter Property="BorderBrush" Value="#686870"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="ComboBox:pointerover">
+      <Setter Property="Background" Value="#303034"/>
+      <Setter Property="BorderBrush" Value="#A5A5AD"/>
+      <Setter Property="Foreground" Value="#FFFFFF"/>
+    </Style>
+    <Style Selector="ComboBox:focus">
+      <Setter Property="BorderBrush" Value="#C6CA4C"/>
+      <Setter Property="Foreground" Value="#FFFFFF"/>
+    </Style>
+    <Style Selector="ComboBox:disabled">
+      <Setter Property="Background" Value="#252527"/>
+      <Setter Property="BorderBrush" Value="#3A3A3E"/>
+      <Setter Property="Foreground" Value="#76767C"/>
+      <Setter Property="Opacity" Value="0.55"/>
+    </Style>
+
+    <Style Selector="ComboBoxItem">
+      <Setter Property="Foreground" Value="#F0F0F2"/>
+      <Setter Property="Background" Value="#242426"/>
+    </Style>
+    <Style Selector="ComboBoxItem:pointerover">
+      <Setter Property="Foreground" Value="#FFFFFF"/>
+      <Setter Property="Background" Value="#38383D"/>
+    </Style>
+    <Style Selector="ComboBoxItem:selected">
+      <Setter Property="Foreground" Value="#F4F59A"/>
+      <Setter Property="Background" Value="#414128"/>
+    </Style>
+
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="#252527"/>
+      <Setter Property="Foreground" Value="#F4F4F6"/>
+      <Setter Property="BorderBrush" Value="#5E5E65"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="TextBox:pointerover">
+      <Setter Property="BorderBrush" Value="#898991"/>
+    </Style>
+    <Style Selector="TextBox:focus">
+      <Setter Property="BorderBrush" Value="#C6CA4C"/>
+    </Style>
+    <Style Selector="TextBox:disabled">
+      <Setter Property="Background" Value="#252527"/>
+      <Setter Property="BorderBrush" Value="#3A3A3E"/>
+      <Setter Property="Foreground" Value="#76767C"/>
+      <Setter Property="Opacity" Value="0.55"/>
+    </Style>
+
+    <Style Selector="NumericUpDown">
+      <Setter Property="Background" Value="#252527"/>
+      <Setter Property="Foreground" Value="#F4F4F6"/>
+      <Setter Property="BorderBrush" Value="#5E5E65"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="NumericUpDown:pointerover">
+      <Setter Property="BorderBrush" Value="#898991"/>
+    </Style>
+    <Style Selector="NumericUpDown:focus">
+      <Setter Property="BorderBrush" Value="#C6CA4C"/>
+    </Style>
+    <Style Selector="NumericUpDown:disabled">
+      <Setter Property="Background" Value="#252527"/>
+      <Setter Property="BorderBrush" Value="#3A3A3E"/>
+      <Setter Property="Foreground" Value="#76767C"/>
+      <Setter Property="Opacity" Value="0.55"/>
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="Foreground" Value="#F4F4F6"/>
+      <Setter Property="BorderBrush" Value="#595960"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="Button:pointerover">
+      <Setter Property="BorderBrush" Value="#8A8A92"/>
+    </Style>
+    <Style Selector="Button:disabled">
+      <Setter Property="Foreground" Value="#77777D"/>
+      <Setter Property="BorderBrush" Value="#3A3A3E"/>
+      <Setter Property="Opacity" Value="0.45"/>
+    </Style>
+  </Application.Styles>
+</Application>
