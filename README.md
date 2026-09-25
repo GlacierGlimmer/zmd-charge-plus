@@ -10,6 +10,25 @@ Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.c
 
 > 本项目为非官方社区二次开发作品，与《明日方舟：终末地》开发方及发行方无隶属、授权或背书关系。
 
+<!-- ECP_SCREENSHOTS_README_ZH_BEGIN -->
+## 📸 软件截图
+
+以下为 ECP v0.1.0 的实际运行界面。点击图片可查看原始分辨率。
+
+**显示与位置 / HUD**
+
+[![ECP 显示与位置设置及 HUD](docs/screenshots/zh-cn/01cn.png)](docs/screenshots/zh-cn/01cn.png)
+
+**HUD 内容与方案管理**
+
+[![ECP HUD 方案管理](docs/screenshots/zh-cn/02cn.png)](docs/screenshots/zh-cn/02cn.png)
+
+**高级变量库**
+
+[![ECP 高级变量库](docs/screenshots/zh-cn/03cn.png)](docs/screenshots/zh-cn/03cn.png)
+
+<!-- ECP_SCREENSHOTS_README_ZH_END -->
+
 ## ✨ Plus 版带来了什么？
 
 | 方向 | 原项目的核心体验 | Endfield Charge Plus 的扩展 |

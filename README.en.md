@@ -10,6 +10,25 @@ Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modificati
 
 > Unofficial community derivative. Not affiliated with, authorized by, or endorsed by the developers or publishers of Arknights: Endfield.
 
+<!-- ECP_SCREENSHOTS_README_EN_BEGIN -->
+## 📸 Screenshots
+
+Actual ECP v0.1.0 interface. Click an image to open the full-resolution screenshot.
+
+**Display & Position / HUD**
+
+[![ECP Display and Position settings and HUD](docs/screenshots/en-us/01en.png)](docs/screenshots/en-us/01en.png)
+
+**HUD Content & Profile Management**
+
+[![ECP HUD profile management](docs/screenshots/en-us/02en.png)](docs/screenshots/en-us/02en.png)
+
+**Advanced Variable Library**
+
+[![ECP variable library](docs/screenshots/en-us/03en.png)](docs/screenshots/en-us/03en.png)
+
+<!-- ECP_SCREENSHOTS_README_EN_END -->
+
 ## ✨ What Plus adds
 
 | Area | Original focus | Endfield Charge Plus |
