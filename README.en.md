@@ -6,7 +6,7 @@
 
 Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modification and extension of [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge). It builds on the original Endfield-inspired battery animation with persistent or on-demand monitoring, customizable profiles, system metrics, DeepSeek API information, and your own HTTP/JSON sources.
 
-**[⬇️ Get the latest release](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
+**[⬇️ Get it from Microsoft Store (recommended)](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[GitHub portable downloads](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
 
 > Unofficial community derivative. Not affiliated with, authorized by, or endorsed by the developers or publishers of Arknights: Endfield.
 
@@ -23,7 +23,21 @@ Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modificati
 
 ## ⬇️ Download & first run
 
-Get the Portable ZIP for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract it to a folder and run `EndfieldChargePlus.exe`. No installer or separately installed .NET runtime is required.
+### Microsoft Store (recommended)
+
+ECP is now available on Microsoft Store. [**Get Endfield Charge Plus from Microsoft Store**](https://apps.microsoft.com/detail/9p3pld3lx7w6), follow the installation prompts, and launch the app when installation finishes.
+
+You can also install it with **winget**. Paste and run this command in PowerShell or Windows Terminal:
+
+```powershell
+winget install --id 9P3PLD3LX7W6 --source msstore --exact
+```
+
+This installs the same app from the Microsoft Store source. Review any prompts shown on first use. If `winget` is not recognized, install or update App Installer from Microsoft Store, or use the Store link above.
+
+### Alternative: GitHub portable downloads
+
+For a version that needs no installation, get the Portable ZIP for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract it to a folder and run `EndfieldChargePlus.exe`. No installer or separately installed .NET runtime is required.
 
 | Download | Device |
 | :-- | :-- |
@@ -32,7 +46,7 @@ Get the Portable ZIP for your device from [**GitHub Releases**](https://github.c
 
 **Getting started:**
 
-1. Download and extract the correct ZIP, then run `EndfieldChargePlus.exe`; ECP stays available in the system tray.
+1. Install and launch ECP through Microsoft Store or winget. For the GitHub portable version, extract the ZIP to a permanent folder and run `EndfieldChargePlus.exe`. ECP stays available in the system tray.
 2. Open **Settings** from the tray. Choose the display, position and visibility mode under **Display & Position**.
 3. Under **HUD Content & Data**, select a built-in profile or make your own, then use **Preview**.
 4. Click **Save & Apply**. Settings persist across restarts; enable Windows auto-start if you want it.

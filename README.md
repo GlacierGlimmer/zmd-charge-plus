@@ -6,7 +6,7 @@
 
 Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge) 二次开发的 Windows 状态栏 HUD。它延续原项目的终末地风格电量动画，并将原本的电源提示扩展为可常驻、可唤出、可轮播的多数据 HUD：从 CPU / GPU 和网络状态，到 DeepSeek API 与自定义 HTTP/JSON 数据，都能组合成自己的显示方案。
 
-**[⬇️ 下载最新版本](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 项目网站](https://zmd-bar.x-neko.com/)** · **[原项目](https://github.com/QinAnze/zmd-charge)**
+**[⬇️ 从 Microsoft Store 获取（推荐）](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[GitHub 便携版](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 项目网站](https://zmd-bar.x-neko.com/)** · **[原项目](https://github.com/QinAnze/zmd-charge)**
 
 > 本项目为非官方社区二次开发作品，与《明日方舟：终末地》开发方及发行方无隶属、授权或背书关系。
 
@@ -23,7 +23,21 @@ Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.c
 
 ## ⬇️ 下载与使用
 
-前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载适合你设备的便携版 ZIP。解压后直接运行其中的 `EndfieldChargePlus.exe`，无需安装，也无需另装 .NET 运行时。
+### Microsoft Store（推荐）
+
+ECP 已上架微软商店。前往 [**Microsoft Store 获取 Endfield Charge Plus**](https://apps.microsoft.com/detail/9p3pld3lx7w6)，按页面提示安装，安装完成后启动应用即可。
+
+也可以使用 **winget**，在 PowerShell 或 Windows 终端中粘贴并运行：
+
+```powershell
+winget install --id 9P3PLD3LX7W6 --source msstore --exact
+```
+
+该命令通过 Microsoft Store 源安装同一个应用；首次使用时按提示确认即可。如果系统找不到 `winget`，请安装或更新微软商店中的「应用安装程序」，也可以直接使用上方商店链接。
+
+### 其他安装方式：GitHub 便携版
+
+需要免安装版本时，前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载适合你设备的便携版 ZIP。解压后直接运行其中的 `EndfieldChargePlus.exe`，无需安装，也无需另装 .NET 运行时。
 
 | 下载文件 | 适用设备 |
 | :-- | :-- |
@@ -32,7 +46,7 @@ Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.c
 
 **首次使用只需几步：**
 
-1. 下载对应架构的 ZIP，解压到一个固定目录，运行 `EndfieldChargePlus.exe`；程序通过系统托盘驻留。
+1. 通过 Microsoft Store 或 winget 安装并启动 ECP；使用 GitHub 便携版时，将 ZIP 解压到固定目录后运行 `EndfieldChargePlus.exe`。程序通过系统托盘驻留。
 2. 从托盘菜单打开**设置**，在「显示与位置」中选择目标显示器、HUD 位置和显示方式。
 3. 进入「HUD 内容与数据」，选择内置方案，或创建自己的 HUD；点击**预览**查看效果。
 4. 点击**保存并应用**。配置自动保存，重新启动后继续使用；可按需开启 Windows 开机启动。
