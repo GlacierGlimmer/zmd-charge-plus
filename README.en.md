@@ -1,16 +1,20 @@
 # Endfield Charge Plus · Endfield-style Status HUD+
 
-[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · v0.1.0**
+[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · Linux x64 · v0.1.0**
 
 > **More than a battery notification: bring the information you care about to the top of your screen.**
 
-Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modification and extension of [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge). It builds on the original Endfield-inspired battery animation with persistent or on-demand monitoring, customizable profiles, system metrics, DeepSeek API information, and your own HTTP/JSON sources.
+Endfield Charge Plus (**ECP**) is a desktop status HUD developed as a modification and extension of [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge). It builds on the original Endfield-inspired battery animation with persistent or on-demand monitoring, customizable profiles, system metrics, DeepSeek API information, and your own HTTP/JSON sources.
 
-**[⬇️ Get it from Microsoft Store (recommended)](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[GitHub portable downloads](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
+**[⬇️ Windows: Microsoft Store (recommended)](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[Windows / Linux downloads](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
 
 > Unofficial community derivative. Not affiliated with, authorized by, or endorsed by the developers or publishers of Arknights: Endfield.
 
+This repository maintains the Windows edition. **[Endfield Charge Plus For Linux](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux)** is maintained separately and offers APT installation and four package formats, described below.
+
 ## ✨ What Plus adds
+
+The comparison and feature details below describe the Windows edition. Linux variables are filtered by device capabilities; see the Linux installation section.
 
 | Area | Original focus | Endfield Charge Plus |
 | :-- | :-- | :-- |
@@ -23,7 +27,7 @@ Endfield Charge Plus (**ECP**) is a Windows status HUD developed as a modificati
 
 ## ⬇️ Download & first run
 
-### Microsoft Store (recommended)
+### Windows: Microsoft Store / winget (recommended)
 
 ECP is now available on Microsoft Store. [**Get Endfield Charge Plus from Microsoft Store**](https://apps.microsoft.com/detail/9p3pld3lx7w6), follow the installation prompts, and launch the app when installation finishes.
 
@@ -35,7 +39,7 @@ winget install --id 9P3PLD3LX7W6 --source msstore --exact
 
 This installs the same app from the Microsoft Store source. Review any prompts shown on first use. If `winget` is not recognized, install or update App Installer from Microsoft Store, or use the Store link above.
 
-### Alternative: GitHub portable downloads
+### Windows: GitHub portable downloads
 
 For a version that needs no installation, get the Portable ZIP for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract it to a folder and run `EndfieldChargePlus.exe`. No installer or separately installed .NET runtime is required.
 
@@ -53,7 +57,67 @@ For a version that needs no installation, get the Portable ZIP for your device f
 
 The default profile is **System – Memory**. On first launch, Windows UI language selects Simplified Chinese for Chinese locales and English for others; you can switch manually.
 
-## 🎛️ Features
+### Linux: install from APT (recommended for Debian / Ubuntu / Kali)
+
+The Linux edition is **Endfield Charge Plus For Linux**. Its source and detailed documentation are in the [Linux repository](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux); Linux packages are also available in [this repository's v0.1.0 Release](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/tag/v0.1.0).
+
+Run these two commands in a Linux terminal. The first configures the signing key and [APT repository](https://apt.x-neko.com) and refreshes the package index; the second installs the app:
+
+```bash
+curl -fsSL https://apt.x-neko.com/install.sh | sudo bash
+sudo apt-get install endfield-charge-plus-for-linux
+```
+
+Packages are currently available for **amd64 / x86_64**. To update the app after adding the repository:
+
+```bash
+sudo apt update
+sudo apt install --only-upgrade endfield-charge-plus-for-linux
+```
+
+To uninstall:
+
+```bash
+sudo apt-get remove endfield-charge-plus-for-linux
+```
+
+Launch from the application menu or run `endfield-charge-plus-for-linux`.
+
+### Linux: direct downloads
+
+All four formats include the .NET runtime:
+
+| Format | Download |
+| :-- | :-- |
+| `.tar.gz` | [EndfieldChargePlusForLinux-v0.1.0-linux-x64.tar.gz](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/EndfieldChargePlusForLinux-v0.1.0-linux-x64.tar.gz) |
+| `.AppImage` | [EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage) |
+| `.deb` | [EndfieldChargePlusForLinux-v0.1.0-linux-x64.deb](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/EndfieldChargePlusForLinux-v0.1.0-linux-x64.deb) |
+| `.rpm` | [EndfieldChargePlusForLinux-v0.1.0-linux-x64.rpm](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/EndfieldChargePlusForLinux-v0.1.0-linux-x64.rpm) |
+
+Use [`SHA256SUMS`](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/SHA256SUMS) for Linux packages and [`SHA256SUMS.txt`](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/download/v0.1.0/SHA256SUMS.txt) for Windows ZIPs. In your Linux download directory, run `sha256sum --ignore-missing -c SHA256SUMS`.
+
+```bash
+# Debian / Ubuntu / Kali: install a downloaded DEB
+sudo apt install ./EndfieldChargePlusForLinux-v0.1.0-linux-x64.deb
+
+# Fedora and other RPM distributions
+sudo dnf install ./EndfieldChargePlusForLinux-v0.1.0-linux-x64.rpm
+
+# AppImage
+chmod +x EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage
+./EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage
+
+# Portable tar.gz
+tar -xzf EndfieldChargePlusForLinux-v0.1.0-linux-x64.tar.gz
+cd EndfieldChargePlusForLinux-v0.1.0-linux-x64
+./EndfieldChargePlus
+```
+
+Without FUSE, use `./EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage --appimage-extract-and-run`.
+
+Linux requires **x86_64, glibc 2.35+, OpenSSL 3, and X11 or XWayland**. Top-edge activation and window stacking under Wayland depend on the compositor. ARM64, 32-bit, Alpine/musl and native Wayland builds are not provided. The Variable Library filters by actual hardware capabilities, excludes Windows-only and unimplemented items, and does not fabricate zero readings for missing sensors. Available variable counts vary by device. See the [Linux documentation](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/README.en.md) and [validation scope](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/docs/linux-validation.md).
+
+## 🎛️ Features (Windows)
 
 | Feature | What it does |
 | :-- | :-- |
@@ -86,7 +150,7 @@ Built-in keys have corresponding runtime collection/calculation code, but actual
 
 DeepSeek requires your API key; custom HTTP/JSON requests target endpoints you configure. See [Privacy](PRIVACY.md) for details on API keys and request headers.
 
-## 💻 Requirements & build
+## 💻 Windows requirements & build
 
 - **OS:** Windows 10 / 11, x64 and x86.
 - **Portable packages:** each ZIP contains a self-contained EXE; no separately installed .NET runtime.
