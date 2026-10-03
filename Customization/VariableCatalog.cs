@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -516,6 +516,27 @@ public static class VariableCatalog
         V("security.windows_update.pending_count", "待安装更新数量", "安全", "Microsoft.Update.Session 搜索到的未安装且未隐藏更新数量。", "整数", "项", "右侧状态", "0"),
         V("security.vpn.active", "VPN 活动状态", "安全", "与 network.vpn_status 同源的活动 VPN 检测。", "布尔", use: "状态 / 条件", formats: "无需格式化"),
         V("security.proxy.enabled", "代理启用状态", "安全", "与 network.proxy_status 同源的系统代理状态。", "布尔", use: "状态 / 条件", formats: "无需格式化"),
+
+        // ===== 媒体（Windows 媒体会话 / GSMTC）=====
+        // 由 MediaSessionProvider 原生读取，无需任何外部桥接进程。
+        V("media.available", "有媒体会话", "媒体", "当前是否存在可读的媒体会话（已取到标题）。", "布尔", use: "条件", formats: "无需格式化"),
+        V("media.app", "媒体来源应用", "媒体", "提供媒体会话的应用标识，如 cloudmusic.exe、Spotify.exe。", "文本", use: "标题 / 左侧信息", formats: "无需格式化"),
+        V("media.title", "曲名", "媒体", "当前播放曲目的标题；没有会话时显示“未在播放”。", "文本", use: "左侧主值", formats: "无需格式化"),
+        V("media.artist", "歌手", "媒体", "当前曲目的表演者。", "文本", use: "标题", formats: "无需格式化"),
+        V("media.album", "专辑", "媒体", "当前曲目的专辑名。", "文本", use: "左侧信息", formats: "无需格式化"),
+        V("media.title_artist", "歌手 - 曲名", "媒体", "已拼接的“歌手 - 曲名”，方便一行显示。", "文本", use: "左侧主值", formats: "无需格式化"),
+        V("media.status", "播放状态", "媒体", "播放中 / 已暂停 / 已停止 等本地化文字。", "文本", use: "右侧状态", formats: "无需格式化"),
+        V("media.status_raw", "播放状态（原始）", "媒体", "GSMTC 的原始状态枚举名，便于做条件判断。", "文本", use: "调试 / 条件", formats: "无需格式化"),
+        V("media.is_playing", "正在播放", "媒体", "当前是否处于播放状态。", "布尔", use: "标题 / 条件", formats: "无需格式化"),
+        V("media.is_paused", "已暂停", "媒体", "当前是否处于暂停状态。", "布尔", use: "条件", formats: "无需格式化"),
+        V("media.position", "已播放秒数", "媒体", "当前曲目已播放秒数（按上报位置外推）。", "数值", "秒", "左侧信息", "duration"),
+        V("media.duration", "曲目总秒数", "媒体", "当前曲目总时长。", "数值", "秒", "左侧信息", "duration"),
+        V("media.progress", "播放进度", "媒体", "已播放时长占总时长的百分比。", unit: "%", use: "右侧状态 / 圆环", formats: "0.0"),
+        V("media.position_text", "已播放时间", "媒体", "已播放时间的 mm:ss / hh:mm:ss 文本。", "文本", use: "左侧次值", formats: "无需格式化"),
+        V("media.duration_text", "总时长", "媒体", "曲目总时长的 mm:ss / hh:mm:ss 文本。", "文本", use: "左侧次值", formats: "无需格式化"),
+        V("media.remaining_text", "剩余时间", "媒体", "剩余时间的 mm:ss / hh:mm:ss 文本。", "文本", use: "左侧次值", formats: "无需格式化"),
+        V("media.progress_text", "播放进度文字", "媒体", "已格式化的进度文字，如 42%。", "文本", use: "右侧状态", formats: "无需格式化"),
+        V("media.has_timeline", "有进度信息", "媒体", "该会话是否提供了可用的时间轴信息。", "布尔", use: "条件", formats: "无需格式化"),
     };
 
     private static readonly HashSet<string> AdvancedKeySet = new(AdvancedBuiltIns.Select(x => x.Key), StringComparer.OrdinalIgnoreCase);
@@ -540,19 +561,20 @@ public static class VariableCatalog
             ["磁盘"] = 3,
             ["电池"] = 4,
             ["网络"] = 5,
-            ["网络探测"] = 6,
-            ["Ping（兼容）"] = 7,
-            ["系统"] = 8,
-            ["显示器"] = 9,
-            ["时间"] = 10,
-            ["进程"] = 11,
-            ["ECP 应用"] = 12,
-            ["DeepSeek API"] = 13,
-            ["安全"] = 14,
-            ["USB / 外设"] = 15,
-            ["剪贴板"] = 16,
-            ["开发者工具"] = 17,
-            ["自定义数据"] = 18,
+            ["媒体"] = 6,
+            ["网络探测"] = 7,
+            ["Ping（兼容）"] = 8,
+            ["系统"] = 9,
+            ["显示器"] = 10,
+            ["时间"] = 11,
+            ["进程"] = 12,
+            ["ECP 应用"] = 13,
+            ["DeepSeek API"] = 14,
+            ["安全"] = 15,
+            ["USB / 外设"] = 16,
+            ["剪贴板"] = 17,
+            ["开发者工具"] = 18,
+            ["自定义数据"] = 19,
         };
 
     // Within a category, common live/status values are shown before detailed/static values.

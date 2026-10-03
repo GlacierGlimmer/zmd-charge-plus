@@ -91,8 +91,51 @@ public static class HudSettingsNormalizer
             ActiveProfileId = activeId,
             CycleSeconds = Math.Clamp(source.CycleSeconds, 3, 3600),
             CycleProfileIds = cycleIds,
-            CycleAnimationMode = cycleAnimationMode
+            CycleAnimationMode = cycleAnimationMode,
+            Triggers = NormalizeTriggers(source.Triggers)
         };
+    }
+
+    /// <summary>
+    /// 触发规则来自用户手改的 settings.json，这里做白名单与范围校验，
+    /// 避免非法模式/运算符导致运行时静默不触发。
+    /// </summary>
+    private static List<HudTriggerRule> NormalizeTriggers(List<HudTriggerRule>? rules)
+    {
+        var result = new List<HudTriggerRule>();
+        if (rules is null) return result;
+
+        foreach (var rule in rules)
+        {
+            if (rule is null || string.IsNullOrWhiteSpace(rule.Variable)) continue;
+
+            string mode = (rule.Mode ?? "").Trim().ToLowerInvariant() switch
+            {
+                "change" => "Change",
+                "becomestrue" => "BecomesTrue",
+                _ => "Threshold"
+            };
+
+            string op = (rule.Operator ?? "").Trim() switch
+            {
+                ">" => ">",
+                "<" => "<",
+                "<=" => "<=",
+                "==" => "==",
+                "!=" => "!=",
+                _ => ">="
+            };
+
+            result.Add(rule with
+            {
+                Variable = rule.Variable.Trim(),
+                Mode = mode,
+                Operator = op,
+                CooldownSeconds = Math.Clamp(rule.CooldownSeconds, 0, 86400)
+            });
+        }
+
+        return result;
     }
 
     public static HudProfile NormalizeProfile(HudProfile p)

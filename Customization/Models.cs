@@ -12,6 +12,37 @@ public sealed record HudColorRule
     public string Color { get; init; } = "#C6CA4C";
 }
 
+/// <summary>
+/// 一条"事件触发"规则：监视某个变量，在条件成立或取值变化时把 HUD 唤出。
+/// 唤出时展示轮播队列里的<b>下一项</b>，因此每次触发都会推进轮播。
+///
+/// <para>Mode：
+/// <c>Threshold</c> —— 数值/文本与 <see cref="Value"/>/<see cref="Operator"/> 比较，命中即触发；
+/// <c>Change</c>    —— 取值与上一次不同即触发（适合"换歌"这种没有阈值的事件）；
+/// <c>BecomesTrue</c> —— 布尔变量由假变真时触发一次（边沿触发，不会持续刷屏）。
+/// </para>
+/// <para>CooldownSeconds 是同一规则两次触发之间的最小间隔，用来防止刷屏。</para>
+/// </summary>
+public sealed record HudTriggerRule
+{
+    public string Name { get; init; } = "";
+    public bool Enabled { get; init; } = true;
+
+    /// <summary>要监视的变量 key，例如 media.title、probe.loss_percent。</summary>
+    public string Variable { get; init; } = "";
+
+    /// <summary>Threshold | Change | BecomesTrue</summary>
+    public string Mode { get; init; } = "Threshold";
+
+    /// <summary>&gt;=、&gt;、&lt;=、&lt;、==、!=</summary>
+    public string Operator { get; init; } = ">=";
+
+    public double Value { get; init; }
+
+    /// <summary>同一规则两次触发之间的最小间隔（秒）。</summary>
+    public int CooldownSeconds { get; init; } = 20;
+}
+
 public sealed record HudProfile
 {
     public string Id { get; init; } = Guid.NewGuid().ToString("N");
@@ -97,6 +128,43 @@ public sealed record CustomHudSettings
 
     public List<HudProfile> Profiles { get; init; } = new();
     public List<CustomHttpSource> HttpSources { get; init; } = new();
+
+    /// <summary>
+    /// 事件触发规则。仅在"一直显示"关闭（瞬态模式）时生效：命中规则的瞬间唤出 HUD，
+    /// 并展示轮播队列里的下一项。
+    /// </summary>
+    public List<HudTriggerRule> Triggers { get; init; } = CreateDefaultTriggers();
+
+    public static List<HudTriggerRule> CreateDefaultTriggers() => new()
+    {
+        // 换歌：曲名一变就呼出。没有阈值可比较，所以用 Change 模式。
+        new()
+        {
+            Name = "换歌",
+            Variable = "media.title",
+            Mode = "Change",
+            CooldownSeconds = 3
+        },
+        // 网络波动：丢包或延迟任一超阈值就呼出。数值可在 settings.json 里自行调整。
+        new()
+        {
+            Name = "丢包",
+            Variable = "probe.loss_percent",
+            Mode = "Threshold",
+            Operator = ">=",
+            Value = 10,
+            CooldownSeconds = 30
+        },
+        new()
+        {
+            Name = "延迟",
+            Variable = "probe.latency_ms",
+            Mode = "Threshold",
+            Operator = ">=",
+            Value = 200,
+            CooldownSeconds = 30
+        }
+    };
 
     public static CustomHudSettings CreateDefault()
     {

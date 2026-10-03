@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -170,6 +170,33 @@ public static class LocalizationManager
         ["配置余额查询与峰谷时段。API Key 使用 Windows 当前用户加密存储。"] = "Configure balance queries and peak/off-peak windows. The API key is encrypted for the current Windows user.",
         ["工作日高峰窗口（北京时间，分号分隔）"] = "Weekday peak windows (Beijing time; separate with semicolons)",
         ["将 GET JSON 字段映射为 custom.source.variable；Header 可引用环境变量。"] = "Map GET JSON fields to custom.source.variable; headers may reference environment variables.",
+
+        // Trigger rules
+        ["触发规则"] = "Trigger Rules",
+        ["事件呼出"] = "Event Triggers",
+        ["命中条件时唤出 HUD，并展示轮播队列的下一项。仅在「一直显示」关闭（事件呼出模式）时生效。"] = "Summons the HUD when a condition is met and shows the next scheme in the carousel queue. Only active in event mode (Always visible turned off).",
+        ["添加规则"] = "Add Rule",
+        ["删除所选"] = "Delete Selected",
+        ["规则参数"] = "Rule Parameters",
+        ["在列表中选择一条规则后编辑这里的参数。"] = "Select a rule in the list, then edit its parameters here.",
+        ["还没有触发规则，点「添加规则」新建一条。"] = "No trigger rules yet — click Add Rule to create one.",
+        ["还没有触发规则。"] = "No trigger rules yet.",
+        ["启用"] = "Enabled",
+        ["名称，例如：丢包"] = "Name, e.g. Packet loss",
+        ["监视变量"] = "Watched variable",
+        ["可填变量库里的任意变量；探测类变量会沿用轮播里「网络包探测器」方案的目标与协议。"] = "Any key from the variable library. Probe variables reuse the target and protocol of the carousel's Packet Probe scheme.",
+        ["模式"] = "Mode",
+        ["运算符"] = "Operator",
+        ["阈值"] = "Threshold",
+        ["冷却 / 秒"] = "Cooldown / s",
+        ["阈值（数值比较）"] = "Threshold (numeric)",
+        ["变化（取值改变）"] = "Change (value differs)",
+        ["布尔边沿（由假变真）"] = "BecomesTrue (false to true)",
+        ["新规则"] = "New rule",
+        ["取值变化"] = "on change",
+        ["变为真"] = "becomes true",
+        ["取值与上一次不同时触发；运算符与阈值不参与判断。适合「换歌」这类没有阈值的事件。"] = "Fires when the value differs from the previous sample; operator and threshold are ignored. Good for events without a threshold, such as a track change.",
+        ["布尔变量由假变真时触发一次（边沿触发），不会持续刷屏。"] = "Fires once when a boolean goes false to true (edge trigger); it will not keep firing.",
 
         // Tray
         ["预览 HUD"] = "Preview HUD",

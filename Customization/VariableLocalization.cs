@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -14,6 +14,7 @@ public static class VariableLocalization
         ["磁盘"] = "Disk",
         ["系统"] = "System",
         ["网络"] = "Network",
+        ["媒体"] = "Media",
         ["网络探测"] = "Network Probe",
         ["网络包探测器"] = "Packet Probe",
         ["Ping"] = "Ping",
