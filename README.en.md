@@ -1,20 +1,22 @@
 # Endfield Charge Plus · Endfield-style Status HUD+
 
-[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · Linux x64 · v0.1.0**
+[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.0**
 
 > **More than a battery notification: bring the information you care about to the top of your screen.**
 
 Endfield Charge Plus (**ECP**) is a desktop status HUD developed as a modification and extension of [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge). It builds on the original Endfield-inspired battery animation with persistent or on-demand monitoring, customizable profiles, system metrics, DeepSeek API information, and your own HTTP/JSON sources.
 
-**[⬇️ Windows: Microsoft Store (recommended)](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[Windows / Linux downloads](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
+**[⬇️ Windows: Microsoft Store (recommended)](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[Windows / Linux downloads](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[macOS downloads](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases)** · **[🌐 Website](https://zmd-bar.x-neko.com/)** · **[Upstream project](https://github.com/QinAnze/zmd-charge)**
 
 > Unofficial community derivative. Not affiliated with, authorized by, or endorsed by the developers or publishers of Arknights: Endfield.
 
-This repository maintains the Windows edition. **[Endfield Charge Plus For Linux](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux)** is maintained separately and offers APT installation and four package formats, described below.
+This repository maintains the Windows edition. **[Endfield Charge Plus For Linux](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux)** is maintained separately with APT installation and four package formats. **[Endfield Charge Plus For MacOS](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos)** is also maintained in a separate repository and currently provides DMGs for both Apple Silicon and Intel Macs.
+
+> ⚠️ **The macOS edition has not yet been tested on physical Mac hardware.** It has passed automated CI checks in macOS environments for building, native data collection, UI, DMG mounting and launch, but hardware/model-specific compatibility issues may still exist.
 
 ## ✨ What Plus adds
 
-The comparison and feature details below describe the Windows edition. Linux variables are filtered by device capabilities; see the Linux installation section.
+The comparison and feature details below describe the Windows edition. Linux and macOS behavior and available variables are adapted to each platform and device; see their installation sections and separate repositories.
 
 | Area | Original focus | Endfield Charge Plus |
 | :-- | :-- | :-- |
@@ -116,6 +118,21 @@ cd EndfieldChargePlusForLinux-v0.1.0-linux-x64
 Without FUSE, use `./EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage --appimage-extract-and-run`.
 
 Linux requires **x86_64, glibc 2.35+, OpenSSL 3, and X11 or XWayland**. Top-edge activation and window stacking under Wayland depend on the compositor. ARM64, 32-bit, Alpine/musl and native Wayland builds are not provided. The Variable Library filters by actual hardware capabilities, excludes Windows-only and unimplemented items, and does not fabricate zero readings for missing sensors. Available variable counts vary by device. See the [Linux documentation](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/README.en.md) and [validation scope](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/docs/linux-validation.md).
+
+### macOS: DMG packages (Beta)
+
+The macOS edition is **Endfield Charge Plus For MacOS**. Source code, releases and platform-specific work are maintained in the [separate macOS repository](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos). The current release is **v0.1.1-beta**, requires **macOS 13+**, and provides two self-contained DMGs with no separate .NET runtime required:
+
+| Download | Device |
+| :-- | :-- |
+| [`EndfieldChargePlusForMacOS-v0.1.1-beta-osx-arm64.dmg`](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases/download/v0.1.1/EndfieldChargePlusForMacOS-v0.1.1-beta-osx-arm64.dmg) | Apple Silicon (M1 / M2 / M3 / M4 / M5, recommended) |
+| [`EndfieldChargePlusForMacOS-v0.1.1-beta-osx-x64.dmg`](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases/download/v0.1.1/EndfieldChargePlusForMacOS-v0.1.1-beta-osx-x64.dmg) | 64-bit Intel Macs |
+
+Open the DMG, drag the app into **Applications**, then launch it. Current packages use **ad-hoc signing and are not signed/notarized with an Apple Developer ID**. On first launch, macOS may require choosing **Open Anyway** under System Settings → Privacy & Security. You do not need to disable Gatekeeper or SIP.
+
+> ⚠️ **The current macOS edition has not yet been tested on physical Mac hardware.** CI runs automated checks on Apple Silicon and Intel macOS environments covering builds, native data collection, per-variable reads, profile rendering, UI, DMG mounting, launch and single-instance behavior, but this does not replace real-hardware testing. Please report model-, macOS-version-, notch-, multi-display-, scaling-, battery- or permission-related issues in the [macOS repository Issues](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/issues).
+
+The macOS edition includes menu-bar residency, a click-through HUD, Chinese/English UI, profile management, time, network probing, HTTP/JSON and DeepSeek features. System data uses native Mach / sysctl / IOPowerSources / APFS / Metal APIs, with variables filtered by detected capabilities. See the [macOS README](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/blob/main/README.md) and [macOS Releases](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases) for full details.
 
 ## 🎛️ Features (Windows)
 
