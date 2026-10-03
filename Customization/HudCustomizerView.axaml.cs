@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text.Json;
@@ -110,6 +111,10 @@ public partial class HudCustomizerView : UserControl
         LocalizationManager.IsEnglish ? HttpJsonCommentExampleEn : HttpJsonCommentExampleZh;
     private List<HudProfile> _profiles = new();
     private List<CustomHttpSource> _httpSources = new();
+    private List<HudTriggerRule> _triggers = new();
+    private int _selectedTriggerIndex = -1;
+    // 用 ObservableCollection 作为 ListBox 的数据源，便于原地更新某一行的显示文字
+    private readonly ObservableCollection<string> _triggerLabels = new();
     private List<string> _cycleProfileIds = new();
     private List<string> _cycleSourceProfileIds = new();
     private IReadOnlyList<GpuAdapterInfo> _gpuAdapters = Array.Empty<GpuAdapterInfo>();
@@ -151,6 +156,19 @@ public partial class HudCustomizerView : UserControl
         VariableList.SelectionChanged += OnVariableSelected;
         CopyVariableKeyBtn.Click += OnCopyVariableKey;
         CopyVariableTemplateBtn.Click += OnCopyVariableTemplate;
+
+        // 触发规则编辑器
+        TriggerList.ItemsSource = _triggerLabels;
+        TriggerList.SelectionChanged += OnTriggerSelected;
+        AddTriggerBtn.Click += OnAddTrigger;
+        RemoveTriggerBtn.Click += OnRemoveTrigger;
+        TriggerEnabledCheck.IsCheckedChanged += (_, _) => OnTriggerFieldChanged();
+        TriggerNameBox.LostFocus += (_, _) => OnTriggerFieldChanged();
+        TriggerVariableBox.LostFocus += (_, _) => OnTriggerFieldChanged();
+        TriggerModeCombo.SelectionChanged += (_, _) => OnTriggerFieldChanged();
+        TriggerOperatorCombo.SelectionChanged += (_, _) => OnTriggerFieldChanged();
+        TriggerValueBox.ValueChanged += (_, _) => OnTriggerFieldChanged();
+        TriggerCooldownBox.ValueChanged += (_, _) => OnTriggerFieldChanged();
 
         RefreshGpuAdapters();
         RebuildVariableCategories();
@@ -201,6 +219,26 @@ public partial class HudCustomizerView : UserControl
         if (percentMode >= 0) NetworkPercentModeCombo.SelectedIndex = Math.Min(percentMode, NetworkPercentModeCombo.Items.Count - 1);
         if (referenceUnit >= 0) NetworkReferenceUnitCombo.SelectedIndex = Math.Min(referenceUnit, NetworkReferenceUnitCombo.Items.Count - 1);
         if (protocol >= 0) ProbeProtocolCombo.SelectedIndex = Math.Min(protocol, ProbeProtocolCombo.Items.Count - 1);
+
+        RebuildTriggerChoiceItems();
+    }
+
+    private void RebuildTriggerChoiceItems()
+    {
+        int mode = TriggerModeCombo.SelectedIndex;
+        int op = TriggerOperatorCombo.SelectedIndex;
+
+        TriggerModeCombo.Items.Clear();
+        TriggerModeCombo.Items.Add(LocalizationManager.Text("阈值（数值比较）", "Threshold (numeric)"));
+        TriggerModeCombo.Items.Add(LocalizationManager.Text("变化（取值改变）", "Change (value differs)"));
+        TriggerModeCombo.Items.Add(LocalizationManager.Text("布尔边沿（由假变真）", "BecomesTrue (false→true)"));
+
+        TriggerOperatorCombo.Items.Clear();
+        foreach (string symbol in TriggerOperators)
+            TriggerOperatorCombo.Items.Add(symbol);
+
+        if (mode >= 0) TriggerModeCombo.SelectedIndex = Math.Min(mode, TriggerModeCombo.Items.Count - 1);
+        if (op >= 0) TriggerOperatorCombo.SelectedIndex = Math.Min(op, TriggerOperatorCombo.Items.Count - 1);
     }
 
     public void ApplyLocalization()
@@ -307,6 +345,8 @@ public partial class HudCustomizerView : UserControl
             ? HttpJsonCommentExample
             : JsonSerializer.Serialize(_httpSources, _json);
 
+        _triggers = (_loaded.Triggers ?? new List<HudTriggerRule>()).Select(t => t with { }).ToList();
+
         RefreshGpuAdapters();
         RebuildProfileCombo(_loaded.ActiveProfileId);
         _selectedIndex = ProfileCombo.SelectedIndex;
@@ -315,6 +355,7 @@ public partial class HudCustomizerView : UserControl
 
         RebuildVariableCategories();
         RefreshVariableList();
+        RefreshTriggerList();
         _loading = false;
         UpdateContextOptionsUi();
         UpdateCycleControls();
@@ -324,6 +365,7 @@ public partial class HudCustomizerView : UserControl
     {
         SaveCurrentProfile();
         TryParseHttpJson(showErrors: true);
+        SaveSelectedTrigger(silent: true);
         return new CustomHudSettings
         {
             AutoCycle = AutoCycleSwitch.IsChecked == true,
@@ -338,8 +380,231 @@ public partial class HudCustomizerView : UserControl
             DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),
             DeepSeekPeakWindows = string.IsNullOrWhiteSpace(DeepSeekWindowsBox.Text) ? "09:00-12:00;14:00-18:00" : DeepSeekWindowsBox.Text!.Trim(),
             Profiles = _profiles.Select(CloneProfile).ToList(),
-            HttpSources = _httpSources.Select(CloneHttp).ToList()
+            HttpSources = _httpSources.Select(CloneHttp).ToList(),
+            Triggers = _triggers.Select(t => t with { }).ToList()
         };
+    }
+
+    // ==================================================================
+    //  触发规则编辑器（设置 → HUD 内容与数据 → 触发规则）
+    // ==================================================================
+
+    private static readonly string[] TriggerOperators = { ">=", ">", "<=", "<", "==", "!=" };
+
+    private static readonly string[] TriggerModes = { "Threshold", "Change", "BecomesTrue" };
+
+    private static string DescribeTrigger(HudTriggerRule rule)
+    {
+        string state = rule.Enabled ? "[x]" : "[ ]";
+        string condition = rule.Mode switch
+        {
+            "Change" => LocalizationManager.Text("取值变化", "on change"),
+            "BecomesTrue" => LocalizationManager.Text("变为真", "becomes true"),
+            _ => rule.Operator + " " + rule.Value.ToString(CultureInfo.InvariantCulture)
+        };
+        return $"{state} {rule.Name}   {rule.Variable}   {condition}   ({rule.CooldownSeconds}s)";
+    }
+
+    private static string TriggerHintFor(HudTriggerRule rule) => rule.Mode switch
+    {
+        "Change" => LocalizationManager.Text(
+            "取值与上一次不同时触发；运算符与阈值不参与判断。适合「换歌」这类没有阈值的事件。",
+            "Fires when the value differs from the previous sample. Operator/threshold are ignored. Good for events without a threshold, such as a track change."),
+        "BecomesTrue" => LocalizationManager.Text(
+            "布尔变量由假变真时触发一次（边沿触发），不会持续刷屏。",
+            "Fires once when a boolean goes false to true (edge trigger); it will not keep firing."),
+        _ => LocalizationManager.Text(
+            $"每 1 秒采样一次，数值满足「{rule.Operator} {rule.Value.ToString(CultureInfo.InvariantCulture)}」即触发。",
+            $"Sampled once per second; fires when the value satisfies '{rule.Operator} {rule.Value.ToString(CultureInfo.InvariantCulture)}'.")
+    };
+
+    private void RefreshTriggerList(int? selectIndex = null)
+    {
+        int keep = selectIndex ?? _selectedTriggerIndex;
+        bool previous = _loading;
+        _loading = true;
+        try
+        {
+            _triggerLabels.Clear();
+            foreach (var rule in _triggers)
+                _triggerLabels.Add(DescribeTrigger(rule));
+
+            if (_triggers.Count == 0) _selectedTriggerIndex = -1;
+            else if (keep < 0 || keep >= _triggers.Count) _selectedTriggerIndex = 0;
+            else _selectedTriggerIndex = keep;
+
+            TriggerList.SelectedIndex = _selectedTriggerIndex;
+            UpdateTriggerListStatus();
+        }
+        finally
+        {
+            _loading = previous;
+        }
+
+        LoadSelectedTrigger();
+    }
+
+    private void UpdateTriggerListStatus()
+    {
+        if (_triggers.Count == 0)
+        {
+            TriggerListStatusText.Text = LocalizationManager.Text("还没有触发规则。", "No trigger rules yet.");
+            return;
+        }
+
+        int enabled = _triggers.Count(x => x.Enabled);
+        TriggerListStatusText.Text = LocalizationManager.Text(
+            $"共 {_triggers.Count} 条，启用 {enabled} 条。",
+            $"{_triggers.Count} rule(s), {enabled} enabled.");
+    }
+
+    private void OnTriggerSelected(object? sender, SelectionChangedEventArgs e)
+    {
+        if (_loading) return;
+
+        // 切换前先把当前编辑写回，避免丢失改动。
+        SaveSelectedTrigger(silent: true);
+        _selectedTriggerIndex = TriggerList.SelectedIndex;
+        LoadSelectedTrigger();
+    }
+
+    private void OnAddTrigger(object? sender, RoutedEventArgs e)
+    {
+        SaveSelectedTrigger(silent: true);
+        _triggers.Add(new HudTriggerRule
+        {
+            Name = LocalizationManager.Text("新规则", "New rule"),
+            Enabled = true,
+            Variable = "probe.loss_percent",
+            Mode = "Threshold",
+            Operator = ">=",
+            Value = 10,
+            CooldownSeconds = 30
+        });
+        RefreshTriggerList(_triggers.Count - 1);
+    }
+
+    private void OnRemoveTrigger(object? sender, RoutedEventArgs e)
+    {
+        int index = _selectedTriggerIndex;
+        if (index < 0 || index >= _triggers.Count) return;
+
+        _triggers.RemoveAt(index);
+        RefreshTriggerList(Math.Min(index, _triggers.Count - 1));
+    }
+
+    private void OnTriggerFieldChanged()
+    {
+        if (_loading) return;
+        if (_selectedTriggerIndex < 0 || _selectedTriggerIndex >= _triggers.Count) return;
+
+        SaveSelectedTrigger(silent: false);
+        UpdateTriggerEditorEnabled();
+    }
+
+    private void SaveSelectedTrigger(bool silent)
+    {
+        if (_selectedTriggerIndex < 0 || _selectedTriggerIndex >= _triggers.Count) return;
+
+        var current = _triggers[_selectedTriggerIndex];
+        string mode = TriggerModeCombo.SelectedIndex >= 0 && TriggerModeCombo.SelectedIndex < TriggerModes.Length
+            ? TriggerModes[TriggerModeCombo.SelectedIndex]
+            : "Threshold";
+        string op = TriggerOperatorCombo.SelectedItem?.ToString() ?? ">=";
+
+        var updated = current with
+        {
+            Enabled = TriggerEnabledCheck.IsChecked == true,
+            Name = string.IsNullOrWhiteSpace(TriggerNameBox.Text) ? current.Name : TriggerNameBox.Text!.Trim(),
+            Variable = TriggerVariableBox.Text?.Trim() ?? "",
+            Mode = mode,
+            Operator = op,
+            Value = (double)(TriggerValueBox.Value ?? 0m),
+            CooldownSeconds = (int)Math.Clamp(TriggerCooldownBox.Value ?? 20m, 0m, 86400m)
+        };
+
+        _triggers[_selectedTriggerIndex] = updated;
+
+        if (silent) return;
+
+        bool previous = _loading;
+        _loading = true;
+        try
+        {
+            int index = _selectedTriggerIndex;
+            if (index >= 0 && index < _triggerLabels.Count)
+                _triggerLabels[index] = DescribeTrigger(updated);
+            UpdateTriggerListStatus();
+            TriggerHintText.Text = TriggerHintFor(updated);
+        }
+        finally
+        {
+            _loading = previous;
+        }
+    }
+
+    private void LoadSelectedTrigger()
+    {
+        bool previous = _loading;
+        _loading = true;
+        try
+        {
+            if (_selectedTriggerIndex < 0 || _selectedTriggerIndex >= _triggers.Count)
+            {
+                TriggerEnabledCheck.IsChecked = false;
+                TriggerNameBox.Text = "";
+                TriggerVariableBox.Text = "";
+                if (TriggerModeCombo.ItemCount > 0) TriggerModeCombo.SelectedIndex = 0;
+                if (TriggerOperatorCombo.ItemCount > 0) TriggerOperatorCombo.SelectedIndex = 0;
+                TriggerValueBox.Value = 0m;
+                TriggerCooldownBox.Value = 20m;
+                TriggerHintText.Text = "";
+            }
+            else
+            {
+                var rule = _triggers[_selectedTriggerIndex];
+                TriggerEnabledCheck.IsChecked = rule.Enabled;
+                TriggerNameBox.Text = rule.Name;
+                TriggerVariableBox.Text = rule.Variable;
+
+                int modeIndex = Array.FindIndex(TriggerModes,
+                    m => string.Equals(m, rule.Mode, StringComparison.OrdinalIgnoreCase));
+                if (TriggerModeCombo.ItemCount > 0)
+                    TriggerModeCombo.SelectedIndex = modeIndex < 0 ? 0 : modeIndex;
+
+                int opIndex = Array.FindIndex(TriggerOperators,
+                    o => string.Equals(o, rule.Operator, StringComparison.Ordinal));
+                if (TriggerOperatorCombo.ItemCount > 0)
+                    TriggerOperatorCombo.SelectedIndex = opIndex < 0 ? 0 : opIndex;
+
+                TriggerValueBox.Value = (decimal)rule.Value;
+                TriggerCooldownBox.Value = rule.CooldownSeconds;
+                TriggerHintText.Text = TriggerHintFor(rule);
+            }
+        }
+        finally
+        {
+            _loading = previous;
+        }
+
+        UpdateTriggerEditorEnabled();
+    }
+
+    private void UpdateTriggerEditorEnabled()
+    {
+        bool has = _selectedTriggerIndex >= 0 && _selectedTriggerIndex < _triggers.Count;
+        TriggerEnabledCheck.IsEnabled = has;
+        TriggerNameBox.IsEnabled = has;
+        TriggerVariableBox.IsEnabled = has;
+        TriggerModeCombo.IsEnabled = has;
+        TriggerOperatorCombo.IsEnabled = has;
+        TriggerValueBox.IsEnabled = has;
+        TriggerCooldownBox.IsEnabled = has;
+        RemoveTriggerBtn.IsEnabled = has;
+
+        TriggerEditorHint.Text = has
+            ? LocalizationManager.Text("在列表中选择一条规则后编辑这里的参数。", "Select a rule, then edit its parameters here.")
+            : LocalizationManager.Text("还没有触发规则，点「添加规则」新建一条。", "No rules yet — click Add to create one.");
     }
 
     private void RebuildProfileCombo(string? preferredProfileId = null)
