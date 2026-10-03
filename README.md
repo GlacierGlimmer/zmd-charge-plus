@@ -1,20 +1,22 @@
 # Endfield Charge Plus · 终末地风格状态栏HUD+
 
-**简体中文** · [English](README.en.md)　｜　**Windows 10 / 11 · Linux x64 · v0.1.0**
+**简体中文** · [English](README.en.md)　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.0**
 
 > **不止于电量提示，让需要的信息以你喜欢的方式出现在屏幕上。**
 
 Endfield Charge Plus（**ECP**）是基于 [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge) 二次开发的桌面状态栏 HUD。它延续原项目的终末地风格电量动画，并将原本的电源提示扩展为可常驻、可唤出、可轮播的多数据 HUD：从 CPU / GPU 和网络状态，到 DeepSeek API 与自定义 HTTP/JSON 数据，都能组合成自己的显示方案。
 
-**[⬇️ Windows：Microsoft Store（推荐）](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[Windows / Linux 下载](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[🌐 项目网站](https://zmd-bar.x-neko.com/)** · **[原项目](https://github.com/QinAnze/zmd-charge)**
+**[⬇️ Windows：Microsoft Store（推荐）](https://apps.microsoft.com/detail/9p3pld3lx7w6)** · **[Windows / Linux 下载](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)** · **[macOS 下载](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases)** · **[🌐 项目网站](https://zmd-bar.x-neko.com/)** · **[原项目](https://github.com/QinAnze/zmd-charge)**
 
 > 本项目为非官方社区二次开发作品，与《明日方舟：终末地》开发方及发行方无隶属、授权或背书关系。
 
-Windows 版在本仓库维护；Linux 版 **[Endfield Charge Plus For Linux](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux)** 提供 APT 命令安装与四种独立安装包，使用方法见下方下载章节。
+Windows 版在本仓库维护；Linux 版 **[Endfield Charge Plus For Linux](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux)** 提供 APT 命令安装与四种独立安装包；macOS 版 **[Endfield Charge Plus For MacOS](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos)** 在独立仓库维护，目前提供 Apple Silicon 与 Intel 两种 DMG。使用方法见下方下载章节。
+
+> ⚠️ **macOS 版本目前尚未进行真实 Mac 实机测试。** 当前仅完成 CI macOS 环境中的构建、原生采集、界面、DMG 挂载与启动等自动化验证，因此可能仍存在与具体机型、macOS 版本、刘海屏、多显示器或系统权限相关的兼容性问题。
 
 ## ✨ Plus 版带来了什么？
 
-下表与后文功能详解以 Windows 版为准；Linux 变量按设备能力筛选，详见 Linux 安装章节。
+下表与后文功能详解以 Windows 版为准；Linux 与 macOS 版本会按平台及设备能力调整可用变量和行为，详见各自安装章节与独立仓库说明。
 
 | 方向 | 原项目的核心体验 | Endfield Charge Plus 的扩展 |
 | :-- | :-- | :-- |
@@ -116,6 +118,21 @@ cd EndfieldChargePlusForLinux-v0.1.0-linux-x64
 AppImage 缺少 FUSE 时，可用 `./EndfieldChargePlusForLinux-v0.1.0-linux-x64.AppImage --appimage-extract-and-run`。
 
 Linux 要求 **x86_64、glibc 2.35+、OpenSSL 3、X11 或 XWayland**；Wayland 下的顶部唤出、置顶等行为受桌面合成器限制。当前不提供 ARM64、32 位、Alpine/musl 或纯原生 Wayland 版本。变量库按实际硬件能力筛选，移除 Windows 专属与未实现项目，不用假零值填补缺失传感器；可用变量数量因设备而异。完整依赖、功能和测试范围见 [Linux 说明](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/README.md) 与 [验证记录](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/blob/main/docs/linux-validation.md)。
+
+### macOS：DMG 安装包（Beta）
+
+macOS 版名称为 **Endfield Charge Plus For MacOS**，源码、发布与后续适配位于 [macOS 独立仓库](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos)。当前发布版本为 **v0.1.1-beta**，支持 **macOS 13+**，并提供两种自包含 DMG，无需另装 .NET：
+
+| 下载文件 | 适用设备 |
+| :-- | :-- |
+| [`EndfieldChargePlusForMacOS-v0.1.1-beta-osx-arm64.dmg`](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases/download/v0.1.1/EndfieldChargePlusForMacOS-v0.1.1-beta-osx-arm64.dmg) | Apple Silicon（M1 / M2 / M3 / M4 / M5 等，推荐） |
+| [`EndfieldChargePlusForMacOS-v0.1.1-beta-osx-x64.dmg`](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases/download/v0.1.1/EndfieldChargePlusForMacOS-v0.1.1-beta-osx-x64.dmg) | Intel 64 位 Mac |
+
+打开 DMG 后，将应用拖入 **Applications** 再启动。当前安装包采用 **ad-hoc 签名，未经过 Apple Developer ID 签名及公证**；首次启动时可能需要在「系统设置 → 隐私与安全性」中选择「仍要打开」。无需关闭 Gatekeeper 或 SIP。
+
+> ⚠️ **当前 macOS 版本尚未进行真实 Mac 实机测试。** CI 会在 Apple Silicon 与 Intel macOS 环境执行自动化构建、原生数据采集、逐变量读取、方案渲染、界面、DMG 挂载、启动和单实例检查，但这些自动化验证不能替代真实硬件测试。若遇到机型、macOS 版本、刘海屏、多显示器、缩放、电池或权限相关问题，请在 [macOS 仓库 Issues](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/issues) 反馈。
+
+macOS 版提供菜单栏驻留、点击穿透 HUD、中英双语、方案管理、时间、网络探测、HTTP/JSON 与 DeepSeek 等功能；系统数据使用 Mach / sysctl / IOPowerSources / APFS / Metal 等原生接口，并按实际检测能力筛选变量。完整功能、限制、校验与安装说明请查看 [macOS README](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/blob/main/README.md) 与 [macOS Releases](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases)。
 
 ## 🎛️ 功能一览（Windows）
 
