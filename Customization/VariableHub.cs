@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -25,6 +25,7 @@ public sealed class VariableHub : IDisposable
     private readonly Dictionary<string, PingTargetState> _pingStates = new(StringComparer.OrdinalIgnoreCase);
     private readonly object _pingGate = new();
     private readonly AdvancedVariableProvider _advanced = new();
+    private readonly MediaSessionProvider _media = new();
 
     private const int PingTimeoutMs = 1000;
     private const double PingFullScaleMs = 999d;
@@ -179,6 +180,9 @@ public sealed class VariableHub : IDisposable
 
         if (NeedsPrefix(requested, "custom."))
             await AddCustomHttpAsync(vars, settings, ct, requested).ConfigureAwait(false);
+
+        // Windows 媒体会话（GSMTC）：原生读取"当前播放"，不依赖任何外部桥接进程。
+        await _media.EnrichAsync(vars, requested, ct).ConfigureAwait(false);
 
         return vars;
     }
@@ -1782,5 +1786,5 @@ public sealed class VariableHub : IDisposable
 
     private sealed record HttpCacheEntry(string Json, DateTime ExpiresAt);
 
-    public void Dispose() { _advanced.Dispose(); }
+    public void Dispose() { _advanced.Dispose(); _media.Dispose(); }
 }

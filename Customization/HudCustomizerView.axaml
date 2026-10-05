@@ -1,4 +1,4 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="EndfieldChargePlus.Customization.HudCustomizerView">
   <TabControl>
@@ -438,6 +438,64 @@
               <TextBox x:Name="HttpSourcesJsonBox" Grid.Row="1" AcceptsReturn="True" MinHeight="390" Margin="0,14,0,10" FontFamily="Consolas, Cascadia Mono, monospace" FontSize="11" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
               <TextBlock x:Name="HttpStatusText" Grid.Row="2" FontSize="11" Foreground="#85858B" TextWrapping="Wrap"/>
             </Grid>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+    </TabItem>
+
+    <TabItem Header="触发规则">
+      <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="4,12,4,18" Spacing="12">
+          <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="12">
+              <StackPanel Spacing="4">
+                <TextBlock Text="事件呼出" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                <TextBlock Text="命中条件时唤出 HUD，并展示轮播队列的下一项。仅在「一直显示」关闭（事件呼出模式）时生效。" FontSize="11" Foreground="#85858B" TextWrapping="Wrap"/>
+              </StackPanel>
+              <ListBox x:Name="TriggerList" Height="180" FontFamily="Consolas, Cascadia Mono, monospace" FontSize="12"/>
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="AddTriggerBtn" Content="添加规则"/>
+                <Button x:Name="RemoveTriggerBtn" Content="删除所选"/>
+                <TextBlock x:Name="TriggerListStatusText" FontSize="11" Foreground="#85858B" VerticalAlignment="Center" Margin="6,0,0,0"/>
+              </StackPanel>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="12">
+              <StackPanel Spacing="4">
+                <TextBlock Text="规则参数" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                <TextBlock x:Name="TriggerEditorHint" Text="在列表中选择一条规则后编辑这里的参数。" FontSize="11" Foreground="#85858B"/>
+              </StackPanel>
+              <Grid ColumnDefinitions="Auto,*">
+                <CheckBox x:Name="TriggerEnabledCheck" Content="启用" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                <TextBox x:Name="TriggerNameBox" Grid.Column="1" Watermark="名称，例如：丢包"/>
+              </Grid>
+              <StackPanel Spacing="5">
+                <TextBlock Text="监视变量" FontSize="12" Foreground="#A0A0A6"/>
+                <TextBox x:Name="TriggerVariableBox" Watermark="probe.loss_percent / media.title / cpu.usage"/>
+                <TextBlock Text="可填变量库里的任意变量；探测类变量会沿用轮播里「网络包探测器」方案的目标与协议。" FontSize="11" Foreground="#77777D" TextWrapping="Wrap"/>
+              </StackPanel>
+              <Grid ColumnDefinitions="*,*,*,*">
+                <StackPanel Spacing="5" Margin="0,0,10,0">
+                  <TextBlock Text="模式" FontSize="12" Foreground="#A0A0A6"/>
+                  <ComboBox x:Name="TriggerModeCombo" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="5" Margin="0,0,10,0">
+                  <TextBlock Text="运算符" FontSize="12" Foreground="#A0A0A6"/>
+                  <ComboBox x:Name="TriggerOperatorCombo" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Spacing="5" Margin="0,0,10,0">
+                  <TextBlock Text="阈值" FontSize="12" Foreground="#A0A0A6"/>
+                  <NumericUpDown x:Name="TriggerValueBox" Minimum="-1000000" Maximum="1000000" Increment="1"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3" Spacing="5">
+                  <TextBlock Text="冷却 / 秒" FontSize="12" Foreground="#A0A0A6"/>
+                  <NumericUpDown x:Name="TriggerCooldownBox" Minimum="0" Maximum="86400" Increment="1"/>
+                </StackPanel>
+              </Grid>
+              <TextBlock x:Name="TriggerHintText" FontSize="11" Foreground="#77777D" TextWrapping="Wrap"/>
+            </StackPanel>
           </Border>
         </StackPanel>
       </ScrollViewer>

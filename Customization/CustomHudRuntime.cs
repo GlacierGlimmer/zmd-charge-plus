@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,6 +41,14 @@ public sealed class CustomHudRuntime : IDisposable
     private string? _lastDeepSeekPeriod;
     private bool _pendingDeepSeekPeriodTransition;
 
+    // ---- 事件触发（settings.CustomHud.Triggers）----
+    // 每次规则命中都会唤出 HUD 并展示轮播队列的下一项，所以这里维护一个独立的游标。
+    private int _transientCycleIndex = -1;
+    private DateTime _nextTriggerPoll = DateTime.MinValue;
+    private bool _triggerBaselineCaptured;
+    private readonly Dictionary<string, object?> _triggerLastValues = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, DateTime> _triggerNextAllowed = new(StringComparer.OrdinalIgnoreCase);
+
     public CustomHudRuntime(HudWindow hud)
     {
         _hud = hud;
@@ -60,6 +69,13 @@ public sealed class CustomHudRuntime : IDisposable
         _persistentProfileId = "";
         _nextDeepSeekPeriodPoll = DateTime.MinValue;
         _pendingDeepSeekPeriodTransition = false;
+
+        // 触发监听重新建立基线，避免切方案/改设置后立刻误触发一次。
+        _transientCycleIndex = -1;
+        _nextTriggerPoll = DateTime.MinValue;
+        _triggerBaselineCaptured = false;
+        _triggerLastValues.Clear();
+        _triggerNextAllowed.Clear();
 
         var activeProfile = _appSettings.AlwaysVisible && _settings.AutoCycle
             ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
@@ -271,6 +287,11 @@ public sealed class CustomHudRuntime : IDisposable
             _pendingDeepSeekPeriodTransition = false;
         }
 
+        // 用户配置的事件触发（换歌 / 丢包 / 延迟 ...）。
+        // 命中后唤出的是轮播队列的下一项，所以每次事件都会把轮播往前推一格。
+        if (await TickTriggerRulesAsync())
+            return;
+
         if (!WindowsSystemProbe.TryGetCursorPosition(out var pointer))
             return;
 
@@ -284,8 +305,9 @@ public sealed class CustomHudRuntime : IDisposable
         if (_hotZoneLatched || _hud.IsHudBusy || Volatile.Read(ref _busy) != 0)
             return;
 
-        var active = ResolveActiveProfile();
-        if (active is null || IsBatteryProfile(active))
+        // 热点唤出同样推进轮播："每次呼出都是轮播的下一个"。
+        var next = NextTransientCycleProfile();
+        if (next is null || IsBatteryProfile(next))
         {
             _hotZoneLatched = true;
             return;
@@ -293,7 +315,7 @@ public sealed class CustomHudRuntime : IDisposable
 
         // 只有真正开始唤出后才锁住热点；鼠标离开顶边后允许下一次唤出。
         _hotZoneLatched = true;
-        await TriggerTransientProfileAsync(active);
+        await TriggerTransientProfileAsync(next);
     }
 
     private void PollPowerSource()
@@ -598,6 +620,177 @@ public sealed class CustomHudRuntime : IDisposable
             }
         }
         return 0;
+    }
+
+    // ==================================================================
+    //  事件触发
+    // ==================================================================
+
+    /// <summary>
+    /// 按 <c>settings.CustomHud.Triggers</c> 监视变量，命中就把 HUD 唤出，
+    /// 并展示轮播队列里的下一项。返回 true 表示这一 tick 已经处理过呼出。
+    /// </summary>
+    private async Task<bool> TickTriggerRulesAsync()
+    {
+        var rules = _settings.Triggers;
+        if (rules is null || rules.Count == 0)
+        {
+            _triggerBaselineCaptured = false;
+            return false;
+        }
+
+        var now = DateTime.UtcNow;
+        if (now < _nextTriggerPoll) return false;
+        // 1 秒一次：换歌这类事件足够及时，同时不会把探测变量打成高频采样。
+        _nextTriggerPoll = now.AddSeconds(1);
+
+        // 只采集规则真正引用的变量，保持 VariableHub 的按需采集语义。
+        var keys = rules
+            .Where(r => r.Enabled && !string.IsNullOrWhiteSpace(r.Variable))
+            .Select(r => r.Variable.Trim())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        if (keys.Count == 0) return false;
+
+        var probeSource = ResolveTriggerProbeSource();
+        Dictionary<string, object?> vars;
+        try
+        {
+            vars = await _variables.SnapshotAsync(
+                _settings,
+                keys,
+                probeSource?.GpuAdapterId,
+                probeSource?.PingTarget,
+                probeSource?.ProbeProtocol ?? "ICMP",
+                probeSource?.ProbePort ?? 443).ConfigureAwait(true);
+        }
+        catch
+        {
+            return false;
+        }
+
+        // 第一次只记录基线，绝不触发 —— 否则启动瞬间就会误报。
+        if (!_triggerBaselineCaptured)
+        {
+            foreach (var key in keys)
+                _triggerLastValues[key] = vars.TryGetValue(key, out var baseline) ? baseline : null;
+            _triggerBaselineCaptured = true;
+            return false;
+        }
+
+        HudTriggerRule? fired = null;
+        foreach (var rule in rules)
+        {
+            if (!rule.Enabled) continue;
+            string key = (rule.Variable ?? "").Trim();
+            if (string.IsNullOrWhiteSpace(key)) continue;
+
+            vars.TryGetValue(key, out var current);
+            _triggerLastValues.TryGetValue(key, out var previous);
+
+            bool hit = rule.Mode switch
+            {
+                "Change" => previous is not null && current is not null && !ValuesEqual(previous, current),
+                "BecomesTrue" => !IsTruthy(previous) && IsTruthy(current),
+                _ => MeetsThreshold(current, rule.Operator, rule.Value)
+            };
+
+            _triggerLastValues[key] = current;
+
+            if (!hit) continue;
+            if (_triggerNextAllowed.TryGetValue(RuleKey(rule), out var allowed) && now < allowed) continue;
+
+            _triggerNextAllowed[RuleKey(rule)] = now.AddSeconds(Math.Max(0, rule.CooldownSeconds));
+            fired = rule;
+            break;
+        }
+
+        if (fired is null) return false;
+        if (_hud.IsHudBusy || Volatile.Read(ref _busy) != 0) return false;
+
+        var next = NextTransientCycleProfile();
+        if (next is null) return false;
+
+        return await TriggerTransientProfileAsync(next);
+    }
+
+    /// <summary>
+    /// 取轮播队列里的下一项并推进游标 —— 这就是"每次呼出都是轮播的下一个"。
+    /// 队列为空时退回当前激活方案，保证至少能弹出点东西。
+    /// </summary>
+    private HudProfile? NextTransientCycleProfile()
+    {
+        var queue = ResolveCycleProfiles();
+        if (queue.Count == 0)
+            return ResolveActiveProfile();
+
+        _transientCycleIndex = _transientCycleIndex < 0
+            ? 0
+            : (_transientCycleIndex + 1) % queue.Count;
+
+        return ApplyCycleAnimationMode(queue[_transientCycleIndex]);
+    }
+
+    /// <summary>
+    /// 探测类变量需要目标/协议/端口。优先用轮播队列里的"网络包探测器"方案，
+    /// 这样监听用的目标和用户在该方案里配置的一致。
+    /// </summary>
+    private HudProfile? ResolveTriggerProbeSource()
+    {
+        var ping = ResolveCycleProfiles().FirstOrDefault(p =>
+            string.Equals(p.BuiltInKey, "network.ping", StringComparison.OrdinalIgnoreCase));
+        return ping ?? ResolveActiveProfile();
+    }
+
+    private static string RuleKey(HudTriggerRule rule) =>
+        string.Join("|", rule.Name ?? "", rule.Variable ?? "", rule.Mode ?? "");
+
+    private static bool ValuesEqual(object? a, object? b)
+    {
+        if (a is null && b is null) return true;
+        if (a is null || b is null) return false;
+        if (TryNumber(a, out double na) && TryNumber(b, out double nb))
+            return Math.Abs(na - nb) < 1e-6;
+        return string.Equals(
+            Convert.ToString(a, CultureInfo.InvariantCulture),
+            Convert.ToString(b, CultureInfo.InvariantCulture),
+            StringComparison.Ordinal);
+    }
+
+    private static bool TryNumber(object? value, out double number)
+    {
+        try
+        {
+            number = Convert.ToDouble(value, CultureInfo.InvariantCulture);
+            return !double.IsNaN(number);
+        }
+        catch
+        {
+            number = 0d;
+            return false;
+        }
+    }
+
+    private static bool IsTruthy(object? value)
+    {
+        if (value is null) return false;
+        if (value is bool b) return b;
+        if (TryNumber(value, out double n)) return Math.Abs(n) > double.Epsilon;
+        return !string.IsNullOrWhiteSpace(Convert.ToString(value, CultureInfo.InvariantCulture));
+    }
+
+    private static bool MeetsThreshold(object? value, string op, double target)
+    {
+        if (value is null || !TryNumber(value, out double n)) return false;
+        return op switch
+        {
+            ">" => n > target,
+            "<" => n < target,
+            "<=" => n <= target,
+            "==" => Math.Abs(n - target) < 1e-6,
+            "!=" => Math.Abs(n - target) >= 1e-6,
+            _ => n >= target
+        };
     }
 
     public void Dispose()
