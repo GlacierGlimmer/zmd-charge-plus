@@ -10,6 +10,6 @@
   <Color x:Key="Hud.Accent">#FFC6CA4C</Color>
   <Color x:Key="Hud.BadgeDark">#FF262425</Color>
   <sys:Double x:Key="Hud.PillRadius">43</sys:Double>
-  <FontFamily x:Key="Hud.FontFamily">Inter, "Microsoft YaHei UI", "PingFang SC", sans-serif</FontFamily>
-  <FontFamily x:Key="Hud.FontFamilyNumeric">"Inter Medium", Inter, "Microsoft YaHei UI", "PingFang SC", sans-serif</FontFamily>
+  <FontFamily x:Key="Hud.FontFamily">avares://Avalonia.Fonts.Inter/Assets#Inter, Microsoft YaHei UI, PingFang SC, sans-serif</FontFamily>
+  <FontFamily x:Key="Hud.FontFamilyNumeric">avares://Avalonia.Fonts.Inter/Assets#Inter, Microsoft YaHei UI, PingFang SC, sans-serif</FontFamily>
 </ResourceDictionary>

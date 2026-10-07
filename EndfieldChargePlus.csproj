@@ -33,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests\**;artifacts\**;publish\**;packaging\**" />
+    <Compile Remove="Customization\Linux*.cs;Interop\LinuxDesktop.cs" />
     <AvaloniaResource Include="Assets\tray_bolt.png" />
   </ItemGroup>
 

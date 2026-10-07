@@ -23,6 +23,7 @@ public sealed record AppSettings
     public double RippleIntensity { get; init; } = DefaultRippleIntensity;
     public double RippleSpread { get; init; } = DefaultRippleSpread;
     public double HudOpacity { get; init; } = DefaultHudOpacity;
+    public double SamplingIntervalSeconds { get; init; } = 1;
 
     public bool AlwaysVisible { get; init; } = false;
     public PersistentHudLayer PersistentLayer { get; init; } = PersistentHudLayer.Desktop;

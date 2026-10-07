@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using EndfieldChargePlus.Customization;
 using EndfieldChargePlus.Diagnostics;
+using EndfieldChargePlus.Interop;
 
 namespace EndfieldChargePlus.Settings;
 
@@ -14,15 +15,15 @@ public static class SettingsManager
         PropertyNameCaseInsensitive = true,
     };
 
-    public static string SettingsDirectory { get; } = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        "EndfieldChargePlus");
+    public static string SettingsDirectory { get; } = AppPaths.DataDirectory;
 
     public static string SettingsPath => Path.Combine(SettingsDirectory, "settings.json");
     public static string BackupsDirectory => Path.Combine(SettingsDirectory, "Backups");
 
     private static readonly string[] LegacySettingsPaths =
     {
+        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldChargePlus", "settings.json"),
+        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Packages", AppPaths.PackageFamilyName ?? "unpackaged", "LocalCache", "Local", "EndfieldChargePlus", "settings.json"),
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldCharge-CustomHUD", "settings.json"),
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldCharge", "settings.json"),
     };
@@ -149,6 +150,8 @@ public static class SettingsManager
         => settings with
         {
             HudOpacity = Math.Clamp(settings.HudOpacity, 0.10, 1.0),
+            SamplingIntervalSeconds = double.IsFinite(settings.SamplingIntervalSeconds)
+                ? Math.Clamp(settings.SamplingIntervalSeconds, 0.5, 60) : 1,
             UiLanguage = LocalizationManager.NormalizePreference(settings.UiLanguage),
             CustomHud = HudSettingsNormalizer.Normalize(settings.CustomHud ?? CustomHudSettings.CreateDefault()),
         };

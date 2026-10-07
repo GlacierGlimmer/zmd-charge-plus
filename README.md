@@ -25,7 +25,7 @@ Windows 版在本仓库维护；Linux 版 **[Endfield Charge Plus For Linux](htt
 | 唤出交互 | 电源状态变化 | 保留电源插拔提示；鼠标移至目标屏幕顶部中央，还可唤出当前方案 |
 | 自定义 | 电量主题与动画 | 方案管理、变量模板、进度环、左右图标、颜色规则和两种动画模式 |
 | 多方案 | 以电池 HUD 为主 | 内置多类方案、自定义方案，以及可排序的自动轮播队列 |
-| 扩展能力 | 本机电量信息 | **429 个固定内置变量 + 17 类动态磁盘变量模板**，并可接入 HTTP/JSON 数据源 |
+| 扩展能力 | 本机电量信息 | **内置变量、17 类动态磁盘变量模板和实际探测到的风扇变量**，并可接入 HTTP/JSON 数据源 |
 
 ## ⬇️ 下载与使用
 
@@ -88,7 +88,7 @@ winget install --id 9P3PLD3LX7W6 --source msstore --exact
 | **多显示器与位置** | 指定目标显示器，选九宫格预设位置或自定义 X/Y 坐标，并调整缩放与不透明度。 |
 | **方案与动画** | 内置电池、CPU、GPU、内存、磁盘、网络、时间、DeepSeek 等方案；支持新建、另存、编辑与预览；完整 / 简洁动画可选。 |
 | **自动轮播** | 按自定义队列依次切换方案，支持添加、删除、上移、下移，另设轮播间隔与切换动画。 |
-| **高级变量库** | 429 个固定内置变量，另有 17 类按实际盘符生成的磁盘变量模板；覆盖硬件、系统、网络、进程、安全和开发者工具等。 |
+| **高级变量库** | 内置变量、17 类按实际盘符生成的磁盘变量模板，以及按实际传感器生成的独立风扇变量；覆盖硬件、系统、网络、进程、安全和开发者工具等。 |
 | **自由组合显示** | 标题、主副数值、百分比圆环、左右图标均可按变量模板配置；支持格式化、表达式及条件颜色规则。 |
 | **网络包探测** | 指定 IPv4 / IPv6 / 域名及端口，使用 ICMP、TCP 或 UDP 探测，查看延迟、丢包等状态。 |
 | **DeepSeek API** | 配置自己的 API Key 后显示余额、当前高峰 / 低谷、时段进度与倒计时；以北京时间判定，并提供本地时区切换时间变量。 |
@@ -113,15 +113,15 @@ DeepSeek API 需要用户自行提供 Key；HTTP/JSON 接口由用户自行配�
 ## 💻 Windows 运行要求与源码构建
 
 - **系统：** Windows 10 / 11，支持 x64 和 x86。
-- **Portable 包：** ZIP 内为自包含单文件 EXE，不需要另行安装 .NET。
+- **Portable 包：** ZIP 内为自包含应用目录，不需要另行安装 .NET。完整解压后运行 `EndfieldChargePlus.exe`；保留同目录的运行库可避免单文件包在启动时解压原生依赖。
 - **自行编译：** Windows 环境及 [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)。
 
 ```powershell
 # 编译源码
 dotnet build EndfieldChargePlus.csproj -c Release
 
-# 示例：发布 x64 自包含单文件版本
-dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
+# 示例：发布 x64 自包含目录
+./scripts/package-windows.ps1 -Runtime win-x64
 ```
 
 构建 x86 时将 `win-x64` 换为 `win-x86`。

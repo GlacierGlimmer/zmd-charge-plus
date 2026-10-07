@@ -51,6 +51,7 @@ public sealed class CustomHudRuntime : IDisposable
     public void ApplySettings(AppSettings settings)
     {
         _appSettings = settings ?? new AppSettings();
+        _variables.SamplingIntervalSeconds = _appSettings.SamplingIntervalSeconds;
         _settings = HudSettingsNormalizer.Normalize(_appSettings.CustomHud ?? CustomHudSettings.CreateDefault());
         _profileIndex = _settings.AutoCycle ? 0 : ResolveActiveProfileIndex();
         _nextPersistentRefresh = DateTime.MinValue;
@@ -61,7 +62,7 @@ public sealed class CustomHudRuntime : IDisposable
         _nextDeepSeekPeriodPoll = DateTime.MinValue;
         _pendingDeepSeekPeriodTransition = false;
 
-        var activeProfile = _appSettings.AlwaysVisible && _settings.AutoCycle
+        var activeProfile = _settings.AutoCycle
             ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
             : ResolveActiveProfile();
         _lastDeepSeekPeriod = activeProfile is not null && IsDeepSeekProfile(activeProfile)
@@ -91,13 +92,13 @@ public sealed class CustomHudRuntime : IDisposable
             if (!settings.HudEnabled)
                 return;
 
-            var profile = settings.AlwaysVisible && _settings.AutoCycle
+            var profile = _settings.AutoCycle
                 ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
                 : ResolveActiveProfile();
             if (profile is null)
                 return;
 
-            if (settings.AlwaysVisible && _settings.AutoCycle)
+            if (_settings.AutoCycle)
                 profile = ApplyCycleAnimationMode(profile);
 
             var required = HudProfileRenderer.GetRequiredVariables(profile);
@@ -152,13 +153,13 @@ public sealed class CustomHudRuntime : IDisposable
             // Every process start presents the currently effective scheme once through
             // its normal summon animation. If AlwaysVisible is enabled, the same animation
             // lands in the persistent C-state and live monitoring continues from there.
-            var profile = _appSettings.AlwaysVisible && _settings.AutoCycle
+            var profile = _settings.AutoCycle
                 ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
                 : ResolveActiveProfile();
             if (profile is null)
                 return;
 
-            if (_appSettings.AlwaysVisible && _settings.AutoCycle)
+            if (_settings.AutoCycle)
                 profile = ApplyCycleAnimationMode(profile);
 
             var required = HudProfileRenderer.GetRequiredVariables(profile);
@@ -271,6 +272,21 @@ public sealed class CustomHudRuntime : IDisposable
             _pendingDeepSeekPeriodTransition = false;
         }
 
+        // Each transient carousel entry follows its normal show/hold/hide lifecycle.
+        // A busy animation delays the next entry instead of skipping queued profiles.
+        if (_settings.AutoCycle && DateTime.UtcNow >= _nextPersistentCycle
+            && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
+        {
+            var queue = ResolveCycleProfiles();
+            if (queue.Count > 0)
+            {
+                int next = (_profileIndex + 1) % queue.Count;
+                _nextPersistentCycle = DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds, 3, 3600));
+                if (await TriggerTransientProfileAsync(ApplyCycleAnimationMode(queue[next]))) _profileIndex = next;
+                return;
+            }
+        }
+
         if (!WindowsSystemProbe.TryGetCursorPosition(out var pointer))
             return;
 
@@ -285,7 +301,7 @@ public sealed class CustomHudRuntime : IDisposable
             return;
 
         var active = ResolveActiveProfile();
-        if (active is null || IsBatteryProfile(active))
+        if (active is null)
         {
             _hotZoneLatched = true;
             return;
@@ -293,7 +309,7 @@ public sealed class CustomHudRuntime : IDisposable
 
         // 只有真正开始唤出后才锁住热点；鼠标离开顶边后允许下一次唤出。
         _hotZoneLatched = true;
-        await TriggerTransientProfileAsync(active);
+        if (!await TriggerTransientProfileAsync(active)) _hotZoneLatched = false;
     }
 
     private void PollPowerSource()
@@ -418,7 +434,7 @@ public sealed class CustomHudRuntime : IDisposable
 
         var nowUtc = DateTime.UtcNow;
 
-        if (_settings.AutoCycle && nowUtc >= _nextPersistentCycle)
+        if (_settings.AutoCycle && nowUtc >= _nextPersistentCycle && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
         {
             if (_persistentShown)
                 _profileIndex = (_profileIndex + 1) % profiles.Count;

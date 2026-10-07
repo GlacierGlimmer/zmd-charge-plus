@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -276,6 +276,7 @@ public partial class SettingsWindow : Window
         BounceBox.Value = (decimal)settings.BounceStrength;
         RippleIntensityBox.Value = (decimal)settings.RippleIntensity;
         RippleSpreadBox.Value = (decimal)settings.RippleSpread;
+        SamplingIntervalBox.Value = (decimal)settings.SamplingIntervalSeconds;
         HudOpacitySlider.Value = Math.Clamp(settings.HudOpacity * 100.0, 10.0, 100.0);
         UpdateOpacityLabel();
 
@@ -311,6 +312,7 @@ public partial class SettingsWindow : Window
             BounceStrength = (double)(BounceBox.Value ?? (decimal)AppSettings.DefaultBounceStrength),
             RippleIntensity = (double)(RippleIntensityBox.Value ?? (decimal)AppSettings.DefaultRippleIntensity),
             RippleSpread = (double)(RippleSpreadBox.Value ?? (decimal)AppSettings.DefaultRippleSpread),
+            SamplingIntervalSeconds = (double)(SamplingIntervalBox.Value ?? 1m),
             HudOpacity = Math.Clamp(HudOpacitySlider.Value / 100.0, 0.10, 1.0),
 
             AlwaysVisible = AlwaysVisibleSwitch.IsChecked == true,
@@ -333,6 +335,8 @@ public partial class SettingsWindow : Window
 
     private async void OnSave(object? sender, RoutedEventArgs e)
     {
+        try
+        {
         _settings = CollectSettingsFromUi();
 
         SettingsManager.Save(_settings);
@@ -357,6 +361,14 @@ public partial class SettingsWindow : Window
             timer.Stop();
         };
         timer.Start();
+        }
+        catch (Exception ex)
+        {
+            SaveBtn.IsEnabled = true;
+            SaveBtn.Content = LocalizationManager.Text("保存失败", "Save failed");
+            MaintenanceStatusText.Text = ex.Message;
+            EndfieldChargePlus.Diagnostics.AppLog.Error("Unable to apply settings.", ex);
+        }
     }
 
     private async void OnExportSettings(object? sender, RoutedEventArgs e)
@@ -682,16 +694,16 @@ public partial class SettingsWindow : Window
 
     private void OnOpenSettingsFolder(object? sender, RoutedEventArgs e)
     {
-        Directory.CreateDirectory(SettingsManager.SettingsDirectory);
         try
         {
+            Directory.CreateDirectory(SettingsManager.SettingsDirectory);
             Process.Start(new ProcessStartInfo
             {
                 FileName = SettingsManager.SettingsDirectory,
                 UseShellExecute = true,
             });
         }
-        catch { }
+        catch (Exception ex) { AppLog.Error("Unable to open the configuration directory.", ex); }
     }
 
     private static int PositionToIndex(HudPosition p) => p switch

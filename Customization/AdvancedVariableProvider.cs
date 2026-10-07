@@ -78,7 +78,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
         bool Exact(string key) => requested is null || requested.Contains(key);
         bool NeedAdvanced(string prefix) => requested is null || requested.Any(k =>
             k.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)
-            && (VariableCatalog.IsAdvancedKey(k) || IsAdvancedDynamicDiskKey(k)));
+            && (VariableCatalog.IsAdvancedKey(k) || IsAdvancedDynamicDiskKey(k) || k.StartsWith("system.fan.", StringComparison.OrdinalIgnoreCase)));
 
         // Only collect an advanced category when the active profile actually references one of its advanced variables.
         // This keeps the ordinary CPU/RAM/GPU HUD as light as the core implementation.
@@ -196,6 +196,8 @@ internal sealed class AdvancedVariableProvider : IDisposable
         PutIfNumber(v, "cpu.instructions_per_second", _perfOs.InstructionsRetiredPerSec);
 
         EnsureHardware();
+        PutIfNumber(v, "cpu.temperature", _hardware.CpuTemperatureMax);
+        PutIfNumber(v, "cpu.temperature_c", _hardware.CpuTemperatureMax);
         PutIfNumber(v, "cpu.temperature_max", _hardware.CpuTemperatureMax);
         PutIfNumber(v, "cpu.core.temperature_avg", _hardware.CpuCoreTemperatureAvg);
         PutIfNumber(v, "cpu.power_max", _hardware.CpuPowerMax);
@@ -367,6 +369,12 @@ internal sealed class AdvancedVariableProvider : IDisposable
         PutIfNumber(v, "system.motherboard_temperature", _hardware.MotherboardTemperatureMax);
         PutIfNumber(v, "system.fan_speed", _hardware.FanRpmMax);
         PutIfNumber(v, "system.fan_speed_percent", _hardware.FanPercentMax);
+        v["system.fan.count"] = _hardware.Fans.Count;
+        foreach (var fan in _hardware.Fans.OrderBy(f => f.Key, StringComparer.Ordinal))
+        {
+            v[$"system.fan.{fan.Key}.rpm"] = fan.Value.Rpm;
+            v[$"system.fan.{fan.Key}.name"] = fan.Value.Name;
+        }
     }
 
     private void AddProcessAdvanced(IDictionary<string, object?> v)
@@ -660,22 +668,55 @@ internal sealed class AdvancedVariableProvider : IDisposable
         {
             lock (_gate)
             {
-                _computer ??= new Computer
+                if (_computer is null)
                 {
-                    IsCpuEnabled = true,
-                    IsGpuEnabled = true,
-                    IsMotherboardEnabled = true,
-                    IsControllerEnabled = true,
-                    IsStorageEnabled = true,
-                    IsMemoryEnabled = true
-                };
-                try { _computer.Open(); } catch { }
-                foreach (var hw in _computer.Hardware)
-                    ReadHardware(hw, result);
+                    _computer = new Computer
+                    {
+                        IsCpuEnabled = true,
+                        IsGpuEnabled = true,
+                        IsMotherboardEnabled = true,
+                        IsControllerEnabled = true,
+                        IsStorageEnabled = true,
+                        IsMemoryEnabled = true
+                    };
+                    try { _computer.Open(); }
+                    catch
+                    {
+                        try { _computer.Close(); } catch { }
+                        _computer = null;
+                    }
+                }
+                if (_computer is not null)
+                    foreach (var hw in _computer.Hardware)
+                        ReadHardware(hw, result);
             }
         }
         catch { }
+        if (result.CpuTemperatureMax is null) ReadExternalCpuTemperature(result);
         _hardware = result;
+        HardwareSensorCatalog.PublishFans(result.Fans);
+    }
+
+    // An already-running hardware monitor can expose its sensors through WMI.
+    // Reading that namespace requires no elevation of the HUD process.
+    private static void ReadExternalCpuTemperature(HardwareSnapshot result)
+    {
+        foreach (string scope in new[] { @"root\LibreHardwareMonitor", @"root\OpenHardwareMonitor" })
+        {
+            try
+            {
+                using var query = new ManagementObjectSearcher(scope, "SELECT Identifier, Value FROM Sensor WHERE SensorType='Temperature'");
+                foreach (ManagementObject sensor in query.Get())
+                {
+                    string id = Convert.ToString(sensor["Identifier"]) ?? "";
+                    double temperature = SafeDouble(sensor["Value"]);
+                    if (id.Contains("cpu", StringComparison.OrdinalIgnoreCase) && temperature is > 0 and < 125)
+                        result.CpuTemperatureMax = Math.Max(result.CpuTemperatureMax ?? 0, temperature);
+                }
+                if (result.CpuTemperatureMax is not null) return;
+            }
+            catch { }
+        }
     }
 
     private static void ReadHardware(IHardware hw, HardwareSnapshot output)
@@ -685,7 +726,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
         var sensors = hw.Sensors.ToList();
         if (type.Equals("Cpu", StringComparison.OrdinalIgnoreCase))
         {
-            var temps = sensors.Where(x => x.SensorType == SensorType.Temperature && x.Value.HasValue).ToList();
+            var temps = sensors.Where(x => x.SensorType == SensorType.Temperature && x.Value is > 0 and < 125).ToList();
             var coreTemps = temps.Where(x => x.Name.Contains("Core", StringComparison.OrdinalIgnoreCase)).Select(x => (double)x.Value!.Value).ToList();
             output.CpuTemperatureMax = temps.Count > 0 ? temps.Max(x => (double)x.Value!.Value) : null;
             output.CpuCoreTemperatureAvg = coreTemps.Count > 0 ? coreTemps.Average() : output.CpuTemperatureMax;
@@ -711,6 +752,15 @@ internal sealed class AdvancedVariableProvider : IDisposable
             output.FanRpmMax = MaxSensor(sensors, SensorType.Fan);
             output.FanPercentMax = MaxSensor(sensors, SensorType.Control);
         }
+        foreach (var sensor in sensors.Where(s => s.SensorType == SensorType.Fan && s.Value is >= 0))
+        {
+            var bytes = System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(sensor.Identifier.ToString()));
+            string id = Convert.ToHexString(bytes)[..12].ToLowerInvariant();
+            output.Fans[id] = (hw.Name + " / " + sensor.Name, sensor.Value!.Value);
+            output.FanRpmMax = Math.Max(output.FanRpmMax ?? 0, sensor.Value.Value);
+        }
+        foreach (var sensor in sensors.Where(s => s.SensorType == SensorType.Control && s.Value is >= 0 and <= 100))
+            output.FanPercentMax = Math.Max(output.FanPercentMax ?? 0, sensor.Value!.Value);
         foreach (var sub in hw.SubHardware) ReadHardware(sub, output);
     }
 
@@ -1283,7 +1333,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
 
     private sealed class PerfOsSnapshot { public double? ContextSwitchesPerSec, SystemCallsPerSec, InterruptsPerSec, DpcTimePercent, InstructionsRetiredPerSec, StandbyBytes, ModifiedBytes; }
     private sealed class MemoryStaticSnapshot { public double? HardwareReservedBytes, SpeedMhz; public int SlotCount, SlotUsed; public string FormFactor = "", MemoryType = ""; }
-    private sealed class HardwareSnapshot { public double? CpuTemperatureMax, CpuCoreTemperatureAvg, CpuPowerMax, CpuVoltage, CpuBusClockMhz, MotherboardTemperatureMax, FanRpmMax, FanPercentMax; public List<GpuHardwareSnapshot> Gpus { get; } = new(); }
+    private sealed class HardwareSnapshot { public double? CpuTemperatureMax, CpuCoreTemperatureAvg, CpuPowerMax, CpuVoltage, CpuBusClockMhz, MotherboardTemperatureMax, FanRpmMax, FanPercentMax; public Dictionary<string, (string Name, double Rpm)> Fans { get; } = new(); public List<GpuHardwareSnapshot> Gpus { get; } = new(); }
     private sealed class GpuHardwareSnapshot { public string Name = ""; public double? CoreTempC, HotspotTempC, MemoryTempC, VoltageV, CoreClockMhz, MemoryClockMhz, PowerW; }
     private sealed class NvidiaSnapshot { public string Name = "", BiosVersion = ""; public double? PowerLimitW, CoreClockMhz, MemoryClockMhz, PcieGen, PcieWidth; }
     private sealed class NetworkStaticSnapshot { public bool VpnActive, ProxyEnabled; public string VpnName = "", ProxyAddress = "", WifiBand = "", WifiStandard = ""; public int TcpConnections, UdpListeners; public double? WifiSignalDbm, WifiChannel, DnsLatencyMs; }

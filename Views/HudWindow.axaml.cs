@@ -24,6 +24,7 @@ public partial class HudWindow : Window
     private AnimationOptions _animOptions = AnimationOptions.Default;
     private bool _persistent;
     private WindowsHudHitTest? _hitTest;
+    private WindowsHudLayer? _windowLayer;
     private HudRenderData? _lastRenderData;
 
     // The progress ring is deliberately animated independently from the existing HUD
@@ -604,7 +605,8 @@ public partial class HudWindow : Window
 
         int windowX = (int)Math.Round(hudLeft - paddingX);
         int windowY = (int)Math.Round(hudTop - paddingY);
-        Position = new PixelPoint(windowX, windowY);
+        var position = new PixelPoint(windowX, windowY);
+        Position = _windowLayer?.ToWindowPosition(position) ?? position;
     }
 
     private Avalonia.Platform.Screen? ResolveScreen(int monitorIndex)
@@ -633,7 +635,7 @@ public partial class HudWindow : Window
         }, DispatcherPriority.Loaded);
     }
 
-    public bool IsPointInTopCenterHotZone(PixelPoint screenPoint, int width = 240, int height = 5)
+    public bool IsPointInTopCenterHotZone(PixelPoint screenPoint, int width = 240, int height = 20)
     {
         var screen = ResolveScreen(_settings.MonitorIndex);
         if (screen is null) return false;
@@ -658,6 +660,9 @@ public partial class HudWindow : Window
         // is presented instead of assuming a one-time style write remains forever.
         var handle = this.TryGetPlatformHandle();
         if (handle is null || handle.Handle == IntPtr.Zero) return;
+
+        _windowLayer ??= new WindowsHudLayer(handle.Handle);
+        _windowLayer.Apply(_persistent && _settings.PersistentLayer == PersistentHudLayer.Desktop, Topmost);
 
         if (_hitTest is not null && _hitTest.Handle != handle.Handle)
         {

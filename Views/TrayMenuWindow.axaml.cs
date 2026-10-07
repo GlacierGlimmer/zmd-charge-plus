@@ -93,25 +93,7 @@ public partial class TrayMenuWindow : Window
             var wa = screen.WorkingArea;
             int winW = (int)Math.Round(Width * scaling);
             int winH = (int)Math.Round(Height * scaling);
-            int x;
-            int y;
-
-            if (hasCursor)
-            {
-                // Match the upstream project: right edge follows the tray click point,
-                // while keeping the whole menu inside the current monitor work area.
-                x = cursor.X - winW;
-                y = wa.Bottom - winH - 8;
-            }
-            else
-            {
-                x = wa.Right - winW - 8;
-                y = wa.Bottom - winH - 8;
-            }
-
-            x = Math.Clamp(x, wa.X + 8, Math.Max(wa.X + 8, wa.Right - winW - 8));
-            y = Math.Clamp(y, wa.Y + 8, Math.Max(wa.Y + 8, wa.Bottom - winH - 8));
-            Position = new PixelPoint(x, y);
+            Position = TrayMenuPosition.Calculate(hasCursor ? cursor : null, wa, winW, winH);
         }
 
         Show();

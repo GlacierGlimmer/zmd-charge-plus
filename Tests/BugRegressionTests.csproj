@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>EndfieldChargePlus.BugTests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BugRegressionTests.cs" />
+    <ProjectReference Include="../EndfieldChargePlus.csproj" />
+  </ItemGroup>
+</Project>

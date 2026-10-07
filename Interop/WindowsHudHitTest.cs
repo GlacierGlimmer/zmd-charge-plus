@@ -15,7 +15,10 @@ internal sealed class WindowsHudHitTest : IDisposable
     private const int GwlExStyle = -20;
     private const uint WsExLayered = 0x00080000u;
     private const uint WsExTransparent = 0x00000020u;
-    private const uint MouseThroughStyles = WsExLayered | WsExTransparent;
+    private const uint WsExToolWindow = 0x00000080u;
+    private const uint WsExNoActivate = 0x08000000u;
+    private const uint WsExAppWindow = 0x00040000u;
+    private const uint MouseThroughStyles = WsExLayered | WsExTransparent | WsExToolWindow | WsExNoActivate;
 
     private const uint SwpNoSize = 0x0001;
     private const uint SwpNoMove = 0x0002;
@@ -66,7 +69,7 @@ internal sealed class WindowsHudHitTest : IDisposable
         try
         {
             uint before = GetExtendedStyle();
-            uint wanted = before | MouseThroughStyles;
+            uint wanted = (before | MouseThroughStyles) & ~WsExAppWindow;
             if (wanted != before)
                 SetExtendedStyle(wanted);
 

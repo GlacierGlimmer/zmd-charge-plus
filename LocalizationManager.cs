@@ -55,6 +55,8 @@ public static class LocalizationManager
         ["回弹强度"] = "Bounce",
         ["波纹强度"] = "Ripple Strength",
         ["波纹幅度"] = "Ripple Spread",
+        ["硬件采样间隔 / 秒"] = "Hardware sampling interval / seconds",
+        ["数值越大，硬件更新越慢；时钟仍按秒更新。"] = "Larger values update hardware less often; clocks still update every second.",
         ["终末地风格状态栏 HUD"] = "Endfield-style Status HUD",
         ["构建日期  2026.09.23"] = "Build  2026.09.23",
         ["检查更新"] = "Check Updates",

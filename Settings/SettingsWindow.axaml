@@ -204,6 +204,11 @@
                     <NumericUpDown x:Name="RippleSpreadBox" Minimum="0.5" Maximum="1.5" Increment="0.05" FormatString="0.00"/>
                   </StackPanel>
                 </Grid>
+                <StackPanel Spacing="4" Margin="0,10,0,0">
+                  <TextBlock Text="硬件采样间隔 / 秒" FontSize="11" Foreground="#85858B"/>
+                  <NumericUpDown x:Name="SamplingIntervalBox" Minimum="0.5" Maximum="60" Increment="0.5" FormatString="0.0"/>
+                  <TextBlock Text="数值越大，硬件更新越慢；时钟仍按秒更新。" FontSize="11" Foreground="#85858B" TextWrapping="Wrap"/>
+                </StackPanel>
               </StackPanel>
             </Border>
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -20,6 +20,11 @@ namespace EndfieldChargePlus.Customization;
 
 public sealed class VariableHub : IDisposable
 {
+    private readonly SemaphoreSlim _snapshotGate = new(1, 1);
+    public double SamplingIntervalSeconds { get; set; } = 1;
+    private string _lastSampleKey = "";
+    private DateTime _lastSampleAt;
+    private Dictionary<string, object?>? _lastSample;
     private static readonly HttpClient Http = new() { Timeout = TimeSpan.FromSeconds(8) };
     private readonly Dictionary<string, HttpCacheEntry> _httpCache = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, PingTargetState> _pingStates = new(StringComparer.OrdinalIgnoreCase);
@@ -107,6 +112,9 @@ public sealed class VariableHub : IDisposable
         int probePort = 443,
         CancellationToken ct = default)
     {
+        await _snapshotGate.WaitAsync(ct).ConfigureAwait(false);
+        try
+        {
         if (_lastLanguage != LocalizationManager.Current)
         {
             _lastLanguage = LocalizationManager.Current;
@@ -119,6 +127,16 @@ public sealed class VariableHub : IDisposable
             : new HashSet<string>(requestedVariables.Where(x => !string.IsNullOrWhiteSpace(x)), StringComparer.OrdinalIgnoreCase);
 
         var vars = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
+        string sampleKey = string.Join(",", requested?.OrderBy(k => k, StringComparer.OrdinalIgnoreCase) ?? new[] { "*" }.AsEnumerable())
+            + "|" + gpuAdapterId + "|" + pingTarget + "|" + probeProtocol + "|" + probePort
+            + "|" + JsonSerializer.Serialize(settings) + "|" + LocalizationManager.Current;
+        double interval = double.IsFinite(SamplingIntervalSeconds) ? Math.Clamp(SamplingIntervalSeconds, 0.5, 60) : 1;
+        if (_lastSample is not null && sampleKey == _lastSampleKey && (DateTime.UtcNow - _lastSampleAt).TotalSeconds < interval)
+        {
+            var cached = new Dictionary<string, object?>(_lastSample, StringComparer.OrdinalIgnoreCase);
+            AddClockAndSystem(cached, NeedsPrefix(requested, "system."), NeedsPrefix(requested, "time."));
+            return cached;
+        }
 
         // 时钟与系统基础信息非常轻量，直接读取，避免 1 秒定时器 + Task 调度造成跳秒。
         bool needSystem = NeedsPrefix(requested, "system.");
@@ -180,7 +198,12 @@ public sealed class VariableHub : IDisposable
         if (NeedsPrefix(requested, "custom."))
             await AddCustomHttpAsync(vars, settings, ct, requested).ConfigureAwait(false);
 
+        _lastSample = new Dictionary<string, object?>(vars, StringComparer.OrdinalIgnoreCase);
+        _lastSampleAt = DateTime.UtcNow;
+        _lastSampleKey = sampleKey;
         return vars;
+        }
+        finally { _snapshotGate.Release(); }
     }
 
     public static IReadOnlyList<string> BuiltInVariableKeys =>
@@ -402,10 +425,8 @@ public sealed class VariableHub : IDisposable
                     {
                         double mhz = ToDoubleSafe(mo.Properties["ProcessorFrequency"]?.Value);
                         double performance = ToDoubleSafe(mo.Properties["PercentProcessorPerformance"]?.Value);
-                        if (_cachedCpuMaxGhz > 0 && performance > 0)
-                            _cachedCpuGhz = _cachedCpuMaxGhz * performance / 100d;
-                        else if (mhz > 0)
-                            _cachedCpuGhz = mhz / 1000d;
+                        if (mhz > 0)
+                            _cachedCpuGhz = WindowsCpuFrequency.EffectiveGhz(mhz, performance);
                         break;
                     }
                 }
@@ -496,6 +517,7 @@ public sealed class VariableHub : IDisposable
     private void AddBattery(IDictionary<string, object?> v)
     {
         var now = DateTime.UtcNow;
+        bool measuredPercent = _cachedBatteryFull > 0;
 
         if (now >= _nextBatteryStatusRead)
         {
@@ -560,6 +582,9 @@ public sealed class VariableHub : IDisposable
             catch { }
         }
 
+        if (_cachedBatteryFull <= 0 && _nextBatteryStaticRead > now.AddSeconds(5))
+            _nextBatteryStaticRead = now.AddSeconds(5);
+
         double percent = _cachedBatteryFull > 0
             ? Math.Clamp(_cachedBatteryRemaining / _cachedBatteryFull * 100d, 0d, 100d)
             : 0d;
@@ -569,13 +594,28 @@ public sealed class VariableHub : IDisposable
 
         if (GetSystemPowerStatus(out var ps))
         {
+            if (ps.BatteryFlag != 255 && (ps.BatteryFlag & 128) != 0)
+            {
+                _cachedBatteryRemaining = _cachedBatteryFull = _cachedBatteryDesign = 0;
+                _nextBatteryStatusRead = _nextBatteryStaticRead = DateTime.MinValue;
+                return;
+            }
             _cachedBatteryAcOnline = ps.ACLineStatus == 1;
+            if (ps.BatteryFlag != 255)
+            {
+                _cachedBatteryCharging = (ps.BatteryFlag & 8) != 0;
+                _cachedBatteryDischarging = ps.ACLineStatus == 0;
+            }
             if (ps.BatteryLifePercent != 255)
+            {
                 percent = ps.BatteryLifePercent;
+                measuredPercent = true;
+            }
             if (ps.BatteryLifeTime >= 0) lifeSeconds = ps.BatteryLifeTime;
             if (ps.BatteryFullLifeTime >= 0) fullLifeSeconds = ps.BatteryFullLifeTime;
             saverOn = ps.SystemStatusFlag == 1;
         }
+        if (!measuredPercent && _cachedBatteryFull <= 0) return;
 
         double remaining = _cachedBatteryRemaining;
         if (remaining <= 0 && _cachedBatteryFull > 0)
@@ -614,6 +654,10 @@ public sealed class VariableHub : IDisposable
         v["battery.status_text"] = status;
         v["battery.power_source"] = _cachedBatteryAcOnline ? LocalizationManager.Text("交流电源", "AC") : LocalizationManager.Text("电池", "Battery");
         v["battery.cycle_count"] = _cachedBatteryCycleCount;
+        if (_cachedBatteryFull <= 0)
+            foreach (string key in new[] { "battery.remaining_mwh", "battery.full_mwh", "battery.remaining_wh", "battery.full_wh" }) v.Remove(key);
+        if (_cachedBatteryDesign <= 0)
+            foreach (string key in new[] { "battery.design_mwh", "battery.design_wh", "battery.health_percent" }) v.Remove(key);
     }
 
     private void AddGpu(IDictionary<string, object?> v, string? requestedAdapterId)
@@ -1452,7 +1496,7 @@ public sealed class VariableHub : IDisposable
             if (requested is not null && !requested.Any(k => k.StartsWith(sourcePrefix, StringComparison.OrdinalIgnoreCase)))
                 continue;
 
-            string cacheKey = source.Name + "|" + source.Url;
+            string cacheKey = source.Name + "|" + Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(source))));
             if (!_httpCache.TryGetValue(cacheKey, out var cache) || DateTime.UtcNow >= cache.ExpiresAt)
             {
                 try
@@ -1471,12 +1515,21 @@ public sealed class VariableHub : IDisposable
                         DateTime.UtcNow.AddSeconds(Math.Clamp(source.RefreshSeconds, 5, 86400)));
                     _httpCache[cacheKey] = cache;
                 }
-                catch
+                catch (OperationCanceledException) when (ct.IsCancellationRequested) { throw; }
+                catch (Exception ex)
                 {
-                    continue;
+                    string error = ex is HttpRequestException http && http.StatusCode is not null
+                        ? $"HTTP {(int)http.StatusCode}"
+                        : LocalizationManager.Text("请求失败，请检查网络、地址与凭据。", "Request failed; check the network, URL and credentials.");
+                    cache = new HttpCacheEntry("", DateTime.UtcNow.AddSeconds(Math.Clamp(source.RefreshSeconds, 5, 86400)), error);
+                    _httpCache[cacheKey] = cache;
+                    EndfieldChargePlus.Diagnostics.AppLog.Warn($"HTTP source request failed ({ex.GetType().Name}).");
                 }
             }
 
+            v[sourcePrefix + "error"] = cache.Error;
+            v[sourcePrefix + "status"] = cache.Error.Length == 0 ? "OK" : cache.Error;
+            if (cache.Error.Length != 0) continue;
             try
             {
                 using var doc = JsonDocument.Parse(cache.Json);
@@ -1484,9 +1537,19 @@ public sealed class VariableHub : IDisposable
                 {
                     if (TryJsonPath(doc.RootElement, f.JsonPath, out var value))
                         v[$"custom.{Sanitize(source.Name)}.{Sanitize(f.Variable)}"] = JsonToObject(value);
+                    else
+                    {
+                        v[sourcePrefix + "error"] = LocalizationManager.Text("JSON 路径不存在：", "JSON path missing: ") + f.JsonPath;
+                        v[sourcePrefix + "status"] = v[sourcePrefix + "error"];
+                    }
                 }
             }
-            catch { }
+            catch (JsonException)
+            {
+                v[sourcePrefix + "error"] = LocalizationManager.Text("响应不是有效的 JSON。", "The response is not valid JSON.");
+                v[sourcePrefix + "status"] = v[sourcePrefix + "error"];
+                EndfieldChargePlus.Diagnostics.AppLog.Warn("HTTP source returned invalid JSON.");
+            }
         }
     }
 
@@ -1780,7 +1843,7 @@ public sealed class VariableHub : IDisposable
         public string Error => Success ? "" : ReplyStatus;
     }
 
-    private sealed record HttpCacheEntry(string Json, DateTime ExpiresAt);
+    private sealed record HttpCacheEntry(string Json, DateTime ExpiresAt, string Error = "");
 
     public void Dispose() { _advanced.Dispose(); }
 }

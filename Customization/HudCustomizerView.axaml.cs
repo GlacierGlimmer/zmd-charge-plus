@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -152,7 +152,25 @@ public partial class HudCustomizerView : UserControl
         CopyVariableKeyBtn.Click += OnCopyVariableKey;
         CopyVariableTemplateBtn.Click += OnCopyVariableTemplate;
 
-        RefreshGpuAdapters();
+        bool discoveryStarted = false;
+        AttachedToVisualTree += async (_, _) =>
+        {
+            if (discoveryStarted) return;
+            discoveryStarted = true;
+            await Task.Run(() =>
+            {
+                GpuAdapterCatalog.GetAdapters();
+                using var provider = new AdvancedVariableProvider();
+                provider.EnrichAsync(new Dictionary<string, object?>(), new CustomHudSettings(),
+                    new HashSet<string> { "system.fan_speed", "cpu.temperature_max" }, null, CancellationToken.None)
+                    .GetAwaiter().GetResult();
+            });
+            RefreshGpuAdapters();
+            if (_selectedIndex >= 0 && _selectedIndex < _profiles.Count) SelectGpuAdapter(_profiles[_selectedIndex].GpuAdapterId);
+            RebuildVariableCategories();
+            RefreshVariableList();
+            UpdateContextOptionsUi();
+        };
         RebuildVariableCategories();
         ClearVariableDetail();
         UpdateContextOptionsUi();
@@ -323,7 +341,7 @@ public partial class HudCustomizerView : UserControl
     public CustomHudSettings ExportSettings()
     {
         SaveCurrentProfile();
-        TryParseHttpJson(showErrors: true);
+        if (!TryParseHttpJson(showErrors: true)) throw new FormatException(HttpStatusText.Text);
         return new CustomHudSettings
         {
             AutoCycle = AutoCycleSwitch.IsChecked == true,
@@ -909,7 +927,9 @@ public partial class HudCustomizerView : UserControl
         }
 
         bool wasBuiltIn = _profiles[_selectedIndex].IsBuiltIn;
-        bool changed = SaveCurrentProfile();
+        bool changed;
+        try { changed = SaveCurrentProfile(); }
+        catch (FormatException ex) { ProfileStatusText.Text = ex.Message; return; }
         if (wasBuiltIn && changed)
             ProfileStatusText.Text = LocalizationManager.Text("已基于内置方案创建修改副本，原预设保持不变", "Modified copy created; the built-in preset is unchanged.");
         else
@@ -989,6 +1009,8 @@ public partial class HudCustomizerView : UserControl
         var list = VariableCatalog.AllBuiltIns.Select(VariableLocalization.Localize).ToList();
         foreach (var s in _httpSources)
         {
+            foreach (string suffix in new[] { "error", "status" })
+                list.Add(VariableCatalog.CreateCustom($"custom.{Sanitize(s.Name)}.{suffix}"));
             foreach (var f in s.Fields)
             {
                 var key = $"custom.{Sanitize(s.Name)}.{Sanitize(f.Variable)}";
@@ -1110,7 +1132,7 @@ public partial class HudCustomizerView : UserControl
             string sourceText = StripHttpJsonCommentLines(HttpSourcesJsonBox.Text);
             var parsed = string.IsNullOrWhiteSpace(sourceText)
                 ? new List<CustomHttpSource>()
-                : JsonSerializer.Deserialize<List<CustomHttpSource>>(sourceText) ?? new();
+                : HttpSourceConfiguration.Parse(sourceText);
             _httpSources = parsed;
             HttpStatusText.Text = LocalizationManager.Text($"已载入 {_httpSources.Count} 个 HTTP 数据源", $"Loaded {_httpSources.Count} HTTP data source(s)");
             RebuildVariableCategories();
@@ -1120,7 +1142,7 @@ public partial class HudCustomizerView : UserControl
         catch (Exception ex)
         {
             if (showErrors)
-                HttpStatusText.Text = LocalizationManager.IsEnglish ? "Invalid JSON; keeping the last valid config." : "JSON 无效，将保留上次有效配置：" + ex.Message;
+                HttpStatusText.Text = LocalizationManager.Text("数据源无效，将保留上次有效配置：", "Invalid sources; keeping the last valid config: ") + ex.Message;
             return false;
         }
     }
@@ -1140,25 +1162,7 @@ public partial class HudCustomizerView : UserControl
                 .Where(line => !line.TrimStart().StartsWith("//", StringComparison.Ordinal)));
     }
 
-    private static List<HudColorRule> ParseColorRules(string? text)
-    {
-        var result = new List<HudColorRule>();
-        var rx = new Regex(@"^\s*(?<var>[A-Za-z0-9_.-]+)\s*(?<op>>=|<=|==|!=|>|<)\s*(?<value>-?[0-9]+(?:\.[0-9]+)?)\s*=>\s*(?<color>#[0-9A-Fa-f]{6,8})\s*$");
-        foreach (var line in (text ?? "").Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
-        {
-            var m = rx.Match(line);
-            if (!m.Success) continue;
-            if (!double.TryParse(m.Groups["value"].Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var d)) continue;
-            result.Add(new HudColorRule
-            {
-                Variable = m.Groups["var"].Value,
-                Operator = m.Groups["op"].Value,
-                Value = d,
-                Color = m.Groups["color"].Value
-            });
-        }
-        return result;
-    }
+    private static List<HudColorRule> ParseColorRules(string? text) => HudColorRuleParser.Parse(text);
 
     private static string NormalizeTimeTarget(string? text, string fallback)
     {

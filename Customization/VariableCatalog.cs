@@ -408,6 +408,9 @@ public static class VariableCatalog
         V("system.motherboard_model", "主板型号", "系统", "Win32_BaseBoard Product。", "文本", use: "左侧信息", formats: "无需格式化"),
         V("system.motherboard_temperature", "主板最高温度", "系统", "LibreHardwareMonitor 可读取的主板温度传感器最高值。", unit: "°C", use: "左侧信息", formats: "0.0"),
         V("system.fan_speed", "风扇最高转速", "系统", "LibreHardwareMonitor 当前可见风扇的最高 RPM。", unit: "RPM", use: "左侧信息", formats: "0"),
+        V("system.fan.count", "可读取的风扇数", "系统", "已检测到的独立风扇传感器数量。", formats: "0"),
+        V("cpu.temperature", "CPU 温度", "CPU", "CPU 传感器温度；设备、驱动或权限不支持时显示不可用。", unit: "°C", formats: "0.0"),
+        V("cpu.temperature_c", "CPU 温度（摄氏）", "CPU", "CPU 传感器温度；设备、驱动或权限不支持时显示不可用。", unit: "°C", formats: "0.0"),
         V("system.fan_speed_percent", "风扇控制百分比", "系统", "硬件监控 Control 类型传感器的最高百分比。", unit: "%", use: "右侧状态 / 圆环", formats: "0"),
         V("system.update_pending", "Windows 更新待处理", "系统", "检测可用 Windows 更新以及 Windows Update / Component Based Servicing 的待重启状态。", "布尔", use: "状态 / 条件", formats: "无需格式化"),
         V("system.update_last_installed", "最近安装更新日期", "系统", "Win32_QuickFixEngineering 中最近的 InstalledOn。", "文本", use: "左侧信息", formats: "无需格式化"),
@@ -756,8 +759,8 @@ public static class VariableCatalog
         return int.MaxValue;
     }
 
-    public static IReadOnlyList<VariableDefinition> AllBuiltIns { get; } =
-        StaticBuiltIns.Concat(AdvancedBuiltIns).Concat(DynamicDriveBuiltIns.Value)
+    public static IReadOnlyList<VariableDefinition> AllBuiltIns =>
+        StaticBuiltIns.Concat(AdvancedBuiltIns).Concat(DynamicDriveBuiltIns.Value).Concat(HardwareSensorCatalog.FanDefinitions)
             .GroupBy(x => x.Key, StringComparer.OrdinalIgnoreCase)
             .Select(g => g.First())
             .Select((item, sourceIndex) => new { Item = item, SourceIndex = sourceIndex })

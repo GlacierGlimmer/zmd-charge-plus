@@ -52,7 +52,7 @@ public static class HudProfileRenderer
         foreach (var rule in profile.ColorRules)
         {
             if (!string.IsNullOrWhiteSpace(rule.Variable))
-                keys.Add(rule.Variable.Trim());
+                foreach (var key in TemplateEngine.ExtractExpressionKeys(rule.Variable)) keys.Add(key);
         }
 
         // time.display.* / time.target.* 是按方案配置派生的；要求底层提供实时本地时钟。
@@ -246,15 +246,15 @@ public static class HudProfileRenderer
     {
         foreach (var r in p.ColorRules)
         {
-            double actual = TemplateEngine.Number(r.Variable, vars, double.NaN);
+            double actual = TemplateEngine.EvaluateNumber(r.Variable, vars, double.NaN);
             if (double.IsNaN(actual)) continue;
-            bool match = r.Operator switch
+            bool match = r.Operator.Trim().Replace("≥", ">=").Replace("≤", "<=").Replace("≠", "!=") switch
             {
                 ">" => actual > r.Value,
                 ">=" => actual >= r.Value,
                 "<" => actual < r.Value,
                 "<=" => actual <= r.Value,
-                "==" => Math.Abs(actual - r.Value) < 0.000001,
+                "=" or "==" => Math.Abs(actual - r.Value) < 0.000001,
                 "!=" => Math.Abs(actual - r.Value) >= 0.000001,
                 _ => false,
             };

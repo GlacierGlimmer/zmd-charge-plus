@@ -25,7 +25,7 @@ The comparison and feature details below describe the Windows edition. Linux and
 | Interaction | Power connection changes | Keeps battery notifications; moving the pointer to the top center of the selected monitor can show the active profile |
 | Customization | Battery display and animation | Profiles, variable templates, progress ring, left/right icons, color rules and animation modes |
 | Multiple profiles | Battery-focused HUD | Built-in and custom profiles with an ordered automatic cycle queue |
-| Data | Local battery information | **429 fixed built-in variables + 17 dynamic per-drive variable templates**, plus HTTP/JSON mapping |
+| Data | Local battery information | **Built-in variables, 17 dynamic per-drive variable templates and detected fan sensors**, plus HTTP/JSON mapping |
 
 ## ⬇️ Download & first run
 
@@ -88,7 +88,7 @@ Other platform versions are distributed by their respective repositories; their 
 | **Display & layout** | Choose monitor, nine position presets or custom X/Y, scaling and opacity. |
 | **Profiles & animation** | Built-in battery, CPU, GPU, memory, disk, network, time and DeepSeek profiles; create, edit, save and preview profiles with full/simple animations. |
 | **Automatic cycle** | Arrange a cycle queue with add/remove/reorder controls, interval and transition animation settings. |
-| **Variable Library** | 429 fixed built-in variables plus 17 types of per-drive templates for hardware, system, network, process, security and developer tools. |
+| **Variable Library** | Built-in variables, 17 types of per-drive templates and individual detected fan sensors for hardware, system, network, process, security and developer tools. |
 | **Flexible layouts** | Variable-driven title, numbers, progress ring and icons; formatting, expressions and conditional color rules. |
 | **Network probe** | Probe IPv4/IPv6/hostnames over ICMP, TCP or UDP; display latency and loss. |
 | **DeepSeek API** | With your own API key: balance, peak/off-peak, progress and countdown. Beijing Time drives the schedule; local-time switch variables are available. |
@@ -113,15 +113,15 @@ DeepSeek requires your API key; custom HTTP/JSON requests target endpoints you c
 ## 💻 Windows requirements & build
 
 - **OS:** Windows 10 / 11, x64 and x86.
-- **Portable packages:** each ZIP contains a self-contained EXE; no separately installed .NET runtime.
+- **Portable packages:** each ZIP contains a self-contained application folder; no separately installed .NET runtime. Extract the entire folder and run `EndfieldChargePlus.exe`. Keep the accompanying libraries to avoid native dependency extraction during launch.
 - **Building:** Windows and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 
 ```powershell
 # Build from source
 dotnet build EndfieldChargePlus.csproj -c Release
 
-# Example: publish a self-contained x64 single-file EXE
-dotnet publish EndfieldChargePlus.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false -o publish/win-x64
+# Example: publish a self-contained x64 application folder
+./scripts/package-windows.ps1 -Runtime win-x64
 ```
 
 Replace `win-x64` with `win-x86` to publish the x86 build.

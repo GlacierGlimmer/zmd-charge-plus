@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using EndfieldChargePlus.Interop;
 
 namespace EndfieldChargePlus.Diagnostics;
 
@@ -13,10 +14,7 @@ public static class AppLog
     private static readonly object Gate = new();
     private static bool _initialized;
 
-    public static string LogsDirectory { get; } = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        "EndfieldChargePlus",
-        "Logs");
+    public static string LogsDirectory { get; } = Path.Combine(AppPaths.DataDirectory, "Logs");
 
     public static string CurrentLogPath { get; private set; } = Path.Combine(LogsDirectory, "latest.log");
 

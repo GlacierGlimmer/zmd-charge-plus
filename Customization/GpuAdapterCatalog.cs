@@ -61,7 +61,7 @@ public static class GpuAdapterCatalog
     {
         lock (Gate)
         {
-            if (!forceRefresh && DateTime.UtcNow < _expiresAt && _cache.Count > 0)
+            if (!forceRefresh && DateTime.UtcNow < _expiresAt)
                 return _cache;
 
             var dxgi = EnumerateDxgiCandidates();

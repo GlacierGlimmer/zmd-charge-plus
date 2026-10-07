@@ -60,7 +60,7 @@ public static class TemplateEngine
         else if (text.StartsWith("=", StringComparison.Ordinal))
             text = text[1..];
         else
-            return Number(text, vars, fallback);
+            return Number(text.Trim('{', '}'), vars, fallback);
 
         var (expression, _) = SplitExpressionAndFormat(text);
         if (!ExpressionEngine.TryEvaluate(expression, vars, out var value, out _) || value is null) return fallback;
@@ -74,7 +74,7 @@ public static class TemplateEngine
         string text = source.Trim();
         if (text.StartsWith("{=", StringComparison.Ordinal) && text.EndsWith("}", StringComparison.Ordinal)) text = text[2..^1];
         else if (text.StartsWith("=", StringComparison.Ordinal)) text = text[1..];
-        else return new[] { text };
+        else return new[] { text.Trim('{', '}') };
         var (expression, _) = SplitExpressionAndFormat(text);
         return ExpressionEngine.ExtractVariables(expression);
     }
