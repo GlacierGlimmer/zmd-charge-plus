@@ -1,0 +1,20 @@
+name: DeepSeek official period regression
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Check official windows and Chinese holiday transitions
+        run: dotnet run --project Tests/DeepSeekPeriodTests.csproj -c Release
+      - name: Build Windows application with the packaged calendar
+        run: dotnet build EndfieldChargePlus.csproj -c Release

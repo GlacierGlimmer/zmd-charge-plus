@@ -307,7 +307,7 @@ public partial class HudCustomizerView : UserControl
         CycleSecondsBox.Value = _loaded.CycleSeconds;
         CycleAnimationModeCombo.SelectedIndex = string.Equals(_loaded.CycleAnimationMode, "Simple", StringComparison.OrdinalIgnoreCase) ? 0 : 1;
         DeepSeekKeyBox.Text = SecretStore.Unprotect(_loaded.DeepSeekApiKeyProtected);
-        DeepSeekWindowsBox.Text = _loaded.DeepSeekPeakWindows;
+        DeepSeekWindowsBox.Text = DeepSeekPeriodCalendar.OfficialWindows;
 
         _profiles = (_loaded.Profiles.Count == 0 ? CustomHudSettings.CreateDefault().Profiles : _loaded.Profiles)
             .Select(CloneProfile)
@@ -354,7 +354,7 @@ public partial class HudCustomizerView : UserControl
                    ?? _profiles.FirstOrDefault()?.Id
                    ?? ""),
             DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),
-            DeepSeekPeakWindows = string.IsNullOrWhiteSpace(DeepSeekWindowsBox.Text) ? "09:00-12:00;14:00-18:00" : DeepSeekWindowsBox.Text!.Trim(),
+            DeepSeekPeakWindows = DeepSeekPeriodCalendar.OfficialWindows,
             Profiles = _profiles.Select(CloneProfile).ToList(),
             HttpSources = _httpSources.Select(CloneHttp).ToList()
         };
@@ -976,7 +976,7 @@ public partial class HudCustomizerView : UserControl
                 CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex == 0 ? "Simple" : "Full",
                 ActiveProfileId = _profiles[_selectedIndex].Id,
                 DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),
-                DeepSeekPeakWindows = string.IsNullOrWhiteSpace(DeepSeekWindowsBox.Text) ? "09:00-12:00;14:00-18:00" : DeepSeekWindowsBox.Text!.Trim(),
+                DeepSeekPeakWindows = DeepSeekPeriodCalendar.OfficialWindows,
                 Profiles = _profiles.Select(CloneProfile).ToList(),
                 HttpSources = _httpSources.Select(CloneHttp).ToList()
             };

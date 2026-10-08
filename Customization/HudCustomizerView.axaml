@@ -1,4 +1,4 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="EndfieldChargePlus.Customization.HudCustomizerView">
   <TabControl>
@@ -422,8 +422,9 @@
                   <TextBox x:Name="DeepSeekKeyBox" PasswordChar="●" Watermark="sk-..."/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Spacing="5" Margin="6,0,0,0">
-                  <TextBlock Text="工作日高峰窗口（北京时间，分号分隔）" FontSize="12" Foreground="#A0A0A6"/>
-                  <TextBox x:Name="DeepSeekWindowsBox" Watermark="09:00-12:00;14:00-18:00"/>
+                  <TextBlock Text="DeepSeek 官方高峰窗口（北京时间）" FontSize="12" Foreground="#A0A0A6"/>
+                  <TextBox IsReadOnly="True" x:Name="DeepSeekWindowsBox" Watermark="09:00-12:00;14:00-18:00"/>
+                  <TextBlock Text="周一至周五，排除中国节假日；周末补班仍为低谷。" TextWrapping="Wrap" FontSize="11" Foreground="#A0A0A6"/>
                 </StackPanel>
               </Grid>
             </StackPanel>

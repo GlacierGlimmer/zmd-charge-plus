@@ -1,0 +1,170 @@
+[
+  {
+    "name": "morning start inclusive",
+    "instant": "2026-10-08T09:00:00+08:00",
+    "peak": true,
+    "next": "2026-10-08T12:00:00+08:00",
+    "start": "2026-10-08T09:00:00+08:00"
+  },
+  {
+    "name": "morning last second",
+    "instant": "2026-10-08T11:59:59+08:00",
+    "peak": true,
+    "next": "2026-10-08T12:00:00+08:00",
+    "start": "2026-10-08T09:00:00+08:00"
+  },
+  {
+    "name": "lunch start exclusive",
+    "instant": "2026-10-08T12:00:00+08:00",
+    "peak": false,
+    "next": "2026-10-08T14:00:00+08:00",
+    "start": "2026-10-08T12:00:00+08:00"
+  },
+  {
+    "name": "afternoon start inclusive",
+    "instant": "2026-10-08T14:00:00+08:00",
+    "peak": true,
+    "next": "2026-10-08T18:00:00+08:00",
+    "start": "2026-10-08T14:00:00+08:00"
+  },
+  {
+    "name": "end exclusive",
+    "instant": "2026-10-08T18:00:00+08:00",
+    "peak": false,
+    "next": "2026-10-09T09:00:00+08:00",
+    "start": "2026-10-08T18:00:00+08:00"
+  },
+  {
+    "name": "UTC maps to Beijing",
+    "instant": "2026-10-08T02:30:00Z",
+    "peak": true,
+    "next": "2026-10-08T12:00:00+08:00",
+    "start": "2026-10-08T09:00:00+08:00"
+  },
+  {
+    "name": "US offset maps to Beijing",
+    "instant": "2026-10-07T22:30:00-04:00",
+    "peak": true,
+    "next": "2026-10-08T12:00:00+08:00",
+    "start": "2026-10-08T09:00:00+08:00"
+  },
+  {
+    "name": "weekday National Day holiday",
+    "instant": "2026-10-07T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-10-08T09:00:00+08:00",
+    "start": "2026-09-30T18:00:00+08:00"
+  },
+  {
+    "name": "2025 combined holiday end",
+    "instant": "2025-10-08T10:00:00+08:00",
+    "peak": false,
+    "next": "2025-10-09T09:00:00+08:00",
+    "start": "2025-09-30T18:00:00+08:00"
+  },
+  {
+    "name": "makeup Saturday is idle",
+    "instant": "2026-10-10T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-10-12T09:00:00+08:00",
+    "start": "2026-10-09T18:00:00+08:00"
+  },
+  {
+    "name": "makeup Sunday is idle",
+    "instant": "2026-09-20T15:00:00+08:00",
+    "peak": false,
+    "next": "2026-09-21T09:00:00+08:00",
+    "start": "2026-09-18T18:00:00+08:00"
+  },
+  {
+    "name": "Spring Festival exceeds old nine-day horizon",
+    "instant": "2026-02-13T18:00:00+08:00",
+    "peak": false,
+    "next": "2026-02-24T09:00:00+08:00",
+    "start": "2026-02-13T18:00:00+08:00"
+  },
+  {
+    "name": "Spring Festival weekday",
+    "instant": "2026-02-23T15:00:00+08:00",
+    "peak": false,
+    "next": "2026-02-24T09:00:00+08:00",
+    "start": "2026-02-13T18:00:00+08:00"
+  },
+  {
+    "name": "Mid Autumn holiday",
+    "instant": "2026-09-25T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-09-28T09:00:00+08:00",
+    "start": "2026-09-24T18:00:00+08:00"
+  },
+  {
+    "name": "Qingming compensatory Monday",
+    "instant": "2026-04-06T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-04-07T09:00:00+08:00",
+    "start": "2026-04-03T18:00:00+08:00"
+  },
+  {
+    "name": "Labour holiday",
+    "instant": "2026-05-04T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-05-06T09:00:00+08:00",
+    "start": "2026-04-30T18:00:00+08:00"
+  },
+  {
+    "name": "Dragon Boat Friday",
+    "instant": "2026-06-19T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-06-22T09:00:00+08:00",
+    "start": "2026-06-18T18:00:00+08:00"
+  },
+  {
+    "name": "New Year crosses calendar years",
+    "instant": "2026-01-01T10:00:00+08:00",
+    "peak": false,
+    "next": "2026-01-05T09:00:00+08:00",
+    "start": "2025-12-31T18:00:00+08:00"
+  },
+  {
+    "name": "2024 holiday calendar",
+    "instant": "2024-10-07T10:00:00+08:00",
+    "peak": false,
+    "next": "2024-10-08T09:00:00+08:00",
+    "start": "2024-09-30T18:00:00+08:00"
+  },
+  {
+    "name": "last announced year still has intraday boundaries",
+    "instant": "2026-12-31T10:00:00+08:00",
+    "peak": true,
+    "next": "2026-12-31T12:00:00+08:00",
+    "start": "2026-12-31T09:00:00+08:00"
+  },
+  {
+    "name": "unknown next-year countdown",
+    "instant": "2026-12-31T18:00:00+08:00",
+    "peak": false,
+    "next": null,
+    "start": "2026-12-31T18:00:00+08:00"
+  },
+  {
+    "name": "unannounced weekday inside peak window",
+    "instant": "2027-01-01T10:00:00+08:00",
+    "peak": null,
+    "next": null,
+    "start": null
+  },
+  {
+    "name": "unannounced weekend is provably idle",
+    "instant": "2027-01-02T10:00:00+08:00",
+    "peak": false,
+    "next": null,
+    "start": null
+  },
+  {
+    "name": "unannounced night is provably idle",
+    "instant": "2027-01-01T21:00:00+08:00",
+    "peak": false,
+    "next": null,
+    "start": null
+  }
+]

@@ -38,4 +38,7 @@
     <AvaloniaResource Include="Assets\tray_bolt.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Assets/china-holidays.json" LogicalName="EndfieldChargePlus.china-holidays.json" />
+  </ItemGroup>
 </Project>

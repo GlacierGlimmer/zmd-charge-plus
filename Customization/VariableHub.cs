@@ -135,6 +135,7 @@ public sealed class VariableHub : IDisposable
         {
             var cached = new Dictionary<string, object?>(_lastSample, StringComparer.OrdinalIgnoreCase);
             AddClockAndSystem(cached, NeedsPrefix(requested, "system."), NeedsPrefix(requested, "time."));
+            if (NeedsPrefix(requested, "deepseek.period.")) AddDeepSeekPeriod(cached, settings);
             return cached;
         }
 
@@ -1419,69 +1420,43 @@ public sealed class VariableHub : IDisposable
 
     public static string GetDeepSeekPeriodNameZh(CustomHudSettings settings)
     {
-        var (_, _, peak) = GetDeepSeekPeriodState(settings);
-        return peak ? "高峰" : "低谷";
-    }
-
-    private static (DateTime Beijing, List<(TimeSpan Start, TimeSpan End)> Windows, bool Peak) GetDeepSeekPeriodState(CustomHudSettings settings)
-    {
-        DateTime beijing;
-        try
-        {
-            beijing = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("China Standard Time")).DateTime;
-        }
-        catch
-        {
-            beijing = DateTime.UtcNow.AddHours(8);
-        }
-
-        var windows = ParseWindows(settings.DeepSeekPeakWindows);
-        bool weekday = beijing.DayOfWeek is >= DayOfWeek.Monday and <= DayOfWeek.Friday;
-        bool peak = weekday && windows.Any(w => beijing.TimeOfDay >= w.Start && beijing.TimeOfDay < w.End);
-        return (beijing, windows, peak);
+        var state = DeepSeekPeriodCalendar.Evaluate(DateTimeOffset.UtcNow);
+        return state.IsPeak is null ? "日历待更新" : state.IsPeak.Value ? "高峰" : "低谷";
     }
 
     private static void AddDeepSeekPeriod(IDictionary<string, object?> v, CustomHudSettings settings)
     {
-        var (beijing, windows, peak) = GetDeepSeekPeriodState(settings);
-        var next = FindNextTransition(beijing, windows);
-        var remaining = Math.Max(0, (next - beijing).TotalSeconds);
-        var segmentStart = FindCurrentSegmentStart(beijing, windows, peak);
-        var total = Math.Max(1, (next - segmentStart).TotalSeconds);
-        var progress = Math.Clamp((beijing - segmentStart).TotalSeconds / total * 100d, 0d, 100d);
+        var state = DeepSeekPeriodCalendar.Evaluate(DateTimeOffset.UtcNow);
+        var remaining = state.RemainingSeconds;
+        var progress = state.Progress;
+        string unavailable = LocalizationManager.Text("节假日日历待更新", "Holiday calendar needs an update");
+        string nameZh = state.IsPeak is null ? "日历待更新" : state.IsPeak.Value ? "高峰" : "低谷";
+        string nameEn = state.IsPeak is null ? "UNKNOWN" : state.IsPeak.Value ? "PEAK" : "OFF-PEAK";
+        string labelEn = state.IsPeak == true ? "Peak" : "Off-peak";
 
-        string periodNameZh = peak ? "高峰" : "低谷";
-        string periodNameEn = peak ? "PEAK" : "OFF-PEAK";
-        string remainingText = LocalizationManager.Text(
-            $"{periodNameZh}时段剩余{FormatDuration(remaining)}",
-            $"{(peak ? "Peak" : "Off-peak")} left {FormatDuration(remaining)}");
-        string progressText = LocalizationManager.Text(
-            $"{periodNameZh}已过{Math.Round(progress, MidpointRounding.AwayFromZero):0}%",
-            $"{(peak ? "Peak" : "Off-peak")} {Math.Round(progress, MidpointRounding.AwayFromZero):0}%");
-
-        v["deepseek.period.name"] = periodNameEn;
-        v["deepseek.period.name_zh"] = LocalizationManager.IsEnglish ? periodNameEn : periodNameZh;
-        v["deepseek.period.is_peak"] = peak;
-        v["deepseek.period.is_off_peak"] = !peak;
+        v["deepseek.period.name"] = nameEn;
+        v["deepseek.period.name_zh"] = LocalizationManager.IsEnglish ? nameEn : nameZh;
+        v["deepseek.period.is_peak"] = state.IsPeak;
+        v["deepseek.period.is_off_peak"] = state.IsPeak is { } peak ? !peak : null;
         v["deepseek.period.remaining_seconds"] = remaining;
-        v["deepseek.period.remaining_text"] = remainingText;
+        v["deepseek.period.remaining_text"] = remaining is { } seconds
+            ? LocalizationManager.Text($"{nameZh}时段剩余{FormatDuration(seconds)}", $"{labelEn} left {FormatDuration(seconds)}")
+            : unavailable;
         v["deepseek.period.progress"] = progress;
-        v["deepseek.period.progress_text"] = progressText;
+        v["deepseek.period.progress_text"] = progress is { } percent
+            ? LocalizationManager.Text($"{nameZh}已过{Math.Round(percent, MidpointRounding.AwayFromZero):0}%", $"{labelEn} {Math.Round(percent, MidpointRounding.AwayFromZero):0}%")
+            : unavailable;
 
-        // DeepSeek peak/off-peak rules are defined in Beijing Time (UTC+08:00).
-        // Keep the existing next_switch_* variables in Beijing Time for compatibility,
-        // and expose explicit local-time variants for users outside China.
-        var nextBeijing = new DateTimeOffset(
-            DateTime.SpecifyKind(next, DateTimeKind.Unspecified),
-            TimeSpan.FromHours(8));
-        var nextLocal = nextBeijing.ToLocalTime();
-
-        v["deepseek.period.next_switch_time"] = nextBeijing.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
-        v["deepseek.period.next_switch_datetime"] = nextBeijing.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-        v["deepseek.period.next_switch_time_local"] = nextLocal.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
-        v["deepseek.period.next_switch_datetime_local"] = nextLocal.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+        DateTimeOffset? nextBeijing = state.NextTransition is { } next
+            ? new DateTimeOffset(DateTime.SpecifyKind(next, DateTimeKind.Unspecified), TimeSpan.FromHours(8)) : null;
+        var nextLocal = nextBeijing?.ToLocalTime();
+        v["deepseek.period.next_switch_time"] = nextBeijing?.ToString("HH:mm:ss", CultureInfo.InvariantCulture) ?? unavailable;
+        v["deepseek.period.next_switch_datetime"] = nextBeijing?.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture) ?? unavailable;
+        v["deepseek.period.next_switch_time_local"] = nextLocal?.ToString("HH:mm:ss", CultureInfo.InvariantCulture) ?? unavailable;
+        v["deepseek.period.next_switch_datetime_local"] = nextLocal?.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture) ?? unavailable;
         v["deepseek.period.timezone"] = LocalizationManager.Text("北京时间 (UTC+08:00)", "Beijing Time (UTC+08:00)");
-        v["deepseek.period.local_timezone"] = $"{TimeZoneInfo.Local.Id} (UTC{FormatUtcOffset(nextLocal.Offset)})";
+        v["deepseek.period.local_timezone"] = nextLocal is { } local
+            ? $"{TimeZoneInfo.Local.Id} (UTC{FormatUtcOffset(local.Offset)})" : unavailable;
     }
 
     private async Task AddCustomHttpAsync(
@@ -1729,45 +1704,6 @@ public sealed class VariableHub : IDisposable
         return list.OrderBy(x => x.Item1).ToList();
     }
 
-    private static DateTime FindNextTransition(DateTime now, List<(TimeSpan Start, TimeSpan End)> windows)
-    {
-        for (int d = 0; d < 8; d++)
-        {
-            var day = now.Date.AddDays(d);
-            bool weekday = day.DayOfWeek is >= DayOfWeek.Monday and <= DayOfWeek.Friday;
-            if (!weekday) continue;
-            foreach (var w in windows)
-            {
-                var a = day + w.Start;
-                var b = day + w.End;
-                if (a > now) return a;
-                if (b > now) return b;
-            }
-        }
-        return now.AddHours(1);
-    }
-
-    private static DateTime FindCurrentSegmentStart(DateTime now, List<(TimeSpan Start, TimeSpan End)> windows, bool peak)
-    {
-        if (peak)
-        {
-            var w = windows.FirstOrDefault(x => now.TimeOfDay >= x.Start && now.TimeOfDay < x.End);
-            return now.Date + w.Start;
-        }
-
-        for (int d = 0; d < 8; d++)
-        {
-            var day = now.Date.AddDays(-d);
-            bool weekday = day.DayOfWeek is >= DayOfWeek.Monday and <= DayOfWeek.Friday;
-            if (!weekday) continue;
-            foreach (var w in windows.OrderByDescending(x => x.End))
-            {
-                var end = day + w.End;
-                if (end <= now) return end;
-            }
-        }
-        return now.AddHours(-1);
-    }
 
     private static ulong ToUInt64(FILETIME ft) => ((ulong)ft.dwHighDateTime << 32) | ft.dwLowDateTime;
 

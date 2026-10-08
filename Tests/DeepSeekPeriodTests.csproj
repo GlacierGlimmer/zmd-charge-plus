@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>obj-period/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(MSBuildThisFileDirectory)obj-period/</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>EndfieldChargePlus.DeepSeekPeriodTests</AssemblyName>
+    <NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DeepSeekPeriodTests.cs" />
+    <Compile Include="../Customization/DeepSeekPeriodCalendar.cs" Link="DeepSeekPeriodCalendar.cs" />
+    <EmbeddedResource Include="../Assets/china-holidays.json" LogicalName="EndfieldChargePlus.china-holidays.json" />
+    <EmbeddedResource Include="DeepSeekPeriodCases.json" LogicalName="DeepSeekPeriodCases.json" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
