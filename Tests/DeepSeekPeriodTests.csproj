@@ -13,8 +13,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DeepSeekPeriodTests.cs" />
+    <Compile Include="../Customization/DeepSeekCalendarUpdater.cs" Link="DeepSeekCalendarUpdater.cs" />
     <Compile Include="../Customization/DeepSeekPeriodCalendar.cs" Link="DeepSeekPeriodCalendar.cs" />
     <EmbeddedResource Include="../Assets/china-holidays.json" LogicalName="EndfieldChargePlus.china-holidays.json" />
+    <EmbeddedResource Include="HolidayAnnualFixture.json" LogicalName="HolidayAnnualFixture.json" />
     <EmbeddedResource Include="DeepSeekPeriodCases.json" LogicalName="DeepSeekPeriodCases.json" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />

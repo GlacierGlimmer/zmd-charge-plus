@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -26,6 +26,7 @@ public sealed class VariableHub : IDisposable
     private DateTime _lastSampleAt;
     private Dictionary<string, object?>? _lastSample;
     private static readonly HttpClient Http = new() { Timeout = TimeSpan.FromSeconds(8) };
+    private static readonly DeepSeekCalendarUpdater CalendarUpdater = new(Path.Combine(EndfieldChargePlus.Interop.AppPaths.DataDirectory, "holiday-calendar"));
     private readonly Dictionary<string, HttpCacheEntry> _httpCache = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, PingTargetState> _pingStates = new(StringComparer.OrdinalIgnoreCase);
     private readonly object _pingGate = new();
@@ -1420,12 +1421,14 @@ public sealed class VariableHub : IDisposable
 
     public static string GetDeepSeekPeriodNameZh(CustomHudSettings settings)
     {
+        _ = CalendarUpdater.RequestRefresh(DateTimeOffset.UtcNow);
         var state = DeepSeekPeriodCalendar.Evaluate(DateTimeOffset.UtcNow);
         return state.IsPeak is null ? "日历待更新" : state.IsPeak.Value ? "高峰" : "低谷";
     }
 
     private static void AddDeepSeekPeriod(IDictionary<string, object?> v, CustomHudSettings settings)
     {
+        _ = CalendarUpdater.RequestRefresh(DateTimeOffset.UtcNow);
         var state = DeepSeekPeriodCalendar.Evaluate(DateTimeOffset.UtcNow);
         var remaining = state.RemainingSeconds;
         var progress = state.Progress;

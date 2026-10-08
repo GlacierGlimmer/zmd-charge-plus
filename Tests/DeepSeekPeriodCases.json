@@ -148,7 +148,7 @@
   },
   {
     "name": "unannounced weekday inside peak window",
-    "instant": "2027-01-01T10:00:00+08:00",
+    "instant": "2027-01-04T10:00:00+08:00",
     "peak": null,
     "next": null,
     "start": null
@@ -158,11 +158,11 @@
     "instant": "2027-01-02T10:00:00+08:00",
     "peak": false,
     "next": null,
-    "start": null
+    "start": "2026-12-31T18:00:00+08:00"
   },
   {
     "name": "unannounced night is provably idle",
-    "instant": "2027-01-01T21:00:00+08:00",
+    "instant": "2027-01-04T21:00:00+08:00",
     "peak": false,
     "next": null,
     "start": null

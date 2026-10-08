@@ -1,0 +1,173 @@
+{
+  "year": 2040,
+  "papers": [
+    "https://www.gov.cn/test-only/annual-notice.htm"
+  ],
+  "days": [
+    {
+      "name": "元旦",
+      "date": "2040-01-01",
+      "isOffDay": true
+    },
+    {
+      "name": "元旦",
+      "date": "2040-01-02",
+      "isOffDay": true
+    },
+    {
+      "name": "元旦",
+      "date": "2040-01-03",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-15",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-16",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-17",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-18",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-19",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-20",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-21",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-22",
+      "isOffDay": true
+    },
+    {
+      "name": "春节",
+      "date": "2040-02-23",
+      "isOffDay": true
+    },
+    {
+      "name": "清明节",
+      "date": "2040-04-04",
+      "isOffDay": true
+    },
+    {
+      "name": "清明节",
+      "date": "2040-04-05",
+      "isOffDay": true
+    },
+    {
+      "name": "清明节",
+      "date": "2040-04-06",
+      "isOffDay": true
+    },
+    {
+      "name": "劳动节",
+      "date": "2040-05-01",
+      "isOffDay": true
+    },
+    {
+      "name": "劳动节",
+      "date": "2040-05-02",
+      "isOffDay": true
+    },
+    {
+      "name": "劳动节",
+      "date": "2040-05-03",
+      "isOffDay": true
+    },
+    {
+      "name": "劳动节",
+      "date": "2040-05-04",
+      "isOffDay": true
+    },
+    {
+      "name": "劳动节",
+      "date": "2040-05-05",
+      "isOffDay": true
+    },
+    {
+      "name": "端午节",
+      "date": "2040-06-19",
+      "isOffDay": true
+    },
+    {
+      "name": "端午节",
+      "date": "2040-06-20",
+      "isOffDay": true
+    },
+    {
+      "name": "端午节",
+      "date": "2040-06-21",
+      "isOffDay": true
+    },
+    {
+      "name": "中秋节",
+      "date": "2040-09-25",
+      "isOffDay": true
+    },
+    {
+      "name": "中秋节",
+      "date": "2040-09-26",
+      "isOffDay": true
+    },
+    {
+      "name": "中秋节",
+      "date": "2040-09-27",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-01",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-02",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-03",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-04",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-05",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-06",
+      "isOffDay": true
+    },
+    {
+      "name": "国庆节",
+      "date": "2040-10-07",
+      "isOffDay": true
+    }
+  ]
+}
