@@ -150,7 +150,8 @@ public static class DeepSeekPeriodCalendar
                 var day = DateOnly.ParseExact(item.GetProperty("date").GetString()!, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 if (day.Year != expectedYear && !(day.Year == expectedYear - 1 && day.Month == 12)) return null;
                 if (holidays.Contains(day) || workdays.Contains(day)) return null;
-                string name = item.GetProperty("name").GetString()!;
+                string? name = item.GetProperty("name").GetString();
+                if (string.IsNullOrWhiteSpace(name)) return null;
                 if (item.GetProperty("isOffDay").GetBoolean()) { holidays.Add(day); if (day.Year == expectedYear) names.Add(name); }
                 else workdays.Add(day);
             }

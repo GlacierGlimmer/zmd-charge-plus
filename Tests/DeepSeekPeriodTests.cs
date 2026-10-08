@@ -54,6 +54,7 @@ Check(!DeepSeekPeriodCalendar.IsValidAnnualJson(annual, 2041), "Wrong response y
 Check(!DeepSeekPeriodCalendar.TryInstallAnnualJson("{\"year\":2040,\"papers\":[],\"days\":[]}", 2040), "Unannounced placeholder rejected");
 Check(!DeepSeekPeriodCalendar.TryInstallAnnualJson(annual.Replace("www.gov.cn", "gov.cn.example.com"), 2040), "Non-government source rejected");
 Check(!DeepSeekPeriodCalendar.TryInstallAnnualJson("{broken", 2040), "Malformed data rejected");
+Check(!DeepSeekPeriodCalendar.TryInstallAnnualJson(annual.Replace("\"name\": \"元旦\"", "\"name\": null"), 2040), "Null holiday name rejected without interrupting refresh");
 Check(!DeepSeekPeriodCalendar.TryInstallAnnualJson(annual.Replace("国庆节", "Other"), 2040), "Incomplete annual schedule rejected");
 string cache = Path.Combine(Environment.CurrentDirectory, "Tests", "obj-period", "calendar-tests-" + Guid.NewGuid().ToString("N"));
 try
