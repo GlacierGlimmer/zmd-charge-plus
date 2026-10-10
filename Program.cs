@@ -23,6 +23,21 @@ internal static class Program
     {
         IsAutoStart = args.Any(a => string.Equals(a, "--autostart", StringComparison.OrdinalIgnoreCase));
 
+        // Windows supplies an activation kind for the Store startup task instead
+        // of the portable command-line flag. Read it once before Avalonia starts.
+        if (!IsAutoStart && Settings.StartupManager.IsPackaged)
+        {
+            try
+            {
+                var activation = Windows.ApplicationModel.AppInstance.GetActivatedEventArgs();
+                IsAutoStart = activation?.Kind == Windows.ApplicationModel.Activation.ActivationKind.StartupTask;
+            }
+            catch (Exception ex)
+            {
+                AppLog.Error("Unable to inspect packaged activation kind.", ex);
+            }
+        }
+
         bool isPrimaryInstance;
         try
         {
