@@ -303,7 +303,7 @@ public sealed class VariableHub : IDisposable
         {
             using var p = Process.GetCurrentProcess();
             var asm = Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly();
-            var version = asm.GetName().Version?.ToString(3) ?? "0.1.0";
+            var version = asm.GetName().Version?.ToString(3) ?? "0.1.1";
             var start = p.StartTime;
             var uptime = Math.Max(0d, (DateTime.Now - start).TotalSeconds);
             v["app.name"] = p.ProcessName;

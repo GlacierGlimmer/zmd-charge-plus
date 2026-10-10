@@ -1,6 +1,8 @@
 # Endfield Charge Plus · Endfield-style Status HUD+
 
-[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.0**
+Current source version: **v0.1.1** (not published in Releases). Version changes require an explicit user request; see [version policy](docs/VERSIONING.md).
+
+[简体中文](README.md) · **English**　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.1**
 
 > **More than a battery notification: bring the information you care about to the top of your screen.**
 
@@ -47,8 +49,8 @@ For a version that needs no installation, get the Portable ZIP for your device f
 
 | Download | Device |
 | :-- | :-- |
-| `EndfieldChargePlus-v0.1.0-win-x64-portable.zip` | Common Intel / AMD 64-bit Windows PCs (recommended) |
-| `EndfieldChargePlus-v0.1.0-win-x86-portable.zip` | For 32-bit Windows devices |
+| `EndfieldChargePlus-v0.1.1-win-x64-portable.zip` | Common Intel / AMD 64-bit Windows PCs (recommended) |
+| `EndfieldChargePlus-v0.1.1-win-x86-portable.zip` | For 32-bit Windows devices |
 
 **Getting started:**
 

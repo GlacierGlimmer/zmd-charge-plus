@@ -235,7 +235,7 @@
                   <TextBlock Text="终末地风格状态栏 HUD" FontSize="14" Foreground="#D2D2D6"/>
                   <TextBlock x:Name="AboutArchitectureText" Text="Windows · x64" FontSize="12" Foreground="#8E8E94" Margin="0,1,0,0"/>
                   <StackPanel Orientation="Horizontal" Spacing="18" Margin="0,7,0,0">
-                    <TextBlock x:Name="AboutVersionText" Text="v0.1.0" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                    <TextBlock x:Name="AboutVersionText" Text="v0.1.1" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
                     <TextBlock Text="构建日期  2026.09.23" FontSize="13" Foreground="#D2D2D6"/>
                   </StackPanel>
                 </StackPanel>
@@ -255,7 +255,7 @@
                             Foreground="#171719"
                             FontWeight="SemiBold"/>
                     <StackPanel Grid.Column="1" Spacing="6" VerticalAlignment="Center">
-                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.0" FontSize="12" Foreground="#D2D2D6"/>
+                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.1" FontSize="12" Foreground="#D2D2D6"/>
                       <TextBlock x:Name="UpdateLatestVersionText" Text="最新版本：尚未获取" FontSize="12" Foreground="#D2D2D6"/>
                       <TextBlock x:Name="UpdateStatusText" Text="状态：尚未检查" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
                     </StackPanel>

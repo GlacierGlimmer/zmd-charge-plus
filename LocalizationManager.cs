@@ -60,7 +60,7 @@ public static class LocalizationManager
         ["终末地风格状态栏 HUD"] = "Endfield-style Status HUD",
         ["构建日期  2026.09.23"] = "Build  2026.09.23",
         ["检查更新"] = "Check Updates",
-        ["当前版本：v0.1.0"] = "Current: v0.1.0",
+        ["当前版本：v0.1.1"] = "Current: v0.1.1",
         ["最新版本：尚未获取"] = "Latest: not checked",
         ["状态：尚未检查"] = "Status: not checked",
         ["项目与协议"] = "Project & License",

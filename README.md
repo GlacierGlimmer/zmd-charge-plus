@@ -1,6 +1,8 @@
 # Endfield Charge Plus · 终末地风格状态栏HUD+
 
-**简体中文** · [English](README.en.md)　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.0**
+当前源码版本：**v0.1.1**（尚未发布 Releases）。版本只在用户明确要求时修改，见[版本约定](docs/VERSIONING.md)。
+
+**简体中文** · [English](README.en.md)　｜　**Windows 10 / 11 · Linux x64 · macOS 13+ · v0.1.1**
 
 > **不止于电量提示，让需要的信息以你喜欢的方式出现在屏幕上。**
 
@@ -47,8 +49,8 @@ winget install --id 9P3PLD3LX7W6 --source msstore --exact
 
 | 下载文件 | 适用设备 |
 | :-- | :-- |
-| `EndfieldChargePlus-v0.1.0-win-x64-portable.zip` | 常见 Intel / AMD 64 位 Windows 电脑（推荐） |
-| `EndfieldChargePlus-v0.1.0-win-x86-portable.zip` | 适用于 32 位 Windows 设备 |
+| `EndfieldChargePlus-v0.1.1-win-x64-portable.zip` | 常见 Intel / AMD 64 位 Windows 电脑（推荐） |
+| `EndfieldChargePlus-v0.1.1-win-x86-portable.zip` | 适用于 32 位 Windows 设备 |
 
 **首次使用只需几步：**
 
