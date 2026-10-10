@@ -71,6 +71,8 @@ public partial class SettingsWindow : Window
     private bool _monitorComboReady;
     private string? _maintenanceStatusZh;
     private string? _maintenanceStatusEn;
+    private string? _startupStatusZh;
+    private string? _startupStatusEn;
 
     public SettingsWindow(AppSettings settings, HudWindow hud, CustomHudRuntime runtime)
     {
@@ -116,6 +118,12 @@ public partial class SettingsWindow : Window
             ApplyUpdateCheckResult(cachedUpdateResult);
 
         Opened += (_, _) => PopulateMonitorCombo();
+        if (StartupManager.IsPackaged)
+        {
+            // Never let the saved JSON value silently override Windows Startup Apps.
+            StartupSwitch.IsEnabled = false;
+            Opened += async (_, _) => await RefreshPackagedStartupSwitchAsync();
+        }
 
         UpdateModeUi();
     }
@@ -199,6 +207,42 @@ public partial class SettingsWindow : Window
         }
 
         RefreshMaintenanceStatusLocalization();
+        RefreshStartupStatusLocalization();
+    }
+
+    private void SetStartupStatus(string? zh, string? en)
+    {
+        _startupStatusZh = zh;
+        _startupStatusEn = en;
+        RefreshStartupStatusLocalization();
+    }
+
+    private void RefreshStartupStatusLocalization()
+    {
+        StartupStatusText.IsVisible = _startupStatusZh is not null && _startupStatusEn is not null;
+        if (StartupStatusText.IsVisible)
+            StartupStatusText.Text = LocalizationManager.Text(_startupStatusZh!, _startupStatusEn!);
+    }
+
+    private async Task RefreshPackagedStartupSwitchAsync()
+    {
+        StartupApplyResult current = await StartupManager.ReadStatusAsync();
+        if (current.Succeeded)
+        {
+            StartupSwitch.IsChecked = current.IsEnabled;
+            _settings = _settings with { StartWithWindows = current.IsEnabled };
+            if (current.State == "DisabledByUser")
+                SetStartupStatus("此应用已在 Windows 启动应用中被禁用，请在那里手动重新启用。",
+                    "Windows disabled startup for this app. Re-enable it in Windows Startup Apps.");
+            else if (current.State is "DisabledByPolicy" or "EnabledByPolicy")
+                SetStartupStatus("开机启动受系统策略管理。", "Startup is managed by system policy.");
+            else
+                SetStartupStatus(null, null);
+        }
+        else
+            SetStartupStatus("无法读取 Windows 启动任务状态。请查看日志。",
+                "Cannot read the Windows startup task. See logs.");
+        StartupSwitch.IsEnabled = current.Succeeded && current.State is not ("DisabledByPolicy" or "EnabledByPolicy");
     }
 
     private void SetMaintenanceStatus(string zh, string en)
@@ -339,8 +383,24 @@ public partial class SettingsWindow : Window
         {
         _settings = CollectSettingsFromUi();
 
+        // MSIX uses the OS-owned startup task; Portable keeps the registry Run entry.
+        bool requestedStartup = _settings.StartWithWindows;
+        StartupApplyResult startup = await StartupManager.ApplyAsync(requestedStartup);
+        if (startup.IsPackaged)
+        {
+            _settings = _settings with { StartWithWindows = startup.IsEnabled };
+            StartupSwitch.IsChecked = startup.IsEnabled;
+            if (requestedStartup != startup.IsEnabled || !startup.Succeeded)
+                SetStartupStatus(
+                    startup.State == "DisabledByUser"
+                        ? "Windows 已禁用此应用开机启动，请到「设置 → 应用 → 启动」手动开启。"
+                        : "未能更改开机启动状态。请检查 Windows 启动应用与日志。",
+                    startup.State == "DisabledByUser"
+                        ? "Windows disabled startup for this app. Enable it in Settings > Apps > Startup."
+                        : "Could not change startup state. Check Windows Startup Apps and logs.");
+            else SetStartupStatus(null, null);
+        }
         SettingsManager.Save(_settings);
-        StartupManager.Apply(_settings.StartWithWindows);
 
         SaveBtn.IsEnabled = false;
         SaveBtn.Content = LocalizationManager.Text("应用中…", "Applying…");
@@ -414,8 +474,13 @@ public partial class SettingsWindow : Window
 
             string? backup = SettingsManager.BackupCurrent("before-import");
             AppSettings imported = SettingsManager.ImportFromFile(files[0].Path.LocalPath);
+            StartupApplyResult importedStartup = await StartupManager.ApplyAsync(imported.StartWithWindows);
+            if (importedStartup.IsPackaged)
+                imported = imported with { StartWithWindows = importedStartup.IsEnabled };
             SettingsManager.Save(imported);
-            StartupManager.Apply(imported.StartWithWindows);
+            if (importedStartup.IsPackaged && !importedStartup.Succeeded)
+                SetStartupStatus("导入的开机启动设置未能应用，请检查 Windows 启动应用。",
+                    "Imported startup preference could not be applied. Check Windows Startup Apps.");
             LocalizationManager.Initialize(imported.UiLanguage);
             ApplyLocalization();
             UpdateLanguageSwitchVisual();

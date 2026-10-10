@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -99,8 +99,8 @@ public static class VariableCatalog
         V("gpu.usage_video_decode", "GPU 视频解码使用率", "GPU", "当前所选 GPU 的视频解码引擎最高实时利用率。", unit: "%", use: "右侧状态 / 圆环"),
         V("gpu.usage_video_encode", "GPU 视频编码使用率", "GPU", "当前所选 GPU 的视频编码引擎最高实时利用率。", unit: "%", use: "右侧状态 / 圆环"),
         V("gpu.name", "GPU 名称", "GPU", "当前方案选择的显示适配器名称。", "文本", use: "标题 / 左侧信息", formats: "无需格式化"),
-        V("gpu.adapter_id", "GPU 设备 ID", "GPU", "当前所选 GPU 的内部稳定标识。", "文本", use: "调试 / 自定义", formats: "无需格式化"),
-        V("gpu.physical_index", "GPU 物理索引", "GPU", "Windows GPU 性能计数器对应的物理 GPU 索引。", "整数", use: "调试 / 左侧信息", formats: "0"),
+        V("gpu.adapter_id", "GPU 设备 ID", "GPU", "当前所选 GPU 的内部稳定标识。", "文本", use: "自定义", formats: "无需格式化"),
+        V("gpu.physical_index", "GPU 物理索引", "GPU", "Windows GPU 性能计数器对应的物理 GPU 索引。", "整数", use: "左侧信息", formats: "0"),
         V("gpu.count", "GPU 数量", "GPU", "当前系统检测到的物理 GPU 数量。", "整数", "个", "左侧信息", "0"),
         V("gpu.vram_bytes", "GPU 专用显存总量", "GPU", "当前所选 GPU 的专用显存总容量。", unit: "Byte", use: "左侧次值", formats: "gb:1 / bytes"),
         V("gpu.dedicated_total_bytes", "专用显存总量", "GPU", "当前所选 GPU 的专用显存容量。", unit: "Byte", use: "左侧次值", formats: "gb:1 / bytes"),
@@ -145,8 +145,8 @@ public static class VariableCatalog
         V("network.available", "网络可用状态", "网络", "Windows 是否检测到至少一个可用网络连接；不代表一定可访问互联网。", "布尔", use: "标题 / 条件", formats: "无需格式化"),
         V("network.packets_received", "累计接收数据包", "网络", "活动网络接口累计接收单播数据包数量。", "数值", "包", "左侧信息", "0"),
         V("network.packets_sent", "累计发送数据包", "网络", "活动网络接口累计发送单播数据包数量。", "数值", "包", "左侧信息", "0"),
-        V("network.receive_errors", "接收错误", "网络", "活动网络接口累计接收错误数量。", "数值", "个", "状态 / 调试", "0"),
-        V("network.send_errors", "发送错误", "网络", "活动网络接口累计发送错误数量。", "数值", "个", "状态 / 调试", "0"),
+        V("network.receive_errors", "接收错误", "网络", "活动网络接口累计接收错误数量。", "数值", "个", "状态", "0"),
+        V("network.send_errors", "发送错误", "网络", "活动网络接口累计发送错误数量。", "数值", "个", "状态", "0"),
 
         // ===== Ping / 实时连通性 =====
         V("probe.target", "探测地址", "网络探测", "当前网络包探测器使用的 IPv4、IPv6 或域名。", "文本", use: "左侧信息 / 标题", formats: "无需格式化"),
@@ -156,7 +156,7 @@ public static class VariableCatalog
         V("probe.endpoint", "探测端点", "网络探测", "ICMP 显示目标地址；TCP / UDP 显示“地址:端口”。", "文本", use: "左侧信息 / 标题", formats: "无需格式化"),
         V("probe.online", "探测是否成功", "网络探测", "最近一次网络探测是否成功。", "布尔", use: "状态 / 条件", formats: "无需格式化"),
         V("probe.status_text", "探测状态文字", "网络探测", "最近一次探测状态，例如“在线”“超时”“端口不可达”。", "文本", use: "右侧状态 / 标题", formats: "无需格式化"),
-        V("probe.reply_status", "探测原始状态", "网络探测", "协议探测返回的底层状态，例如 Success、Connected、Response、TimedOut。", "文本", use: "状态 / 调试", formats: "无需格式化"),
+        V("probe.reply_status", "探测原始状态", "网络探测", "协议探测返回的底层状态，例如 Success、Connected、Response、TimedOut。", "文本", use: "状态", formats: "无需格式化"),
         V("probe.latency_ms", "探测延迟", "网络探测", "最近一次成功探测的往返/连接延迟；失败时按 999 ms 处理。", unit: "ms", use: "左侧主体信息", formats: "0 / 0.0"),
         V("probe.latency_text", "探测延迟文字", "网络探测", "成功时显示“20ms”；失败时显示超时或错误状态。", "文本", use: "左侧主体信息", formats: "无需格式化"),
         V("probe.latency_progress", "延迟进度", "网络探测", "0 ms 为 0%，999 ms 及以上为 100%；适合用作延迟圆环。", unit: "%", use: "圆环"),
@@ -172,7 +172,7 @@ public static class VariableCatalog
         V("probe.max_latency_ms", "最高延迟", "网络探测", "当前探测配置最近 20 次成功样本中的最高延迟。", unit: "ms", use: "左侧信息", formats: "0"),
         V("probe.jitter_ms", "延迟抖动", "网络探测", "相邻成功样本延迟差的平均绝对值，用于近似表示抖动。", unit: "ms", use: "左侧信息", formats: "0.0"),
         V("probe.last_success", "最近成功时间", "网络探测", "当前探测配置最近一次成功的本地时间。", "文本", use: "左侧信息", formats: "无需格式化"),
-        V("probe.error", "探测错误", "网络探测", "最近一次检测失败时的底层状态或错误。", "文本", use: "状态 / 调试", formats: "无需格式化"),
+        V("probe.error", "探测错误", "网络探测", "最近一次检测失败时的底层状态或错误。", "文本", use: "状态", formats: "无需格式化"),
 
         V("ping.target", "Ping 目标", "Ping（兼容）", "当前方案正在检测的 IP 地址或域名。", "文本", use: "左侧主值 / 标题", formats: "无需格式化"),
         V("ping.address", "Ping 实际地址", "Ping（兼容）", "Ping 响应返回的实际 IP 地址；域名目标解析成功后可查看最终地址。", "文本", use: "左侧信息", formats: "无需格式化"),
@@ -181,7 +181,7 @@ public static class VariableCatalog
         V("ping.endpoint", "Ping/探测端点", "Ping（兼容）", "兼容变量：当前地址和端口组合。", "文本", use: "左侧信息", formats: "无需格式化"),
         V("ping.online", "Ping 是否在线", "Ping（兼容）", "最近一次 ICMP Ping 是否成功。", "布尔", use: "状态 / 条件", formats: "无需格式化"),
         V("ping.status_text", "Ping 状态文字", "Ping（兼容）", "最近一次检测状态，例如“在线”“超时”“不可达”。", "文本", use: "右侧状态 / 标题", formats: "无需格式化"),
-        V("ping.reply_status", "Ping 原始状态", "Ping（兼容）", "System.Net.NetworkInformation.IPStatus 返回的原始状态名称。", "文本", use: "状态 / 调试", formats: "无需格式化"),
+        V("ping.reply_status", "Ping 原始状态", "Ping（兼容）", "System.Net.NetworkInformation.IPStatus 返回的原始状态名称。", "文本", use: "状态", formats: "无需格式化"),
         V("ping.latency_ms", "Ping 延迟", "Ping（兼容）", "最近一次成功 Ping 的往返延迟；失败时按 999 ms 计入进度。", unit: "ms", use: "右侧状态", formats: "0 / 0.0"),
         V("ping.latency_text", "Ping 延迟文字", "Ping（兼容）", "成功时显示“20ms”一类文字；超时或不可达时显示对应状态。", "文本", use: "右侧状态", formats: "无需格式化"),
         V("ping.progress", "Ping 延迟进度", "Ping（兼容）", "延迟换算后的圆环进度：0 ms 为 0%，999 ms 及以上为 100%；超时/失败为 100%。", unit: "%", use: "右侧状态 / 圆环"),
@@ -197,7 +197,7 @@ public static class VariableCatalog
         V("ping.max_latency_ms", "Ping 最高延迟", "Ping（兼容）", "当前目标最近 20 次成功检测中的最高延迟。", unit: "ms", use: "左侧信息", formats: "0"),
         V("ping.jitter_ms", "Ping 抖动", "Ping（兼容）", "当前目标最近成功样本相邻延迟差的平均绝对值，用于近似表示网络抖动。", unit: "ms", use: "左侧信息", formats: "0.0"),
         V("ping.last_success", "Ping 最近成功时间", "Ping（兼容）", "当前目标最近一次成功响应的本地时间。", "文本", use: "左侧信息", formats: "无需格式化"),
-        V("ping.error", "Ping 错误信息", "Ping（兼容）", "最近一次检测失败时的错误或状态说明。", "文本", use: "状态 / 调试", formats: "无需格式化"),
+        V("ping.error", "Ping 错误信息", "Ping（兼容）", "最近一次检测失败时的错误或状态说明。", "文本", use: "状态", formats: "无需格式化"),
 
         // ===== 磁盘 =====
         V("disk.system.root", "系统盘盘符", "磁盘", "Windows 系统目录所在驱动器根路径，如 C:\\。", "文本", use: "标题 / 左侧信息", formats: "无需格式化"),
@@ -438,7 +438,7 @@ public static class VariableCatalog
         // ===== 软件自身进阶 =====
         V("app.theme", "应用主题", "ECP 应用", "当前 Endfield Charge Plus 使用的主题。", "文本", use: "左侧信息", formats: "无需格式化"),
         V("app.preset_name", "当前方案名称", "ECP 应用", "当前选中的 HUD 方案显示名称。", "文本", use: "标题 / 左侧信息", formats: "无需格式化"),
-        V("app.active_profile", "当前方案 ID", "ECP 应用", "当前 HUD 方案内部 ID。", "文本", use: "调试 / 条件", formats: "无需格式化"),
+        V("app.active_profile", "当前方案 ID", "ECP 应用", "当前 HUD 方案内部 ID。", "文本", use: "条件", formats: "无需格式化"),
         V("app.gpu_usage", "本程序 GPU 使用率", "ECP 应用", "GPU Engine 性能计数器中当前 Endfield Charge Plus 进程的利用率。", unit: "%", use: "右侧状态 / 圆环", formats: "0.0"),
 
         // ===== 显示器进阶 =====

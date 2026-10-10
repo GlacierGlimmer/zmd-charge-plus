@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -161,7 +161,6 @@ public static class VariableLocalization
             .Replace("条件", "Condition", StringComparison.Ordinal)
             .Replace("状态计算", "Status calculation", StringComparison.Ordinal)
             .Replace("状态", "Status", StringComparison.Ordinal)
-            .Replace("调试", "Debug", StringComparison.Ordinal)
             .Replace("自定义", "Custom", StringComparison.Ordinal)
             .Replace("按数据含义决定", "As appropriate for the value", StringComparison.Ordinal);
     }

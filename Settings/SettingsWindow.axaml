@@ -96,6 +96,7 @@
                   </StackPanel>
                   <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center"/>
                 </Grid>
+                <TextBlock x:Name="StartupStatusText" IsVisible="False" TextWrapping="Wrap" FontSize="11" Foreground="#C6CA4C"/>
               </StackPanel>
             </Border>
 
