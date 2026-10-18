@@ -11,13 +11,32 @@ public enum AppLanguage
 {
     SimplifiedChinese,
     English,
+    TraditionalChinese,
+    Japanese,
+    Korean,
+    German,
+    French,
+    Spanish,
+    Portuguese,
+    Russian,
+    Arabic,
+    Hindi,
+    Bengali,
+    Urdu,
+    Indonesian,
+    Vietnamese,
+    Thai,
+    Turkish,
+    Italian,
+    Persian,
+    Tibetan,
 }
 
 /// <summary>
-/// Runtime UI/HUD language state. "Auto" follows the Windows UI culture; all zh-* cultures
-/// resolve to Simplified Chinese, everything else resolves to English.
+/// Runtime UI/HUD language state. "Auto" resolves the system UI culture through the
+/// bundled catalog; unsupported system languages fall back to English.
 /// </summary>
-public static class LocalizationManager
+public static partial class LocalizationManager
 {
     private static readonly Dictionary<string, string> ZhToEn = new(StringComparer.Ordinal)
     {
@@ -43,13 +62,46 @@ public static class LocalizationManager
         ["间隔越小，采样越快、资源消耗越高。时钟按秒更新；外部 API 保留各自的刷新间隔。"] = "Shorter intervals sample faster and use more resources. Clocks update each second; external APIs retain their own refresh intervals.",
         ["HUD 内容与数据"] = "HUD Content & Data",
         ["关于"] = "About",
+        ["硬件数据"] = "Hardware Data",
+        ["HUD显示内容"] = "HUD Content",
+        ["数据管理"] = "Data Management",
+        ["数据源配置"] = "Data Source Configuration",
+        ["使用手册"] = "User Manual",
         ["HUD 总开关"] = "HUD Master Switch",
+        ["显示 / 隐藏全部 HUD 的快捷键"] = "Shortcut to show / hide all HUDs",
+        ["快捷键显示动画"] = "Shortcut show animation",
+        ["触发规则"] = "Trigger rules",
+        ["事件呼出"] = "Event summons",
+        ["仅在关闭“一直显示”时生效。满足规则后按轮播队列呼出下一项；空队列使用当前方案。首次采样和数据恢复只建立基线。"] = "Active when Always Visible is off. Matching rules summon the next carousel item, or the current profile if the queue is empty. Initial and recovered samples only establish a baseline.",
+        ["添加规则"] = "Add rule",
+        ["删除所选规则"] = "Remove selected rule",
+        ["启用这条规则"] = "Enable this rule",
+        ["规则名称"] = "Rule name",
+        ["监视变量"] = "Watched variable",
+        ["变量可从变量库复制。网络探测沿用队列中网络包探测方案的目标和协议；没有该方案时使用当前方案。"] = "Copy keys from the variable library. Network probes use the carousel's Packet Probe target and protocol, or the current profile when no probe profile is queued.",
+        ["触发条件模式"] = "Condition mode",
+        ["规则运算符"] = "Comparison operator",
+        ["触发阈值"] = "Threshold",
+        ["触发冷却 / 秒"] = "Cooldown / seconds",
+        ["启用鼠标热区呼出"] = "Enable mouse hot-zone summons",
+        ["关闭“一直显示”时可用。热区位于目标显示器的完整屏幕范围，可调整位置、大小和停留时长。"] = "Available when Always Visible is off. Position the hot zone within the full target display and adjust its size and dwell time.",
+        ["热区位置"] = "Hot-zone position",
+        ["热区宽度 / px"] = "Hot-zone width / px",
+        ["热区高度 / px"] = "Hot-zone height / px",
+        ["热区 X 微调 / px"] = "Hot-zone X offset / px",
+        ["热区 Y 微调 / px"] = "Hot-zone Y offset / px",
+        ["热区停留时间"] = "Hot-zone dwell time",
+        ["每次热区呼出切换到下一个方案"] = "Advance the carousel on each hot-zone summon",
+        ["点击后按下组合键"] = "Click and press a shortcut",
+        ["清除快捷键"] = "Clear shortcut",
+        ["使用 Ctrl 或 Alt，可加 Shift；支持字母、数字和 F1–F24（F12 除外）。保存后生效，留空关闭。"] = "Use Ctrl or Alt, optionally Shift, with a letter, digit or F1–F24 (except F12). Save to apply; leave blank to disable.",
+        ["同时控制主 HUD 与附加实例。隐藏期间暂停自动呼出，再按一次恢复原有显示模式；重启后恢复显示。"] = "Controls the primary HUD and additional instances together. Automatic summons pause while hidden. Press again to restore the previous display mode; restarting restores visibility.",
         ["控制 HUD 的全部显示功能。"] = "Controls all HUD display functions.",
         ["开机启动"] = "Start with Windows",
         ["登录 Windows 后自动启动 Endfield Charge Plus。"] = "Start Endfield Charge Plus after Windows sign-in.",
         ["显示方式"] = "Display Mode",
         ["一直显示"] = "Always Visible",
-        ["开启：HUD 持续显示。\n关闭：电源插拔显示电池；鼠标移到目标屏幕顶部中央可唤出当前方案。"] = "On: keep the HUD visible.\nOff: power changes show Battery; move the pointer to the top-center of the target display to summon the active profile.",
+        ["开启：HUD 持续显示。\n关闭：电源插拔显示电池；鼠标移到目标屏幕的已配置热区可唤出当前方案。"] = "On: keep the HUD visible.\nOff: power changes show Battery; move the pointer into the configured hot zone on the target display to summon the active profile.",
         ["常驻状态"] = "Persistent",
         ["显示层级"] = "Layer",
         ["HUD 不透明度"] = "HUD Opacity",
@@ -73,9 +125,9 @@ public static class LocalizationManager
         ["硬件采样间隔 / 秒"] = "Hardware sampling interval / seconds",
         ["数值越大，硬件更新越慢；时钟仍按秒更新。"] = "Larger values update hardware less often; clocks still update every second.",
         ["终末地风格状态栏 HUD"] = "Endfield-style Status HUD",
-        ["构建日期  2026.10.12"] = "Build  2026.10.12",
+        ["构建日期  2026.10.18"] = "Build  2026.10.18",
         ["检查更新"] = "Check Updates",
-        ["当前版本：v0.1.1"] = "Current: v0.1.1",
+        ["当前版本：v0.1.2"] = "Current: v0.1.2",
         ["最新版本：尚未获取"] = "Latest: not checked",
         ["状态：尚未检查"] = "Status: not checked",
         ["项目与协议"] = "Project & License",
@@ -92,7 +144,7 @@ public static class LocalizationManager
         ["恢复全部默认"] = "Reset All",
 
         // HUD customizer - profile tab
-        ["HUD 配置"] = "HUD Profiles",
+        ["HUD 配置"] = "HUD Configuration",
         ["方案管理"] = "Profile Management",
         ["选择当前显示方案。内置方案修改后会另存为新方案，原预设保持不变。"] = "Select the active HUD profile. Editing a built-in profile creates a copy; the original stays unchanged.",
         ["预览当前方案"] = "Preview",
@@ -101,7 +153,7 @@ public static class LocalizationManager
         ["保存"] = "Save",
         ["删除"] = "Delete",
         ["DeepSeek API 数据源"] = "DeepSeek API Source",
-        ["此方案需要先在“数据源 → DeepSeek API”中配置 DeepSeek API Key；峰谷时段也可在该数据源中设置。未配置 API Key 时，余额相关数据无法获取。"] = "Configure the DeepSeek API key under Data Sources → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.",
+        ["此方案需要先在“数据管理 → 数据源配置 → DeepSeek API”中配置 DeepSeek API Key；峰谷时段也可在该数据源中设置。未配置 API Key 时，余额相关数据无法获取。"] = "Configure the DeepSeek API key under Data Management → Data Source Configuration → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.",
         ["目标时间模式"] = "Target-time Mode",
         ["关闭时显示当天已过进度；开启后显示距离下一个每日目标时间的剩余比例。"] = "Off: show today's elapsed progress. On: show the remaining share until the next daily target time.",
         ["UTC 时区"] = "UTC time zone",
@@ -169,7 +221,7 @@ public static class LocalizationManager
         ["条件变色 · 每行：变量 运算符 数值 => 颜色"] = "Color rules · one per line: variable operator value => color",
 
         // Variable library
-        ["变量库"] = "Variables",
+        ["变量库"] = "Variable Library",
         ["按名称、变量名或分类查找，选择变量后查看完整说明。"] = "Search by name, key, or category; select a variable for details.",
         ["按功能分类；分类内优先显示常用状态与实时指标，再显示详细信息。支持按名称、变量名或分类查找。"] = "Grouped by function; common status and live metrics come first, followed by detailed values. Search by name, key, or category.",
         ["搜索：CPU 使用率 / cpu.usage"] = "Search: CPU usage / cpu.usage",
@@ -198,49 +250,40 @@ public static class LocalizationManager
         ["退出"] = "Exit",
     };
 
-    private static readonly Dictionary<string, string> EnToZh = ZhToEn.ToDictionary(kv => kv.Value, kv => kv.Key, StringComparer.Ordinal);
+    private static readonly Dictionary<string, string> EnToZh = ZhToEn.GroupBy(kv=>kv.Value,StringComparer.Ordinal).ToDictionary(g=>g.Key,g=>g.First().Key.StartsWith("{}",StringComparison.Ordinal) ? g.First().Key[2..] : g.First().Key,StringComparer.Ordinal);
 
     public static AppLanguage Current { get; private set; } = AppLanguage.English;
     public static bool IsEnglish => Current == AppLanguage.English;
+    public static bool UsesChineseSource => Current == AppLanguage.SimplifiedChinese;
     public static event Action? LanguageChanged;
 
     public static void Initialize(string? preference)
     {
-        string normalized = NormalizePreference(preference);
-        Current = normalized switch
-        {
-            "zh-CN" => AppLanguage.SimplifiedChinese,
-            "en-US" => AppLanguage.English,
-            _ => CultureInfo.CurrentUICulture.Name.StartsWith("zh", StringComparison.OrdinalIgnoreCase)
-                ? AppLanguage.SimplifiedChinese
-                : AppLanguage.English,
-        };
+        Preference=NormalizePreference(preference);
+        Current=ResolvePreference(Preference,CultureInfo.CurrentUICulture.Name);
     }
 
     public static string NormalizePreference(string? preference)
     {
-        if (string.Equals(preference, "zh-CN", StringComparison.OrdinalIgnoreCase)) return "zh-CN";
-        if (string.Equals(preference, "en-US", StringComparison.OrdinalIgnoreCase)) return "en-US";
-        return "Auto";
+        if(string.IsNullOrWhiteSpace(preference) || preference.Equals("Auto",StringComparison.OrdinalIgnoreCase))return "Auto";
+        return LanguageForCulture(preference) is { } language ? PreferenceFor(language) : "Auto";
     }
 
-    public static string PreferenceFor(AppLanguage language) => language == AppLanguage.English ? "en-US" : "zh-CN";
+    public static string PreferenceFor(AppLanguage language) => SupportedLanguages.First(l=>l.Language==language).Code;
 
     public static void SetLanguage(AppLanguage language)
     {
-        if (Current == language) return;
-        Current = language;
-        LanguageChanged?.Invoke();
+        SetPreference(PreferenceFor(language));
     }
 
-    public static string Text(string zh, string en) => IsEnglish ? en : zh;
+    public static string Text(string zh, string en) => UsesChineseSource ? zh : TranslateEnglish(en);
 
     public static string TranslateLiteral(string? value)
     {
         if (string.IsNullOrEmpty(value)) return value ?? string.Empty;
-        if (IsEnglish)
-            return ZhToEn.TryGetValue(value, out var en) ? en : value;
-        return EnToZh.TryGetValue(value, out var zh) ? zh : value;
+        string english=EnglishKey(value);
+        if(UsesChineseSource)return EnToZh.TryGetValue(english,out var zh) ? zh : ReadResource("zh-CN").GetValueOrDefault(english,value);
+        return TranslateEnglish(english);
     }
 
     public static void ApplyStaticText(Control root)
@@ -251,23 +294,23 @@ public static class LocalizationManager
             switch (node)
             {
                 case Window window:
-                    window.Title = TranslateLiteral(window.Title);
+                    window.Title = TranslateControlLiteral(window,"Title",window.Title ?? "");
                     break;
                 case TabItem tab when tab.Header is string header:
-                    tab.Header = TranslateLiteral(header);
+                    tab.Header = TranslateControlLiteral(tab,"Header",header);
                     break;
                 case ToggleSwitch toggle:
-                    if (toggle.OnContent is string on) toggle.OnContent = TranslateLiteral(on);
-                    if (toggle.OffContent is string off) toggle.OffContent = TranslateLiteral(off);
+                    if (toggle.OnContent is string on) toggle.OnContent = TranslateControlLiteral(toggle,"OnContent",on);
+                    if (toggle.OffContent is string off) toggle.OffContent = TranslateControlLiteral(toggle,"OffContent",off);
                     break;
                 case TextBox box:
-                    if (box.Watermark is string watermark) box.Watermark = TranslateLiteral(watermark);
+                    if (box.Watermark is string watermark) box.Watermark = TranslateControlLiteral(box,"Watermark",watermark);
                     break;
                 case TextBlock text when text.Text is not null:
-                    text.Text = TranslateLiteral(text.Text);
+                    text.Text = TranslateControlLiteral(text,"Text",text.Text);
                     break;
                 case ContentControl content when content.Content is string s:
-                    content.Content = TranslateLiteral(s);
+                    content.Content = TranslateControlLiteral(content,"Content",s);
                     break;
             }
         }

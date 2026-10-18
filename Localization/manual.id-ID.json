@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Langkah penggunaan",
+    "Keterangan dan parameter",
+    "Contoh",
+    "Salin contoh lalu sesuaikan nilainya. Nama variabel, fungsi, dan sintaks kode tidak diterjemahkan.",
+    "Referensi fungsi dan format"
+  ],
+  "start": [
+    "Mulai menggunakan ECP",
+    "Tampilkan HUD pertama, lalu sesuaikan isinya.",
+    "Aktifkan HUD dan tampilan selalu terlihat di Tampilan dan posisi.\nPilih profil bawaan di Konten HUD, lalu buka pratinjau.\nTekan Simpan dan terapkan di bagian atas.",
+    "Simpan di editor menyimpan profil. Mengedit profil bawaan membuat salinan khusus. Pratinjau tidak mengganti pengaturan yang sedang digunakan; tombol atas menyimpan dan menerapkan semuanya."
+  ],
+  "display": [
+    "Tampilan, posisi, dan rupa",
+    "Atur monitor serta mode tampilan.",
+    "Pilih monitor dan posisi bawaan atau koordinat sendiri.\nAtur ukuran, opasitas, dan font.\nPilih tampilan tetap atau sementara, lalu terapkan.",
+    "Area kerja menghindari bilah tugas; batas layar memakai seluruh layar. Koordinat negatif normal pada beberapa monitor. Mode sementara muncul karena peristiwa lalu menutup. Pengumpulan data dibagi bersama, sedangkan jam dan API memiliki interval pembaruan sendiri.\n\nPilih bahasa atau ikuti sistem di bagian atas. Hanya bahasa yang langsung disimpan; perubahan lain tetap belum disimpan di editor. Bahasa atau teks yang tidak tersedia memakai Inggris. Teks Anda dan nama variabel tetap sama."
+  ],
+  "profiles": [
+    "Profil dan isi HUD",
+    "Atur teks, ikon, dan cincin.",
+    "Buat profil atau edit salinan profil bawaan.\nIsi judul, nilai utama dan tambahan, akhiran, ikon, serta warna.\nPilih variabel dan batas cincin, periksa pratinjau, lalu terapkan.",
+    "Teks biasa dapat digabungkan dengan variabel dalam kurung kurawal. Cincin memetakan rentang ke 0–100% tanpa mengubah angka teks. Aturan warna memakai satuan asli. Menghapus profil khusus tidak menghapus profil bawaan."
+  ],
+  "variables": [
+    "Variabel, templat, dan ekspresi",
+    "Cari data dan tentukan formatnya.",
+    "Cari variabel di Manajemen data dan baca deskripsi serta satuannya.\nSalin nama untuk aturan atau cincin; salin templat untuk teks.\nGunakan contoh dan referensi berikut.",
+    "Format dijalankan dari kiri ke kanan. 0.0 menampilkan satu desimal; auto:1 memilih satuan otomatis, jadi jangan menambahkan satuan lagi. Nama fungsi tetap. Nama variabel lama tetap berfungsi. Duplikat disembunyikan, indikator ringkasan tetap tersedia. -- berarti tidak ada nilai yang valid."
+  ],
+  "hardware": [
+    "Sensor dan driver",
+    "Periksa suhu atau pembacaan yang tidak muncul.",
+    "Buka Manajemen data → Data perangkat keras dan periksa driver.\nJika PawnIO belum ada, instal dan setujui konfirmasi Windows.\nKeluar sepenuhnya dari ECP, lalu jalankan kembali sebagai administrator.\nSegarkan data, cari sensor, lalu salin variabel atau ekspor diagnosis.",
+    "Hak administrator tidak menggantikan driver. Data yang tidak didukung tetap tidak tersedia. Inti, paket, titik panas, dan memori adalah sensor berbeda. Minimum dan maksimum merupakan riwayat sesi ini, bukan batas spesifikasi. SMBIOS bukan tabel SPD/XMP/EXPO lengkap."
+  ],
+  "sources": [
+    "Konfigurasi sumber data",
+    "Hubungkan DeepSeek, API JSON, dan AIDA64.",
+    "Masukkan kunci DeepSeek lalu terapkan.\nUntuk HTTP, atur nama, URL GET, header, interval, dan jalur JSON; aktifkan sumber.\nGunakan custom.<source>.<variable> dalam profil.\nDi AIDA64, pilih data dan aktifkan ekspor melalui memori bersama, registri, atau WMI; biarkan AIDA64 berjalan.",
+    "Kunci DeepSeek dienkripsi untuk pengguna Windows saat ini. Periode memakai waktu Beijing; akhir pekan termasuk luar jam sibuk. Periksa status dan error saat HTTP gagal. Pengumpulan lebih cepat tidak melewati cache. Variabel lingkungan dapat menghindari penyimpanan rahasia langsung dalam JSON. ECP hanya membaca data yang benar-benar diekspor AIDA64."
+  ],
+  "cycle": [
+    "Rotasi dan animasi",
+    "Ganti beberapa profil secara berurutan.",
+    "Tambahkan profil ke daftar dan atur urutannya.\nAktifkan rotasi otomatis beserta interval jika diperlukan.\nPilih animasi sederhana, lengkap, atau gulir ke atas.\nAktifkan pergantian dengan klik untuk maju secara manual.",
+    "Mengeluarkan dari daftar tidak menghapus profil. Daftar kosong memakai profil saat ini; satu item tidak berpindah ke profil lain. Gulir menggerakkan isi HUD tetap. Setiap HUD memiliki daftar sendiri; klik memulai ulang waktunya. Pergantian periode DeepSeek memakai animasi lengkap."
+  ],
+  "summons": [
+    "Pintasan dan area mouse",
+    "Tampilkan atau sembunyikan HUD sesuai kebutuhan.",
+    "Atur pintasan dengan Ctrl atau Alt, opsional Shift, lalu terapkan.\nPilih animasi sederhana atau lengkap saat muncul. Saat disembunyikan juga ada animasi keluar.\nPada mode sementara, aktifkan area mouse dan atur titik acuan, ukuran, jarak, serta waktu diam.",
+    "F12 dan kombinasi yang dicadangkan ditolak. Jika konflik, pintasan lama dipertahankan. Pintasan mengendalikan semua HUD tanpa mengubah posisi; status tersembunyi hanya berlaku pada sesi ini. Area tetap di dalam layar penuh. Keluar lalu masuk lagi untuk mengaktifkan ulang; area juga dapat memajukan daftar."
+  ],
+  "triggers": [
+    "Aturan pemicu",
+    "Munculkan HUD sementara berdasarkan data.",
+    "Tambahkan dan aktifkan aturan di Konten HUD.\nPilih variabel dan mode: ambang, perubahan nilai, atau menjadi benar.\nAtur jeda, nonaktifkan tampilan selalu terlihat, lalu terapkan.",
+    "Sampel pertama dan pemulihan data hanya membentuk nilai acuan. Kondisi yang bertahan dapat memicu lagi sesudah jeda. Aturan dan daftar independen untuk setiap HUD. Contoh: cpu.usage >= 90 dengan jeda 30 detik, atau perubahan media.title untuk memberi tahu lagu baru."
+  ],
+  "special": [
+    "Jam, jaringan, dan FPS",
+    "Atur fitur khusus setiap profil.",
+    "Pilih selisih UTC tetap dan target waktu harian opsional pada jam dunia.\nAtur satuan dan acuan lebar pita cincin jaringan.\nPilih tujuan dan protokol pemeriksaan; TCP/UDP memakai port.\nUntuk FPS, segarkan daftar dan pilih jendela atau layar.",
+    "Selisih tetap tidak mengikuti waktu musim panas. 1 MB/s sama dengan 8 Mbps; acuan tidak membatasi koneksi. Satu pemeriksaan gagal tidak membuktikan internet terputus seluruhnya. FPS mengukur bingkai yang disajikan, bukan laju penyegaran tetap layar; mungkin perlu administrator. GPU dipilih per profil."
+  ],
+  "media": [
+    "Media dan kemajuan",
+    "Tampilkan sesi media Windows.",
+    "Gunakan media.title_artist untuk judul dan artis.\nGunakan media.position_text dan media.duration_text untuk waktu.\nAtur cincin ke media.progress dengan rentang 0–100.",
+    "Pemutar harus menerbitkan sesi media Windows. Posisi mengikuti lini masa dan kecepatan yang dilaporkan; saat jeda tidak bergerak. Siaran tanpa durasi tidak memiliki persentase valid. Metadata yang tidak disediakan tetap tidak tersedia."
+  ],
+  "instances": [
+    "Beberapa HUD eksperimental",
+    "Buat tampilan yang independen.",
+    "Aktifkan beberapa HUD di Fitur eksperimental.\nTambahkan HUD tambahan, beri nama, lalu pilih untuk diedit.\nSimpan dan terapkan HUD baru sebelum pratinjau.",
+    "HUD terpilih ditandai. Posisi, profil, daftar, aturan, dan area tersendiri untuk setiap HUD. Interval pengumpulan, pintasan global, dan sakelar pergantian klik dibagi bersama. Klik hanya memajukan HUD yang diklik. Menghapus HUD tambahan tidak menghapus yang utama."
+  ],
+  "maintenance": [
+    "Pengaturan dan pemeliharaan",
+    "Cadangkan pengaturan dan periksa diagnosis.",
+    "Ekspor pengaturan atau buat cadangan dari Tentang sebelum perubahan besar.\nImpor untuk memulihkan.\nBuka log atau folder pengaturan saat menyelidiki masalah.\nSetelah reset, terapkan pengaturan yang dimuat.",
+    "Kunci terenkripsi mungkin perlu dimasukkan ulang pada PC atau akun Windows lain. Kegagalan memeriksa pembaruan bukan bukti versi sudah terbaru. Paket pengembangan dapat memakai nomor yang sama; periksa keterangan paket."
+  ],
+  "troubleshooting": [
+    "Masalah dan peringatan data",
+    "Periksa tampilan dan sumbernya.",
+    "Jika HUD tidak muncul, periksa sakelar, pintasan sembunyi, mode, monitor, koordinat, dan opasitas.\nUntuk mode sementara, periksa peristiwa, area, atau aturan.\nUntuk --, periksa sensor, izin, kunci API, jalur JSON, dan ekspresi.",
+    "-- bukan angka nol; format tidak memperbaiki pengumpulan. Kotak centang peringatan hanya membisukan secara permanen variabel yang tercantum di jendela itu. Variabel lain tetap memperingatkan. Menutup biasa hanya mengakui kejadian tersebut. Kesalahan ekspresi dibedakan menurut profil dan ekspresi. Membisukan tidak memperbaiki atau menghentikan pengumpulan."
+  ]
+}

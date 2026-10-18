@@ -60,6 +60,52 @@ public partial class HudCustomizerView : UserControl
 // custom.myserver.online
 """;
 
+    private const string HttpJsonCommentExampleZhTw = """
+// HTTP / JSON 資料來源範例（本範例全部為註解，不會發出任何網路請求）
+// 使用方式：複製下方範例，移除每行開頭的 //，再依實際介面修改。
+//
+// 欄位說明：
+// name            資料來源名稱；變數前綴為 custom.<name>.*
+// enabled         是否啟用這個資料來源
+// url             HTTP/HTTPS GET 介面網址，回應必須為 JSON
+// refreshSeconds  更新／快取間隔（秒）
+// headers         選用的請求標頭；敏感值建議使用 ${env:環境變數名稱}
+// fields.variable 自訂變數名稱
+// fields.jsonPath JSON 欄位路徑，例如 data.cpu、players[0].name
+//
+// [
+//   {
+//     "name": "myserver",
+//     "enabled": true,
+//     "url": "https://example.com/status",
+//     "refreshSeconds": 10,
+//     "headers": {
+//       "Authorization": "Bearer ${env:MY_API_KEY}",
+//       "Accept": "application/json"
+//     },
+//     "fields": [
+//       {
+//         "variable": "cpu",
+//         "jsonPath": "data.cpu"
+//       },
+//       {
+//         "variable": "players",
+//         "jsonPath": "data.players.online"
+//       },
+//       {
+//         "variable": "online",
+//         "jsonPath": "data.server.online"
+//       }
+//     ]
+//   }
+// ]
+//
+// 啟用上述範例後會產生：
+// custom.myserver.cpu
+// custom.myserver.players
+// custom.myserver.online
+""";
+
     private const string HttpJsonCommentExampleEn = """
 // HTTP / JSON data source example (comment-only; no network request is made)
 // Usage: copy the example below, remove the leading // on each line, then edit it for your API.
@@ -106,8 +152,12 @@ public partial class HudCustomizerView : UserControl
 // custom.myserver.online
 """;
 
-    private static string HttpJsonCommentExample =>
-        LocalizationManager.IsEnglish ? HttpJsonCommentExampleEn : HttpJsonCommentExampleZh;
+    private static string HttpJsonCommentExample => LocalizationManager.CurrentLanguage.Code switch
+    {
+        "zh-CN" => HttpJsonCommentExampleZh,
+        "zh-TW" or "zh-HK" => HttpJsonCommentExampleZhTw,
+        _ => HttpJsonCommentExampleEn
+    };
     private List<HudProfile> _profiles = new();
     private List<CustomHttpSource> _httpSources = new();
     private List<string> _cycleProfileIds = new();
@@ -115,6 +165,14 @@ public partial class HudCustomizerView : UserControl
     private IReadOnlyList<GpuAdapterInfo> _gpuAdapters = Array.Empty<GpuAdapterInfo>();
     private HudWindow? _hud;
     public Func<HudRenderData,Func<System.Threading.CancellationToken,Task<HudRenderData>>,Task>? PreviewPresenter { get; set; }
+    internal Func<Task>? DiscoverHardware { get; set; }
+    internal (TabItem Variables,TabItem Sources) DetachDataPages()
+    {
+        CustomizerTabs.Items.Remove(VariableLibraryPage);CustomizerTabs.Items.Remove(DataSourcesPage);
+        return (VariableLibraryPage,DataSourcesPage);
+    }
+    internal void SelectTriggerRules()=>CustomizerTabs.SelectedItem=TriggerRulesPage;
+    internal void SelectProfileEditor()=>CustomizerTabs.SelectedIndex=0;
     public void SetPreviewHud(HudWindow? hud)
     {
         _hud=hud;PreviewBtn.IsEnabled=hud is { IsClosed:false };
@@ -129,6 +187,7 @@ public partial class HudCustomizerView : UserControl
     public HudCustomizerView()
     {
         InitializeComponent();
+        InitializeTriggerEditor();
         RefreshFrameTargetsBtn.Click += (_,_) => RefreshFrameTargets();
 
         LocalizationManager.ApplyStaticText(this);
@@ -168,12 +227,14 @@ public partial class HudCustomizerView : UserControl
             await Task.Run(() =>
             {
                 GpuAdapterCatalog.GetAdapters();
+                if(DiscoverHardware is not null)return;
                 using var provider = new AdvancedVariableProvider();
                 provider.EnrichAsync(new Dictionary<string, object?>(), new CustomHudSettings(),
-                    new HashSet<string> { "system.fan_speed", "cpu.temperature_max" }, null, CancellationToken.None)
+                    new HashSet<string> { "hardware.sensor_count" }, null, CancellationToken.None)
                     .GetAwaiter().GetResult();
             });
             RefreshGpuAdapters();
+            if(DiscoverHardware is not null)await DiscoverHardware();
             if (_selectedIndex >= 0 && _selectedIndex < _profiles.Count) SelectGpuAdapter(_profiles[_selectedIndex].GpuAdapterId);
             RebuildVariableCategories();
             RefreshVariableList();
@@ -200,6 +261,7 @@ public partial class HudCustomizerView : UserControl
         CycleAnimationModeCombo.Items.Clear();
         CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("简洁", "Simple"));
         CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("完整", "Full"));
+        CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("向上翻滚", "Roll Up"));
 
         NetworkDisplayUnitCombo.Items.Clear();
         NetworkDisplayUnitCombo.Items.Add("Mbps");
@@ -227,6 +289,7 @@ public partial class HudCustomizerView : UserControl
         if (percentMode >= 0) NetworkPercentModeCombo.SelectedIndex = Math.Min(percentMode, NetworkPercentModeCombo.Items.Count - 1);
         if (referenceUnit >= 0) NetworkReferenceUnitCombo.SelectedIndex = Math.Min(referenceUnit, NetworkReferenceUnitCombo.Items.Count - 1);
         if (protocol >= 0) ProbeProtocolCombo.SelectedIndex = Math.Min(protocol, ProbeProtocolCombo.Items.Count - 1);
+        RebuildTriggerChoices();
     }
 
     public void ApplyLocalization()
@@ -288,7 +351,9 @@ public partial class HudCustomizerView : UserControl
         string desiredName = $"{desired.Category} - {desired.Name}";
         string currentName = ProfileNameBox.Text ?? string.Empty;
         if (string.Equals(currentName, zhName, StringComparison.Ordinal)
-            || string.Equals(currentName, enName, StringComparison.Ordinal))
+            || string.Equals(currentName, enName, StringComparison.Ordinal)
+            || LocalizationManager.SupportedLanguages.Any(l=>{
+                var p=BuiltInProfileLocalization.ForLanguage(profile,l.Language);return currentName==$"{p.Category} - {p.Name}";}))
             ProfileNameBox.Text = desiredName;
 
         TranslateCanonicalText(TaglineBox, zh.TaglineTemplate, en.TaglineTemplate, desired.TaglineTemplate);
@@ -303,7 +368,8 @@ public partial class HudCustomizerView : UserControl
     private static void TranslateCanonicalText(TextBox box, string zh, string en, string desired)
     {
         string current = box.Text ?? string.Empty;
-        if (string.Equals(current, zh, StringComparison.Ordinal) || string.Equals(current, en, StringComparison.Ordinal))
+        if (string.Equals(current, zh, StringComparison.Ordinal) || string.Equals(current, en, StringComparison.Ordinal)
+            || LocalizationManager.SupportedLanguages.Any(l=>current==LocalizationManager.TranslateEnglish(en,l.Language)))
             box.Text = desired;
     }
 
@@ -312,9 +378,10 @@ public partial class HudCustomizerView : UserControl
         _loading = true;
         SetPreviewHud(hud);
         _loaded = HudSettingsNormalizer.Normalize(settings ?? CustomHudSettings.CreateDefault());
+        LoadTriggerRules(_loaded.Triggers);
         AutoCycleSwitch.IsChecked = _loaded.AutoCycle;
         CycleSecondsBox.Value = _loaded.CycleSeconds;
-        CycleAnimationModeCombo.SelectedIndex = string.Equals(_loaded.CycleAnimationMode, "Simple", StringComparison.OrdinalIgnoreCase) ? 0 : 1;
+        CycleAnimationModeCombo.SelectedIndex = _loaded.CycleAnimationMode switch { "Simple"=>0,"Full"=>1,_=>2 };
         DeepSeekKeyBox.Text = SecretStore.Unprotect(_loaded.DeepSeekApiKeyProtected);
         DeepSeekWindowsBox.Text = DeepSeekPeriodCalendar.OfficialWindows;
 
@@ -354,9 +421,10 @@ public partial class HudCustomizerView : UserControl
         return new CustomHudSettings
         {
             AutoCycle = AutoCycleSwitch.IsChecked == true,
+            Triggers=ExportTriggerRules(),
             CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
             CycleProfileIds = GetSanitizedCycleProfileIds(),
-            CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex == 0 ? "Simple" : "Full",
+            CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
             ActiveProfileId = _selectedIndex >= 0 && _selectedIndex < _profiles.Count
                 ? _profiles[_selectedIndex].Id
                 : (_profiles.FirstOrDefault(p => string.Equals(p.Id, _loaded.ActiveProfileId, StringComparison.OrdinalIgnoreCase))?.Id
@@ -512,7 +580,7 @@ public partial class HudCustomizerView : UserControl
 
             string desiredName = renamed
                 ? enteredName
-                : LocalizationManager.Text($"{ProfileDisplayName(old)}（已更改）", $"{ProfileDisplayName(old)} (Modified)");
+                : LocalizationManager.Formatted($"{ProfileDisplayName(old)}（已更改）", (System.FormattableString)$"{ProfileDisplayName(old)} (Modified)");
             desiredName = MakeUniqueCustomName(desiredName);
 
             var custom = HudSettingsNormalizer.NormalizeProfile(edited with
@@ -814,8 +882,8 @@ public partial class HudCustomizerView : UserControl
             GpuAdapterStatusText.Text = _gpuAdapters.Count switch
             {
                 0 => LocalizationManager.Text("未检测到可用 GPU", "No GPU detected"),
-                1 => LocalizationManager.Text($"已检测到 1 个 GPU：{_gpuAdapters[0].Name}", $"1 GPU detected: {_gpuAdapters[0].Name}"),
-                _ => LocalizationManager.Text($"已检测到 {_gpuAdapters.Count} 个 GPU", $"{_gpuAdapters.Count} GPUs detected")
+                1 => LocalizationManager.Formatted($"已检测到 1 个 GPU：{_gpuAdapters[0].Name}", (System.FormattableString)$"1 GPU detected: {_gpuAdapters[0].Name}"),
+                _ => LocalizationManager.Formatted($"已检测到 {_gpuAdapters.Count} 个 GPU", (System.FormattableString)$"{_gpuAdapters.Count} GPUs detected")
             };
         }
 
@@ -886,8 +954,8 @@ public partial class HudCustomizerView : UserControl
                 ? LocalizationManager.Text("队列中有 1 个方案；会保持该方案，不发生方案间切换。", "The queue has one profile; it will stay on that profile.")
                 : LocalizationManager.Text("已配置 1 个轮播方案。", "1 profile is in the cycle queue."),
             _ => enabled
-                ? LocalizationManager.Text($"已启用自动轮播，将按上方顺序循环 {_cycleProfileIds.Count} 个方案。", $"Auto cycle is on; {_cycleProfileIds.Count} profiles will rotate in order.")
-                : LocalizationManager.Text($"已配置 {_cycleProfileIds.Count} 个轮播方案；开启自动轮播后生效。", $"{_cycleProfileIds.Count} profiles are queued; enable auto cycle to use them.")
+                ? LocalizationManager.Formatted($"已启用自动轮播，将按上方顺序循环 {_cycleProfileIds.Count} 个方案。", (System.FormattableString)$"Auto cycle is on; {_cycleProfileIds.Count} profiles will rotate in order.")
+                : LocalizationManager.Formatted($"已配置 {_cycleProfileIds.Count} 个轮播方案；开启自动轮播后生效。", (System.FormattableString)$"{_cycleProfileIds.Count} profiles are queued; enable auto cycle to use them.")
         };
         UpdateCycleButtons();
     }
@@ -953,7 +1021,7 @@ public partial class HudCustomizerView : UserControl
             IsBuiltIn = false,
             BuiltInKey = "",
             Category = "自定义",
-            Name = LocalizationManager.Text($"自定义方案 {number}", $"Custom Profile {number}"),
+            Name = LocalizationManager.Formatted($"自定义方案 {number}", (System.FormattableString)$"Custom Profile {number}"),
             TitleTemplate = LocalizationManager.Text("系统状态", "System Status"),
             AnimationMode = "Full",
             LeftIcon = "clock",
@@ -1019,7 +1087,7 @@ public partial class HudCustomizerView : UserControl
                 AutoCycle = AutoCycleSwitch.IsChecked == true,
                 CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
                 CycleProfileIds = GetSanitizedCycleProfileIds(),
-                CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex == 0 ? "Simple" : "Full",
+                CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
                 ActiveProfileId = _profiles[_selectedIndex].Id,
                 DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),
                 DeepSeekPeakWindows = DeepSeekPeriodCalendar.OfficialWindows,
@@ -1046,7 +1114,8 @@ public partial class HudCustomizerView : UserControl
         }
         catch (Exception ex)
         {
-            ProfileStatusText.Text = LocalizationManager.IsEnglish ? "Preview failed. See logs." : "显示失败：" + ex.Message;
+            Diagnostics.AppLog.Error("HUD preview failed.",ex);
+            ProfileStatusText.Text = LocalizationManager.Text("预览失败，请查看日志。","Preview failed. See logs.");
         }
         finally
         {
@@ -1056,11 +1125,11 @@ public partial class HudCustomizerView : UserControl
 
     private IReadOnlyList<VariableDefinition> GetAllVariableDefinitions()
     {
-        var list = VariableCatalog.AllBuiltIns.Select(VariableLocalization.Localize).ToList();
+        var list = VariableCatalog.VisibleBuiltIns.Select(VariableLocalization.Localize).ToList();
         foreach (var s in _httpSources)
         {
             foreach (string suffix in new[] { "error", "status" })
-                list.Add(VariableCatalog.CreateCustom($"custom.{Sanitize(s.Name)}.{suffix}"));
+                list.Add(VariableLocalization.Localize(VariableCatalog.CreateCustom($"custom.{Sanitize(s.Name)}.{suffix}")));
             foreach (var f in s.Fields)
             {
                 var key = $"custom.{Sanitize(s.Name)}.{Sanitize(f.Variable)}";
@@ -1121,6 +1190,8 @@ public partial class HudCustomizerView : UserControl
                 VariableList.SelectedItem = match;
         }
     }
+
+    internal void RefreshHardwareVariables() { RebuildVariableCategories();RefreshVariableList(); }
 
     private void OnVariableSelected(object? sender, SelectionChangedEventArgs e)
     {
@@ -1184,7 +1255,7 @@ public partial class HudCustomizerView : UserControl
                 ? new List<CustomHttpSource>()
                 : HttpSourceConfiguration.Parse(sourceText);
             _httpSources = parsed;
-            HttpStatusText.Text = LocalizationManager.Text($"已载入 {_httpSources.Count} 个 HTTP 数据源", $"Loaded {_httpSources.Count} HTTP data source(s)");
+            HttpStatusText.Text = LocalizationManager.Formatted($"已载入 {_httpSources.Count} 个 HTTP 数据源", (System.FormattableString)$"Loaded {_httpSources.Count} HTTP data source(s)");
             RebuildVariableCategories();
             RefreshVariableList();
             return true;

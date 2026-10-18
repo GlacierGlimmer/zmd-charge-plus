@@ -19,6 +19,7 @@ public partial class TrayMenuWindow : Window
     {
         InitializeComponent();
         LocalizationManager.ApplyStaticText(this);
+        FlowDirection=LocalizationManager.IsRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
 
         try
         {

@@ -17,7 +17,7 @@ public static class HudColorRuleParser
             if (string.IsNullOrWhiteSpace(line) || line.TrimStart().StartsWith("//")) continue;
             var match = Rule.Match(line);
             if (!match.Success)
-                throw new FormatException(LocalizationManager.Text($"颜色条件第 {lineNumber} 行无效。例：cpu.usage >= 80 => #FF4D4F", $"Invalid color rule on line {lineNumber}. Example: cpu.usage >= 80 => #FF4D4F"));
+                throw new FormatException(LocalizationManager.Formatted($"颜色条件第 {lineNumber} 行无效。例：cpu.usage >= 80 => #FF4D4F", (System.FormattableString)$"Invalid color rule on line {lineNumber}. Example: cpu.usage >= 80 => #FF4D4F"));
             rules.Add(new HudColorRule
             {
                 Variable = match.Groups["var"].Value,

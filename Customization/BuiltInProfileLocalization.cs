@@ -9,11 +9,25 @@ public static class BuiltInProfileLocalization
 
     public static HudProfile ForLanguage(HudProfile profile, AppLanguage language)
     {
+        var canonical=Canonical(profile,language==AppLanguage.SimplifiedChinese ? AppLanguage.SimplifiedChinese : AppLanguage.English);
+        if(language is AppLanguage.SimplifiedChinese or AppLanguage.English || string.IsNullOrWhiteSpace(profile.BuiltInKey))return canonical;
+        string T(string value)=>LocalizationManager.TranslateEnglish(value,language);
+        string name=profile.BuiltInKey is "system.display-fps" or "system.window-fps"
+            ? T(profile.BuiltInKey=="system.display-fps" ? "Display FPS" : "Window FPS")+" ("+T("Run as administrator")+")" : T(canonical.Name);
+        string title=T(canonical.TitleTemplate);
+        if(profile.BuiltInKey=="deepseek.balance-period")title=title.Replace("{deepseek.period.name}","{deepseek.period.name_zh}",StringComparison.Ordinal);
+        return canonical with {
+            Category=T(canonical.Category),Name=name,TaglineTemplate=T(canonical.TaglineTemplate),TitleTemplate=title,
+            PrimaryTemplate=T(canonical.PrimaryTemplate),SecondaryTemplate=T(canonical.SecondaryTemplate),RightTemplate=T(canonical.RightTemplate),RightSuffix=T(canonical.RightSuffix)};
+    }
+
+    private static HudProfile Canonical(HudProfile profile,AppLanguage language)
+    {
         if (profile.BuiltInKey is "system.display-fps" or "system.window-fps")
         {
             bool display=profile.BuiltInKey=="system.display-fps",english=language==AppLanguage.English;
             string name=english ? (display ? "Display FPS" : "Window FPS") : (display ? "显示器帧率" : "窗口帧率");
-            return profile with { Category=english ? "System" : "系统",Name=name+(english ? " (Requires administrator authorization)" : "（需管理员授权）"),
+            return profile with { Category=english ? "System" : "系统",Name=name+(english ? " (Run as administrator required)" : "（需管理员身份运行）"),
                 TitleTemplate=english ? name : (display ? "显示器帧率" : "窗口帧率") };
         }
         if (language != AppLanguage.English || string.IsNullOrWhiteSpace(profile.BuiltInKey))

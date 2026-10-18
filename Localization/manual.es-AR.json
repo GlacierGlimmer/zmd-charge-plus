@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Pasos",
+    "Explicaciones y parámetros",
+    "Ejemplo",
+    "Copia el ejemplo y adapta los valores a tu configuración. Los nombres de variables, las funciones y la sintaxis del código no se traducen.",
+    "Referencia de funciones y formatos"
+  ],
+  "start": [
+    "Primeros pasos",
+    "Muestra tu primer HUD y después personalízalo.",
+    "Activa el HUD en Visualización y posición. Activa Siempre visible para mantenerlo en pantalla.\nElige un perfil integrado en Contenido del HUD y abre la vista previa.\nPulsa Guardar y aplicar en la parte superior para guardar y utilizar los ajustes.",
+    "Guardar junto al perfil conserva sus cambios en el editor. Modificar un perfil integrado crea una copia personalizada. La vista previa no sustituye la configuración en uso. Guardar y aplicar confirma todos los ajustes y los aplica al HUD en ejecución."
+  ],
+  "display": [
+    "Visualización, posición y aspecto",
+    "Configura la visibilidad, la pantalla y la apariencia.",
+    "Selecciona la pantalla de destino y una posición predefinida o coordenadas propias.\nAjusta el tamaño, la opacidad y la fuente.\nElige el modo permanente o temporal y aplica los cambios.",
+    "Las posiciones del área de trabajo evitan la barra de tareas. Las posiciones de pantalla usan sus límites completos; las coordenadas negativas son normales con varios monitores. El modo temporal aparece por un evento y después se retrae. El muestreo es compartido; los relojes y las API conservan sus propios intervalos.\n\nArriba puedes elegir un idioma o seguir el sistema. Solo el idioma se guarda al instante; los demás cambios quedan sin guardar en el editor. Los idiomas o textos no disponibles usan inglés. Se conservan tus textos y los nombres de variables."
+  ],
+  "profiles": [
+    "Perfiles y contenido del HUD",
+    "Define los textos, los iconos y el anillo.",
+    "Crea un perfil o edita una copia de uno integrado.\nIntroduce el título, los valores principales y secundarios, el sufijo, los iconos y el color.\nSelecciona la variable del anillo y sus límites; comprueba la vista previa y aplica.",
+    "Los campos combinan texto normal y variables entre llaves. El anillo representa el valor entre el mínimo y el máximo y limita el resultado a 0–100 %. La escala no cambia la lectura escrita. Las reglas de color usan las unidades originales. Eliminar un perfil personalizado no borra los perfiles integrados."
+  ],
+  "variables": [
+    "Variables, plantillas y expresiones",
+    "Combina datos para crear textos legibles.",
+    "Busca una variable en Gestión de datos y consulta su descripción y unidad.\nCopia la clave para reglas o anillos; copia la plantilla para campos de texto.\nUtiliza los ejemplos y la referencia de funciones para ajustar el formato.",
+    "Las etapas de formato se ejecutan de izquierda a derecha. 0.0 muestra un decimal y auto:1 elige la unidad; no añadas de nuevo una unidad automática. Los nombres de funciones no cambian. Las claves antiguas siguen funcionando. Se ocultan duplicados, pero se conservan los indicadores de resumen. -- indica que no hay una lectura válida."
+  ],
+  "hardware": [
+    "Sensores y controladores",
+    "Consulta mediciones y resuelve temperaturas ausentes.",
+    "Abre Gestión de datos → Datos de hardware y revisa el estado del controlador.\nSi falta PawnIO, instálalo, confirma la solicitud de Windows y cierra ECP por completo.\nVuelve a ejecutar ECP como administrador y actualiza las mediciones.\nBusca un sensor, copia su variable o exporta el diagnóstico.",
+    "Los permisos de administrador no sustituyen al controlador. Los datos no admitidos quedan sin valor. Núcleo, encapsulado, punto caliente y memoria son sensores diferentes. Los mínimos y máximos son el historial de la sesión, no límites del hardware. La información SMBIOS no equivale a una tabla SPD/XMP/EXPO completa."
+  ],
+  "sources": [
+    "Configurar fuentes de datos",
+    "Conecta DeepSeek, API JSON y AIDA64.",
+    "Introduce la clave de DeepSeek y aplica los ajustes.\nPara HTTP, define nombre, dirección GET, cabeceras, intervalo y rutas JSON. Activa la fuente cuando esté lista.\nUsa custom.<source>.<variable> en el perfil.\nEn AIDA64, selecciona los datos y activa su exportación por memoria compartida, registro o WMI; mantén AIDA64 abierto.",
+    "La clave de DeepSeek se cifra para el usuario actual de Windows. Los horarios usan la hora de Pekín y los fines de semana siguen fuera de punta. Consulta status y error ante fallos HTTP. Un muestreo más rápido no omite la caché. Las variables de entorno evitan guardar secretos directamente en JSON. ECP solo lee los datos que AIDA64 exporta realmente."
+  ],
+  "cycle": [
+    "Rotación, clics y animaciones",
+    "Alterna entre varios perfiles.",
+    "Añade perfiles a la lista y ajusta su orden.\nActiva la rotación automática y su intervalo si la necesitas.\nElige una animación simple, completa o de desplazamiento hacia arriba.\nActiva el cambio al hacer clic para avanzar manualmente.",
+    "Quitar un elemento de la lista no elimina su perfil. Una lista vacía usa el perfil actual; una lista de un elemento no cambia a otro perfil. El desplazamiento hacia arriba mueve el contenido del HUD permanente. Cada HUD usa su propia lista y reinicia su temporizador al hacer clic. Los cambios de período DeepSeek conservan la animación completa."
+  ],
+  "summons": [
+    "Atajos y zonas del ratón",
+    "Muestra u oculta los HUD cuando lo necesites.",
+    "Introduce un atajo con Ctrl o Alt, opcionalmente Shift, y aplica.\nElige una aparición simple o completa; al ocultarse se reproduce una animación de retirada.\nEn modo temporal, activa una zona y ajusta anclaje, tamaño, desplazamiento y tiempo de permanencia.",
+    "F12 y las combinaciones reservadas se rechazan. Si el nuevo atajo está ocupado, se mantiene el anterior. El atajo controla todos los HUD sin cambiar sus posiciones; la ocultación dura solo esta sesión. Las zonas usan toda la pantalla y se mantienen dentro de sus límites. Sal y vuelve a entrar para reactivarlas; opcionalmente pueden avanzar la lista."
+  ],
+  "triggers": [
+    "Reglas de activación",
+    "Muestra temporalmente el HUD según los datos.",
+    "Añade una regla en Contenido del HUD y actívala.\nSelecciona una variable y el modo: umbral, cambio de valor o paso a verdadero.\nConfigura el tiempo de espera, desactiva Siempre visible y aplica.",
+    "La primera muestra y la recuperación de datos ausentes solo establecen la referencia. Una condición mantenida puede activarse otra vez al terminar la espera. Las reglas y listas son independientes para cada HUD. Ejemplos: cpu.usage >= 90 con 30 segundos de espera, o cambios de media.title para anunciar otra canción."
+  ],
+  "special": [
+    "Hora, red y FPS",
+    "Configura las opciones específicas de cada perfil.",
+    "En el reloj mundial, selecciona un desfase UTC fijo y, si procede, una hora objetivo diaria.\nEn red, elige las unidades y el ancho de banda de referencia del anillo.\nEn las sondas, elige destino y protocolo; TCP y UDP usan el puerto indicado.\nPara FPS, actualiza la lista y selecciona una ventana o pantalla.",
+    "Un desfase fijo no cambia por el horario de verano. 1 MB/s equivale a 8 Mbps; la referencia del anillo no limita la conexión. Una sonda fallida no demuestra una desconexión general. Los FPS representan fotogramas presentados, no la frecuencia fija de la pantalla; pueden requerir permisos de administrador. La GPU se selecciona por perfil."
+  ],
+  "media": [
+    "Información multimedia y progreso",
+    "Muestra la sesión multimedia de Windows.",
+    "Usa media.title_artist para título y artista.\nAñade media.position_text y media.duration_text para los tiempos.\nConfigura media.progress como variable del anillo con un rango de 0 a 100.",
+    "El reproductor debe publicar una sesión multimedia de Windows. Durante la reproducción, la posición sigue la línea temporal y la velocidad informadas; en pausa no se extrapola. Un directo sin duración no tiene un porcentaje válido. Los metadatos que el reproductor no proporciona quedan sin valor."
+  ],
+  "instances": [
+    "Varios HUD experimentales",
+    "Configura varias vistas independientes.",
+    "Activa varios HUD en Funciones experimentales.\nAñade un HUD secundario, asígnale un nombre y selecciónalo para editarlo.\nGuarda y aplica las instancias nuevas antes de usar su vista previa.",
+    "El HUD seleccionado se resalta. Cada instancia tiene sus perfiles, posición, lista, reglas y zonas. El intervalo de muestreo, el atajo global y la opción general de cambio al hacer clic son compartidos. Un clic solo avanza el HUD pulsado. Eliminar una instancia secundaria no elimina el HUD principal."
+  ],
+  "maintenance": [
+    "Configuración, copias y mantenimiento",
+    "Conserva tus ajustes y consulta los diagnósticos.",
+    "Antes de cambios importantes, exporta la configuración o crea una copia desde Acerca de.\nImporta una configuración para restaurarla.\nAbre los registros o la carpeta de ajustes para investigar fallos.\nTras restablecer los valores, aplica los ajustes cargados.",
+    "Las claves cifradas pueden requerir una nueva introducción al cambiar de equipo o de cuenta. Un fallo al buscar actualizaciones no demuestra que la versión esté al día. Los paquetes de desarrollo pueden mantener el mismo número; consulta la descripción del paquete recibido."
+  ],
+  "troubleshooting": [
+    "Solución de problemas y avisos",
+    "Revisa el modo de visualización y las fuentes.",
+    "Si el HUD no aparece, revisa el interruptor, la ocultación por atajo, el modo, la pantalla, la posición y la opacidad.\nEn modo temporal, comprueba el evento, la zona o la regla esperados.\nAnte --, verifica sensores, permisos, clave API, ruta JSON o expresión.",
+    "-- no es un cero real y un formato no repara datos ausentes. La casilla de avisos silencia permanentemente solo las variables ya indicadas en esa ventana. Las demás continúan avisando. Cerrar normalmente solo confirma ese incidente. Los errores de expresión se distinguen por perfil y expresión. Silenciar no repara ni detiene la recopilación."
+  ]
+}

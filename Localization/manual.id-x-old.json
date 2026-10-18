@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Langkah penggoenaan",
+    "Keterangan dan parameter",
+    "Tjontoh",
+    "Salin tjontoh laloe sesoeaikan nilainja. Nama variabel, foengsi, dan sintaks kode tidak diterdjemahkan.",
+    "Referensi foengsi dan format"
+  ],
+  "start": [
+    "Moelai menggoenakan ETJP",
+    "Tampilkan HUD pertama, laloe sesoeaikan isinja.",
+    "Aktifkan HUD dan tampilan selaloe terlihat di Tampilan dan posisi.\nPilih profil bawaan di Konten HUD, laloe boeka pratindjaoe.\nTekan Simpan dan terapkan di bagian atas.",
+    "Simpan di editor menjimpan profil. Mengedit profil bawaan memboeat salinan choesoes. Pratindjaoe tidak mengganti pengatoeran jang sedang digoenakan; tombol atas menjimpan dan menerapkan semoeanja."
+  ],
+  "display": [
+    "Tampilan, posisi, dan roepa",
+    "Atoer monitor serta mode tampilan.",
+    "Pilih monitor dan posisi bawaan ataoe koordinat sendiri.\nAtoer oekoeran, opasitas, dan font.\nPilih tampilan tetap ataoe sementara, laloe terapkan.",
+    "Area kerdja menghindari bilah toegas; batas lajar memakai seloeroeh lajar. Koordinat negatif normal pada beberapa monitor. Mode sementara moentjoel karena peristiwa laloe menoetoep. Pengoempoelan data dibagi bersama, sedangkan djam dan API memiliki interval pembaroean sendiri.\n\nPilih bahasa ataoe ikoeti sistem di bagian atas. Hanja bahasa jang langsoeng disimpan; peroebahan lain tetap beloem disimpan di editor. Bahasa ataoe teks jang tidak tersedia memakai Inggris. Teks Anda dan nama variabel tetap sama."
+  ],
+  "profiles": [
+    "Profil dan isi HUD",
+    "Atoer teks, ikon, dan tjintjin.",
+    "Boeat profil ataoe edit salinan profil bawaan.\nIsi djoedoel, nilai oetama dan tambahan, achiran, ikon, serta warna.\nPilih variabel dan batas tjintjin, periksa pratindjaoe, laloe terapkan.",
+    "Teks biasa dapat digaboengkan dengan variabel dalam koeroeng koerawal. Tjintjin memetakan rentang ke 0–100% tanpa mengoebah angka teks. Atoeran warna memakai satoean asli. Menghapoes profil choesoes tidak menghapoes profil bawaan."
+  ],
+  "variables": [
+    "Variabel, templat, dan ekspresi",
+    "Tjari data dan tentoekan formatnja.",
+    "Tjari variabel di Manadjemen data dan batja deskripsi serta satoeannja.\nSalin nama oentoek atoeran ataoe tjintjin; salin templat oentoek teks.\nGoenakan tjontoh dan referensi berikoet.",
+    "Format didjalankan dari kiri ke kanan. 0.0 menampilkan satoe desimal; auto:1 memilih satoean otomatis, djadi djangan menambahkan satoean lagi. Nama foengsi tetap. Nama variabel lama tetap berfoengsi. Doeplikat disemboenjikan, indikator ringkasan tetap tersedia. -- berarti tidak ada nilai jang valid."
+  ],
+  "hardware": [
+    "Sensor dan driver",
+    "Periksa soehoe ataoe pembatjaan jang tidak moentjoel.",
+    "Boeka Manadjemen data → Data perangkat keras dan periksa driver.\nDjika PawnIO beloem ada, instal dan setoedjoei konfirmasi Windows.\nKeloear sepenoehnja dari ETJP, laloe djalankan kembali sebagai administrator.\nSegarkan data, tjari sensor, laloe salin variabel ataoe ekspor diagnosis.",
+    "Hak administrator tidak menggantikan driver. Data jang tidak didoekoeng tetap tidak tersedia. Inti, paket, titik panas, dan memori adalah sensor berbeda. Minimoem dan maksimoem meroepakan riwajat sesi ini, boekan batas spesifikasi. SMBIOS boekan tabel SPD/XMP/EXPO lengkap."
+  ],
+  "sources": [
+    "Konfigoerasi soember data",
+    "Hoeboengkan DeepSeek, API JSON, dan AIDA64.",
+    "Masoekkan koentji DeepSeek laloe terapkan.\nOentoek HTTP, atoer nama, OERL GET, header, interval, dan djaloer JSON; aktifkan soember.\nGoenakan custom.<source>.<variable> dalam profil.\nDi AIDA64, pilih data dan aktifkan ekspor melaloei memori bersama, registri, ataoe WMI; biarkan AIDA64 berdjalan.",
+    "Koentji DeepSeek dienkripsi oentoek penggoena Windows saat ini. Periode memakai waktoe Beidjing; achir pekan termasoek loear djam siboek. Periksa statoes dan error saat HTTP gagal. Pengoempoelan lebih tjepat tidak melewati tjatjhe. Variabel lingkoengan dapat menghindari penjimpanan rahasia langsoeng dalam JSON. ETJP hanja membatja data jang benar-benar diekspor AIDA64."
+  ],
+  "cycle": [
+    "Rotasi dan animasi",
+    "Ganti beberapa profil setjara beroeroetan.",
+    "Tambahkan profil ke daftar dan atoer oeroetannja.\nAktifkan rotasi otomatis beserta interval djika diperloekan.\nPilih animasi sederhana, lengkap, ataoe goelir ke atas.\nAktifkan pergantian dengan klik oentoek madjoe setjara manoeal.",
+    "Mengeloearkan dari daftar tidak menghapoes profil. Daftar kosong memakai profil saat ini; satoe item tidak berpindah ke profil lain. Goelir menggerakkan isi HUD tetap. Setiap HUD memiliki daftar sendiri; klik memoelai oelang waktoenja. Pergantian periode DeepSeek memakai animasi lengkap."
+  ],
+  "summons": [
+    "Pintasan dan area mooese",
+    "Tampilkan ataoe semboenjikan HUD sesoeai keboetoehan.",
+    "Atoer pintasan dengan Ctrl ataoe Alt, opsional Shift, laloe terapkan.\nPilih animasi sederhana ataoe lengkap saat moentjoel. Saat disemboenjikan djoega ada animasi keloear.\nPada mode sementara, aktifkan area mooese dan atoer titik atjoean, oekoeran, djarak, serta waktoe diam.",
+    "F12 dan kombinasi jang ditjadangkan ditolak. Djika konflik, pintasan lama dipertahankan. Pintasan mengendalikan semoea HUD tanpa mengoebah posisi; statoes tersemboenji hanja berlakoe pada sesi ini. Area tetap di dalam lajar penoeh. Keloear laloe masoek lagi oentoek mengaktifkan oelang; area djoega dapat memadjoekan daftar."
+  ],
+  "triggers": [
+    "Atoeran pemitjoe",
+    "Moentjoelkan HUD sementara berdasarkan data.",
+    "Tambahkan dan aktifkan atoeran di Konten HUD.\nPilih variabel dan mode: ambang, peroebahan nilai, ataoe mendjadi benar.\nAtoer djeda, nonaktifkan tampilan selaloe terlihat, laloe terapkan.",
+    "Sampel pertama dan pemoelihan data hanja membentoek nilai atjoean. Kondisi jang bertahan dapat memitjoe lagi sesoedah djeda. Atoeran dan daftar independen oentoek setiap HUD. Tjontoh: cpu.usage >= 90 dengan djeda 30 detik, ataoe peroebahan media.title oentoek memberi tahoe lagoe baroe."
+  ],
+  "special": [
+    "Djam, djaringan, dan FPS",
+    "Atoer fitoer choesoes setiap profil.",
+    "Pilih selisih OETTJ tetap dan target waktoe harian opsional pada djam doenia.\nAtoer satoean dan atjoean lebar pita tjintjin djaringan.\nPilih toedjoean dan protokol pemeriksaan; TTJP/OEDP memakai port.\nOentoek FPS, segarkan daftar dan pilih djendela ataoe lajar.",
+    "Selisih tetap tidak mengikoeti waktoe moesim panas. 1 MB/s sama dengan 8 Mbps; atjoean tidak membatasi koneksi. Satoe pemeriksaan gagal tidak memboektikan internet terpoetoes seloeroehnja. FPS mengoekoer bingkai jang disadjikan, boekan ladjoe penjegaran tetap lajar; moengkin perloe administrator. GPU dipilih per profil."
+  ],
+  "media": [
+    "Media dan kemadjoean",
+    "Tampilkan sesi media Windows.",
+    "Goenakan media.title_artist oentoek djoedoel dan artis.\nGoenakan media.position_text dan media.duration_text oentoek waktoe.\nAtoer tjintjin ke media.progress dengan rentang 0–100.",
+    "Pemoetar haroes menerbitkan sesi media Windows. Posisi mengikoeti lini masa dan ketjepatan jang dilaporkan; saat djeda tidak bergerak. Siaran tanpa doerasi tidak memiliki persentase valid. Metadata jang tidak disediakan tetap tidak tersedia."
+  ],
+  "instances": [
+    "Beberapa HUD eksperimental",
+    "Boeat tampilan jang independen.",
+    "Aktifkan beberapa HUD di Fitoer eksperimental.\nTambahkan HUD tambahan, beri nama, laloe pilih oentoek diedit.\nSimpan dan terapkan HUD baroe sebeloem pratindjaoe.",
+    "HUD terpilih ditandai. Posisi, profil, daftar, atoeran, dan area tersendiri oentoek setiap HUD. Interval pengoempoelan, pintasan global, dan sakelar pergantian klik dibagi bersama. Klik hanja memadjoekan HUD jang diklik. Menghapoes HUD tambahan tidak menghapoes jang oetama."
+  ],
+  "maintenance": [
+    "Pengatoeran dan pemeliharaan",
+    "Tjadangkan pengatoeran dan periksa diagnosis.",
+    "Ekspor pengatoeran ataoe boeat tjadangan dari Tentang sebeloem peroebahan besar.\nImpor oentoek memoelihkan.\nBoeka log ataoe folder pengatoeran saat menjelidiki masalah.\nSetelah reset, terapkan pengatoeran jang dimoeat.",
+    "Koentji terenkripsi moengkin perloe dimasoekkan oelang pada PTJ ataoe akoen Windows lain. Kegagalan memeriksa pembaroean boekan boekti versi soedah terbaroe. Paket pengembangan dapat memakai nomor jang sama; periksa keterangan paket."
+  ],
+  "troubleshooting": [
+    "Masalah dan peringatan data",
+    "Periksa tampilan dan soembernja.",
+    "Djika HUD tidak moentjoel, periksa sakelar, pintasan semboenji, mode, monitor, koordinat, dan opasitas.\nOentoek mode sementara, periksa peristiwa, area, ataoe atoeran.\nOentoek --, periksa sensor, izin, koentji API, djaloer JSON, dan ekspresi.",
+    "-- boekan angka nol; format tidak memperbaiki pengoempoelan. Kotak tjentang peringatan hanja membisoekan setjara permanen variabel jang tertjantoem di djendela itoe. Variabel lain tetap memperingatkan. Menoetoep biasa hanja mengakoei kedjadian terseboet. Kesalahan ekspresi dibedakan menoeroet profil dan ekspresi. Membisoekan tidak memperbaiki ataoe menghentikan pengoempoelan."
+  ]
+}

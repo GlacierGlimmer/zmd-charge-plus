@@ -1,0 +1,223 @@
+Name|名稱|名前|이름|Name|Nom|Nombre|Nome|Имя|الاسم|नाम|নাম|نام|Nama|Tên|ชื่อ|Ad|Nome|نام|མིང་།
+Average|平均|平均|평균|Durchschnitt|Moyenne|Promedio|Média|Среднее|المتوسط|औसत|গড়|اوسط|Rata-rata|Trung bình|เฉลี่ย|Ortalama|Media|میانگین|ཆ་སྙོམས།
+Percent|百分比|割合|백분율|Prozent|Pourcentage|Porcentaje|Porcentagem|Процент|النسبة|प्रतिशत|শতাংশ|فیصد|Persen|Phần trăm|ร้อยละ|Yüzde|Percentuale|درصد|བརྒྱ་ཆ།
+Count|數量|数|개수|Anzahl|Nombre|Cantidad|Quantidade|Количество|العدد|संख्या|সংখ্যা|تعداد|Jumlah|Số lượng|จำนวน|Sayı|Conteggio|تعداد|གྲངས་ཀ
+Core|核心|コア|코어|Kern|Cœur|Núcleo|Núcleo|Ядро|النواة|कोर|কোর|کور|Inti|Lõi|คอร์|Çekirdek|Nucleo|هسته|ལྟེ་བ།
+Clock|時脈|クロック|클록|Takt|Horloge|Reloj|Clock|Частота|التردد|क्लॉक|ক্লক|کلاک|Clock|Xung nhịp|สัญญาณนาฬิกา|Saat|Clock|کلاک|ཟློས་ཕྱོད།
+Voltage|電壓|電圧|전압|Spannung|Tension|Voltaje|Tensão|Напряжение|الجهد|वोल्टेज|ভোল্টেজ|وولٹیج|Tegangan|Điện áp|แรงดันไฟฟ้า|Gerilim|Tensione|ولتاژ|གློག་གནོན།
+Temperature|溫度|温度|온도|Temperatur|Température|Temperatura|Temperatura|Температура|الحرارة|तापमान|তাপমাত্রা|درجہ حرارت|Suhu|Nhiệt độ|อุณหภูมิ|Sıcaklık|Temperatura|دما|དྲོད་ཚད།
+Frequency|頻率|周波数|주파수|Frequenz|Fréquence|Frecuencia|Frequência|Частота|التردد|आवृत्ति|কম্পাঙ্ক|تعدد|Frekuensi|Tần số|ความถี่|Frekans|Frequenza|فرکانس|ཟློས་ཕྱོད།
+Architecture|架構|アーキテクチャ|아키텍처|Architektur|Architecture|Arquitectura|Arquitetura|Архитектура|البنية|वास्तुकला|স্থাপত্য|ساخت|Arsitektur|Kiến trúc|สถาปัตยกรรม|Mimari|Architettura|معماری|སྒྲོམ་གཞི།
+Physical|實體|物理|물리|Physisch|Physique|Físico|Físico|Физический|فعلي|भौतिक|ভৌত|طبعی|Fisik|Vật lý|กายภาพ|Fiziksel|Fisico|فیزیکی|དངོས་ཡོད།
+Logical|邏輯|論理|논리|Logisch|Logique|Lógico|Lógico|Логический|منطقي|तार्किक|যৌক্তিক|منطقی|Logis|Lôgic|เชิงตรรกะ|Mantıksal|Logico|منطقی|གཏན་ཚིགས།
+Processor|處理器|プロセッサ|프로세서|Prozessor|Processeur|Procesador|Processador|Процессор|المعالج|प्रोसेसर|প্রসেসর|پروسیسر|Prosesor|Bộ xử lý|ตัวประมวลผล|İşlemci|Processore|پردازنده|ཐག་གཅོད་ཆས།
+Socket|插槽|ソケット|소켓|Sockel|Socket|Zócalo|Soquete|Сокет|المقبس|सॉकेट|সকেট|ساکٹ|Soket|Đế cắm|ซ็อกเก็ต|Soket|Socket|سوکت|འཛུགས་གནས།
+Virtualization|虛擬化|仮想化|가상화|Virtualisierung|Virtualisation|Virtualización|Virtualização|Виртуализация|المحاكاة الافتراضية|वर्चुअलाइज़ेशन|ভার্চুয়ালাইজেশন|ورچوئلائزیشن|Virtualisasi|Ảo hóa|การจำลองเสมือน|Sanallaştırma|Virtualizzazione|مجازی‌سازی|རྟོག་བཟོ།
+Cache|快取|キャッシュ|캐시|Cache|Cache|Caché|Cache|Кэш|الذاكرة المؤقتة|कैश|ক্যাশ|کیش|Cache|Bộ nhớ đệm|แคช|Önbellek|Cache|حافظه نهان|གནས་སྐབས་དྲན་གསོག
+Speed|速度|速度|속도|Geschwindigkeit|Vitesse|Velocidad|Velocidade|Скорость|السرعة|गति|গতি|رفتار|Kecepatan|Tốc độ|ความเร็ว|Hız|Velocità|سرعت|མྱུར་ཚད།
+Bus|匯流排|バス|버스|Bus|Bus|Bus|Barramento|Шина|الناقل|बस|বাস|بس|Bus|Bus|บัส|Veri yolu|Bus|گذرگاه|གཞི་གྲངས་སྐྱེལ་ལམ།
+Idle|閒置|アイドル|유휴|Leerlauf|Inactivité|Inactivo|Ocioso|Простой|الخمول|निष्क्रिय|নিষ্ক্রিয়|غیر فعال|Menganggur|Nhàn rỗi|ว่าง|Boşta|Inattivo|بیکار|བྲེལ་མེད།
+Kernel|核心態|カーネル|커널|Kernel|Noyau|Núcleo del sistema|Kernel|Ядро системы|النواة النظامية|कर्नेल|কার্নেল|کرنل|Kernel|Nhân hệ thống|เคอร์เนล|Çekirdek sistemi|Kernel|هسته سیستم|མ་ལག་ལྟེ་བ།
+User|使用者|ユーザー|사용자|Benutzer|Utilisateur|Usuario|Usuário|Пользователь|المستخدم|उपयोगकर्ता|ব্যবহারকারী|صارف|Pengguna|Người dùng|ผู้ใช้|Kullanıcı|Utente|کاربر|སྤྱོད་མཁན།
+Interrupt|中斷|割り込み|인터럽트|Interrupt|Interruption|Interrupción|Interrupção|Прерывание|المقاطعة|इंटरप्ट|ইন্টারাপ্ট|انٹرپٹ|Interupsi|Ngắt|อินเทอร์รัปต์|Kesme|Interrupt|وقفه|བར་འཇོག
+Context Switch|內容切換|コンテキスト切り替え|문맥 전환|Kontextwechsel|Changement de contexte|Cambio de contexto|Troca de contexto|Переключение контекста|تبديل السياق|संदर्भ स्विच|কনটেক্সট পরিবর্তন|سیاق کی تبدیلی|Alih konteks|Chuyển ngữ cảnh|สลับบริบท|Bağlam değişimi|Cambio di contesto|تعویض زمینه|གནས་བབ་བརྗེ་བ།
+Instruction|指令|命令|명령|Befehl|Instruction|Instrucción|Instrução|Инструкция|التعليمة|निर्देश|নির্দেশ|ہدایت|Instruksi|Lệnh|คำสั่ง|Komut|Istruzione|دستور|བཀོད་འདོམས།
+Second|秒|秒|초|Sekunde|Seconde|Segundo|Segundo|Секунда|ثانية|सेकंड|সেকেন্ড|سیکنڈ|Detik|Giây|วินาที|Saniye|Secondo|ثانیه|སྐར་ཆ།
+Hardware|硬體|ハードウェア|하드웨어|Hardware|Matériel|Hardware|Hardware|Оборудование|العتاد|हार्डवेयर|হার্ডওয়্যার|ہارڈویئر|Perangkat keras|Phần cứng|ฮาร์ดแวร์|Donanım|Hardware|سخت‌افزار|སྲ་ཆས།
+Reserved|保留|予約済み|예약됨|Reserviert|Réservé|Reservado|Reservado|Зарезервировано|محجوز|आरक्षित|সংরক্ষিত|مختص|Dicadangkan|Dành riêng|สงวนไว้|Ayrılmış|Riservato|رزروشده|བཀག་ཉར།
+Bytes|位元組|バイト|바이트|Byte|Octets|Bytes|Bytes|Байты|بايت|बाइट|বাইট|بائٹس|Bita|Byte|ไบต์|Bayt|Byte|بایت|ཡིག་ཚིགས།
+Free|可用|空き|여유|Frei|Libre|Libre|Livre|Свободно|حر|खाली|খালি|خالی|Kosong|Trống|ว่าง|Boş|Libero|آزاد|སྟོང་པ།
+Virtual|虛擬|仮想|가상|Virtuell|Virtuel|Virtual|Virtual|Виртуальный|افتراضي|वर्चुअल|ভার্চুয়াল|ورچوئل|Virtual|Ảo|เสมือน|Sanal|Virtuale|مجازی|རྟོག་བཟོས།
+Commit|認可記憶體|コミット|커밋|Zugesichert|Mémoire engagée|Memoria comprometida|Memória confirmada|Выделенная память|الذاكرة الملتزمة|कमिट मेमोरी|কমিট মেমোরি|کمٹ میموری|Memori komit|Bộ nhớ cam kết|หน่วยความจำที่ยืนยัน|Ayrılan bellek|Memoria impegnata|حافظه تخصیص‌یافته|སྤྲད་པའི་དྲན་གསོག
+Limit|上限|上限|한도|Grenze|Limite|Límite|Limite|Предел|الحد|सीमा|সীমা|حد|Batas|Giới hạn|ขีดจำกัด|Sınır|Limite|حد|མཚམས་ཚད།
+Paged Pool|分頁集區|ページプール|페이징 풀|Auslagerbarer Pool|Pool paginé|Grupo paginado|Pool paginado|Выгружаемый пул|تجمع قابل للترحيل|पेज्ड पूल|পেজড পুল|پیجڈ پول|Pool berpaginasi|Vùng nhớ phân trang|พูลแบบเพจ|Sayfalı havuz|Pool paginato|مخزن صفحه‌بندی‌شده|ཤོག་བགོས་དྲན་གསོག་ཚོགས།
+Nonpaged Pool|非分頁集區|非ページプール|비페이징 풀|Nicht auslagerbarer Pool|Pool non paginé|Grupo no paginado|Pool não paginado|Невыгружаемый пул|تجمع غير قابل للترحيل|नॉनपेज्ड पूल|ননপেজড পুল|نان پیجڈ پول|Pool tanpa paginasi|Vùng nhớ không phân trang|พูลไม่แบ่งเพจ|Sayfasız havuz|Pool non paginato|مخزن صفحه‌بندی‌نشده|ཤོག་མ་བགོས་དྲན་གསོག་ཚོགས།
+Standby|待命|スタンバイ|대기|Standby|Veille|En espera|Em espera|Ожидание|الاستعداد|स्टैंडबाय|স্ট্যান্ডবাই|اسٹینڈ بائی|Siaga|Chờ|สแตนด์บาย|Bekleme|Standby|آماده‌باش|གྲ་སྒྲིག
+Modified|已修改|変更済み|수정됨|Geändert|Modifié|Modificado|Modificado|Изменено|معدّل|संशोधित|পরিবর্তিত|تبدیل شدہ|Diubah|Đã sửa|แก้ไขแล้ว|Değiştirildi|Modificato|تغییریافته|བཅོས་ཟིན།
+Slot|插槽|スロット|슬롯|Steckplatz|Emplacement|Ranura|Slot|Слот|الفتحة|स्लॉट|স্লট|سلاٹ|Slot|Khe cắm|ช่อง|Yuva|Slot|شکاف|འཛུགས་གནས།
+Used|已使用|使用済み|사용됨|Belegt|Utilisé|Usado|Usado|Использовано|مستخدم|उपयोग किया|ব্যবহৃত|استعمال شدہ|Terpakai|Đã dùng|ใช้แล้ว|Kullanılan|Usato|استفاده‌شده|སྤྱད་ཟིན།
+Total|總計|合計|합계|Gesamt|Total|Total|Total|Всего|الإجمالي|कुल|মোট|کل|Total|Tổng|รวม|Toplam|Totale|مجموع|བསྡོམས།
+Dedicated|專用|専用|전용|Dediziert|Dédié|Dedicado|Dedicado|Выделенный|مخصص|समर्पित|নির্দিষ্ট|مخصوص|Khusus|Chuyên dụng|เฉพาะ|Ayrılmış|Dedicato|اختصاصی|ཆེད་སྤྱོད།
+Shared|共用|共有|공유|Gemeinsam|Partagé|Compartido|Compartilhado|Общий|مشترك|साझा|শেয়ার করা|مشترکہ|Bersama|Chia sẻ|ใช้ร่วมกัน|Paylaşılan|Condiviso|اشتراکی|མཉམ་སྤྱོད།
+Unified|統一|統合|통합|Vereinheitlicht|Unifié|Unificado|Unificado|Унифицированный|موحد|एकीकृत|একীভূত|یکجا|Terpadu|Hợp nhất|รวม|Birleşik|Unificato|یکپارچه|གཅིག་གྱུར།
+Driver|驅動程式|ドライバー|드라이버|Treiber|Pilote|Controlador|Driver|Драйвер|برنامج التشغيل|ड्राइवर|ড্রাইভার|ڈرائیور|Driver|Trình điều khiển|ไดรเวอร์|Sürücü|Driver|راه‌انداز|སྐུལ་འདེད་ཆས།
+Version|版本|バージョン|버전|Version|Version|Versión|Versão|Версия|الإصدار|संस्करण|সংস্করণ|نسخہ|Versi|Phiên bản|รุ่น|Sürüm|Versione|نسخه|ཐོན་རིམ།
+Date|日期|日付|날짜|Datum|Date|Fecha|Data|Дата|التاريخ|तारीख|তারিখ|تاریخ|Tanggal|Ngày|วันที่|Tarih|Data|تاریخ|ཚེས་གྲངས།
+Hotspot|熱點|ホットスポット|핫스폿|Hotspot|Point chaud|Punto caliente|Ponto quente|Горячая точка|النقطة الساخنة|हॉटस्पॉट|হটস্পট|ہاٹ اسپاٹ|Titik panas|Điểm nóng|จุดร้อน|Sıcak nokta|Punto caldo|نقطه داغ|དྲོད་མཐོའི་གནས།
+Junction|接面|ジャンクション|접합부|Sperrschicht|Jonction|Unión|Junção|Переход|الوصلة|जंक्शन|জাংশন|جنکشن|Sambungan|Tiếp giáp|รอยต่อ|Birleşim|Giunzione|اتصال|མཐུད་མཚམས།
+Fan|風扇|ファン|팬|Lüfter|Ventilateur|Ventilador|Ventoinha|Вентилятор|المروحة|पंखा|ফ্যান|پنکھا|Kipas|Quạt|พัดลม|Fan|Ventola|فن|རླུང་འཁོར།
+Compute|運算|計算|연산|Berechnung|Calcul|Cálculo|Cálculo|Вычисления|الحوسبة|गणना|গণনা|حساب|Komputasi|Tính toán|คำนวณ|Hesaplama|Calcolo|محاسبه|རྩིས་རྒྱག
+Video Decode|影片解碼|動画デコード|비디오 디코딩|Videodekodierung|Décodage vidéo|Decodificación de vídeo|Decodificação de vídeo|Декодирование видео|فك الفيديو|वीडियो डिकोड|ভিডিও ডিকোড|ویڈیو ڈی کوڈ|Dekode video|Giải mã video|ถอดรหัสวิดีโอ|Video çözme|Decodifica video|رمزگشایی ویدیو|བརྙན་གསང་འབྱེད།
+Video Encode|影片編碼|動画エンコード|비디오 인코딩|Videokodierung|Encodage vidéo|Codificación de vídeo|Codificação de vídeo|Кодирование видео|ترميز الفيديو|वीडियो एनकोड|ভিডিও এনকোড|ویڈیو انکوڈ|Enkode video|Mã hóa video|เข้ารหัสวิดีโอ|Video kodlama|Codifica video|رمزگذاری ویدیو|བརྙན་གསང་སྒྲིག
+Copy|複製|コピー|복사|Kopieren|Copie|Copia|Cópia|Копирование|نسخ|कॉपी|অনুলিপি|نقل|Salin|Sao chép|คัดลอก|Kopyalama|Copia|کپی|འདྲ་བཤུས།
+Power|功率|電力|전력|Leistung|Puissance|Potencia|Potência|Мощность|القدرة|शक्ति|বিদ্যুৎ শক্তি|توانائی|Daya|Công suất|กำลังไฟ|Güç|Potenza|توان|གློག་ཤུགས།
+Current|目前|現在|현재|Aktuell|Actuel|Actual|Atual|Текущий|الحالي|वर्तमान|বর্তমান|موجودہ|Saat ini|Hiện tại|ปัจจุบัน|Geçerli|Attuale|فعلی|ད་ལྟའི།
+Balance|餘額|残高|잔액|Guthaben|Solde|Saldo|Saldo|Баланс|الرصيد|शेष राशि|ব্যালান্স|بیلنس|Saldo|Số dư|ยอดคงเหลือ|Bakiye|Saldo|موجودی|ལྷག་དངུལ།
+Granted|贈送|付与|지급됨|Gewährt|Offert|Concedido|Concedido|Бонусный|ممنوح|प्रदत्त|প্রদত্ত|عطا کردہ|Diberikan|Được tặng|ได้รับ|Verilen|Concesso|اعطایی|སྤྲད་པ།
+Topped Up|儲值|チャージ|충전됨|Aufgeladen|Rechargé|Recargado|Recarregado|Пополненный|مشحون|रीचार्ज|রিচার্জ|ری چارج|Diisi ulang|Đã nạp|เติมเงิน|Yüklenen|Ricaricato|شارژشده|ཁ་སྣོན་དངུལ།
+Period|時段|時間帯|시간대|Zeitraum|Période|Período|Período|Период|الفترة|अवधि|সময়কাল|دورانیہ|Periode|Khung giờ|ช่วงเวลา|Dönem|Periodo|بازه|དུས་མཚམས།
+Remaining|剩餘|残り|남음|Verbleibend|Restant|Restante|Restante|Осталось|المتبقي|शेष|বাকি|باقی|Tersisa|Còn lại|เหลือ|Kalan|Rimanente|باقی|ལྷག་ཚད།
+Progress|進度|進捗|진행률|Fortschritt|Progression|Progreso|Progresso|Прогресс|التقدم|प्रगति|অগ্রগতি|پیش رفت|Kemajuan|Tiến độ|ความคืบหน้า|İlerleme|Avanzamento|پیشرفت|འཕེལ་ཚད།
+Local|本地|ローカル|로컬|Lokal|Local|Local|Local|Местный|محلي|स्थानीय|স্থানীয়|مقامی|Lokal|Cục bộ|ท้องถิ่น|Yerel|Locale|محلی|ས་གནས།
+Timezone|時區|タイムゾーン|시간대|Zeitzone|Fuseau horaire|Zona horaria|Fuso horário|Часовой пояс|المنطقة الزمنية|समय क्षेत्र|সময় অঞ্চল|ٹائم زون|Zona waktu|Múi giờ|เขตเวลา|Saat dilimi|Fuso orario|منطقه زمانی|དུས་ཁུལ།
+Next|下一個|次|다음|Nächster|Suivant|Siguiente|Próximo|Следующий|التالي|अगला|পরবর্তী|اگلا|Berikutnya|Tiếp theo|ถัดไป|Sonraki|Successivo|بعدی|རྗེས་མ།
+Switch|切換|切り替え|전환|Wechsel|Basculement|Cambio|Troca|Переключение|التبديل|बदलाव|পরিবর্তন|تبدیلی|Pergantian|Chuyển đổi|สลับ|Geçiş|Cambio|تغییر|བརྗེ་བ།
+Datetime|日期時間|日時|날짜 및 시간|Datum und Uhrzeit|Date et heure|Fecha y hora|Data e hora|Дата и время|التاريخ والوقت|तारीख और समय|তারিখ ও সময়|تاریخ اور وقت|Tanggal dan waktu|Ngày và giờ|วันเวลา|Tarih ve saat|Data e ora|تاریخ و زمان|ཚེས་གྲངས་དང་དུས་ཚོད།
+Latency|延遲|遅延|지연 시간|Latenz|Latence|Latencia|Latência|Задержка|التأخير|विलंब|বিলম্ব|تاخیر|Latensi|Độ trễ|เวลาแฝง|Gecikme|Latenza|تأخیر|ཕྱི་འགྱངས།
+Jitter|抖動|ジッター|지터|Jitter|Gigue|Variación|Variação|Джиттер|التذبذب|जिटर|জিটার|اتار چڑھاؤ|Jitter|Độ dao động|ความผันผวน|Gecikme değişimi|Jitter|نوسان تأخیر|འགྱུར་ཚད།
+Loss|遺失|損失|손실|Verlust|Perte|Pérdida|Perda|Потери|الفقد|हानि|ক্ষতি|ضیاع|Kehilangan|Mất gói|สูญเสีย|Kayıp|Perdita|افت|བོར་ཚད།
+Sent|已傳送|送信済み|보냄|Gesendet|Envoyé|Enviado|Enviado|Отправлено|مرسل|भेजा गया|পাঠানো|بھیجا گیا|Terkirim|Đã gửi|ส่งแล้ว|Gönderilen|Inviato|ارسال‌شده|བཏང་ཟིན།
+Received|已接收|受信済み|받음|Empfangen|Reçu|Recibido|Recebido|Получено|مستلم|प्राप्त|প্রাপ্ত|موصول|Diterima|Đã nhận|รับแล้ว|Alınan|Ricevuto|دریافت‌شده|ཐོབ་ཟིན།
+Lost|已遺失|損失数|손실됨|Verloren|Perdu|Perdido|Perdido|Потеряно|مفقود|खोया|হারানো|ضائع|Hilang|Đã mất|สูญหาย|Kaybolan|Perso|ازدست‌رفته|བོར་ཟིན།
+Target|目標|対象|대상|Ziel|Cible|Destino|Destino|Цель|الهدف|लक्ष्य|লক্ষ্য|ہدف|Target|Đích|เป้าหมาย|Hedef|Destinazione|هدف|དམིགས་ཡུལ།
+Timeout|逾時|タイムアウト|시간 초과|Zeitüberschreitung|Délai d’attente|Tiempo de espera|Tempo limite|Тайм-аут|المهلة|समय सीमा|সময়সীমা|انتظار کی حد|Batas waktu|Thời gian chờ|เวลารอ|Zaman aşımı|Tempo limite|مهلت|སྒུག་ཡུན།
+Reply|回覆|応答|응답|Antwort|Réponse|Respuesta|Resposta|Ответ|الرد|उत्तर|উত্তর|جواب|Balasan|Phản hồi|การตอบกลับ|Yanıt|Risposta|پاسخ|ལན།
+Resolve|解析|名前解決|이름 확인|Auflösung|Résolution|Resolución|Resolução|Разрешение|الحل|रिज़ॉल्व|সমাধান|حل|Resolusi|Phân giải|แก้ชื่อ|Çözümleme|Risoluzione|تفکیک نام|མིང་འགྲེལ།
+Connect|連線|接続|연결|Verbindung|Connexion|Conexión|Conexão|Подключение|الاتصال|जुड़ाव|সংযোগ|کنکشن|Koneksi|Kết nối|เชื่อมต่อ|Bağlantı|Connessione|اتصال|འབྲེལ་མཐུད།
+Endpoint|端點|エンドポイント|엔드포인트|Endpunkt|Point d’accès|Punto de acceso|Endpoint|Конечная точка|نقطة النهاية|एंडपॉइंट|এন্ডপয়েন্ট|اختتامی نقطہ|Titik akhir|Điểm cuối|ปลายทาง|Uç nokta|Endpoint|نقطه پایانی|མཐའ་སྣེ།
+Error|錯誤|エラー|오류|Fehler|Erreur|Error|Erro|Ошибка|خطأ|त्रुटि|ত্রুটি|خرابی|Galat|Lỗi|ข้อผิดพลาด|Hata|Errore|خطا|སྐྱོན།
+Last|上次|前回|마지막|Letzter|Dernier|Último|Último|Последний|الأخير|पिछला|সর্বশেষ|آخری|Terakhir|Gần nhất|ล่าสุด|Son|Ultimo|آخرین|མཐའ་མ།
+Success|成功|成功|성공|Erfolg|Réussite|Éxito|Sucesso|Успех|نجاح|सफलता|সফলতা|کامیابی|Berhasil|Thành công|สำเร็จ|Başarı|Successo|موفقیت|འགྲུབ་པ།
+Updated|更新時間|更新|업데이트됨|Aktualisiert|Mis à jour|Actualizado|Atualizado|Обновлено|محدّث|अपडेट हुआ|হালনাগাদ|تازہ کردہ|Diperbarui|Đã cập nhật|ปรับปรุงแล้ว|Güncellendi|Aggiornato|به‌روزشده|གསར་བཅོས་ཟིན།
+Active|作用中|アクティブ|활성|Aktiv|Actif|Activo|Ativo|Активный|نشط|सक्रिय|সক্রিয়|فعال|Aktif|Hoạt động|ทำงาน|Etkin|Attivo|فعال|འགུལ་བཞིན།
+Adapter|介面卡|アダプター|어댑터|Adapter|Adaptateur|Adaptador|Adaptador|Адаптер|المحوّل|एडाप्टर|অ্যাডাপ্টার|اڈاپٹر|Adaptor|Bộ điều hợp|อะแดปเตอร์|Bağdaştırıcı|Adattatore|مبدل|མཐུད་སྒྱུར་ཆས།
+Address|位址|アドレス|주소|Adresse|Adresse|Dirección|Endereço|Адрес|العنوان|पता|ঠিকানা|پتہ|Alamat|Địa chỉ|ที่อยู่|Adres|Indirizzo|نشانی|ཁ་བྱང་།
+Administrator|管理員|管理者|관리자|Administrator|Administrateur|Administrador|Administrador|Администратор|المسؤول|व्यवस्थापक|প্রশাসক|منتظم|Administrator|Quản trị viên|ผู้ดูแล|Yönetici|Amministratore|مدیر|དོ་དམ་པ།
+Album|專輯|アルバム|앨범|Album|Album|Álbum|Álbum|Альбом|الألبوم|एल्बम|অ্যালবাম|البم|Album|Album|อัลบั้ม|Albüm|Album|آلبوم|གླུ་ཐོ།
+App|應用程式|アプリ|앱|App|Application|Aplicación|Aplicativo|Приложение|التطبيق|ऐप|অ্যাপ|ایپ|Aplikasi|Ứng dụng|แอป|Uygulama|App|برنامه|མཉེན་ཆས།
+Artist|演出者|アーティスト|아티스트|Interpret|Artiste|Artista|Artista|Исполнитель|الفنان|कलाकार|শিল্পী|فنکار|Artis|Nghệ sĩ|ศิลปิน|Sanatçı|Artista|هنرمند|སྒྱུ་རྩལ་པ།
+Background|背景|バックグラウンド|백그라운드|Hintergrund|Arrière-plan|Segundo plano|Segundo plano|Фон|الخلفية|पृष्ठभूमि|পটভূমি|پس منظر|Latar belakang|Nền|เบื้องหลัง|Arka plan|Sfondo|پس‌زمینه|རྒྱབ་ལྗོངས།
+Band|頻段|帯域|주파수 대역|Frequenzband|Bande|Banda|Banda|Диапазон|النطاق|बैंड|ব্যান্ড|بینڈ|Pita|Băng tần|ย่านความถี่|Bant|Banda|باند|ཟློས་རྒྱུན་ཁུལ།
+Beijing|北京|北京|베이징|Peking|Pékin|Pekín|Pequim|Пекин|بكين|बीजिंग|বেইজিং|بیجنگ|Beijing|Bắc Kinh|ปักกิ่ง|Pekin|Pechino|پکن|པེ་ཅིང་།
+Boot|開機|起動|부팅|Systemstart|Démarrage|Arranque|Inicialização|Загрузка|الإقلاع|बूट|বুট|بوٹ|Boot|Khởi động|บูต|Önyükleme|Avvio|راه‌اندازی|འགོ་རྩོམ།
+Branch|分支|ブランチ|브랜치|Branch|Branche|Rama|Branch|Ветка|الفرع|शाखा|শাখা|شاخ|Cabang|Nhánh|สาขา|Dal|Ramo|شاخه|ཡན་ལག
+Build|組建|ビルド|빌드|Build|Compilation|Compilación|Compilação|Сборка|البنية|बिल्ड|বিল্ড|بلڈ|Build|Bản dựng|บิลด์|Derleme|Build|ساخت|བཟོ་བསྐྲུན།
+System Calls|系統呼叫|システムコール|시스템 호출|Systemaufrufe|Appels système|Llamadas del sistema|Chamadas do sistema|Системные вызовы|استدعاءات النظام|सिस्टम कॉल|সিস্টেম কল|سسٹم کالز|Panggilan sistem|Lời gọi hệ thống|การเรียกระบบ|Sistem çağrıları|Chiamate di sistema|فراخوانی سیستم|མ་ལག་སྐུལ་འབོད།
+Channel|通道|チャンネル|채널|Kanal|Canal|Canal|Canal|Канал|القناة|चैनल|চ্যানেল|چینل|Kanal|Kênh|ช่อง|Kanal|Canale|کانال|རྒྱུ་ལམ།
+Charge|充電|充電|충전|Laden|Charge|Carga|Carga|Заряд|الشحن|चार्ज|চার্জ|چارج|Pengisian|Sạc|การชาร์จ|Şarj|Carica|شارژ|གློག་གསོག
+Chemistry|化學類型|化学組成|화학 유형|Chemie|Composition chimique|Composición química|Composição química|Химический состав|التركيب الكيميائي|रासायनिक प्रकार|রাসায়নিক ধরন|کیمیائی قسم|Jenis kimia|Thành phần hóa học|ชนิดเคมี|Kimyasal tür|Composizione chimica|نوع شیمیایی|རྫས་ཀྱི་རིགས།
+Connection|連線|接続|연결|Verbindung|Connexion|Conexión|Conexão|Соединение|الاتصال|कनेक्शन|সংযোগ|کنکشن|Koneksi|Kết nối|การเชื่อมต่อ|Bağlantı|Connessione|اتصال|འབྲེལ་མཐུད།
+Container|容器|コンテナー|컨테이너|Container|Conteneur|Contenedor|Contêiner|Контейнер|الحاوية|कंटेनर|কন্টেইনার|کنٹینر|Kontainer|Container|คอนเทนเนอร์|Kapsayıcı|Contenitore|کانتینر|སྣོད་ཆས།
+Culture|地區設定|地域設定|지역 설정|Gebietsschema|Paramètres régionaux|Configuración regional|Configuração regional|Локаль|الإعدادات الإقليمية|क्षेत्रीय सेटिंग|আঞ্চলিক সেটিং|علاقائی ترتیب|Lokal|Thiết đặt vùng|การตั้งค่าภูมิภาค|Yerel ayar|Impostazioni locali|تنظیمات منطقه|ས་ཁུལ་སྒྲིག་འགོད།
+Cycle|循環|サイクル|주기|Zyklus|Cycle|Ciclo|Ciclo|Цикл|الدورة|चक्र|চক্র|چکر|Siklus|Chu kỳ|รอบ|Döngü|Ciclo|چرخه|འཁོར་ཐེངས།
+Data|資料|データ|데이터|Daten|Données|Datos|Dados|Данные|البيانات|डेटा|তথ্য|ڈیٹا|Data|Dữ liệu|ข้อมูล|Veri|Dati|داده|གཞི་གྲངས།
+Day|日|日|일|Tag|Jour|Día|Dia|День|يوم|दिन|দিন|دن|Hari|Ngày|วัน|Gün|Giorno|روز|ཉིན།
+Default|預設|既定|기본|Standard|Par défaut|Predeterminado|Padrão|По умолчанию|الافتراضي|डिफ़ॉल्ट|ডিফল্ট|طے شدہ|Bawaan|Mặc định|ค่าเริ่มต้น|Varsayılan|Predefinito|پیش‌فرض|སོར་བཞག
+Depth|深度|深度|깊이|Tiefe|Profondeur|Profundidad|Profundidade|Глубина|العمق|गहराई|গভীরতা|گہرائی|Kedalaman|Độ sâu|ความลึก|Derinlik|Profondità|عمق|ཟབ་ཚད།
+Description|說明|説明|설명|Beschreibung|Description|Descripción|Descrição|Описание|الوصف|विवरण|বিবরণ|تفصیل|Deskripsi|Mô tả|คำอธิบาย|Açıklama|Descrizione|توضیحات|ཞིབ་བཤད།
+Design|設計|設計|설계|Auslegung|Conception|Diseño|Projeto|Расчётный|التصميم|डिज़ाइन|নকশা|ڈیزائن|Desain|Thiết kế|ออกแบบ|Tasarım|Progetto|طراحی|ཇུས་འགོད།
+Device|裝置|デバイス|장치|Gerät|Appareil|Dispositivo|Dispositivo|Устройство|الجهاز|डिवाइस|ডিভাইস|آلہ|Perangkat|Thiết bị|อุปกรณ์|Aygıt|Dispositivo|دستگاه|སྒྲིག་ཆས།
+Discharge|放電|放電|방전|Entladen|Décharge|Descarga|Descarga|Разряд|التفريغ|डिस्चार्ज|ডিসচার্জ|ڈسچارج|Pengosongan|Xả|คายประจุ|Boşalma|Scarica|تخلیه|གློག་འདོན།
+Discharging|放電中|放電中|방전 중|Wird entladen|En décharge|Descargando|Descarregando|Разряжается|قيد التفريغ|डिस्चार्ज हो रहा है|ডিসচার্জ হচ্ছে|ڈسچارج ہو رہا ہے|Mengosongkan daya|Đang xả|กำลังคายประจุ|Boşalıyor|In scarica|در حال تخلیه|གློག་འདོན་བཞིན།
+Distro|發行版|ディストリビューション|배포판|Distribution|Distribution|Distribución|Distribuição|Дистрибутив|التوزيعة|वितरण|ডিস্ট্রিবিউশন|ڈسٹری بیوشن|Distribusi|Bản phân phối|ดิสทริบิวชัน|Dağıtım|Distribuzione|توزیع|ཁྱབ་སྤེལ་རིགས།
+Domain|網域|ドメイン|도메인|Domäne|Domaine|Dominio|Domínio|Домен|المجال|डोमेन|ডোমেইন|ڈومین|Domain|Miền|โดเมน|Etki alanı|Dominio|دامنه|ཁོངས།
+Duration|時長|長さ|길이|Dauer|Durée|Duración|Duração|Длительность|المدة|अवधि|সময়কাল|دورانیہ|Durasi|Thời lượng|ระยะเวลา|Süre|Durata|مدت|དུས་ཡུན།
+Elapsed|已過|経過|경과|Vergangen|Écoulé|Transcurrido|Decorrido|Прошло|المنقضي|बीता|অতিবাহিত|گزرا ہوا|Berlalu|Đã qua|ผ่านไป|Geçen|Trascorso|سپری‌شده|འདས་ཟིན།
+Empty|耗盡|空|비어 있음|Leer|Vide|Vacío|Vazio|Пусто|فارغ|खाली|খালি|خالی|Kosong|Hết|หมด|Boş|Vuoto|خالی|སྟོང་པ།
+Encryption|加密|暗号化|암호화|Verschlüsselung|Chiffrement|Cifrado|Criptografia|Шифрование|التشفير|एन्क्रिप्शन|এনক্রিপশন|خفیہ کاری|Enkripsi|Mã hóa|การเข้ารหัส|Şifreleme|Crittografia|رمزگذاری|གསང་སྒྲིལ།
+Estimated|估計|推定|예상|Geschätzt|Estimé|Estimado|Estimado|Расчётный|تقديري|अनुमानित|আনুমানিক|تخمینی|Perkiraan|Ước tính|ประมาณ|Tahmini|Stimato|تخمینی|ཚོད་རྩིས།
+File|檔案|ファイル|파일|Datei|Fichier|Archivo|Arquivo|Файл|الملف|फ़ाइल|ফাইল|فائل|Berkas|Tệp|ไฟล์|Dosya|File|پرونده|ཡིག་ཆ།
+Filesystem|檔案系統|ファイルシステム|파일 시스템|Dateisystem|Système de fichiers|Sistema de archivos|Sistema de arquivos|Файловая система|نظام الملفات|फ़ाइल सिस्टम|ফাইল সিস্টেম|فائل سسٹم|Sistem berkas|Hệ thống tệp|ระบบไฟล์|Dosya sistemi|File system|سامانه پرونده|ཡིག་ཆའི་མ་ལག
+Firewall|防火牆|ファイアウォール|방화벽|Firewall|Pare-feu|Cortafuegos|Firewall|Брандмауэр|جدار الحماية|फ़ायरवॉल|ফায়ারওয়াল|فائر وال|Firewall|Tường lửa|ไฟร์วอลล์|Güvenlik duvarı|Firewall|دیوار آتش|མེ་འགོག་གྱང་།
+Form Factor|外形規格|フォームファクター|폼 팩터|Bauform|Format physique|Factor de forma|Formato físico|Форм-фактор|عامل الشكل|आकार प्रकार|আকৃতির ধরন|ساختی قسم|Faktor bentuk|Kiểu dáng|รูปแบบ|Biçim etmeni|Formato|شکل ساخت|ཕྱི་དབྱིབས་ཚད་གཞི།
+Framework|框架|フレームワーク|프레임워크|Framework|Framework|Marco|Framework|Платформа|إطار العمل|फ़्रेमवर्क|ফ্রেমওয়ার্ক|فریم ورک|Kerangka kerja|Khung ứng dụng|เฟรมเวิร์ก|Çatı|Framework|چارچوب|སྒྲོམ་གཞི།
+Gamepad|遊戲控制器|ゲームパッド|게임패드|Gamepad|Manette|Mando|Controle|Геймпад|ذراع اللعب|गेमपैड|গেমপ্যাড|گیم پیڈ|Gamepad|Tay cầm|จอยเกม|Oyun kumandası|Gamepad|دسته بازی|རོལ་རྩེད་ཚོད་འཛིན་ཆས།
+Gateway|閘道|ゲートウェイ|게이트웨이|Gateway|Passerelle|Puerta de enlace|Gateway|Шлюз|البوابة|गेटवे|গেটওয়ে|گیٹ وے|Gerbang|Cổng nối|เกตเวย์|Ağ geçidi|Gateway|دروازه|མཐུད་སྒོ།
+Generation|世代|世代|세대|Generation|Génération|Generación|Geração|Поколение|الجيل|पीढ़ी|প্রজন্ম|نسل|Generasi|Thế hệ|รุ่น|Nesil|Generazione|نسل|རབས།
+Handle|控制代碼|ハンドル|핸들|Handle|Handle|Identificador|Identificador|Дескриптор|المقبض|हैंडल|হ্যান্ডেল|ہینڈل|Handle|Handle|แฮนเดิล|Tanıtıcı|Handle|دستگیره|འཛིན་རྟགས།
+Health|健康度|健全性|상태|Zustand|État de santé|Salud|Saúde|Состояние|الصحة|स्वास्थ्य|স্বাস্থ্য|صحت|Kesehatan|Tình trạng|สุขภาพ|Sağlık|Stato di salute|سلامت|བདེ་ཐང་།
+Height|高度|高さ|높이|Höhe|Hauteur|Altura|Altura|Высота|الارتفاع|ऊँचाई|উচ্চতা|اونچائی|Tinggi|Chiều cao|ความสูง|Yükseklik|Altezza|ارتفاع|མཐོ་ཚད།
+Host|主機|ホスト|호스트|Host|Hôte|Servidor|Host|Узел|المضيف|होस्ट|হোস্ট|میزبان|Host|Máy chủ|โฮสต์|Ana makine|Host|میزبان|གཙོ་འཕྲུལ།
+Hour|小時|時間|시간|Stunde|Heure|Hora|Hora|Час|ساعة|घंटा|ঘণ্টা|گھنٹہ|Jam|Giờ|ชั่วโมง|Saat|Ora|ساعت|ཆུ་ཚོད།
+Image|影像|画像|이미지|Bild|Image|Imagen|Imagem|Изображение|الصورة|छवि|ছবি|تصویر|Gambar|Hình ảnh|ภาพ|Görüntü|Immagine|تصویر|པར་རིས།
+Index|索引|インデックス|인덱스|Index|Indice|Índice|Índice|Индекс|الفهرس|सूचकांक|সূচক|اشاریہ|Indeks|Chỉ số|ดัชนี|Dizin|Indice|شاخص|གོ་ཨང་།
+Installed|已安裝|インストール済み|설치됨|Installiert|Installé|Instalado|Instalado|Установлено|مثبت|स्थापित|ইনস্টল করা|نصب شدہ|Terpasang|Đã cài|ติดตั้งแล้ว|Kurulu|Installato|نصب‌شده|སྒྲིག་འཇུག་ཟིན།
+Interface|介面|インターフェイス|인터페이스|Schnittstelle|Interface|Interfaz|Interface|Интерфейс|الواجهة|इंटरफ़ेस|ইন্টারফেস|انٹرفیس|Antarmuka|Giao diện|อินเทอร์เฟซ|Arayüz|Interfaccia|رابط|མཐུད་ངོས།
+Keyboard|鍵盤|キーボード|키보드|Tastatur|Clavier|Teclado|Teclado|Клавиатура|لوحة المفاتيح|कीबोर्ड|কীবোর্ড|کی بورڈ|Papan ketik|Bàn phím|แป้นพิมพ์|Klavye|Tastiera|صفحه‌کلید|མཐེབ་གཞོང་།
+Label|標籤|ラベル|레이블|Bezeichnung|Libellé|Etiqueta|Rótulo|Метка|التسمية|लेबल|লেবেল|لیبل|Label|Nhãn|ป้ายชื่อ|Etiket|Etichetta|برچسب|རྟགས་བྱང་།
+Lane|通道|レーン|레인|Lane|Ligne|Carril|Via|Линия|المسار|लेन|লেন|لین|Lajur|Làn|เลน|Hat|Corsia|مسیر|རྒྱུ་ལམ།
+Length|長度|長さ|길이|Länge|Longueur|Longitud|Comprimento|Длина|الطول|लंबाई|দৈর্ঘ্য|لمبائی|Panjang|Độ dài|ความยาว|Uzunluk|Lunghezza|طول|རིང་ཚད།
+Life|續航時間|駆動時間|지속 시간|Laufzeit|Autonomie|Autonomía|Autonomia|Время работы|عمر التشغيل|चलने का समय|চলার সময়|چلنے کا وقت|Waktu pakai|Thời lượng dùng|ระยะเวลาใช้งาน|Çalışma süresi|Autonomia|زمان کارکرد|སྤྱོད་ཡུན།
+Link|連結|リンク|링크|Verbindung|Liaison|Enlace|Enlace|Канал|الرابط|लिंक|লিংক|لنک|Tautan|Liên kết|ลิงก์|Bağlantı|Collegamento|پیوند|མཐུད་ལམ།
+List|清單|一覧|목록|Liste|Liste|Lista|Lista|Список|القائمة|सूची|তালিকা|فہرست|Daftar|Danh sách|รายการ|Liste|Elenco|فهرست|ཐོ།
+London|倫敦|ロンドン|런던|London|Londres|Londres|Londres|Лондон|لندن|लंदन|লন্ডন|لندن|London|Luân Đôn|ลอนดอน|Londra|Londra|لندن|ལོན་ཏོན།
+Machine|電腦|コンピューター|컴퓨터|Computer|Ordinateur|Equipo|Computador|Компьютер|الحاسوب|कंप्यूटर|কম্পিউটার|کمپیوٹر|Komputer|Máy tính|คอมพิวเตอร์|Bilgisayar|Computer|رایانه|གློག་ཀླད།
+Manufacturer|製造商|メーカー|제조사|Hersteller|Fabricant|Fabricante|Fabricante|Производитель|الشركة المصنّعة|निर्माता|প্রস্তুতকারক|سازندہ|Produsen|Nhà sản xuất|ผู้ผลิต|Üretici|Produttore|سازنده|བཟོ་སྐྲུན་ཚོང་པ།
+Media|媒體|メディア|미디어|Medien|Média|Multimedia|Mídia|Медиа|الوسائط|मीडिया|মিডিয়া|میڈیا|Media|Đa phương tiện|สื่อ|Medya|Media|رسانه|བརྒྱུད་གཟུགས།
+Millisecond|毫秒|ミリ秒|밀리초|Millisekunde|Milliseconde|Milisegundo|Milissegundo|Миллисекунда|مللي ثانية|मिलीसेकंड|মিলিসেকেন্ড|ملی سیکنڈ|Milidetik|Mili giây|มิลลิวินาที|Milisaniye|Millisecondo|میلی‌ثانیه|སྐར་ཆ་སྟོང་ཆ།
+Minute|分鐘|分|분|Minute|Minute|Minuto|Minuto|Минута|دقيقة|मिनट|মিনিট|منٹ|Menit|Phút|นาที|Dakika|Minuto|دقیقه|སྐར་མ།
+Mode|模式|モード|모드|Modus|Mode|Modo|Modo|Режим|الوضع|मोड|মোড|موڈ|Mode|Chế độ|โหมด|Mod|Modalità|حالت|རྣམ་པ།
+Model|型號|モデル|모델|Modell|Modèle|Modelo|Modelo|Модель|الطراز|मॉडल|মডেল|ماڈل|Model|Mẫu|รุ่น|Model|Modello|مدل|དཔེ་རྟགས།
+Monitor|顯示器|モニター|모니터|Monitor|Écran|Monitor|Monitor|Монитор|الشاشة|मॉनिटर|মনিটর|مانیٹر|Monitor|Màn hình|จอภาพ|Monitör|Monitor|نمایشگر|འཆར་ཆས།
+Month|月|月|월|Monat|Mois|Mes|Mês|Месяц|شهر|महीना|মাস|مہینہ|Bulan|Tháng|เดือน|Ay|Mese|ماه|ཟླ་བ།
+Motherboard|主機板|マザーボード|메인보드|Hauptplatine|Carte mère|Placa base|Placa-mãe|Материнская плата|اللوحة الأم|मदरबोर्ड|মাদারবোর্ড|مدربورڈ|Papan induk|Bo mạch chủ|เมนบอร์ด|Anakart|Scheda madre|مادربرد|ཨ་མ་པང་ལེབ།
+Mouse|滑鼠|マウス|마우스|Maus|Souris|Ratón|Mouse|Мышь|الفأرة|माउस|মাউস|ماؤس|Tetikus|Chuột|เมาส์|Fare|Mouse|ماوس|ཙིག་རྟགས།
+New York|紐約|ニューヨーク|뉴욕|New York|New York|Nueva York|Nova York|Нью-Йорк|نيويورك|न्यूयॉर्क|নিউ ইয়র্ক|نیویارک|New York|New York|นิวยอร์ก|New York|New York|نیویورک|ཉིའུ་ཡོག
+Offset|偏移|オフセット|오프셋|Versatz|Décalage|Desplazamiento|Deslocamento|Смещение|الإزاحة|ऑफ़सेट|অফসেট|فرق|Offset|Độ lệch|ออฟเซ็ต|Kayma|Scostamento|جابجایی|སྤོ་ཚད།
+Packet|封包|パケット|패킷|Paket|Paquet|Paquete|Pacote|Пакет|الحزمة|पैकेट|প্যাকেট|پیکٹ|Paket|Gói|แพ็กเก็ต|Paket|Pacchetto|بسته|ཐུམ་བུ།
+Partition|分割區|パーティション|파티션|Partition|Partition|Partición|Partição|Раздел|القسم|पार्टिशन|পার্টিশন|پارٹیشن|Partisi|Phân vùng|พาร์ทิชัน|Bölüm|Partizione|پارتیشن|བགོས་ཁུལ།
+Paused|暫停|一時停止|일시 정지|Pausiert|En pause|En pausa|Pausado|Приостановлено|متوقف مؤقتًا|रुका|বিরত|موقوف|Dijeda|Tạm dừng|หยุดชั่วคราว|Duraklatıldı|In pausa|مکث‌شده|གནས་སྐབས་བར་འཇོག
+Pending|待處理|保留中|대기 중|Ausstehend|En attente|Pendiente|Pendente|Ожидает|معلّق|लंबित|অপেক্ষমাণ|زیر التوا|Tertunda|Đang chờ|รอดำเนินการ|Bekliyor|In sospeso|در انتظار|སྒུག་བཞིན།
+Plan|計畫|プラン|계획|Plan|Plan|Plan|Plano|План|الخطة|योजना|পরিকল্পনা|منصوبہ|Rencana|Chế độ|แผน|Plan|Piano|طرح|འཆར་གཞི།
+Playback|播放|再生|재생|Wiedergabe|Lecture|Reproducción|Reprodução|Воспроизведение|التشغيل|प्लेबैक|প্লেব্যাক|پلے بیک|Pemutaran|Phát|การเล่น|Oynatma|Riproduzione|پخش|གཏོང་བ།
+Playing|播放中|再生中|재생 중|Läuft|En lecture|Reproduciendo|Reproduzindo|Воспроизводится|قيد التشغيل|चल रहा है|চলছে|چل رہا ہے|Diputar|Đang phát|กำลังเล่น|Oynatılıyor|In riproduzione|در حال پخش|གཏོང་བཞིན།
+Present|存在|存在|존재|Vorhanden|Présent|Presente|Presente|Присутствует|موجود|मौजूद|বিদ্যমান|موجود|Ada|Có|มี|Mevcut|Presente|موجود|ཡོད་པ།
+Private|私用|プライベート|전용|Privat|Privé|Privado|Privado|Частный|خاص|निजी|ব্যক্তিগত|نجی|Privat|Riêng|ส่วนตัว|Özel|Privato|خصوصی|སྒེར་སྤྱོད།
+Process|處理程序|プロセス|프로세스|Prozess|Processus|Proceso|Processo|Процесс|العملية|प्रक्रिया|প্রক্রিয়া|عمل|Proses|Tiến trình|กระบวนการ|İşlem|Processo|فرایند|བྱ་རིམ།
+Proxy|Proxy|プロキシ|프록시|Proxy|Proxy|Proxy|Proxy|Прокси|الوكيل|प्रॉक्सी|প্রক্সি|پراکسی|Proksi|Proxy|พร็อกซี|Vekil|Proxy|پراکسی|ལས་ཚབ།
+Public|公用|パブリック|공용|Öffentlich|Public|Público|Público|Публичный|عام|सार्वजनिक|সর্বজনীন|عوامی|Publik|Công cộng|สาธารณะ|Genel|Pubblico|عمومی|སྤྱི་སྤྱོད།
+Queue|佇列|キュー|대기열|Warteschlange|File d’attente|Cola|Fila|Очередь|قائمة الانتظار|कतार|সারি|قطار|Antrean|Hàng đợi|คิว|Kuyruk|Coda|صف|གོ་རིམ།
+Rate|速率|レート|비율|Rate|Taux|Tasa|Taxa|Скорость|المعدل|दर|হার|شرح|Laju|Tốc độ|อัตรา|Oran|Tasso|نرخ|ཚད།
+Raw|原始|生データ|원시|Roh|Brut|Bruto|Bruto|Исходный|خام|मूल|কাঁচা|خام|Mentah|Thô|ดิบ|Ham|Grezzo|خام|མ་བཅོས་པ།
+Read|讀取|読み取り|읽기|Lesen|Lecture|Lectura|Leitura|Чтение|القراءة|पढ़ना|পড়া|پڑھنا|Baca|Đọc|อ่าน|Okuma|Lettura|خواندن|ཀློག་པ།
+Receive|接收|受信|수신|Empfangen|Réception|Recepción|Recebimento|Приём|الاستقبال|प्राप्ति|গ্রহণ|وصول|Terima|Nhận|รับ|Alma|Ricezione|دریافت|ལེན་པ།
+Resolution|解析度|解像度|해상도|Auflösung|Résolution|Resolución|Resolução|Разрешение|الدقة|रिज़ॉल्यूशन|রেজল্যুশন|ریزولوشن|Resolusi|Độ phân giải|ความละเอียด|Çözünürlük|Risoluzione|وضوح|གསལ་ཚད།
+Root|根目錄|ルート|루트|Stammverzeichnis|Racine|Raíz|Raiz|Корень|الجذر|मूल निर्देशिका|মূল ডিরেক্টরি|جڑ|Akar|Gốc|ราก|Kök|Radice|ریشه|རྩ་བའི་དཀར་ཆག
+Running|執行中|実行中|실행 중|Läuft|En cours|En ejecución|Em execução|Запущено|يعمل|चल रहा है|চলমান|چل رہا ہے|Berjalan|Đang chạy|ทำงานอยู่|Çalışıyor|In esecuzione|در حال اجرا|འགུལ་བཞིན།
+Scale|縮放|倍率|배율|Skalierung|Échelle|Escala|Escala|Масштаб|المقياس|स्केल|স্কেল|پیمانہ|Skala|Tỷ lệ|มาตราส่วน|Ölçek|Scala|مقیاس|བསྡུར་ཚད།
+Scan|掃描|スキャン|검사|Scan|Analyse|Análisis|Verificação|Сканирование|الفحص|स्कैन|স্ক্যান|اسکین|Pindai|Quét|สแกน|Tarama|Scansione|اسکن|བཤེར་འཚོལ།
+Secondary|次要|セカンダリ|보조|Sekundär|Secondaire|Secundario|Secundário|Вторичный|ثانوي|द्वितीयक|গৌণ|ثانوی|Sekunder|Phụ|รอง|İkincil|Secondario|ثانویه|ཕལ་པ།
+Secure|安全|セキュア|보안|Sicher|Sécurisé|Seguro|Seguro|Безопасный|آمن|सुरक्षित|নিরাপদ|محفوظ|Aman|An toàn|ปลอดภัย|Güvenli|Sicuro|امن|བདེ་འཇགས།
+Send|傳送|送信|송신|Senden|Envoi|Envío|Envio|Отправка|الإرسال|भेजना|পাঠানো|بھیجنا|Kirim|Gửi|ส่ง|Gönderme|Invio|ارسال|གཏོང་བ།
+Sensor|感測器|センサー|센서|Sensor|Capteur|Sensor|Sensor|Датчик|المستشعر|सेंसर|সেন্সর|سینسر|Sensor|Cảm biến|เซ็นเซอร์|Sensör|Sensore|حسگر|ཚོར་ཆས།
+Server|伺服器|サーバー|서버|Server|Serveur|Servidor|Servidor|Сервер|الخادم|सर्वर|সার্ভার|سرور|Server|Máy chủ|เซิร์ฟเวอร์|Sunucu|Server|سرور|ཞབས་ཞུ་ཆས།
+Set|集合|セット|집합|Satz|Ensemble|Conjunto|Conjunto|Набор|المجموعة|समूह|সমষ্টি|مجموعہ|Himpunan|Tập|ชุด|Küme|Insieme|مجموعه|ཚོགས།
+Signal|訊號|信号|신호|Signal|Signal|Señal|Sinal|Сигнал|الإشارة|संकेत|সংকেত|سگنل|Sinyal|Tín hiệu|สัญญาณ|Sinyal|Segnale|سیگنال|བརྡ་རྟགས།
+Size|大小|サイズ|크기|Größe|Taille|Tamaño|Tamanho|Размер|الحجم|आकार|আকার|حجم|Ukuran|Kích thước|ขนาด|Boyut|Dimensione|اندازه|ཆེ་ཆུང་།
+Source|來源|ソース|원본|Quelle|Source|Origen|Fonte|Источник|المصدر|स्रोत|উৎস|ماخذ|Sumber|Nguồn|แหล่ง|Kaynak|Fonte|منبع|འབྱུང་ཁུངས།
+Standard|標準|規格|표준|Standard|Norme|Estándar|Padrão|Стандарт|المعيار|मानक|মান|معیار|Standar|Tiêu chuẩn|มาตรฐาน|Standart|Standard|استاندارد|ཚད་གཞི།
+Start|開始|開始|시작|Start|Début|Inicio|Início|Начало|البدء|आरंभ|শুরু|آغاز|Mulai|Bắt đầu|เริ่ม|Başlangıç|Inizio|شروع|འགོ་རྩོམ།
+Storage|儲存裝置|ストレージ|저장 장치|Speicherlaufwerk|Stockage|Almacenamiento|Armazenamento|Накопитель|التخزين|भंडारण|সংরক্ষণ|ذخیرہ|Penyimpanan|Lưu trữ|ที่เก็บข้อมูล|Depolama|Archiviazione|ذخیره‌سازی|གསོག་ཉར་ཆས།
+Terminal|終端機|ターミナル|터미널|Terminal|Terminal|Terminal|Terminal|Терминал|الطرفية|टर्मिनल|টার্মিনাল|ٹرمینل|Terminal|Thiết bị đầu cuối|เทอร์มินัล|Terminal|Terminale|پایانه|མཐའ་སྣེ་ཆས།
+Theme|主題|テーマ|테마|Design|Thème|Tema|Tema|Тема|المظهر|थीम|থিম|تھیم|Tema|Chủ đề|ธีม|Tema|Tema|پوسته|ཁ་མདོག་རྣམ་པ།
+Thread|執行緒|スレッド|스레드|Thread|Fil d’exécution|Hilo|Thread|Поток|الخيط|थ्रेड|থ্রেড|تھریڈ|Utas|Luồng|เธรด|İş parçacığı|Thread|رشته|བྱ་རིམ་ཕྲ་བ།
+Threat|威脅|脅威|위협|Bedrohung|Menace|Amenaza|Ameaça|Угроза|التهديد|खतरा|হুমকি|خطرہ|Ancaman|Mối đe dọa|ภัยคุกคาม|Tehdit|Minaccia|تهدید|ཉེན་ཁ།
+Timeline|時間軸|タイムライン|타임라인|Zeitleiste|Chronologie|Línea de tiempo|Linha do tempo|Шкала времени|الخط الزمني|समयरेखा|সময়রেখা|ٹائم لائن|Linimasa|Dòng thời gian|เส้นเวลา|Zaman çizelgesi|Sequenza temporale|خط زمان|དུས་ཚོད་ཐིག
+Tokyo|東京|東京|도쿄|Tokio|Tokyo|Tokio|Tóquio|Токио|طوكيو|टोक्यो|টোকিও|ٹوکیو|Tokyo|Tokyo|โตเกียว|Tokyo|Tokyo|توکیو|ཏུང་ཅིང་།
+Top|最高|上位|상위|Höchster|En tête|Mayor|Maior|Наибольший|الأعلى|शीर्ष|শীর্ষ|سب سے زیادہ|Teratas|Cao nhất|สูงสุด|En yüksek|Massimo|بیشترین|མཐོ་ཤོས།
+Track|曲目|トラック|트랙|Titel|Piste|Pista|Faixa|Композиция|المقطع|ट्रैक|ট্র্যাক|ٹریک|Trek|Bản nhạc|เพลง|Parça|Traccia|قطعه|གླུ་དབྱངས།
+Transferred|已傳輸|転送済み|전송됨|Übertragen|Transféré|Transferido|Transferido|Передано|منقول|स्थानांतरित|স্থানান্তরিত|منتقل شدہ|Ditransfer|Đã truyền|ส่งผ่านแล้ว|Aktarılan|Trasferito|منتقل‌شده|བསྐུར་ཟིན།
+Transport|傳輸方式|転送方式|전송 방식|Übertragungsweg|Transport|Transporte|Transporte|Способ передачи|وسيلة النقل|परिवहन|পরিবহন|منتقلی|Transportasi|Cách truyền|วิธีส่ง|Aktarım|Trasporto|روش انتقال|སྐྱེལ་སྟངས།
+Update|更新|更新|업데이트|Update|Mise à jour|Actualización|Atualização|Обновление|التحديث|अपडेट|হালনাগাদ|تازہ کاری|Pembaruan|Cập nhật|อัปเดต|Güncelleme|Aggiornamento|به‌روزرسانی|གསར་བཅོས།
+Uptime|運作時間|稼働時間|가동 시간|Betriebszeit|Durée de fonctionnement|Tiempo activo|Tempo ativo|Время работы|مدة التشغيل|चलने का समय|চালু থাকার সময়|چلنے کا دورانیہ|Waktu aktif|Thời gian hoạt động|เวลาทำงาน|Çalışma süresi|Tempo di attività|زمان فعالیت|འགུལ་ཡུན།
+Utilization|使用率|使用率|사용률|Auslastung|Utilisation|Utilización|Utilização|Загрузка|الاستخدام|उपयोग|ব্যবহার|استعمال|Pemakaian|Mức sử dụng|การใช้งาน|Kullanım|Utilizzo|بهره‌برداری|བེད་སྤྱོད་ཚད།
+Week|週|週|주|Woche|Semaine|Semana|Semana|Неделя|أسبوع|सप्ताह|সপ্তাহ|ہفتہ|Minggu|Tuần|สัปดาห์|Hafta|Settimana|هفته|གཟའ་འཁོར།
+Weekend|週末|週末|주말|Wochenende|Week-end|Fin de semana|Fim de semana|Выходные|عطلة الأسبوع|सप्ताहांत|সাপ্তাহিক ছুটি|ہفتہ وار تعطیل|Akhir pekan|Cuối tuần|สุดสัปดาห์|Hafta sonu|Fine settimana|پایان هفته|གཟའ་མཇུག
+Width|寬度|幅|너비|Breite|Largeur|Ancho|Largura|Ширина|العرض|चौड़ाई|প্রস্থ|چوڑائی|Lebar|Chiều rộng|ความกว้าง|Genişlik|Larghezza|عرض|ཞེང་ཚད།
+Window|視窗|ウィンドウ|창|Fenster|Fenêtre|Ventana|Janela|Окно|النافذة|विंडो|উইন্ডো|ونڈو|Jendela|Cửa sổ|หน้าต่าง|Pencere|Finestra|پنجره|སྒེའུ་ཁུང་།
+World|世界|世界|세계|Welt|Monde|Mundo|Mundo|Мир|العالم|विश्व|বিশ্ব|دنیا|Dunia|Thế giới|โลก|Dünya|Mondo|جهان|འཛམ་གླིང་།
+Write|寫入|書き込み|쓰기|Schreiben|Écriture|Escritura|Escrita|Запись|الكتابة|लिखना|লেখা|لکھنا|Tulis|Ghi|เขียน|Yazma|Scrittura|نوشتن|འབྲི་བ།
+Year|年|年|년|Jahr|Année|Año|Ano|Год|سنة|वर्ष|বছর|سال|Tahun|Năm|ปี|Yıl|Anno|سال|ལོ།
+Working Set|工作集|ワーキングセット|작업 집합|Arbeitssatz|Ensemble de travail|Conjunto de trabajo|Conjunto de trabalho|Рабочий набор|مجموعة العمل|वर्किंग सेट|ওয়ার্কিং সেট|ورکنگ سیٹ|Set kerja|Tập làm việc|ชุดทำงาน|Çalışma kümesi|Set di lavoro|مجموعه کاری|ལས་སྤྱོད་དྲན་གསོག་ཚོགས།
+Profile|方案|プロファイル|프로필|Profil|Profil|Perfil|Perfil|Профиль|الملف|प्रोफ़ाइल|প্রোফাইল|پروفائل|Profil|Hồ sơ|โปรไฟล์|Profil|Profilo|نمایه|འཆར་གཞི།
+Power On|通電|通電|전원 켜짐|Eingeschaltet|Sous tension|Encendido|Ligado|Под питанием|تشغيل الطاقة|बिजली चालू|বিদ্যুৎ চালু|بجلی چالو|Daya hidup|Bật nguồn|เปิดเครื่อง|Açık kalma|Acceso|روشن|གློག་མཐུད།
+Day Of Week|星期|曜日|요일|Wochentag|Jour de la semaine|Día de la semana|Dia da semana|День недели|يوم الأسبوع|सप्ताह का दिन|সপ্তাহের দিন|ہفتے کا دن|Hari dalam minggu|Ngày trong tuần|วันในสัปดาห์|Haftanın günü|Giorno della settimana|روز هفته|གཟའ།
+Day Of Year|年內第幾天|年間通算日|연중 일수|Tag im Jahr|Jour de l’année|Día del año|Dia do ano|День года|يوم السنة|वर्ष का दिन|বছরের দিন|سال کا دن|Hari dalam tahun|Ngày trong năm|วันที่ของปี|Yılın günü|Giorno dell’anno|روز سال|ལོའི་ཉིན་གྲངས།
+Week Of Year|年內第幾週|年間通算週|연중 주 수|Kalenderwoche|Semaine de l’année|Semana del año|Semana do ano|Неделя года|أسبوع السنة|वर्ष का सप्ताह|বছরের সপ্তাহ|سال کا ہفتہ|Minggu dalam tahun|Tuần trong năm|สัปดาห์ของปี|Yılın haftası|Settimana dell’anno|هفته سال|ལོའི་གཟའ་འཁོར་གྲངས།
+Fixed|固定式|固定|고정식|Fest|Fixe|Fijo|Fixo|Фиксированный|ثابت|स्थिर|স্থির|مقرر|Tetap|Cố định|คงที่|Sabit|Fisso|ثابت|གཏན་འཇགས།
+Compatibility|相容|互換|호환|Kompatibilität|Compatibilité|Compatibilidad|Compatibilidade|Совместимость|التوافق|अनुकूलता|সামঞ্জস্য|مطابقت|Kompatibilitas|Tương thích|ความเข้ากันได้|Uyumluluk|Compatibilità|سازگاری|མཐུན་སྒྲིག
+Condition|條件|条件|조건|Bedingung|Condition|Condición|Condição|Условие|الشرط|शर्त|শর্ত|شرط|Kondisi|Điều kiện|เงื่อนไข|Koşul|Condizione|شرط|ཆ་རྐྱེན།
+As appropriate for the value|依數值選擇適合的用法|値に応じた用途|값에 맞는 용도|Passend zum Wert|Selon la valeur|Según el valor|Conforme o valor|По смыслу значения|حسب القيمة|मान के अनुसार|মান অনুযায়ী|قدر کے مطابق|Sesuai nilai|Theo giá trị|ตามค่าที่ใช้|Değere göre|Secondo il valore|متناسب با مقدار|ཐང་ལ་འོས་པ་ལྟར།
+Git Last Commit|Git 最近提交|Git の最新コミット|Git 마지막 커밋|Letzter Git-Commit|Dernier commit Git|Último commit Git|Último commit Git|Последний коммит Git|آخر إيداع Git|पिछला Git कमिट|সর্বশেষ Git কমিট|آخری Git کمٹ|Komit Git terakhir|Commit Git gần nhất|คอมมิต Git ล่าสุด|Son Git kaydı|Ultimo commit Git|آخرین ثبت Git|Git ཡི་མཐའ་མའི་སྤྲོད་པ།
+Power Plan|電源計畫|電源プラン|전원 관리 옵션|Energieplan|Mode d’alimentation|Plan de energía|Plano de energia|План электропитания|خطة الطاقة|पावर योजना|বিদ্যুৎ পরিকল্পনা|بجلی کا منصوبہ|Rencana daya|Gói nguồn|แผนการใช้พลังงาน|Güç planı|Piano energetico|طرح توان|གློག་ཁུངས་འཆར་གཞི།
+Power Source|電源來源|電源|전원 공급원|Stromquelle|Source d’alimentation|Fuente de energía|Fonte de energia|Источник питания|مصدر الطاقة|बिजली स्रोत|বিদ্যুৎ উৎস|بجلی کا ذریعہ|Sumber daya|Nguồn điện|แหล่งจ่ายไฟ|Güç kaynağı|Fonte di alimentazione|منبع تغذیه|གློག་ཁུངས།

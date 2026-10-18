@@ -14,9 +14,9 @@
     <Authors>GlacierGlimmer_冰川雪貓</Authors>
     <Copyright>© 2026 GlacierGlimmer_冰川雪貓</Copyright>
     <Description>Configurable Endfield-style HUD for Windows</Description>
-    <Version>0.1.1</Version>
-    <AssemblyVersion>0.1.1.0</AssemblyVersion>
-    <FileVersion>0.1.1.0</FileVersion>
+    <Version>0.1.2</Version>
+    <AssemblyVersion>0.1.2.0</AssemblyVersion>
+    <FileVersion>0.1.2.0</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\tray_bolt.ico</ApplicationIcon>
     <NoWarn>$(NoWarn);AVLN3001</NoWarn>
@@ -38,15 +38,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\**;artifacts\**;publish\**;packaging\**" />
+    <Compile Remove="Tests\**;artifacts\**;publish\**;packaging\**;scripts\localization\catalog\**" />
     <Compile Remove="Customization\Linux*.cs;Interop\LinuxDesktop.cs" />
     <AvaloniaResource Include="Assets\tray_bolt.png" />
+    <AvaloniaResource Include="Assets\Fonts\*.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Localization/reviewed-language-catalog.json" WithCulture="false" LogicalName="EndfieldChargePlus.LanguageCatalog" />
+    <EmbeddedResource Include="Localization/*.json" Exclude="Localization/reviewed-*.json" WithCulture="false" LogicalName="EndfieldChargePlus.Localization.%(Filename)%(Extension)" />
     <EmbeddedResource Include="Assets/china-holidays.json" LogicalName="EndfieldChargePlus.china-holidays.json" />
     <EmbeddedResource Include="Assets/PresentMon/ECPFrames-x64.exe" LogicalName="EndfieldChargePlus.PresentMon" />
     <EmbeddedResource Include="Assets/PresentMon/ECPFrames-arm64.exe" LogicalName="EndfieldChargePlus.PresentMon.Arm64" />
     <EmbeddedResource Include="Assets/PresentMon/LICENSE.txt" LogicalName="EndfieldChargePlus.PresentMon.License" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets/Fonts/OFL-NotoSerifTibetan.txt" Link="licenses/NotoSerifTibetan-OFL.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

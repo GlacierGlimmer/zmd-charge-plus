@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Kullanım adımları",
+    "Açıklamalar ve parametreler",
+    "Örnek",
+    "Örneği kopyalayıp değerleri kendi ayarlarınıza uyarlayın. Değişken ve işlev adları ile kod söz dizimi çevrilmez.",
+    "İşlev ve biçim başvurusu"
+  ],
+  "start": [
+    "Başlarken",
+    "Önce HUD'ı gösterin, sonra içeriğini düzenleyin.",
+    "Görünüm ve konum bölümünde HUD'ı ve sürekli görünümü açın.\nHUD içeriğinde yerleşik profil seçip önizlemeyi açın.\nÜstte Kaydet ve uygula düğmesine basın.",
+    "Düzenleyicideki kaydet işlemi profili saklar. Yerleşik profili değiştirmek özel bir kopya oluşturur. Önizleme çalışan ayarları değiştirmez; üst düğme tüm değişiklikleri kaydeder ve uygular."
+  ],
+  "display": [
+    "Görünüm, konum ve biçim",
+    "Ekranı ve gösterim yöntemini seçin.",
+    "Monitörü ve hazır konumu seçin ya da koordinat girin.\nBoyut, opaklık ve yazı tipini ayarlayın.\nSürekli veya geçici gösterimi seçip uygulayın.",
+    "Çalışma alanı görev çubuğunu dışarıda bırakır; ekran sınırları tüm ekranı kullanır. Çoklu monitörde negatif koordinatlar normaldir. Geçici HUD bir olayla açılır ve sonra kapanır. Veri toplama ortaktır; saatler ve API'ler kendi yenileme aralıklarını korur.\n\nÜstten dil veya sistem dilini seçin. Yalnız dil hemen kaydedilir; diğer kaydedilmemiş değişiklikler düzenleyicide kalır. Desteklenmeyen dil veya eksik metin İngilizce gösterilir. Kendi metinleriniz ve değişken adları korunur."
+  ],
+  "profiles": [
+    "Profiller ve HUD içeriği",
+    "Metinleri, simgeleri ve halkayı düzenleyin.",
+    "Profil oluşturun veya yerleşik profilin kopyasını düzenleyin.\nBaşlık, ana/yardımcı değer, son ek, simge ve renk girin.\nHalka değişkeni ve sınırlarını seçip önizleyin ve uygulayın.",
+    "Düz metinle süslü parantez içindeki değişkenler birlikte kullanılabilir. Halka aralığı %0–100'e dönüştürür; yazılı sayıyı değiştirmez. Renk koşulları özgün birimi kullanır. Özel profil silinince yerleşik profiller silinmez."
+  ],
+  "variables": [
+    "Değişkenler, şablonlar ve ifadeler",
+    "Veriyi bulun ve biçimini seçin.",
+    "Veri yönetiminde değişken arayın, açıklamasını ve birimini okuyun.\nKural veya halka için adı, metin için şablonu kopyalayın.\nAşağıdaki örnek ve başvurudan yararlanın.",
+    "Biçimler soldan sağa çalışır. 0.0 tek ondalık basamak gösterir; auto:1 birimi seçer, tekrar birim eklemeyin. İşlev adları değişmez ve eski değişken adları çalışır. Yinelenenler gizlenir, özetler korunur. -- geçerli ölçüm olmadığını belirtir."
+  ],
+  "hardware": [
+    "Sensörler ve sürücüler",
+    "Görünmeyen sıcaklık ve ölçümleri denetleyin.",
+    "Veri yönetimi → Donanım verilerinde sürücü durumuna bakın.\nPawnIO yoksa yükleyin ve Windows onayını verin.\nECP'den tamamen çıkıp yönetici olarak yeniden açın.\nYenileyin, sensörü arayın ve değişkeni kopyalayın veya tanılamayı dışa aktarın.",
+    "Yönetici yetkisi sürücünün yerini tutmaz. Desteklenmeyen değerler kullanılamaz. Çekirdek, paket, sıcak nokta ve bellek ayrı sensörlerdir. En düşük/yüksek değerler bu oturumun geçmişidir, donanımın anma sınırı değildir. SMBIOS tam SPD/XMP/EXPO tablosu sunmaz."
+  ],
+  "sources": [
+    "Veri kaynağı ayarları",
+    "DeepSeek, JSON API ve AIDA64'ü bağlayın.",
+    "DeepSeek anahtarını girip uygulayın.\nHTTP için ad, GET URL'si, üstbilgi, aralık ve JSON yollarını girip kaynağı açın.\nProfilde custom.<source>.<variable> kullanın.\nAIDA64'te verileri seçip paylaşılan bellek, kayıt defteri veya WMI aktarımını açın; AIDA64 çalışmaya devam etsin.",
+    "DeepSeek anahtarı mevcut Windows kullanıcısı için şifrelenir. Dönemler Pekin saatini kullanır; hafta sonu yoğun olmayan dönemdir. HTTP hatalarında status ve error alanlarına bakın. Sık örnekleme önbelleği atlamaz. Ortam değişkenleri sırların doğrudan JSON'a yazılmasını önleyebilir. ECP yalnız AIDA64'ün gerçekten aktardığı veriyi okur."
+  ],
+  "cycle": [
+    "Döngü ve animasyonlar",
+    "Profilleri sırayla gösterin.",
+    "Listeye profil ekleyip sıralayın.\nGerekirse otomatik geçişi ve aralığını açın.\nBasit, tam veya yukarı kaydırma animasyonu seçin.\nElle ilerlemek için tıklayarak geçişi açın.",
+    "Listeden çıkarma profili silmez. Boş liste mevcut profili kullanır; tek öğe başka profile geçmez. Kaydırma sürekli HUD'ın içeriğini hareket ettirir. Her HUD'ın listesi ayrıdır; tıklama zamanlayıcısını yeniden başlatır. DeepSeek dönem değişimleri tam animasyon kullanır."
+  ],
+  "summons": [
+    "Kısayollar ve fare alanları",
+    "HUD'ları gerektiğinde gösterip gizleyin.",
+    "Ctrl veya Alt içeren, isteğe bağlı Shift eklenmiş kısayolu uygulayın.\nGörünme için basit veya tam animasyon seçin. Gizleme de çıkış animasyonu oynatır.\nGeçici modda alanı açıp dayanak, boyut, kaydırma ve bekleme süresini belirleyin.",
+    "F12 ve ayrılmış birleşimler reddedilir. Çakışmada önceki kısayol korunur. Kısayol tüm HUD'ları konum değiştirmeden yönetir; gizleme bu oturum içindir. Alanlar tam ekran sınırları içinde kalır. Yeniden tetiklemek için çıkıp girin; alan listeyi de ilerletebilir."
+  ],
+  "triggers": [
+    "Tetikleme kuralları",
+    "Veriye göre geçici HUD gösterin.",
+    "HUD içeriğinde kural ekleyip etkinleştirin.\nDeğişken ve eşik, değer değişimi veya doğruya dönüşme modunu seçin.\nBekleme süresini ayarlayın, sürekli görünümü kapatıp uygulayın.",
+    "İlk örnek ve veri geri geldiğindeki ilk değer yalnız karşılaştırma tabanı oluşturur. Süren koşul beklemeden sonra yeniden tetikleyebilir. Kurallar ve listeler HUD başına bağımsızdır. Örnek: cpu.usage >= 90 ve 30 saniye bekleme veya yeni şarkı için media.title değişimi."
+  ],
+  "special": [
+    "Saat, ağ ve FPS",
+    "Profile özel işlevleri ayarlayın.",
+    "Dünya saatinde sabit UTC farkı ve isteğe bağlı günlük hedef saat seçin.\nAğda birimi ve halka referans bant genişliğini ayarlayın.\nYoklamada hedef ve protokol seçin; TCP/UDP bağlantı noktası ister.\nFPS listesini yenileyip pencere veya ekran seçin.",
+    "Sabit fark yaz saatiyle değişmez. 1 MB/s, 8 Mbps eder; referans bağlantıyı sınırlamaz. Bir yoklamanın başarısızlığı tüm internetin kesildiğini kanıtlamaz. FPS sunulan kareleri ölçer, ekranın sabit yenileme hızı değildir; yönetici yetkisi gerekebilir. GPU profil başına seçilir."
+  ],
+  "media": [
+    "Medya ve oynatma ilerlemesi",
+    "Windows medya oturumunu gösterin.",
+    "Başlık ve sanatçı için media.title_artist kullanın.\nSüreler için media.position_text ve media.duration_text kullanın.\nHalkayı media.progress ve 0–100 aralığına ayarlayın.",
+    "Oynatıcı Windows medya oturumu yayımlamalıdır. Konum bildirilen zaman çizelgesi ve hızla ilerler, duraklatmada sabittir. Süresi bilinmeyen yayının geçerli yüzdesi yoktur. Oynatıcının vermediği bilgiler kullanılamaz."
+  ],
+  "instances": [
+    "Deneysel çoklu HUD",
+    "Bağımsız görünümler oluşturun.",
+    "Deneysel özelliklerde çoklu HUD'ı açın.\nİkincil HUD ekleyin, ad verin ve düzenlemek için seçin.\nYeni HUD'ı önizlemeden önce kaydedip uygulayın.",
+    "Seçilen HUD vurgulanır. Konum, profil, liste, kural ve alanlar ayrıdır. Toplama aralığı, genel kısayol ve tıklayarak geçiş ana seçeneği ortaktır. Tıklama sadece tıklanan HUD'ı ilerletir. İkincil HUD silinince ana HUD silinmez."
+  ],
+  "maintenance": [
+    "Ayarlar ve bakım",
+    "Yedek alın ve tanılamayı inceleyin.",
+    "Büyük değişikliklerden önce Hakkında bölümünden ayarları dışa aktarın veya yedekleyin.\nGeri yüklemek için içe aktarın.\nSorun araştırırken günlükleri veya ayar klasörünü açın.\nSıfırlamadan sonra yüklenen ayarları uygulayın.",
+    "Şifreli anahtar başka PC veya Windows hesabında yeniden girilmek zorunda olabilir. Güncelleme denetiminin başarısızlığı en yeni sürümü doğrulamaz. Geliştirme paketleri aynı sürüm numarasını kullanabilir; paket açıklamasına bakın."
+  ],
+  "troubleshooting": [
+    "Sorunlar ve uyarılar",
+    "Görünümü ve veri kaynaklarını denetleyin.",
+    "HUD görünmüyorsa anahtar, kısayolla gizleme, mod, ekran, koordinat ve opaklığı kontrol edin.\nGeçici modda olay, alan veya kuralı inceleyin.\n-- için sensör, izin, API anahtarı, JSON yolu ve ifadeyi denetleyin.",
+    "-- gerçek sıfır değildir; biçimlendirme veri toplamayı düzeltmez. Uyarı kutusundaki işaret yalnız o pencerede listelenen değişkenlerin bildirimini kalıcı kapatır. Diğerleri uyarmaya devam eder. Normal kapatma sadece bu olayı onaylar. İfade hataları profil ve ifadeye göre ayrılır. Susturma veri toplamayı onarmaz veya durdurmaz."
+  ]
+}

@@ -87,6 +87,26 @@
           </Grid>
         </Border>
 
+        <StackPanel x:Name="TitleHost"
+                    Orientation="Vertical" Spacing="2"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Opacity="0">
+          <StackPanel.RenderTransform><TranslateTransform X="0"/></StackPanel.RenderTransform>
+          <TextBlock x:Name="TagLineText"
+                     Text="/// SYSTEM MONITOR"
+                     FontFamily="{DynamicResource Hud.FontFamilyNumeric}"
+                     FontSize="9" FontWeight="Medium" LetterSpacing="2"
+                     HorizontalAlignment="Center" Foreground="White" Opacity="0.40"/>
+          <TextBlock x:Name="TitleText"
+                     Text="系统状态"
+                     FontFamily="{DynamicResource Hud.FontFamily}"
+                     FontSize="26" FontWeight="Bold" LetterSpacing="2"
+                     HorizontalAlignment="Center" Foreground="White"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentClip" Width="560" Height="60" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <Grid x:Name="ContentHost">
+            <Grid.RenderTransform><TranslateTransform Y="0"/></Grid.RenderTransform>
         <Grid x:Name="BoltIcon"
               Width="32" Height="32"
               HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -115,23 +135,6 @@
             </Border>
           </Grid>
         </Grid>
-
-        <StackPanel x:Name="TitleHost"
-                    Orientation="Vertical" Spacing="2"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Opacity="0">
-          <StackPanel.RenderTransform><TranslateTransform X="0"/></StackPanel.RenderTransform>
-          <TextBlock x:Name="TagLineText"
-                     Text="/// SYSTEM MONITOR"
-                     FontFamily="{DynamicResource Hud.FontFamilyNumeric}"
-                     FontSize="9" FontWeight="Medium" LetterSpacing="2"
-                     HorizontalAlignment="Center" Foreground="White" Opacity="0.40"/>
-          <TextBlock x:Name="TitleText"
-                     Text="系统状态"
-                     FontFamily="{DynamicResource Hud.FontFamily}"
-                     FontSize="26" FontWeight="Bold" LetterSpacing="2"
-                     HorizontalAlignment="Center" Foreground="White"/>
-        </StackPanel>
 
         <Grid x:Name="NumHost"
               Width="560"
@@ -203,6 +206,8 @@
                       HorizontalAlignment="Center" VerticalAlignment="Center"
                       Foreground="#FFC6CA4C"
                       IsVisible="False"/>
+          </Grid>
+        </Grid>
           </Grid>
         </Grid>
       </Grid>

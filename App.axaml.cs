@@ -16,6 +16,7 @@ public partial class App : Application
     private HudWindow? _hud;
     private CustomHudRuntime? _runtime;
     private WindowsTrayIcon? _tray;
+    private DesktopGlobalHotkey? _hudHotkey;
     private TrayMenuWindow? _trayMenu;
     private SettingsWindow? _settingsWindow;
     private IClassicDesktopStyleApplicationLifetime? _desktop;
@@ -33,6 +34,7 @@ public partial class App : Application
             AppLog.Info("Avalonia framework initialization completed; loading settings.");
             var settings = SettingsManager.Load();
             LocalizationManager.Initialize(settings.UiLanguage);
+            GlobalAppearance.SetPreferences(settings.GlobalFontScale,settings.GlobalUiScale);
             StartupManager.Apply(settings.StartWithWindows);
 
             _hud = new HudWindow();
@@ -41,6 +43,18 @@ public partial class App : Application
             _runtime = new CustomHudRuntime(_hud);
             _runtime.ApplySettings(settings);
             _runtime.Start();
+
+            try
+            {
+                _hudHotkey = new DesktopGlobalHotkey(() =>
+                {
+                    if (_settingsWindow?.IsRecordingHudHotkey == true) return;
+                    if (_runtime is not null) _ = _runtime.ToggleUserVisibilityAsync();
+                });
+                if (!_hudHotkey.TryUpdate(settings.HudToggleHotkey))
+                    AppLog.Warn($"HUD shortcut could not be registered (Windows error {_hudHotkey.LastError}).");
+            }
+            catch (Exception ex) { AppLog.Error("Unable to initialize the HUD shortcut.", ex); }
 
             // Normal interactive launch opens Settings. Windows autostart stays silent:
             // only the tray icon and startup HUD presentation are shown.
@@ -67,6 +81,7 @@ public partial class App : Application
     private SettingsWindow CreateSettingsWindow(AppSettings settings)
     {
         var window = new SettingsWindow(settings, _hud!, _runtime!);
+        window.AttachHudHotkey(_hudHotkey);
         window.Closed += (_, _) =>
         {
             if (ReferenceEquals(_settingsWindow, window))
@@ -152,7 +167,7 @@ public partial class App : Application
                     .Replace("Latest: ", "", StringComparison.Ordinal);
                 _tray?.ShowNotification(
                     LocalizationManager.Text("Endfield Charge Plus 有新版本", "Endfield Charge Plus update available"),
-                    LocalizationManager.Text($"发现 {latest}。可在“关于”页面查看更新状态。", $"Found {latest}. See About for update details."));
+                    LocalizationManager.Formatted($"发现 {latest}。可在“关于”页面查看更新状态。", (System.FormattableString)$"Found {latest}. See About for update details."));
             }
         });
     }
@@ -239,6 +254,8 @@ public partial class App : Application
         CloseTrayMenu();
         _tray?.Dispose();
         _tray = null;
+        _hudHotkey?.Dispose();
+        _hudHotkey = null;
         _runtime?.Dispose();
         _runtime = null;
         _hud?.Close();

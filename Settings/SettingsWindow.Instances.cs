@@ -140,7 +140,11 @@ public partial class SettingsWindow
 
     private void ApplySettingsToControls(AppSettings settings)
     {
+        HudHotkeyBox.Text=settings.HudToggleHotkey;
+        HudHotkeyAnimationCombo.SelectedIndex=settings.HudHotkeyShowAnimation=="Simple" ? 0 : 1;
         _rootSettings=settings; _persistedRootSettings=settings; _selectedInstanceId=""; ApplyEditorControls(settings); RefreshInstanceEditor(); _=RefreshEditingHighlightAsync();
+        GlobalAppearance.Apply(this,settings.GlobalFontScale,settings.GlobalUiScale);
+        RefreshHudHotkeyRegistrationStatus();
     }
 
     private AppSettings CollectSettingsFromUi()
@@ -153,9 +157,12 @@ public partial class SettingsWindow
             _rootSettings=_rootSettings with { MultiHudEnabled=multi,
                 HudInstances=_rootSettings.HudInstances.Select(i => i.Id==_selectedInstanceId ? i with {
                     Settings=editor, Name=string.IsNullOrWhiteSpace(_instanceName?.Text) ? i.Name : _instanceName.Text.Trim() } : i).ToList() };
-        _rootSettings=_rootSettings with { SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,UiLanguage=editor.UiLanguage,
+        _rootSettings=_rootSettings with { HudToggleHotkey=HudHotkeyBox.Text?.Trim() ?? "",
+            HudHotkeyShowAnimation=HudHotkeyAnimationCombo.SelectedIndex==0 ? "Simple" : "Full",
+            SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,UiLanguage=editor.UiLanguage,
             HudInstances=_rootSettings.HudInstances.Select(i=>i with { Settings=i.Settings with {
-                SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle } }).ToList() };
+                SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,
+                GlobalFontScale=_rootSettings.GlobalFontScale,GlobalUiScale=_rootSettings.GlobalUiScale } }).ToList() };
         return _rootSettings;
     }
 }

@@ -20,9 +20,9 @@ public static class HttpSourceConfiguration
                 throw new FormatException(LocalizationManager.Text("Header 和字段映射不能为 null。", "Headers and field mappings cannot be null."));
             if (!source.Enabled) continue;
             if (!Uri.TryCreate(source.Url, UriKind.Absolute, out var url) || (url.Scheme != "http" && url.Scheme != "https"))
-                throw new FormatException(LocalizationManager.Text($"{source.Name}：请输入完整 HTTP/HTTPS 地址。", $"{source.Name}: enter an absolute HTTP/HTTPS URL."));
+                throw new FormatException(LocalizationManager.Formatted($"{source.Name}：请输入完整 HTTP/HTTPS 地址。", (System.FormattableString)$"{source.Name}: enter an absolute HTTP/HTTPS URL."));
             if (source.Headers is null || source.Fields is null || source.Fields.Count == 0 || source.Fields.Any(f => f is null || !Regex.IsMatch(f.Variable ?? "", @"^[A-Za-z0-9_-]+$") || string.IsNullOrWhiteSpace(f.JsonPath)))
-                throw new FormatException(LocalizationManager.Text($"{source.Name}：请填写变量名和 JSON 路径。", $"{source.Name}: provide variable names and JSON paths."));
+                throw new FormatException(LocalizationManager.Formatted($"{source.Name}：请填写变量名和 JSON 路径。", (System.FormattableString)$"{source.Name}: provide variable names and JSON paths."));
         }
         return sources;
     }

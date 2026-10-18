@@ -47,7 +47,7 @@ public partial class SettingsWindow : Window
             UpdateStatusKind.NoRemoteVersion => LocalizationManager.Text("最新版本：未获取到", "Latest: unavailable"),
             UpdateStatusKind.NetworkError or UpdateStatusKind.Error => LocalizationManager.Text("最新版本：检查失败", "Latest: check failed"),
             UpdateStatusKind.Timeout => LocalizationManager.Text("最新版本：检查超时", "Latest: timed out"),
-            _ when !string.IsNullOrWhiteSpace(LatestVersion) => LocalizationManager.Text($"最新版本：v{LatestVersion}", $"Latest: v{LatestVersion}"),
+            _ when !string.IsNullOrWhiteSpace(LatestVersion) => LocalizationManager.Formatted($"最新版本：v{LatestVersion}", (System.FormattableString)$"Latest: v{LatestVersion}"),
             _ => LocalizationManager.Text("最新版本：尚未获取", "Latest: not checked"),
         };
 
@@ -58,7 +58,7 @@ public partial class SettingsWindow : Window
             UpdateStatusKind.UpdateAvailable => LocalizationManager.Text("状态：发现新版本", "Status: update available"),
             UpdateStatusKind.UpToDate => LocalizationManager.Text("状态：当前已是最新版本", "Status: up to date"),
             UpdateStatusKind.LocalNewer => LocalizationManager.Text("状态：当前版本高于线上最新版本", "Status: local version is newer than the latest online version"),
-            UpdateStatusKind.NetworkError => LocalizationManager.Text($"状态：网络请求失败（{Detail ?? "连接错误"}）", $"Status: network request failed ({Detail ?? "connection error"})"),
+            UpdateStatusKind.NetworkError => LocalizationManager.Formatted($"状态：网络请求失败（{Detail ?? "连接错误"}）", (System.FormattableString)$"Status: network request failed ({Detail ?? "connection error"})"),
             UpdateStatusKind.Timeout => LocalizationManager.Text("状态：检查超时，请稍后重试", "Status: update check timed out; try again later"),
             _ => LocalizationManager.Text("状态：检查更新时发生错误", "Status: an error occurred while checking for updates"),
         };
@@ -71,8 +71,10 @@ public partial class SettingsWindow : Window
     private readonly CustomHudRuntime _runtime;
     private bool _monitorComboReady;
     private bool _applyingPositionUi;
+    internal Action<AppSettings> PersistLanguagePreference {get;set;}=SettingsManager.SaveImmediatePreferences;
     private string? _maintenanceStatusZh;
     private string? _maintenanceStatusEn;
+    private object?[]? _maintenanceStatusArguments;
     private string? _startupStatusZh;
     private string? _startupStatusEn;
 
@@ -82,12 +84,17 @@ public partial class SettingsWindow : Window
         _settings = settings;
         _hud = hud;
         _runtime = runtime;
+        InitializeDataManagement();
+        InitializeHudHotkeyEditor();
+        InitializeHotZoneEditor();
+        InitializeHardwarePanel();
+        ManualView.NavigationRequested+=NavigateToSettingsSection;
 
         LocalizationManager.ApplyStaticText(this);
         RebuildLocalizedChoiceItems();
 
-        LanguageChineseBtn.Click += (_, _) => OnLanguageSelected(AppLanguage.SimplifiedChinese);
-        LanguageEnglishBtn.Click += (_, _) => OnLanguageSelected(AppLanguage.English);
+        LanguageButton.Click+=async (_,_)=>await new LanguageSelectionWindow(
+            ()=>_rootSettings,OnLanguageSelected,ApplyGlobalAppearanceAsync).ShowDialog(this);
 
         HudFontCombo.Items.Add(LocalizationManager.Text("系统默认", "System default"));
         foreach (var family in FontManager.Current.SystemFonts.OrderBy(f => f.Name)) HudFontCombo.Items.Add(family.Name);
@@ -117,8 +124,9 @@ public partial class SettingsWindow : Window
 
         string currentVersion = GetCurrentVersionText();
         AboutVersionText.Text = $"v{currentVersion}";
+        BuildDateText.Text=LocalizationManager.Formatted("构建日期  2026.10.18",$"Build  {"2026.10.18"}");
         Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion);
-        UpdateCurrentVersionText.Text = LocalizationManager.Text($"当前版本：v{currentVersion}", $"Current: v{currentVersion}");
+        UpdateCurrentVersionText.Text = LocalizationManager.Formatted($"当前版本：v{currentVersion}", (System.FormattableString)$"Current: v{currentVersion}");
         UpdateLatestVersionText.Text = LocalizationManager.Text("最新版本：尚未获取", "Latest: not checked");
         UpdateStatusText.Text = LocalizationManager.Text("状态：尚未检查", "Status: not checked");
         if (LastUpdateResult is { } cachedUpdateResult)
@@ -132,6 +140,7 @@ public partial class SettingsWindow : Window
             Opened += async (_, _) => await RefreshPackagedStartupSwitchAsync();
         }
 
+        ManualView.ApplyLocalization();
         UpdateModeUi();
     }
 
@@ -178,13 +187,13 @@ public partial class SettingsWindow : Window
         finally { _applyingPositionUi=previousPositionUi; }
     }
 
-    private async void OnLanguageSelected(AppLanguage language)
+    private async void OnLanguageSelected(string preference)
     {
-        string preference = LocalizationManager.PreferenceFor(language);
-        bool languageChanged = LocalizationManager.Current != language;
+        preference=LocalizationManager.NormalizePreference(preference);
+        bool languageChanged = _settings.UiLanguage != preference;
 
         _settings = _settings with { UiLanguage = preference };
-        LocalizationManager.SetLanguage(language);
+        LocalizationManager.SetPreference(preference);
 
         ApplyLocalization();
         UpdateLanguageSwitchVisual();
@@ -193,7 +202,13 @@ public partial class SettingsWindow : Window
         // other editor changes still require Save & Apply.
         _rootSettings = _rootSettings with { UiLanguage = _settings.UiLanguage };
         _persistedRootSettings=_persistedRootSettings with { UiLanguage=_rootSettings.UiLanguage };
-        SettingsManager.Save(_persistedRootSettings);
+        try {PersistLanguagePreference(_persistedRootSettings);}
+        catch(Exception ex)
+        {
+            Diagnostics.AppLog.Error("Unable to save the language preference.",ex);
+            MaintenanceStatusText.Text=ex.Message;
+            ToolTip.SetTip(LanguageButton,ex.Message);
+        }
 
         // Persistent and transient HUD renderers read LocalizationManager at render time,
         // so their next live refresh switches language without replacing unsaved settings.
@@ -213,8 +228,9 @@ public partial class SettingsWindow : Window
 
         string currentVersion = GetCurrentVersionText();
         AboutVersionText.Text = $"v{currentVersion}";
+        BuildDateText.Text=LocalizationManager.Formatted("构建日期  2026.10.18",$"Build  {"2026.10.18"}");
         Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion);
-        UpdateCurrentVersionText.Text = LocalizationManager.Text($"当前版本：v{currentVersion}", $"Current: v{currentVersion}");
+        UpdateCurrentVersionText.Text = LocalizationManager.Formatted($"当前版本：v{currentVersion}", (System.FormattableString)$"Current: v{currentVersion}");
         if (LastUpdateResult is { } result)
             ApplyUpdateCheckResult(result);
         else
@@ -225,6 +241,11 @@ public partial class SettingsWindow : Window
 
         RefreshMaintenanceStatusLocalization();
         RefreshStartupStatusLocalization();
+        RefreshHudHotkeyLocalization();
+        RebuildHotZoneChoices();
+        ApplyHardwareLocalization();
+        ManualView.ApplyLocalization();
+        UpdateLanguageSwitchVisual();
     }
 
     private void SetStartupStatus(string? zh, string? en)
@@ -266,7 +287,13 @@ public partial class SettingsWindow : Window
     {
         _maintenanceStatusZh = zh;
         _maintenanceStatusEn = en;
+        _maintenanceStatusArguments=null;
         RefreshMaintenanceStatusLocalization();
+    }
+
+    private void SetMaintenanceStatus(string zh,FormattableString en)
+    {
+        _maintenanceStatusZh=zh;_maintenanceStatusEn=en.Format;_maintenanceStatusArguments=en.GetArguments();RefreshMaintenanceStatusLocalization();
     }
 
     private void RefreshMaintenanceStatusLocalization()
@@ -274,24 +301,21 @@ public partial class SettingsWindow : Window
         if (_maintenanceStatusZh is null || _maintenanceStatusEn is null)
             return;
 
-        MaintenanceStatusText.Text = LocalizationManager.Text(_maintenanceStatusZh, _maintenanceStatusEn);
+        MaintenanceStatusText.Text = _maintenanceStatusArguments is null ? LocalizationManager.Text(_maintenanceStatusZh, _maintenanceStatusEn)
+            : LocalizationManager.Formatted(_maintenanceStatusZh,System.Runtime.CompilerServices.FormattableStringFactory.Create(_maintenanceStatusEn,_maintenanceStatusArguments));
     }
 
     private void UpdateLanguageSwitchVisual()
     {
-        var activeBg = new SolidColorBrush(Color.Parse("#C6CA4C"));
-        var inactiveBg = new SolidColorBrush(Color.Parse("#2B2B2E"));
-        var activeFg = new SolidColorBrush(Color.Parse("#171719"));
-        var inactiveFg = new SolidColorBrush(Color.Parse("#F0F0F2"));
-
-        bool english = LocalizationManager.IsEnglish;
-        LanguageChineseBtn.Background = english ? inactiveBg : activeBg;
-        LanguageChineseBtn.Foreground = english ? inactiveFg : activeFg;
-        LanguageChineseBtn.FontWeight = english ? FontWeight.Normal : FontWeight.SemiBold;
-
-        LanguageEnglishBtn.Background = english ? activeBg : inactiveBg;
-        LanguageEnglishBtn.Foreground = english ? activeFg : inactiveFg;
-        LanguageEnglishBtn.FontWeight = english ? FontWeight.SemiBold : FontWeight.Normal;
+        FlowDirection=LocalizationManager.IsRightToLeft ? Avalonia.Media.FlowDirection.RightToLeft : Avalonia.Media.FlowDirection.LeftToRight;
+        // JSON, tokens, formulas and numeric input keep their stable reading order.
+        foreach(var box in this.GetLogicalDescendants().OfType<TextBox>())
+            box.FlowDirection=box.Name?.Contains("Search",StringComparison.Ordinal)==true || box.Name is "ProfileNameBox" or "TriggerNameBox" ? FlowDirection : Avalonia.Media.FlowDirection.LeftToRight;
+        string languageLabel="Language / "+LocalizationManager.CurrentLanguage.LanguageWord;
+        LanguageButtonLabel.Text=languageLabel;
+        ToolTip.SetTip(LanguageButton,languageLabel);
+        Avalonia.Automation.AutomationProperties.SetName(LanguageButton,languageLabel);
+        GlobalAppearance.Apply(this,_rootSettings.GlobalFontScale,_rootSettings.GlobalUiScale);
     }
 
     private void PopulateMonitorCombo(bool force = false)
@@ -308,7 +332,7 @@ public partial class SettingsWindow : Window
             var s = screens[i];
             var area = s.WorkingArea;
             string primary = ReferenceEquals(s, Screens.Primary) ? LocalizationManager.Text(" · 主", " · Primary") : "";
-            MonitorCombo.Items.Add(LocalizationManager.Text($"显示器 {i + 1} · {area.Width}×{area.Height}{primary}", $"Display {i + 1} · {area.Width}×{area.Height}{primary}"));
+            MonitorCombo.Items.Add(LocalizationManager.Formatted($"显示器 {i + 1} · {area.Width}×{area.Height}{primary}", (System.FormattableString)$"Display {i + 1} · {area.Width}×{area.Height}{primary}"));
         }
 
         int wanted = _settings.MonitorIndex < 0 ? 0 : _settings.MonitorIndex + 1;
@@ -324,6 +348,7 @@ public partial class SettingsWindow : Window
             || (multi && _rootSettings.HudInstances.Any(i=>i.Enabled && (i.Id==_selectedInstanceId ? AlwaysVisibleSwitch.IsChecked==true : i.Settings.AlwaysVisible)));
         ClickToCycleSwitch.IsEnabled=anyPersistent;
         bool persistent = AlwaysVisibleSwitch.IsChecked == true;
+        HotZonePanel.IsEnabled=!persistent;HotZonePanel.Opacity=persistent ? .45 : 1;
         PersistentLayerCombo.IsEnabled = persistent;
         PersistentLayerCombo.Opacity = persistent ? 1.0 : 0.45;
 
@@ -348,6 +373,7 @@ public partial class SettingsWindow : Window
         try
         {
             _settings = settings;
+            LoadHotZoneControls(settings);
 
             ScaleBox.Value = (decimal)settings.GlobalScale;
             DurationBox.Value = (decimal)settings.DisplayDurationSeconds;
@@ -393,7 +419,9 @@ public partial class SettingsWindow : Window
         {
             HudEnabled = HudEnabledSwitch.IsChecked == true,
             StartWithWindows = StartupSwitch.IsChecked == true,
-            UiLanguage = _settings.UiLanguage,
+            UiLanguage = _rootSettings.UiLanguage,
+            GlobalFontScale = _rootSettings.GlobalFontScale,
+            GlobalUiScale = _rootSettings.GlobalUiScale,
             GlobalScale = (double)(ScaleBox.Value ?? (decimal)AppSettings.DefaultGlobalScale),
             DisplayDurationSeconds = (double)(DurationBox.Value ?? (decimal)AppSettings.DefaultDisplayDurationSeconds),
             BounceStrength = (double)(BounceBox.Value ?? (decimal)AppSettings.DefaultBounceStrength),
@@ -405,6 +433,10 @@ public partial class SettingsWindow : Window
             HudFontFamily = HudFontCombo.SelectedIndex > 0 ? HudFontCombo.SelectedItem?.ToString() ?? "" : "",
             ClickToCycle = ClickToCycleSwitch.IsChecked == true,
             AlwaysVisible = AlwaysVisibleSwitch.IsChecked == true,
+            HotZoneEnabled=HotZoneEnabledCheck.IsChecked==true,HotZonePosition=(HudPosition)Math.Max(0,HotZonePositionCombo.SelectedIndex),
+            HotZoneWidth=(int)(HotZoneWidthBox.Value ?? 240),HotZoneHeight=(int)(HotZoneHeightBox.Value ?? 20),
+            HotZoneOffsetX=(int)(HotZoneOffsetXBox.Value ?? 0),HotZoneOffsetY=(int)(HotZoneOffsetYBox.Value ?? 0),
+            HotZoneDwellMilliseconds=(int)HotZoneDwellSlider.Value,HotZoneAdvanceQueue=HotZoneAdvanceCheck.IsChecked==true,
             PersistentLayer = PersistentLayerCombo.SelectedIndex == 1
                 ? PersistentHudLayer.Desktop
                 : PersistentHudLayer.Topmost,
@@ -449,8 +481,9 @@ public partial class SettingsWindow : Window
                         : "Could not change startup state. Check Windows Startup Apps and logs.");
             else SetStartupStatus(null, null);
         }
-        SettingsManager.Save(_settings);
+        SaveSettingsWithHudHotkey(_settings);
         _persistedRootSettings=_settings;
+        RefreshHudHotkeyRegistrationStatus();
 
         SaveBtn.IsEnabled = false;
         SaveBtn.Content = LocalizationManager.Text("应用中…", "Applying…");
@@ -533,7 +566,7 @@ public partial class SettingsWindow : Window
             StartupApplyResult importedStartup = await StartupManager.ApplyAsync(imported.StartWithWindows);
             if (importedStartup.IsPackaged)
                 imported = imported with { StartWithWindows = importedStartup.IsEnabled };
-            SettingsManager.Save(imported);
+            SaveSettingsWithHudHotkey(imported);
             if (importedStartup.IsPackaged && !importedStartup.Succeeded)
                 SetStartupStatus("导入的开机启动设置未能应用，请检查 Windows 启动应用。",
                     "Imported startup preference could not be applied. Check Windows Startup Apps.");
@@ -548,7 +581,7 @@ public partial class SettingsWindow : Window
             else
                 SetMaintenanceStatus(
                     $"配置已导入并应用；旧配置已备份到 {Path.GetFileName(backup)}。",
-                    $"Config imported and applied; previous config backed up as {Path.GetFileName(backup)}.");
+                    (System.FormattableString)$"Config imported and applied; previous config backed up as {Path.GetFileName(backup)}.");
         }
         catch (Exception ex)
         {
@@ -570,7 +603,7 @@ public partial class SettingsWindow : Window
             else
                 SetMaintenanceStatus(
                     $"配置已备份：{Path.GetFileName(backup)}",
-                    $"Config backed up: {Path.GetFileName(backup)}");
+                    (System.FormattableString)$"Config backed up: {Path.GetFileName(backup)}");
         }
         catch (Exception ex)
         {
@@ -635,7 +668,7 @@ public partial class SettingsWindow : Window
     }
 
     private static string GetCurrentVersionText()
-        => typeof(SettingsWindow).Assembly.GetName().Version?.ToString(3) ?? "0.1.1";
+        => typeof(SettingsWindow).Assembly.GetName().Version?.ToString(3) ?? "0.1.2";
 
     private async void OnCheckUpdate(object? sender, RoutedEventArgs e)
     {
@@ -742,7 +775,7 @@ public partial class SettingsWindow : Window
 
     public void ApplyUpdateCheckResult(UpdateCheckResult result)
     {
-        UpdateCurrentVersionText.Text = LocalizationManager.Text($"当前版本：v{result.CurrentVersion}", $"Current: v{result.CurrentVersion}");
+        UpdateCurrentVersionText.Text = LocalizationManager.Formatted($"当前版本：v{result.CurrentVersion}", (System.FormattableString)$"Current: v{result.CurrentVersion}");
         UpdateLatestVersionText.Text = result.LatestVersionText;
         UpdateStatusText.Text = result.StatusText;
     }

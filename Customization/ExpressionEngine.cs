@@ -106,7 +106,7 @@ public static class ExpressionEngine
             var value = ParseTernary();
             SkipWhite();
             if (_pos != _text.Length)
-                throw Error(LocalizationManager.Text($"无法识别的内容：{_text[_pos..]}", $"Unrecognized content: {_text[_pos..]}"));
+                throw Error(LocalizationManager.Formatted($"无法识别的内容：{_text[_pos..]}", (System.FormattableString)$"Unrecognized content: {_text[_pos..]}"));
             return value;
         }
 
@@ -290,7 +290,7 @@ public static class ExpressionEngine
                 return _vars.TryGetValue(id, out var value) ? value : null;
             }
 
-            throw Error(LocalizationManager.Text($"无法识别字符 '{c}'", $"Unrecognized character '{c}'"));
+            throw Error(LocalizationManager.Formatted($"无法识别字符 '{c}'", (System.FormattableString)$"Unrecognized character '{c}'"));
         }
 
         private object? Call(string name, List<object?> args)
@@ -332,13 +332,13 @@ public static class ExpressionEngine
                 "bool" => RequireCount(name, args, 1, () => ToBool(args[0])),
                 "percent" => RequireCount(name, args, 2, () => Math.Abs(ToNumber(args[1])) < double.Epsilon ? 0d : ToNumber(args[0]) / ToNumber(args[1]) * 100d),
                 "between" => RequireCount(name, args, 3, () => ToNumber(args[0]) >= ToNumber(args[1]) && ToNumber(args[0]) <= ToNumber(args[2])),
-                _ => throw Error(LocalizationManager.Text($"不支持的函数：{name}", $"Unsupported function: {name}"))
+                _ => throw Error(LocalizationManager.Formatted($"不支持的函数：{name}", (System.FormattableString)$"Unsupported function: {name}"))
             };
         }
 
         private static object Round(List<object?> args, string name)
         {
-            if (args.Count is < 1 or > 2) throw new FormatException(LocalizationManager.Text($"函数 {name} 需要 1~2 个参数", $"Function {name} requires 1-2 arguments"));
+            if (args.Count is < 1 or > 2) throw new FormatException(LocalizationManager.Formatted($"函数 {name} 需要 1~2 个参数", (System.FormattableString)$"Function {name} requires 1-2 arguments"));
             int digits = args.Count == 2 ? Math.Clamp((int)ToNumber(args[1]), 0, 8) : 0;
             return Math.Round(ToNumber(args[0]), digits, MidpointRounding.AwayFromZero);
         }
@@ -347,13 +347,13 @@ public static class ExpressionEngine
 
         private static object? RequireCount(string name, List<object?> args, int count, Func<object?> value)
         {
-            if (args.Count != count) throw new FormatException(LocalizationManager.Text($"函数 {name} 需要 {count} 个参数", $"Function {name} requires {count} arguments"));
+            if (args.Count != count) throw new FormatException(LocalizationManager.Formatted($"函数 {name} 需要 {count} 个参数", (System.FormattableString)$"Function {name} requires {count} arguments"));
             return value();
         }
 
         private static object? RequireMinCount(string name, List<object?> args, int count, Func<object?> value)
         {
-            if (args.Count < count) throw new FormatException(LocalizationManager.Text($"函数 {name} 至少需要 {count} 个参数", $"Function {name} requires at least {count} arguments"));
+            if (args.Count < count) throw new FormatException(LocalizationManager.Formatted($"函数 {name} 至少需要 {count} 个参数", (System.FormattableString)$"Function {name} requires at least {count} arguments"));
             return value();
         }
 
@@ -376,7 +376,7 @@ public static class ExpressionEngine
             }
             string raw = _text[start.._pos];
             if (!double.TryParse(raw, NumberStyles.Float, CultureInfo.InvariantCulture, out double value))
-                throw Error(LocalizationManager.Text($"无效数字：{raw}", $"Invalid number: {raw}"));
+                throw Error(LocalizationManager.Formatted($"无效数字：{raw}", (System.FormattableString)$"Invalid number: {raw}"));
             return value;
         }
 
@@ -428,7 +428,7 @@ public static class ExpressionEngine
 
         private void Require(string token)
         {
-            if (!Match(token)) throw Error(LocalizationManager.Text($"缺少 '{token}'", $"Missing '{token}'"));
+            if (!Match(token)) throw Error(LocalizationManager.Formatted($"缺少 '{token}'", (System.FormattableString)$"Missing '{token}'"));
         }
 
         private void SkipWhite()
@@ -436,7 +436,7 @@ public static class ExpressionEngine
             while (_pos < _text.Length && char.IsWhiteSpace(_text[_pos])) _pos++;
         }
 
-        private FormatException Error(string message) => new(LocalizationManager.Text($"表达式错误（位置 {_pos + 1}）：{message}", $"Expression error (position {_pos + 1}): {message}"));
+        private FormatException Error(string message) => new(LocalizationManager.Formatted($"表达式错误（位置 {_pos + 1}）：{message}", (System.FormattableString)$"Expression error (position {_pos + 1}): {message}"));
     }
 
     private static bool ValuesEqual(object? a, object? b)
@@ -474,7 +474,7 @@ public static class ExpressionEngine
     {
         if (value is null) return 0d;
         if (TryNumber(value, out double number)) return number;
-        throw new FormatException(LocalizationManager.Text($"'{ToText(value)}' 不是数值", $"'{ToText(value)}' is not numeric"));
+        throw new FormatException(LocalizationManager.Formatted($"'{ToText(value)}' 不是数值", (System.FormattableString)$"'{ToText(value)}' is not numeric"));
     }
 
     private static bool ToBool(object? value)

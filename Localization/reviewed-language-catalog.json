@@ -1,0 +1,1318 @@
+{
+  "minecraftJavaVersion": "26.3",
+  "source": "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json",
+  "checkedAt": "2026-10-18",
+  "languages": [
+    {
+      "id": 100,
+      "code": "af-ZA",
+      "nativeName": "Afrikaans",
+      "region": "Suid-Afrika",
+      "languageWord": "Taal",
+      "minecraftCode": "af_za",
+      "rightToLeft": false
+    },
+    {
+      "id": 10,
+      "code": "ar-SA",
+      "nativeName": "العربية",
+      "region": "العالم العربي",
+      "languageWord": "اللغة",
+      "minecraftCode": "ar_sa",
+      "rightToLeft": true
+    },
+    {
+      "id": 102,
+      "code": "ast-ES",
+      "nativeName": "Asturianu",
+      "region": "Asturies",
+      "languageWord": "Llingua",
+      "minecraftCode": "ast_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 103,
+      "code": "az-AZ",
+      "nativeName": "Azərbaycanca",
+      "region": "Azərbaycan",
+      "languageWord": "Dil",
+      "minecraftCode": "az_az",
+      "rightToLeft": false
+    },
+    {
+      "id": 104,
+      "code": "ba-RU",
+      "nativeName": "Башҡортса",
+      "region": "Башҡортостан, Рәсәй",
+      "languageWord": "Тел",
+      "minecraftCode": "ba_ru",
+      "rightToLeft": false
+    },
+    {
+      "id": 105,
+      "code": "bar",
+      "nativeName": "Boarisch",
+      "region": "Bayern",
+      "languageWord": "Sproch",
+      "minecraftCode": "bar",
+      "rightToLeft": false
+    },
+    {
+      "id": 106,
+      "code": "be-BY",
+      "nativeName": "Беларуская",
+      "region": "Беларусь",
+      "languageWord": "Мова",
+      "minecraftCode": "be_by",
+      "rightToLeft": false
+    },
+    {
+      "id": 107,
+      "code": "be-Latn",
+      "nativeName": "Biełaruskaja",
+      "region": "Biełaruś",
+      "languageWord": "Mova",
+      "minecraftCode": "be_latn",
+      "rightToLeft": false
+    },
+    {
+      "id": 108,
+      "code": "bg-BG",
+      "nativeName": "Български",
+      "region": "България",
+      "languageWord": "Език",
+      "minecraftCode": "bg_bg",
+      "rightToLeft": false
+    },
+    {
+      "id": 109,
+      "code": "br-FR",
+      "nativeName": "Brezhoneg",
+      "region": "Breizh",
+      "languageWord": "Yezh",
+      "minecraftCode": "br_fr",
+      "rightToLeft": false
+    },
+    {
+      "id": 110,
+      "code": "brb",
+      "nativeName": "Braobans",
+      "region": "Braobant",
+      "languageWord": "Taol",
+      "minecraftCode": "brb",
+      "rightToLeft": false
+    },
+    {
+      "id": 111,
+      "code": "bs-BA",
+      "nativeName": "Bosanski",
+      "region": "Bosna i Hercegovina",
+      "languageWord": "Jezik",
+      "minecraftCode": "bs_ba",
+      "rightToLeft": false
+    },
+    {
+      "id": 112,
+      "code": "ca-ES",
+      "nativeName": "Català",
+      "region": "Catalunya",
+      "languageWord": "Idioma",
+      "minecraftCode": "ca_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 113,
+      "code": "cs-CZ",
+      "nativeName": "Čeština",
+      "region": "Česko",
+      "languageWord": "Jazyk",
+      "minecraftCode": "cs_cz",
+      "rightToLeft": false
+    },
+    {
+      "id": 114,
+      "code": "cv-RU",
+      "nativeName": "Чӑвашла",
+      "region": "Чӑваш Ен, Раҫҫей",
+      "languageWord": "Чӗлхе",
+      "minecraftCode": "cv_cu",
+      "rightToLeft": false
+    },
+    {
+      "id": 115,
+      "code": "cy-GB",
+      "nativeName": "Cymraeg",
+      "region": "Cymru",
+      "languageWord": "Iaith",
+      "minecraftCode": "cy_gb",
+      "rightToLeft": false
+    },
+    {
+      "id": 116,
+      "code": "da-DK",
+      "nativeName": "Dansk",
+      "region": "Danmark",
+      "languageWord": "Sprog",
+      "minecraftCode": "da_dk",
+      "rightToLeft": false
+    },
+    {
+      "id": 117,
+      "code": "de-AT",
+      "nativeName": "Deitsch",
+      "region": "Österreich",
+      "languageWord": "Sproch",
+      "minecraftCode": "de_at",
+      "rightToLeft": false
+    },
+    {
+      "id": 118,
+      "code": "de-CH",
+      "nativeName": "Schwiizerdütsch",
+      "region": "Schwiiz",
+      "languageWord": "Sprach",
+      "minecraftCode": "de_ch",
+      "rightToLeft": false
+    },
+    {
+      "id": 5,
+      "code": "de-DE",
+      "nativeName": "Deutsch",
+      "region": "Deutschland",
+      "languageWord": "Sprache",
+      "minecraftCode": "de_de",
+      "rightToLeft": false
+    },
+    {
+      "id": 120,
+      "code": "el-GR",
+      "nativeName": "Ελληνικά",
+      "region": "Ελλάδα",
+      "languageWord": "Γλώσσα",
+      "minecraftCode": "el_gr",
+      "rightToLeft": false
+    },
+    {
+      "id": 121,
+      "code": "en-AU",
+      "nativeName": "English",
+      "region": "Australia",
+      "languageWord": "Language",
+      "minecraftCode": "en_au",
+      "rightToLeft": false
+    },
+    {
+      "id": 122,
+      "code": "en-CA",
+      "nativeName": "English",
+      "region": "Canada",
+      "languageWord": "Language",
+      "minecraftCode": "en_ca",
+      "rightToLeft": false
+    },
+    {
+      "id": 123,
+      "code": "en-GB",
+      "nativeName": "English",
+      "region": "United Kingdom",
+      "languageWord": "Language",
+      "minecraftCode": "en_gb",
+      "rightToLeft": false
+    },
+    {
+      "id": 124,
+      "code": "en-NZ",
+      "nativeName": "English",
+      "region": "New Zealand",
+      "languageWord": "Language",
+      "minecraftCode": "en_nz",
+      "rightToLeft": false
+    },
+    {
+      "id": 125,
+      "code": "en-x-pirate",
+      "nativeName": "Pirate Speak",
+      "region": "The Seven Seas",
+      "languageWord": "Lingo",
+      "minecraftCode": "en_pt",
+      "rightToLeft": false
+    },
+    {
+      "id": 126,
+      "code": "en-x-upside-down",
+      "nativeName": "ɥsᴉꞁᵷuƎ",
+      "region": "uʍoᗡ ǝpᴉsd∩",
+      "languageWord": "˙˙˙ǝᵷɐnᵷuɐꞀ",
+      "minecraftCode": "en_ud",
+      "rightToLeft": false
+    },
+    {
+      "id": 1,
+      "code": "en-US",
+      "nativeName": "English",
+      "region": "United States",
+      "languageWord": "Language",
+      "minecraftCode": "en_us",
+      "rightToLeft": false
+    },
+    {
+      "id": 128,
+      "code": "en-x-anglish",
+      "nativeName": "Anglish",
+      "region": "Oned Riches",
+      "languageWord": "Tongue",
+      "minecraftCode": "enp",
+      "rightToLeft": false
+    },
+    {
+      "id": 129,
+      "code": "en-x-shakespeare",
+      "nativeName": "Shakespearean English",
+      "region": "Kingdom of England",
+      "languageWord": "Writ Dialogue",
+      "minecraftCode": "enws",
+      "rightToLeft": false
+    },
+    {
+      "id": 130,
+      "code": "eo-UY",
+      "nativeName": "Esperanto",
+      "region": "Esperantujo",
+      "languageWord": "Lingvo",
+      "minecraftCode": "eo_uy",
+      "rightToLeft": false
+    },
+    {
+      "id": 131,
+      "code": "es-AR",
+      "nativeName": "Español",
+      "region": "Argentina",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_ar",
+      "rightToLeft": false
+    },
+    {
+      "id": 132,
+      "code": "es-CL",
+      "nativeName": "Español",
+      "region": "Chile",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_cl",
+      "rightToLeft": false
+    },
+    {
+      "id": 133,
+      "code": "es-EC",
+      "nativeName": "Español",
+      "region": "Ecuador",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_ec",
+      "rightToLeft": false
+    },
+    {
+      "id": 7,
+      "code": "es-ES",
+      "nativeName": "Español",
+      "region": "España",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 135,
+      "code": "es-MX",
+      "nativeName": "Español",
+      "region": "México",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_mx",
+      "rightToLeft": false
+    },
+    {
+      "id": 136,
+      "code": "es-UY",
+      "nativeName": "Español",
+      "region": "Uruguay",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_uy",
+      "rightToLeft": false
+    },
+    {
+      "id": 137,
+      "code": "es-VE",
+      "nativeName": "Español",
+      "region": "Venezuela",
+      "languageWord": "Idioma",
+      "minecraftCode": "es_ve",
+      "rightToLeft": false
+    },
+    {
+      "id": 138,
+      "code": "esan",
+      "nativeName": "Andalûh",
+      "region": "Andaluçía",
+      "languageWord": "Idioma",
+      "minecraftCode": "esan",
+      "rightToLeft": false
+    },
+    {
+      "id": 139,
+      "code": "et-EE",
+      "nativeName": "Eesti keel",
+      "region": "Eesti",
+      "languageWord": "Keel",
+      "minecraftCode": "et_ee",
+      "rightToLeft": false
+    },
+    {
+      "id": 140,
+      "code": "eu-ES",
+      "nativeName": "Euskara",
+      "region": "Euskal Herria",
+      "languageWord": "Hizkuntza",
+      "minecraftCode": "eu_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 19,
+      "code": "fa-IR",
+      "nativeName": "فارسی",
+      "region": "ايران",
+      "languageWord": "زبان",
+      "minecraftCode": "fa_ir",
+      "rightToLeft": true
+    },
+    {
+      "id": 142,
+      "code": "fi-FI",
+      "nativeName": "Suomi",
+      "region": "Suomi",
+      "languageWord": "Kieli",
+      "minecraftCode": "fi_fi",
+      "rightToLeft": false
+    },
+    {
+      "id": 143,
+      "code": "fil-PH",
+      "nativeName": "Filipino",
+      "region": "Pilipinas",
+      "languageWord": "Wika",
+      "minecraftCode": "fil_ph",
+      "rightToLeft": false
+    },
+    {
+      "id": 144,
+      "code": "fo-FO",
+      "nativeName": "Føroyskt",
+      "region": "Føroyar",
+      "languageWord": "Mál",
+      "minecraftCode": "fo_fo",
+      "rightToLeft": false
+    },
+    {
+      "id": 145,
+      "code": "fr-CA",
+      "nativeName": "Français",
+      "region": "Canada",
+      "languageWord": "Langue",
+      "minecraftCode": "fr_ca",
+      "rightToLeft": false
+    },
+    {
+      "id": 146,
+      "code": "fr-CH",
+      "nativeName": "Français",
+      "region": "Suisse",
+      "languageWord": "Langue",
+      "minecraftCode": "fr_ch",
+      "rightToLeft": false
+    },
+    {
+      "id": 6,
+      "code": "fr-FR",
+      "nativeName": "Français",
+      "region": "France",
+      "languageWord": "Langue",
+      "minecraftCode": "fr_fr",
+      "rightToLeft": false
+    },
+    {
+      "id": 148,
+      "code": "fra-DE",
+      "nativeName": "Fränggisch",
+      "region": "Franggn",
+      "languageWord": "Schbroch",
+      "minecraftCode": "fra_de",
+      "rightToLeft": false
+    },
+    {
+      "id": 149,
+      "code": "fur-IT",
+      "nativeName": "Furlan",
+      "region": "Friûl",
+      "languageWord": "Lenghe",
+      "minecraftCode": "fur_it",
+      "rightToLeft": false
+    },
+    {
+      "id": 150,
+      "code": "fy-NL",
+      "nativeName": "Frysk",
+      "region": "Fryslân",
+      "languageWord": "Taal",
+      "minecraftCode": "fy_nl",
+      "rightToLeft": false
+    },
+    {
+      "id": 151,
+      "code": "ga-IE",
+      "nativeName": "Gaeilge",
+      "region": "Éire",
+      "languageWord": "Teanga",
+      "minecraftCode": "ga_ie",
+      "rightToLeft": false
+    },
+    {
+      "id": 152,
+      "code": "gd-GB",
+      "nativeName": "Gàidhlig",
+      "region": "Alba",
+      "languageWord": "Cànan",
+      "minecraftCode": "gd_gb",
+      "rightToLeft": false
+    },
+    {
+      "id": 153,
+      "code": "gl-ES",
+      "nativeName": "Galego",
+      "region": "Galicia / Galiza",
+      "languageWord": "Lingua",
+      "minecraftCode": "gl_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 154,
+      "code": "go-FR",
+      "nativeName": "Galo",
+      "region": "Bertègn",
+      "languageWord": "Parlement",
+      "minecraftCode": "go_fr",
+      "rightToLeft": false
+    },
+    {
+      "id": 155,
+      "code": "got-DE",
+      "nativeName": "𐌲𐌿𐍄𐍂𐌰𐌶𐌳𐌰",
+      "region": "𐌲𐌿𐍄𐌸𐌹𐌿𐌳𐌰",
+      "languageWord": "𐍂𐌰𐌶𐌳𐌰",
+      "minecraftCode": "got_de",
+      "rightToLeft": false
+    },
+    {
+      "id": 156,
+      "code": "hal-UA",
+      "nativeName": "Галицка",
+      "region": "Галичина, Вкраїна",
+      "languageWord": "Мова",
+      "minecraftCode": "hal_ua",
+      "rightToLeft": false
+    },
+    {
+      "id": 157,
+      "code": "haw-US",
+      "nativeName": "ʻŌlelo Hawaiʻi",
+      "region": "Hawaiʻi",
+      "languageWord": "'Ōlelo",
+      "minecraftCode": "haw_us",
+      "rightToLeft": false
+    },
+    {
+      "id": 158,
+      "code": "he-IL",
+      "nativeName": "עברית",
+      "region": "ישראל",
+      "languageWord": "שפה",
+      "minecraftCode": "he_il",
+      "rightToLeft": true
+    },
+    {
+      "id": 11,
+      "code": "hi-IN",
+      "nativeName": "हिंदी",
+      "region": "भारत",
+      "languageWord": "भाषा",
+      "minecraftCode": "hi_in",
+      "rightToLeft": false
+    },
+    {
+      "id": 160,
+      "code": "hn-NO",
+      "nativeName": "Høgnorsk",
+      "region": "Norig",
+      "languageWord": "Mål",
+      "minecraftCode": "hn_no",
+      "rightToLeft": false
+    },
+    {
+      "id": 161,
+      "code": "hr-HR",
+      "nativeName": "Hrvatski",
+      "region": "Hrvatska",
+      "languageWord": "Jezik",
+      "minecraftCode": "hr_hr",
+      "rightToLeft": false
+    },
+    {
+      "id": 162,
+      "code": "hu-HU",
+      "nativeName": "Magyar",
+      "region": "Magyarország",
+      "languageWord": "Nyelv",
+      "minecraftCode": "hu_hu",
+      "rightToLeft": false
+    },
+    {
+      "id": 163,
+      "code": "hy-AM",
+      "nativeName": "Հայերեն",
+      "region": "Հայաստան",
+      "languageWord": "Լեզու",
+      "minecraftCode": "hy_am",
+      "rightToLeft": false
+    },
+    {
+      "id": 14,
+      "code": "id-ID",
+      "nativeName": "Bahasa Indonesia",
+      "region": "Indonesia",
+      "languageWord": "Bahasa",
+      "minecraftCode": "id_id",
+      "rightToLeft": false
+    },
+    {
+      "id": 165,
+      "code": "ig-NG",
+      "nativeName": "Igbo",
+      "region": "Naigeria",
+      "languageWord": "Asụsụ",
+      "minecraftCode": "ig_ng",
+      "rightToLeft": false
+    },
+    {
+      "id": 166,
+      "code": "io",
+      "nativeName": "Ido",
+      "region": "Idia",
+      "languageWord": "Linguo",
+      "minecraftCode": "io_en",
+      "rightToLeft": false
+    },
+    {
+      "id": 167,
+      "code": "is-IS",
+      "nativeName": "Íslenska",
+      "region": "Ísland",
+      "languageWord": "Tungumál",
+      "minecraftCode": "is_is",
+      "rightToLeft": false
+    },
+    {
+      "id": 168,
+      "code": "isv",
+      "nativeName": "Medžuslovjansky",
+      "region": "Slovjanščina",
+      "languageWord": "Jezyk",
+      "minecraftCode": "isv",
+      "rightToLeft": false
+    },
+    {
+      "id": 18,
+      "code": "it-IT",
+      "nativeName": "Italiano",
+      "region": "Italia",
+      "languageWord": "Lingua",
+      "minecraftCode": "it_it",
+      "rightToLeft": false
+    },
+    {
+      "id": 3,
+      "code": "ja-JP",
+      "nativeName": "日本語",
+      "region": "日本",
+      "languageWord": "言語",
+      "minecraftCode": "ja_jp",
+      "rightToLeft": false
+    },
+    {
+      "id": 171,
+      "code": "jbo",
+      "nativeName": "la .lojban.",
+      "region": "la jbogu'e",
+      "languageWord": "bangu",
+      "minecraftCode": "jbo_en",
+      "rightToLeft": false
+    },
+    {
+      "id": 172,
+      "code": "ka-GE",
+      "nativeName": "ქართული",
+      "region": "საქართველო",
+      "languageWord": "ენა",
+      "minecraftCode": "ka_ge",
+      "rightToLeft": false
+    },
+    {
+      "id": 173,
+      "code": "kk-KZ",
+      "nativeName": "Қазақша",
+      "region": "Қазақстан",
+      "languageWord": "Тіл",
+      "minecraftCode": "kk_kz",
+      "rightToLeft": false
+    },
+    {
+      "id": 174,
+      "code": "kn-IN",
+      "nativeName": "ಕನ್ನಡ",
+      "region": "ಭಾರತ",
+      "languageWord": "ಭಾಷೆ",
+      "minecraftCode": "kn_in",
+      "rightToLeft": false
+    },
+    {
+      "id": 4,
+      "code": "ko-KR",
+      "nativeName": "한국어",
+      "region": "대한민국",
+      "languageWord": "언어",
+      "minecraftCode": "ko_kr",
+      "rightToLeft": false
+    },
+    {
+      "id": 176,
+      "code": "ksh",
+      "nativeName": "Kölsch/Ripoarisch",
+      "region": "Rhingland",
+      "languageWord": "Sprooch",
+      "minecraftCode": "ksh",
+      "rightToLeft": false
+    },
+    {
+      "id": 177,
+      "code": "kw-GB",
+      "nativeName": "Kernewek",
+      "region": "Kernow",
+      "languageWord": "Yeth",
+      "minecraftCode": "kw_gb",
+      "rightToLeft": false
+    },
+    {
+      "id": 178,
+      "code": "ky-KG",
+      "nativeName": "Кыргызча",
+      "region": "Кыргызстан",
+      "languageWord": "Тил",
+      "minecraftCode": "ky_kg",
+      "rightToLeft": false
+    },
+    {
+      "id": 179,
+      "code": "la-LA",
+      "nativeName": "Latina",
+      "region": "Latium",
+      "languageWord": "Lingua",
+      "minecraftCode": "la_la",
+      "rightToLeft": false
+    },
+    {
+      "id": 180,
+      "code": "lb-LU",
+      "nativeName": "Lëtzebuergesch",
+      "region": "Lëtzebuerg",
+      "languageWord": "Sprooch",
+      "minecraftCode": "lb_lu",
+      "rightToLeft": false
+    },
+    {
+      "id": 181,
+      "code": "li-LI",
+      "nativeName": "Limburgs",
+      "region": "Limburg",
+      "languageWord": "Toal",
+      "minecraftCode": "li_li",
+      "rightToLeft": false
+    },
+    {
+      "id": 182,
+      "code": "lmo",
+      "nativeName": "Lombard",
+      "region": "Lombardia",
+      "languageWord": "Lengua",
+      "minecraftCode": "lmo",
+      "rightToLeft": false
+    },
+    {
+      "id": 183,
+      "code": "lo-LA",
+      "nativeName": "ລາວ",
+      "region": "ປະເທດລາວ",
+      "languageWord": "ພາສາ",
+      "minecraftCode": "lo_la",
+      "rightToLeft": false
+    },
+    {
+      "id": 184,
+      "code": "en-x-lolcat",
+      "nativeName": "LOLCAT",
+      "region": "Kingdom of Cats",
+      "languageWord": "Wat u re speek",
+      "minecraftCode": "lol_us",
+      "rightToLeft": false
+    },
+    {
+      "id": 185,
+      "code": "lt-LT",
+      "nativeName": "Lietuvių",
+      "region": "Lietuva",
+      "languageWord": "Kalba",
+      "minecraftCode": "lt_lt",
+      "rightToLeft": false
+    },
+    {
+      "id": 186,
+      "code": "lv-LV",
+      "nativeName": "Latviešu",
+      "region": "Latvija",
+      "languageWord": "Valoda",
+      "minecraftCode": "lv_lv",
+      "rightToLeft": false
+    },
+    {
+      "id": 187,
+      "code": "lzh",
+      "nativeName": "文言",
+      "region": "華夏",
+      "languageWord": "文",
+      "minecraftCode": "lzh",
+      "rightToLeft": false
+    },
+    {
+      "id": 188,
+      "code": "mk-MK",
+      "nativeName": "Македонски",
+      "region": "Северна Македонија",
+      "languageWord": "Jазик",
+      "minecraftCode": "mk_mk",
+      "rightToLeft": false
+    },
+    {
+      "id": 189,
+      "code": "mn-MN",
+      "nativeName": "Монгол",
+      "region": "Монгол Улс",
+      "languageWord": "Хэл",
+      "minecraftCode": "mn_mn",
+      "rightToLeft": false
+    },
+    {
+      "id": 190,
+      "code": "ms-MY",
+      "nativeName": "Bahasa Melayu",
+      "region": "Malaysia",
+      "languageWord": "Bahasa",
+      "minecraftCode": "ms_my",
+      "rightToLeft": false
+    },
+    {
+      "id": 191,
+      "code": "mt-MT",
+      "nativeName": "Malti",
+      "region": "Malta",
+      "languageWord": "Lingwa",
+      "minecraftCode": "mt_mt",
+      "rightToLeft": false
+    },
+    {
+      "id": 192,
+      "code": "nah",
+      "nativeName": "Mēxikatlahtōlli",
+      "region": "Mēxiko",
+      "languageWord": "Tlahtōlli",
+      "minecraftCode": "nah",
+      "rightToLeft": false
+    },
+    {
+      "id": 193,
+      "code": "nds-DE",
+      "nativeName": "Plattdüütsch",
+      "region": "Düütschland",
+      "languageWord": "Spraak",
+      "minecraftCode": "nds_de",
+      "rightToLeft": false
+    },
+    {
+      "id": 194,
+      "code": "nl-BE",
+      "nativeName": "Vlaams",
+      "region": "België",
+      "languageWord": "Taal",
+      "minecraftCode": "nl_be",
+      "rightToLeft": false
+    },
+    {
+      "id": 195,
+      "code": "nl-NL",
+      "nativeName": "Nederlands",
+      "region": "Nederland",
+      "languageWord": "Taal",
+      "minecraftCode": "nl_nl",
+      "rightToLeft": false
+    },
+    {
+      "id": 196,
+      "code": "nn-NO",
+      "nativeName": "Norsk nynorsk",
+      "region": "Noreg",
+      "languageWord": "Mål",
+      "minecraftCode": "nn_no",
+      "rightToLeft": false
+    },
+    {
+      "id": 197,
+      "code": "no-NO",
+      "nativeName": "Norsk bokmål",
+      "region": "Norge",
+      "languageWord": "Språk",
+      "minecraftCode": "no_no",
+      "rightToLeft": false
+    },
+    {
+      "id": 198,
+      "code": "oc-FR",
+      "nativeName": "Occitan",
+      "region": "Occitània",
+      "languageWord": "Lenga",
+      "minecraftCode": "oc_fr",
+      "rightToLeft": false
+    },
+    {
+      "id": 199,
+      "code": "ovd",
+      "nativeName": "Övdalska",
+      "region": "Swerre",
+      "languageWord": "Glam",
+      "minecraftCode": "ovd",
+      "rightToLeft": false
+    },
+    {
+      "id": 200,
+      "code": "pl-PL",
+      "nativeName": "Polski",
+      "region": "Polska",
+      "languageWord": "Język",
+      "minecraftCode": "pl_pl",
+      "rightToLeft": false
+    },
+    {
+      "id": 201,
+      "code": "pls",
+      "nativeName": "Ngiiwà",
+      "region": "Ndanìꞌngà",
+      "languageWord": "Ngiiwà",
+      "minecraftCode": "pls",
+      "rightToLeft": false
+    },
+    {
+      "id": 8,
+      "code": "pt-BR",
+      "nativeName": "Português",
+      "region": "Brasil",
+      "languageWord": "Idioma",
+      "minecraftCode": "pt_br",
+      "rightToLeft": false
+    },
+    {
+      "id": 203,
+      "code": "pt-PT",
+      "nativeName": "Português",
+      "region": "Portugal",
+      "languageWord": "Idioma",
+      "minecraftCode": "pt_pt",
+      "rightToLeft": false
+    },
+    {
+      "id": 204,
+      "code": "qcb-ES",
+      "nativeName": "Cántabru/Montañés",
+      "region": "Cantabria",
+      "languageWord": "Lengua",
+      "minecraftCode": "qcb_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 205,
+      "code": "id-x-old",
+      "nativeName": "Bhs. Indonesia edjaän lama",
+      "region": "Indonesia tempo doeloe",
+      "languageWord": "Bahasa",
+      "minecraftCode": "qid",
+      "rightToLeft": false
+    },
+    {
+      "id": 206,
+      "code": "qya",
+      "nativeName": "Quenya",
+      "region": "Arda",
+      "languageWord": "Lambë",
+      "minecraftCode": "qya_aa",
+      "rightToLeft": false
+    },
+    {
+      "id": 207,
+      "code": "ro-RO",
+      "nativeName": "Română",
+      "region": "România",
+      "languageWord": "Limbă",
+      "minecraftCode": "ro_ro",
+      "rightToLeft": false
+    },
+    {
+      "id": 208,
+      "code": "ru-x-old",
+      "nativeName": "Русскій дореформенный",
+      "region": "Россійская имперія",
+      "languageWord": "Языкъ",
+      "minecraftCode": "rpr",
+      "rightToLeft": false
+    },
+    {
+      "id": 9,
+      "code": "ru-RU",
+      "nativeName": "Русский",
+      "region": "Россия",
+      "languageWord": "Язык",
+      "minecraftCode": "ru_ru",
+      "rightToLeft": false
+    },
+    {
+      "id": 210,
+      "code": "ry-UA",
+      "nativeName": "Руснацькый",
+      "region": "Пудкарпатя, Украина",
+      "languageWord": "Язык",
+      "minecraftCode": "ry_ua",
+      "rightToLeft": false
+    },
+    {
+      "id": 211,
+      "code": "sah-RU",
+      "nativeName": "Сахалыы",
+      "region": "Cаха Сирэ",
+      "languageWord": "Тыл",
+      "minecraftCode": "sah_sah",
+      "rightToLeft": false
+    },
+    {
+      "id": 212,
+      "code": "se-NO",
+      "nativeName": "Davvisámegiella",
+      "region": "Sápmi",
+      "languageWord": "Giella",
+      "minecraftCode": "se_no",
+      "rightToLeft": false
+    },
+    {
+      "id": 213,
+      "code": "sk-SK",
+      "nativeName": "Slovenčina",
+      "region": "Slovensko",
+      "languageWord": "Jazyk",
+      "minecraftCode": "sk_sk",
+      "rightToLeft": false
+    },
+    {
+      "id": 214,
+      "code": "sl-SI",
+      "nativeName": "Slovenščina",
+      "region": "Slovenija",
+      "languageWord": "Jezik",
+      "minecraftCode": "sl_si",
+      "rightToLeft": false
+    },
+    {
+      "id": 215,
+      "code": "so-SO",
+      "nativeName": "Soomaali",
+      "region": "Soomaaliya",
+      "languageWord": "Luqad",
+      "minecraftCode": "so_so",
+      "rightToLeft": false
+    },
+    {
+      "id": 216,
+      "code": "sq-AL",
+      "nativeName": "Shqip",
+      "region": "Shqipëri",
+      "languageWord": "Gjuha",
+      "minecraftCode": "sq_al",
+      "rightToLeft": false
+    },
+    {
+      "id": 217,
+      "code": "sr-Latn",
+      "nativeName": "Srpski",
+      "region": "Srbija",
+      "languageWord": "Jezik",
+      "minecraftCode": "sr_cs",
+      "rightToLeft": false
+    },
+    {
+      "id": 218,
+      "code": "sr-Cyrl",
+      "nativeName": "Српски",
+      "region": "Србија",
+      "languageWord": "Језик",
+      "minecraftCode": "sr_sp",
+      "rightToLeft": false
+    },
+    {
+      "id": 219,
+      "code": "sv-SE",
+      "nativeName": "Svenska",
+      "region": "Sverige",
+      "languageWord": "Språk",
+      "minecraftCode": "sv_se",
+      "rightToLeft": false
+    },
+    {
+      "id": 220,
+      "code": "sxu",
+      "nativeName": "Säggs’sch",
+      "region": "Saggsn",
+      "languageWord": "Schbrache",
+      "minecraftCode": "sxu",
+      "rightToLeft": false
+    },
+    {
+      "id": 221,
+      "code": "szl",
+      "nativeName": "Ślōnski",
+      "region": "Gōrny Ślōnsk",
+      "languageWord": "Godka",
+      "minecraftCode": "szl",
+      "rightToLeft": false
+    },
+    {
+      "id": 222,
+      "code": "ta-IN",
+      "nativeName": "தமிழ்",
+      "region": "இந்தியா",
+      "languageWord": "மொழி",
+      "minecraftCode": "ta_in",
+      "rightToLeft": false
+    },
+    {
+      "id": 16,
+      "code": "th-TH",
+      "nativeName": "ไทย",
+      "region": "ประเทศไทย",
+      "languageWord": "ภาษา",
+      "minecraftCode": "th_th",
+      "rightToLeft": false
+    },
+    {
+      "id": 224,
+      "code": "tl-PH",
+      "nativeName": "Tagalog",
+      "region": "Pilipinas",
+      "languageWord": "Wika",
+      "minecraftCode": "tl_ph",
+      "rightToLeft": false
+    },
+    {
+      "id": 225,
+      "code": "tlh",
+      "nativeName": "tlhIngan Hol",
+      "region": "tlhIngan wo'",
+      "languageWord": "Hol",
+      "minecraftCode": "tlh_aa",
+      "rightToLeft": false
+    },
+    {
+      "id": 226,
+      "code": "tok",
+      "nativeName": "toki pona",
+      "region": "kulupu pona",
+      "languageWord": "toki",
+      "minecraftCode": "tok",
+      "rightToLeft": false
+    },
+    {
+      "id": 17,
+      "code": "tr-TR",
+      "nativeName": "Türkçe",
+      "region": "Türkiye",
+      "languageWord": "Dil",
+      "minecraftCode": "tr_tr",
+      "rightToLeft": false
+    },
+    {
+      "id": 228,
+      "code": "tt-RU",
+      "nativeName": "Татарча",
+      "region": "Татарстан, Рәсәй",
+      "languageWord": "Тел",
+      "minecraftCode": "tt_ru",
+      "rightToLeft": false
+    },
+    {
+      "id": 229,
+      "code": "tzo-MX",
+      "nativeName": "Bats'i k'op",
+      "region": "Jobel",
+      "languageWord": "K'op",
+      "minecraftCode": "tzo_mx",
+      "rightToLeft": false
+    },
+    {
+      "id": 230,
+      "code": "uk-UA",
+      "nativeName": "Українська",
+      "region": "Україна",
+      "languageWord": "Мова",
+      "minecraftCode": "uk_ua",
+      "rightToLeft": false
+    },
+    {
+      "id": 231,
+      "code": "uz-UZ",
+      "nativeName": "O'zbekcha",
+      "region": "O'zbekiston",
+      "languageWord": "Til",
+      "minecraftCode": "uz_uz",
+      "rightToLeft": false
+    },
+    {
+      "id": 232,
+      "code": "val-ES",
+      "nativeName": "Català (Valencià)",
+      "region": "País Valencià",
+      "languageWord": "Llengua",
+      "minecraftCode": "val_es",
+      "rightToLeft": false
+    },
+    {
+      "id": 233,
+      "code": "vec-IT",
+      "nativeName": "Vèneto",
+      "region": "Veneto",
+      "languageWord": "Łengua",
+      "minecraftCode": "vec_it",
+      "rightToLeft": false
+    },
+    {
+      "id": 15,
+      "code": "vi-VN",
+      "nativeName": "Tiếng Việt",
+      "region": "Việt Nam",
+      "languageWord": "Ngôn ngữ",
+      "minecraftCode": "vi_vn",
+      "rightToLeft": false
+    },
+    {
+      "id": 235,
+      "code": "vp-VL",
+      "nativeName": "Viossa",
+      "region": "Vilant",
+      "languageWord": "Glossa",
+      "minecraftCode": "vp_vl",
+      "rightToLeft": false
+    },
+    {
+      "id": 236,
+      "code": "vro",
+      "nativeName": "Võro",
+      "region": "Eesti",
+      "languageWord": "Kiil",
+      "minecraftCode": "vro",
+      "rightToLeft": false
+    },
+    {
+      "id": 237,
+      "code": "yi-DE",
+      "nativeName": "ייִדיש",
+      "region": "אשכנזיש יידן",
+      "languageWord": "שפּראך",
+      "minecraftCode": "yi_de",
+      "rightToLeft": true
+    },
+    {
+      "id": 238,
+      "code": "yo-NG",
+      "nativeName": "Yorùbá",
+      "region": "Nàìjíríà",
+      "languageWord": "Ede",
+      "minecraftCode": "yo_ng",
+      "rightToLeft": false
+    },
+    {
+      "id": 0,
+      "code": "zh-CN",
+      "nativeName": "简体中文",
+      "region": "中国大陆",
+      "languageWord": "语言",
+      "minecraftCode": "zh_cn",
+      "rightToLeft": false
+    },
+    {
+      "id": 240,
+      "code": "zh-HK",
+      "nativeName": "繁體中文",
+      "region": "香港特別行政區",
+      "languageWord": "語言",
+      "minecraftCode": "zh_hk",
+      "rightToLeft": false
+    },
+    {
+      "id": 2,
+      "code": "zh-TW",
+      "nativeName": "繁體中文",
+      "region": "台灣",
+      "languageWord": "語言",
+      "minecraftCode": "zh_tw",
+      "rightToLeft": false
+    },
+    {
+      "id": 242,
+      "code": "ms-Arab",
+      "nativeName": "بهاس ملايو",
+      "region": "مليسيا",
+      "languageWord": "بهاس",
+      "minecraftCode": "zlm_arab",
+      "rightToLeft": true
+    },
+    {
+      "id": 12,
+      "code": "bn-BD",
+      "nativeName": "বাংলা",
+      "region": "বাংলাদেশ",
+      "languageWord": "ভাষা",
+      "rightToLeft": false
+    },
+    {
+      "id": 13,
+      "code": "ur-PK",
+      "nativeName": "اردو",
+      "region": "پاکستان",
+      "languageWord": "زبان",
+      "rightToLeft": true
+    },
+    {
+      "id": 20,
+      "code": "bo-CN",
+      "nativeName": "བོད་ཡིག",
+      "region": "བོད།",
+      "languageWord": "སྐད་ཡིག",
+      "rightToLeft": false
+    }
+  ]
+}

@@ -8,6 +8,13 @@
   <ItemGroup>
     <Compile Include="BugRegressionTests.cs" /><Compile Include="NativeRenderingChecks.cs" /><Compile Include="FrameCollectorResourceChecks.cs" /><Compile Include="MultiHudLayerChecks.cs" /><Compile Include="DesktopShellChecks.cs" />
     <Compile Include="WorldClockChecks.cs" /><Compile Include="FeatureRegressionChecks.cs" /><Compile Include="InteractionRegressionChecks.cs" /><Compile Include="PositionRegressionChecks.cs" /><Compile Include="RuntimeRegressionChecks.cs" /><Compile Include="LiveFrameChecks.cs" /><Compile Include="NativeFrameSource.cs" />
+    <Compile Include="HotkeyRegressionChecks.cs" />
+    <Compile Include="DataWarningRegressionChecks.cs" />
+    <Compile Include="NextVersionRegressionChecks.cs" />
+    <Compile Include="HardwareTelemetryChecks.cs" />
+    <Compile Include="NavigationManualChecks.cs" />
+    <Compile Include="LocalizationRegressionChecks.cs" />
+    <Compile Include="AppearanceLanguageChecks.cs" />
     <None Include="Fixtures/presentmon2.6-replay.csv" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../EndfieldChargePlus.csproj" />
   </ItemGroup>

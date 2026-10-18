@@ -4,7 +4,7 @@ namespace EndfieldChargePlus.Customization;
 public sealed record WorldClockZone(int Minutes,string Zh,string En)
 {
     public string Label(bool english) => WorldClockTimeZones.OffsetText(Minutes)+" "+(english ? En : Zh);
-    public override string ToString() => Label(LocalizationManager.Current==AppLanguage.English);
+    public override string ToString() => WorldClockTimeZones.OffsetText(Minutes)+" "+LocalizationManager.Text(Zh,En);
 }
 
 /// <summary>Fixed UTC offsets. Region names are examples; daylight saving does not change an offset.</summary>

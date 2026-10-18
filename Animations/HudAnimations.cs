@@ -14,6 +14,7 @@ public sealed record AnimationOptions
     public double BounceStrength { get; init; } = 0.275;
     public double RippleIntensity { get; init; } = 1.0;
     public double RippleSpread { get; init; } = 1.0;
+    public double FontHeightFactor { get; init; } = 1.0;
 
     public static AnimationOptions Default { get; } = new();
     public static AnimationOptions FromSettings(AppSettings s) => new()
@@ -22,6 +23,7 @@ public sealed record AnimationOptions
         BounceStrength = Math.Clamp(s.BounceStrength, 0d, 0.5d),
         RippleIntensity = Math.Clamp(s.RippleIntensity, 0d, 2d),
         RippleSpread = Math.Clamp(s.RippleSpread, 0.5d, 1.5d),
+        FontHeightFactor = Math.Max(1,GlobalAppearance.NormalizeScale(s.GlobalFontScale)),
     };
 }
 
@@ -70,11 +72,11 @@ internal static class HudAnimations
     public static Animation PillCorner(AnimationOptions o)
     {
         var a = New(o);
-        a.Children.Add(KF(MapCue(o, 0d), null, CR(PillRadiusA)));
-        a.Children.Add(KF(MapCue(o, TAppear), KS_In, CR(PillRadiusA)));
-        a.Children.Add(KF(MapCue(o, TExpand), KS_InOut, CR(PillRadiusB)));
-        a.Children.Add(KF(MapCue(o, THoldB), KS_In, CR(PillRadiusB)));
-        a.Children.Add(KF(MapCue(o, TContract), KS_InOut, CR(PillRadiusA)));
+        a.Children.Add(KF(MapCue(o, 0d), null, CR(PillRadiusA*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TAppear), KS_In, CR(PillRadiusA*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TExpand), KS_InOut, CR(PillRadiusB*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, THoldB), KS_In, CR(PillRadiusB*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TContract), KS_InOut, CR(PillRadiusA*o.FontHeightFactor)));
         return a;
     }
 
@@ -92,12 +94,12 @@ internal static class HudAnimations
     public static Animation PillHeight(AnimationOptions o)
     {
         var a = New(o);
-        a.Children.Add(KF(MapCue(o, 0d), null, H(PillHeightA)));
-        a.Children.Add(KF(MapCue(o, TAppear), KS_In, H(PillHeightA)));
-        a.Children.Add(KF(MapCue(o, TExpand), BackOut(o), H(PillHeightB)));
-        a.Children.Add(KF(MapCue(o, THoldB), KS_In, H(PillHeightB)));
-        a.Children.Add(KF(MapCue(o, TContract), KS_InOut, H(PillHeightA)));
-        a.Children.Add(KF(MapCue(o, THoldC), KS_In, H(PillHeightA)));
+        a.Children.Add(KF(MapCue(o, 0d), null, H(PillHeightA*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TAppear), KS_In, H(PillHeightA*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TExpand), BackOut(o), H(PillHeightB*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, THoldB), KS_In, H(PillHeightB*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, TContract), KS_InOut, H(PillHeightA*o.FontHeightFactor)));
+        a.Children.Add(KF(MapCue(o, THoldC), KS_In, H(PillHeightA*o.FontHeightFactor)));
         return a;
     }
 
@@ -260,6 +262,22 @@ internal static class HudAnimations
         a.Children.Add(KF(0d, null, SX(1d), SY(1d)));
         a.Children.Add(KF(1d, KS_In, SX(0d), SY(0d)));
         return a;
+    }
+
+    public const double RollDistance=60;
+    public static Animation RollOut()
+    {
+        var animation=new Animation { Duration=TimeSpan.FromMilliseconds(360),FillMode=FillMode.Forward };
+        animation.Children.Add(KF(0,null,TY(0)));
+        animation.Children.Add(KF(1,KS_In,TY(-RollDistance)));
+        return animation;
+    }
+    public static Animation RollIn()
+    {
+        var animation=new Animation { Duration=TimeSpan.FromMilliseconds(460),FillMode=FillMode.Forward };
+        animation.Children.Add(KF(0,null,TY(RollDistance)));
+        animation.Children.Add(KF(1,KS_Out,TY(0)));
+        return animation;
     }
 
     private static Animation New(AnimationOptions o) => new()

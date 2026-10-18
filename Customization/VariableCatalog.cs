@@ -769,7 +769,7 @@ public static class VariableCatalog
     }
 
     public static IReadOnlyList<VariableDefinition> AllBuiltIns =>
-        StaticBuiltIns.Concat(AdvancedBuiltIns).Concat(DynamicDriveBuiltIns.Value).Concat(HardwareSensorCatalog.FanDefinitions)
+        StaticBuiltIns.Concat(AdvancedBuiltIns).Concat(DynamicDriveBuiltIns.Value).Concat(HardwareSensorCatalog.FanDefinitions).Concat(MediaVariableCatalog.All).Concat(HardwareTelemetryCatalog.Definitions).Concat(HardwareStatusVariables.All)
             .GroupBy(x => x.Key, StringComparer.OrdinalIgnoreCase)
             .Select(g => g.First())
             .Select((item, sourceIndex) => new { Item = item, SourceIndex = sourceIndex })
@@ -781,6 +781,8 @@ public static class VariableCatalog
 
     public static VariableDefinition? Find(string key) =>
         AllBuiltIns.FirstOrDefault(x => string.Equals(x.Key, key, StringComparison.OrdinalIgnoreCase));
+
+    internal static IReadOnlyList<VariableDefinition> VisibleBuiltIns=>AllBuiltIns.Where(v=>!HardwareVariableCompatibility.IsDuplicate(v.Key)).ToArray();
 
     public static VariableDefinition CreateCustom(string key) => new(
         key,

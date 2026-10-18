@@ -21,6 +21,14 @@ internal static class Program
     [STAThread]
     public static void Main(string[] args)
     {
+        int restartIndex=Array.IndexOf(args,"--restart-from");
+        if(restartIndex>=0)
+        {
+            if(restartIndex+1>=args.Length || !int.TryParse(args[restartIndex+1],out int previousPid) || previousPid<=0 || previousPid==Environment.ProcessId)return;
+            try {using var previous=System.Diagnostics.Process.GetProcessById(previousPid);if(!previous.WaitForExit(15000))return;}
+            catch(ArgumentException) { }
+            catch {return;}
+        }
         IsAutoStart = args.Any(a => string.Equals(a, "--autostart", StringComparison.OrdinalIgnoreCase));
 
         // Windows supplies an activation kind for the Store startup task instead
@@ -119,5 +127,6 @@ internal static class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
+            .With(LocalizationManager.FontOptions)
             .LogToTrace();
 }

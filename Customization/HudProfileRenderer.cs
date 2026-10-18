@@ -106,7 +106,7 @@ public static class HudProfileRenderer
             || k.StartsWith("time.", StringComparison.OrdinalIgnoreCase)
             || k.StartsWith("deepseek.period.", StringComparison.OrdinalIgnoreCase));
 
-    private static IReadOnlyDictionary<string, object?> BuildEffectiveVariables(
+    public static IReadOnlyDictionary<string, object?> BuildEffectiveVariables(
         HudProfile profile,
         IReadOnlyDictionary<string, object?> vars,DateTimeOffset? instant=null)
     {
@@ -146,16 +146,16 @@ public static class HudProfileRenderer
             result["time.target.remaining_seconds"] = remainingSeconds;
             result["time.target.remaining_percent"] = remainingPercent;
             result["time.target.progress"] = targetProgress;
-            result["time.target.remaining_text"] = LocalizationManager.Text(
+            result["time.target.remaining_text"] = LocalizationManager.Formatted(
                 $"剩余{Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%",
-                $"Left {Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%");
+(System.FormattableString)                $"Left {Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%");
 
             if (profile.TimeTargetEnabled)
             {
                 result["time.display.progress"] = remainingPercent;
-                result["time.display.status_text"] = LocalizationManager.Text(
+                result["time.display.status_text"] = LocalizationManager.Formatted(
                     $"剩余{Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%",
-                    $"Left {Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%");
+(System.FormattableString)                    $"Left {Math.Round(remainingPercent, MidpointRounding.AwayFromZero):0}%");
             }
             else
             {

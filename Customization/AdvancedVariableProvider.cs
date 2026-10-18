@@ -25,7 +25,7 @@ namespace EndfieldChargePlus.Customization;
 /// Hardware/driver dependent values are omitted when Windows/the driver does not expose them;
 /// TemplateEngine then renders "--" rather than inventing a value.
 /// </summary>
-internal sealed class AdvancedVariableProvider : IDisposable
+internal sealed partial class AdvancedVariableProvider : IDisposable
 {
     private static readonly HttpClient FastHttp = new() { Timeout = TimeSpan.FromSeconds(3) };
     private readonly object _gate = new();
@@ -99,6 +99,8 @@ internal sealed class AdvancedVariableProvider : IDisposable
             if (NeedAdvanced("usb.") || NeedAdvanced("peripheral.")) AddUsbAndPeripherals(vars);
             if (NeedAdvanced("dev.")) AddDeveloper(vars);
             if (NeedAdvanced("security.")) AddSecurity(vars);
+            if (requested is null || requested.Any(k=>k.StartsWith("sensor.",StringComparison.OrdinalIgnoreCase) || k.StartsWith("hardware.",StringComparison.OrdinalIgnoreCase)))
+                AddHardwareTelemetry(vars);
         }, ct).ConfigureAwait(false);
 
         if (Exact("network.public_ipv4") || Exact("network.public_ipv6"))
@@ -663,7 +665,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
     {
         if (DateTime.UtcNow < _nextHardwareRead) return;
         _nextHardwareRead = DateTime.UtcNow.AddMilliseconds(900);
-        var result = new HardwareSnapshot();
+        var result = new HardwareSnapshot { CpuLowLevelReady=Interop.HardwareSensorDriver.Inspect().Status=="Ready" };
         try
         {
             lock (_gate)
@@ -677,11 +679,16 @@ internal sealed class AdvancedVariableProvider : IDisposable
                         IsMotherboardEnabled = true,
                         IsControllerEnabled = true,
                         IsStorageEnabled = true,
-                        IsMemoryEnabled = true
+                        IsMemoryEnabled = true,
+                        IsPsuEnabled = true,
+                        IsBatteryEnabled = true,
+                        IsNetworkEnabled = true,
+                        IsPowerMonitorEnabled = true
                     };
                     try { _computer.Open(); }
-                    catch
+                    catch (Exception ex)
                     {
+                        Diagnostics.AppLog.Warn("Hardware monitor initialization failed: "+ex.GetType().Name+": "+ex.Message);
                         try { _computer.Close(); } catch { }
                         _computer = null;
                     }
@@ -692,44 +699,48 @@ internal sealed class AdvancedVariableProvider : IDisposable
             }
         }
         catch { }
-        if (result.CpuTemperatureMax is null) ReadExternalCpuTemperature(result);
+        ReadExternalSensors(result);
+        MergeExternalAliases(result);
         _hardware = result;
         HardwareSensorCatalog.PublishFans(result.Fans);
-    }
-
-    // An already-running hardware monitor can expose its sensors through WMI.
-    // Reading that namespace requires no elevation of the HUD process.
-    private static void ReadExternalCpuTemperature(HardwareSnapshot result)
-    {
-        foreach (string scope in new[] { @"root\LibreHardwareMonitor", @"root\OpenHardwareMonitor" })
-        {
-            try
-            {
-                using var query = new ManagementObjectSearcher(scope, "SELECT Identifier, Value FROM Sensor WHERE SensorType='Temperature'");
-                foreach (ManagementObject sensor in query.Get())
-                {
-                    string id = Convert.ToString(sensor["Identifier"]) ?? "";
-                    double temperature = SafeDouble(sensor["Value"]);
-                    if (id.Contains("cpu", StringComparison.OrdinalIgnoreCase) && temperature is > 0 and < 125)
-                        result.CpuTemperatureMax = Math.Max(result.CpuTemperatureMax ?? 0, temperature);
-                }
-                if (result.CpuTemperatureMax is not null) return;
-            }
-            catch { }
-        }
+        HardwareTelemetryCatalog.Publish(result.Sensors);
+        HardwareTelemetryCatalog.Publish(result.Properties);
     }
 
     private static void ReadHardware(IHardware hw, HardwareSnapshot output)
     {
-        try { hw.Update(); } catch { }
-        string type = hw.HardwareType.ToString();
-        var sensors = hw.Sensors.ToList();
-        if (type.Equals("Cpu", StringComparison.OrdinalIgnoreCase))
+        try { hw.Update(); }
+        catch
         {
-            var temps = sensors.Where(x => x.SensorType == SensorType.Temperature && x.Value is > 0 and < 125).ToList();
+            // A failed update must not republish a previous successful sensor
+            // value as a fresh measurement. Child devices can still update.
+            foreach(var child in hw.SubHardware)ReadHardware(child,output);
+            return;
+        }
+        string type = hw.HardwareType.ToString();
+        output.Properties.Add(new("inventory","lhm:"+hw.Identifier+":name",hw.Name,"Name","Hardware","",hw.Name));
+        output.Properties.Add(new("inventory","lhm:"+hw.Identifier+":type",hw.Name,"Type","Hardware","",type));
+        try { foreach(var property in hw.Properties)
+            if(!string.IsNullOrWhiteSpace(property.Value))output.Properties.Add(new("inventory","lhm:"+hw.Identifier+":"+property.Key,hw.Name,property.Key,"Hardware","",property.Value)); }
+        catch { }
+        var sensors = hw.Sensors.ToList();
+        foreach(var sensor in sensors)
+        {
+            double? Valid(float? value)=>value is { } number && float.IsFinite(number) ? number : null;
+            var value=Valid(sensor.Value);
+            bool inaccessibleCpu=type=="Cpu" && !output.CpuLowLevelReady && sensor.SensorType is SensorType.Temperature or SensorType.Voltage or SensorType.Current or SensorType.Power or SensorType.Clock or SensorType.Factor;
+            if(inaccessibleCpu || type=="Cpu" && sensor.SensorType==SensorType.Temperature && value==0)value=null;
+            output.Sensors.Add(new("lhm",sensor.Identifier.ToString(),hw.Name,sensor.Name,sensor.SensorType.ToString(),
+                HardwareTelemetryCatalog.Unit(sensor.SensorType.ToString()),value,value is null ? null : Valid(sensor.Min),value is null ? null : Valid(sensor.Max)));
+        }
+        if (type.Equals("Cpu", StringComparison.OrdinalIgnoreCase) && output.CpuLowLevelReady)
+        {
+            var temps = sensors.Where(x => x.SensorType == SensorType.Temperature && x.Value is > 0 and <= 150
+                && !x.Name.Contains("Distance",StringComparison.OrdinalIgnoreCase) && !x.Name.Contains("TjMax",StringComparison.OrdinalIgnoreCase)).ToList();
             var coreTemps = temps.Where(x => x.Name.Contains("Core", StringComparison.OrdinalIgnoreCase)).Select(x => (double)x.Value!.Value).ToList();
-            output.CpuTemperatureMax = temps.Count > 0 ? temps.Max(x => (double)x.Value!.Value) : null;
-            output.CpuCoreTemperatureAvg = coreTemps.Count > 0 ? coreTemps.Average() : output.CpuTemperatureMax;
+            if(temps.Count>0)output.CpuTemperatureMax=Math.Max(output.CpuTemperatureMax ?? double.NegativeInfinity,temps.Max(x=>(double)x.Value!.Value));
+            output.CoreTemperatures.AddRange(coreTemps);
+            output.CpuCoreTemperatureAvg = output.CoreTemperatures.Count>0 ? output.CoreTemperatures.Average() : output.CpuTemperatureMax;
             output.CpuPowerMax = MaxSensor(sensors, SensorType.Power);
             output.CpuVoltage = FirstSensor(sensors, SensorType.Voltage, "Core") ?? MaxSensor(sensors, SensorType.Voltage);
             output.CpuBusClockMhz = FirstSensor(sensors, SensorType.Clock, "Bus") ?? FirstSensor(sensors, SensorType.Clock, "BCLK");
@@ -746,11 +757,10 @@ internal sealed class AdvancedVariableProvider : IDisposable
             g.PowerW = FirstSensor(sensors, SensorType.Power, "Total") ?? FirstSensor(sensors, SensorType.Power, "Package") ?? MaxSensor(sensors, SensorType.Power);
             output.Gpus.Add(g);
         }
-        else if (type.Equals("Motherboard", StringComparison.OrdinalIgnoreCase))
+        else if (type is "Motherboard" or "SuperIO" or "EmbeddedController")
         {
-            output.MotherboardTemperatureMax = MaxSensor(sensors, SensorType.Temperature);
-            output.FanRpmMax = MaxSensor(sensors, SensorType.Fan);
-            output.FanPercentMax = MaxSensor(sensors, SensorType.Control);
+            if(MaxSensor(sensors,SensorType.Temperature) is { } temperature)
+                output.MotherboardTemperatureMax=Math.Max(output.MotherboardTemperatureMax ?? double.NegativeInfinity,temperature);
         }
         foreach (var sensor in sensors.Where(s => s.SensorType == SensorType.Fan && s.Value is >= 0))
         {
@@ -1271,7 +1281,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
         6 => LocalizationManager.Text("锂离子", "Li-ion"),
         7 => LocalizationManager.Text("锌空气", "Zinc-air"),
         8 => LocalizationManager.Text("锂聚合物", "Li-polymer"),
-        _ => LocalizationManager.Text($"类型 {c}", $"Type {c}")
+        _ => LocalizationManager.Formatted($"类型 {c}", (System.FormattableString)$"Type {c}")
     };
     private static string MemoryFormFactorName(int x) => x switch { 8 => "DIMM", 9 => "TSOP", 12 => "SODIMM", 13 => "SRIMM", 15 => "FB-DIMM", _ => x > 0 ? $"FormFactor {x}" : "" };
     private static string MemoryTypeName(int x) => x switch { 20 => "DDR", 21 => "DDR2", 22 => "DDR2 FB-DIMM", 24 => "DDR3", 26 => "DDR4", 27 => "LPDDR", 28 => "LPDDR2", 29 => "LPDDR3", 30 => "LPDDR4", 34 => "DDR5", 35 => "LPDDR5", _ => x > 0 ? $"SMBIOS {x}" : "" };
@@ -1333,7 +1343,7 @@ internal sealed class AdvancedVariableProvider : IDisposable
 
     private sealed class PerfOsSnapshot { public double? ContextSwitchesPerSec, SystemCallsPerSec, InterruptsPerSec, DpcTimePercent, InstructionsRetiredPerSec, StandbyBytes, ModifiedBytes; }
     private sealed class MemoryStaticSnapshot { public double? HardwareReservedBytes, SpeedMhz; public int SlotCount, SlotUsed; public string FormFactor = "", MemoryType = ""; }
-    private sealed class HardwareSnapshot { public double? CpuTemperatureMax, CpuCoreTemperatureAvg, CpuPowerMax, CpuVoltage, CpuBusClockMhz, MotherboardTemperatureMax, FanRpmMax, FanPercentMax; public Dictionary<string, (string Name, double Rpm)> Fans { get; } = new(); public List<GpuHardwareSnapshot> Gpus { get; } = new(); }
+    private sealed class HardwareSnapshot { public bool CpuLowLevelReady;public double? CpuTemperatureMax, CpuCoreTemperatureAvg, CpuPowerMax, CpuVoltage, CpuBusClockMhz, MotherboardTemperatureMax, FanRpmMax, FanPercentMax; public Dictionary<string, (string Name, double Rpm)> Fans { get; } = new(); public List<GpuHardwareSnapshot> Gpus { get; } = new(); public List<HardwareReading> Sensors {get;}=new();public List<HardwareReading> Properties {get;}=new();public List<double> CoreTemperatures {get;}=new(); }
     private sealed class GpuHardwareSnapshot { public string Name = ""; public double? CoreTempC, HotspotTempC, MemoryTempC, VoltageV, CoreClockMhz, MemoryClockMhz, PowerW; }
     private sealed class NvidiaSnapshot { public string Name = "", BiosVersion = ""; public double? PowerLimitW, CoreClockMhz, MemoryClockMhz, PcieGen, PcieWidth; }
     private sealed class NetworkStaticSnapshot { public bool VpnActive, ProxyEnabled; public string VpnName = "", ProxyAddress = "", WifiBand = "", WifiStandard = ""; public int TcpConnections, UdpListeners; public double? WifiSignalDbm, WifiChannel, DnsLatencyMs; }

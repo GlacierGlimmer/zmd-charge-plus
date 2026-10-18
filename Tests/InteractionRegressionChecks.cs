@@ -29,7 +29,7 @@ internal static class InteractionRegressionChecks
         check(safe==new PixelPoint(-1864,876),"Existing bottom-left respects the work area, including a side/top/bottom reserved strip.");
         check((int)HudPosition.BottomRight==8 && (int)HudPosition.ScreenBottomRight==17,"Position additions preserve stored numeric values.");
         var fps=CustomHudSettings.CreateDefault().Profiles.Single(p=>p.BuiltInKey=="system.window-fps");
-        check(BuiltInProfileLocalization.ForLanguage(fps,AppLanguage.SimplifiedChinese).Name.EndsWith("（需管理员授权）")
+        check(BuiltInProfileLocalization.ForLanguage(fps,AppLanguage.SimplifiedChinese).Name.EndsWith("（需管理员身份运行）")
             && BuiltInProfileLocalization.ForLanguage(fps,AppLanguage.English).Name.Contains("administrator"),"Built-in FPS names explain required authorization in both languages.");
 
         var profiles=Enumerable.Range(0,3).Select(i=>new HudProfile { Id=$"interaction-{i}",Name=$"Profile {i}",PrimaryTemplate=$"LIVE{i}",TitleTemplate="Test",
@@ -66,7 +66,7 @@ internal static class InteractionRegressionChecks
             check(child.Hud.FindControl<TextBlock>("PrimaryText")!.Text=="LIVE1" && hud.FindControl<TextBlock>("PrimaryText")!.Text=="LIVE0","Clicking the secondary HUD switches its own queue without switching the primary.");
         }
         var window=new SettingsWindow(settings,hud,runtime);window.Show();await Task.Delay(600);
-        check(window.FindControl<TextBlock>("BuildDateText")!.Text==LocalizationManager.Text("构建日期  2026.10.12","Build  2026.10.12"),"The actual About control displays the current 2026.10.12 build date in the selected language.");
+        check(window.FindControl<TextBlock>("BuildDateText")!.Text==LocalizationManager.Text("构建日期  2026.10.18","Build  2026.10.18"),"The actual About control displays the current 2026.10.18 build date in the selected language.");
         string version=typeof(HudWindow).Assembly.GetName().Version!.ToString(3);
         check(window.Title.Contains("v"+version) && window.Title.EndsWith("（Endministrator Mode）")==ProcessPrivileges.IsElevated,"Settings title reflects effective process privileges in the current locale.");
         check(hud.IsEditingHighlighted && !child.Hud.IsEditingHighlighted,"Opening Settings with multiple HUDs highlights the primary automatically.");

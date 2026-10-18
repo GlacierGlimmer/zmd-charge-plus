@@ -1,0 +1,10 @@
+{
+  "productVersion": "0.1.2",
+  "fileVersion": "0.1.2.0",
+  "androidVersionCode": null,
+  "previousPublishedRelease": "v0.1.1",
+  "checkedAt": "2026-10-18",
+  "versionFrozen": true,
+  "changePolicy": "Only change these version fields after an explicit new user request. Source updates and CI runs must not increment them.",
+  "publishReleases": false
+}

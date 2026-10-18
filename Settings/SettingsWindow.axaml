@@ -1,12 +1,23 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:custom="clr-namespace:EndfieldChargePlus.Customization"
+        xmlns:settings="clr-namespace:EndfieldChargePlus.Settings"
         x:Class="EndfieldChargePlus.Settings.SettingsWindow"
         Width="1120" Height="790"
         MinWidth="940" MinHeight="680"
         Title="Endfield Charge Plus 设置"
         Background="#19191B"
         WindowStartupLocation="CenterScreen">
+  <Window.Styles>
+    <Style Selector="TabControl.settings-main > TabItem">
+      <Setter Property="FontSize" Value="16"/>
+      <Setter Property="Padding" Value="12,10"/>
+    </Style>
+    <Style Selector="TabControl.settings-data > TabItem">
+      <Setter Property="FontSize" Value="16"/>
+      <Setter Property="Padding" Value="14,9"/>
+    </Style>
+  </Window.Styles>
   <Grid RowDefinitions="Auto,*">
     <Border Grid.Row="0" Background="#222224" Padding="24,16" BorderBrush="#343438" BorderThickness="0,0,0,1">
       <Grid ColumnDefinitions="*,Auto,Auto">
@@ -15,55 +26,16 @@
           <TextBlock Text="HUD SETTINGS" FontSize="12" Foreground="#8E8E94"/>
         </StackPanel>
 
-        <Border Grid.Column="1"
-                Width="186" Height="38"
-                CornerRadius="7"
-                Background="#2B2B2E"
-                BorderBrush="#4A4A4F"
-                BorderThickness="1"
-                VerticalAlignment="Center"
-                Margin="16,0,0,0"
-                ClipToBounds="True">
-          <!--
-            Two true 50/50 segments. The previous *,1,* grid left 183 px to be
-            split by the star columns, producing two 91.5 px columns and visible
-            half-pixel asymmetry. The divider now overlays the exact center so
-            both language buttons always receive the same width.
-          -->
-          <Grid ColumnDefinitions="*,*">
-            <Button x:Name="LanguageChineseBtn"
-                    Grid.Column="0"
-                    Content="简体中文"
-                    Height="36"
-                    MinWidth="0"
-                    Margin="0"
-                    Padding="10,5"
-                    CornerRadius="6,0,0,6"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Button x:Name="LanguageEnglishBtn"
-                    Grid.Column="1"
-                    Content="English"
-                    Height="36"
-                    MinWidth="0"
-                    Margin="0"
-                    Padding="10,5"
-                    CornerRadius="0,6,6,0"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Border Grid.ColumnSpan="2"
-                    Width="1"
-                    Background="#55555A"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Stretch"
-                    Margin="0,7"
-                    IsHitTestVisible="False"/>
-          </Grid>
-        </Border>
+        <Button x:Name="LanguageButton" Grid.Column="1" MinHeight="38" MinWidth="180"
+                Margin="16,0,0,0" Padding="12,7" FlowDirection="LeftToRight"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+          <StackPanel Orientation="Horizontal" Spacing="9">
+            <Path x:Name="LanguageIcon" Width="20" Height="20" Stretch="Uniform" IsHitTestVisible="False"
+                  Stroke="#C6CA4C" StrokeThickness="1.5"
+                  Data="M10,1 A9,9 0 1 0 10,19 A9,9 0 1 0 10,1 M1,10 H19 M10,1 C4,5 4,15 10,19 M10,1 C16,5 16,15 10,19"/>
+            <TextBlock x:Name="LanguageButtonLabel" VerticalAlignment="Center"/>
+          </StackPanel>
+        </Button>
 
         <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Margin="10,0,0,0">
           <Button x:Name="OpenSettingsFolderBtn" Content="配置文件夹" Height="38" MinWidth="100" Padding="14,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -72,8 +44,9 @@
       </Grid>
     </Border>
 
-    <TabControl Grid.Row="1" Margin="18,14,18,18">
-      <TabItem Header="显示与位置">
+    <TabControl x:Name="MainSettingsTabs" Classes="settings-main" Grid.Row="1" Margin="18,14,18,18">
+      <TabControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></TabControl.ItemsPanel>
+      <TabItem x:Name="DisplayPage" Header="显示与位置">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
           <StackPanel Margin="4,12,4,18" Spacing="12">
 
@@ -97,6 +70,19 @@
                   <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center"/>
                 </Grid>
                 <TextBlock x:Name="StartupStatusText" IsVisible="False" TextWrapping="Wrap" FontSize="11" Foreground="#C6CA4C"/>
+                <Border Height="1" Background="#343438"/>
+                <TextBlock Text="显示 / 隐藏全部 HUD 的快捷键" FontSize="12" Foreground="#E7E7E9"/>
+                <Grid ColumnDefinitions="*,Auto">
+                  <TextBox x:Name="HudHotkeyBox" IsReadOnly="True" Watermark="点击后按下组合键" MinHeight="34"/>
+                  <Button x:Name="ClearHudHotkeyBtn" Grid.Column="1" Content="清除快捷键" Margin="10,0,0,0"/>
+                </Grid>
+                <TextBlock Text="使用 Ctrl 或 Alt，可加 Shift；支持字母、数字和 F1–F24（F12 除外）。保存后生效，留空关闭。" TextWrapping="Wrap" FontSize="11" Foreground="#85858B"/>
+                <TextBlock Text="同时控制主 HUD 与附加实例。隐藏期间暂停自动呼出，再按一次恢复原有显示模式；重启后恢复显示。" TextWrapping="Wrap" FontSize="11" Foreground="#85858B"/>
+                <TextBlock x:Name="HudHotkeyStatusText" TextWrapping="Wrap" FontSize="11" Foreground="#C6CA4C"/>
+                <Grid ColumnDefinitions="*,180">
+                  <TextBlock Text="快捷键显示动画" FontSize="12" VerticalAlignment="Center"/>
+                  <ComboBox x:Name="HudHotkeyAnimationCombo" Grid.Column="1"/>
+                </Grid>
               </StackPanel>
             </Border>
 
@@ -106,7 +92,7 @@
                 <Grid ColumnDefinitions="*,150,260" RowDefinitions="Auto,Auto">
                   <StackPanel Grid.RowSpan="2" Spacing="2" Margin="0,0,18,0" VerticalAlignment="Center">
                     <TextBlock Text="一直显示" FontSize="12" Foreground="#E7E7E9"/>
-                    <TextBlock Text="开启：HUD 持续显示。&#10;关闭：电源插拔显示电池；鼠标移到目标屏幕顶部中央可唤出当前方案。" FontSize="13" Foreground="#C6CA4C" TextWrapping="Wrap" LineHeight="19" Margin="0,3,0,0"/>
+                    <TextBlock Text="开启：HUD 持续显示。&#10;关闭：电源插拔显示电池；鼠标移到目标屏幕的已配置热区可唤出当前方案。" FontSize="13" Foreground="#C6CA4C" TextWrapping="Wrap" LineHeight="19" Margin="0,3,0,0"/>
                   </StackPanel>
                   <TextBlock Grid.Column="1" Text="常驻状态" FontSize="11" Foreground="#85858B" Margin="0,0,18,4"/>
                   <TextBlock Grid.Column="2" Text="显示层级" FontSize="11" Foreground="#85858B" Margin="0,0,0,4"/>
@@ -116,6 +102,26 @@
               </StackPanel>
             </Border>
 
+            <Border x:Name="HotZonePanel" Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
+              <StackPanel Spacing="12">
+                <CheckBox x:Name="HotZoneEnabledCheck" Content="启用鼠标热区呼出"/>
+                <TextBlock Text="关闭“一直显示”时可用。热区位于目标显示器的完整屏幕范围，可调整位置、大小和停留时长。" TextWrapping="Wrap" FontSize="12" Foreground="#85858B"/>
+                <Grid ColumnDefinitions="*,*,*">
+                  <StackPanel Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区位置"/><ComboBox x:Name="HotZonePositionCombo"/></StackPanel>
+                  <StackPanel Grid.Column="1" Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区宽度 / px"/><NumericUpDown x:Name="HotZoneWidthBox" Minimum="8" Maximum="8192" Increment="10"/></StackPanel>
+                  <StackPanel Grid.Column="2" Spacing="5"><TextBlock Text="热区高度 / px"/><NumericUpDown x:Name="HotZoneHeightBox" Minimum="2" Maximum="8192" Increment="2"/></StackPanel>
+                </Grid>
+                <Grid ColumnDefinitions="*,*">
+                  <StackPanel Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区 X 微调 / px"/><NumericUpDown x:Name="HotZoneOffsetXBox" Minimum="-32768" Maximum="32768"/></StackPanel>
+                  <StackPanel Grid.Column="1" Spacing="5"><TextBlock Text="热区 Y 微调 / px"/><NumericUpDown x:Name="HotZoneOffsetYBox" Minimum="-32768" Maximum="32768"/></StackPanel>
+                </Grid>
+                <Grid ColumnDefinitions="*,Auto">
+                  <TextBlock Text="热区停留时间"/><TextBlock x:Name="HotZoneDwellText" Grid.Column="1"/>
+                </Grid>
+                <Slider x:Name="HotZoneDwellSlider" Minimum="0" Maximum="3000" TickFrequency="100" IsSnapToTickEnabled="True"/>
+                <CheckBox x:Name="HotZoneAdvanceCheck" Content="每次热区呼出切换到下一个方案"/>
+              </StackPanel>
+            </Border>
             <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
               <Grid ColumnDefinitions="220,*,64" RowDefinitions="Auto,Auto">
                 <StackPanel Grid.RowSpan="2" Spacing="3" Margin="0,0,18,0" VerticalAlignment="Center">
@@ -224,17 +230,30 @@
         </ScrollViewer>
       </TabItem>
 
-      <TabItem Header="HUD 内容与数据">
-        <custom:HudCustomizerView x:Name="Customizer" Margin="4,12,4,4"/>
+      <TabItem x:Name="HudContentPage" Header="HUD显示内容">
+        <custom:HudCustomizerView x:Name="Customizer"/>
       </TabItem>
 
-      <TabItem Header="实验性功能">
+      <TabItem x:Name="DataManagementPage" Header="数据管理">
+        <TabControl x:Name="DataManagementTabs" Classes="settings-data">
+          <TabControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></TabControl.ItemsPanel>
+          <TabItem x:Name="HardwarePage" Header="硬件数据">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+              <StackPanel x:Name="HardwarePanel" Margin="4,12,4,4" Spacing="14"/>
+            </ScrollViewer>
+          </TabItem>
+        </TabControl>
+      </TabItem>
+      <TabItem x:Name="ExperimentalPage" Header="实验性功能">
         <ScrollViewer>
           <StackPanel x:Name="ExperimentalPanel" Margin="20" Spacing="16"/>
         </ScrollViewer>
       </TabItem>
 
-      <TabItem Header="关于">
+      <TabItem x:Name="ManualPage" Header="使用手册">
+        <settings:UserManualView x:Name="ManualView"/>
+      </TabItem>
+      <TabItem x:Name="AboutPage" Header="关于">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
           <StackPanel Margin="4,12,4,18" Spacing="12">
             <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="24,22">
@@ -248,8 +267,8 @@
                   <TextBlock Text="终末地风格状态栏 HUD" FontSize="14" Foreground="#D2D2D6"/>
                   <TextBlock x:Name="AboutArchitectureText" Text="Windows · x64" FontSize="12" Foreground="#8E8E94" Margin="0,1,0,0"/>
                   <StackPanel Orientation="Horizontal" Spacing="18" Margin="0,7,0,0">
-                    <TextBlock x:Name="AboutVersionText" Text="v0.1.1" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                    <TextBlock x:Name="BuildDateText" Text="构建日期  2026.10.12" FontSize="13" Foreground="#D2D2D6"/>
+                    <TextBlock x:Name="AboutVersionText" Text="v0.1.2" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+                    <TextBlock x:Name="BuildDateText" Text="构建日期  2026.10.18" FontSize="13" Foreground="#D2D2D6"/>
                   </StackPanel>
                 </StackPanel>
 
@@ -268,7 +287,7 @@
                             Foreground="#171719"
                             FontWeight="SemiBold"/>
                     <StackPanel Grid.Column="1" Spacing="6" VerticalAlignment="Center">
-                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.1" FontSize="12" Foreground="#D2D2D6"/>
+                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.2" FontSize="12" Foreground="#D2D2D6"/>
                       <TextBlock x:Name="UpdateLatestVersionText" Text="最新版本：尚未获取" FontSize="12" Foreground="#D2D2D6"/>
                       <TextBlock x:Name="UpdateStatusText" Text="状态：尚未检查" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
                     </StackPanel>

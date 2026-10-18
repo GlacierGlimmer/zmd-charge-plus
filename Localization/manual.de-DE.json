@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Schritte",
+    "Hinweise und Einstellungen",
+    "Beispiel",
+    "Kopieren Sie das Beispiel und passen Sie die Werte an. Variablennamen, Funktionsnamen und die Syntax bleiben unverändert.",
+    "Funktionen und Formatierung"
+  ],
+  "start": [
+    "Erste Schritte",
+    "Den ersten HUD anzeigen und anschließend anpassen.",
+    "Aktivieren Sie den HUD unter Anzeige & Position. Für eine dauerhafte Anzeige aktivieren Sie Immer sichtbar.\nWählen Sie unter HUD-Inhalte ein integriertes Profil und starten Sie die Vorschau.\nÜbernehmen Sie die Einstellungen mit der Schaltfläche oben im Fenster.",
+    "Speichern neben dem Profil übernimmt dessen Inhalt in den Editor. Änderungen an integrierten Profilen erzeugen eine eigene Kopie. Die Vorschau ersetzt die laufende Konfiguration nicht. Erst Übernehmen speichert sämtliche Einstellungen und wendet sie auf den laufenden HUD an."
+  ],
+  "display": [
+    "Anzeige, Position und Aussehen",
+    "Sichtbarkeit, Bildschirm und Darstellung einstellen.",
+    "Wählen Sie den Zielbildschirm und eine vorgegebene Position oder eigene Koordinaten.\nStellen Sie Größe, Deckkraft und Schrift ein.\nWählen Sie die dauerhafte oder vorübergehende Anzeige und übernehmen Sie die Einstellungen.",
+    "Arbeitsbereichspositionen berücksichtigen die Taskleiste. Bildschirmpositionen nutzen den gesamten Bildschirm; negative Koordinaten sind bei mehreren Monitoren normal. Im vorübergehenden Modus blendet ein Ereignis den HUD ein; danach zieht er sich zurück. Das Messintervall gilt für alle HUDs. Uhren und externe Datenquellen behalten ihre eigenen Aktualisierungsintervalle.\n\nOben wählen Sie eine Sprache oder die Systemsprache. Die Sprachwahl wird sofort gespeichert, andere ungespeicherte Eingaben bleiben im Editor. Bei nicht unterstützten Sprachen oder fehlenden Texten erscheint Englisch. Eigene Texte und Variablennamen bleiben erhalten."
+  ],
+  "profiles": [
+    "Profile und HUD-Inhalte",
+    "Texte, Symbole und Fortschrittsring festlegen.",
+    "Erstellen Sie ein Profil oder bearbeiten Sie eine Kopie eines integrierten Profils.\nGeben Sie Titel, Haupt- und Nebenwerte, Suffix, Symbole und Farbe ein.\nWählen Sie die Ringvariable und ihren Wertebereich, prüfen Sie die Vorschau und übernehmen Sie das Ergebnis.",
+    "Textfelder können normalen Text und Variablen in geschweiften Klammern enthalten. Der Ring bildet den eingestellten Bereich auf 0–100 % ab; der angezeigte Rohwert bleibt unverändert. Farbregeln verwenden die ursprünglichen Einheiten. Nur eigene Profile können entfernt werden; die integrierten Vorlagen bleiben erhalten."
+  ],
+  "variables": [
+    "Variablen, Vorlagen und Ausdrücke",
+    "Verfügbare Daten zu lesbaren Texten kombinieren.",
+    "Suchen Sie in der Datenverwaltung nach einer Variablen und lesen Sie Beschreibung und Einheit.\nKopieren Sie den Schlüssel für Regeln oder den Ring und die Vorlage für Textfelder.\nVerwenden Sie die Beispiele und die Funktionsübersicht zur Formatierung.",
+    "Formatstufen werden von links nach rechts ausgeführt. 0.0 zeigt eine Nachkommastelle; auto:1 wählt eine passende Einheit. Ergänzen Sie automatisch ausgegebene Einheiten nicht doppelt. Funktionsnamen bleiben unverändert. Alte Schlüssel bleiben kompatibel, doppelte Einträge verschwinden aus der Bibliothek. Zusammenfassungen behalten ihre eigene Bedeutung. -- kennzeichnet fehlende gültige Daten."
+  ],
+  "hardware": [
+    "Hardwaresensoren und Treiber",
+    "Messwerte prüfen und fehlende Temperaturen untersuchen.",
+    "Öffnen Sie Datenverwaltung → Hardwaredaten und prüfen Sie den Treiberstatus.\nInstallieren Sie bei Bedarf PawnIO, bestätigen Sie die Windows-Abfrage und beenden Sie ECP vollständig.\nStarten Sie ECP als Administrator neu und aktualisieren Sie die Messwerte.\nSuchen Sie einen Sensor, kopieren Sie seine Variable oder exportieren Sie die Diagnose.",
+    "Administratorrechte ersetzen keinen fehlenden Treiber. Nicht unterstützte Messwerte bleiben unverfügbar. Kern-, Gehäuse-, Hotspot- und Speichertemperatur sind unterschiedliche Messungen. Minimum und Maximum stammen aus der laufenden Messsitzung und sind keine Hardwaregrenzen. SMBIOS-Speicherdaten ersetzen keine vollständigen SPD/XMP/EXPO-Tabellen."
+  ],
+  "sources": [
+    "Datenquellen einrichten",
+    "DeepSeek, JSON-APIs und AIDA64 verbinden.",
+    "Tragen Sie den DeepSeek-Schlüssel ein und übernehmen Sie die Einstellungen.\nDefinieren Sie für HTTP Name, GET-Adresse, Header, Intervall und JSON-Pfade. Aktivieren Sie die fertige Quelle.\nVerwenden Sie anschließend custom.<source>.<variable> im HUD.\nAktivieren Sie in AIDA64 die gewünschten Exporte über gemeinsamen Speicher, Registrierung oder WMI und lassen Sie AIDA64 laufen.",
+    "Der DeepSeek-Schlüssel wird für das aktuelle Windows-Konto verschlüsselt. Die Zeitfenster richten sich nach Pekinger Zeit; Wochenenden bleiben Nebenzeiten. status und error helfen bei HTTP-Fehlern. Ein kürzeres globales Intervall umgeht keinen Cache. Umgebungsvariablen vermeiden Klartextschlüssel im JSON. ECP liest nur tatsächlich von AIDA64 exportierte Daten."
+  ],
+  "cycle": [
+    "Profilwechsel, Klicks und Animationen",
+    "Mehrere Profile der Reihe nach anzeigen.",
+    "Fügen Sie Profile zur Wechselliste hinzu und ordnen Sie sie an.\nAktivieren Sie bei Bedarf den automatischen Wechsel und stellen Sie das Intervall ein.\nWählen Sie eine einfache, vollständige oder nach oben rollende Animation.\nAktivieren Sie den Profilwechsel per Klick für die manuelle Bedienung.",
+    "Das Entfernen aus der Liste löscht kein Profil. Eine leere Liste verwendet das aktuelle Profil; ein einzelner Eintrag wechselt nicht zu einem anderen Profil. Die Rollanimation bewegt den Inhalt eines dauerhaft sichtbaren HUDs. Jeder HUD verwendet seine eigene Liste und startet seinen Timer beim Klick neu. DeepSeek-Zeitwechsel behalten die vollständige Animation."
+  ],
+  "summons": [
+    "Tastenkürzel und Mausbereiche",
+    "HUDs gezielt ein- und ausblenden.",
+    "Geben Sie ein Kürzel mit Ctrl oder Alt und optional Shift ein und übernehmen Sie es.\nWählen Sie die einfache oder vollständige Einblendung; beim Ausblenden läuft eine Rückzugsanimation.\nAktivieren Sie im vorübergehenden Modus einen Mausbereich und stellen Sie Position, Größe, Versatz und Verweildauer ein.",
+    "F12 und reservierte Kombinationen werden abgelehnt. Bei belegten Kürzeln bleibt das bisherige aktiv. Das Kürzel steuert alle HUDs und erhält deren Positionen. Der ausgeblendete Zustand gilt nur für die Sitzung. Mausbereiche nutzen die vollständigen Bildschirmgrenzen und werden darin begrenzt. Verlassen und erneutes Betreten aktiviert sie erneut; optional wird dabei die Profilliste weitergeschaltet."
+  ],
+  "triggers": [
+    "Auslöseregeln",
+    "Bei passenden Daten vorübergehend einen HUD anzeigen.",
+    "Fügen Sie unter HUD-Inhalte eine Regel hinzu und aktivieren Sie sie.\nWählen Sie Variable, Schwellenwert, Wertänderung oder Wechsel zu wahr.\nLegen Sie die Abklingzeit fest, deaktivieren Sie die dauerhafte Anzeige und übernehmen Sie die Einstellungen.",
+    "Die erste Messung und die Rückkehr fehlender Daten setzen nur die Ausgangsbasis. Ein anhaltend erfüllter Schwellenwert kann nach Ablauf der Abklingzeit erneut auslösen. Regeln und Listen gelten je HUD. Beispiele: cpu.usage >= 90 mit 30 Sekunden Abstand oder eine Änderung von media.title beim Titelwechsel."
+  ],
+  "special": [
+    "Zeit, Netzwerk und FPS",
+    "Profilspezifische Einstellungen verstehen.",
+    "Wählen Sie für die Weltuhr einen festen UTC-Versatz und bei Bedarf eine tägliche Zielzeit.\nLegen Sie Netzwerkeinheiten und Referenzbandbreite für den Ring fest.\nWählen Sie für die Netzwerkprüfung Ziel und Protokoll; TCP und UDP verwenden den angegebenen Port.\nAktualisieren Sie für FPS die Liste und wählen Sie Fenster oder Bildschirm.",
+    "Feste UTC-Versätze folgen keiner Sommerzeit. 1 MB/s entspricht 8 Mbps; der Ringreferenzwert begrenzt die Verbindung nicht. Eine fehlgeschlagene Prüfung beweist keinen allgemeinen Netzausfall. FPS messen tatsächlich präsentierte Bilder, nicht die feste Bildschirmfrequenz. Administratorrechte können nötig sein. Der ausgewählte Grafikprozessor gilt für das jeweilige Profil."
+  ],
+  "media": [
+    "Medieninformationen und Wiedergabe",
+    "Die Windows-Mediensitzung anzeigen.",
+    "Nutzen Sie media.title_artist für Titel und Künstler.\nErgänzen Sie media.position_text und media.duration_text für die Zeiten.\nVerwenden Sie media.progress als Ringvariable mit dem Bereich 0–100.",
+    "Der Player muss eine Windows-Mediensitzung bereitstellen. Während der Wiedergabe folgt die Position der gemeldeten Zeitachse und Geschwindigkeit; bei Pause wird sie nicht weitergerechnet. Livestreams ohne Dauer liefern keinen gültigen Prozentwert. Nicht vom Player gelieferte Metadaten bleiben unverfügbar."
+  ],
+  "instances": [
+    "Experimentell: mehrere HUDs",
+    "Mehrere Anzeigen unabhängig einrichten.",
+    "Aktivieren Sie mehrere HUDs in den experimentellen Funktionen.\nFügen Sie einen Neben-HUD hinzu, benennen Sie ihn und wählen Sie ihn zur Bearbeitung.\nÜbernehmen Sie neue Instanzen, bevor Sie deren Vorschau verwenden.",
+    "Der bearbeitete HUD wird hervorgehoben. Profile, Position, Liste, Regeln und Mausbereiche werden je Instanz festgelegt. Messintervall, globales Kürzel und die allgemeine Klickoption sind gemeinsam. Ein Klick schaltet nur den betroffenen HUD weiter. Das Entfernen einer Nebeninstanz entfernt nicht den Haupt-HUD."
+  ],
+  "maintenance": [
+    "Konfiguration, Sicherung und Wartung",
+    "Einstellungen sichern und Fehler untersuchen.",
+    "Exportieren oder sichern Sie die Konfiguration unter Info vor größeren Änderungen.\nImportieren Sie eine Konfiguration, um sie wiederherzustellen.\nÖffnen Sie Protokolle oder den Konfigurationsordner zur Fehlersuche.\nÜbernehmen Sie nach dem Zurücksetzen die geladenen Standardwerte.",
+    "Verschlüsselte Schlüssel müssen nach einem Rechner- oder Kontowechsel eventuell neu eingegeben werden. Eine fehlgeschlagene Updateprüfung bedeutet nicht, dass die Version aktuell ist. Entwicklungspakete können dieselbe Versionsnummer behalten; beachten Sie die Angaben zum gelieferten Paket."
+  ],
+  "troubleshooting": [
+    "Fehlersuche und Warnungen",
+    "Anzeigemodus und Datenquellen gezielt prüfen.",
+    "Prüfen Sie bei fehlender Anzeige Hauptschalter, ausgeblendeten Zustand, Modus, Zielbildschirm, Position und Deckkraft.\nPrüfen Sie im vorübergehenden Modus das erwartete Ereignis, den Mausbereich oder die Regel.\nPrüfen Sie bei -- Sensor, Berechtigungen, API-Schlüssel, JSON-Pfad oder Ausdruck.",
+    "-- ist kein echter Nullwert; Formatierung kann fehlende Messungen nicht ersetzen. Das Kontrollkästchen unterdrückt dauerhaft nur Warnungen für die bereits im Fenster aufgeführten Variablen. Andere Variablen warnen weiterhin. Normales Schließen bestätigt nur diesen Vorfall. Ausdrucksfehler werden nach Profil und Ausdruck unterschieden. Das Unterdrücken repariert oder beendet keine Datenerfassung."
+  ]
+}

@@ -102,6 +102,16 @@ public static class SettingsManager
         }
     }
 
+    internal static void SaveImmediatePreferences(AppSettings preferences)
+    {
+        // A data warning may have saved ignored keys since Settings was opened.
+        // Read the latest file, and merge only the three immediate UI preferences.
+        var latest=File.Exists(SettingsPath) ? Normalize(DeserializeFile(SettingsPath)) : preferences;
+        Save(latest with {UiLanguage=preferences.UiLanguage,GlobalFontScale=preferences.GlobalFontScale,GlobalUiScale=preferences.GlobalUiScale,
+            HudInstances=latest.HudInstances.Select(i=>i with {Settings=i.Settings with {
+                GlobalFontScale=preferences.GlobalFontScale,GlobalUiScale=preferences.GlobalUiScale}}).ToList()});
+    }
+
     public static void ExportToFile(string destinationPath, AppSettings settings)
     {
         if (string.IsNullOrWhiteSpace(destinationPath))
@@ -150,6 +160,9 @@ public static class SettingsManager
         => settings with
         {
             HudOpacity = Math.Clamp(settings.HudOpacity, 0.10, 1.0),
+            GlobalScale=double.IsFinite(settings.GlobalScale) ? Math.Clamp(settings.GlobalScale,0.4,1.4) : AppSettings.DefaultGlobalScale,
+            GlobalFontScale = GlobalAppearance.NormalizeScale(settings.GlobalFontScale),
+            GlobalUiScale = GlobalAppearance.NormalizeScale(settings.GlobalUiScale),
             SamplingIntervalSeconds = double.IsFinite(settings.SamplingIntervalSeconds)
                 ? Math.Clamp(settings.SamplingIntervalSeconds, 0.1, 60) : 1,
             HudInstances = (settings.HudInstances ?? new()).Where(i => i is not null).Take(15)
@@ -158,6 +171,12 @@ public static class SettingsManager
                     Name=string.IsNullOrWhiteSpace(i.Name) ? "HUD" : i.Name.Trim(),
                     Settings=Normalize((i.Settings ?? new()) with { MultiHudEnabled=false, HudInstances=new() }) }).ToList(),
             HudFontFamily = (settings.HudFontFamily ?? "").Trim(),
+            HudToggleHotkey = HudHotkeyGesture.TryParse(settings.HudToggleHotkey, out var hotkey) ? hotkey.Text : "",
+            HudHotkeyShowAnimation = string.Equals(settings.HudHotkeyShowAnimation,"Simple",StringComparison.OrdinalIgnoreCase) ? "Simple" : "Full",
+            HotZonePosition=(HudPosition)Math.Clamp((int)settings.HotZonePosition,0,8),
+            HotZoneWidth=Math.Clamp(settings.HotZoneWidth,8,8192),HotZoneHeight=Math.Clamp(settings.HotZoneHeight,2,8192),
+            HotZoneOffsetX=Math.Clamp(settings.HotZoneOffsetX,-32768,32768),HotZoneOffsetY=Math.Clamp(settings.HotZoneOffsetY,-32768,32768),
+            HotZoneDwellMilliseconds=Math.Clamp(settings.HotZoneDwellMilliseconds,0,3000),
             ClickToCycle = settings.ClickToCycle,
             UiLanguage = LocalizationManager.NormalizePreference(settings.UiLanguage),
             CustomHud = HudSettingsNormalizer.Normalize(settings.CustomHud ?? CustomHudSettings.CreateDefault()),

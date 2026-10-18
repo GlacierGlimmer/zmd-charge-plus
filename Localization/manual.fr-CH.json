@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Étapes",
+    "Explications et paramètres",
+    "Exemple",
+    "Copiez cet exemple, puis adaptez les valeurs à votre configuration. Les noms de variables, les fonctions et la syntaxe du code restent inchangés.",
+    "Référence des fonctions et formats"
+  ],
+  "start": [
+    "Premiers pas",
+    "Afficher un premier HUD, puis le personnaliser.",
+    "Activez le HUD dans Affichage et position. Activez Toujours visible pour le garder à l’écran.\nChoisissez un profil prédéfini dans Contenu du HUD, puis lancez son aperçu.\nCliquez sur Appliquer en haut de la fenêtre pour enregistrer les réglages et les utiliser.",
+    "Le bouton Enregistrer du profil conserve son contenu dans l’éditeur. Modifier un profil prédéfini crée une copie personnalisée. L’aperçu ne remplace pas la configuration en cours : le bouton Appliquer valide l’ensemble des réglages."
+  ],
+  "display": [
+    "Affichage, position et apparence",
+    "Régler la visibilité, l’écran et l’apparence.",
+    "Choisissez l’écran cible, puis un emplacement prédéfini ou des coordonnées.\nRéglez la taille, l’opacité et la police.\nChoisissez l’affichage permanent ou temporaire, puis appliquez les réglages.",
+    "Les positions de zone de travail évitent la barre des tâches. Les positions d’écran utilisent ses limites complètes ; des coordonnées négatives sont normales sur plusieurs écrans. Le mode temporaire apparaît lors d’un événement, puis se rétracte. L’intervalle d’échantillonnage est commun aux HUD ; les horloges et les API gardent leur propre rythme.\n\nChoisissez une langue ou la langue du système en haut. Ce choix est enregistré immédiatement ; les autres modifications restent dans l’éditeur. Une langue non prise en charge ou un texte absent utilise l’anglais. Vos textes et les noms de variables restent inchangés."
+  ],
+  "profiles": [
+    "Profils et contenu du HUD",
+    "Définir les textes, les icônes et l’anneau.",
+    "Créez un profil ou modifiez une copie d’un profil prédéfini.\nRenseignez le titre, les valeurs, le suffixe, les icônes et la couleur.\nChoisissez la variable de l’anneau et ses limites, puis prévisualisez et appliquez.",
+    "Le texte peut mélanger des mots et des variables entre accolades. L’anneau représente la valeur entre le minimum et le maximum, limitée à 0–100 %. Cette échelle ne modifie pas la valeur affichée. Les règles de couleur utilisent les unités brutes ; supprimer un profil personnalisé ne supprime pas les profils prédéfinis."
+  ],
+  "variables": [
+    "Variables, modèles et expressions",
+    "Composer des textes avec les données disponibles.",
+    "Recherchez une variable dans Gestion des données, puis consultez son unité et sa description.\nCopiez sa clé pour une règle ou un anneau ; copiez son modèle pour un champ de texte.\nUtilisez les exemples ci-dessous pour les nombres, les expressions et les formats.",
+    "Les formats s’exécutent de gauche à droite. 0.0 conserve une décimale ; auto:1 choisit l’unité. Ne répétez pas le suffixe fourni automatiquement. Les noms de fonctions restent inchangés. Les anciennes clés restent compatibles ; les doublons quittent la bibliothèque, mais les valeurs de synthèse conservent leur sens distinct. -- signifie qu’aucune donnée valide n’est disponible."
+  ],
+  "hardware": [
+    "Capteurs matériels et pilotes",
+    "Lire les mesures et diagnostiquer les températures manquantes.",
+    "Ouvrez Gestion des données → Données matérielles et consultez l’état du pilote.\nSi nécessaire, installez PawnIO, acceptez la demande Windows, puis quittez complètement ECP.\nRelancez ECP en administrateur et actualisez les mesures.\nRecherchez un capteur, copiez sa variable ou exportez le diagnostic.",
+    "Les droits administrateur ne remplacent pas le pilote. Un matériel non pris en charge reste indisponible. Les capteurs de cœur, boîtier, point chaud et mémoire sont distincts. Les minimums et maximums sont l’historique de la session, pas les limites du matériel. Les informations mémoire SMBIOS ne constituent pas une table SPD/XMP/EXPO complète."
+  ],
+  "sources": [
+    "Configuration des sources de données",
+    "Connecter DeepSeek, une API JSON ou AIDA64.",
+    "Renseignez la clé DeepSeek, puis appliquez les réglages.\nPour HTTP, définissez le nom, l’URL GET, les en-têtes, l’intervalle et les chemins JSON. Activez la source quand elle est prête.\nUtilisez ensuite custom.<source>.<variable> dans le HUD.\nDans AIDA64, activez l’export des éléments souhaités par mémoire partagée, registre ou WMI et laissez AIDA64 ouvert.",
+    "La clé DeepSeek est chiffrée pour l’utilisateur Windows actuel. Les plages horaires suivent l’heure de Pékin ; les week-ends restent hors pointe. Les variables status et error facilitent le diagnostic HTTP ; une fréquence globale élevée ne contourne pas le cache. Les références d’environnement évitent d’écrire un secret dans le JSON. ECP lit uniquement les données réellement exportées par AIDA64."
+  ],
+  "cycle": [
+    "Défilement, clics et animations",
+    "Faire alterner plusieurs profils.",
+    "Ajoutez les profils à la liste de défilement et ajustez leur ordre.\nActivez le défilement automatique et réglez son intervalle si nécessaire.\nChoisissez une animation simple, complète ou un défilement vers le haut.\nActivez le changement au clic pour avancer manuellement.",
+    "Retirer un élément de la liste ne supprime pas le profil. Une liste vide utilise le profil actuel ; une liste d’un seul élément ne change pas de profil. Le défilement vers le haut agit dans le HUD permanent. Chaque HUD avance sa propre liste et réinitialise son minuteur au clic. Les événements de période DeepSeek gardent l’animation complète."
+  ],
+  "summons": [
+    "Raccourcis et zones de souris",
+    "Afficher ou masquer le HUD à la demande.",
+    "Saisissez un raccourci avec Ctrl ou Alt, éventuellement Shift, puis appliquez.\nChoisissez une animation d’apparition simple ou complète ; le masquage joue une animation de rétractation.\nEn mode temporaire, activez une zone de souris et réglez son ancrage, sa taille, son décalage et le délai de survol.",
+    "F12 et les combinaisons réservées sont refusés. Si un raccourci est déjà utilisé, l’ancien reste actif. Le raccourci agit sur tous les HUD sans perdre leurs positions ; le masquage ne dure que pour la session. Les zones utilisent l’écran complet et restent dans ses limites. Quittez puis rentrez dans la zone pour la réarmer ; elle peut avancer la liste de profils."
+  ],
+  "triggers": [
+    "Règles de déclenchement",
+    "Afficher temporairement un HUD quand une donnée change.",
+    "Ajoutez une règle dans Contenu du HUD et activez-la.\nChoisissez une variable, un seuil, un changement de valeur ou un passage à vrai.\nRéglez le délai entre déclenchements, désactivez l’affichage permanent et appliquez.",
+    "Le premier échantillon et le retour d’une donnée manquante établissent seulement une référence. Une condition maintenue peut se redéclencher après le délai. Les règles et listes sont indépendantes pour chaque HUD. Exemple : cpu.usage >= 90 avec un délai de 30 secondes, ou un changement de media.title pour annoncer une nouvelle piste."
+  ],
+  "special": [
+    "Heure, réseau et FPS",
+    "Régler les options propres à chaque profil.",
+    "Pour l’horloge mondiale, choisissez un décalage UTC fixe et, si nécessaire, une heure cible quotidienne.\nPour le réseau, choisissez les unités et la bande passante de référence de l’anneau.\nPour une sonde, choisissez l’hôte et le protocole ; TCP et UDP utilisent le port indiqué.\nPour les FPS, actualisez la liste et sélectionnez la fenêtre ou l’écran.",
+    "Un décalage fixe ne suit pas l’heure d’été. 1 MB/s vaut 8 Mbps ; la référence de l’anneau ne limite pas le réseau. Un échec ICMP, TCP ou UDP ne prouve pas une panne générale. Les FPS reflètent les présentations mesurées, pas la fréquence fixe de l’écran ; des droits administrateur peuvent être nécessaires. Le choix du GPU reste propre au profil."
+  ],
+  "media": [
+    "Médias et progression de lecture",
+    "Afficher la session multimédia de Windows.",
+    "Utilisez media.title_artist pour le titre et l’artiste.\nAjoutez media.position_text et media.duration_text pour les durées.\nRéglez l’anneau sur media.progress avec une plage de 0 à 100.",
+    "Le lecteur doit publier une session multimédia Windows. Pendant la lecture, la position suit la chronologie et la vitesse signalées ; elle reste figée en pause. Un direct sans durée ne fournit pas de pourcentage valide. Les champs que le lecteur ne fournit pas restent indisponibles."
+  ],
+  "instances": [
+    "Plusieurs HUD expérimentaux",
+    "Configurer plusieurs affichages indépendants.",
+    "Activez plusieurs HUD dans les fonctions expérimentales.\nAjoutez et nommez un HUD secondaire, puis sélectionnez-le pour l’éditer.\nAppliquez les changements avant de prévisualiser une nouvelle instance.",
+    "Le HUD sélectionné est surligné. Chaque instance possède ses profils, sa position, sa liste, ses règles et ses zones. L’intervalle de mesure, le raccourci global et l’option de changement au clic sont partagés. Un clic avance uniquement le HUD concerné. Supprimer une instance secondaire ne supprime pas le HUD principal."
+  ],
+  "maintenance": [
+    "Configuration, sauvegarde et maintenance",
+    "Conserver ses réglages et consulter les diagnostics.",
+    "Dans À propos, exportez la configuration ou créez une sauvegarde avant une modification importante.\nImportez une configuration pour la restaurer.\nOuvrez les journaux ou le dossier de configuration pour diagnostiquer un problème.\nAprès une remise à zéro, appliquez les réglages pour les utiliser.",
+    "Les clés chiffrées peuvent nécessiter une nouvelle saisie après un changement de machine ou de compte. Un échec de vérification des mises à jour ne signifie pas que le logiciel est à jour. Les versions de développement peuvent conserver le même numéro : consultez les indications de livraison."
+  ],
+  "troubleshooting": [
+    "Dépannage et avertissements",
+    "Vérifier le mode d’affichage et l’origine des données.",
+    "Si le HUD n’apparaît pas, vérifiez son interrupteur, le raccourci de masquage, le mode, l’écran, la position et l’opacité.\nEn mode temporaire, vérifiez l’événement, la zone ou la règle attendue.\nPour --, vérifiez le capteur, les droits, la clé API, le chemin JSON ou l’expression.",
+    "-- ne représente pas un zéro réel et un format ne répare pas une donnée absente. La case de suppression d’avertissement concerne uniquement les variables déjà affichées dans la fenêtre, de façon permanente ; les autres restent surveillées. Fermer normalement ne confirme que cet incident. Les erreurs d’expression restent distinguées par profil et expression ; masquer un avertissement ne répare ni n’arrête la collecte."
+  ]
+}

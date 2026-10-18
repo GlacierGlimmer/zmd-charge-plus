@@ -26,7 +26,9 @@ public sealed partial class CustomHudRuntime
         {
             var local = instance.Settings with { MultiHudEnabled=false, HudInstances=new(),
                 HudEnabled=settings.HudEnabled && instance.Settings.HudEnabled,
-                SamplingIntervalSeconds=settings.SamplingIntervalSeconds, ClickToCycle=settings.ClickToCycle, UiLanguage=settings.UiLanguage };
+                SamplingIntervalSeconds=settings.SamplingIntervalSeconds, ClickToCycle=settings.ClickToCycle, UiLanguage=settings.UiLanguage,
+                HudHotkeyShowAnimation=settings.HudHotkeyShowAnimation,
+                GlobalFontScale=settings.GlobalFontScale,GlobalUiScale=settings.GlobalUiScale };
             if (_instances.TryGetValue(instance.Id, out var existing) && !existing.Hud.IsClosed)
             {
                 if (System.Text.Json.JsonSerializer.Serialize(existing.Runtime._appSettings)!=System.Text.Json.JsonSerializer.Serialize(local))
@@ -43,6 +45,7 @@ public sealed partial class CustomHudRuntime
                 {
                     hud=new HudWindow(); hud.ApplySettings(local);
                     child=new CustomHudRuntime(hud,_variables) { _isChild=true };
+                    child.IsUserHidden=IsUserHidden;
                     child.ApplySettings(local); _instances.Add(instance.Id,(hud,child)); child.Start();
                 }
                 catch (Exception ex)
@@ -77,6 +80,7 @@ public sealed partial class CustomHudRuntime
         if(target is null || target._disposed) return Task.CompletedTask;
         target.CancelRevision();
         return target.RunSerializedAsync(async ()=> {
+            if (target.IsUserHidden) return;
             if(target._editingPreview) await target._hud.ShowPersistentAsync(data,refresh);
             else await target._hud.ShowCustomAsync(data,refresh);
             target._persistentShown=false;target._nextPersistentRefresh=DateTime.MinValue;

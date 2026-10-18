@@ -30,6 +30,7 @@ public sealed class VariableHub : IDisposable
     private readonly Dictionary<string, PingTargetState> _pingStates = new(StringComparer.OrdinalIgnoreCase);
     private readonly object _pingGate = new();
     private readonly AdvancedVariableProvider _advanced = new();
+    private readonly MediaSessionProvider _media = new();
 
     private const int PingTimeoutMs = 1000;
     private const double PingFullScaleMs = 999d;
@@ -140,6 +141,7 @@ public sealed class VariableHub : IDisposable
             var cached = new Dictionary<string, object?>(sample.Values, StringComparer.OrdinalIgnoreCase);
             AddClockAndSystem(cached, NeedsPrefix(requested, "system."), NeedsPrefix(requested, "time."));
             if (NeedsPrefix(requested, "deepseek.period.")) AddDeepSeekPeriod(cached, settings);
+            if (NeedsPrefix(requested,"media.")) _media.WriteCached(cached);
             return cached;
         }
 
@@ -190,6 +192,7 @@ public sealed class VariableHub : IDisposable
             await AddPingAsync(vars, pingTarget, probeProtocol, probePort, ct).ConfigureAwait(false);
 
         // Advanced variables are real collectors layered over the core snapshot.
+        if (NeedsPrefix(requested,"media.")) await _media.EnrichAsync(vars,ct).ConfigureAwait(false);
         // Hardware/driver-dependent fields are omitted when unavailable instead of returning fake zeros.
         await _advanced.EnrichAsync(vars, settings, requested, gpuAdapterId, ct).ConfigureAwait(false);
 
@@ -318,7 +321,7 @@ public sealed class VariableHub : IDisposable
         {
             using var p = Process.GetCurrentProcess();
             var asm = Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly();
-            var version = asm.GetName().Version?.ToString(3) ?? "0.1.1";
+            var version = asm.GetName().Version?.ToString(3) ?? "0.1.2";
             var start = p.StartTime;
             var uptime = Math.Max(0d, (DateTime.Now - start).TotalSeconds);
             v["app.name"] = p.ProcessName;
@@ -1450,19 +1453,19 @@ public sealed class VariableHub : IDisposable
         string unavailable = LocalizationManager.Text("节假日日历待更新", "Holiday calendar needs an update");
         string nameZh = state.IsPeak is null ? "日历待更新" : state.IsPeak.Value ? "高峰" : "低谷";
         string nameEn = state.IsPeak is null ? "UNKNOWN" : state.IsPeak.Value ? "PEAK" : "OFF-PEAK";
-        string labelEn = state.IsPeak == true ? "Peak" : "Off-peak";
+        string labelEn = state.IsPeak == true ? LocalizationManager.Text("高峰","Peak") : LocalizationManager.Text("低谷","Off-peak");
 
         v["deepseek.period.name"] = nameEn;
-        v["deepseek.period.name_zh"] = LocalizationManager.IsEnglish ? nameEn : nameZh;
+        v["deepseek.period.name_zh"] = LocalizationManager.UsesChineseSource ? nameZh : LocalizationManager.IsEnglish ? nameEn : state.IsPeak is null ? unavailable : labelEn;
         v["deepseek.period.is_peak"] = state.IsPeak;
         v["deepseek.period.is_off_peak"] = state.IsPeak is { } peak ? !peak : null;
         v["deepseek.period.remaining_seconds"] = remaining;
         v["deepseek.period.remaining_text"] = remaining is { } seconds
-            ? LocalizationManager.Text($"{nameZh}时段剩余{FormatDuration(seconds)}", $"{labelEn} left {FormatDuration(seconds)}")
+            ? LocalizationManager.Formatted($"{nameZh}时段剩余{FormatDuration(seconds)}", (System.FormattableString)$"{labelEn} left {FormatDuration(seconds)}")
             : unavailable;
         v["deepseek.period.progress"] = progress;
         v["deepseek.period.progress_text"] = progress is { } percent
-            ? LocalizationManager.Text($"{nameZh}已过{Math.Round(percent, MidpointRounding.AwayFromZero):0}%", $"{labelEn} {Math.Round(percent, MidpointRounding.AwayFromZero):0}%")
+            ? LocalizationManager.Formatted($"{nameZh}已过{Math.Round(percent, MidpointRounding.AwayFromZero):0}%", (System.FormattableString)$"{labelEn} {Math.Round(percent, MidpointRounding.AwayFromZero):0}%")
             : unavailable;
 
         DateTimeOffset? nextBeijing = state.NextTransition is { } next
@@ -1609,26 +1612,14 @@ public sealed class VariableHub : IDisposable
         return Math.Clamp(max, 0d, 100d);
     }
 
-    private static string DayOfWeekZh(DayOfWeek day) => LocalizationManager.IsEnglish
-        ? day.ToString()
-        : day switch
-        {
-            DayOfWeek.Monday => "星期一",
-            DayOfWeek.Tuesday => "星期二",
-            DayOfWeek.Wednesday => "星期三",
-            DayOfWeek.Thursday => "星期四",
-            DayOfWeek.Friday => "星期五",
-            DayOfWeek.Saturday => "星期六",
-            DayOfWeek.Sunday => "星期日",
-            _ => ""
-        };
+    private static string DayOfWeekZh(DayOfWeek day) => LocalizationManager.DataCulture.DateTimeFormat.GetDayName(day);
 
     private static string FormatDurationLong(double seconds)
     {
         long safe = Math.Max(0L, (long)Math.Floor(seconds));
         var ts = TimeSpan.FromSeconds(safe);
         if (ts.TotalDays >= 1)
-            return LocalizationManager.Text($"{(int)ts.TotalDays}天 {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}", $"{(int)ts.TotalDays}d {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}");
+            return LocalizationManager.Formatted($"{(int)ts.TotalDays}天 {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}", (System.FormattableString)$"{(int)ts.TotalDays}d {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}");
         return $"{(int)ts.TotalHours:00}:{ts.Minutes:00}:{ts.Seconds:00}";
     }
 
@@ -1807,7 +1798,7 @@ public sealed class VariableHub : IDisposable
     private async Task DisposeAfterSamplingAsync()
     {
         await _snapshotGate.WaitAsync().ConfigureAwait(false);
-        try { _advanced.Dispose(); _samples.Clear(); }
+        try { _advanced.Dispose(); _media.Dispose(); _samples.Clear(); }
         finally { _snapshotGate.Release(); }
     }
 }

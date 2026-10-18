@@ -14,10 +14,15 @@ public sealed record AppSettings
     // turned off temporarily during the current session from the settings window.
     public bool HudEnabled { get; init; } = true;
     public bool StartWithWindows { get; init; } = false;
-    // Auto | zh-CN | en-US. Auto follows Windows UI culture; all zh-* cultures use Simplified Chinese.
+    public string HudToggleHotkey { get; init; } = "";
+    public string HudHotkeyShowAnimation { get; init; } = "Full";
+    // Auto or a supported BCP-47 language code. Auto follows the Windows UI language.
     public string UiLanguage { get; init; } = "Auto";
 
     public double GlobalScale { get; init; } = DefaultGlobalScale;
+    // Independent accessibility preferences, shared by Settings and all HUD instances.
+    public double GlobalFontScale { get; init; } = 1.0;
+    public double GlobalUiScale { get; init; } = 1.0;
     public double DisplayDurationSeconds { get; init; } = DefaultDisplayDurationSeconds;
     public double BounceStrength { get; init; } = DefaultBounceStrength;
     public double RippleIntensity { get; init; } = DefaultRippleIntensity;
@@ -32,6 +37,14 @@ public sealed record AppSettings
     public bool ClickToCycle { get; init; } = false;
 
     public bool AlwaysVisible { get; init; } = false;
+    public bool HotZoneEnabled { get; init; } = true;
+    public HudPosition HotZonePosition { get; init; } = HudPosition.TopCenter;
+    public int HotZoneWidth { get; init; } = 240;
+    public int HotZoneHeight { get; init; } = 20;
+    public int HotZoneOffsetX { get; init; }
+    public int HotZoneOffsetY { get; init; }
+    public int HotZoneDwellMilliseconds { get; init; }
+    public bool HotZoneAdvanceQueue { get; init; }
     public PersistentHudLayer PersistentLayer { get; init; } = PersistentHudLayer.Desktop;
 
     public HudPositionMode PositionMode { get; init; } = HudPositionMode.Preset;

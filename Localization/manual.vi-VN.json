@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Cách thực hiện",
+    "Giải thích và tham số",
+    "Ví dụ",
+    "Sao chép ví dụ rồi thay giá trị cho phù hợp. Giữ nguyên tên biến, tên hàm và cú pháp mã.",
+    "Tra cứu hàm và định dạng"
+  ],
+  "start": [
+    "Bắt đầu",
+    "Hiển thị HUD đầu tiên rồi tùy chỉnh nội dung.",
+    "Bật HUD và chế độ luôn hiển thị trong Hiển thị và vị trí.\nChọn cấu hình tích hợp trong Nội dung HUD và mở bản xem trước.\nNhấn Lưu và áp dụng ở đầu cửa sổ.",
+    "Lưu trong trình sửa chỉ lưu cấu hình. Sửa cấu hình tích hợp sẽ tạo bản sao tùy chỉnh. Xem trước không thay thế thiết lập đang chạy; nút phía trên lưu và áp dụng toàn bộ thay đổi."
+  ],
+  "display": [
+    "Hiển thị, vị trí và giao diện",
+    "Chọn màn hình và cách xuất hiện.",
+    "Chọn màn hình, vị trí có sẵn hoặc nhập tọa độ riêng.\nChỉnh kích thước, độ mờ và phông chữ.\nChọn hiển thị thường trực hoặc tạm thời rồi áp dụng.",
+    "Vùng làm việc tránh thanh tác vụ; vị trí theo màn hình dùng toàn bộ biên màn hình. Tọa độ âm là bình thường khi có nhiều màn hình. Chế độ tạm thời xuất hiện theo sự kiện rồi thu lại. Bộ thu thập được dùng chung; đồng hồ và API có chu kỳ riêng.\n\nChọn ngôn ngữ hoặc theo hệ thống ở phía trên. Chỉ ngôn ngữ được lưu ngay; chỉnh sửa khác vẫn chưa lưu trong trình sửa. Ngôn ngữ hay câu chưa hỗ trợ dùng tiếng Anh. Nội dung tự viết và tên biến giữ nguyên."
+  ],
+  "profiles": [
+    "Cấu hình và nội dung HUD",
+    "Thiết lập chữ, biểu tượng và vòng chỉ báo.",
+    "Tạo cấu hình hoặc sửa bản sao của cấu hình tích hợp.\nNhập tiêu đề, giá trị chính/phụ, hậu tố, biểu tượng và màu.\nChọn biến và giới hạn vòng, xem trước rồi áp dụng.",
+    "Có thể trộn văn bản với biến trong dấu ngoặc nhọn. Vòng đổi khoảng giá trị sang 0–100%, không đổi số trong phần chữ. Điều kiện màu dùng đơn vị gốc. Xóa cấu hình tùy chỉnh không xóa cấu hình tích hợp."
+  ],
+  "variables": [
+    "Biến, mẫu và biểu thức",
+    "Tìm dữ liệu và chọn cách trình bày.",
+    "Tìm biến trong Quản lý dữ liệu, đọc mô tả và đơn vị.\nSao chép tên cho quy tắc hoặc vòng; sao chép mẫu cho văn bản.\nTham khảo các ví dụ và bảng tra cứu bên dưới.",
+    "Các bước định dạng chạy từ trái sang phải. 0.0 giữ một chữ số thập phân; auto:1 tự chọn đơn vị, không cần thêm đơn vị lần nữa. Tên hàm giữ nguyên. Tên biến cũ vẫn dùng được. Mục trùng bị ẩn nhưng chỉ số tổng hợp được giữ lại. -- nghĩa là chưa có giá trị hợp lệ."
+  ],
+  "hardware": [
+    "Cảm biến và trình điều khiển",
+    "Kiểm tra nhiệt độ hoặc số đo bị thiếu.",
+    "Mở Quản lý dữ liệu → Dữ liệu phần cứng để kiểm tra trình điều khiển.\nNếu thiếu PawnIO, cài đặt và chấp nhận xác nhận của Windows.\nThoát hẳn ECP rồi chạy lại bằng quyền quản trị.\nLàm mới, tìm cảm biến và sao chép biến hoặc xuất chẩn đoán.",
+    "Quyền quản trị không thay thế trình điều khiển. Số đo không được hỗ trợ sẽ không có giá trị. Lõi, gói, điểm nóng và bộ nhớ là các cảm biến khác nhau. Cực tiểu/cực đại là lịch sử phiên này, không phải giới hạn định mức. SMBIOS không phải bảng SPD/XMP/EXPO đầy đủ."
+  ],
+  "sources": [
+    "Thiết lập nguồn dữ liệu",
+    "Kết nối DeepSeek, API JSON và AIDA64.",
+    "Nhập khóa DeepSeek rồi áp dụng.\nVới HTTP, đặt tên, URL GET, tiêu đề, chu kỳ và đường dẫn JSON, sau đó bật nguồn.\nDùng custom.<source>.<variable> trong cấu hình.\nTrong AIDA64, chọn dữ liệu và bật xuất qua bộ nhớ chia sẻ, sổ đăng ký hoặc WMI; giữ AIDA64 chạy.",
+    "Khóa DeepSeek được mã hóa cho người dùng Windows hiện tại. Các khung giờ theo giờ Bắc Kinh; cuối tuần thuộc giờ thấp điểm. Kiểm tra status và error khi HTTP lỗi. Lấy mẫu nhanh hơn không bỏ qua bộ nhớ đệm. Biến môi trường giúp tránh ghi bí mật trực tiếp vào JSON. ECP chỉ đọc dữ liệu AIDA64 thực sự xuất ra."
+  ],
+  "cycle": [
+    "Luân phiên và hoạt ảnh",
+    "Chuyển giữa nhiều cấu hình theo thứ tự.",
+    "Thêm cấu hình vào danh sách và sắp xếp thứ tự.\nBật chuyển tự động và chu kỳ nếu cần.\nChọn hoạt ảnh đơn giản, đầy đủ hoặc cuộn lên.\nBật chuyển bằng nhấp chuột để chuyển thủ công.",
+    "Bỏ khỏi danh sách không xóa cấu hình. Danh sách rỗng dùng cấu hình hiện tại; một mục không chuyển sang cấu hình khác. Cuộn lên di chuyển nội dung HUD thường trực. Mỗi HUD có danh sách riêng; nhấp sẽ khởi động lại bộ đếm. Đổi khung giờ DeepSeek dùng hoạt ảnh đầy đủ."
+  ],
+  "summons": [
+    "Phím tắt và vùng chuột",
+    "Hiện hoặc ẩn HUD khi cần.",
+    "Đặt tổ hợp có Ctrl hoặc Alt, có thể thêm Shift, rồi áp dụng.\nChọn hoạt ảnh hiện đơn giản hoặc đầy đủ. Khi ẩn cũng có hoạt ảnh thu lại.\nTrong chế độ tạm thời, bật vùng chuột và chỉnh neo, kích thước, độ lệch, thời gian lưu chuột.",
+    "F12 và tổ hợp dành riêng bị từ chối. Nếu xung đột, phím cũ được giữ. Phím tắt điều khiển mọi HUD mà không đổi vị trí; trạng thái ẩn chỉ kéo dài trong phiên này. Vùng chuột nằm trong toàn màn hình. Rời vùng rồi vào lại để kích hoạt lần nữa; có thể cho vùng chuyển danh sách."
+  ],
+  "triggers": [
+    "Quy tắc kích hoạt",
+    "Hiển thị HUD tạm thời theo dữ liệu.",
+    "Thêm và bật quy tắc trong Nội dung HUD.\nChọn biến và chế độ: ngưỡng, đổi giá trị hoặc chuyển thành đúng.\nĐặt thời gian chờ, tắt luôn hiển thị rồi áp dụng.",
+    "Mẫu đầu tiên và dữ liệu vừa phục hồi chỉ lập mốc so sánh. Điều kiện còn đúng có thể kích hoạt lại khi hết thời gian chờ. Mỗi HUD có quy tắc và danh sách độc lập. Ví dụ: cpu.usage >= 90 với chờ 30 giây, hoặc media.title thay đổi để báo bài hát mới."
+  ],
+  "special": [
+    "Đồng hồ, mạng và FPS",
+    "Thiết lập chức năng riêng của từng cấu hình.",
+    "Đồng hồ thế giới dùng độ lệch UTC cố định và giờ mục tiêu hằng ngày tùy chọn.\nMạng dùng đơn vị và băng thông tham chiếu cho vòng.\nĐầu dò cần đích và giao thức; TCP/UDP cần cổng.\nVới FPS, làm mới danh sách và chọn cửa sổ hoặc màn hình.",
+    "Độ lệch cố định không tự đổi theo giờ mùa hè. 1 MB/s bằng 8 Mbps; tham chiếu không giới hạn đường truyền. Một lần dò lỗi không chứng minh toàn bộ Internet bị ngắt. FPS đo khung hình được trình bày, không phải tần số quét cố định; có thể cần quyền quản trị. GPU được chọn theo cấu hình."
+  ],
+  "media": [
+    "Thông tin phương tiện và tiến độ",
+    "Hiển thị phiên phương tiện Windows.",
+    "Dùng media.title_artist cho tên bài và nghệ sĩ.\nDùng media.position_text và media.duration_text cho thời gian.\nĐặt vòng thành media.progress với khoảng 0–100.",
+    "Trình phát phải công bố phiên phương tiện Windows. Vị trí chạy theo dòng thời gian và tốc độ được báo, không tiến khi tạm dừng. Phát trực tiếp chưa rõ thời lượng không có phần trăm hợp lệ. Thông tin trình phát không cung cấp sẽ bị thiếu."
+  ],
+  "instances": [
+    "Nhiều HUD thử nghiệm",
+    "Tạo các khung hiển thị độc lập.",
+    "Bật nhiều HUD trong Tính năng thử nghiệm.\nThêm HUD phụ, đặt tên và chọn để sửa.\nLưu và áp dụng HUD mới trước khi xem trước.",
+    "HUD được chọn sẽ nổi bật. Mỗi HUD có vị trí, cấu hình, danh sách, quy tắc và vùng riêng. Chu kỳ lấy mẫu, phím tắt toàn cục và tùy chọn bật chuyển bằng nhấp là dùng chung. Nhấp chỉ chuyển HUD vừa nhấp. Xóa HUD phụ không xóa HUD chính."
+  ],
+  "maintenance": [
+    "Thiết lập và bảo trì",
+    "Sao lưu và xem chẩn đoán.",
+    "Xuất thiết lập hoặc tạo bản sao trong Giới thiệu trước khi sửa lớn.\nNhập thiết lập để khôi phục.\nMở nhật ký hoặc thư mục thiết lập khi điều tra lỗi.\nSau khi đặt lại, áp dụng thiết lập vừa tải.",
+    "Khóa mã hóa có thể phải nhập lại trên PC hay tài khoản Windows khác. Kiểm tra cập nhật thất bại không có nghĩa phiên bản đã mới nhất. Bản phát triển có thể dùng cùng số phiên bản; hãy đọc mô tả gói đã nhận."
+  ],
+  "troubleshooting": [
+    "Khắc phục lỗi và cảnh báo",
+    "Kiểm tra hiển thị và nguồn dữ liệu.",
+    "Nếu không thấy HUD, kiểm tra công tắc, ẩn bằng phím tắt, chế độ, màn hình, tọa độ và độ mờ.\nVới hiển thị tạm thời, kiểm tra sự kiện, vùng hoặc quy tắc.\nVới --, kiểm tra cảm biến, quyền, khóa API, đường dẫn JSON và biểu thức.",
+    "-- không phải số không thật; định dạng không sửa được lỗi thu thập. Ô chọn cảnh báo chỉ tắt vĩnh viễn thông báo của các biến đang liệt kê trong cửa sổ đó. Biến khác vẫn cảnh báo. Đóng bình thường chỉ xác nhận sự cố này. Lỗi biểu thức được phân biệt theo cấu hình và biểu thức. Tắt báo không sửa hay dừng việc thu thập."
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "_labels": [
+    "Procedura",
+    "Spiegazioni e parametri",
+    "Esempio",
+    "Copia l'esempio e adatta i valori. I nomi di variabili e funzioni e la sintassi del codice non vengono tradotti.",
+    "Riferimento di funzioni e formati"
+  ],
+  "start": [
+    "Primi passi",
+    "Mostra il primo HUD, poi personalizzalo.",
+    "Attiva HUD e visualizzazione permanente in Visualizzazione e posizione.\nScegli un profilo integrato in Contenuto HUD e apri l'anteprima.\nPremi Salva e applica nella parte superiore.",
+    "Salvare nell'editor conserva il profilo. Modificare un profilo integrato crea una copia personalizzata. L'anteprima non sostituisce le impostazioni in uso; il pulsante superiore salva e applica tutte le modifiche."
+  ],
+  "display": [
+    "Visualizzazione, posizione e aspetto",
+    "Scegli lo schermo e la modalità di visualizzazione.",
+    "Scegli monitor e posizione predefinita oppure inserisci le coordinate.\nRegola dimensioni, opacità e carattere.\nScegli visualizzazione permanente o temporanea e applica.",
+    "L'area di lavoro evita la barra delle applicazioni; i limiti dello schermo comprendono l'intero monitor. Coordinate negative sono normali con più schermi. La modalità temporanea appare per un evento e poi si ritira. La raccolta è condivisa; orologi e API conservano i propri intervalli.\n\nScegli la lingua o segui quella del sistema in alto. Solo la lingua viene salvata subito; le altre modifiche restano non salvate. Lingue o testi mancanti usano l’inglese. I tuoi testi e i nomi delle variabili restano uguali."
+  ],
+  "profiles": [
+    "Profili e contenuto HUD",
+    "Configura testi, icone e anello.",
+    "Crea un profilo o modifica una copia di quello integrato.\nInserisci titolo, valori principali e secondari, suffisso, icone e colore.\nScegli variabile e limiti dell'anello, controlla l'anteprima e applica.",
+    "Il testo può includere variabili tra parentesi graffe. L'anello converte l'intervallo in 0–100% senza cambiare il valore scritto. Le condizioni di colore usano l'unità originale. Eliminare un profilo personalizzato non elimina quelli integrati."
+  ],
+  "variables": [
+    "Variabili, modelli ed espressioni",
+    "Trova i dati e scegli come presentarli.",
+    "Cerca una variabile in Gestione dati e leggi descrizione e unità.\nCopia il nome per regole e anelli, il modello per i testi.\nConsulta gli esempi e il riferimento seguente.",
+    "I formati vengono eseguiti da sinistra a destra. 0.0 mostra un decimale; auto:1 sceglie l'unità, che non va aggiunta nuovamente. I nomi delle funzioni restano uguali e i vecchi nomi delle variabili funzionano. I duplicati sono nascosti, gli indicatori riepilogativi restano. -- indica una lettura non disponibile."
+  ],
+  "hardware": [
+    "Sensori e driver",
+    "Verifica temperature e letture mancanti.",
+    "Apri Gestione dati → Dati hardware e controlla il driver.\nSe manca PawnIO, installalo e accetta la conferma di Windows.\nEsci completamente da ECP e riaprilo come amministratore.\nAggiorna, cerca il sensore e copia la variabile o esporta la diagnostica.",
+    "I privilegi di amministratore non sostituiscono il driver. Le letture non supportate restano indisponibili. Core, pacchetto, punto caldo e memoria sono sensori distinti. Minimo e massimo sono lo storico della sessione, non i limiti nominali. SMBIOS non fornisce una tabella SPD/XMP/EXPO completa."
+  ],
+  "sources": [
+    "Configurazione delle fonti",
+    "Collega DeepSeek, API JSON e AIDA64.",
+    "Inserisci la chiave DeepSeek e applica.\nPer HTTP imposta nome, URL GET, intestazioni, intervallo e percorsi JSON, poi abilita la fonte.\nUsa custom.<source>.<variable> nel profilo.\nIn AIDA64 scegli i dati e abilita l'esportazione tramite memoria condivisa, registro o WMI; lascia AIDA64 aperto.",
+    "La chiave DeepSeek viene cifrata per l'utente Windows attuale. I periodi seguono l'ora di Pechino; i fine settimana sono fuori punta. Controlla status ed error per i problemi HTTP. Campionare più spesso non salta la cache. Le variabili d'ambiente evitano segreti scritti direttamente nel JSON. ECP legge soltanto ciò che AIDA64 esporta davvero."
+  ],
+  "cycle": [
+    "Rotazione e animazioni",
+    "Alterna più profili in sequenza.",
+    "Aggiungi profili all'elenco e riordinali.\nSe serve, abilita rotazione automatica e intervallo.\nScegli animazione semplice, completa o scorrimento verso l'alto.\nAbilita il cambio al clic per avanzare manualmente.",
+    "Rimuovere dall'elenco non elimina il profilo. Un elenco vuoto usa il profilo attuale; con un solo elemento non passa a un altro profilo. Lo scorrimento muove il contenuto del HUD permanente. Ogni HUD ha il proprio elenco; il clic riavvia il suo timer. I cambi di periodo DeepSeek usano l'animazione completa."
+  ],
+  "summons": [
+    "Scorciatoie e aree del mouse",
+    "Mostra o nascondi i HUD quando serve.",
+    "Imposta una combinazione con Ctrl o Alt, eventualmente Shift, e applica.\nScegli comparsa semplice o completa; anche la scomparsa ha un'animazione.\nNel modo temporaneo abilita un'area e regola ancoraggio, dimensioni, spostamento e permanenza.",
+    "F12 e combinazioni riservate vengono rifiutati. Un conflitto mantiene la scorciatoia precedente. La combinazione controlla tutti i HUD senza cambiarne la posizione; lo stato nascosto vale per questa sessione. Le aree restano entro lo schermo intero. Esci e rientra per riattivare; possono anche avanzare l'elenco."
+  ],
+  "triggers": [
+    "Regole di attivazione",
+    "Mostra temporaneamente il HUD in base ai dati.",
+    "Aggiungi e abilita una regola in Contenuto HUD.\nScegli variabile e modalità: soglia, variazione del valore o passaggio a vero.\nImposta l'attesa, disabilita la visualizzazione permanente e applica.",
+    "Il primo campione e il ripristino dei dati stabiliscono solo il riferimento. Una condizione persistente può attivarsi di nuovo dopo l'attesa. Ogni HUD ha regole ed elenco indipendenti. Esempi: cpu.usage >= 90 con 30 secondi di attesa, oppure variazione di media.title per annunciare un brano."
+  ],
+  "special": [
+    "Orologio, rete e FPS",
+    "Imposta le funzioni specifiche dei profili.",
+    "Nell'orologio mondiale scegli uno scarto UTC fisso e un eventuale orario obiettivo giornaliero.\nPer la rete imposta unità e banda di riferimento dell'anello.\nPer le sonde scegli destinazione e protocollo; TCP/UDP usano una porta.\nPer FPS aggiorna l'elenco e scegli finestra o schermo.",
+    "Lo scarto fisso non segue l'ora legale. 1 MB/s equivale a 8 Mbps; il riferimento non limita la connessione. Una sonda fallita non prova un'interruzione generale di Internet. FPS misura i fotogrammi presentati, non la frequenza fissa dello schermo; può richiedere amministratore. La GPU si sceglie per profilo."
+  ],
+  "media": [
+    "Media e avanzamento",
+    "Mostra la sessione multimediale Windows.",
+    "Usa media.title_artist per titolo e artista.\nUsa media.position_text e media.duration_text per i tempi.\nImposta l'anello su media.progress con intervallo 0–100.",
+    "Il lettore deve pubblicare una sessione multimediale Windows. La posizione segue sequenza temporale e velocità dichiarate, e non avanza in pausa. Una diretta senza durata non ha una percentuale valida. I metadati non forniti dal lettore non sono disponibili."
+  ],
+  "instances": [
+    "HUD multipli sperimentali",
+    "Crea visualizzazioni indipendenti.",
+    "Abilita più HUD nelle Funzioni sperimentali.\nAggiungi un HUD secondario, assegnagli un nome e selezionalo per modificarlo.\nSalva e applica le nuove istanze prima dell'anteprima.",
+    "Il HUD selezionato viene evidenziato. Posizione, profili, elenco, regole e aree sono individuali. Intervallo di raccolta, scorciatoia globale e opzione generale del cambio al clic sono condivisi. Il clic avanza solo il HUD premuto. Eliminare un secondario non elimina quello principale."
+  ],
+  "maintenance": [
+    "Impostazioni e manutenzione",
+    "Conserva copie e consulta la diagnostica.",
+    "Prima di modifiche importanti esporta le impostazioni o crea un backup da Informazioni.\nImporta per ripristinare.\nApri registri o cartella delle impostazioni per indagare sui guasti.\nDopo il ripristino dei valori iniziali applica le impostazioni caricate.",
+    "Le chiavi cifrate potrebbero richiedere un nuovo inserimento su un altro PC o account Windows. Un controllo aggiornamenti fallito non conferma che la versione sia l'ultima. I pacchetti di sviluppo possono avere lo stesso numero: leggi la descrizione del pacchetto ricevuto."
+  ],
+  "troubleshooting": [
+    "Problemi e avvisi",
+    "Controlla visualizzazione e fonti dati.",
+    "Se il HUD non appare, controlla attivazione, nascondimento tramite scorciatoia, modalità, schermo, coordinate e opacità.\nNel modo temporaneo controlla evento, area o regola.\nPer -- verifica sensore, permessi, chiave API, percorso JSON ed espressione.",
+    "-- non è uno zero reale; il formato non ripara la raccolta. La casella nell'avviso disattiva per sempre solo le notifiche delle variabili elencate in quella finestra. Le altre continuano ad avvisare. Chiudere normalmente conferma solo quell'episodio. Gli errori di espressione sono distinti per profilo ed espressione. Silenziare non ripara né ferma la raccolta."
+  ]
+}

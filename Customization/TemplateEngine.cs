@@ -279,7 +279,7 @@ public static class TemplateEngine
     {
         var ts = TimeSpan.FromSeconds(Math.Max(0, (long)seconds));
         return ts.TotalDays >= 1
-            ? LocalizationManager.Text($"{(int)ts.TotalDays}天 {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}", $"{(int)ts.TotalDays}d {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}")
+            ? LocalizationManager.Formatted($"{(int)ts.TotalDays}天 {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}", (System.FormattableString)$"{(int)ts.TotalDays}d {ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}")
             : $"{(int)ts.TotalHours:00}:{ts.Minutes:00}:{ts.Seconds:00}";
     }
 
@@ -288,7 +288,7 @@ public static class TemplateEngine
         var delta = DateTime.Now - dt;
         bool future = delta.TotalSeconds < 0;
         var a = delta.Duration();
-        if (LocalizationManager.IsEnglish)
+        if (!LocalizationManager.UsesChineseSource)
         {
             string unitEn = a.TotalSeconds < 60 ? $"{Math.Max(1, (int)a.TotalSeconds)}s"
                 : a.TotalMinutes < 60 ? $"{(int)a.TotalMinutes}m"
@@ -296,7 +296,7 @@ public static class TemplateEngine
                 : a.TotalDays < 30 ? $"{(int)a.TotalDays}d"
                 : a.TotalDays < 365 ? $"{(int)(a.TotalDays / 30)}mo"
                 : $"{(int)(a.TotalDays / 365)}y";
-            return future ? $"in {unitEn}" : $"{unitEn} ago";
+            return future ? LocalizationManager.Formatted("",(FormattableString)$"in {unitEn}") : LocalizationManager.Formatted("",(FormattableString)$"{unitEn} ago");
         }
 
         string unit = a.TotalSeconds < 60 ? $"{Math.Max(1, (int)a.TotalSeconds)}秒"
@@ -311,7 +311,7 @@ public static class TemplateEngine
     private static string RelativeDuration(double seconds)
     {
         var a = Math.Abs(seconds);
-        if (LocalizationManager.IsEnglish)
+        if (!LocalizationManager.UsesChineseSource)
         {
             if (a < 60) return $"{(int)a}s";
             if (a < 3600) return $"{(int)(a / 60)}m";

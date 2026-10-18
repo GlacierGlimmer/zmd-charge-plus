@@ -23,10 +23,23 @@ internal class BugRegressionTests
     {
         try
         {
-            var builder=AppBuilder.Configure<FontTestApp>().UsePlatformDetect().WithInterFont();
+            // SetupWithoutStarting leaves ApplicationLifetime unset, so App loads
+            // its actual theme without starting the tray, collectors or user settings.
+            var builder=AppBuilder.Configure<EndfieldChargePlus.App>().UsePlatformDetect().WithInterFont().With(EndfieldChargePlus.LocalizationManager.FontOptions);
             if(Environment.GetEnvironmentVariable("ECP_RENDER_FALLBACK")=="1")
                 builder.With(new Win32PlatformOptions { CompositionMode=new[] { Win32CompositionMode.RedirectionSurface },RenderingMode=new[] { Win32RenderingMode.Software } });
             builder.SetupWithoutStarting();
+            if(args.Length>0 && args[0]=="--core-async") {SynchronizationContext.SetSynchronizationContext(null);RunAsync().GetAwaiter().GetResult();Console.WriteLine($"PASS {_checks} asynchronous core checks");return 0;}
+            if(args.Length>0 && args[0]=="--appearance") {AppearanceLanguageChecks.Run(Check);Console.WriteLine($"PASS {_checks} appearance/language checks");return 0;}
+            if(args.Length>0 && args[0]=="--localization") {LocalizationRegressionChecks.Run(Check);Console.WriteLine($"PASS {_checks} localization checks");return 0;}
+            if(args.Length>0 && args[0]=="--localization-models") {LocalizationRegressionChecks.Run(Check,gui:false);Console.WriteLine($"PASS {_checks} localization model checks");return 0;}
+            if(args.Length>0 && args[0]=="--navigation") {NavigationManualChecks.Run(Check);Console.WriteLine($"PASS {_checks} settings navigation/manual checks");return 0;}
+            if(args.Length>0 && args[0]=="--hardware") {HardwareTelemetryChecks.Run(Check);Console.WriteLine($"PASS {_checks} hardware checks");return 0;}
+            if(args.Length>0 && args[0]=="--hardware-live") {HardwareTelemetryChecks.Run(Check,liveOnly:true);Console.WriteLine($"PASS {_checks} live hardware checks");return 0;}
+            if(args.Length>0 && args[0]=="--media-live") { NextVersionRegressionChecks.RunLiveMedia(Check);Console.WriteLine($"PASS {_checks} live media checks");return 0; }
+            if(args.Length>0 && args[0]=="--next") { NextVersionRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} next-version checks"); return 0; }
+            if(args.Length>0 && args[0]=="--hotkey") { HotkeyRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} HUD shortcut checks"); return 0; }
+            if(args.Length>0 && args[0]=="--warnings") { DataWarningRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} variable warning checks"); return 0; }
             if(args.Length>0 && args[0]=="--desktop-shell") { DesktopShellChecks.Run(Check); Console.WriteLine($"PASS {_checks} actual Explorer desktop checks"); return 0; }
             if(args.Length>0 && args[0]=="--rendering") { NativeRenderingChecks.Run(Check); Console.WriteLine($"PASS {_checks} native rendering checks"); return 0; }
             if(args.Length>0 && args[0]=="--interaction") { InteractionRegressionChecks.Standalone(Check); Console.WriteLine($"PASS {_checks} interaction checks"); return 0; }
@@ -40,6 +53,11 @@ internal class BugRegressionTests
             FrameCollectorResourceChecks.Run(Check);
             SettingsFeatureChecks();
             RuntimeRegressionChecks.Run(Check);
+            HotkeyRegressionChecks.Run(Check);
+            DataWarningRegressionChecks.Run(Check);
+            NextVersionRegressionChecks.Run(Check);
+            HardwareTelemetryChecks.Run(Check);
+            NavigationManualChecks.Run(Check);
             NativeRenderingChecks.Run(Check);
             SynchronizationContext.SetSynchronizationContext(null);
             RunAsync().GetAwaiter().GetResult();
@@ -58,7 +76,7 @@ internal class BugRegressionTests
         using var runtime=new CustomHudRuntime(hud);
         runtime.ApplySettings(settings);
         var window=new EndfieldChargePlus.Settings.SettingsWindow(settings,hud,runtime);
-        Check(window.Title=="Endfield Charge Plus v0.1.1 设置","Settings title contains the frozen version without parentheses.");
+        Check(window.Title=="Endfield Charge Plus v0.1.2 设置","Settings title contains the frozen version without parentheses.");
         var panel=window.FindControl<Avalonia.Controls.StackPanel>("ExperimentalPanel")!;
         Check(panel.Children.Count>3,"Experimental tab contains a multi-instance editor.");
         Check(!window.FindControl<HudCustomizerView>("Customizer")!.FindControl<Avalonia.Controls.CheckBox>("PersistentClickSwitch")!.IsEnabled,"Click cycling is configurable only in persistent mode.");
@@ -70,7 +88,7 @@ internal class BugRegressionTests
         Check(view.FindControl<Avalonia.Controls.StackPanel>("FrameDisplayOptions")!.IsVisible && !view.FindControl<Avalonia.Controls.StackPanel>("FrameWindowOptions")!.IsVisible,"Selecting Display FPS exposes the corresponding display settings.");
         EndfieldChargePlus.LocalizationManager.SetLanguage(EndfieldChargePlus.AppLanguage.English);
         typeof(EndfieldChargePlus.Settings.SettingsWindow).GetMethod("ApplyLocalization",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance)!.Invoke(window,null);
-        Check(window.Title=="Endfield Charge Plus v0.1.1 Settings","English title has no parentheses.");
+        Check(window.Title=="Endfield Charge Plus v0.1.2 Settings","English title has no parentheses.");
         window.Close(); hud.Close();
     }
 

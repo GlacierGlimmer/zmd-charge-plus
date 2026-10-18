@@ -1,7 +1,8 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="EndfieldChargePlus.Customization.HudCustomizerView">
-  <TabControl>
+  <TabControl x:Name="CustomizerTabs" Classes="settings-data">
+    <TabControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></TabControl.ItemsPanel>
     <TabItem Header="HUD 配置">
       <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="4,12,4,18" Spacing="12">
@@ -31,7 +32,7 @@
               <Border x:Name="DeepSeekOptionsHintPanel" Background="#1E1E20" BorderBrush="#3A3A3E" BorderThickness="1" CornerRadius="8" Padding="14" IsVisible="False">
                 <StackPanel Spacing="4">
                   <TextBlock Text="DeepSeek API 数据源" FontSize="12" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                  <TextBlock Text="此方案需要先在“数据源 → DeepSeek API”中配置 DeepSeek API Key；峰谷时段也可在该数据源中设置。未配置 API Key 时，余额相关数据无法获取。" FontSize="12" Foreground="#D2D2D6" TextWrapping="Wrap"/>
+                  <TextBlock Text="此方案需要先在“数据管理 → 数据源配置 → DeepSeek API”中配置 DeepSeek API Key；峰谷时段也可在该数据源中设置。未配置 API Key 时，余额相关数据无法获取。" FontSize="12" Foreground="#D2D2D6" TextWrapping="Wrap"/>
                 </StackPanel>
               </Border>
 
@@ -363,7 +364,7 @@
       </ScrollViewer>
     </TabItem>
 
-    <TabItem Header="变量库">
+    <TabItem x:Name="VariableLibraryPage" Header="变量库">
       <Grid ColumnDefinitions="390,*" Margin="4,12,4,4">
         <Border Grid.Column="0" Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="16" Margin="0,0,6,0">
           <Grid RowDefinitions="Auto,Auto,Auto,*">
@@ -373,7 +374,7 @@
             </StackPanel>
             <TextBox x:Name="VariableSearchBox" Grid.Row="1" Watermark="搜索：CPU 使用率 / cpu.usage" Margin="0,12,0,8"/>
             <ComboBox x:Name="VariableCategoryCombo" Grid.Row="2" Height="36" MinWidth="260" HorizontalAlignment="Stretch" Margin="0,0,0,18"/>
-            <ListBox x:Name="VariableList" Grid.Row="3" MinHeight="430" Margin="0,4,0,0"/>
+            <ListBox x:Name="VariableList" Grid.Row="3" MinHeight="240" Margin="0,4,0,0"/>
           </Grid>
         </Border>
 
@@ -381,7 +382,7 @@
           <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Spacing="16">
               <StackPanel Spacing="4">
-                <TextBlock x:Name="VariableDetailName" Text="选择一个变量" FontSize="18" FontWeight="SemiBold" Foreground="#F1F1F2"/>
+                <TextBlock x:Name="VariableDetailName" Text="选择一个变量" FontSize="18" FontWeight="SemiBold" Foreground="#F1F1F2" TextWrapping="Wrap"/>
                 <TextBlock x:Name="VariableDetailCategory" Text="" FontSize="11" Foreground="#C6CA4C"/>
                 <TextBlock x:Name="VariableDetailDescription" Text="从左侧列表选择变量后，这里会显示变量含义和使用建议。" FontSize="12" Foreground="#9B9BA1" TextWrapping="Wrap" Margin="0,4,0,0"/>
               </StackPanel>
@@ -390,17 +391,17 @@
 
               <StackPanel Spacing="5">
                 <TextBlock Text="变量名" FontSize="11" Foreground="#85858B"/>
-                <Grid ColumnDefinitions="*,110">
+                <Grid ColumnDefinitions="*,Auto">
                   <TextBox x:Name="VariableKeyBox" IsReadOnly="True" FontFamily="Consolas, Cascadia Mono, monospace"/>
-                  <Button x:Name="CopyVariableKeyBtn" Grid.Column="1" Content="复制变量名" Height="34" Padding="12,6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="8,0,0,0"/>
+                  <Button x:Name="CopyVariableKeyBtn" Grid.Column="1" Content="复制变量名" MinHeight="34" MinWidth="102" Padding="12,6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="8,0,0,0"/>
                 </Grid>
               </StackPanel>
 
               <StackPanel Spacing="5">
                 <TextBlock Text="模板写法" FontSize="11" Foreground="#85858B"/>
-                <Grid ColumnDefinitions="*,110">
+                <Grid ColumnDefinitions="*,Auto">
                   <TextBox x:Name="VariableTemplateBox" IsReadOnly="True" FontFamily="Consolas, Cascadia Mono, monospace"/>
-                  <Button x:Name="CopyVariableTemplateBtn" Grid.Column="1" Content="复制模板" Height="34" Padding="12,6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="8,0,0,0"/>
+                  <Button x:Name="CopyVariableTemplateBtn" Grid.Column="1" Content="复制模板" MinHeight="34" MinWidth="102" Padding="12,6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="8,0,0,0"/>
                 </Grid>
               </StackPanel>
 
@@ -436,7 +437,7 @@
       </Grid>
     </TabItem>
 
-    <TabItem Header="数据源">
+    <TabItem x:Name="DataSourcesPage" Header="数据源配置">
       <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="4,12,4,18" Spacing="12">
           <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18">
@@ -468,6 +469,54 @@
               <TextBox x:Name="HttpSourcesJsonBox" Grid.Row="1" AcceptsReturn="True" MinHeight="390" Margin="0,14,0,10" FontFamily="Consolas, Cascadia Mono, monospace" FontSize="11" TextWrapping="NoWrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
               <TextBlock x:Name="HttpStatusText" Grid.Row="2" FontSize="11" Foreground="#85858B" TextWrapping="Wrap"/>
             </Grid>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+    </TabItem>
+    <TabItem x:Name="TriggerRulesPage" Header="触发规则">
+      <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="4,12,4,18" Spacing="12">
+          <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="12">
+              <TextBlock Text="事件呼出" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
+              <TextBlock Text="仅在关闭“一直显示”时生效。满足规则后按轮播队列呼出下一项；空队列使用当前方案。首次采样和数据恢复只建立基线。" TextWrapping="Wrap" FontSize="12" Foreground="#A0A0A6"/>
+              <ListBox x:Name="TriggerList" Height="160"/>
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Button x:Name="AddTriggerBtn" Content="添加规则"/>
+                <Button x:Name="RemoveTriggerBtn" Content="删除所选规则"/>
+              </StackPanel>
+            </StackPanel>
+          </Border>
+          <Border x:Name="TriggerEditorPanel" Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="12">
+              <CheckBox x:Name="TriggerEnabledCheck" Content="启用这条规则"/>
+              <TextBlock Text="规则名称"/>
+              <TextBox x:Name="TriggerNameBox"/>
+              <TextBlock Text="监视变量"/>
+              <TextBox x:Name="TriggerVariableBox" Watermark="cpu.usage / probe.loss_percent"/>
+              <TextBlock Text="变量可从变量库复制。网络探测沿用队列中网络包探测方案的目标和协议；没有该方案时使用当前方案。" TextWrapping="Wrap" FontSize="11" Foreground="#85858B"/>
+              <Grid ColumnDefinitions="*,*">
+                <StackPanel Spacing="6" Margin="0,0,12,0">
+                  <TextBlock Text="触发条件模式"/>
+                  <ComboBox x:Name="TriggerModeCombo"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6">
+                  <TextBlock Text="规则运算符"/>
+                  <ComboBox x:Name="TriggerOperatorCombo"/>
+                </StackPanel>
+              </Grid>
+              <Grid ColumnDefinitions="*,*">
+                <StackPanel Spacing="6" Margin="0,0,12,0">
+                  <TextBlock Text="触发阈值"/>
+                  <NumericUpDown x:Name="TriggerValueBox" Minimum="-1000000000000" Maximum="1000000000000" Increment="1"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="6">
+                  <TextBlock Text="触发冷却 / 秒"/>
+                  <NumericUpDown x:Name="TriggerCooldownBox" Minimum="1" Maximum="86400" Increment="1"/>
+                </StackPanel>
+              </Grid>
+              <TextBlock x:Name="TriggerModeHint" TextWrapping="Wrap" Foreground="#C6CA4C" FontSize="12"/>
+            </StackPanel>
           </Border>
         </StackPanel>
       </ScrollViewer>

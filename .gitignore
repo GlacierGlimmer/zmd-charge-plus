@@ -46,3 +46,7 @@ settings.*.json
 **/.avalonia-build-tasks/
 **/obj-bugs/
 native/ECPFrames/build/
+
+# Local Python tooling caches
+__pycache__/
+*.py[cod]

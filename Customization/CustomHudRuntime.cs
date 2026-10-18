@@ -29,7 +29,7 @@ public sealed partial class CustomHudRuntime : IDisposable
         _revision=new CancellationTokenSource();
         // An interrupted close/summon no longer represents a completed
         // persistent presentation, even when its old profile ID is unchanged.
-        if (_hud.IsHudBusy) _persistentShown=false;
+        if (_hud.IsHudBusy && !_hud.IsRolling) _persistentShown=false;
         previous.Cancel(); previous.Dispose();
         _hud.CancelPresentation();
     }
@@ -58,6 +58,7 @@ public sealed partial class CustomHudRuntime : IDisposable
     }
 
     private AppSettings _appSettings = new();
+    private AppSettings? _pendingSettings;
     private CustomHudSettings _settings = CustomHudSettings.CreateDefault();
 
     private DateTime _nextPersistentRefresh = DateTime.MinValue;
@@ -71,7 +72,7 @@ public sealed partial class CustomHudRuntime : IDisposable
     private bool _persistentShown;
     private string _persistentProfileId = "";
 
-    private bool _hotZoneLatched;
+    private readonly HotZoneDwellGate _hotZone=new();
     private bool? _lastAcOnline;
     private bool? _candidateAcOnline;
     private DateTime _candidateAcSince = DateTime.MinValue;
@@ -90,7 +91,7 @@ public sealed partial class CustomHudRuntime : IDisposable
         _hud.HudClicked += OnHudClicked;
         // 100 ms：用于屏幕顶边热点检测和墙钟秒边界同步。重型指标仍按需采样。
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
-        _timer.Tick += (_, _) => RunSerializedAsync(TickAsync);
+        _timer.Tick += (_, _) => { ObserveHotZone();_ = RunSerializedAsync(TickAsync); };
         _hud.Closed += OnHudClosed;
     }
 
@@ -103,6 +104,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private void ConfigureSettings(AppSettings settings)
     {
+        _pendingSettings = null;
         _appSettings = settings ?? new AppSettings();
         SyncInstances(_appSettings);
         _variables.SamplingIntervalSeconds = _appSettings.SamplingIntervalSeconds;
@@ -113,10 +115,12 @@ public sealed partial class CustomHudRuntime : IDisposable
         _nextPersistentRefresh = DateTime.MinValue;
         _nextPersistentCycle = DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds, 3, 3600));
         _lastRenderedLocalSecond = -1;
-        _hotZoneLatched = false;
+        _hotZone.Reset();
         _persistentProfileId = "";
         _nextDeepSeekPeriodPoll = DateTime.MinValue;
         _pendingDeepSeekPeriodTransition = false;
+
+        ResetTriggerRules();
 
         var activeProfile = _settings.AutoCycle
             ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
@@ -132,6 +136,7 @@ public sealed partial class CustomHudRuntime : IDisposable
     public Task ApplySettingsWithTransitionAsync(AppSettings settings)
     {
         if (_disposed) return Task.CompletedTask;
+        _pendingSettings = settings;
         CancelRevision();
         return RunSerializedAsync(() => ApplyTransitionAsync(settings),wait:true);
     }
@@ -153,7 +158,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             _hud.ApplySettings(settings);
             ConfigureSettings(settings);
 
-            if (!settings.HudEnabled)
+            if (IsUserHidden || !settings.HudEnabled)
                 return;
 
             var profile = _settings.AutoCycle
@@ -218,7 +223,7 @@ public sealed partial class CustomHudRuntime : IDisposable
         _timer.Stop();
         try
         {
-            if (!_appSettings.HudEnabled && !_editingPreview)
+            if (IsUserHidden || (!_appSettings.HudEnabled && !_editingPreview))
                 return;
 
             // Every process start presents the currently effective scheme once through
@@ -274,6 +279,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     public async Task PreviewAsync(HudProfile profile)
     {
+        if (IsUserHidden) return;
         await RunSerializedAsync(async () => { await TriggerTransientProfileAsync(profile); },wait:true);
     }
 
@@ -286,7 +292,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private async Task TickAsync()
     {
-        if (_disposed) return;
+        if (_disposed || IsUserHidden) return;
         if (Volatile.Read(ref _settingsTransitionBusy) != 0) return;
         KeepFrameCaptureAlive();
 
@@ -303,7 +309,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
         if (_appSettings.AlwaysVisible || _editingPreview)
         {
-            _hotZoneLatched = false;
+            _hotZone.Reset();
             await TickPersistentAsync();
             return;
         }
@@ -345,6 +351,8 @@ public sealed partial class CustomHudRuntime : IDisposable
             _pendingDeepSeekPeriodTransition = false;
         }
 
+        if(await TickTriggerRulesAsync()) return;
+
         // Each transient carousel entry follows its normal show/hold/hide lifecycle.
         // A busy animation delays the next entry instead of skipping queued profiles.
         if (_settings.AutoCycle && DateTime.UtcNow >= _nextPersistentCycle
@@ -360,29 +368,27 @@ public sealed partial class CustomHudRuntime : IDisposable
             }
         }
 
-        if (!WindowsSystemProbe.TryGetCursorPosition(out var pointer))
+        if (!_hotZone.Ready(Environment.TickCount64,_appSettings.HotZoneDwellMilliseconds) || _hud.IsHudBusy || Volatile.Read(ref _busy) != 0)
             return;
 
-        bool inHotZone = _hud.IsPointInTopCenterHotZone(pointer);
-        if (!inHotZone)
-        {
-            _hotZoneLatched = false;
-            return;
-        }
-
-        if (_hotZoneLatched || _hud.IsHudBusy || Volatile.Read(ref _busy) != 0)
-            return;
-
-        var active = ResolveActiveProfile();
+        var hotQueue=ResolveCycleProfiles();
+        int hotNext=_appSettings.HotZoneAdvanceQueue && hotQueue.Count>0 ? (_eventCycleIndex+1)%hotQueue.Count : -1;
+        var active = hotNext<0 ? ResolveActiveProfile() : ApplyCycleAnimationMode(hotQueue[hotNext]);
         if (active is null)
-        {
-            _hotZoneLatched = true;
             return;
-        }
 
-        // 只有真正开始唤出后才锁住热点；鼠标离开顶边后允许下一次唤出。
-        _hotZoneLatched = true;
-        if (!await TriggerTransientProfileAsync(active)) _hotZoneLatched = false;
+        _hotZone.Presented();
+        if (await TriggerTransientProfileAsync(active)) { if(hotNext>=0)_eventCycleIndex=hotNext; }
+        else _hotZone.Reset();
+    }
+
+    private void ObserveHotZone()
+    {
+        if(_disposed || IsUserHidden || !_appSettings.HudEnabled || _appSettings.AlwaysVisible || _editingPreview || !_appSettings.HotZoneEnabled)
+        { _hotZone.Reset();return; }
+        if(WindowsSystemProbe.TryGetCursorPosition(out var pointer))
+            _hotZone.Observe(_hud.IsPointInConfiguredHotZone(pointer),Environment.TickCount64);
+        else _hotZone.Reset();
     }
 
     private void PollPowerSource()
@@ -451,6 +457,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private async Task<bool> TriggerTransientProfileAsync(HudProfile profile)
     {
+        if (_disposed || IsUserHidden) return false;
         if (Interlocked.Exchange(ref _busy, 1) != 0) return false;
         try
         {
@@ -468,6 +475,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             };
 
             await _hud.ShowCustomAsync(data, refresh);
+            _activeToken.ThrowIfCancellationRequested();
             return true;
         }
         catch
@@ -482,6 +490,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private async Task TickPersistentAsync()
     {
+        if (_disposed || IsUserHidden) return;
         var profiles = _settings.AutoCycle
             ? ResolveCycleProfiles().ToList()
             : _settings.Profiles.ToList();
@@ -590,9 +599,14 @@ public sealed partial class CustomHudRuntime : IDisposable
 
             if (profileChanged || deepSeekPeriodChanged)
             {
-                await _hud.HideAnimatedAsync();
-                _activeToken.ThrowIfCancellationRequested();
-                await _hud.ShowPersistentAsync(data, refresh);
+                if (profileChanged && !deepSeekPeriodChanged && _settings.CycleAnimationMode=="Roll")
+                    await _hud.RollToPersistentAsync(data,refresh);
+                else
+                {
+                    await _hud.HideAnimatedAsync();
+                    _activeToken.ThrowIfCancellationRequested();
+                    await _hud.ShowPersistentAsync(data, refresh);
+                }
                 _persistentShown = true;
             }
             else if (!_persistentShown || !_hud.IsVisible)
