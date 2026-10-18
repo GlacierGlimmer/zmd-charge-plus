@@ -24,5 +24,8 @@
   "Variables": "Variabelsamling",
   "Data Sources": "Uppsetjing av datakjeldor",
   "HUD Content & Data": "HUD-innhald",
-  "Save and apply": "Gøym og nytta"
+  "Save and apply": "Gøym og nytta",
+  "HUD SETTINGS": "HUD · Innstillingar",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Innstillingar",
+  "{0} v{1} Settings": "{0} v{1} · Innstillingar"
 }

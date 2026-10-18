@@ -24,5 +24,9 @@
   "Variables": "Breytusafn",
   "Data Sources": "Stilling gagnagjafa",
   "HUD Content & Data": "HUD-innihald",
-  "Save and apply": "Vista og nota"
+  "Save and apply": "Vista og nota",
+  "(Language translations may not be 100% accurate)": "(Þýðingarnar eru hugsanlega ekki 100% nákvæmar)",
+  "HUD SETTINGS": "HUD · Stillingar",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Stillingar",
+  "{0} v{1} Settings": "{0} v{1} · Stillingar"
 }

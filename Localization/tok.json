@@ -24,5 +24,8 @@
   "Variables": "kulupu nimi ante",
   "Data Sources": "ante pi kama sona",
   "HUD Content & Data": "ijo pi ilo HUD",
-  "Save and apply": "awen e ante o kepeken"
+  "Save and apply": "awen e ante o kepeken",
+  "HUD SETTINGS": "HUD · ante",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · ante",
+  "{0} v{1} Settings": "{0} v{1} · ante"
 }

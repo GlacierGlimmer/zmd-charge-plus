@@ -24,5 +24,9 @@
   "Variables": "Biblioteka zmiennych",
   "Data Sources": "Konfiguracja źródeł danych",
   "HUD Content & Data": "Zawartość HUD",
-  "Save and apply": "Zapisz i zastosuj"
+  "Save and apply": "Zapisz i zastosuj",
+  "(Language translations may not be 100% accurate)": "(Tłumaczenia mogą nie być w 100% dokładne)",
+  "HUD SETTINGS": "HUD · Ustawienia",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Ustawienia",
+  "{0} v{1} Settings": "{0} v{1} · Ustawienia"
 }

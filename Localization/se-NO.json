@@ -24,5 +24,8 @@
   "Variables": "Variábelgirjerádju",
   "Data Sources": "Diehtogálduid heivehusat",
   "HUD Content & Data": "HUD-sisdoallu",
-  "Save and apply": "Vurke ja geavat"
+  "Save and apply": "Vurke ja geavat",
+  "HUD SETTINGS": "HUD · Heivehusat",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Heivehusat",
+  "{0} v{1} Settings": "{0} v{1} · Heivehusat"
 }

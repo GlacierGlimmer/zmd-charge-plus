@@ -24,5 +24,9 @@
   "Variables": "Librerija tal-varjabbli",
   "Data Sources": "Konfigurazzjoni tas-sorsi tad-data",
   "HUD Content & Data": "Kontenut tal-HUD",
-  "Save and apply": "Issejvja u applika"
+  "Save and apply": "Issejvja u applika",
+  "(Language translations may not be 100% accurate)": "(It-traduzzjonijiet jistgħu ma jkunux 100% preċiżi)",
+  "HUD SETTINGS": "HUD · Settings",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Settings",
+  "{0} v{1} Settings": "{0} v{1} · Settings"
 }

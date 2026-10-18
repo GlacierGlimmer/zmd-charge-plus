@@ -24,5 +24,9 @@
   "Variables": "Biblioteka e ndryshoreve",
   "Data Sources": "Cilësimi i burimeve të të dhënave",
   "HUD Content & Data": "Përmbajtja e HUD",
-  "Save and apply": "Ruaj dhe zbato"
+  "Save and apply": "Ruaj dhe zbato",
+  "(Language translations may not be 100% accurate)": "(Përkthimet mund të mos jenë 100% të sakta)",
+  "HUD SETTINGS": "HUD · Cilësimet",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Cilësimet",
+  "{0} v{1} Settings": "{0} v{1} · Cilësimet"
 }

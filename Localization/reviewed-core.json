@@ -9859,6 +9859,46 @@
       "Android'de diğer uygulamaların üzerinde gösterme ve bildirim izinlerini verin, ardından Ana Sayfa'dan HUD'yi başlatın. Ayarlar otomatik kaydedilir. Donanım okumaları sistem erişimine bağlıdır. PawnIO ve AIDA64 masaüstü arayüzü yalnızca Windows içindir. Bildirim düzenini ve yazı boyutunu Android yönetir.",
       "Su Android, consenti la visualizzazione sopra altre app e le notifiche, poi avvia l’HUD dalla pagina iniziale. Le impostazioni vengono salvate automaticamente. Le letture hardware dipendono dall’accesso al sistema. PawnIO e l’interfaccia desktop di AIDA64 sono disponibili solo su Windows. Android controlla disposizione e dimensione del testo delle notifiche.",
       "در Android، مجوز نمایش روی برنامه‌ها و اعلان‌ها را بدهید و سپس HUD را از صفحهٔ اصلی اجرا کنید. تنظیمات خودکار ذخیره می‌شوند. داده‌های سخت‌افزار به دسترسی سیستم وابسته‌اند. PawnIO و رابط رومیزی AIDA64 فقط برای Windows هستند. چیدمان و اندازهٔ متن اعلان‌ها را Android کنترل می‌کند."
+    ],
+    "(Language translations may not be 100% accurate)": [
+      "（語言翻譯不一定100%準確）",
+      "（翻訳は100%正確とは限りません）",
+      "(번역이 100% 정확하지 않을 수 있습니다)",
+      "(Die Übersetzungen sind möglicherweise nicht zu 100% korrekt)",
+      "(Les traductions ne sont pas forcément exactes à 100%)",
+      "(Las traducciones pueden no ser 100% precisas)",
+      "(As traduções podem não ser 100% precisas)",
+      "(Переводы могут быть не на 100% точными)",
+      "(قد لا تكون الترجمات دقيقة بنسبة 100%)",
+      "(अनुवाद 100% सटीक नहीं भी हो सकते हैं)",
+      "(অনুবাদ 100% নির্ভুল নাও হতে পারে)",
+      "(ترجمے 100% درست نہ بھی ہوں)",
+      "(Terjemahan mungkin tidak 100% akurat)",
+      "(Bản dịch có thể không chính xác 100%)",
+      "(คำแปลอาจไม่ถูกต้อง 100%)",
+      "(Çeviriler %100 doğru olmayabilir)",
+      "(Le traduzioni potrebbero non essere accurate al 100%)",
+      "(ترجمه‌ها ممکن است 100% دقیق نباشند)"
+    ],
+    "HUD SETTINGS": [
+      "HUD · 設定",
+      "HUD · 設定",
+      "HUD · 설정",
+      "HUD · Einstellungen",
+      "HUD · Paramètres",
+      "HUD · Ajustes",
+      "HUD · Configurações",
+      "HUD · Настройки",
+      "HUD · الإعدادات",
+      "HUD · सेटिंग",
+      "HUD · সেটিংস",
+      "HUD · ترتیبات",
+      "HUD · Pengaturan",
+      "HUD · Cài đặt",
+      "HUD · การตั้งค่า",
+      "HUD · Ayarlar",
+      "HUD · Impostazioni",
+      "HUD · تنظیمات"
     ]
   }
 }

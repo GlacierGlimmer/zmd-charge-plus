@@ -24,5 +24,9 @@
   "Variables": "Knihovna proměnných",
   "Data Sources": "Nastavení zdrojů dat",
   "HUD Content & Data": "Obsah HUD",
-  "Save and apply": "Uložit a použít"
+  "Save and apply": "Uložit a použít",
+  "(Language translations may not be 100% accurate)": "(Překlady nemusí být 100% přesné)",
+  "HUD SETTINGS": "HUD · Nastavení",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Nastavení",
+  "{0} v{1} Settings": "{0} v{1} · Nastavení"
 }

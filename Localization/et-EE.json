@@ -24,5 +24,9 @@
   "Variables": "Muutujate teek",
   "Data Sources": "Andmeallikate seadistus",
   "HUD Content & Data": "HUD-i sisu",
-  "Save and apply": "Salvesta ja rakenda"
+  "Save and apply": "Salvesta ja rakenda",
+  "(Language translations may not be 100% accurate)": "(Tõlked ei pruugi olla 100% täpsed)",
+  "HUD SETTINGS": "HUD · Seaded",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Seaded",
+  "{0} v{1} Settings": "{0} v{1} · Seaded"
 }

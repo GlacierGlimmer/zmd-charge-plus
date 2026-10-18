@@ -24,5 +24,9 @@
   "Variables": "Biblioteka varijabli",
   "Data Sources": "Postavke izvora podataka",
   "HUD Content & Data": "Sadržaj HUD-a",
-  "Save and apply": "Sačuvaj i primijeni"
+  "Save and apply": "Sačuvaj i primijeni",
+  "(Language translations may not be 100% accurate)": "(Prijevodi možda nisu 100% tačni)",
+  "HUD SETTINGS": "HUD · Postavke",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Postavke",
+  "{0} v{1} Settings": "{0} v{1} · Postavke"
 }

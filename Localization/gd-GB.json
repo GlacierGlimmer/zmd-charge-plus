@@ -24,5 +24,9 @@
   "Variables": "Leabharlann chaochladairean",
   "Data Sources": "Rèiteachadh thùsan dàta",
   "HUD Content & Data": "Susbaint HUD",
-  "Save and apply": "Sàbhail is cuir an sàs"
+  "Save and apply": "Sàbhail is cuir an sàs",
+  "(Language translations may not be 100% accurate)": "(Dh'fhaodadh nach eil na h-eadar-theangachaidhean 100% ceart)",
+  "HUD SETTINGS": "HUD · Roghainnean",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Roghainnean",
+  "{0} v{1} Settings": "{0} v{1} · Roghainnean"
 }

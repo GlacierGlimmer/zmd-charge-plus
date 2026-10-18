@@ -24,5 +24,9 @@
   "Variables": "Változótár",
   "Data Sources": "Adatforrások beállítása",
   "HUD Content & Data": "HUD-tartalom",
-  "Save and apply": "Mentés és alkalmazás"
+  "Save and apply": "Mentés és alkalmazás",
+  "(Language translations may not be 100% accurate)": "(A fordítások nem feltétlenül 100% pontosak)",
+  "HUD SETTINGS": "HUD · Beállítások",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Beállítások",
+  "{0} v{1} Settings": "{0} v{1} · Beállítások"
 }

@@ -24,5 +24,9 @@
   "Variables": "Бібліятэка зменных",
   "Data Sources": "Налады крыніц даных",
   "HUD Content & Data": "Змесціва HUD",
-  "Save and apply": "Захаваць і ўжыць"
+  "Save and apply": "Захаваць і ўжыць",
+  "(Language translations may not be 100% accurate)": "(Пераклады могуць быць не на 100% дакладнымі)",
+  "HUD SETTINGS": "HUD · Налады",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Налады",
+  "{0} v{1} Settings": "{0} v{1} · Налады"
 }

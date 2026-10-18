@@ -24,5 +24,9 @@
   "Variables": "Llyfrgell newidynnau",
   "Data Sources": "Ffurfweddu ffynonellau data",
   "HUD Content & Data": "Cynnwys HUD",
-  "Save and apply": "Cadw a gweithredu"
+  "Save and apply": "Cadw a gweithredu",
+  "(Language translations may not be 100% accurate)": "(Efallai nad yw'r cyfieithiadau'n 100% cywir)",
+  "HUD SETTINGS": "HUD · Gosodiadau",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Gosodiadau",
+  "{0} v{1} Settings": "{0} v{1} · Gosodiadau"
 }

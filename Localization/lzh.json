@@ -24,5 +24,8 @@
   "Variables": "變數庫",
   "Data Sources": "資料源設定",
   "HUD Content & Data": "HUD 所示",
-  "Save and apply": "存而施行"
+  "Save and apply": "存而施行",
+  "HUD SETTINGS": "HUD · 設定",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · 設定",
+  "{0} v{1} Settings": "{0} v{1} · 設定"
 }

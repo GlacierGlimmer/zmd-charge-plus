@@ -1724,5 +1724,7 @@
   "Using native system hardware interfaces. Available data depends on hardware, drivers and permissions; PawnIO is not required.": "시스템의 기본 하드웨어 인터페이스를 사용합니다. 제공되는 데이터는 하드웨어, 드라이버, 권한에 따라 다릅니다. PawnIO는 필요하지 않습니다.",
   "Shows readings actually provided by the device and system. Unavailable items show -- and their reason.": "기기와 시스템이 실제로 제공하는 값을 표시합니다. 사용할 수 없는 항목은 --와 그 이유를 표시합니다.",
   "This build has no native media-session data source on this platform. Media fields remain unavailable.": "이 플랫폼의 현재 빌드에는 기본 미디어 세션 데이터 소스가 없습니다. 미디어 항목은 사용할 수 없습니다.",
-  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android에서는 다른 앱 위에 표시와 알림을 허용한 다음 홈에서 HUD를 시작하세요. 설정은 자동 저장됩니다. 하드웨어 값은 시스템 접근 권한에 따라 달라집니다. PawnIO와 AIDA64 데스크톱 인터페이스는 Windows 전용입니다. 알림 배치와 글자 크기는 Android가 관리합니다."
+  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android에서는 다른 앱 위에 표시와 알림을 허용한 다음 홈에서 HUD를 시작하세요. 설정은 자동 저장됩니다. 하드웨어 값은 시스템 접근 권한에 따라 달라집니다. PawnIO와 AIDA64 데스크톱 인터페이스는 Windows 전용입니다. 알림 배치와 글자 크기는 Android가 관리합니다.",
+  "(Language translations may not be 100% accurate)": "(번역이 100% 정확하지 않을 수 있습니다)",
+  "HUD SETTINGS": "HUD · 설정"
 }

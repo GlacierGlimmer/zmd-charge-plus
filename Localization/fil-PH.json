@@ -24,5 +24,8 @@
   "Variables": "Aklatan ng mga baryabol",
   "Data Sources": "Pagsasaayos ng pinagmumulan ng datos",
   "HUD Content & Data": "Nilalaman ng HUD",
-  "Save and apply": "I-save at ilapat"
+  "Save and apply": "I-save at ilapat",
+  "HUD SETTINGS": "HUD · Mga setting",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Mga setting",
+  "{0} v{1} Settings": "{0} v{1} · Mga setting"
 }

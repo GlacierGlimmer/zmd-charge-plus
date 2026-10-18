@@ -24,5 +24,9 @@
   "Variables": "Biblioteca de variables",
   "Data Sources": "Configuració de les fonts de dades",
   "HUD Content & Data": "Contingut del HUD",
-  "Save and apply": "Desa i aplica"
+  "Save and apply": "Desa i aplica",
+  "(Language translations may not be 100% accurate)": "(Les traduccions poden no ser 100% precises)",
+  "HUD SETTINGS": "HUD · Configuració",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Configuració",
+  "{0} v{1} Settings": "{0} v{1} · Configuració"
 }

@@ -24,5 +24,9 @@
   "Variables": "Βιβλιοθήκη μεταβλητών",
   "Data Sources": "Ρύθμιση πηγών δεδομένων",
   "HUD Content & Data": "Περιεχόμενο HUD",
-  "Save and apply": "Αποθήκευση και εφαρμογή"
+  "Save and apply": "Αποθήκευση και εφαρμογή",
+  "(Language translations may not be 100% accurate)": "(Οι μεταφράσεις ενδέχεται να μην είναι 100% ακριβείς)",
+  "HUD SETTINGS": "HUD · Ρυθμίσεις",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Ρυθμίσεις",
+  "{0} v{1} Settings": "{0} v{1} · Ρυθμίσεις"
 }

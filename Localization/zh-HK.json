@@ -1724,5 +1724,7 @@
   "Using native system hardware interfaces. Available data depends on hardware, drivers and permissions; PawnIO is not required.": "使用系統原生硬體介面。資料取決於硬體、驅動程式和目前權限；不需要 PawnIO。",
   "Shows readings actually provided by the device and system. Unavailable items show -- and their reason.": "顯示裝置和系統實際提供的讀數；無法使用的項目顯示 --，並說明原因。",
   "This build has no native media-session data source on this platform. Media fields remain unavailable.": "此平台目前的建置尚未提供原生媒體工作階段資料來源，媒體欄位會維持無法使用。",
-  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android 需允許懸浮視窗和通知，再於首頁啟動 HUD。設定自動儲存；硬體讀數取決於系統權限。PawnIO 和 AIDA64 桌面介面僅適用於 Windows。通知的版面與字級由 Android 系統控制。"
+  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android 需允許懸浮視窗和通知，再於首頁啟動 HUD。設定自動儲存；硬體讀數取決於系統權限。PawnIO 和 AIDA64 桌面介面僅適用於 Windows。通知的版面與字級由 Android 系統控制。",
+  "(Language translations may not be 100% accurate)": "（語言翻譯不一定100%準確）",
+  "HUD SETTINGS": "HUD · 設定"
 }

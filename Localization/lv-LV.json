@@ -24,5 +24,9 @@
   "Variables": "Mainīgo bibliotēka",
   "Data Sources": "Datu avotu iestatījumi",
   "HUD Content & Data": "HUD saturs",
-  "Save and apply": "Saglabāt un lietot"
+  "Save and apply": "Saglabāt un lietot",
+  "(Language translations may not be 100% accurate)": "(Tulkojumi var nebūt 100% precīzi)",
+  "HUD SETTINGS": "HUD · Iestatījumi",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Iestatījumi",
+  "{0} v{1} Settings": "{0} v{1} · Iestatījumi"
 }

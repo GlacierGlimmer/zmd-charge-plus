@@ -19,6 +19,7 @@ internal sealed class LanguageSelectionWindow : Window
     private readonly TextBox _search=new() {Name="LanguageSearch",MinHeight=38,FlowDirection=FlowDirection.LeftToRight};
     private readonly ListBox _languages=new() {Name="LanguageList"};
     private readonly TextBlock _heading=new() {FontSize=22,HorizontalAlignment=HorizontalAlignment.Center};
+    private readonly TextBlock _translationNotice=new() {Name="LanguageTranslationNotice",TextWrapping=TextWrapping.Wrap,TextAlignment=TextAlignment.Center,HorizontalAlignment=HorizontalAlignment.Stretch,Foreground=Brush.Parse("#A4A4AA"),Margin=new Thickness(0,14,0,0)};
     private readonly Button _appearance=new() {Name="GlobalAppearanceButton",MinHeight=42,HorizontalAlignment=HorizontalAlignment.Stretch,HorizontalContentAlignment=HorizontalAlignment.Center};
     private readonly Button _done=new() {Name="LanguageDoneButton",MinHeight=42,HorizontalAlignment=HorizontalAlignment.Stretch,HorizontalContentAlignment=HorizontalAlignment.Center};
     private Choice[] _choices=Array.Empty<Choice>();
@@ -28,15 +29,19 @@ internal sealed class LanguageSelectionWindow : Window
     {
         _settings=settings;_choose=choose;_scale=scale;
         Width=900;Height=720;MinWidth=580;MinHeight=440;Background=Brush.Parse("#19191B");WindowStartupLocation=WindowStartupLocation.CenterOwner;
-        var root=new Grid {RowDefinitions=new RowDefinitions("Auto,Auto,*,Auto"),Margin=new Thickness(28,20),MinWidth=520,MinHeight=380};
+        var root=new Grid {RowDefinitions=new RowDefinitions("Auto,Auto,*,Auto,Auto"),Margin=new Thickness(28,20),MinWidth=520,MinHeight=380};
         root.Children.Add(_heading);
         _search.MaxWidth=660;_search.HorizontalAlignment=HorizontalAlignment.Stretch;_search.Margin=new Thickness(0,18,0,14);Grid.SetRow(_search,1);root.Children.Add(_search);
-        var frame=new Border {BorderBrush=Brush.Parse("#454549"),BorderThickness=new Thickness(1),Child=_languages};Grid.SetRow(frame,2);root.Children.Add(frame);
+        var frame=new Border {MaxWidth=560,HorizontalAlignment=HorizontalAlignment.Stretch,BorderBrush=Brush.Parse("#454549"),BorderThickness=new Thickness(1),Child=_languages};Grid.SetRow(frame,2);root.Children.Add(frame);
         _languages.ItemTemplate=new FuncDataTemplate<Choice>((c,_)=>c is null ? new TextBlock() : new TextBlock {
-            Text=c.Label,TextAlignment=TextAlignment.Center,TextWrapping=TextWrapping.Wrap,Margin=new Thickness(12,9),FontSize=16,
+            Text=c.Label,TextAlignment=TextAlignment.Center,TextWrapping=TextWrapping.Wrap,Margin=new Thickness(12,5),FontSize=16,
             FlowDirection=c.RightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight });
         _languages.Styles.Add(new Avalonia.Styling.Style(s=>s.OfType<ListBoxItem>()) {Setters={
             new Setter(ListBoxItem.HorizontalContentAlignmentProperty,HorizontalAlignment.Stretch),
+            new Setter(ListBoxItem.VerticalContentAlignmentProperty,VerticalAlignment.Center),
+            new Setter(ListBoxItem.MinHeightProperty,36d),
+            new Setter(ListBoxItem.PaddingProperty,new Thickness(0)),
+            new Setter(ListBoxItem.MarginProperty,new Thickness(0)),
             new Setter(ListBoxItem.BorderThicknessProperty,new Thickness(1)),
             new Setter(ListBoxItem.BorderBrushProperty,Brushes.Transparent)}});
         _languages.Styles.Add(new Avalonia.Styling.Style(s=>s.OfType<ListBoxItem>().Class(":selected")) {Setters={
@@ -44,7 +49,8 @@ internal sealed class LanguageSelectionWindow : Window
             new Setter(ListBoxItem.BackgroundProperty,Brushes.Transparent)}});
         var footer=new Grid {ColumnDefinitions=new ColumnDefinitions("*,*"),Margin=new Thickness(0,18,0,0)};
         _appearance.Margin=new Thickness(0,0,7,0);_done.Margin=new Thickness(7,0,0,0);
-        footer.Children.Add(_appearance);Grid.SetColumn(_done,1);footer.Children.Add(_done);Grid.SetRow(footer,3);root.Children.Add(footer);Content=root;
+        Grid.SetRow(_translationNotice,3);root.Children.Add(_translationNotice);
+        footer.Children.Add(_appearance);Grid.SetColumn(_done,1);footer.Children.Add(_done);Grid.SetRow(footer,4);root.Children.Add(footer);Content=root;
         _search.TextChanged+=(_,_)=>Filter();
         _languages.SelectionChanged+=(_,_)=>{
             if(_refreshing || _languages.SelectedItem is not Choice item)return;
@@ -63,6 +69,8 @@ internal sealed class LanguageSelectionWindow : Window
         AutomationProperties.SetName(_search,_search.Watermark?.ToString());
         _appearance.Content=new TextBlock {Text=T("全局字体大小和UI缩放","Global font size and UI scale"),TextWrapping=TextWrapping.Wrap,TextAlignment=TextAlignment.Center};
         _done.Content=T("完成","Done");
+        _translationNotice.Text=T("（语言翻译不一定100%准确）","(Language translations may not be 100% accurate)");
+        _translationNotice.FlowDirection=LocalizationManager.CurrentLanguage.RightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
         _choices=new[]{new Choice("Auto",T("跟随系统","Follow system"),"Auto System 跟随系统",false)}.Concat(
             LocalizationManager.SupportedLanguages.Select(l=>new Choice(l.Code,l.DisplayName,$"{l.DisplayName} {l.Code} {l.EnglishName} {l.MinecraftCode}",l.RightToLeft))).ToArray();
         Filter();

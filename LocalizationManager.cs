@@ -41,6 +41,7 @@ public static partial class LocalizationManager
     private static readonly Dictionary<string, string> ZhToEn = new(StringComparer.Ordinal)
     {
         // Settings shell
+        ["HUD 设置"] = "HUD SETTINGS",
         ["Endfield Charge Plus 设置"] = "Endfield Charge Plus Settings",
         ["配置文件夹"] = "Config Folder",
         ["保存并应用"] = "Save & Apply",

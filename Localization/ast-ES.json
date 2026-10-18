@@ -24,5 +24,8 @@
   "Variables": "Biblioteca de variables",
   "Data Sources": "Configuración de fontes de datos",
   "HUD Content & Data": "Conteníu del HUD",
-  "Save and apply": "Guardar y aplicar"
+  "Save and apply": "Guardar y aplicar",
+  "HUD SETTINGS": "HUD · Configuración",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Configuración",
+  "{0} v{1} Settings": "{0} v{1} · Configuración"
 }

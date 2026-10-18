@@ -24,5 +24,8 @@
   "Variables": "Үзгәрешлеләр китапханәсе",
   "Data Sources": "Мәгълүмат чыганакларын көйләү",
   "HUD Content & Data": "HUD эчтәлеге",
-  "Save and apply": "Сакларга һәм кулланырга"
+  "Save and apply": "Сакларга һәм кулланырга",
+  "HUD SETTINGS": "HUD · Көйләүләр",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Көйләүләр",
+  "{0} v{1} Settings": "{0} v{1} · Көйләүләр"
 }

@@ -24,5 +24,9 @@
   "Variables": "Biblioteko de variabloj",
   "Data Sources": "Agordo de datumfontoj",
   "HUD Content & Data": "Enhavo de HUD",
-  "Save and apply": "Konservi kaj apliki"
+  "Save and apply": "Konservi kaj apliki",
+  "(Language translations may not be 100% accurate)": "(La tradukoj eble ne estas 100% precizaj)",
+  "HUD SETTINGS": "HUD · Agordoj",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Agordoj",
+  "{0} v{1} Settings": "{0} v{1} · Agordoj"
 }

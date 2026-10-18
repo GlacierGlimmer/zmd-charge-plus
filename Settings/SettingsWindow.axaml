@@ -23,7 +23,7 @@
       <Grid ColumnDefinitions="*,Auto,Auto">
         <StackPanel Spacing="3">
           <TextBlock Text="ENDFIELD CHARGE PLUS" FontSize="16" FontWeight="SemiBold" Foreground="White" LetterSpacing="1.2"/>
-          <TextBlock Text="HUD SETTINGS" FontSize="12" Foreground="#8E8E94"/>
+          <TextBlock Text="HUD 设置" FontSize="12" Foreground="#8E8E94"/>
         </StackPanel>
 
         <Button x:Name="LanguageButton" Grid.Column="1" MinHeight="38" MinWidth="180"

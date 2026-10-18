@@ -8,6 +8,7 @@ from pathlib import Path
 from regional_variants import build as build_regions
 from orthographic_variants import build as build_scripts
 from apply_additions import apply as apply_additions
+from apply_screenshot_review import apply as apply_screenshot_review
 
 ROOT=Path(__file__).resolve().parents[2]
 PACKS=ROOT/'Localization'
@@ -42,6 +43,7 @@ def build():
         save(path,pack)
     regions,variants=build_regions(PACKS)
     scripts=build_scripts(PACKS)
+    apply_screenshot_review()
     report=[]
     for item in catalog:
         code=item['code'];path=PACKS/(code+'.json')

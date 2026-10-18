@@ -87,3 +87,6 @@ for locale in catalog:
 print('PASS catalog146, bundled146 and immutable syntax; partial message sets:',len(partial))
 if args.complete:
     assert not partial,('Unfinished translation sets',partial)
+    from audit_coverage import audit
+    coverage=audit(ROOT.parent,None)
+    assert not coverage['incompleteLanguagePlatformPairs'], ('Unfinished prose or manuals',[(r['platform'],r['code'],len(r['missingKeys']),len(r['englishProse']),r['nativeManual']) for r in coverage['languages'] if not r['complete']])

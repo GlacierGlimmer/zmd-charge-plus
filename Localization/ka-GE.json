@@ -24,5 +24,9 @@
   "Variables": "ცვლადების ბიბლიოთეკა",
   "Data Sources": "მონაცემთა წყაროების გამართვა",
   "HUD Content & Data": "HUD-ის შიგთავსი",
-  "Save and apply": "შენახვა და გამოყენება"
+  "Save and apply": "შენახვა და გამოყენება",
+  "(Language translations may not be 100% accurate)": "(თარგმანები შეიძლება 100% ზუსტი არ იყოს)",
+  "HUD SETTINGS": "HUD · პარამეტრები",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · პარამეტრები",
+  "{0} v{1} Settings": "{0} v{1} · პარამეტრები"
 }

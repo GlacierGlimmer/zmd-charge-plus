@@ -24,5 +24,8 @@
   "Variables": "Biblioteche des variabilis",
   "Data Sources": "Configurazion des fonts dai dâts",
   "HUD Content & Data": "Contignût HUD",
-  "Save and apply": "Salve e apliche"
+  "Save and apply": "Salve e apliche",
+  "HUD SETTINGS": "HUD · Impostazions",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Impostazions",
+  "{0} v{1} Settings": "{0} v{1} · Impostazions"
 }

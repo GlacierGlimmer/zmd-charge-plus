@@ -24,5 +24,8 @@
   "Variables": "Бібліотека змінных",
   "Data Sources": "Настройкы джерел даных",
   "HUD Content & Data": "Зміст HUD",
-  "Save and apply": "Зберегти і хосновати"
+  "Save and apply": "Зберегти і хосновати",
+  "HUD SETTINGS": "HUD · Настройкы",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Настройкы",
+  "{0} v{1} Settings": "{0} v{1} · Настройкы"
 }

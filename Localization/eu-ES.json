@@ -24,5 +24,9 @@
   "Variables": "Aldagaien liburutegia",
   "Data Sources": "Datu-iturrien konfigurazioa",
   "HUD Content & Data": "HUD edukia",
-  "Save and apply": "Gorde eta aplikatu"
+  "Save and apply": "Gorde eta aplikatu",
+  "(Language translations may not be 100% accurate)": "(Baliteke itzulpenak %100 zehatzak ez izatea)",
+  "HUD SETTINGS": "HUD · Ezarpenak",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Ezarpenak",
+  "{0} v{1} Settings": "{0} v{1} · Ezarpenak"
 }

@@ -24,5 +24,8 @@
   "Variables": "Bibliotheca variabilium",
   "Data Sources": "Configuratio fontium datorum",
   "HUD Content & Data": "Argumentum HUD",
-  "Save and apply": "Serva et adhibe"
+  "Save and apply": "Serva et adhibe",
+  "HUD SETTINGS": "HUD · Optiones",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Optiones",
+  "{0} v{1} Settings": "{0} v{1} · Optiones"
 }

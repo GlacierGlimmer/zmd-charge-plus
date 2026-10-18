@@ -24,5 +24,9 @@
   "Variables": "Variabelbibliotek",
   "Data Sources": "Opsætning af datakilder",
   "HUD Content & Data": "HUD-indhold",
-  "Save and apply": "Gem og anvend"
+  "Save and apply": "Gem og anvend",
+  "(Language translations may not be 100% accurate)": "(Oversættelserne er muligvis ikke 100% korrekte)",
+  "HUD SETTINGS": "HUD · Indstillinger",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Indstillinger",
+  "{0} v{1} Settings": "{0} v{1} · Indstillinger"
 }

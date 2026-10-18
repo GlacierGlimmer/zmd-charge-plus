@@ -24,5 +24,8 @@
   "Variables": "Variabel-Bökerie",
   "Data Sources": "Datenborn-Instellungen",
   "HUD Content & Data": "HUD-Inholt",
-  "Save and apply": "Sekern un anwennen"
+  "Save and apply": "Sekern un anwennen",
+  "HUD SETTINGS": "HUD · Instellungen",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Instellungen",
+  "{0} v{1} Settings": "{0} v{1} · Instellungen"
 }

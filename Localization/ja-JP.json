@@ -1724,5 +1724,7 @@
   "Using native system hardware interfaces. Available data depends on hardware, drivers and permissions; PawnIO is not required.": "システム標準のハードウェアインターフェースを使用します。取得できる値は機器、ドライバー、権限によって異なります。PawnIO は不要です。",
   "Shows readings actually provided by the device and system. Unavailable items show -- and their reason.": "機器とシステムが実際に提供する値を表示します。取得できない項目には -- と理由を表示します。",
   "This build has no native media-session data source on this platform. Media fields remain unavailable.": "このプラットフォームの現在のビルドには、標準のメディアセッションを読み取るデータソースがありません。メディア項目は取得できません。",
-  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android では重ねて表示する権限と通知を許可し、ホームから HUD を開始します。設定は自動保存されます。ハードウェアの取得はシステムの権限に依存します。PawnIO と AIDA64 のデスクトップ接続は Windows 専用です。通知の配置と文字サイズは Android が管理します。"
+  "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.": "Android では重ねて表示する権限と通知を許可し、ホームから HUD を開始します。設定は自動保存されます。ハードウェアの取得はシステムの権限に依存します。PawnIO と AIDA64 のデスクトップ接続は Windows 専用です。通知の配置と文字サイズは Android が管理します。",
+  "(Language translations may not be 100% accurate)": "（翻訳は100%正確とは限りません）",
+  "HUD SETTINGS": "HUD · 設定"
 }

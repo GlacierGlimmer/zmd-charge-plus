@@ -24,5 +24,9 @@
   "Variables": "Muuttujakirjasto",
   "Data Sources": "Tietolähteiden asetukset",
   "HUD Content & Data": "HUD-sisältö",
-  "Save and apply": "Tallenna ja käytä"
+  "Save and apply": "Tallenna ja käytä",
+  "(Language translations may not be 100% accurate)": "(Käännökset eivät välttämättä ole 100% tarkkoja)",
+  "HUD SETTINGS": "HUD · Asetukset",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Asetukset",
+  "{0} v{1} Settings": "{0} v{1} · Asetukset"
 }

@@ -24,5 +24,9 @@
   "Variables": "Variabelbibliotek",
   "Data Sources": "Oppsett av datakjelder",
   "HUD Content & Data": "HUD-innhald",
-  "Save and apply": "Lagre og bruk"
+  "Save and apply": "Lagre og bruk",
+  "(Language translations may not be 100% accurate)": "(Omsetjingane er kanskje ikkje 100% nøyaktige)",
+  "HUD SETTINGS": "HUD · Innstillingar",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Innstillingar",
+  "{0} v{1} Settings": "{0} v{1} · Innstillingar"
 }

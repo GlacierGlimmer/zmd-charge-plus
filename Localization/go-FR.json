@@ -24,5 +24,8 @@
   "Variables": "Bibliotèqe des variabls",
   "Data Sources": "Ajustaije des sourçes de donées",
   "HUD Content & Data": "Contenu du HUD",
-  "Save and apply": "Enrjistrer e apliquer"
+  "Save and apply": "Enrjistrer e apliquer",
+  "HUD SETTINGS": "HUD · Opcions",
+  "Endfield Charge Plus Settings": "Endfield Charge Plus · Opcions",
+  "{0} v{1} Settings": "{0} v{1} · Opcions"
 }
