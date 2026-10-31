@@ -140,6 +140,7 @@ public partial class HudWindow : Window
         PrimaryText.FontSize=26*fontScale;SecondaryText.FontSize=14*fontScale;
         RightText.FontSize=22*fontScale;RightSuffixText.FontSize=13*fontScale;
         ContentClip.Height=60*Math.Max(1,fontScale);
+        ContentClip.CornerRadius=new CornerRadius(ContentClip.Height/2);
         Width=Math.Max(1200,620*scale);Height=Math.Max(160,200*scale*Math.Max(1,fontScale));
         Root.Width=Width;Root.Height=100*Math.Max(1,fontScale);
         UpdateContentGeometry();
