@@ -174,9 +174,10 @@ internal static class NextVersionRegressionChecks
             check(hud.IsVisible && hud.FindControl<Border>("Pill")!.Height>65 && hud.FindControl<StackPanel>("TitleHost")!.Opacity>0,"Full shortcut reveal uses the expanded title and shape-changing intro.");await show;
             runtime.ApplySettings(options);await Until(()=>!hud.IsHudBusy);
             int hidden=0;hud.PropertyChanged+=(_,e)=>{if(e.Property==Window.IsVisibleProperty && e.NewValue is false)hidden++;};
-            var handle=hud.TryGetPlatformHandle()!.Handle;var pill=hud.FindControl<Border>("Pill")!;var bounds=pill.Bounds;
+            var handle=hud.TryGetPlatformHandle()!.Handle;var pill=hud.FindControl<Border>("Pill")!;var clip=hud.FindControl<Border>("ContentClip")!;var bounds=pill.Bounds;
             typeof(CustomHudRuntime).GetMethod("OnHudClicked",Private)!.Invoke(runtime,null);await Task.Delay(220);
             var offset=(TranslateTransform)hud.FindControl<Grid>("ContentHost")!.RenderTransform!;
+            check(clip.ClipToBounds && Math.Abs(clip.CornerRadius.TopLeft-clip.Height/2)<0.01,"Dynamic HUD content is clipped to the capsule corner instead of a rectangular edge.");
             check(offset.Y<0 && offset.Y>-60 && hud.IsVisible,"Rolling moves all content upward inside the clipped capsule.");await Task.Delay(190);
             check(hud.FindControl<TextBlock>("PrimaryText")!.Text=="PROFILE1" && ((TranslateTransform)hud.FindControl<Grid>("ContentHost")!.RenderTransform!).Y>0,"The next profile replaces hidden content and enters from below.");await Until(()=>!hud.IsHudBusy);
             check(hidden==0 && hud.TryGetPlatformHandle()!.Handle==handle && pill.Bounds==bounds && ((TranslateTransform)hud.FindControl<Grid>("ContentHost")!.RenderTransform!).Y==0,"A roll preserves native window, capsule geometry and exact final content position.");
