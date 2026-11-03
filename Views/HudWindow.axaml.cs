@@ -52,6 +52,15 @@ public partial class HudWindow : Window
         IsHudBusy = false;
     }
 
+    internal void RaiseAboveAll()
+    {
+        if (!OperatingSystem.IsWindows() || _closed) return;
+        var handle = this.TryGetPlatformHandle();
+        if (handle is null || handle.Handle == IntPtr.Zero) return;
+        _windowLayer ??= new WindowsHudLayer(handle.Handle);
+        _windowLayer.Raise();
+    }
+
     // The progress ring is deliberately animated independently from the existing HUD
     // summon/retract animations. Data updates therefore feel continuous without changing
     // any of the original layout or animation timelines.
@@ -67,6 +76,9 @@ public partial class HudWindow : Window
     private TextBlock? _editingHint;
     private bool _editingHighlight;
     private double _contentWidth=560;
+    internal double VisibleContentWidth => _contentWidth;
+    internal double MinimumContentWidth { get; set; }
+    internal bool SuppressRadialInput { get; set; }
     public bool IsEditingHighlighted => _editingHighlight;
     public void SetEditingHighlight(bool enabled, string name)
     {

@@ -120,6 +120,7 @@ public partial class SettingsWindow : Window
 
         HudEnabledSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
         AlwaysVisibleSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
+        UsbNoticeSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
         PositionModeCombo.SelectionChanged += (_, _) => UpdateModeUi();
         PositionCombo.SelectionChanged += OnPositionPresetChanged;
         SaveBtn.Click += OnSave;
@@ -178,6 +179,7 @@ public partial class SettingsWindow : Window
             int layerIndex = PersistentLayerCombo.SelectedIndex;
             int modeIndex = PositionModeCombo.SelectedIndex;
             int positionIndex = PositionCombo.SelectedIndex;
+            int usbScopeIndex = UsbNoticeScopeCombo.SelectedIndex;
 
             PersistentLayerCombo.Items.Clear();
             PersistentLayerCombo.Items.Add(LocalizationManager.Text("始终置顶", "Always on Top"));
@@ -193,9 +195,19 @@ public partial class SettingsWindow : Window
             for (int i = 0; i < zh.Length; i++)
                 PositionCombo.Items.Add(LocalizationManager.Text(zh[i], en[i]));
 
+            UsbNoticeScopeCombo.Items.Clear();
+            UsbNoticeScopeCombo.Items.Add(LocalizationManager.Text("所有 USB 设备", "All USB devices"));
+            UsbNoticeScopeCombo.Items.Add(LocalizationManager.Text("仅 USB 存储设备", "USB storage devices only"));
+            UsbNoticeScopeCombo.Items.Add(LocalizationManager.Text("仅 USB 外设", "USB peripherals only"));
+
             if (layerIndex >= 0) PersistentLayerCombo.SelectedIndex = Math.Min(layerIndex, PersistentLayerCombo.Items.Count - 1);
             if (modeIndex >= 0) PositionModeCombo.SelectedIndex = Math.Min(modeIndex, PositionModeCombo.Items.Count - 1);
             if (positionIndex >= 0) PositionCombo.SelectedIndex = Math.Min(positionIndex, PositionCombo.Items.Count - 1);
+            if (usbScopeIndex >= 0) UsbNoticeScopeCombo.SelectedIndex = Math.Min(usbScopeIndex, UsbNoticeScopeCombo.Items.Count - 1);
+
+            UsbNoticePlaceholderHint.Text = LocalizationManager.Text(
+                "可用占位符：{device} 设备名，{drive} 盘符，{used} 已用百分比，{action} 已连接/已移除，{type} 设备类型。",
+                "Placeholders: {device} device name, {drive} drive letter, {used} used percentage, {action} connected/removed, {type} device type.");
         }
         finally { _applyingPositionUi=previousPositionUi; }
     }
@@ -373,6 +385,10 @@ public partial class SettingsWindow : Window
         PresetPositionPanel.Opacity = custom ? 0.40 : 1.0;
         CustomPositionPanel.IsEnabled = custom;
         CustomPositionPanel.Opacity = custom ? 1.0 : 0.40;
+
+        bool usbNotice = UsbNoticeSwitch.IsChecked == true;
+        UsbNoticeOptionsPanel.IsVisible = usbNotice;
+        UsbNoticeOptionsPanel.IsEnabled = usbNotice && UsbNoticeSwitch.IsEnabled;
     }
 
     private void OnPositionPresetChanged(object? sender,SelectionChangedEventArgs e)
@@ -407,6 +423,15 @@ public partial class SettingsWindow : Window
             ClickToCycleSwitch.IsChecked = _rootSettings.ClickToCycle;
             HudEnabledSwitch.IsChecked = settings.HudEnabled;
             StartupSwitch.IsChecked = settings.StartWithWindows;
+            UsbNoticeSwitch.IsChecked = _rootSettings.UsbInsertNotificationEnabled;
+            UsbNoticeScopeCombo.SelectedIndex = _rootSettings.UsbInsertNotificationScope switch
+            {
+                "Storage" => 1,
+                "Peripheral" => 2,
+                _ => 0,
+            };
+            UsbNoticeTaglineBox.Text = _rootSettings.UsbInsertNotificationTagline;
+            UsbNoticeTitleBox.Text = _rootSettings.UsbInsertNotificationTitle;
             AlwaysVisibleSwitch.IsChecked = settings.AlwaysVisible;
             PersistentLayerCombo.SelectedIndex = settings.PersistentLayer == PersistentHudLayer.Desktop ? 1 : 0;
             PositionModeCombo.SelectedIndex = settings.PositionMode == HudPositionMode.CustomCoordinates ? 1 : 0;
@@ -436,6 +461,15 @@ public partial class SettingsWindow : Window
         {
             HudEnabled = HudEnabledSwitch.IsChecked == true,
             StartWithWindows = StartupSwitch.IsChecked == true,
+            UsbInsertNotificationEnabled = UsbNoticeSwitch.IsChecked == true,
+            UsbInsertNotificationScope = UsbNoticeScopeCombo.SelectedIndex switch
+            {
+                1 => "Storage",
+                2 => "Peripheral",
+                _ => "All",
+            },
+            UsbInsertNotificationTagline = UsbNoticeTaglineBox.Text?.Trim() ?? "",
+            UsbInsertNotificationTitle = UsbNoticeTitleBox.Text?.Trim() ?? "",
             UiLanguage = _rootSettings.UiLanguage,
             Workspace = WorkspacePreferences.Normalize(_workspaceDraft),
             GlobalFontScale = _rootSettings.GlobalFontScale,

@@ -17,6 +17,8 @@ public partial class HudWindow
         double right=Measure(RightText)+Measure(RightSuffixText)+1;
         double title=Math.Max(Measure(TitleText),Measure(TagLineText))+60;
         _contentWidth=Math.Max(560,Math.Min(1800,Math.Max(left+right+155,title)));
+        if(MinimumContentWidth>0)
+            _contentWidth=Math.Max(_contentWidth,Math.Min(1800,MinimumContentWidth));
         Pill.Width=NumHost.Width=ContentClip.Width=_contentWidth;
         ContentClip.CornerRadius=new CornerRadius(30*_animOptions.FontHeightFactor);
         if(_editingFrame is not null)

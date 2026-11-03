@@ -48,6 +48,7 @@ public partial class HudWindow
     }
     private void EnsureRadialRegistration()
     {
+        if(SuppressRadialInput) { _radialInput?.Dispose();_unixRadialInput?.Dispose();_radialInput=null;_unixRadialInput=null;return; }
         if(_closed || !IsVisible || !_settings.HudEnabled || !(_settings.Workspace.RadialEnabled || OperatingSystem.IsWindows() && CanCycleOnClick)) {
             _radialInput?.Dispose();_unixRadialInput?.Dispose();_radialInput=null;_unixRadialInput=null;return;
         }

@@ -135,6 +135,7 @@ public partial class SettingsWindow
         _refreshingInstanceChoice=false;
         SamplingIntervalBox.IsEnabled=true;
         StartupSwitch.IsEnabled=string.IsNullOrEmpty(_selectedInstanceId);
+        UsbNoticeSwitch.IsEnabled=string.IsNullOrEmpty(_selectedInstanceId);
         Customizer.SetPreviewHud(_runtime.GetInstanceHud(_selectedInstanceId));
         UpdateModeUi();
     }
