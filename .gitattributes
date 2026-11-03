@@ -2,3 +2,5 @@
 *.desktop text eol=lf
 packaging/linux/AppRun text eol=lf
 *.yml text eol=lf
+*.lang text eol=lf
+*.sha256 text eol=lf

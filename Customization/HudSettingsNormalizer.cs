@@ -92,6 +92,7 @@ public static class HudSettingsNormalizer
             ActiveProfileId = activeId,
             CycleSeconds = Math.Clamp(source.CycleSeconds, 3, 3600),
             CycleProfileIds = cycleIds,
+            RadialProfileIds = source.RadialProfileIds?.Where(validIds.Contains).Distinct(StringComparer.OrdinalIgnoreCase).ToList(),
             CycleAnimationMode = cycleAnimationMode,
             Triggers=HudTriggerRule.Normalize(source.Triggers)
         };

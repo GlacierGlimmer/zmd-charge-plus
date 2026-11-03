@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Étapes",
+    "Explications et précautions",
+    "Exemple",
+    "Copiez l’exemple et adaptez les valeurs à votre configuration. Conservez les noms des variables et des fonctions ainsi que la syntaxe du code.",
+    "Référence des fonctions et des formats"
+  ],
+  "linux": {
+    "sources": [
+      "Configuration des sources de données",
+      "Connectez DeepSeek et des services HTTP JSON.",
+      "Ouvrez Gestion des données → Configuration des sources et saisissez votre clé API DeepSeek.\nPour HTTP, définissez un nom, une URL GET, les en-têtes, l’intervalle d’actualisation et les correspondances des champs JSON ; activez la source.\nEnregistrez et appliquez, puis copiez custom.<source>.<variable> depuis la bibliothèque de variables vers un profil.",
+      "Les plages DeepSeek utilisent l’heure de Pékin et le calendrier des jours fériés chinois ; les week-ends restent en heures creuses, même lorsqu’ils sont travaillés en compensation. L’intervalle HTTP contrôle le cache indépendamment du rythme global de collecte. Après un échec, consultez custom.<source>.status et custom.<source>.error ; pour 401/403, vérifiez généralement l’authentification et les droits d’accès. Les chemins JSON doivent correspondre à la réponse réelle. ${env:MY_API_KEY} lit une variable d’environnement du processus. PawnIO et l’interface de bureau AIDA64 sont réservés à Windows."
+    ],
+    "media": [
+      "Sessions multimédias",
+      "La version native actuelle ne dispose pas de collecteur de sessions multimédias.",
+      "Ouvrez Gestion des données → Bibliothèque de variables et consultez les champs disponibles.\nChoisissez un profil dont les variables sont prises en charge sur cet ordinateur.\nRemplacez les champs multimédias indisponibles par une autre mesure prise en charge, puis enregistrez et appliquez.",
+      "Cette version ne lit pas les sessions natives des lecteurs. Importer un profil multimédia Windows n’active pas de collecteur natif. Les titres, chronologies ou progressions manquants restent indisponibles ; aucune donnée n’est inventée. Le modèle d’autorisation des sessions multimédias Windows ne s’applique pas ici."
+    ],
+    "hardware": [
+      "Capteurs matériels et accès sous Linux",
+      "Utilisez les interfaces Linux détectées et recherchez les causes des mesures manquantes.",
+      "Ouvrez Gestion des données → Données matérielles et relancez la détection.\nRecherchez un appareil, un capteur ou un identifiant d’origine ; sélectionnez une ligne et copiez son modèle dans le HUD.\nSi une mesure manque, consultez sa disponibilité et exportez le diagnostic avant de modifier les droits d’accès.",
+      "Les mesures CPU utilisent /proc/stat, /proc/cpuinfo, cpufreq ou hwmon. L’accès au GPU dépend de DRM/hwmon ou de NVIDIA nvidia-smi. Les pilotes Linux et les droits sur les fichiers déterminent quels nœuds de température, puissance et tension existent et sont lisibles. Un nœud pris en charge doit renvoyer des données réelles ; les mesures indisponibles restent --. PawnIO et AIDA64 ne sont pas des collecteurs Linux. Les canaux de boîtier, cœur et point chaud peuvent représenter des mesures différentes ; un maximum n’est pas automatiquement une limite nominale du matériel."
+    ],
+    "special": [
+      "Profils horaires, réseau et FPS",
+      "Choisissez des unités et des cibles adaptées à la source native.",
+      "Dans le profil, choisissez un décalage UTC pour l’horloge mondiale ou une heure cible quotidienne.\nPour le trafic réseau, choisissez les unités automatiques en octets ou Mbps et définissez la référence de l’anneau.\nPour les FPS, actualisez la liste des fenêtres et écrans, choisissez une cible active et définissez la cadence correspondant à 100%, puis enregistrez et appliquez.",
+      "L’horloge mondiale utilise un décalage UTC fixe, sans changement automatique d’heure d’été. 1 MB/s correspond à 8 Mbps ; la vitesse de référence de l’anneau définit l’échelle et ne limite pas le débit réseau. ICMP ignore les ports ; TCP/UDP utilisent le port configuré. L’échec d’une sonde ne prouve pas que tout l’appareil est hors ligne. Linux compte les événements de fin X11 Present et nécessite une session X11/XWayland avec l’extension Present et libXpresent. Ce collecteur ne peut pas mesurer une fenêtre Wayland native sans flux de présentation X11 visible. Avant qu’un véritable flux d’images n’ait été observé, l’absence d’événements signifie que les données sont indisponibles. Une fois que de vraies images ont amorcé l’échantillonnage, un flux inactif peut signaler 0 FPS ; la fréquence de rafraîchissement de l’écran n’est jamais utilisée comme substitut."
+    ],
+    "maintenance": [
+      "Configuration, sauvegarde et protection native des clés",
+      "Sauvegardez vos réglages et comprenez le contenu d’un fichier de configuration.",
+      "Avant des modifications importantes, exportez les réglages ou créez une sauvegarde dans À propos → Configuration et maintenance.\nImportez une configuration pour la restaurer ; la barre supérieure ouvre le dossier de configuration et À propos donne accès aux journaux.\nAprès avoir chargé les valeurs par défaut, enregistrez et appliquez ; consultez l’état de la recherche de mises à jour avant de conclure que la version est actuelle.",
+      "Linux protège la clé API avec AES-GCM au moyen d’un fichier de clé local privé situé dans secrets/master.key sous le dossier de configuration. Ce fichier doit avoir des droits Unix privés. Exporter uniquement la configuration ne transfère pas la clé de chiffrement locale ; une autre installation peut nécessiter une nouvelle saisie de la clé API. Un échec de recherche de mises à jour ou une version distante indisponible ne confirme pas que vous êtes à jour. Conservez l’état des sources et les diagnostics matériels locaux pour examiner les pannes."
+    ],
+    "troubleshooting": [
+      "HUD et mesures manquants",
+      "Distinguez les problèmes de visibilité, de source et d’autorisations natives.",
+      "Vérifiez l’interrupteur principal, le masquage par raccourci, l’écran cible, les coordonnées et l’opacité.\nPour un HUD permanent, activez Toujours visible ; le mode temporaire nécessite un événement, une zone sensible ou une règle configurés.\nVérifiez la variable et son unité dans la bibliothèque, consultez l’état de la capture native et des sources, puis enregistrez et appliquez les changements.",
+      "Les mesures indisponibles restent -- ; le formatage ne répare pas un capteur inaccessible ou une expression invalide. Selon le cas, vérifiez les chemins JSON, l’authentification API et les autorisations de capture de la plateforme. N’installez pas de pilote Windows pour réparer une interface native. La case de l’avertissement supprime les notifications uniquement pour les variables qui y sont listées ; les autres continuent de produire des avertissements. Elle ne répare ni n’arrête la collecte."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Configuration des sources de données",
+      "Connectez DeepSeek et des services HTTP JSON.",
+      "Ouvrez Gestion des données → Configuration des sources et saisissez votre clé API DeepSeek.\nPour HTTP, définissez un nom, une URL GET, les en-têtes, l’intervalle d’actualisation et les correspondances des champs JSON ; activez la source.\nEnregistrez et appliquez, puis copiez custom.<source>.<variable> depuis la bibliothèque de variables vers un profil.",
+      "Les plages DeepSeek utilisent l’heure de Pékin et le calendrier des jours fériés chinois ; les week-ends restent en heures creuses, même lorsqu’ils sont travaillés en compensation. L’intervalle HTTP contrôle le cache indépendamment du rythme global de collecte. Après un échec, consultez custom.<source>.status et custom.<source>.error ; pour 401/403, vérifiez généralement l’authentification et les droits d’accès. Les chemins JSON doivent correspondre à la réponse réelle. ${env:MY_API_KEY} lit une variable d’environnement du processus. PawnIO et l’interface de bureau AIDA64 sont réservés à Windows."
+    ],
+    "media": [
+      "Sessions multimédias",
+      "La version native actuelle ne dispose pas de collecteur de sessions multimédias.",
+      "Ouvrez Gestion des données → Bibliothèque de variables et consultez les champs disponibles.\nChoisissez un profil dont les variables sont prises en charge sur cet ordinateur.\nRemplacez les champs multimédias indisponibles par une autre mesure prise en charge, puis enregistrez et appliquez.",
+      "Cette version ne lit pas les sessions natives des lecteurs. Importer un profil multimédia Windows n’active pas de collecteur natif. Les titres, chronologies ou progressions manquants restent indisponibles ; aucune donnée n’est inventée. Le modèle d’autorisation des sessions multimédias Windows ne s’applique pas ici."
+    ],
+    "hardware": [
+      "Données matérielles sous macOS",
+      "Lisez les mesures fournies par le système en respectant les limites de l’appareil.",
+      "Ouvrez Gestion des données → Données matérielles et relancez la détection.\nRecherchez les appareils et champs détectés, puis copiez une variable prise en charge dans un profil.\nSi une mesure manque, consultez l’état et exportez le diagnostic ; les droits administrateur ne créent pas d’API de capteur.",
+      "Les statistiques CPU et mémoire utilisent Mach ou sysctl ; les informations de batterie proviennent des interfaces natives d’alimentation. Le stockage utilise les statistiques du volume APFS Data et peut partager sa capacité au sein d’un même conteneur. Les valeurs GPU dépendent des interfaces Metal et système réellement exposées. Un budget de mémoire GPU n’est pas de la mémoire vidéo physique dédiée. Les températures et puissances que le matériel et le système ne publient pas restent --. Cette version n’utilise ni PawnIO ni l’interface Windows AIDA64."
+    ],
+    "special": [
+      "Profils horaires, réseau et FPS",
+      "Choisissez des unités et des cibles adaptées à la source native.",
+      "Dans le profil, choisissez un décalage UTC pour l’horloge mondiale ou une heure cible quotidienne.\nPour le trafic réseau, choisissez les unités automatiques en octets ou Mbps et définissez la référence de l’anneau.\nPour les FPS, actualisez la liste des fenêtres et écrans, choisissez une cible active et définissez la cadence correspondant à 100%, puis enregistrez et appliquez.",
+      "L’horloge mondiale utilise un décalage UTC fixe, sans changement automatique d’heure d’été. 1 MB/s correspond à 8 Mbps ; la vitesse de référence de l’anneau définit l’échelle et ne limite pas le débit réseau. ICMP ignore les ports ; TCP/UDP utilisent le port configuré. L’échec d’une sonde ne prouve pas que tout l’appareil est hors ligne. macOS utilise les images complètes de ScreenCaptureKit et nécessite l’autorisation d’enregistrement de l’écran. Les images inactives, vides ou suspendues sont exclues. Si la capture est refusée ou si la cible disparaît, consultez l’état ; la fréquence de rafraîchissement de l’écran ne représente pas les FPS mesurés."
+    ],
+    "maintenance": [
+      "Configuration, sauvegarde et protection native des clés",
+      "Sauvegardez vos réglages et comprenez le contenu d’un fichier de configuration.",
+      "Avant des modifications importantes, exportez les réglages ou créez une sauvegarde dans À propos → Configuration et maintenance.\nImportez une configuration pour la restaurer ; la barre supérieure ouvre le dossier de configuration et À propos donne accès aux journaux.\nAprès avoir chargé les valeurs par défaut, enregistrez et appliquez ; consultez l’état de la recherche de mises à jour avant de conclure que la version est actuelle.",
+      "La clé API est stockée dans le trousseau macOS Keychain ; la configuration conserve une référence, pas une copie transportable du secret. Importer la configuration dans un autre compte ou sur un autre ordinateur peut nécessiter une nouvelle saisie de la clé API. Si le système le demande, autorisez une demande légitime d’accès au trousseau. Un échec de recherche de mises à jour ou une version distante indisponible ne confirme pas que vous êtes à jour. Conservez l’état des sources et les diagnostics matériels locaux pour examiner les pannes."
+    ],
+    "troubleshooting": [
+      "HUD et mesures manquants",
+      "Distinguez les problèmes de visibilité, de source et d’autorisations natives.",
+      "Vérifiez l’interrupteur principal, le masquage par raccourci, l’écran cible, les coordonnées et l’opacité.\nPour un HUD permanent, activez Toujours visible ; le mode temporaire nécessite un événement, une zone sensible ou une règle configurés.\nVérifiez la variable et son unité dans la bibliothèque, consultez l’état de la capture native et des sources, puis enregistrez et appliquez les changements.",
+      "Les mesures indisponibles restent -- ; le formatage ne répare pas un capteur inaccessible ou une expression invalide. Selon le cas, vérifiez les chemins JSON, l’authentification API et les autorisations de capture de la plateforme. N’installez pas de pilote Windows pour réparer une interface native. La case de l’avertissement supprime les notifications uniquement pour les variables qui y sont listées ; les autres continuent de produire des avertissements. Elle ne répare ni n’arrête la collecte."
+    ]
+  },
+  "android": {
+    "start": [
+      "Premiers pas sur Android",
+      "Démarrez le HUD avec les autorisations nécessaires au mode de sortie choisi.",
+      "Ouvrez Accueil et consultez les autorisations ; pour la superposition, autorisez l’affichage au-dessus des autres applications, ainsi que les notifications lorsqu’elles sont demandées.\nChoisissez un profil dans Contenu du HUD et un mode dans Affichage et position ; activez l’interrupteur principal du HUD.\nRevenez à Accueil et appuyez sur Démarrer le HUD ; utilisez Arrêter le HUD au même endroit pour arrêter le service.",
+      "Les paramètres généraux sont enregistrés automatiquement. La modification d’un profil utilise son propre bouton Enregistrer ; modifier un profil intégré crée une copie personnalisée. La superposition et la notification native en direct sont deux sorties différentes, avec des possibilités système distinctes. Ouvrir l’application ne garantit pas à lui seul que le service HUD de premier plan fonctionne."
+    ],
+    "display": [
+      "Affichage, position et apparence globale",
+      "Configurez la superposition ou la notification en direct contrôlée par le système.",
+      "Dans Affichage et position, choisissez Superposition ou Notification native en direct si elle est prise en charge.\nPour la superposition, choisissez Toujours visible, un ancrage avec décalages ou des coordonnées personnalisées ; réglez taille, opacité, évitement de l’encoche et l’option Laisser passer les clics.\nOuvrez Langue → Taille du texte et échelle globale de l’interface pour régler les paramètres et le HUD de 75% à 200% ; Rétablir 100% restaure les facteurs globaux.",
+      "L’option Laisser passer les clics transmet les interactions tactiles à l’application située dessous. Le démarrage à l’allumage dépend des restrictions Android sur le lancement en arrière-plan et des autorisations du mode choisi. Les notifications natives en direct nécessitent une version Android prise en charge et l’éligibilité accordée par le système ; Android contrôle leur disposition et leur taille de texte. Le style de la superposition ne peut pas imposer sa géométrie à la notification système. La taille propre au HUD est multipliée par l’échelle globale de l’interface."
+    ],
+    "profiles": [
+      "Profils et contenu du HUD",
+      "Modifiez les textes, les icônes, les expressions et l’anneau de progression.",
+      "Dans Contenu du HUD, sélectionnez un profil intégré ou créez un profil personnalisé.\nModifiez l’accroche, le titre, les textes principal et secondaire, la valeur à droite, le suffixe, les icônes et la couleur d’accentuation ; vérifiez l’aperçu.\nDéfinissez une variable de progression ou une expression commençant par =, choisissez ses limites, puis enregistrez le profil.",
+      "Modifier un profil intégré enregistre une copie personnalisée sans remplacer le préréglage d’origine. L’anneau rapporte la valeur actuelle à la plage configurée et limite le résultat à 0–100% ; il ne modifie pas la valeur brute du texte. Choisissez des unités et un fond d’échelle adaptés. Les règles de couleur utilisent l’unité de mesure d’origine ; une donnée indisponible n’est pas un zéro mesuré."
+    ],
+    "variables": [
+      "Variables, modèles et expressions",
+      "Copiez un champ pris en charge sur Android en conservant la syntaxe du code.",
+      "Ouvrez Gestion des données → Bibliothèque de variables et recherchez un nom ou une clé.\nConsultez le sens, l’unité, la disponibilité et la note sur la source Android ; copiez la variable ou son modèle dans un profil.\nUtilisez {cpu.usage|0} pour le texte formaté, ou = (cpu.usage + gpu.usage) / 2 pour une expression numérique ; vérifiez l’aperçu et enregistrez.",
+      "Les clés de variables, les noms de fonctions et les chaînes de formats sont du code et ne sont pas traduits. bytes et speed formatent les tailles et débits en octets ; gb:2 utilise les puissances de 1024, tandis que duration formate des secondes. Les fonctions d’expression couvrent le calcul, les conditions, le texte et les valeurs manquantes. Les données qui ne peuvent pas être collectées restent indisponibles. Une variable de bureau peut avoir un alias Android ou aucun collecteur Android ; vérifiez la bibliothèque réelle au lieu de supposer qu’une clé importée est prise en charge."
+    ],
+    "hardware": [
+      "Données matérielles et accès Root facultatif",
+      "Utilisez les capacités réelles d’Android sans les remplacer par des pilotes de bureau.",
+      "Ouvrez Gestion des données → Données matérielles pour consulter les champs détectés et leur disponibilité.\nSi le téléphone dispose déjà de Root, ouvrez Fonctions expérimentales → Collecter les mesures avec Root et choisissez d’autoriser ou non ECP dans votre gestionnaire Root.\nRelancez la détection, consultez l’état des sources obtenu, puis copiez un champ pris en charge ou exportez le diagnostic.",
+      "L’accès Root est facultatif ; ce réglage ne roote pas le téléphone. Il élargit l’accès en lecture aux nœuds CPU/GPU, de température et de mémoire du fabricant ; sans nœud compatible, aucune mesure n’est disponible. Les collecteurs ordinaires de batterie et de mémoire continuent sans Root. Les valeurs manquantes restent indisponibles, sans zéro inventé. PawnIO et l’interface Windows AIDA64 ne fonctionnent pas sur Android. L’énergie à pleine charge peut être estimée à partir de l’énergie mesurée et du pourcentage de batterie ; elle ne représente pas une capacité de conception nominale."
+    ],
+    "sources": [
+      "Sources DeepSeek et HTTP JSON",
+      "Configurez les services et consultez l’état réel des réponses.",
+      "Ouvrez Gestion des données → Configuration des sources et saisissez une clé API DeepSeek ; enregistrez-la avec l’action dédiée à la clé.\nPour une source HTTP, définissez un nom, une URL GET renvoyant du JSON, les en-têtes, l’intervalle et les chemins de champs ; activez la source configurée.\nRecherchez custom.<source>.<variable> dans la bibliothèque ; en cas d’échec, consultez custom.<source>.status et custom.<source>.error.",
+      "La clé API est chiffrée avec Android Keystore ; l’export d’une configuration n’est pas une sauvegarde transportable du secret. Saisissez la clé à nouveau si une autre installation ne peut pas la retrouver. Les plages DeepSeek utilisent l’heure de Pékin et le calendrier des jours fériés chinois ; les week-ends travaillés en compensation restent en heures creuses. Le cache HTTP suit l’intervalle de chaque source. Faites correspondre les chemins JSON à la réponse réelle et vérifiez l’authentification pour 401/403. ${env:MY_API_KEY} fonctionne uniquement si cette variable d’environnement existe dans le processus. L’exemple JSON est initialement désactivé ; remplacez son URL et ses correspondances avant de l’activer."
+    ],
+    "cycle": [
+      "Défilement automatique et animations",
+      "Ordonnez les profils et choisissez la transition de la superposition.",
+      "Enregistrez les profils à faire défiler, puis ajoutez-les à la liste de défilement dans Contenu du HUD.\nUtilisez Monter et Descendre pour modifier l’ordre, ou Retirer pour enlever un élément de la liste.\nActivez le défilement automatique, choisissez un intervalle de 3 à 3600 secondes et une transition Simple ou Complète pour la superposition.",
+      "Retirer un élément de la liste ne supprime pas son profil. La transition de la liste remplace l’animation propre au profil. Une liste vide utilise le profil actif ; avec un seul élément, aucun autre profil ne peut apparaître. Android propose actuellement les transitions Simple et Complète pour la superposition ; le Défilement vers le haut du bureau n’est pas une transition Android. La notification native en direct est dessinée par Android, pas par le moteur d’animation de la superposition."
+    ],
+    "summons": [
+      "Afficher et arrêter le HUD Android",
+      "Utilisez les commandes Android plutôt que les raccourcis et zones de souris du bureau.",
+      "Utilisez Accueil → Démarrer le HUD pour lancer la sortie choisie et Accueil → Arrêter le HUD pour l’arrêter.\nPour une superposition permanente, activez Toujours visible dans Affichage et position.\nPour une superposition à la demande, désactivez Toujours visible et vérifiez les événements d’alimentation pris en charge ainsi que la durée d’affichage.",
+      "L’interface Android ne propose ni raccourci clavier global d’affichage/masquage du bureau, ni éditeur de zone sensible de la souris. Importer ces paramètres de bureau ne crée pas de commandes Android. L’interrupteur principal du HUD supprime la sortie ; le service en arrière-plan et sa notification de premier plan peuvent conserver leur propre état d’exécution. Utilisez Arrêter le HUD pour arrêter le service."
+    ],
+    "triggers": [
+      "Règles d’événements et limites d’Android",
+      "Vérifiez les possibilités prises en charge avant de compter sur une règle importée.",
+      "Avant de configurer un profil, vérifiez la variable et sa valeur actuelle dans Gestion des données.\nPour les comportements automatiques disponibles, utilisez le défilement automatique Android ou l’affichage par événement d’alimentation pris en charge.\nConfirmez l’état réel du HUD dans Accueil et gardez Toujours visible activé si vous avez besoin d’un affichage permanent.",
+      "Cette interface de paramètres Android ne propose ni l’éditeur de règles de déclenchement du bureau, ni les listes de règles par instance. Importer une règle de seuil ou de changement de valeur du bureau ne rend pas cette fonction disponible. Un avertissement de données signale une défaillance de source et n’est pas une règle automatique de seuil. Ne comptez pas sur une règle non implémentée pour un rappel."
+    ],
+    "special": [
+      "Heure, réseau et FPS sur Android",
+      "Choisissez de vraies mesures et des cibles prises en charge.",
+      "Définissez le décalage UTC de l’horloge mondiale ou une heure cible quotidienne ; les décalages fixes ne suivent pas automatiquement l’heure d’été.\nChoisissez les unités automatiques en octets ou Mbps pour le trafic, puis configurez la cible ICMP/TCP/UDP et le port lorsque le protocole l’utilise.\nPour les FPS, autorisez Root si nécessaire, actualisez les cibles, sélectionnez la couche SurfaceFlinger ou l’écran et définissez la cadence correspondant à 100%.",
+      "1 MB/s correspond à 8 Mbps. La référence de l’anneau définit l’échelle sans limiter la bande passante. ICMP ignore les ports ; l’échec d’une cible TCP/UDP/ICMP ne prouve pas une coupure générale du réseau. Les FPS d’une fenêtre proviennent des horodatages des images réellement affichées de la couche SurfaceFlinger choisie. Les FPS d’un écran nécessitent un compteur d’images composées du fabricant et ne peuvent pas être attribués si plusieurs écrans sont ambigus. Les données d’images absentes ou non prises en charge restent indisponibles ; la fréquence de rafraîchissement ne les remplace jamais."
+    ],
+    "media": [
+      "Disponibilité des sessions multimédias",
+      "La version Android actuelle ne dispose pas de source de sessions des lecteurs.",
+      "Consultez les champs pris en charge dans la bibliothèque de variables Android.\nChoisissez un profil utilisant ces champs, par exemple l’heure, la batterie ou la mémoire.\nRemplacez les champs multimédias importés du bureau avant d’enregistrer un profil destiné à Android.",
+      "Cette version ne lit ni le titre, ni l’artiste, ni la chronologie de lecture des sessions multimédias Android. Les autorisations de superposition ou de notification n’activent pas un collecteur multimédia que l’application n’a pas implémenté. Les clés multimédias importées restent indisponibles ; aucun morceau ni aucune progression fictive ne sont affichés."
+    ],
+    "instances": [
+      "Plusieurs HUD et fonctionnement mobile",
+      "Android contrôle actuellement une seule sortie HUD active.",
+      "Sélectionnez le profil actif dans Contenu du HUD.\nUtilisez la liste de défilement pour faire partager cette sortie à plusieurs profils au fil du temps.\nLa taille globale du texte et l’échelle de l’interface règlent les paramètres et le HUD ; les réglages de taille de la superposition ajustent sa taille propre.",
+      "L’éditeur d’instances multiples du bureau et ses fenêtres HUD positionnables séparément ne sont pas implémentés dans cette interface Android. Importer une liste d’instances de bureau ne crée pas plusieurs fenêtres de superposition Android. Superposition et Notification native en direct sont des modes de sortie à choisir, pas deux instances de bureau configurables indépendamment. La langue et les facteurs d’apparence globaux s’appliquent à toute l’application."
+    ],
+    "maintenance": [
+      "Configuration, diagnostic et mises à jour",
+      "Utilisez les sélecteurs de fichiers Android et conservez les informations sur la source des erreurs.",
+      "Avant des modifications importantes, exportez la configuration depuis Fonctions expérimentales avec le sélecteur de fichiers du système.\nImportez une configuration JSON enregistrée pour la restaurer, ou exportez les journaux et le diagnostic pour examiner une panne.\nConsultez la version et l’état de mise à jour dans À propos ; utilisez Réinitialiser uniquement pour revenir aux valeurs de la première installation.",
+      "Les clés API sont protégées par Android Keystore et ne sont pas des champs en clair transportables dans la configuration exportée. Une autre installation ou un autre compte peut nécessiter une nouvelle saisie de la clé. Après confirmation, la réinitialisation restaure les profils, sources, intervalles d’actualisation et réglages d’affichage. L’échec d’une recherche de mises à jour distante ne confirme pas que la version installée est actuelle. La collecte ralentit lorsque le HUD est masqué ou l’écran éteint, selon les intervalles configurés."
+    ],
+    "troubleshooting": [
+      "Visibilité, données manquantes et portée des avertissements",
+      "Vérifiez les autorisations Android et l’état réel des collecteurs.",
+      "Consultez Accueil → Autorisations et l’état d’exécution, puis l’interrupteur principal du HUD et le mode de sortie choisi.\nPour la superposition, vérifiez Toujours visible, les coordonnées, l’opacité et l’autorisation de superposition ; pour la notification en direct, consultez l’éligibilité accordée par le système.\nPour les valeurs --, consultez la source de la variable, la disponibilité de Root si nécessaire, l’authentification API ou les chemins JSON, puis exportez le diagnostic.",
+      "Une donnée manquante n’est pas un zéro et un format de texte ne peut pas réparer un capteur ou une expression. Certaines restrictions du fabricant ou de SELinux subsistent même si la superposition est autorisée. La case de l’avertissement supprime définitivement les notifications uniquement pour les variables déjà listées dans cette fenêtre ; les autres continuent de produire des avertissements. Fermer sans cocher acquitte cet incident seulement. Supprimer les notifications ne répare pas la source et n’arrête pas la collecte."
+    ]
+  }
+}

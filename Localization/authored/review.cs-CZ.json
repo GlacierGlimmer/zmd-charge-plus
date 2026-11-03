@@ -1,0 +1,23 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Geographical proper names with the same conventional Czech spelling.",
+    "Eucla": "Geographical proper name with the same conventional Czech spelling.",
+    "Newfoundland": "Geographical proper name with the same conventional Czech spelling.",
+    "Nukuʻalofa, Apia": "Geographical proper names with the same conventional Czech spelling.",
+    "Sydney, Brisbane": "Geographical proper names with the same conventional Czech spelling.",
+    "Album": "Album is an established Czech noun with the same spelling.",
+    "Disk": "Disk is the standard Czech noun for a disk with the same spelling.",
+    "Maximum": "Maximum is an established Czech noun with the same spelling.",
+    "Minimum": "Minimum is an established Czech noun with the same spelling.",
+    "Text": "Text is the standard Czech noun for text with the same spelling.",
+    "d": "d abbreviates the Czech day unit den or dny in compact durations.",
+    "{0}d {1:00}:{2:00}:{3:00}": "d abbreviates the Czech day unit den or dny; duration placeholders and time separators are preserved."
+  },
+  "notes": [
+    "All 2313 active messages and all 14 manual chapters were translated directly by the model without an online translation service.",
+    "Complete Chinese meanings were used, including WMI, performance counters, cache intervals, unavailable readings, permissions and platform-specific APIs.",
+    "SystemClock.elapsedRealtime()/1000 includes seconds since boot and deep sleep. Both period-percentage templates explicitly state elapsed time.",
+    "Variable identifiers, API and function names, protocol names and executable code examples retain their syntax.",
+    "No native-speaker review or all-platform visual cross-review has been performed. Structural completeness does not certify either review."
+  ]
+}

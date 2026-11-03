@@ -18,6 +18,7 @@ internal static class GlobalAppearance
     private sealed class WindowState
     {
         public required LayoutTransformControl Transform;
+        public required ScrollViewer Viewport;
         public required Control Root;
         public double FontScale=1,UiScale=1,MinWidth,MinHeight;
         public bool Applying,Scheduled;
@@ -27,27 +28,35 @@ internal static class GlobalAppearance
     private static readonly ConditionalWeakTable<ColumnDefinition,OriginalColumn> Columns=new();
     private static readonly ConditionalWeakTable<Window,WindowState> Windows=new();
     private static double _font=1,_ui=1;
-    private static Avalonia.Threading.DispatcherTimer? _windowWatcher;
-    public static double NormalizeScale(double value)=>double.IsFinite(value) ? Math.Clamp(value,.75,2) : 1;
+    internal static (double Font,double Ui) CurrentScales => (_font,_ui);
+    private static readonly List<WeakReference<Window>> RegisteredWindows=new();
+    public static double NormalizeFontScale(double value)=>double.IsFinite(value) ? Math.Clamp(value,.8,1.25) : 1;
+    public static double NormalizeUiScale(double value)=>double.IsFinite(value) ? Math.Clamp(value,.8,1.5) : 1;
 
     public static void Apply(Window window,double fontScale,double uiScale)
     {
-        fontScale=NormalizeScale(fontScale);uiScale=NormalizeScale(uiScale);
+        fontScale=NormalizeFontScale(fontScale);uiScale=NormalizeUiScale(uiScale);
         if(window is SettingsWindow)SetPreferences(fontScale,uiScale);
+        bool created=false;
         if(!Windows.TryGetValue(window,out var state))
         {
-            var content=window.Content as Control ?? throw new InvalidOperationException("Window content is missing.");
-            window.Content=null;
+            // Keep window controls and the rounded frame outside the scalable viewport.
+            var bodyHost=window is SettingsWindow ? window.FindControl<ContentControl>("SettingsBodyHost") : null;
+            var content=(bodyHost?.Content ?? window.Content) as Control ?? throw new InvalidOperationException("Window content is missing.");
+            if(bodyHost is not null)bodyHost.Content=null;else window.Content=null;
             var transform=new LayoutTransformControl { Child=content };
             // At large scales, both axes remain reachable on a small display.
-            window.Content=new ScrollViewer { Content=transform,
+            var viewport=new ScrollViewer { Content=transform,Padding=new Avalonia.Thickness(0),
+                HorizontalContentAlignment=HorizontalAlignment.Stretch,VerticalContentAlignment=VerticalAlignment.Stretch,
                 HorizontalScrollBarVisibility=ScrollBarVisibility.Auto,VerticalScrollBarVisibility=ScrollBarVisibility.Auto };
-            state=new WindowState { Transform=transform,Root=content,
+            if(bodyHost is not null)bodyHost.Content=viewport;else window.Content=viewport;
+            state=new WindowState { Transform=transform,Viewport=viewport,Root=content,
                 MinWidth=Math.Max(content.MinWidth,window.MinWidth-32-content.Margin.Left-content.Margin.Right),
-                MinHeight=Math.Max(content.MinHeight,window.MinHeight-32-content.Margin.Top-content.Margin.Bottom) };
-            Windows.Add(window,state);
+                MinHeight=Math.Max(content.MinHeight,window.MinHeight-32-(bodyHost is not null ? 92 : 0)-content.Margin.Top-content.Margin.Bottom) };
+            Windows.Add(window,state);created=true;RegisteredWindows.Add(new(window));
             window.LayoutUpdated+=(_,_)=>ScheduleFonts(window,state);
         }
+        if(!created && state.FontScale==fontScale && state.UiScale==uiScale)return;
         state.FontScale=fontScale;state.UiScale=uiScale;
         state.Transform.LayoutTransform=new ScaleTransform(uiScale,uiScale);
         ApplyFonts(window,state);
@@ -66,15 +75,14 @@ internal static class GlobalAppearance
 
     internal static void SetPreferences(double font,double ui)
     {
-        _font=NormalizeScale(font);_ui=NormalizeScale(ui);
-        if(_windowWatcher is not null)return;
-        _windowWatcher=new Avalonia.Threading.DispatcherTimer {Interval=TimeSpan.FromMilliseconds(200)};
-        _windowWatcher.Tick+=(_,_)=>{
-            if(Avalonia.Application.Current?.ApplicationLifetime is not Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)return;
-            foreach(var window in desktop.Windows.ToArray())
-                if(window is not Views.HudWindow && window.Content is Control)Apply(window,_font,_ui);
-        };
-        _windowWatcher.Start();
+        font=NormalizeFontScale(font);ui=NormalizeUiScale(ui);
+        if(_font==font && _ui==ui)return;
+        _font=font;_ui=ui;
+        // Scale only when preferences change. Dynamic pages are handled by the
+        // existing coalesced LayoutUpdated pass; no idle polling or colour writes.
+        for(int i=RegisteredWindows.Count-1;i>=0;i--)
+            if(!RegisteredWindows[i].TryGetTarget(out var window))RegisteredWindows.RemoveAt(i);
+            else if(window.IsVisible)Apply(window,font,ui);
     }
 
     private static void ApplyFonts(Window window,WindowState state)
@@ -85,13 +93,19 @@ internal static class GlobalAppearance
         {
             if(window.ClientSize.Width>0 && window.ClientSize.Height>0)
             {
+                // Use the actual viewport, including scrollbar space when present.
+                // Reserving 16 pixels unconditionally centered the settings root
+                // inside the client area and introduced an unwanted 8-pixel frame.
+                double width=state.Viewport.Viewport.Width,height=state.Viewport.Viewport.Height;
+                if(!double.IsFinite(width) || width<=0)width=window.ClientSize.Width;
+                if(!double.IsFinite(height) || height<=0)height=window.ClientSize.Height;
                 state.Root.Width=Math.Max(state.MinWidth*Math.Max(1,state.FontScale),
-                    (window.ClientSize.Width-16)/state.UiScale-state.Root.Margin.Left-state.Root.Margin.Right);
+                    width/state.UiScale-state.Root.Margin.Left-state.Root.Margin.Right);
                 state.Root.Height=state.Root is StackPanel || state.Root is Border {Child:StackPanel}
                     ? double.NaN : Math.Max(state.MinHeight,
-                        (window.ClientSize.Height-16)/state.UiScale-state.Root.Margin.Top-state.Root.Margin.Bottom);
+                        height/state.UiScale-state.Root.Margin.Top-state.Root.Margin.Bottom);
             }
-            foreach(var c in window.GetVisualDescendants().OfType<Control>())
+            foreach(var c in state.Root.GetVisualDescendants().OfType<Control>().Prepend(state.Root))
             {
                 if(c is Grid grid && grid.TemplatedParent is null)
                     foreach(var column in grid.ColumnDefinitions)

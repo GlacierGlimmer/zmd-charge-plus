@@ -1,0 +1,33 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Both Australian place names have the same spelling in German.",
+    "Alaska": "Alaska is the German place name with the same spelling.",
+    "Album": "Album is the standard German noun for a music album.",
+    "Animation": "Animation is the standard German noun for an animation.",
+    "Bangkok, Hanoi, Jakarta": "These city names use the same spelling in German.",
+    "Dhaka, Thimphu": "These city names use the same spelling in German.",
+    "Dubai, Abu Dhabi": "These city names use the same spelling in German.",
+    "Eucla": "Eucla is the unchanged German place name.",
+    "Hawaii": "Hawaii is the standard German place name.",
+    "Kabul": "Kabul is the standard German city name.",
+    "Kathmandu": "Kathmandu is the standard German city name.",
+    "Maximum": "Maximum is the standard German noun for the upper limit.",
+    "Minimum": "Minimum is the standard German noun for the lower limit.",
+    "Minute": "Minute is the standard German time-unit noun.",
+    "Nukuʻalofa, Apia": "These city names use the same spelling in German.",
+    "Online": "Online is a standard German status word.",
+    "Operator": "Operator is the German mathematical noun for this comparison control.",
+    "Position": "Position is the standard German noun for location.",
+    "Sydney, Brisbane": "These Australian city names use the same spelling in German.",
+    "System": "System is the standard German noun in the system category.",
+    "Text": "Text is the standard German noun for text.",
+    "Variable": "Variable is the standard German mathematical and programming noun.",
+    "in {0}": "German future-relative time uses the same preposition in before the preserved duration placeholder."
+  },
+  "notes": [
+    "Full-meaning German translations authored directly from the 2313 Chinese meanings; no online translation or metric-summary drafts.",
+    "1005 previously missing entries completed; prior metric labels corrected against Chinese to retain CPU/GPU, application, partition, capacity, rate and elapsed-time context.",
+    "Existing Current/Measured/Whether descriptions and long UI guidance reviewed, including Windows counters, collection APIs, hardware and permission conditions. Technical names and paths remain unchanged; SystemClock.elapsedRealtime()/1000. includes deep sleep.",
+    "All 14 native German manual chapters reviewed; CPU package temperature terminology and global 75-200 percent UI scale/HUD multiplication are included. Structural checks are not native-speaker certification."
+  ]
+}

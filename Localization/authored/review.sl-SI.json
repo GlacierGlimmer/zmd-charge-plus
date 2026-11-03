@@ -1,0 +1,16 @@
+{
+  "shared": {
+    "AC": "Kratica za izmenično napajanje, ki je v slovenskih vmesnikih običajno zapisana enako kot v izvirniku.",
+    "Adelaide, Darwin": "Imeni avstralskih mest se v slovenščini pišeta enako kot v izvirniku.",
+    "Album": "Slovenska beseda za glasbeni album je enaka angleški, zato je prevod enak izvirniku.",
+    "Buenos Aires, Brasilia": "Imeni južnoameriških mest se v slovenščini ohranjata v izvirni obliki.",
+    "Disk": "Slovenski strokovni izraz za disk je enak angleškemu, zato ostane nespremenjen.",
+    "Eucla": "Ime avstralskega kraja se v slovenščini piše enako kot v izvirniku.",
+    "Kabul": "Ime afganistanske prestolnice se v slovenščini piše enako kot v izvirniku.",
+    "Operator": "Slovenski izraz za operator je enak angleškemu, zato ga ni mogoče drugače prevesti.",
+    "Sydney, Brisbane": "Imeni avstralskih mest se v slovenščini pišeta enako kot v izvirniku.",
+    "Ttl": "Kratica TTL za čas življenja paketa se v slovenščini uporablja nespremenjena.",
+    "Yangon": "Ime mjanmarskega mesta se v slovenščini piše enako kot v izvirniku."
+  },
+  "notes": "Kratki izrazi, ki so v slovenščini enaki angleškim: kratice in zemljepisna imena."
+}

@@ -42,6 +42,16 @@ public partial class SettingsWindow : Window
         bool CheckSucceeded,
         string? Detail = null)
     {
+        public string NotificationTitle => LocalizationManager.Text("Endfield Charge Plus 有新版本", "Endfield Charge Plus update available");
+        public string NotificationMessage
+        {
+            get
+            {
+                string latest = string.IsNullOrWhiteSpace(LatestVersion) ? "" : "v" + LatestVersion.Trim().TrimStart('v', 'V');
+                return LocalizationManager.Formatted($"发现 {latest}。可在“关于”页面查看更新状态。", (System.FormattableString)$"Found {latest}. See About for update details.");
+            }
+        }
+
         public string LatestVersionText => Status switch
         {
             UpdateStatusKind.NoRemoteVersion => LocalizationManager.Text("最新版本：未获取到", "Latest: unavailable"),
@@ -53,7 +63,7 @@ public partial class SettingsWindow : Window
 
         public string StatusText => Status switch
         {
-            UpdateStatusKind.NoRemoteVersion => LocalizationManager.Text("状态：未获取到 Release / 标签，仓库可能尚未公开", "Status: no release/tag found; the repository may not be public yet"),
+            UpdateStatusKind.NoRemoteVersion => LocalizationManager.Text("状态：未找到已发布版本，仓库可能尚未公开", "Status: no release/tag found; the repository may not be public yet"),
             UpdateStatusKind.Uncomparable => LocalizationManager.Text("状态：已获取线上版本，但版本号格式无法比较", "Status: remote version found, but its format cannot be compared"),
             UpdateStatusKind.UpdateAvailable => LocalizationManager.Text("状态：发现新版本", "Status: update available"),
             UpdateStatusKind.UpToDate => LocalizationManager.Text("状态：当前已是最新版本", "Status: up to date"),
@@ -81,6 +91,9 @@ public partial class SettingsWindow : Window
     public SettingsWindow(AppSettings settings, HudWindow hud, CustomHudRuntime runtime)
     {
         InitializeComponent();
+        InitializeWindowChrome();
+        InitializeRepositoryLinks();
+        InitializeAboutDetails();
         _settings = settings;
         _hud = hud;
         _runtime = runtime;
@@ -92,15 +105,18 @@ public partial class SettingsWindow : Window
 
         LocalizationManager.ApplyStaticText(this);
         RebuildLocalizedChoiceItems();
+        RefreshWindowChrome();
+        RefreshRepositoryLinks();
 
         LanguageButton.Click+=async (_,_)=>await new LanguageSelectionWindow(
             ()=>_rootSettings,OnLanguageSelected,ApplyGlobalAppearanceAsync).ShowDialog(this);
 
-        HudFontCombo.Items.Add(LocalizationManager.Text("系统默认", "System default"));
-        foreach (var family in FontManager.Current.SystemFonts.OrderBy(f => f.Name)) HudFontCombo.Items.Add(family.Name);
+        InitializeFontChoices();
         ApplySettingsToControls(settings);
         UpdateLanguageSwitchVisual();
         InitializeInstanceEditor();
+        InitializeWorkspace();
+        InitializeRuntimeSelection();
 
         HudEnabledSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
         AlwaysVisibleSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
@@ -115,8 +131,7 @@ public partial class SettingsWindow : Window
         OpenLogsFolderBtn.Click += OnOpenLogsFolder;
         ResetAllSettingsBtn.Click += OnResetAllSettings;
         HudOpacitySlider.ValueChanged += (_, _) => UpdateOpacityLabel();
-        OpenProjectGithubBtn.Click += (_, _) => OpenUrl("https://github.com/GlacierGlimmer/zmd-charge-plus");
-        OpenUpstreamBtn.Click += (_, _) => OpenUrl("https://github.com/QinAnze/zmd-charge");
+        OpenIssueTrackerBtn.Click += (_, _) => OpenUrl("https://ecp-bugs.x-neko.com");
         OpenWebsiteBtn.Click += (_, _) => OpenUrl("https://zmd-bar.x-neko.com");
         CheckUpdateBtn.Click += OnCheckUpdate;
 
@@ -124,8 +139,8 @@ public partial class SettingsWindow : Window
 
         string currentVersion = GetCurrentVersionText();
         AboutVersionText.Text = $"v{currentVersion}";
-        BuildDateText.Text=LocalizationManager.Formatted("构建日期  2026.10.18",$"Build  {"2026.10.18"}");
-        Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion);
+        BuildDateText.Text=LocalizationManager.Formatted($"构建日期  {ProductInfo.BuildDate}",$"Build  {ProductInfo.BuildDate}");
+        Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion,ProductInfo.Name);
         UpdateCurrentVersionText.Text = LocalizationManager.Formatted($"当前版本：v{currentVersion}", (System.FormattableString)$"Current: v{currentVersion}");
         UpdateLatestVersionText.Text = LocalizationManager.Text("最新版本：尚未获取", "Latest: not checked");
         UpdateStatusText.Text = LocalizationManager.Text("状态：尚未检查", "Status: not checked");
@@ -133,12 +148,10 @@ public partial class SettingsWindow : Window
             ApplyUpdateCheckResult(cachedUpdateResult);
 
         Opened += (_, _) => PopulateMonitorCombo();
-        if (StartupManager.IsPackaged)
-        {
-            // Never let the saved JSON value silently override Windows Startup Apps.
-            StartupSwitch.IsEnabled = false;
-            Opened += async (_, _) => await RefreshPackagedStartupSwitchAsync();
-        }
+        // Both installed/portable copies and Store apps must show the actual
+        // Windows startup state instead of a potentially stale JSON preference.
+        StartupSwitch.IsEnabled = false;
+        Opened += async (_, _) => await RefreshStartupSwitchAsync();
 
         ManualView.ApplyLocalization();
         UpdateModeUi();
@@ -220,16 +233,19 @@ public partial class SettingsWindow : Window
     {
         LocalizationManager.ApplyStaticText(this);
         RebuildLocalizedChoiceItems();
+        RefreshWindowChrome();
+        RefreshRepositoryLinks();
         if (_monitorComboReady)
             PopulateMonitorCombo(force: true);
 
         Customizer.ApplyLocalization();
+        if (_workspaceReady) { RefreshWorkspaceLocalization(); RefreshQuickActionsLocalization(); }
         ApplyInstanceEditorLocalization();
 
         string currentVersion = GetCurrentVersionText();
         AboutVersionText.Text = $"v{currentVersion}";
-        BuildDateText.Text=LocalizationManager.Formatted("构建日期  2026.10.18",$"Build  {"2026.10.18"}");
-        Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion);
+        BuildDateText.Text=LocalizationManager.Formatted($"构建日期  {ProductInfo.BuildDate}",$"Build  {ProductInfo.BuildDate}");
+        Title = EndfieldChargePlus.Interop.ProcessPrivileges.SettingsTitle(currentVersion,ProductInfo.Name);
         UpdateCurrentVersionText.Text = LocalizationManager.Formatted($"当前版本：v{currentVersion}", (System.FormattableString)$"Current: v{currentVersion}");
         if (LastUpdateResult is { } result)
             ApplyUpdateCheckResult(result);
@@ -262,7 +278,7 @@ public partial class SettingsWindow : Window
             StartupStatusText.Text = LocalizationManager.Text(_startupStatusZh!, _startupStatusEn!);
     }
 
-    private async Task RefreshPackagedStartupSwitchAsync()
+    private async Task RefreshStartupSwitchAsync()
     {
         StartupApplyResult current = await StartupManager.ReadStatusAsync();
         if (current.Succeeded)
@@ -384,6 +400,7 @@ public partial class SettingsWindow : Window
             HudOpacitySlider.Value = Math.Clamp(settings.HudOpacity * 100.0, 10.0, 100.0);
             UpdateOpacityLabel();
 
+            if(!string.IsNullOrWhiteSpace(settings.HudFontFamily) && !HudFontCombo.Items.Contains(settings.HudFontFamily))HudFontCombo.Items.Add(settings.HudFontFamily);
             HudFontCombo.SelectedIndex = 0;
             for (int i=1; i<HudFontCombo.Items.Count; i++)
                 if (string.Equals(HudFontCombo.Items[i]?.ToString(), settings.HudFontFamily, StringComparison.OrdinalIgnoreCase)) HudFontCombo.SelectedIndex=i;
@@ -420,6 +437,7 @@ public partial class SettingsWindow : Window
             HudEnabled = HudEnabledSwitch.IsChecked == true,
             StartWithWindows = StartupSwitch.IsChecked == true,
             UiLanguage = _rootSettings.UiLanguage,
+            Workspace = WorkspacePreferences.Normalize(_workspaceDraft),
             GlobalFontScale = _rootSettings.GlobalFontScale,
             GlobalUiScale = _rootSettings.GlobalUiScale,
             GlobalScale = (double)(ScaleBox.Value ?? (decimal)AppSettings.DefaultGlobalScale),
@@ -433,7 +451,8 @@ public partial class SettingsWindow : Window
             HudFontFamily = HudFontCombo.SelectedIndex > 0 ? HudFontCombo.SelectedItem?.ToString() ?? "" : "",
             ClickToCycle = ClickToCycleSwitch.IsChecked == true,
             AlwaysVisible = AlwaysVisibleSwitch.IsChecked == true,
-            HotZoneEnabled=HotZoneEnabledCheck.IsChecked==true,HotZonePosition=(HudPosition)Math.Max(0,HotZonePositionCombo.SelectedIndex),
+            HotZoneEnabled=HotZoneEnabledCheck.IsChecked==true,
+            TransientHoverHold=_transientHoverHold.IsChecked==true,HotZonePosition=(HudPosition)Math.Max(0,HotZonePositionCombo.SelectedIndex),
             HotZoneWidth=(int)(HotZoneWidthBox.Value ?? 240),HotZoneHeight=(int)(HotZoneHeightBox.Value ?? 20),
             HotZoneOffsetX=(int)(HotZoneOffsetXBox.Value ?? 0),HotZoneOffsetY=(int)(HotZoneOffsetYBox.Value ?? 0),
             HotZoneDwellMilliseconds=(int)HotZoneDwellSlider.Value,HotZoneAdvanceQueue=HotZoneAdvanceCheck.IsChecked==true,
@@ -464,10 +483,9 @@ public partial class SettingsWindow : Window
         if(editorTabs is not null) editorTabs.IsEnabled=false;
         _settings = CollectSettingsFromUi();
 
-        // MSIX uses the OS-owned startup task; Portable keeps the registry Run entry.
+        // Store uses StartupTask; Setup/portable copies use the owned HKCU entry.
         bool requestedStartup = _settings.StartWithWindows;
         StartupApplyResult startup = await StartupManager.ApplyAsync(requestedStartup);
-        if (startup.IsPackaged)
         {
             _settings = _settings with { StartWithWindows = startup.IsEnabled };
             StartupSwitch.IsChecked = startup.IsEnabled;
@@ -489,7 +507,7 @@ public partial class SettingsWindow : Window
         SaveBtn.Content = LocalizationManager.Text("应用中…", "Applying…");
         try
         {
-            await _runtime.ApplySettingsWithTransitionAsync(_settings);
+            await _runtime.ApplySavedSettingsAsync(_settings);
             _rootSettings=_settings;
             _settings=string.IsNullOrEmpty(_selectedInstanceId) ? _rootSettings : _rootSettings.HudInstances.FirstOrDefault(i=>i.Id==_selectedInstanceId)?.Settings ?? _rootSettings;
             RefreshInstanceEditor();
@@ -564,10 +582,9 @@ public partial class SettingsWindow : Window
             string? backup = SettingsManager.BackupCurrent("before-import");
             AppSettings imported = SettingsManager.ImportFromFile(files[0].Path.LocalPath);
             StartupApplyResult importedStartup = await StartupManager.ApplyAsync(imported.StartWithWindows);
-            if (importedStartup.IsPackaged)
-                imported = imported with { StartWithWindows = importedStartup.IsEnabled };
+            imported = imported with { StartWithWindows = importedStartup.IsEnabled };
             SaveSettingsWithHudHotkey(imported);
-            if (importedStartup.IsPackaged && !importedStartup.Succeeded)
+            if (!importedStartup.Succeeded)
                 SetStartupStatus("导入的开机启动设置未能应用，请检查 Windows 启动应用。",
                     "Imported startup preference could not be applied. Check Windows Startup Apps.");
             LocalizationManager.Initialize(imported.UiLanguage);
@@ -668,18 +685,18 @@ public partial class SettingsWindow : Window
     }
 
     private static string GetCurrentVersionText()
-        => typeof(SettingsWindow).Assembly.GetName().Version?.ToString(3) ?? "0.1.2";
+        => typeof(SettingsWindow).Assembly.GetName().Version?.ToString(3) ?? "0.2.0";
 
     private async void OnCheckUpdate(object? sender, RoutedEventArgs e)
     {
         CheckUpdateBtn.IsEnabled = false;
-        CheckUpdateBtn.Content = LocalizationManager.Text("检查中…", "Checking…");
+        SetAboutActionLabel(CheckUpdateBtn,"refresh-cw",LocalizationManager.Text("检查中…", "Checking…"));
         UpdateStatusText.Text = LocalizationManager.Text("状态：正在连接 GitHub 检查更新…", "Status: checking GitHub…");
 
         UpdateCheckResult result = await CheckForUpdatesAsync();
         ApplyUpdateCheckResult(result);
 
-        CheckUpdateBtn.Content = LocalizationManager.Text("检查更新", "Check Updates");
+        SetAboutActionLabel(CheckUpdateBtn,"refresh-cw",LocalizationManager.Text("检查更新", "Check Updates"));
         CheckUpdateBtn.IsEnabled = true;
     }
 
@@ -690,8 +707,6 @@ public partial class SettingsWindow : Window
         try
         {
             string? latestTag = await TryGetLatestReleaseTagAsync();
-            if (string.IsNullOrWhiteSpace(latestTag))
-                latestTag = await TryGetLatestTagAsync();
 
             if (string.IsNullOrWhiteSpace(latestTag))
             {
@@ -780,42 +795,8 @@ public partial class SettingsWindow : Window
         UpdateStatusText.Text = result.StatusText;
     }
 
-    private static async Task<string?> TryGetLatestReleaseTagAsync()
-    {
-        using HttpResponseMessage response = await UpdateHttpClient.GetAsync(
-            "https://api.github.com/repos/GlacierGlimmer/zmd-charge-plus/releases/latest");
-
-        if (response.StatusCode == HttpStatusCode.NotFound)
-            return null;
-
-        response.EnsureSuccessStatusCode();
-        await using Stream stream = await response.Content.ReadAsStreamAsync();
-        using JsonDocument json = await JsonDocument.ParseAsync(stream);
-        return json.RootElement.TryGetProperty("tag_name", out JsonElement tag)
-            ? tag.GetString()
-            : null;
-    }
-
-    private static async Task<string?> TryGetLatestTagAsync()
-    {
-        using HttpResponseMessage response = await UpdateHttpClient.GetAsync(
-            "https://api.github.com/repos/GlacierGlimmer/zmd-charge-plus/tags?per_page=1");
-
-        if (response.StatusCode == HttpStatusCode.NotFound)
-            return null;
-
-        response.EnsureSuccessStatusCode();
-        await using Stream stream = await response.Content.ReadAsStreamAsync();
-        using JsonDocument json = await JsonDocument.ParseAsync(stream);
-        JsonElement root = json.RootElement;
-        if (root.ValueKind != JsonValueKind.Array || root.GetArrayLength() == 0)
-            return null;
-
-        JsonElement first = root[0];
-        return first.TryGetProperty("name", out JsonElement name)
-            ? name.GetString()
-            : null;
-    }
+    private static Task<string?> TryGetLatestReleaseTagAsync()
+        => GitHubReleaseUpdate.FetchTagAsync(UpdateHttpClient);
 
     private static string NormalizeVersionTag(string tag)
     {

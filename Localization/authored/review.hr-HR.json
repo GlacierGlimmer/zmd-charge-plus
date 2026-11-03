@@ -1,0 +1,20 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Gradovi u Australiji zadržavaju svoja izvorna imena u hrvatskom tekstu.",
+    "Bangkok, Hanoi, Jakarta": "Glavni gradovi zadržavaju svoja uobičajena imena na hrvatskom.",
+    "Dhaka, Thimphu": "Nazivi glavnih gradova zadržavaju se u izvornom obliku.",
+    "Dubai, Abu Dhabi": "Gradovi Ujedinjenih Arapskih Emirata zadržavaju izvorna imena.",
+    "Eucla": "Naziv australskog mjesta nema hrvatski prijevod.",
+    "Islamabad, Karachi": "Pakistanski gradovi zadržavaju svoja izvorna imena.",
+    "Kabul": "Glavni grad Afganistana zadržava izvorni naziv.",
+    "New Delhi, Mumbai": "Indijski gradovi zadržavaju svoja uobičajena imena.",
+    "Newfoundland": "Kanadska pokrajina zadržava izvorni zemljopisni naziv.",
+    "Sydney, Brisbane": "Australski gradovi zadržavaju svoja izvorna imena.",
+    "Yangon": "Naziv mjanmarskog grada zadržava se u izvornom obliku.",
+    "Album": "Riječ je ista u hrvatskom jeziku i označava glazbeni album.",
+    "Disk": "Uobičajeni hrvatski računalni naziv za disk jedinice.",
+    "Online": "Uobičajeni hrvatski naziv za stanje mrežne dostupnosti.",
+    "Operator": "Uobičajeni hrvatski naziv za operator u izrazu."
+  },
+  "notes": "Proper place names and international technical words that are spelled identically in Croatian."
+}

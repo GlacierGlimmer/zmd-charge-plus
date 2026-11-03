@@ -20,19 +20,35 @@ public static class SettingsManager
     public static string SettingsPath => Path.Combine(SettingsDirectory, "settings.json");
     public static string BackupsDirectory => Path.Combine(SettingsDirectory, "Backups");
 
-    private static readonly string[] LegacySettingsPaths =
+    internal static string? ResolveSettingsReadPath(string primary,string localAppData,string? packageRoot)
     {
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldChargePlus", "settings.json"),
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Packages", AppPaths.PackageFamilyName ?? "unpackaged", "LocalCache", "Local", "EndfieldChargePlus", "settings.json"),
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldCharge-CustomHUD", "settings.json"),
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EndfieldCharge", "settings.json"),
-    };
+        if(!Path.IsPathFullyQualified(primary))throw new ArgumentException("Settings path must be absolute.",nameof(primary));
+        var candidates=new List<string>{primary};
+        if(packageRoot is not null)
+        {
+            if(!Path.IsPathFullyQualified(packageRoot))throw new ArgumentException("Package data root must be absolute.",nameof(packageRoot));
+            // Preserve the existing Store user's data before considering a
+            // portable copy or an older, separately exported Store backup.
+            candidates.Add(Path.Combine(packageRoot,"LocalCache","Local","EndfieldChargePlus","settings.json"));
+            candidates.Add(Path.Combine(packageRoot,"AC","EndfieldChargePlus","settings.json"));
+            var packages=Directory.GetParent(packageRoot);
+            if(packages?.Name.Equals("Packages",StringComparison.OrdinalIgnoreCase)==true && packages.Parent is {} local)
+                localAppData=local.FullName;
+        }
+        if(Path.IsPathFullyQualified(localAppData))
+        {
+            candidates.Add(Path.Combine(localAppData,"EndfieldChargePlus","StoreBackup","settings.json"));
+            candidates.Add(Path.Combine(localAppData,"EndfieldChargePlus","settings.json"));
+            candidates.Add(Path.Combine(localAppData,"EndfieldCharge-CustomHUD","settings.json"));
+            candidates.Add(Path.Combine(localAppData,"EndfieldCharge","settings.json"));
+        }
+        return candidates.Distinct(StringComparer.OrdinalIgnoreCase).FirstOrDefault(File.Exists);
+    }
 
     public static AppSettings Load()
     {
-        string? path = File.Exists(SettingsPath)
-            ? SettingsPath
-            : Array.Find(LegacySettingsPaths, File.Exists);
+        string? packageRoot=AppPaths.PackageFamilyName is null ? null : Directory.GetParent(SettingsDirectory)?.Parent?.FullName;
+        string? path=ResolveSettingsReadPath(SettingsPath,Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),packageRoot);
 
         if (path is null)
         {
@@ -161,8 +177,9 @@ public static class SettingsManager
         {
             HudOpacity = Math.Clamp(settings.HudOpacity, 0.10, 1.0),
             GlobalScale=double.IsFinite(settings.GlobalScale) ? Math.Clamp(settings.GlobalScale,0.4,1.4) : AppSettings.DefaultGlobalScale,
-            GlobalFontScale = GlobalAppearance.NormalizeScale(settings.GlobalFontScale),
-            GlobalUiScale = GlobalAppearance.NormalizeScale(settings.GlobalUiScale),
+            GlobalFontScale = GlobalAppearance.NormalizeFontScale(settings.GlobalFontScale),
+            GlobalUiScale = GlobalAppearance.NormalizeUiScale(settings.GlobalUiScale),
+            Workspace = WorkspacePreferences.Normalize(settings.Workspace),
             SamplingIntervalSeconds = double.IsFinite(settings.SamplingIntervalSeconds)
                 ? Math.Clamp(settings.SamplingIntervalSeconds, 0.1, 60) : 1,
             HudInstances = (settings.HudInstances ?? new()).Where(i => i is not null).Take(15)
@@ -172,6 +189,7 @@ public static class SettingsManager
                     Settings=Normalize((i.Settings ?? new()) with { MultiHudEnabled=false, HudInstances=new() }) }).ToList(),
             HudFontFamily = (settings.HudFontFamily ?? "").Trim(),
             HudToggleHotkey = HudHotkeyGesture.TryParse(settings.HudToggleHotkey, out var hotkey) ? hotkey.Text : "",
+            QuickHotkeys = HudQuickHotkeys.Normalize(settings.QuickHotkeys),
             HudHotkeyShowAnimation = string.Equals(settings.HudHotkeyShowAnimation,"Simple",StringComparison.OrdinalIgnoreCase) ? "Simple" : "Full",
             HotZonePosition=(HudPosition)Math.Clamp((int)settings.HotZonePosition,0,8),
             HotZoneWidth=Math.Clamp(settings.HotZoneWidth,8,8192),HotZoneHeight=Math.Clamp(settings.HotZoneHeight,2,8192),

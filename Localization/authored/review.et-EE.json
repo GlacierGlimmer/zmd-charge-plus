@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "AC": "Vahelduvvoolu rahvusvaheline lühend, mida kasutatakse muutumatul kujul ka eesti tehnikatekstides.",
+    "Adelaide, Darwin": "Austraalia linnanimed, mis on eesti keeles samal kujul.",
+    "Alaska": "Kohanimi, mis on eesti keeles samal kujul.",
+    "Album": "Muusikaalbumit tähistav rahvusvaheline sõna, mis on eesti keeles samal kujul.",
+    "Bangkok, Hanoi, Jakarta": "Aasia pealinnade nimed, mis on eesti keeles samal kujul.",
+    "Dhaka, Thimphu": "Lõuna-Aasia pealinnade nimed, mis on eesti keeles samal kujul.",
+    "Dubai, Abu Dhabi": "Araabia Ühendemiraatide linnade nimed, mis on eesti keeles samal kujul.",
+    "Eucla": "Austraalia asula nimi, mis on eesti keeles samal kujul.",
+    "Hawaii": "Kohanimi, mis on eesti keeles samal kujul.",
+    "Islamabad, Karachi": "Pakistani linnade nimed, mis on eesti keeles samal kujul.",
+    "Kabul": "Afganistani pealinna nimi, mis on eesti keeles samal kujul.",
+    "Kathmandu": "Nepali pealinna nimi, mis on eesti keeles samal kujul.",
+    "New Delhi, Mumbai": "India linnade nimed, mis on eesti keeles samal kujul.",
+    "Newfoundland": "Kanada saare nimi, mis on eesti keeles samal kujul.",
+    "NiCd": "Nikkel-kaadmiumaku rahvusvaheline keemialühend, mida kasutatakse muutumatult.",
+    "NiMH": "Nikkel-metallhüdriidaku rahvusvaheline keemialühend, mida kasutatakse muutumatult.",
+    "Nukuʻalofa, Apia": "Vaikse ookeani saareriikide pealinnade nimed, mis on eesti keeles samal kujul.",
+    "Port": "Võrguporti tähistav rahvusvaheline termin, mis on eesti keeles samal kujul.",
+    "Sydney, Brisbane": "Austraalia linnade nimed, mis on eesti keeles samal kujul.",
+    "Wi-Fi SSID": "Wi-Fi-võrgu nime rahvusvaheline lühend, mida kasutatakse muutumatul kujul.",
+    "Yangon": "Myanmari suurima linna nimi, mis on eesti keeles samal kujul."
+  },
+  "notes": "Need väärtused on pärisnimed, keemialühendid ja rahvusvahelised lühendid, millel puudub eraldi eestikeelne kuju; ülejäänud 2315 sõnumit on tõlgitud hiina allikast."
+}

@@ -1,0 +1,12 @@
+{
+  "shared": {
+    "Bytes": "Unit symbol kept unchanged because it is written the same way in Galician.",
+    "Eucla": "Australian locality without a Galician exonym, so the proper name stays unchanged.",
+    "Interface": "International technical term whose Galician spelling is identical to the English one.",
+    "Islamabad, Karachi": "Pakistani city names without established Galician exonyms; both stay unchanged.",
+    "Kathmandu": "Nepalese capital without an established Galician exonym, so the proper name stays unchanged.",
+    "Variable": "Galician noun that is spelled exactly like the English label it translates.",
+    "d": "Abbreviation for days used after a number; it is identical in Galician."
+  },
+  "notes": "Values that legitimately match the English source: international unit symbols, proper nouns without Galician exonyms, and one same-spelling Galician noun."
+}

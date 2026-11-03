@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Etapas",
+    "Detalhes",
+    "Exemplo",
+    "As chaves de variáveis e os exemplos de código permanecem inalterados.",
+    "Referência de funções"
+  ],
+  "linux": {
+    "sources": [
+      "Configuração de fontes de dados",
+      "Conecte o DeepSeek e serviços HTTP JSON.",
+      "Abra Gerenciamento de dados → Configurar fontes e informe sua chave de API do DeepSeek.\nPara HTTP, defina um nome, uma URL GET, cabeçalhos, intervalo de atualização e mapeamentos dos campos JSON; habilite a fonte.\nClique em Salvar e aplicar e copie custom.<source>.<variable> da Biblioteca de variáveis para um perfil.",
+      "Os horários de pico do DeepSeek seguem o horário de Pequim e o calendário de feriados da China; fins de semana continuam fora de pico mesmo quando há compensação de dias de trabalho. Os intervalos de atualização HTTP controlam o cache independentemente da amostragem global. Após uma falha, examine custom.<source>.status e custom.<source>.error; respostas 401/403 geralmente exigem verificar autenticação e acesso. Os caminhos JSON devem corresponder à resposta real. ${env:MY_API_KEY} lê uma variável de ambiente do processo. PawnIO e a interface de desktop do AIDA64 estão disponíveis somente no Windows."
+    ],
+    "media": [
+      "Sessões de mídia",
+      "A compilação nativa atual não possui um coletor de sessões de mídia.",
+      "Abra Gerenciamento de dados → Biblioteca de variáveis e confira os campos disponíveis.\nEscolha um perfil com variáveis compatíveis com este computador.\nSubstitua os campos de mídia indisponíveis por outra medição compatível e clique em Salvar e aplicar.",
+      "Esta compilação não disponibiliza sessões nativas de reprodutores. Importar um perfil de mídia do Windows não adiciona um coletor nativo. Títulos, linhas do tempo ou valores de progresso ausentes permanecem indisponíveis, sem valores inventados. O modelo de permissões de sessões de mídia do Windows não se aplica aqui."
+    ],
+    "hardware": [
+      "Sensores de hardware e acesso no Linux",
+      "Use as interfaces Linux detectadas e investigue leituras ausentes.",
+      "Abra Gerenciamento de dados → Dados de hardware e atualize a detecção.\nPesquise por dispositivo, sensor ou identificador original; selecione uma linha e copie seu modelo para o HUD.\nSe faltar uma leitura, examine a disponibilidade e exporte o diagnóstico antes de alterar permissões.",
+      "As leituras de CPU usam /proc/stat, /proc/cpuinfo, cpufreq ou hwmon. O acesso à GPU depende de DRM/hwmon ou do NVIDIA nvidia-smi. Os drivers Linux e as permissões de arquivos determinam quais nós de temperatura, potência e tensão existem e podem ser lidos. Um nó compatível precisa retornar dados reais; leituras indisponíveis continuam como --. PawnIO e AIDA64 não são coletores Linux. Os canais de encapsulamento, núcleo e ponto mais quente dos sensores podem representar medições diferentes; um máximo medido não é automaticamente um limite nominal do hardware."
+    ],
+    "special": [
+      "Perfis de hora, rede e FPS",
+      "Escolha unidades e destinos que correspondam à fonte nativa de dados.",
+      "Escolha no perfil um deslocamento UTC para o relógio mundial ou um horário-alvo diário.\nPara tráfego de rede, selecione unidades automáticas em bytes ou Mbps e defina a referência do anel.\nPara FPS, atualize a lista de janelas e monitores, escolha um destino ativo e defina a taxa de quadros que representa 100%; depois clique em Salvar e aplicar.",
+      "O relógio mundial usa um deslocamento UTC fixo, sem ajuste automático de horário de verão. 1 MB/s equivale a 8 Mbps; a largura de banda de referência determina a escala do anel e não limita a velocidade da rede. ICMP ignora portas; sondagens TCP/UDP usam a porta configurada. Uma sondagem malsucedida não prova que o dispositivo inteiro esteja desconectado. O Linux conta eventos de conclusão do X11 Present e exige uma sessão X11/XWayland com a extensão Present e libXpresent. Janelas nativas do Wayland sem um fluxo observável de apresentação X11 não podem ser medidas por este coletor. Antes de qualquer fluxo real de quadros ser observado, a falta de eventos significa que os dados estão indisponíveis. Depois que quadros reais inicializarem a amostragem, um fluxo ocioso pode informar 0 FPS; a taxa de atualização do monitor nunca é usada como substituta."
+    ],
+    "maintenance": [
+      "Configuração, backup e segredos nativos",
+      "Faça backup dos ajustes e entenda o conteúdo do arquivo de configuração.",
+      "Antes de grandes alterações, exporte as configurações ou crie um backup em Sobre → Configuração e manutenção.\nImporte uma configuração para restaurá-la; use a barra superior para abrir a pasta de configuração e Sobre para acessar os logs.\nDepois de carregar os padrões, clique em Salvar e aplicar para confirmá-los; examine o estado da verificação de atualizações antes de concluir que a compilação está atualizada.",
+      "O Linux protege a chave de API com AES-GCM usando um arquivo de chave local privado em secrets/master.key, dentro do diretório de configuração. Esse arquivo precisa de permissões Unix privadas. Exportar apenas a configuração não transfere a chave de criptografia local; ao mudar de instalação, pode ser necessário informar a chave de API novamente. Uma falha na verificação de atualizações ou uma versão remota indisponível não confirma que o programa esteja atualizado. Preserve o estado das fontes e os diagnósticos locais de hardware ao investigar falhas."
+    ],
+    "troubleshooting": [
+      "HUDs e leituras que não aparecem",
+      "Diferencie problemas de visibilidade, de fontes e de permissões nativas.",
+      "Confira o interruptor geral, a ocultação pelo atalho, o monitor de destino, as coordenadas e a opacidade.\nUse Sempre visível para manter o HUD na tela; o modo temporário exige um evento, uma zona ativa do mouse ou uma regra configurada.\nConfirme a variável e a unidade na biblioteca, examine o estado da captura nativa ou da fonte e clique em Salvar e aplicar após as alterações.",
+      "Leituras indisponíveis continuam como --; a formatação não corrige um sensor inacessível nem uma expressão inválida. Confira os caminhos JSON, a autenticação da API e as permissões de captura da plataforma conforme o caso. Não instale um driver do Windows para corrigir uma interface nativa. A caixa de seleção do aviso silencia somente as variáveis listadas naquele aviso; outras variáveis continuam podendo emitir avisos. A supressão não corrige a fonte nem interrompe a coleta."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Configuração de fontes de dados",
+      "Conecte o DeepSeek e serviços HTTP JSON.",
+      "Abra Gerenciamento de dados → Configurar fontes e informe sua chave de API do DeepSeek.\nPara HTTP, defina um nome, uma URL GET, cabeçalhos, intervalo de atualização e mapeamentos dos campos JSON; habilite a fonte.\nClique em Salvar e aplicar e copie custom.<source>.<variable> da Biblioteca de variáveis para um perfil.",
+      "Os horários de pico do DeepSeek seguem o horário de Pequim e o calendário de feriados da China; fins de semana continuam fora de pico mesmo quando há compensação de dias de trabalho. Os intervalos de atualização HTTP controlam o cache independentemente da amostragem global. Após uma falha, examine custom.<source>.status e custom.<source>.error; respostas 401/403 geralmente exigem verificar autenticação e acesso. Os caminhos JSON devem corresponder à resposta real. ${env:MY_API_KEY} lê uma variável de ambiente do processo. PawnIO e a interface de desktop do AIDA64 estão disponíveis somente no Windows."
+    ],
+    "media": [
+      "Sessões de mídia",
+      "A compilação nativa atual não possui um coletor de sessões de mídia.",
+      "Abra Gerenciamento de dados → Biblioteca de variáveis e confira os campos disponíveis.\nEscolha um perfil com variáveis compatíveis com este computador.\nSubstitua os campos de mídia indisponíveis por outra medição compatível e clique em Salvar e aplicar.",
+      "Esta compilação não disponibiliza sessões nativas de reprodutores. Importar um perfil de mídia do Windows não adiciona um coletor nativo. Títulos, linhas do tempo ou valores de progresso ausentes permanecem indisponíveis, sem valores inventados. O modelo de permissões de sessões de mídia do Windows não se aplica aqui."
+    ],
+    "hardware": [
+      "Dados de hardware no macOS",
+      "Leia as medições fornecidas pelo sistema e respeite os limites do dispositivo.",
+      "Abra Gerenciamento de dados → Dados de hardware e atualize a detecção.\nPesquise os dispositivos e campos detectados e copie uma variável compatível para um perfil.\nQuando faltarem dados, confira o estado e exporte o diagnóstico; acesso de administrador não cria uma API de sensores inexistente.",
+      "As estatísticas de CPU e memória usam Mach ou sysctl; os dados de bateria vêm das interfaces nativas de energia. O armazenamento usa estatísticas do volume de dados APFS e pode compartilhar a capacidade de um mesmo contêiner. Os valores de GPU dependem das interfaces de Metal ou do sistema realmente expostas. Um orçamento de memória de GPU não é VRAM física dedicada. Temperaturas ou potências que o hardware e o sistema operacional não expõem continuam como --. Esta compilação não usa PawnIO nem a interface do AIDA64 para Windows."
+    ],
+    "special": [
+      "Perfis de hora, rede e FPS",
+      "Escolha unidades e destinos que correspondam à fonte nativa de dados.",
+      "Escolha no perfil um deslocamento UTC para o relógio mundial ou um horário-alvo diário.\nPara tráfego de rede, selecione unidades automáticas em bytes ou Mbps e defina a referência do anel.\nPara FPS, atualize a lista de janelas e monitores, escolha um destino ativo e defina a taxa de quadros que representa 100%; depois clique em Salvar e aplicar.",
+      "O relógio mundial usa um deslocamento UTC fixo, sem ajuste automático de horário de verão. 1 MB/s equivale a 8 Mbps; a largura de banda de referência determina a escala do anel e não limita a velocidade da rede. ICMP ignora portas; sondagens TCP/UDP usam a porta configurada. Uma sondagem malsucedida não prova que o dispositivo inteiro esteja desconectado. O macOS usa quadros completos do ScreenCaptureKit e exige permissão de gravação da tela. Quadros ociosos, vazios e suspensos são excluídos. Se a captura for negada ou o destino desaparecer, examine o estado em vez de tratar a taxa de atualização do monitor como FPS."
+    ],
+    "maintenance": [
+      "Configuração, backup e segredos nativos",
+      "Faça backup dos ajustes e entenda o conteúdo do arquivo de configuração.",
+      "Antes de grandes alterações, exporte as configurações ou crie um backup em Sobre → Configuração e manutenção.\nImporte uma configuração para restaurá-la; use a barra superior para abrir a pasta de configuração e Sobre para acessar os logs.\nDepois de carregar os padrões, clique em Salvar e aplicar para confirmá-los; examine o estado da verificação de atualizações antes de concluir que a compilação está atualizada.",
+      "A chave de API é armazenada nas Chaves do macOS; a configuração mantém uma referência, não uma cópia portátil do segredo. Importar a configuração em outra conta ou computador pode exigir que a chave de API seja informada novamente. Permita uma solicitação legítima de acesso às Chaves se o sistema perguntar. Uma falha na verificação de atualizações ou uma versão remota indisponível não confirma que o programa esteja atualizado. Preserve o estado das fontes e os diagnósticos locais de hardware ao investigar falhas."
+    ],
+    "troubleshooting": [
+      "HUDs e leituras que não aparecem",
+      "Diferencie problemas de visibilidade, de fontes e de permissões nativas.",
+      "Confira o interruptor geral, a ocultação pelo atalho, o monitor de destino, as coordenadas e a opacidade.\nUse Sempre visível para manter o HUD na tela; o modo temporário exige um evento, uma zona ativa do mouse ou uma regra configurada.\nConfirme a variável e a unidade na biblioteca, examine o estado da captura nativa ou da fonte e clique em Salvar e aplicar após as alterações.",
+      "Leituras indisponíveis continuam como --; a formatação não corrige um sensor inacessível nem uma expressão inválida. Confira os caminhos JSON, a autenticação da API e as permissões de captura da plataforma conforme o caso. Não instale um driver do Windows para corrigir uma interface nativa. A caixa de seleção do aviso silencia somente as variáveis listadas naquele aviso; outras variáveis continuam podendo emitir avisos. A supressão não corrige a fonte nem interrompe a coleta."
+    ]
+  },
+  "android": {
+    "start": [
+      "Primeiros passos no Android",
+      "Inicie o HUD com as permissões exigidas pelo modo de saída escolhido.",
+      "Abra Início e examine Permissões; permita a exibição sobre outros apps para a sobreposição e autorize notificações quando solicitado.\nEscolha um perfil em Conteúdo do HUD e um modo em Exibição e posição; ative o interruptor geral do HUD.\nVolte a Início e toque em Iniciar HUD; use Parar HUD nessa tela para encerrar o serviço.",
+      "Os ajustes gerais são salvos automaticamente. Edições de perfil têm sua própria ação Salvar; editar um perfil integrado cria uma cópia personalizada. A sobreposição em execução e a atualização nativa ao vivo são saídas diferentes, com capacidades distintas do sistema operacional. Abrir o app, por si só, não garante que o serviço do HUD em primeiro plano esteja funcionando."
+    ],
+    "display": [
+      "Exibição, posição e aparência global",
+      "Configure a sobreposição ou a atualização ao vivo controlada pelo sistema.",
+      "Em Exibição e posição, escolha Sobreposição ou a saída compatível Ilha dinâmica nativa, que usa as atualizações ao vivo do Android.\nPara a sobreposição, selecione Sempre visível, uma âncora com deslocamentos ou coordenadas personalizadas; ajuste tamanho, opacidade, desvio de recortes da tela e passagem de toques.\nAbra Language → Tamanho da fonte e escala global da interface para redimensionar os ajustes e o HUD de 75% a 200%; Redefinir para 100% restaura os fatores globais.",
+      "A passagem de toques encaminha entradas para o app abaixo. Iniciar com o sistema está sujeito às restrições de inicialização em segundo plano do Android e às permissões da saída escolhida. Atualizações nativas ao vivo exigem uma versão compatível do Android e elegibilidade do sistema; o Android controla o layout e o tamanho do texto. O estilo da sobreposição não pode obrigar a notificação do sistema a usar a mesma geometria. O tamanho individual do HUD é multiplicado pela escala global da interface."
+    ],
+    "profiles": [
+      "Perfis e conteúdo do HUD",
+      "Edite texto, ícones, expressões e o anel de progresso.",
+      "Selecione um perfil integrado ou crie um personalizado em Conteúdo do HUD.\nEdite a identificação superior, o título, os textos principal e secundário, o valor à direita, o sufixo, os ícones e a cor de destaque; confira a prévia.\nDefina uma variável de progresso ou uma expressão iniciada por =, escolha mínimo e máximo e salve o perfil.",
+      "Editar um perfil integrado salva uma cópia personalizada, sem substituir o modelo original. O anel posiciona o valor atual no intervalo configurado e limita o resultado a 0–100%; isso não muda a leitura bruta exibida como texto. Use unidades e valores de escala adequados. Regras condicionais de cor usam a unidade original da medição; dados indisponíveis não representam um zero medido."
+    ],
+    "variables": [
+      "Variáveis, marcadores e expressões",
+      "Copie um campo compatível com Android e mantenha o código inalterado.",
+      "Abra Gerenciamento de dados → Biblioteca de variáveis e procure um nome ou uma chave.\nLeia significado, unidade, disponibilidade e observação sobre a fonte Android; copie a variável ou o marcador para um perfil.\nUse {cpu.usage|0} para texto formatado ou = (cpu.usage + gpu.usage) / 2 para uma expressão numérica; confira a prévia e salve.",
+      "Chaves de variáveis, nomes de funções e opções de formato após a barra vertical são código e não são traduzidos. bytes e speed formatam tamanhos e taxas em bytes; gb:2 usa potências de 1024, enquanto duration formata segundos. As funções de expressão abrangem cálculos, condições, texto e valores ausentes. Dados que não podem ser coletados permanecem indisponíveis. Uma variável de desktop pode ter um alias no Android ou não ter coletor nessa plataforma; confira a biblioteca real, em vez de supor que uma chave importada seja compatível."
+    ],
+    "hardware": [
+      "Dados de hardware e Root opcional",
+      "Leia os recursos reais do Android sem substituí-los por drivers de desktop.",
+      "Abra Gerenciamento de dados → Dados de hardware para examinar os campos detectados e sua disponibilidade.\nSe o telefone já tiver Root, abra Recursos experimentais → Usar Root para leituras e decida se autoriza o ECP no seu gerenciador de Root.\nAtualize a detecção, examine o estado da fonte e copie um campo compatível ou exporte o diagnóstico.",
+      "O acesso Root é opcional e não faz Root no telefone. Ele complementa o acesso de leitura a nós de CPU/GPU, temperatura e memória do fabricante; um dispositivo sem nó compatível continua sem a leitura. Os coletores comuns de bateria e memória funcionam sem Root. Valores ausentes permanecem indisponíveis, nunca são substituídos por um zero inventado. PawnIO e a interface do AIDA64 para Windows não funcionam no Android. A energia da bateria totalmente carregada pode ser estimada pela energia medida e pelo percentual de carga; não é uma capacidade nominal de projeto."
+    ],
+    "sources": [
+      "Fontes DeepSeek e HTTP JSON",
+      "Configure os serviços e examine o estado real das respostas.",
+      "Abra Gerenciamento de dados → Configurar fontes e informe uma chave de API do DeepSeek; salve-a com a ação específica da chave.\nPara uma fonte HTTP, informe nome, URL GET de JSON, cabeçalhos, intervalo e caminhos dos campos; habilite a fonte configurada.\nLocalize custom.<source>.<variable> na biblioteca; examine custom.<source>.status e custom.<source>.error em caso de falha.",
+      "A chave de API é criptografada com Android Keystore; exportar a configuração não cria um backup portátil do segredo. Informe a chave novamente quando outra instalação não conseguir recuperá-la. Os períodos do DeepSeek seguem o horário de Pequim e o calendário de feriados da China; dias de trabalho compensados no fim de semana continuam fora de pico. O cache HTTP segue o intervalo de cada fonte. Ajuste os caminhos JSON à resposta real e confira a autenticação para erros 401/403. ${env:MY_API_KEY} só funciona se essa variável de ambiente existir no processo. O JSON de exemplo começa desabilitado; substitua a URL e os mapeamentos antes de habilitá-lo."
+    ],
+    "cycle": [
+      "Alternância automática e animação",
+      "Ordene os perfis e escolha a transição da sobreposição.",
+      "Salve os perfis que deseja alternar e adicione-os à fila de alternância em Conteúdo do HUD.\nUse Subir e Descer para reordenar ou Remover para retirar uma entrada da fila.\nHabilite a alternância automática, defina um intervalo de 3 a 3600 segundos e escolha Simples ou Completa para a transição da sobreposição.",
+      "Remover uma entrada da fila não exclui seu perfil. A transição da alternância substitui a animação individual do perfil. Uma fila vazia usa o perfil ativo; uma única entrada não pode alternar para um perfil diferente. O Android oferece atualmente as transições de sobreposição Simples e Completa; a rolagem para cima do desktop não é uma transição Android. A atualização nativa ao vivo é desenhada pelo Android, e não pelo mecanismo de animação da sobreposição."
+    ],
+    "summons": [
+      "Exibir e parar o HUD no Android",
+      "Use os controles Android em vez de atalhos de desktop ou zonas ativas do mouse.",
+      "Use Início → Iniciar HUD para iniciar a saída escolhida e Início → Parar HUD para encerrá-la.\nPara manter uma sobreposição na tela, habilite Sempre visível em Exibição e posição.\nPara exibição sob demanda, desabilite Sempre visível e confira o comportamento compatível para eventos de alimentação e o tempo de exibição.",
+      "A interface Android não possui o atalho global de desktop para exibir/ocultar nem um editor de zonas ativas do mouse. Importar esses ajustes de desktop não cria controles Android equivalentes. O interruptor geral do HUD suprime a saída; o serviço em segundo plano e sua notificação de primeiro plano podem manter um estado próprio de execução. Use Parar HUD para encerrar o serviço."
+    ],
+    "triggers": [
+      "Regras de eventos e limites do Android",
+      "Confira os recursos compatíveis antes de depender de uma regra importada.",
+      "Confira a variável e seu valor atual em Gerenciamento de dados antes de configurar um perfil.\nUse a alternância automática Android ou a exibição compatível por eventos de alimentação para o comportamento automático disponível.\nConfirme o estado real do HUD em Início e mantenha Sempre visível habilitado quando precisar de exibição permanente.",
+      "Esta interface de ajustes Android não oferece o editor de regras de disparo do desktop nem sua fila de regras por instância. Importar uma regra de limite ou alteração do desktop não disponibiliza esse recurso. Um aviso de dados informa uma falha na fonte; não é uma regra automática de limite. Não dependa de uma regra não implementada para receber um lembrete."
+    ],
+    "special": [
+      "Hora, rede e FPS no Android",
+      "Escolha medições reais e destinos compatíveis.",
+      "Defina um deslocamento UTC para o relógio mundial ou um horário-alvo diário; deslocamentos fixos não acompanham automaticamente o horário de verão.\nEscolha unidades automáticas em bytes ou Mbps para o tráfego e configure o destino e a porta de ICMP/TCP/UDP conforme o caso.\nPara FPS, autorize Root quando necessário, atualize os destinos, escolha a camada do SurfaceFlinger ou o monitor e defina a taxa de quadros que representa 100%.",
+      "1 MB/s equivale a 8 Mbps. A referência do anel determina a escala e não limita a largura de banda. ICMP ignora portas; uma falha no destino TCP/UDP/ICMP não prova uma queda total da rede. FPS de janela usa marcas de tempo reais de quadros exibidos na camada escolhida do SurfaceFlinger. FPS de monitor exige um contador de quadros de composição do fabricante e não pode ser atribuído quando há ambiguidade entre vários monitores. Dados de quadros ausentes ou incompatíveis continuam indisponíveis; a taxa de atualização nunca é usada como substituta."
+    ],
+    "media": [
+      "Disponibilidade de sessões de mídia",
+      "A compilação Android atual não possui uma fonte de sessões de reprodutores.",
+      "Confira os campos compatíveis na Biblioteca de variáveis Android.\nEscolha um perfil baseado nesses campos, como hora, bateria ou memória.\nSubstitua os campos de mídia importados do desktop antes de salvar um perfil destinado ao Android.",
+      "Esta compilação não lê título, artista ou linha do tempo de reprodução das sessões de mídia Android. Permissão de sobreposição ou de notificação não adiciona um coletor de mídia que o app não implementou. Chaves de mídia importadas continuam indisponíveis, em vez de exibir uma faixa ou um progresso inventados."
+    ],
+    "instances": [
+      "Vários HUDs e o alcance no celular",
+      "O Android controla atualmente uma saída ativa de HUD.",
+      "Selecione o perfil ativo em Conteúdo do HUD.\nUse a fila de alternância quando quiser que vários perfis compartilhem essa saída ao longo do tempo.\nUse a escala global da fonte e da interface para ajustes e HUD; use os controles de tamanho da sobreposição para seu tamanho individual.",
+      "O editor de múltiplas instâncias do desktop e suas janelas de HUD com posições independentes não estão implementados nesta interface Android. Importar uma lista de instâncias do desktop não cria várias janelas de sobreposição Android. Sobreposição e atualização nativa ao vivo são modos de saída selecionáveis, não duas instâncias de desktop configuradas independentemente. O idioma e os fatores globais de aparência valem para todo o app."
+    ],
+    "maintenance": [
+      "Configuração, diagnósticos e atualizações",
+      "Use os seletores de arquivos Android e preserve a origem das falhas.",
+      "Antes de grandes alterações, exporte a configuração em Recursos experimentais com o seletor de arquivos do sistema.\nImporte uma configuração JSON salva para restaurá-la ou exporte logs e diagnósticos para investigar uma falha.\nConfira a versão do app e o estado de atualização em Sobre; use Redefinir somente quando quiser restaurar os padrões da primeira instalação.",
+      "As chaves de API são protegidas pelo Android Keystore e não são campos portáteis em texto aberto na configuração exportada. Outra instalação ou conta pode exigir a chave novamente. Após confirmação, Redefinir restaura perfis, fontes, intervalos de atualização e ajustes de exibição. Uma falha na verificação remota de atualizações não comprova que a versão instalada esteja atualizada. A amostragem fica mais lenta quando o HUD está oculto ou a tela apagada, conforme os intervalos configurados."
+    ],
+    "troubleshooting": [
+      "Visibilidade, dados ausentes e alcance dos avisos",
+      "Confira as permissões Android e o estado real dos coletores.",
+      "Confira Início → Permissões e o estado de execução, depois o interruptor geral do HUD e o modo de saída escolhido.\nPara sobreposições, confira Sempre visível, coordenadas, opacidade e permissão de sobreposição; para atualizações ao vivo, examine a elegibilidade informada pelo sistema.\nPara leituras --, examine a fonte da variável, o acesso Root quando aplicável, a autenticação da API ou os caminhos JSON e exporte o diagnóstico.",
+      "Dados ausentes não são zero, e um formato de texto não corrige um sensor nem uma expressão. Algumas restrições do fabricante ou de SELinux permanecem mesmo com a sobreposição autorizada. A caixa de seleção do aviso suprime permanentemente somente os avisos das variáveis já listadas naquele aviso; outras variáveis continuam emitindo avisos. Fechar sem marcar a caixa confirma somente aquele incidente. A supressão não corrige a fonte nem interrompe a coleta."
+    ]
+  }
+}

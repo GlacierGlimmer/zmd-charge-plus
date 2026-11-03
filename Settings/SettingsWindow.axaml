@@ -1,341 +1,455 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:custom="clr-namespace:EndfieldChargePlus.Customization"
-        xmlns:settings="clr-namespace:EndfieldChargePlus.Settings"
-        x:Class="EndfieldChargePlus.Settings.SettingsWindow"
-        Width="1120" Height="790"
-        MinWidth="940" MinHeight="680"
-        Title="Endfield Charge Plus 设置"
-        Background="#19191B"
-        WindowStartupLocation="CenterScreen">
+<Window xmlns="https://github.com/avaloniaui" xmlns:custom="clr-namespace:EndfieldChargePlus.Customization" xmlns:settings="clr-namespace:EndfieldChargePlus.Settings" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="EndfieldChargePlus.Settings.SettingsWindow" Width="1120" Height="882" MinWidth="940" MinHeight="772" Title="Endfield Charge Plus 设置" Background="Transparent" SystemDecorations="None" TransparencyLevelHint="Transparent" TransparencyBackgroundFallback="{DynamicResource EcpCanvas}" CanResize="True" WindowStartupLocation="CenterScreen" FontSize="14">
   <Window.Styles>
-    <Style Selector="TabControl.settings-main > TabItem">
-      <Setter Property="FontSize" Value="16"/>
-      <Setter Property="Padding" Value="12,10"/>
+    <Style Selector="TabControl.content-only">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid RowDefinitions="0,*">
+            <ItemsPresenter Name="PART_ItemsPresenter" Height="0" Opacity="0" IsHitTestVisible="False" />
+            <ContentPresenter Grid.Row="1" Name="PART_SelectedContentHost" Content="{TemplateBinding SelectedContent}" ContentTemplate="{TemplateBinding SelectedContentTemplate}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+          </Grid>
+        </ControlTemplate>
+      </Setter>
     </Style>
-    <Style Selector="TabControl.settings-data > TabItem">
-      <Setter Property="FontSize" Value="16"/>
-      <Setter Property="Padding" Value="14,9"/>
+    <Style Selector="ListBox.workspace-nav">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
     </Style>
+    <Style Selector="ListBox.workspace-nav ListBoxItem">
+      <Setter Property="MinHeight" Value="42" />
+      <Setter Property="Padding" Value="12,9" />
+      <Setter Property="Margin" Value="0,2" />
+      <Setter Property="CornerRadius" Value="4" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" />
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="ListBox.workspace-nav ListBoxItem:selected">
+      <Setter Property="Background" Value="{DynamicResource EcpSelection}" />
+      <Setter Property="Foreground" Value="{DynamicResource EcpAccent}" />
+    </Style>
+    <Style Selector="Button">
+      <Setter Property="CornerRadius" Value="4" />
+    </Style>
+    <Style Selector="Button.window-caption">
+      <Setter Property="Foreground" Value="#3D2923" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Width" Value="28" />
+      <Setter Property="Height" Value="28" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Template"><ControlTemplate>
+        <Border Background="Transparent">
+          <Border Name="CaptionDot" Width="13" Height="13" CornerRadius="7" Background="{TemplateBinding Background}" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ContentPresenter Name="CaptionGlyph" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0" />
+          </Border>
+        </Border>
+      </ControlTemplate></Setter>
+    </Style>
+    <Style Selector="Button.window-caption:pointerover /template/ ContentPresenter#CaptionGlyph"><Setter Property="Opacity" Value="1" /></Style>
+    <Style Selector="Button.window-caption:focus-visible /template/ Border#CaptionDot"><Setter Property="BorderThickness" Value="1" /><Setter Property="BorderBrush" Value="White" /></Style>
+    <Style Selector="Button.window-close"><Setter Property="Background" Value="#FF5F57" /></Style>
+    <Style Selector="Button.window-minimize"><Setter Property="Background" Value="#FEBC2E" /></Style>
+    <Style Selector="Button.window-maximize"><Setter Property="Background" Value="#28C840" /></Style>
+    <Style Selector="Button.window-caption:pressed"><Setter Property="Opacity" Value="0.65" /></Style>
   </Window.Styles>
-  <Grid RowDefinitions="Auto,*">
-    <Border Grid.Row="0" Background="#222224" Padding="24,16" BorderBrush="#343438" BorderThickness="0,0,0,1">
-      <Grid ColumnDefinitions="*,Auto,Auto">
-        <StackPanel Spacing="3">
-          <TextBlock Text="ENDFIELD CHARGE PLUS" FontSize="16" FontWeight="SemiBold" Foreground="White" LetterSpacing="1.2"/>
-          <TextBlock Text="HUD 设置" FontSize="12" Foreground="#8E8E94"/>
+  <Border x:Name="SettingsWindowFrame" Background="{DynamicResource EcpCanvas}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="8" ClipToBounds="True">
+    <Grid RowDefinitions="92,*">
+      <Grid x:Name="SettingsTitleBar" Classes="ecp-native" RowDefinitions="28,64" ColumnDefinitions="*,96" Background="#191919" FlowDirection="LeftToRight">
+        <Border x:Name="TitleBarSidebarBackground" IsVisible="False" Width="248" Background="{DynamicResource EcpSidebar}" />
+        <Border x:Name="TitleBarDragArea" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Transparent">
+          <Grid RowDefinitions="28,64">
+            <TextBlock x:Name="IntegratedWindowTitle" Margin="96,0" Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}" FontSize="12" Foreground="{DynamicResource EcpMuted}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" IsHitTestVisible="False" />
+            <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="22,0,22,9">
+              <StackPanel Spacing="5" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                  <Border Width="2" Height="13" Background="#FFFA00" />
+                  <TextBlock x:Name="SystemStatusLabel" FontSize="12" FontWeight="SemiBold" Text="当前系统" Foreground="{DynamicResource EcpText}" />
+                </StackPanel>
+                <StackPanel x:Name="SystemStatusGroup" Orientation="Horizontal" Spacing="14" />
+              </StackPanel>
+              <Border Grid.Column="1" Height="1" Margin="36,0" Background="#34342E" VerticalAlignment="Center" IsHitTestVisible="False" />
+              <StackPanel Grid.Column="2" Spacing="5" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                  <Border Width="2" Height="13" Background="#01FFA2" />
+                  <TextBlock x:Name="AppStatusLabel" FontSize="12" FontWeight="SemiBold" Text="软件占用" Foreground="{DynamicResource EcpText}" />
+                </StackPanel>
+                <StackPanel x:Name="AppStatusGroup" Orientation="Horizontal" Spacing="14" />
+              </StackPanel>
+            </Grid>
+          </Grid>
+        </Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Height="1" Background="#393A32" VerticalAlignment="Bottom" IsHitTestVisible="False" />
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2" VerticalAlignment="Center" Margin="0,0,8,0">
+          <Button x:Name="MinimizeWindowButton" Classes="window-caption window-minimize"><Border Width="7" Height="1.3" Background="#584318" /></Button>
+          <Button x:Name="MaximizeWindowButton" Classes="window-caption window-maximize"><Path x:Name="MaximizeWindowGlyph" Width="7" Height="7" Stretch="Uniform" Stroke="#145024" StrokeThickness="1.2" Data="M1,3 V1 H3 M5,1 H7 V3 M7,5 V7 H5 M3,7 H1 V5" /></Button>
+          <Button x:Name="CloseWindowButton" Classes="window-caption window-close">
+            <Path Width="7" Height="7" Stretch="Uniform" Stroke="#57201D" StrokeThickness="1.4" Data="M1,1 L7,7 M7,1 L1,7" />
+          </Button>
         </StackPanel>
-
-        <Button x:Name="LanguageButton" Grid.Column="1" MinHeight="38" MinWidth="180"
-                Margin="16,0,0,0" Padding="12,7" FlowDirection="LeftToRight"
-                HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-          <StackPanel Orientation="Horizontal" Spacing="9">
-            <Path x:Name="LanguageIcon" Width="20" Height="20" Stretch="Uniform" IsHitTestVisible="False"
-                  Stroke="#C6CA4C" StrokeThickness="1.5"
-                  Data="M10,1 A9,9 0 1 0 10,19 A9,9 0 1 0 10,1 M1,10 H19 M10,1 C4,5 4,15 10,19 M10,1 C16,5 16,15 10,19"/>
-            <TextBlock x:Name="LanguageButtonLabel" VerticalAlignment="Center"/>
+      </Grid>
+      <ContentControl x:Name="SettingsBodyHost" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+  <Grid ColumnDefinitions="248,*">
+    <Border x:Name="WorkspaceSidebar" Background="{DynamicResource EcpSidebar}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="0,0,1,0" Padding="12,22,12,16">
+      <Grid RowDefinitions="Auto,*,Auto">
+        <StackPanel Margin="2,0,0,22" Orientation="Horizontal" Spacing="9">
+          <Image Source="avares://EndfieldChargePlus/Assets/tray_bolt.png" Width="32" Height="32" VerticalAlignment="Center" />
+          <StackPanel Spacing="3" VerticalAlignment="Center">
+            <TextBlock Text="ENDFIELD CHARGE PLUS" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource EcpText}" />
+            <TextBlock Text="endfield-style island HUD+" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
           </StackPanel>
-        </Button>
-
-        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Margin="10,0,0,0">
-          <Button x:Name="OpenSettingsFolderBtn" Content="配置文件夹" Height="38" MinWidth="100" Padding="14,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-          <Button x:Name="SaveBtn" Content="保存并应用" Height="38" MinWidth="108" Padding="16,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#C6CA4C" Foreground="#171719" FontWeight="SemiBold"/>
+        </StackPanel>
+        <ListBox x:Name="WorkspaceNavigation" Classes="workspace-nav" Grid.Row="1" />
+        <StackPanel Grid.Row="2" Spacing="10" Margin="6,16,6,0">
+          <Button x:Name="OpenPlatformRepositoriesBtn" Height="34" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="#303030" Padding="10,5">
+            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+              <Path Width="17" Height="17" Stretch="Uniform" Fill="{DynamicResource EcpText}" Data="M8,0 C3.58,0 0,3.58 0,8 C0,11.54 2.29,14.53 5.47,15.59 C5.87,15.66 6.02,15.42 6.02,15.21 V13.72 C3.79,14.2 3.32,12.77 3.32,12.77 C2.96,11.85 2.43,11.6 2.43,11.6 C1.7,11.1 2.49,11.11 2.49,11.11 C3.3,11.17 3.73,11.94 3.73,11.94 C4.45,13.16 5.6,12.81 6.06,12.6 C6.13,12.08 6.34,11.73 6.57,11.53 C4.79,11.33 2.92,10.64 2.92,7.58 C2.92,6.7 3.23,5.99 3.74,5.43 C3.66,5.23 3.38,4.41 3.82,3.31 C3.82,3.31 4.49,3.1 6.02,4.13 C6.66,3.95 7.34,3.86 8.02,3.86 C8.7,3.86 9.38,3.95 10.02,4.13 C11.55,3.1 12.22,3.31 12.22,3.31 C12.66,4.41 12.38,5.23 12.3,5.43 C12.81,5.99 13.12,6.7 13.12,7.58 C13.12,10.65 11.25,11.33 9.46,11.53 C9.75,11.78 10,12.27 10,13.01 V15.21 C10,15.42 10.15,15.67 10.55,15.59 C13.73,14.53 16,11.54 16,8 C16,3.58 12.42,0 8,0 Z" />
+              <TextBlock Text="GitHub" FontSize="14" VerticalAlignment="Center" />
+            </StackPanel>
+          </Button>
+          <TextBlock x:Name="SidebarVersion" FontSize="12" Foreground="{DynamicResource EcpMuted}" Margin="4,0,0,0" />
         </StackPanel>
       </Grid>
     </Border>
-
-    <TabControl x:Name="MainSettingsTabs" Classes="settings-main" Grid.Row="1" Margin="18,14,18,18">
-      <TabControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></TabControl.ItemsPanel>
-      <TabItem x:Name="DisplayPage" Header="显示与位置">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-          <StackPanel Margin="4,12,4,18" Spacing="12">
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="14">
-                <Grid ColumnDefinitions="*,Auto">
-                  <StackPanel Spacing="3" Margin="0,0,18,0">
-                    <TextBlock Text="HUD 总开关" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                    <TextBlock Text="控制 HUD 的全部显示功能。" FontSize="11" Foreground="#85858B"/>
-                  </StackPanel>
-                  <ToggleSwitch x:Name="HudEnabledSwitch" Grid.Column="1" VerticalAlignment="Center"/>
-                </Grid>
-
-                <Border Height="1" Background="#343438"/>
-
-                <Grid ColumnDefinitions="*,Auto">
-                  <StackPanel Spacing="3" Margin="0,0,18,0">
-                    <TextBlock Text="开机启动" FontSize="12" Foreground="#E7E7E9"/>
-                    <TextBlock Text="登录 Windows 后自动启动 Endfield Charge Plus。" FontSize="11" Foreground="#7F7F85"/>
-                  </StackPanel>
-                  <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center"/>
-                </Grid>
-                <TextBlock x:Name="StartupStatusText" IsVisible="False" TextWrapping="Wrap" FontSize="11" Foreground="#C6CA4C"/>
-                <Border Height="1" Background="#343438"/>
-                <TextBlock Text="显示 / 隐藏全部 HUD 的快捷键" FontSize="12" Foreground="#E7E7E9"/>
-                <Grid ColumnDefinitions="*,Auto">
-                  <TextBox x:Name="HudHotkeyBox" IsReadOnly="True" Watermark="点击后按下组合键" MinHeight="34"/>
-                  <Button x:Name="ClearHudHotkeyBtn" Grid.Column="1" Content="清除快捷键" Margin="10,0,0,0"/>
-                </Grid>
-                <TextBlock Text="使用 Ctrl 或 Alt，可加 Shift；支持字母、数字和 F1–F24（F12 除外）。保存后生效，留空关闭。" TextWrapping="Wrap" FontSize="11" Foreground="#85858B"/>
-                <TextBlock Text="同时控制主 HUD 与附加实例。隐藏期间暂停自动呼出，再按一次恢复原有显示模式；重启后恢复显示。" TextWrapping="Wrap" FontSize="11" Foreground="#85858B"/>
-                <TextBlock x:Name="HudHotkeyStatusText" TextWrapping="Wrap" FontSize="11" Foreground="#C6CA4C"/>
-                <Grid ColumnDefinitions="*,180">
-                  <TextBlock Text="快捷键显示动画" FontSize="12" VerticalAlignment="Center"/>
-                  <ComboBox x:Name="HudHotkeyAnimationCombo" Grid.Column="1"/>
-                </Grid>
-              </StackPanel>
-            </Border>
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="14">
-                <TextBlock Text="显示方式" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                <Grid ColumnDefinitions="*,150,260" RowDefinitions="Auto,Auto">
-                  <StackPanel Grid.RowSpan="2" Spacing="2" Margin="0,0,18,0" VerticalAlignment="Center">
-                    <TextBlock Text="一直显示" FontSize="12" Foreground="#E7E7E9"/>
-                    <TextBlock Text="开启：HUD 持续显示。&#10;关闭：电源插拔显示电池；鼠标移到目标屏幕的已配置热区可唤出当前方案。" FontSize="13" Foreground="#C6CA4C" TextWrapping="Wrap" LineHeight="19" Margin="0,3,0,0"/>
-                  </StackPanel>
-                  <TextBlock Grid.Column="1" Text="常驻状态" FontSize="11" Foreground="#85858B" Margin="0,0,18,4"/>
-                  <TextBlock Grid.Column="2" Text="显示层级" FontSize="11" Foreground="#85858B" Margin="0,0,0,4"/>
-                  <ToggleSwitch x:Name="AlwaysVisibleSwitch" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,18,0"/>
-                  <ComboBox x:Name="PersistentLayerCombo" Grid.Row="1" Grid.Column="2" Height="34"/>
-                </Grid>
-              </StackPanel>
-            </Border>
-
-            <Border x:Name="HotZonePanel" Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="12">
-                <CheckBox x:Name="HotZoneEnabledCheck" Content="启用鼠标热区呼出"/>
-                <TextBlock Text="关闭“一直显示”时可用。热区位于目标显示器的完整屏幕范围，可调整位置、大小和停留时长。" TextWrapping="Wrap" FontSize="12" Foreground="#85858B"/>
-                <Grid ColumnDefinitions="*,*,*">
-                  <StackPanel Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区位置"/><ComboBox x:Name="HotZonePositionCombo"/></StackPanel>
-                  <StackPanel Grid.Column="1" Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区宽度 / px"/><NumericUpDown x:Name="HotZoneWidthBox" Minimum="8" Maximum="8192" Increment="10"/></StackPanel>
-                  <StackPanel Grid.Column="2" Spacing="5"><TextBlock Text="热区高度 / px"/><NumericUpDown x:Name="HotZoneHeightBox" Minimum="2" Maximum="8192" Increment="2"/></StackPanel>
-                </Grid>
-                <Grid ColumnDefinitions="*,*">
-                  <StackPanel Spacing="5" Margin="0,0,12,0"><TextBlock Text="热区 X 微调 / px"/><NumericUpDown x:Name="HotZoneOffsetXBox" Minimum="-32768" Maximum="32768"/></StackPanel>
-                  <StackPanel Grid.Column="1" Spacing="5"><TextBlock Text="热区 Y 微调 / px"/><NumericUpDown x:Name="HotZoneOffsetYBox" Minimum="-32768" Maximum="32768"/></StackPanel>
-                </Grid>
-                <Grid ColumnDefinitions="*,Auto">
-                  <TextBlock Text="热区停留时间"/><TextBlock x:Name="HotZoneDwellText" Grid.Column="1"/>
-                </Grid>
-                <Slider x:Name="HotZoneDwellSlider" Minimum="0" Maximum="3000" TickFrequency="100" IsSnapToTickEnabled="True"/>
-                <CheckBox x:Name="HotZoneAdvanceCheck" Content="每次热区呼出切换到下一个方案"/>
-              </StackPanel>
-            </Border>
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <Grid ColumnDefinitions="220,*,64" RowDefinitions="Auto,Auto">
-                <StackPanel Grid.RowSpan="2" Spacing="3" Margin="0,0,18,0" VerticalAlignment="Center">
-                  <TextBlock Text="HUD 不透明度" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                  <TextBlock Text="100% 为完全不透明。" FontSize="11" Foreground="#85858B"/>
-                </StackPanel>
-                <Slider x:Name="HudOpacitySlider" Grid.Column="1" Grid.RowSpan="2" Minimum="10" Maximum="100" TickFrequency="1" VerticalAlignment="Center" Margin="0,0,14,0"/>
-                <TextBlock x:Name="HudOpacityValueText" Grid.Column="2" Grid.RowSpan="2" Text="100%" FontSize="13" FontWeight="SemiBold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+    <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="26,22,26,20">
+      <Border Grid.Row="0" Background="Transparent" Padding="0,0,0,18" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="0">
+        <Grid ColumnDefinitions="*,Auto,Auto">
+          <StackPanel>
+            <Grid ColumnDefinitions="14,*" VerticalAlignment="Center">
+              <Grid x:Name="EndfieldColorMarker" Width="2" Height="36" RowDefinitions="*,*,*" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False">
+                <Border Grid.Row="0" Background="#FFFA00" />
+                <Border Grid.Row="1" Background="#01FFA2" />
+                <Border Grid.Row="2" Background="#FF1AAC" />
               </Grid>
-            </Border>
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="14">
-                <TextBlock Text="HUD 字体" Foreground="#C6CA4C"/>
-                <ComboBox x:Name="HudFontCombo" MinWidth="320" MaxWidth="520" HorizontalAlignment="Left"/>
-                <TextBlock Text="选择已安装字体；系统默认会自动补全缺失的中文字符。" TextWrapping="Wrap" Foreground="#85858B"/>
-              </StackPanel>
-            </Border>
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="14">
-                <TextBlock Text="位置" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                <Grid ColumnDefinitions="*,*">
-                  <StackPanel Spacing="4" Margin="0,0,6,0">
-                    <TextBlock Text="目标显示器" FontSize="11" Foreground="#85858B"/>
-                    <ComboBox x:Name="MonitorCombo" Height="34"/>
+              <TextBlock x:Name="WorkspacePageTitle" Text="显示与位置" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource EcpText}" TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Center" />
+            </Grid>
+          </StackPanel>
+          <Button x:Name="LanguageButton" Grid.Column="1" MinHeight="38" MinWidth="180" Margin="16,0,0,0" Padding="12,7" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <StackPanel Orientation="Horizontal" Spacing="9">
+              <Path x:Name="LanguageIcon" Width="20" Height="20" Stretch="Uniform" IsHitTestVisible="False" Stroke="{DynamicResource EcpAccent}" StrokeThickness="1.5" Data="M10,1 A9,9 0 1 0 10,19 A9,9 0 1 0 10,1 M1,10 H19 M10,1 C4,5 4,15 10,19 M10,1 C16,5 16,15 10,19" />
+              <TextBlock x:Name="LanguageButtonLabel" VerticalAlignment="Center" TextWrapping="Wrap" />
+            </StackPanel>
+          </Button>
+          <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center" Margin="10,0,0,0">
+            <Button x:Name="OpenSettingsFolderBtn" Content="配置文件夹" MinHeight="38" MinWidth="100" Padding="14,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Button x:Name="SaveBtn" Content="保存并应用" MinHeight="38" MinWidth="108" Padding="16,7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{DynamicResource EcpAccent}" Foreground="{DynamicResource EcpOnAccent}" FontWeight="SemiBold" />
+          </StackPanel>
+        </Grid>
+      </Border>
+      <TabControl x:Name="MainSettingsTabs" Classes="content-only" Grid.Row="1" Margin="0">
+        <TabItem x:Name="DisplayPage" Header="显示与位置">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="4,12,4,18" Spacing="12">
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="14">
+                  <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Spacing="3" Margin="0,0,18,0">
+                      <TextBlock Text="HUD 总开关" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                      <TextBlock Text="控制 HUD 的全部显示功能。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <ToggleSwitch x:Name="HudEnabledSwitch" Grid.Column="1" VerticalAlignment="Center" />
+                  </Grid>
+                  <Border Height="1" Background="{DynamicResource EcpBorder}" />
+                  <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Spacing="3" Margin="0,0,18,0">
+                      <TextBlock Text="开机启动" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <TextBlock Text="登录 Windows 后自动启动 Endfield Charge Plus。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center" />
+                  </Grid>
+                  <TextBlock x:Name="StartupStatusText" IsVisible="False" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpAccent}" />
+                  <Border Height="1" Background="{DynamicResource EcpBorder}" />
+                </StackPanel>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="14">
+                  <TextBlock Text="显示方式" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                  <Grid ColumnDefinitions="*,150,260" RowDefinitions="Auto,Auto">
+                    <StackPanel Grid.RowSpan="2" Spacing="2" Margin="0,0,18,0" VerticalAlignment="Center">
+                      <TextBlock Text="一直显示" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <TextBlock Text="开启：HUD 持续显示。&#10;关闭：电源插拔显示电池；鼠标移到目标屏幕的已配置热区可唤出当前方案。" FontSize="14" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" LineHeight="19" Margin="0,3,0,0" />
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" Text="常驻状态" FontSize="12" Foreground="{DynamicResource EcpMuted}" Margin="0,0,18,4" TextWrapping="Wrap" />
+                    <TextBlock Grid.Column="2" Text="显示层级" FontSize="12" Foreground="{DynamicResource EcpMuted}" Margin="0,0,0,4" TextWrapping="Wrap" />
+                    <ToggleSwitch x:Name="AlwaysVisibleSwitch" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,18,0" />
+                    <ComboBox x:Name="PersistentLayerCombo" Grid.Row="1" Grid.Column="2" MinHeight="34" />
+                  </Grid>
+                </StackPanel>
+              </Border>
+              <Border x:Name="HotZonePanel" Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="12">
+                  <CheckBox x:Name="HotZoneEnabledCheck" Content="启用鼠标热区呼出" />
+                  <TextBlock Text="关闭“一直显示”时可用。热区位于目标显示器的完整屏幕范围，可调整位置、大小和停留时长。" TextWrapping="Wrap" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" />
+                  <Grid ColumnDefinitions="*,*,*">
+                    <StackPanel Spacing="5" Margin="0,0,12,0">
+                      <TextBlock Text="热区位置" TextWrapping="Wrap" />
+                      <ComboBox x:Name="HotZonePositionCombo" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Spacing="5" Margin="0,0,12,0">
+                      <TextBlock Text="热区宽度 / px" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="HotZoneWidthBox" Minimum="8" Maximum="8192" Increment="10" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Spacing="5">
+                      <TextBlock Text="热区高度 / px" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="HotZoneHeightBox" Minimum="2" Maximum="8192" Increment="2" />
+                    </StackPanel>
+                  </Grid>
+                  <Grid ColumnDefinitions="*,*">
+                    <StackPanel Spacing="5" Margin="0,0,12,0">
+                      <TextBlock Text="热区 X 微调 / px" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="HotZoneOffsetXBox" Minimum="-32768" Maximum="32768" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Spacing="5">
+                      <TextBlock Text="热区 Y 微调 / px" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="HotZoneOffsetYBox" Minimum="-32768" Maximum="32768" />
+                    </StackPanel>
+                  </Grid>
+                  <Grid ColumnDefinitions="*,Auto">
+                    <TextBlock Text="热区停留时间" TextWrapping="Wrap" />
+                    <TextBlock x:Name="HotZoneDwellText" Grid.Column="1" TextWrapping="Wrap" />
+                  </Grid>
+                  <Slider x:Name="HotZoneDwellSlider" Minimum="0" Maximum="3000" TickFrequency="100" IsSnapToTickEnabled="True" />
+                  <CheckBox x:Name="HotZoneAdvanceCheck" Content="每次热区呼出切换到下一个方案" />
+                </StackPanel>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <Grid ColumnDefinitions="220,*,64" RowDefinitions="Auto,Auto">
+                  <StackPanel Grid.RowSpan="2" Spacing="3" Margin="0,0,18,0" VerticalAlignment="Center">
+                    <TextBlock Text="HUD 不透明度" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                    <TextBlock Text="100% 为完全不透明。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
                   </StackPanel>
-                  <StackPanel Grid.Column="1" Spacing="4" Margin="6,0,0,0">
-                    <TextBlock Text="定位方式" FontSize="11" Foreground="#85858B"/>
-                    <ComboBox x:Name="PositionModeCombo" Height="34"/>
-                  </StackPanel>
+                  <Slider x:Name="HudOpacitySlider" Grid.Column="1" Grid.RowSpan="2" Minimum="10" Maximum="100" TickFrequency="1" VerticalAlignment="Center" Margin="0,0,14,0" />
+                  <TextBlock x:Name="HudOpacityValueText" Grid.Column="2" Grid.RowSpan="2" Text="100%" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource EcpText}" VerticalAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" />
                 </Grid>
-
-                <Border x:Name="PresetPositionPanel" Background="#1E1E20" CornerRadius="8" Padding="14">
-                  <StackPanel Spacing="10">
-                    <Grid ColumnDefinitions="*,150,150">
-                      <StackPanel Spacing="4" Margin="0,0,8,0">
-                        <TextBlock Text="预设位置" FontSize="11" Foreground="#85858B"/>
-                        <ComboBox x:Name="PositionCombo" Height="34"/>
-                      </StackPanel>
-                      <StackPanel Grid.Column="1" Spacing="4" Margin="8,0">
-                        <TextBlock Text="X 微调 / px" FontSize="11" Foreground="#85858B"/>
-                        <NumericUpDown x:Name="OffsetXBox" Minimum="-10000" Maximum="10000" Increment="1"/>
-                      </StackPanel>
-                      <StackPanel Grid.Column="2" Spacing="4" Margin="8,0,0,0">
-                        <TextBlock Text="Y 微调 / px" FontSize="11" Foreground="#85858B"/>
-                        <NumericUpDown x:Name="OffsetYBox" Minimum="-10000" Maximum="10000" Increment="1"/>
-                      </StackPanel>
-                    </Grid>
-                    <TextBlock Text="X 向右为正，Y 向下为正。切换预设位置会将 X/Y 微调归零。" FontSize="11" Foreground="#6F6F74"/>
-                  </StackPanel>
-                </Border>
-
-                <Border x:Name="CustomPositionPanel" Background="#1E1E20" CornerRadius="8" Padding="14">
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="14">
+                  <TextBlock Text="HUD 字体" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                  <ComboBox x:Name="HudFontCombo" MinWidth="220" MaxWidth="520" HorizontalAlignment="Left" />
+                  <TextBlock Text="选择已安装字体；系统默认会自动补全缺失的中文字符。" TextWrapping="Wrap" Foreground="{DynamicResource EcpMuted}" />
+                </StackPanel>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="14">
+                  <TextBlock Text="位置" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
                   <Grid ColumnDefinitions="*,*">
                     <StackPanel Spacing="4" Margin="0,0,6,0">
-                      <TextBlock Text="X 坐标 / px" FontSize="11" Foreground="#85858B"/>
-                      <NumericUpDown x:Name="CustomXBox" Minimum="-10000" Maximum="20000" Increment="1"/>
+                      <TextBlock Text="目标显示器" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <ComboBox x:Name="MonitorCombo" MinHeight="34" />
                     </StackPanel>
                     <StackPanel Grid.Column="1" Spacing="4" Margin="6,0,0,0">
-                      <TextBlock Text="Y 坐标 / px" FontSize="11" Foreground="#85858B"/>
-                      <NumericUpDown x:Name="CustomYBox" Minimum="-10000" Maximum="20000" Increment="1"/>
+                      <TextBlock Text="定位方式" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <ComboBox x:Name="PositionModeCombo" MinHeight="34" />
                     </StackPanel>
                   </Grid>
-                </Border>
-              </StackPanel>
-            </Border>
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="18,16">
-              <StackPanel Spacing="14">
-                <Grid ColumnDefinitions="*,Auto">
-                  <TextBlock Text="尺寸与动画" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C" VerticalAlignment="Center"/>
-                  <Button x:Name="ResetSizeAnimationBtn" Grid.Column="1" Content="恢复默认" Height="32" MinWidth="86" Padding="12,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                </Grid>
-                <Grid ColumnDefinitions="*,*,*,*,*">
-                  <StackPanel Spacing="4" Margin="0,0,5,0">
-                    <TextBlock Text="HUD 缩放" FontSize="11" Foreground="#85858B"/>
-                    <NumericUpDown x:Name="ScaleBox" Minimum="0.4" Maximum="1.4" Increment="0.05" FormatString="0.00"/>
-                  </StackPanel>
-                  <StackPanel Grid.Column="1" Spacing="4" Margin="5,0">
-                    <TextBlock Text="总时长 / 秒" FontSize="11" Foreground="#85858B"/>
-                    <NumericUpDown x:Name="DurationBox" Minimum="3" Maximum="10" Increment="0.25" FormatString="0.00"/>
-                  </StackPanel>
-                  <StackPanel Grid.Column="2" Spacing="4" Margin="5,0">
-                    <TextBlock Text="回弹强度" FontSize="11" Foreground="#85858B"/>
-                    <NumericUpDown x:Name="BounceBox" Minimum="0" Maximum="0.5" Increment="0.025" FormatString="0.000"/>
-                  </StackPanel>
-                  <StackPanel Grid.Column="3" Spacing="4" Margin="5,0">
-                    <TextBlock Text="波纹强度" FontSize="11" Foreground="#85858B"/>
-                    <NumericUpDown x:Name="RippleIntensityBox" Minimum="0" Maximum="2" Increment="0.05" FormatString="0.00"/>
-                  </StackPanel>
-                  <StackPanel Grid.Column="4" Spacing="4" Margin="5,0,0,0">
-                    <TextBlock Text="波纹幅度" FontSize="11" Foreground="#85858B"/>
-                    <NumericUpDown x:Name="RippleSpreadBox" Minimum="0.5" Maximum="1.5" Increment="0.05" FormatString="0.00"/>
-                  </StackPanel>
-                </Grid>
-                <StackPanel Spacing="4" Margin="0,10,0,0">
-                  <TextBlock Text="数据采样间隔 / 秒（所有 HUD 共用）" FontSize="11" Foreground="#85858B"/>
-                  <NumericUpDown x:Name="SamplingIntervalBox" Minimum="0.1" Maximum="60" Increment="0.1" FormatString="0.0"/>
-                  <TextBlock Text="编辑任意 HUD 都可修改；保存后所有 HUD 使用同一采样间隔。时钟按秒更新，外部 API 保留自己的刷新间隔。" FontSize="11" Foreground="#85858B" TextWrapping="Wrap"/>
+                  <Border x:Name="PresetPositionPanel" Background="{DynamicResource EcpInput}" CornerRadius="{DynamicResource EcpRadius}" Padding="14">
+                    <StackPanel Spacing="10">
+                      <Grid ColumnDefinitions="*,150,150">
+                        <StackPanel Spacing="4" Margin="0,0,8,0">
+                          <TextBlock Text="预设位置" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                          <ComboBox x:Name="PositionCombo" MinHeight="34" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Spacing="4" Margin="8,0">
+                          <TextBlock Text="X 微调 / px" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                          <NumericUpDown x:Name="OffsetXBox" Minimum="-10000" Maximum="10000" Increment="1" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Spacing="4" Margin="8,0,0,0">
+                          <TextBlock Text="Y 微调 / px" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                          <NumericUpDown x:Name="OffsetYBox" Minimum="-10000" Maximum="10000" Increment="1" />
+                        </StackPanel>
+                      </Grid>
+                      <TextBlock Text="X 向右为正，Y 向下为正。切换预设位置会将 X/Y 微调归零。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    </StackPanel>
+                  </Border>
+                  <Border x:Name="CustomPositionPanel" Background="{DynamicResource EcpInput}" CornerRadius="{DynamicResource EcpRadius}" Padding="14">
+                    <Grid ColumnDefinitions="*,*">
+                      <StackPanel Spacing="4" Margin="0,0,6,0">
+                        <TextBlock Text="X 坐标 / px" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <NumericUpDown x:Name="CustomXBox" Minimum="-10000" Maximum="20000" Increment="1" />
+                      </StackPanel>
+                      <StackPanel Grid.Column="1" Spacing="4" Margin="6,0,0,0">
+                        <TextBlock Text="Y 坐标 / px" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <NumericUpDown x:Name="CustomYBox" Minimum="-10000" Maximum="20000" Increment="1" />
+                      </StackPanel>
+                    </Grid>
+                  </Border>
                 </StackPanel>
-              </StackPanel>
-            </Border>
-
-
-          </StackPanel>
-        </ScrollViewer>
-      </TabItem>
-
-      <TabItem x:Name="HudContentPage" Header="HUD显示内容">
-        <custom:HudCustomizerView x:Name="Customizer"/>
-      </TabItem>
-
-      <TabItem x:Name="DataManagementPage" Header="数据管理">
-        <TabControl x:Name="DataManagementTabs" Classes="settings-data">
-          <TabControl.ItemsPanel><ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate></TabControl.ItemsPanel>
-          <TabItem x:Name="HardwarePage" Header="硬件数据">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-              <StackPanel x:Name="HardwarePanel" Margin="4,12,4,4" Spacing="14"/>
-            </ScrollViewer>
-          </TabItem>
-        </TabControl>
-      </TabItem>
-      <TabItem x:Name="ExperimentalPage" Header="实验性功能">
-        <ScrollViewer>
-          <StackPanel x:Name="ExperimentalPanel" Margin="20" Spacing="16"/>
-        </ScrollViewer>
-      </TabItem>
-
-      <TabItem x:Name="ManualPage" Header="使用手册">
-        <settings:UserManualView x:Name="ManualView"/>
-      </TabItem>
-      <TabItem x:Name="AboutPage" Header="关于">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-          <StackPanel Margin="4,12,4,18" Spacing="12">
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="24,22">
-              <Grid ColumnDefinitions="96,*,320">
-                <Border Width="76" Height="76" CornerRadius="18" Background="#1E1E20" BorderBrush="#39393D" BorderThickness="1" VerticalAlignment="Top">
-                  <Image Source="avares://EndfieldChargePlus/Assets/tray_bolt.png" Width="66" Height="66" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-
-                <StackPanel Grid.Column="1" Spacing="5" Margin="18,0,24,0">
-                  <TextBlock Text="Endfield Charge Plus" FontSize="24" FontWeight="Bold" Foreground="White"/>
-                  <TextBlock Text="终末地风格状态栏 HUD" FontSize="14" Foreground="#D2D2D6"/>
-                  <TextBlock x:Name="AboutArchitectureText" Text="Windows · x64" FontSize="12" Foreground="#8E8E94" Margin="0,1,0,0"/>
-                  <StackPanel Orientation="Horizontal" Spacing="18" Margin="0,7,0,0">
-                    <TextBlock x:Name="AboutVersionText" Text="v0.1.2" FontSize="13" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                    <TextBlock x:Name="BuildDateText" Text="构建日期  2026.10.18" FontSize="13" Foreground="#D2D2D6"/>
-                  </StackPanel>
-                </StackPanel>
-
-                <Border Grid.Column="2" Background="#1E1E20" BorderBrush="#343438" BorderThickness="1" CornerRadius="8" Padding="14,12">
-                  <Grid ColumnDefinitions="96,*" VerticalAlignment="Center">
-                    <Button x:Name="CheckUpdateBtn"
-                            Grid.Column="0"
-                            Content="检查更新"
-                            Width="84"
-                            Height="36"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Background="#C6CA4C"
-                            Foreground="#171719"
-                            FontWeight="SemiBold"/>
-                    <StackPanel Grid.Column="1" Spacing="6" VerticalAlignment="Center">
-                      <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.1.2" FontSize="12" Foreground="#D2D2D6"/>
-                      <TextBlock x:Name="UpdateLatestVersionText" Text="最新版本：尚未获取" FontSize="12" Foreground="#D2D2D6"/>
-                      <TextBlock x:Name="UpdateStatusText" Text="状态：尚未检查" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="18,16">
+                <StackPanel Spacing="14">
+                  <Grid ColumnDefinitions="*,Auto">
+                    <TextBlock Text="尺寸与动画" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <Button x:Name="ResetSizeAnimationBtn" Grid.Column="1" Content="恢复默认" MinHeight="32" MinWidth="86" Padding="12,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                  </Grid>
+                  <Grid ColumnDefinitions="*,*,*,*,*">
+                    <StackPanel Spacing="4" Margin="0,0,5,0">
+                      <TextBlock Text="HUD 缩放" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="ScaleBox" Minimum="0.4" Maximum="1.4" Increment="0.05" FormatString="0.00" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Spacing="4" Margin="5,0">
+                      <TextBlock Text="总时长 / 秒" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="DurationBox" Minimum="3" Maximum="10" Increment="0.25" FormatString="0.00" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Spacing="4" Margin="5,0">
+                      <TextBlock Text="回弹强度" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="BounceBox" Minimum="0" Maximum="0.5" Increment="0.025" FormatString="0.000" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="3" Spacing="4" Margin="5,0">
+                      <TextBlock Text="波纹强度" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="RippleIntensityBox" Minimum="0" Maximum="2" Increment="0.05" FormatString="0.00" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="4" Spacing="4" Margin="5,0,0,0">
+                      <TextBlock Text="波纹幅度" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <NumericUpDown x:Name="RippleSpreadBox" Minimum="0.5" Maximum="1.5" Increment="0.05" FormatString="0.00" />
                     </StackPanel>
                   </Grid>
-                </Border>
-              </Grid>
-            </Border>
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="20,18">
-              <StackPanel Spacing="12">
-                <TextBlock Text="项目与协议" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                <Grid ColumnDefinitions="128,*,80" RowDefinitions="Auto,Auto,Auto,Auto">
-                  <TextBlock Text="开源协议" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
-                  <TextBlock Grid.Column="1" Text="MIT" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
-
-                  <TextBlock Grid.Row="1" Text="本项目 GitHub" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
-                  <TextBlock Grid.Row="1" Grid.Column="1" Text="github.com/GlacierGlimmer/zmd-charge-plus" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
-                  <Button x:Name="OpenProjectGithubBtn" Grid.Row="1" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-
-                  <TextBlock Grid.Row="2" Text="原项目 GitHub" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center" Margin="0,0,0,10"/>
-                  <TextBlock Grid.Row="2" Grid.Column="1" Text="github.com/QinAnze/zmd-charge" FontSize="13" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
-                  <Button x:Name="OpenUpstreamBtn" Grid.Row="2" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-
-                  <TextBlock Grid.Row="3" Text="项目网站" FontSize="12" Foreground="#8E8E94" VerticalAlignment="Center"/>
-                  <TextBlock Grid.Row="3" Grid.Column="1" Text="zmd-bar.x-neko.com" FontSize="13" Foreground="White" VerticalAlignment="Center"/>
-                  <Button x:Name="OpenWebsiteBtn" Grid.Row="3" Grid.Column="2" Content="打开" Height="30" MinWidth="66" Padding="10,4" Margin="8,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                  <StackPanel Spacing="4" Margin="0,10,0,0">
+                    <TextBlock Text="数据采样间隔 / 秒（所有 HUD 共用）" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    <NumericUpDown x:Name="SamplingIntervalBox" Minimum="0.1" Maximum="60" Increment="0.1" FormatString="0.0" />
+                    <TextBlock Text="编辑任意 HUD 都可修改；保存后所有 HUD 使用同一采样间隔。时钟按秒更新，外部 API 保留自己的刷新间隔。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                  </StackPanel>
+                </StackPanel>
+              </Border>
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+        <TabItem x:Name="HudContentPage" Header="HUD显示内容">
+          <custom:HudCustomizerView x:Name="Customizer" />
+        </TabItem>
+        <TabItem x:Name="DataManagementPage" Header="数据管理">
+          <TabControl x:Name="DataManagementTabs" Classes="content-only">
+            <TabItem x:Name="HardwarePage" Header="硬件数据">
+              <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="HardwarePanel" Margin="4,12,4,4" Spacing="14" />
+              </ScrollViewer>
+            </TabItem>
+          </TabControl>
+        </TabItem>
+        <TabItem x:Name="ExperimentalPage" Header="实验性功能">
+          <ScrollViewer>
+            <StackPanel x:Name="ExperimentalPanel" Margin="20" Spacing="16" />
+          </ScrollViewer>
+        </TabItem>
+        <TabItem x:Name="ManualPage" Header="使用手册">
+          <settings:UserManualView x:Name="ManualView" />
+        </TabItem>
+        <TabItem x:Name="AboutPage" Header="关于">
+          <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="4,12,4,18" Spacing="12">
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="24,22">
+                <Grid ColumnDefinitions="96,*,320">
+                  <Border Width="76" Height="76" CornerRadius="18" Background="{DynamicResource EcpInput}" BorderBrush="#39393D" BorderThickness="1" VerticalAlignment="Top">
+                    <settings:AboutSvg Icon="ecp" Width="66" Height="66" HorizontalAlignment="Center" />
+                  </Border>
+                  <StackPanel Grid.Column="1" Spacing="5" Margin="18,0,24,0">
+                    <TextBlock Text="Endfield Charge Plus" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource EcpText}" TextWrapping="Wrap" />
+                    <TextBlock Text="终末地风格状态栏 HUD" FontSize="14" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    <StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="cpu" Width="14" Height="14" /><TextBlock x:Name="AboutArchitectureText" Text="Windows · x64" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" Margin="0,1,0,0" TextWrapping="Wrap" /></StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="18" Margin="0,7,0,0">
+                      <StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="tag" Width="14" Height="14" /><TextBlock x:Name="AboutVersionText" Text="v0.2.0" FontSize="14" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" /></StackPanel>
+                      <StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="calendar" Width="14" Height="14" /><TextBlock x:Name="BuildDateText" Text="构建日期  2026.10.18" FontSize="14" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" /></StackPanel>
+                    </StackPanel>
+                  </StackPanel>
+                  <Border Grid.Column="2" Background="{DynamicResource EcpInput}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="14,12">
+                    <StackPanel Spacing="10" VerticalAlignment="Center">
+                      <Button x:Name="CheckUpdateBtn" Content="检查更新" MinHeight="36" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{DynamicResource EcpAccent}" Foreground="{DynamicResource EcpOnAccent}" FontWeight="SemiBold" />
+                      <StackPanel Spacing="6" VerticalAlignment="Center">
+                        <TextBlock x:Name="UpdateCurrentVersionText" Text="当前版本：v0.2.0" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <TextBlock x:Name="UpdateLatestVersionText" Text="最新版本：尚未获取" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <TextBlock x:Name="UpdateStatusText" Text="状态：尚未检查" FontSize="12.5" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                      </StackPanel>
+                    </StackPanel>
+                  </Border>
                 </Grid>
-              </StackPanel>
-            </Border>
-
-            <Border Background="#242426" BorderBrush="#343438" BorderThickness="1" CornerRadius="10" Padding="20,18">
-              <StackPanel Spacing="12">
-                <TextBlock Text="配置与维护" FontSize="14" FontWeight="SemiBold" Foreground="#C6CA4C"/>
-                <WrapPanel Orientation="Horizontal">
-                  <Button x:Name="ExportSettingsBtn" Content="导出配置" Height="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                  <Button x:Name="ImportSettingsBtn" Content="导入配置" Height="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                  <Button x:Name="BackupSettingsBtn" Content="备份当前配置" Height="34" MinWidth="112" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                  <Button x:Name="OpenLogsFolderBtn" Content="日志文件夹" Height="34" MinWidth="98" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                  <Button x:Name="ResetAllSettingsBtn" Content="恢复全部默认" Height="34" MinWidth="112" Padding="14,5" Margin="0,0,0,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                </WrapPanel>
-                <TextBlock x:Name="MaintenanceStatusText" Text="" FontSize="12" Foreground="#C6CA4C" TextWrapping="Wrap"/>
-              </StackPanel>
-            </Border>
-
-            <TextBlock Text="© 2026 GlacierGlimmer_冰川雪貓" FontSize="13" Foreground="#7F7F85" HorizontalAlignment="Center" Margin="0,8,0,0"/>
-          </StackPanel>
-        </ScrollViewer>
-      </TabItem>
-    </TabControl>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="20,18">
+                <StackPanel Spacing="12">
+                  <StackPanel Orientation="Horizontal" Spacing="8"><settings:AboutSvg Icon="file-badge" /><TextBlock Text="项目与协议" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" /></StackPanel>
+                  <StackPanel x:Name="AboutGeneralLinks" Spacing="12">
+                    <Grid ColumnDefinitions="156,*,Auto" MinHeight="36">
+                      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,20,0" VerticalAlignment="Center"><settings:AboutSvg Icon="file-badge" /><TextBlock Text="开源协议" MaxWidth="108" TextWrapping="Wrap" FontSize="14" VerticalAlignment="Center" /></StackPanel>
+                      <TextBlock Grid.Column="1" Text="MIT" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    </Grid>
+                    <Grid ColumnDefinitions="156,*,Auto" MinHeight="36">
+                      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,20,0" VerticalAlignment="Center"><settings:AboutSvg Icon="globe" /><TextBlock Text="项目网站" MaxWidth="108" TextWrapping="Wrap" FontSize="14" VerticalAlignment="Center" /></StackPanel>
+                      <TextBlock Grid.Column="1" Text="zmd-bar.x-neko.com" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,12,0" />
+                      <Button x:Name="OpenWebsiteBtn" Grid.Column="2" Content="打开" MinHeight="36" MinWidth="84" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid ColumnDefinitions="156,*,Auto" MinHeight="36">
+                      <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,20,0" VerticalAlignment="Center"><settings:AboutSvg Icon="bug" /><TextBlock Text="问题追踪" MaxWidth="108" TextWrapping="Wrap" FontSize="14" VerticalAlignment="Center" /></StackPanel>
+                      <TextBlock Grid.Column="1" Text="ecp-bugs.x-neko.com" FontSize="14" VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,12,0" />
+                      <Button x:Name="OpenIssueTrackerBtn" Grid.Column="2" Content="问题追踪" MinHeight="36" MinWidth="84" HorizontalContentAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                  </StackPanel>
+                  <StackPanel Orientation="Horizontal" Spacing="8"><settings:AboutSvg Icon="github" /><TextBlock Text="本项目 GitHub" FontSize="14" FontWeight="SemiBold" /></StackPanel>
+                  <StackPanel x:Name="AboutRepositoryRows" Spacing="8" />
+                </StackPanel>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="20,18">
+                <StackPanel Spacing="12">
+                  <StackPanel Orientation="Horizontal" Spacing="8"><settings:AboutSvg Icon="wrench" /><TextBlock Text="配置与维护" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" /></StackPanel>
+                  <WrapPanel Orientation="Horizontal">
+                    <Button x:Name="ExportSettingsBtn" MinHeight="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ><StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="download" Width="16" Height="16" /><TextBlock Text="导出配置" VerticalAlignment="Center" /></StackPanel></Button>
+                    <Button x:Name="ImportSettingsBtn" MinHeight="34" MinWidth="92" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ><StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="upload" Width="16" Height="16" /><TextBlock Text="导入配置" VerticalAlignment="Center" /></StackPanel></Button>
+                    <Button x:Name="BackupSettingsBtn" MinHeight="34" MinWidth="112" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ><StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="copy" Width="16" Height="16" /><TextBlock Text="备份当前配置" VerticalAlignment="Center" /></StackPanel></Button>
+                    <Button x:Name="OpenLogsFolderBtn" MinHeight="34" MinWidth="98" Padding="14,5" Margin="0,0,8,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ><StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="folder-open" Width="16" Height="16" /><TextBlock Text="日志文件夹" VerticalAlignment="Center" /></StackPanel></Button>
+                    <Button x:Name="ResetAllSettingsBtn" MinHeight="34" MinWidth="112" Padding="14,5" Margin="0,0,0,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ><StackPanel Orientation="Horizontal" Spacing="7"><settings:AboutSvg Icon="rotate-ccw" Width="16" Height="16" /><TextBlock Text="恢复全部默认" VerticalAlignment="Center" /></StackPanel></Button>
+                  </WrapPanel>
+                  <TextBlock x:Name="MaintenanceStatusText" Text="" FontSize="12.5" Foreground="{DynamicResource EcpAccent}" TextWrapping="Wrap" />
+                </StackPanel>
+              </Border>
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="4" Padding="20,18"><StackPanel x:Name="AboutAuthorLinks" Spacing="10" /></Border>
+              <TextBlock Text="© 2026 GlacierGlimmer冰川雪貓" FontSize="14" Foreground="{DynamicResource EcpMuted}" HorizontalAlignment="Center" Margin="0,8,0,0" TextWrapping="Wrap" />
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+        <TabItem x:Name="QuickActionsPage" Header="快捷操作">
+          <ScrollViewer>
+            <StackPanel x:Name="QuickActionsPanel" Spacing="16">
+              <Border Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="{DynamicResource EcpRadius}" Padding="20">
+                <StackPanel Spacing="12">
+                  <TextBlock Text="显示 / 隐藏全部 HUD 的快捷键" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                  <Grid ColumnDefinitions="*,Auto">
+                    <TextBox x:Name="HudHotkeyBox" IsReadOnly="True" Watermark="点击后按下组合键" MinHeight="34" />
+                    <Button x:Name="ClearHudHotkeyBtn" Grid.Column="1" Content="清除快捷键" Margin="10,0,0,0" />
+                  </Grid>
+                  <TextBlock Text="使用 Ctrl 或 Alt，可加 Shift；支持字母、数字和 F1–F24（F12 除外）。保存后生效，留空关闭。" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
+                  <TextBlock Text="同时控制主 HUD 与附加实例。隐藏期间暂停自动呼出，再按一次恢复原有显示模式；重启后恢复显示。" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
+                  <TextBlock x:Name="HudHotkeyStatusText" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpAccent}" />
+                  <Grid ColumnDefinitions="*,180">
+                    <TextBlock Text="快捷键显示动画" FontSize="12.5" VerticalAlignment="Center" TextWrapping="Wrap" />
+                    <ComboBox x:Name="HudHotkeyAnimationCombo" Grid.Column="1" />
+                  </Grid>
+                </StackPanel>
+              </Border>
+            </StackPanel>
+          </ScrollViewer>
+        </TabItem>
+      </TabControl>
+    </Grid>
   </Grid>
+      </ContentControl>
+      <Grid x:Name="RepositoriesOverlay" Grid.RowSpan="2" Background="#99000000" IsVisible="False" FlowDirection="LeftToRight">
+        <LayoutTransformControl x:Name="RepositoryScaleHost" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+          <Border x:Name="RepositoryDialog" Classes="ecp-native" Width="380" Background="{DynamicResource EcpCard}" BorderBrush="{DynamicResource EcpBorder}" BorderThickness="1" CornerRadius="8" Padding="22">
+            <StackPanel Spacing="18">
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="GitHub" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <Button x:Name="RepositoryCloseButton" Grid.Column="1" Width="32" Height="32" Padding="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                  <Path Width="12" Height="12" Stretch="Uniform" Stroke="{DynamicResource EcpText}" StrokeThickness="1.4" Data="M1,1 L11,11 M11,1 L1,11" />
+                </Button>
+              </Grid>
+              <StackPanel x:Name="RepositoryRows" Spacing="8" />
+            </StackPanel>
+          </Border>
+        </LayoutTransformControl>
+      </Grid>
+    </Grid>
+  </Border>
 </Window>

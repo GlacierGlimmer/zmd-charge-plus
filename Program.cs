@@ -21,6 +21,11 @@ internal static class Program
     [STAThread]
     public static void Main(string[] args)
     {
+        if(args.Length==2 && args[0]=="--package-probe")
+        {
+            System.IO.File.WriteAllText(args[1],System.Text.Json.JsonSerializer.Serialize(new {executable=Environment.ProcessPath,assembly=typeof(Program).Assembly.Location,programBase=AppContext.BaseDirectory,architecture=System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString(),startupExecutable=Settings.StartupManager.StartupExecutablePath,dataDirectory=Interop.AppPaths.DataDirectory,settingsPath=Settings.SettingsManager.SettingsPath,backupsDirectory=Settings.SettingsManager.BackupsDirectory,logsDirectory=AppLog.LogsDirectory,elevated=new System.Security.Principal.WindowsPrincipal(System.Security.Principal.WindowsIdentity.GetCurrent()).IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator)}));
+            return;
+        }
         int restartIndex=Array.IndexOf(args,"--restart-from");
         if(restartIndex>=0)
         {
@@ -50,6 +55,10 @@ internal static class Program
         try
         {
             _singleInstanceMutex = new Mutex(initiallyOwned: true, SingleInstanceMutexName, out isPrimaryInstance);
+        }
+        catch (UnauthorizedAccessException)
+        {
+            isPrimaryInstance = false;
         }
         catch
         {

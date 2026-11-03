@@ -23,7 +23,7 @@ public sealed record AnimationOptions
         BounceStrength = Math.Clamp(s.BounceStrength, 0d, 0.5d),
         RippleIntensity = Math.Clamp(s.RippleIntensity, 0d, 2d),
         RippleSpread = Math.Clamp(s.RippleSpread, 0.5d, 1.5d),
-        FontHeightFactor = Math.Max(1,GlobalAppearance.NormalizeScale(s.GlobalFontScale)),
+        FontHeightFactor = Math.Max(1,GlobalAppearance.NormalizeFontScale(s.GlobalFontScale)),
     };
 }
 
@@ -265,17 +265,17 @@ internal static class HudAnimations
     }
 
     public const double RollDistance=60;
-    public static Animation RollOut()
+    public static Animation RollOut(int direction=-1)
     {
         var animation=new Animation { Duration=TimeSpan.FromMilliseconds(360),FillMode=FillMode.Forward };
         animation.Children.Add(KF(0,null,TY(0)));
-        animation.Children.Add(KF(1,KS_In,TY(-RollDistance)));
+        animation.Children.Add(KF(1,KS_In,TY((direction>0?1:-1)*RollDistance)));
         return animation;
     }
-    public static Animation RollIn()
+    public static Animation RollIn(int direction=-1)
     {
         var animation=new Animation { Duration=TimeSpan.FromMilliseconds(460),FillMode=FillMode.Forward };
-        animation.Children.Add(KF(0,null,TY(RollDistance)));
+        animation.Children.Add(KF(0,null,TY((direction>0?-1:1)*RollDistance)));
         animation.Children.Add(KF(1,KS_Out,TY(0)));
         return animation;
     }

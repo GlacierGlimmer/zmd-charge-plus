@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Endfield Charge Plus For Linux
+Comment=Endfield Charge Plus For Linux - customizable system HUD
+Comment[zh_CN]=可自定义的终末地风格系统状态 HUD
+Exec=endfield-charge-plus-for-linux
+Icon=endfield-charge-plus-for-linux
+Terminal=false
+Categories=System;Monitor;
+StartupWMClass=EndfieldChargePlus
+Keywords=HUD;Battery;CPU;Memory;Monitor;

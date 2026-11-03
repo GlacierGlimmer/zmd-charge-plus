@@ -1,0 +1,89 @@
+code,name,resource_date,total,translated,identical_english,blank,coverage,placeholder_errors,placeholder_warnings,hash_ok,class
+zh-CN,简体中文 (中国大陆),20261020,2470,2404,66,0,97.3%,0,11,true,ui-complete
+en-US,English (United States),20261020,2470,2470,0,0,100.0%,0,5,true,complete
+zh-TW,繁體中文 (台灣),20261020,2470,2404,66,0,97.3%,0,11,true,ui-complete
+ja-JP,日本語 (日本),20261020,2470,2404,66,0,97.3%,0,6,true,ui-complete
+ko-KR,한국어 (대한민국),20261020,2470,2404,66,0,97.3%,0,5,true,ui-complete
+de-DE,Deutsch (Deutschland),20261020,2470,2251,89,130,91.1%,0,6,true,partial
+fr-FR,Français (France),20261020,2470,2370,100,0,96.0%,0,5,true,ui-complete
+es-ES,Español (España),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+pt-BR,Português (Brasil),20261020,2470,2255,85,130,91.3%,0,5,true,partial
+ru-RU,Русский (Россия),20261020,2470,2268,72,130,91.8%,0,5,true,partial
+ar-SA,العربية (العالم العربي),20261020,2470,2270,70,130,91.9%,0,5,true,partial
+hi-IN,हिंदी (भारत),20261020,2470,2270,70,130,91.9%,0,5,true,partial
+bn-BD,বাংলা (বাংলাদেশ),20261020,2470,2274,66,130,92.1%,0,12,true,partial
+ur-PK,اردو (پاکستان),20261020,2470,2276,64,130,92.1%,0,5,true,partial
+id-ID,Bahasa Indonesia (Indonesia),20261020,2470,2238,102,130,90.6%,0,5,true,partial
+vi-VN,Tiếng Việt (Việt Nam),20261020,2470,2249,91,130,91.1%,0,5,true,partial
+th-TH,ไทย (ประเทศไทย),20261020,2470,2271,69,130,91.9%,0,5,true,partial
+tr-TR,Türkçe (Türkiye),20261020,2470,2261,79,130,91.5%,0,5,true,partial
+it-IT,Italiano (Italia),20261020,2470,2255,85,130,91.3%,0,5,true,partial
+fa-IR,فارسی (ايران),20261020,2470,2270,70,130,91.9%,0,5,true,partial
+af-ZA,Afrikaans (Suid-Afrika),20261020,2470,2250,90,130,91.1%,0,6,true,partial
+az-AZ,Azərbaycanca (Azərbaycan),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+be-BY,Беларуская (Беларусь),20261020,2470,2272,68,130,92.0%,0,5,true,partial
+bg-BG,Български (България),20261020,2470,2272,68,130,92.0%,0,5,true,partial
+bs-BA,Bosanski (Bosna i Hercegovina),20261020,2470,2259,81,130,91.5%,0,6,true,partial
+ca-ES,Català (Catalunya),20261020,2470,2252,88,130,91.2%,0,5,true,partial
+cs-CZ,Čeština (Česko),20261020,2470,2260,80,130,91.5%,0,5,true,partial
+cy-GB,Cymraeg (Cymru),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+da-DK,Dansk (Danmark),20261020,2470,2275,65,130,92.1%,0,7,true,partial
+de-AT,Deitsch (Österreich),20261020,2470,2251,89,130,91.1%,0,6,true,partial
+de-CH,Schwiizerdütsch (Schwiiz),20261020,2470,2381,89,0,96.4%,0,6,true,ui-complete
+el-GR,Ελληνικά (Ελλάδα),20261020,2470,2272,68,130,92.0%,0,5,true,partial
+en-AU,English (Australia),20261020,2470,2470,0,0,100.0%,0,5,true,complete
+en-CA,English (Canada),20261020,2470,2470,0,0,100.0%,0,5,true,complete
+en-GB,English (United Kingdom),20261020,2470,2470,0,0,100.0%,0,5,true,complete
+en-NZ,English (New Zealand),20261020,2470,2470,0,0,100.0%,0,5,true,complete
+es-AR,Español (Argentina),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+es-CL,Español (Chile),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+es-EC,Español (Ecuador),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+es-MX,Español (México),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+es-UY,Español (Uruguay),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+es-VE,Español (Venezuela),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+et-EE,Eesti keel (Eesti),20261020,2470,2251,89,130,91.1%,0,6,true,partial
+eu-ES,Euskara (Euskal Herria),20261020,2470,2255,85,130,91.3%,0,15,true,partial
+fi-FI,Suomi (Suomi),20261020,2470,2257,83,130,91.4%,0,15,true,partial
+fil-PH,Filipino (Pilipinas),20261020,2470,2231,109,130,90.3%,0,5,true,partial
+fr-CA,Français (Canada),20261020,2470,2240,100,130,90.7%,0,5,true,partial
+fr-CH,Français (Suisse),20261020,2470,2240,100,130,90.7%,0,5,true,partial
+ga-IE,Gaeilge (Éire),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+gd-GB,Gàidhlig (Alba),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+gl-ES,Galego (Galicia / Galiza),20261020,2470,2265,75,130,91.7%,0,5,true,partial
+he-IL,עברית (ישראל),20261020,2470,2272,68,130,92.0%,0,5,true,partial
+hr-HR,Hrvatski (Hrvatska),20261020,2470,2259,81,130,91.5%,0,6,true,partial
+hu-HU,Magyar (Magyarország),20261020,2470,2273,67,130,92.0%,0,5,true,partial
+hy-AM,Հայերեն (Հայաստան),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+ig-NG,Igbo (Naigeria),20261020,2470,30,0,2440,1.2%,0,4,true,partial
+is-IS,Íslenska (Ísland),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+ka-GE,ქართული (საქართველო),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+kk-KZ,Қазақша (Қазақстан),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+kn-IN,ಕನ್ನಡ (ಭಾರತ),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+ky-KG,Кыргызча (Кыргызстан),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+lb-LU,Lëtzebuergesch (Lëtzebuerg),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+lo-LA,ລາວ (ປະເທດລາວ),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+lt-LT,Lietuvių (Lietuva),20261020,2470,2272,68,130,92.0%,0,5,true,partial
+lv-LV,Latviešu (Latvija),20261020,2470,2268,72,130,91.8%,0,5,true,partial
+mk-MK,Македонски (Северна Македонија),20261020,2470,2271,69,130,91.9%,0,5,true,partial
+mn-MN,Монгол (Монгол Улс),20261020,2470,2404,66,0,97.3%,0,22,true,ui-complete
+ms-MY,Bahasa Melayu (Malaysia),20261020,2470,2245,95,130,90.9%,0,5,true,partial
+mt-MT,Malti (Malta),20261020,2470,30,1,2439,1.2%,0,4,true,partial
+nl-BE,Vlaams (België),20261020,2470,2243,97,130,90.8%,0,7,true,partial
+nl-NL,Nederlands (Nederland),20261020,2470,2243,97,130,90.8%,0,7,true,partial
+nn-NO,Norsk nynorsk (Noreg),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+no-NO,Norsk bokmål (Norge),20261020,2470,2262,78,130,91.6%,0,6,true,partial
+pl-PL,Polski (Polska),20261020,2470,2259,81,130,91.5%,0,5,true,partial
+pt-PT,Português (Portugal),20261020,2470,2255,85,130,91.3%,0,5,true,partial
+ro-RO,Română (România),20261020,2470,2253,87,130,91.2%,0,5,true,partial
+sk-SK,Slovenčina (Slovensko),20261020,2470,2274,66,130,92.1%,0,5,true,partial
+sl-SI,Slovenščina (Slovenija),20261020,2470,2262,78,130,91.6%,0,5,true,partial
+sq-AL,Shqip (Shqipëri),20261020,2470,2264,76,130,91.7%,0,5,true,partial
+sr-Latn,Srpski (Srbija),20261020,2470,2259,81,130,91.5%,0,6,true,partial
+sr-Cyrl,Српски (Србија),20261020,2470,2280,60,130,92.3%,0,6,true,partial
+sv-SE,Svenska (Sverige),20261020,2470,2253,87,130,91.2%,0,6,true,partial
+ta-IN,தமிழ் (இந்தியா),20261020,2470,2404,66,0,97.3%,0,7,true,ui-complete
+tt-RU,Татарча (Татарстан  Рәсәй),20261020,2470,30,0,2440,1.2%,0,4,true,partial
+uk-UA,Українська (Україна),20261020,2470,2405,65,0,97.4%,0,5,true,ui-complete
+uz-UZ,O'zbekcha (O'zbekiston),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+yo-NG,Yorùbá (Nàìjíríà),20261020,2470,31,0,2439,1.3%,0,4,true,partial
+zh-HK,繁體中文 (香港特別行政區),20261020,2470,2404,66,0,97.3%,0,11,true,ui-complete

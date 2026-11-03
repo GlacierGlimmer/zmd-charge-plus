@@ -1,0 +1,39 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Geographical proper name with the same conventional Dutch spelling.",
+    "Alaska": "Geographical proper name with the same conventional Dutch spelling.",
+    "Auckland, Fiji": "Geographical proper name with the same conventional Dutch spelling.",
+    "Bangkok, Hanoi, Jakarta": "Geographical proper name with the same conventional Dutch spelling.",
+    "Buenos Aires, Brasilia": "Geographical proper name with the same conventional Dutch spelling.",
+    "Dhaka, Thimphu": "Geographical proper name with the same conventional Dutch spelling.",
+    "Dubai, Abu Dhabi": "Geographical proper name with the same conventional Dutch spelling.",
+    "Eucla": "Geographical proper name with the same conventional Dutch spelling.",
+    "Islamabad, Karachi": "Geographical proper name with the same conventional Dutch spelling.",
+    "Kabul": "Geographical proper name with the same conventional Dutch spelling.",
+    "Kathmandu": "Geographical proper name with the same conventional Dutch spelling.",
+    "New Delhi, Mumbai": "Geographical proper name with the same conventional Dutch spelling.",
+    "Newfoundland": "Geographical proper name with the same conventional Dutch spelling.",
+    "Nukuʻalofa, Apia": "Geographical proper name with the same conventional Dutch spelling.",
+    "Sydney, Brisbane": "Geographical proper name with the same conventional Dutch spelling.",
+    "Album": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Bytes": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Interface": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Later": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Maximum": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Media": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Minimum": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Online": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Operator": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Ring": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "Type": "Established Dutch word, spelled the same as its English cognate or loanword.",
+    "d": "Dutch abbreviation for dag/dagen (day/days).",
+    "Type {0}": "Type is the established Dutch noun type, with the same spelling; {0} is a preserved format placeholder.",
+    "{0}d {1:00}:{2:00}:{3:00}": "d is the Dutch abbreviation for dag/dagen; the numeric duration placeholders and time separators are intentionally preserved."
+  },
+  "notes": [
+    "Full active-message and 14-chapter manual translation authored without an external translation service.",
+    "Technical literals, protocols and code samples remain unchanged. The source key DeepSeek {deepseek.period.name} is deliberately retained rather than changing its embedded variable to the distinct Chinese-source placeholder.",
+    "Collector details reviewed against Chinese descriptions, including Windows performance counters, caches, unavailable values, permissions and platform-specific APIs.",
+    "No native-speaker review performed."
+  ]
+}

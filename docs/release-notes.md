@@ -1,3 +1,9 @@
+# 当前 Windows 打包方式（2026-10-27）
+
+产品版本保持 v0.1.2。Windows 改为 x64、x86、ARM64 三架构自包含目录便携版，各提供 ZIP 和 7z。每个压缩包只有一层 `EndfieldChargePlus0.1.2` 文件夹，顶层主程序为 `EndfieldChargePlus0.1.2.exe`，DLL 和运行环境集中在 `Runtime`，说明在 `Documents`，许可在 `Licenses`；用户配置继续使用用户数据目录。当前暂停制作 Setup，其实验方案已归档到源码仓库外。详见 [Windows 便携版](windows-portable.md)。
+
+下面保留 v0.1.1 的历史发布说明；其中单文件 EXE 的说明不代表当前打包方式。
+
 # ECP For Windows v0.1.1
 
 正式版 · v0.1.0 → v0.1.1 · 2026-10-13

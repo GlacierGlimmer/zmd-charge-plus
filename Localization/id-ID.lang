@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (Diubah)
+CPU
+ FPS
+ GHz
+ salinan
+ {time.utc_offset}
+ · Utama
+%
+'{0}' bukan angka
+(Terjemahan mungkin tidak 100% akurat)
+(diubah)
++X ke kanan, +Y ke bawah.
++X ke kanan, +Y ke bawah.
++X ke kanan, +Y ke bawah. Mengganti prasetel mengatur ulang kedua offset X/Y ke nol.
+-- berarti tidak ada pembacaan yang valid atau kegagalan ekspresi. Periksa makna dan unit di perpustakaan, kemudian driver, autentikasi API, jalur JSON atau status FPS. Pemformatan tidak dapat mengubah data yang hilang menjadi pengukuran nyata. Jaga MB/s, Mbps, GiB dan °C berbeda.
+, ungkapan dan unit yang tidak valid --
+/ GB
+/// Baterai
+/// CPU
+/// DeepSeek API
+/// FPS layar
+/// GPU
+/// Memori
+/// Jaringan
+/// Pemeriksaan jaringan
+/// Disk sistem
+/// Waktu
+/// FPS jendela
+/// Jam dunia
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 atau 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0.4–1.4×. Diterapkan setelah penggeser dilepas.
+1 GPU terdeteksi: {0}
+Ada 1 profil dalam antrean rotasi.
+10%–100%. Diterapkan setelah penggeser dilepas.
+Kecepatan acuan 100%
+100% berarti tidak transparan sepenuhnya.
+Kecepatan acuan 100%
+Salinan dibuat dari profil bawaan; profil asli tidak berubah.
+Layanan latar depan diperlukan supaya HUD terus berjalan; tanpanya, sistem menghentikan pengambilan sampel.
+Sebuah media HUD template
+Bidang aktual yang dipetakan dari sumber HTTP/JSON yang dikonfigurasi.
+AC
+Listrik terhubung
+Daya AC terhubung
+Listrik terhubung
+Data AIDA64 tersedia
+AIDA64 aplikasi eksternal
+Metode pengiriman AIDA64
+Latensi API (ms)
+Level API
+Status API
+Permintaan API gagal
+Tentang
+Tentang menunjukkan versi, arsitektur dan hasil pemeriksaan pembaruan. kegagalan jaringan atau versi jarak jauh yang tidak tersedia tidak mengkonfirmasi bahwa Anda up to date. Periksa status dan coba lagi. Paket pengembangan mungkin menyimpan nomor versi publik; gunakan catatan pengiriman mereka untuk mengidentifikasi mereka.
+Warna aksen
+Warna aksen
+Jumlah antarmuka aktif
+Profil aktif
+Profil aktif
+Berlaku hanya ketika Selalu Tampilkan dinonaktifkan. Aturan yang dipenuhi memanggil item pergiliran berikutnya, atau profil saat ini jika antrean kosong. Sampel pertama dan sampel pertama setelah data pulih hanya membentuk garis dasar. Permintaan area aktif diprioritaskan; area aktif dan aturan melanjutkan antrean secara terpisah. Pengambilan sampel tetap berlangsung saat HUD tampil, sesuai interval global dan sumber data. Peristiwa yang terdeteksi saat sibuk digabung dan disimpan.
+ActivityManager.MemoryInfo.lowMemory: apakah sistem melaporkan memori rendah.
+Laju perubahan penghitung bingkai komposisi aktual SurfaceFlinger dengan ROOT. Tidak tersedia jika penghitung tidak dapat dikaitkan dengan satu layar tertentu pada sistem beberapa layar; nilainya bukan refresh rate.
+Status pengumpulan aktual dan alasan tidak tersedia.
+Status pengumpulan aktual.
+Informasi pemutaran aktual dari sesi media Windows. Posisi pemutaran dihitung dari garis waktu yang dilaporkan saat media diputar; bidang yang tidak didukung tetap tidak tersedia.
+ID adaptor
+Tambah
+Tambah HUD
+Tambahkan aturan
+Tambahkan dan aktifkan aturan di Konten HUD → Aturan pemicu.\nMasukkan kunci variabel dan pilih Ambang, perubahan nilai, atau perubahan menjadi benar; atur operator dan nilai untuk kondisi ambang.\nTentukan jeda antarpemicu, matikan Selalu tampil, lalu pilih Simpan dan Terapkan.
+Tambahkan satu variabel/operator/Ambang => aturan warna per baris. Aturan mengubah aksen berdasarkan beban, suhu dan nilai lainnya. ambang menggunakan unit asli variabel. gunakan nilai warna yang valid; pengukuran yang hilang tidak diperlakukan sebagai nol.
+Tambahkan profil ke antrian dan gunakan Move Up/Down untuk memerintahkannya.Untuk menghapus profil dari antrian, tidak akan menghapus profil.Percepatan bersepeda otomatis maju pada interval yang dikonfigurasi.Antrian kosong menggunakan profil aktif; antrian satu item tidak dapat beralih ke item yang berbeda.
+Tambah aturan
+Tambah ke antrean
+Alamat
+Adelaide, Darwin
+Sesuaikan opsi khusus untuk setiap profil.
+Lanjutkan rotasi setiap kali HUD dipanggil melalui zona pemicu
+Agregasi: min, max, avg, sum. Rentang dan presisi: clamp(value, min, max), round(value, digits), floor, ceil, abs, sign. Matematika: sqrt, pow, log, log10, exp, sin, cos, tan. percent(value, total) mengembalikan persentase; between(value, min, max) menguji rentang yang mencakup kedua batas.
+Alaska
+Album
+Semua kategori
+Semua HUD berbagi satu interval pengambilan sampel; interval yang lebih pendek menggunakan lebih banyak sumber daya. Jam memperbarui setiap detik, sementara sumber HTTP dan keseimbangan menyimpan interval refresh/cache mereka sendiri.
+Semua kategori
+Izinkan tampilan di atas aplikasi lain dalam pengaturan sistem.
+Sudah pernah diminta; aktifkan kembali di pengaturan sistem.
+Selalu tampil
+Selalu tampil mempertahankan HUD di layar, di atas semua jendela atau pada lapisan desktop. Jika opsi ini mati, peristiwa daya, area pemicu mouse, atau aturan pemicu menampilkan HUD sementara; HUD menyusut setelah durasi tampilan berakhir. Mematikan sakelar utama menghentikan tampilan untuk sesi ini; sakelar diaktifkan kembali saat aplikasi dijalankan berikutnya.
+Selalu di atas
+Selalu tampil
+AMD Adrenalin tersedia
+Samoa Amerika
+Layanan dengan hak istimewa tambahan seperti Shizuku diperlukan.
+Diperlukan izin tambahan atau akses khusus.
+Impor berlaku seketika; ekspor konfigurasi saat ini terlebih dahulu jika cadangan diperlukan.
+Notifikasi berkelanjutan harus tetap terlihat.
+Pembaruan tersedia.
+Android 13 dan lebih baru memerlukan izin notifikasi untuk notifikasi berkelanjutan HUD; izin hanya diminta ketika HUD dimulai.
+Android 16 atau lebih baru diperlukan.
+Kode status Android EXTRA_HEALTH (GOOD/OVERHEAT/DEAD/...); gunakan battery.health_percent untuk persentase kesehatan.
+Android EXTRA_PLUGGED: AC / USB / WIRELESS / tidak dihubungkan.
+Kode angka Android EXTRA_STATUS (CHARGING/DISCHARGING/FULL/NOT_CHARGING).
+Model SoC Android (Build.SOC_MODEL, API 31+); kunci setara pada desktop adalah cpu.name.
+Versi Android
+Android tidak mengizinkan aplikasi biasa membaca semua metrik perangkat keras: penggunaan GPU, suhu CPU dan beberapa pembacaan arus baterai tidak tersedia pada kebanyakan perangkat. ECP hanya menampilkan data yang benar-benar dibaca, menandai pembacaan yang tidak dapat dibaca sebagai tidak didukung dan tidak pernah mengarang nilai.
+Android tidak menyediakan API publik untuk fungsi ini.
+Android tidak menyediakan API pembacaan yang didukung untuk metrik ini; aplikasi melaporkannya sebagai tidak tersedia.
+Pembaruan langsung asli Android
+Catatan Android
+Android tidak menyediakan API publik untuk beban GPU.
+Sistem Android
+Android v{0} tersedia pada halaman rilis.
+Animasi
+Proses aplikasi
+Pembaruan aplikasi
+Berlaku untuk seluruh antarmuka pengaturan dan setiap HUD. Ukuran masing-masing HUD dikalikan dengan skala UI global.
+Berlaku untuk semua HUD yang selalu tampil, termasuk instans eksperimental. Mengklik HUD memajukan antrean rotasi HUD tersebut dengan animasi transisinya, meskipun rotasi otomatis dimatikan, serta memulai ulang interval rotasi otomatis HUD itu.
+Menerapkan…
+Tampilan bebas tidak diizinkan; hanya templat resmi yang dapat digunakan.
+Arsitektur
+Artis
+Artis - judul
+Sesuai nilai
+Maksimum 600 entri dan 3 berkas log disimpan supaya HUD yang berjalan lama tidak memenuhi penyimpanan.
+Athena, Kairo, Helsinki
+Waktu Atlantik (Kanada)
+Auckland, Fiji
+Autentikasi gagal; periksa kunci API.
+Penulis
+Izin belum diberikan.
+Otomatis / pilih target
+Rotasi otomatis
+Rotasi otomatis aktif, tetapi antrean kosong. Tambahkan setidaknya satu profil.
+Rotasi otomatis aktif; {0} profil akan ditampilkan secara berurutan.
+Otomatis
+Rotasi otomatis
+Unit dan pipa otomatis
+Tersedia
+Byte tersedia
+Teks memori tersedia
+Byte tersedia dibagi total kapasitas dari StatFs.
+Jumlah inti CPU logis yang tersedia
+Hanya tersedia dalam mode Selalu Tampilkan. Setiap klik beralih mengikuti antrean otomatis menggunakan animasi peralihannya, meskipun pergiliran otomatis dinonaktifkan. Antrean kosong atau dengan satu item saja tidak berganti.
+Jumlah sensor tersedia
+Persentase tersedia
+Tersedia ketika Selalu tampil dimatikan. Tempatkan zona pemicu di dalam batas penuh layar target, lalu sesuaikan ukuran dan waktu tunggu penunjuk.
+Latensi rata-rata (ms)
+Hindari poni layar
+Tanggal BIOS
+Versi BIOS
+Jumlah proses latar belakang
+Cadangan
+Pencadangan gagal. Lihat log.
+Saldo
+Saldo / periode
+Mata uang saldo
+Teks saldo
+Kueri saldo dan periode puncak/luar puncak; kunci API dienkripsi dengan Android Keystore.
+Status kueri saldo; sebab yang jelas ditampilkan jika kunci tidak ada atau permintaan gagal.
+Bangkok, Hanoi, Jakarta
+URL dasar
+Baselines, cooldown dan antrian
+Baterai
+Arus baterai
+Kode kesehatan baterai
+Kode status baterai
+Suhu baterai
+Arus baterai
+Tingkat baterai
+Statistik baterai tidak tersedia atau dibatasi oleh sistem.
+Suhu baterai
+Suhu baterai Android dalam °C; kunci setara pada desktop adalah battery.temperature.
+Tegangan baterai
+Membaca penghitung energi BatteryManager terlebih dahulu; jika tidak tersedia, energi tersisa diperkirakan dari penghitung muatan dan tegangan yang diukur.
+Menjadi benar
+Waktu Beijing (UTC+08:00)
+Beijing, Hong Kong, Singapura
+Berlin, Paris, Roma
+Persentase enkripsi BitLocker
+Status BitLocker
+Boolean
+Waktu boot
+Izin menjalankan saat boot sudah dideklarasikan; aktifkan opsi tersebut dalam pengaturan.
+Tengah bawah (di atas bilah tugas / Dock)
+Kiri bawah (di atas bilah tugas / Dock)
+Kanan bawah (di atas bilah tugas / Dock)
+Tengah bawah
+Kiri bawah
+Kanan bawah
+Pantulan
+Buenos Aires, Brasilia
+Build 2026.10.27
+Build {0}
+Bangun antrian carousel
+Tanggal build
+Produsen dari Build.MANUFACTURER.
+Model perangkat dari Build.MODEL.
+Profil bawaan tidak dapat dihapus
+Profil bawaan tidak dapat dihapus
+Bawaan · perubahan disimpan sebagai salinan
+Bawaan · zona waktu dan target harian dapat ditetapkan; perubahan konten membuat salinan
+Kecepatan bus
+Byte
+Persentase aktivitas C:
+Sistem berkas C:
+Ruang tersedia C: (byte)
+Kesehatan C:
+I/O C: (B/s)
+Label C:
+Jumlah partisi C:
+Waktu menyala C: (jam)
+Panjang antrean C:
+Kecepatan baca C: (B/s)
+Status SMART C:
+Suhu C:
+Total kapasitas C: (byte)
+Status TRIM C:
+Penggunaan C:
+Ruang terpakai C: (byte)
+Kecepatan tulis C: (B/s)
+CPU
+Jumlah inti fisik CPU
+Model CPU
+Suhu CPU
+Waktu CPU (detik)
+Frekuensi CPU
+CPU per inti
+Sensor CPU tidak tersedia: perangkat keras atau driver tidak mengembalikan suhu yang valid.
+Suhu CPU
+Status suhu CPU
+Suhu CPU masih menampilkan --
+Suhu CPU; Android tidak menyediakan API publik (lihat androidNote).
+Penggunaan CPU keseluruhan
+Penggunaan CPU
+Penggunaan CPU / cpu.usage
+Ukuran cache (byte)
+Memori cache Android yang dapat direklamasi; kunci setara pada desktop adalah memory.cache_bytes.
+Memori cache
+Dihitung dari jam perangkat dan pengaturan profil.
+Batal
+Tidak dapat membaca tugas startup Windows. Lihat log.
+Penjelasan kemampuan perangkat
+Format kapasitas dan waktu
+Informasi utama seperti kapasitas, frekuensi saat ini, laju, saldo dan waktu saat ini.
+Tanjung Verde
+Target pengukuran
+Tengah
+Tengah (area kerja)
+Kiri tengah (area kerja)
+Kanan tengah (area kerja)
+Kiri tengah
+Kanan tengah
+Waktu Tengah (AS dan Kanada)
+Dapat diubah saat mengedit HUD mana pun. Setelah Simpan dan Terapkan, semua HUD menggunakan interval pengambilan sampel yang sama. Jam diperbarui setiap detik; API eksternal memiliki interval penyegarannya sendiri.
+Sedang berganti
+Penghitung muatan
+Daya pengisian (W)
+Mengisi daya
+Kepulauan Chatham
+Offset waktu musim panas Kepulauan Chatham
+Periksa pembaruan
+Periksa driver dan sensor dalam Pengaturan → Pengelolaan Data → Data Perangkat keras.
+Periksa untuk pembaruan
+Periksa izin, dukungan perangkat dan sumber data. Kotak centang hanya membisukan peringatan untuk data yang ditampilkan dalam jendela ini secara tetap; variabel lain masih menampilkan peringatan.
+Periksa sakelar utama dan apakah HUD disembunyikan oleh pintasan, lalu pastikan mode selalu tampil atau sementara. Mode sementara memerlukan peristiwa, area aktif, atau aturan pemicu. Periksa layar tujuan, koordinat, opasitas, dan sakelar area aktif. Menyimpan profil tanpa Simpan dan Terapkan dapat membuat HUD yang sedang berjalan tetap memakai pengaturan lama.
+Periksa sensor ini atau pengaturan berbagi AIDA64 dalam Pengaturan → Pengelolaan Data → Data Perangkat keras.
+Periksa pembaruan
+Memeriksa pembaruan langsung asli Android…
+Memeriksa GitHub…
+Memeriksa izin dan pembaruan langsung asli…
+Memeriksa…
+Pemeriksaan dilakukan sekali saat aplikasi dimulai; Anda juga dapat memeriksanya secara manual.
+Jenis kimia
+Bahasa Tionghoa (Sederhana)
+Pilih Lengkap atau Sederhana untuk menampilkan animasi untuk jalan pintas; hiding memainkan animasi tarik kembali. Ini mempengaruhi semua HUD sambil mempertahankan profil dan posisi mereka. Dalam mode transient, ini memanggil sekali, kemudian melanjutkan perilaku acara. permintaan cepat terbaru menang. Penindasan jalan pintas berlangsung selama sesi.
+Pilih bahasa di bilah atas atau ikuti bahasa sistem. Preferensi bahasa langsung disimpan; perubahan lain yang belum diterapkan tetap memerlukan Simpan dan Terapkan. Jika bahasa sistem tidak didukung, bahasa Inggris digunakan. Pengaturan, profil bawaan, peringatan data, dan panduan ini mengikuti bahasa yang dipilih. Kunci variabel, rumus, dan JSON API tidak berubah.
+Pilih font yang terpasang; sistem menyediakan glif pengganti untuk karakter yang tidak ada.
+Ketika beberapa GPU terdeteksi, pilih GPU yang ingin ditampilkan oleh profil ini.
+Pilih profil untuk ditampilkan; menyimpan profil bawaan membuat salinan.
+Pilih apa yang ditampilkan HUD dan bagaimana tampilan.
+Kosongkan
+Hapus pencarian
+Hapus pintasan
+Klik HUD yang terus-menerus untuk beralih
+Ganti profil dengan klik HUD tetap
+Klik lalu tekan pintasan
+Klik tembus
+Papan klip
+Diciutkan: 
+Warna
+Aturan warna per baris: variabel operator nilai => warna
+Warna
+Total kecepatan seluruh antarmuka aktif.
+Sisa memori commit (byte)
+Batas memori commit (byte)
+Penggunaan memori commit
+Memori commit terpakai (byte)
+Format umum
+Format token umum
+Operator perbandingan
+Memori fisik yang kosong sepenuhnya (MemFree); nama yang sama digunakan dalam edisi macOS desktop.
+Kondisi
+Mode kondisi
+Warna-warna Kondisional
+Pengaturan dan pemeliharaan
+Folder konfigurasi
+Pengaturan dicadangkan: {0}
+Pengaturan diekspor.
+Konfigurasi diimpor dan diterapkan.
+Konfigurasi diimpor dan diterapkan; konfigurasi sebelumnya dicadangkan sebagai {0}.
+Impor dan ekspor konfigurasi
+Konfigurasi, cadangan & pemeliharaan
+Mengkonfigurasi HTTP / JSON
+Tetapkan kueri saldo dan periode puncak/luar puncak. Kunci API disimpan dalam bentuk dienkripsi untuk pengguna Windows saat ini.
+Mengkonfigurasi posisi hot-zone dan tinggal
+Tetapkan kunci DeepSeek API dalam Pengelolaan Data → Konfigurasi Sumber Data → DeepSeek API terlebih dahulu. Periode puncak/luar puncak juga ditetapkan di situ. Data saldo tidak tersedia tanpa kunci API.
+Tetapkan kunci API DeepSeek di Sumber Data → DeepSeek API terlebih dahulu. Periode puncak/luar puncak juga ditetapkan di situ. Data saldo tidak tersedia tanpa kunci.
+Waktu target harian yang ditetapkan dalam profil (hh:mm:ss); kunci setara pada desktop adalah time.target.value.
+Sambung DeepSeek, HTTP JSON dan AIDA64.
+Terhubung
+Koneksi gagal
+Koneksi berhasil.
+Daftar isi
+Alih konteks
+Kontrol bagaimana profil bergantian.
+Mengendalikan semua tampilan HUD.
+Mengendalikan HUD utama dan instans tambahan bersama-sama. Pemanggilan otomatis dijeda selama tersembunyi. Tekan sekali lagi untuk memulihkan mode tampilan sebelumnya; memulai ulang aplikasi memulihkan visibilitas.
+Jeda / detik
+Waktu Universal Terkoordinasi
+Disalin: {0}
+Salin kunci
+Salin templat
+Salin contoh
+Salin dari perpustakaan, lalu bangun teks HUD yang dapat dibaca.
+Salin kunci
+Salin nama variabel dari pustaka. Probe jaringan menggunakan target dan protokol profil Probe Paket dalam antrean, atau profil saat ini jika tidak ada profil probe dalam antrean.
+Salin variabel terpilih
+Salin templat
+Struktur JSON yang dapat disalin
+Clock inti (MHz)
+Suhu rata-rata inti (ringkasan)
+Tegangan inti
+Inti
+Folder log tidak dapat dibuka. Lihat log.
+Tidak dapat menghubungi GitHub; coba lagi kemudian.
+Tidak dapat membaca rincian pembaruan; coba lagi.
+Pintasan tidak dapat didaftarkan; aplikasi lain mungkin menggunakannya. Pilih pintasan lain, kemudian Simpan dan Terapkan.
+Pintasan ini tidak dapat didaftarkan; ia mungkin sedang digunakan. Pintasan sebelumnya dipertahankan. Pilih kombinasi tombol lain.
+Pilihan untuk membisukan peringatan tidak dapat disimpan. Silakan coba ulang.
+Tidak dapat memulai layanan HUD; lihat log pada halaman Lanjutan.
+Tidak dapat memverifikasi kelayakan tampilan langsung
+Jumlah
+Menghitung bingkai pembaruan konten aktual pada tampilan yang dipilih, tidak termasuk bingkai statis. Memerlukan izin Perekaman Layar; tidak ada gambar disimpan. Nilai ini mungkin berbeda dari FPS rendering atau presentasi internal aplikasi; konten statis dapat menghasilkan 0 FPS.
+Buat, simpan, hapus dan pratinjau
+Penghargaan
+Lokal
+Kode mata uang saldo, biasanya CNY; kurs tidak dibuat-buat.
+Waktu saat ini (24 jam)
+Waktu saat ini (12 jam)
+Jumlah antarmuka jaringan yang saat ini berstatus Up dan bukan loopback.
+ID internal profil HUD saat ini.
+Pengenal internal yang stabil untuk GPU terpilih.
+Alamat IP aktual yang digunakan untuk pengujian atau yang merespons setelah nama target diurai.
+Arsitektur prosesor, seperti x64 / ARM64.
+Memori fisik yang tersedia saat ini.
+Teks “Tersedia / Tidak tersedia” yang dihasilkan berdasarkan status ketersediaan.
+Tanggal ReleaseDate dari Win32_BIOS.
+Versi VBIOS yang dilaporkan oleh nvidia-smi; tersedia jika didukung.
+Jumlah proses yang saat ini tidak memiliki handle jendela utama.
+Teks jumlah saldo yang diformatkan sebagai “¥0.00”.
+Jumlah saldo akun DeepSeek API dalam yuan China.
+Arus seketika baterai Android; arah pengisian daya atau pengosongan daya ditentukan melalui EXTRA_STATUS, bukan tanda nilai.
+Nilai EncryptionPercentage untuk volume sistem.
+Status perlindungan disk sistem yang dilaporkan oleh antarmuka Windows Volume Encryption.
+Waktu Windows dimulai pada sesi ini, diperkirakan dari durasi sistem berjalan.
+Frekuensi Bus/BCLK yang dilaporkan oleh sensor pemantauan perangkat keras.
+PercentDiskTime Windows untuk drive C: (%).
+Sistem berkas drive C:.
+Ruang tersedia pada drive C: (byte).
+HealthStatus Windows Storage untuk disk fisik yang berisi C:; tersedia ketika antarmuka Storage mendukungnya.
+Jumlah laju pembacaan dan penulisan saat ini untuk C:.
+Label volume drive C:.
+Jumlah partisi yang dikaitkan dengan volume logis C: melalui Win32_LogicalDiskToPartition.
+PowerOnHours untuk disk yang berisi C:; tersedia jika didukung oleh perangkat.
+CurrentDiskQueueLength drive C: (jumlah item).
+Kecepatan pembacaan real-time untuk volume logis C: dari penghitung kinerja Windows.
+Status operasional OperationalStatus dari Windows Storage untuk disk fisik yang memuat volume C:.
+Suhu Storage Reliability Counter untuk disk yang berisi C:; tersedia jika didukung oleh perangkat.
+Total kapasitas drive C: (byte).
+Status Windows DisableDeleteNotify untuk sistem berkas drive C:.
+Persentase ruang terpakai pada drive C: (%).
+Ruang terpakai pada drive C: (byte).
+Kecepatan penulisan real-time untuk volume logis C: dari penghitung kinerja Windows.
+Jumlah waktu prosesor yang telah digunakan oleh proses aplikasi saat ini.
+Jumlah byte cache sistem yang dilaporkan oleh penghitung kinerja Windows.
+Penghitung muatan dari Android BatteryManager; jika tidak didukung, Integer.MIN_VALUE dikembalikan dan dianggap sebagai data yang tidak ada.
+Daya pengisian saat ini; biasanya 0 ketika tidak mengisi daya.
+Kimia baterai yang dilaporkan oleh Win32_Battery, seperti ion litium atau polimer litium.
+Sisa ruang yang masih tersedia di dalam batas memori commit.
+Batas memori commit Windows saat ini, biasanya dipengaruhi oleh memori fisik dan berkas paging.
+Rasio memori commit terpakai terhadap batas commit.
+Jumlah memori yang telah dikomit oleh sistem.
+Penghitung kinerja Context Switches/sec dalam Windows System.
+Frekuensi inti GPU saat ini dalam real-time.
+Rata-rata real-time untuk pembacaan sensor suhu inti yang tersedia.
+Tegangan inti CPU atau tegangan valid tertinggi yang dilaporkan oleh sensor pemantauan perangkat keras.
+Jumlah GPU fisik yang terdeteksi oleh sistem saat ini.
+Nama pengaturan bahasa dan wilayah proses saat ini, seperti zh-CN.
+Waktu lokal saat ini dalam format 12 jam dengan AM/PM.
+Waktu lokal saat ini dalam format HH:mm:ss.
+Jumlah siklus baterai yang diberikan oleh firmware atau driver; beberapa perangkat mungkin mengembalikan 0.
+PercentDiskTime Windows untuk drive D: (%).
+Sistem berkas drive D:.
+Ruang tersedia pada drive D: (byte).
+HealthStatus Windows Storage untuk disk fisik yang berisi D:; tersedia ketika antarmuka Storage mendukungnya.
+Jumlah laju pembacaan dan penulisan saat ini untuk D:.
+Label volume drive D:.
+Jumlah partisi yang dikaitkan dengan volume logis D: melalui Win32_LogicalDiskToPartition.
+PowerOnHours untuk disk yang berisi D:; tersedia jika didukung oleh perangkat.
+CurrentDiskQueueLength drive D: (jumlah item).
+Kecepatan pembacaan real-time untuk volume logis D: dari penghitung kinerja Windows.
+Status operasional OperationalStatus dari Windows Storage untuk disk fisik yang memuat volume D:.
+Suhu Storage Reliability Counter untuk disk yang berisi D:; tersedia jika didukung oleh perangkat.
+Total kapasitas drive D: (byte).
+Status Windows DisableDeleteNotify untuk sistem berkas drive D:.
+Persentase ruang terpakai pada drive D: (%).
+Ruang terpakai pada drive D: (byte).
+Kecepatan penulisan real-time untuk volume logis D: dari penghitung kinerja Windows.
+Durasi resolusi DNS pada siklus probe saat ini jika target berupa nama domain; 0 jika alamat IP digunakan secara langsung.
+Daftar alamat server DNS yang dikonfigurasikan pada antarmuka jaringan aktif.
+Penghitung % DPC Time dalam Windows Processor Information.
+Tanggal saat ini pada komputer ini.
+Tanggal dan waktu saat ini pada komputer ini.
+Jumlah detik yang telah berlalu pada hari ini.
+Nama hari saat ini dalam bahasa Inggris.
+Nama hari saat ini dalam bahasa Tionghoa.
+Angka hari untuk tanggal saat ini dalam tahun ini.
+Persen waktu yang telah berlalu antara 00:00:00 hari ini dengan 00:00:00 besok.
+Jumlah detik yang tersisa hingga 00:00:00 besok.
+Hari dalam bulan saat ini.
+Kapasitas memori video khusus untuk GPU yang sedang dipilih.
+Rasio memori video khusus yang digunakan dibandingkan dengan jumlah kapasitas memori video khusus.
+Penggunaan memori video khusus dalam real-time untuk GPU yang sedang dipilih.
+Daftar alamat gateway yang dikonfigurasikan pada antarmuka jaringan aktif.
+Waktu pemindaian Quick/Full Scan terakhir yang selesai.
+Status pengaktifan dan perlindungan real-time yang dilaporkan oleh Windows Defender WMI.
+Jumlah ancaman yang sedang ditampilkan oleh MSFT_MpThreat.
+Rasio kapasitas penuh saat ini terhadap kapasitas desain, sama dengan tingkat kesehatan baterai.
+Kapasitas desain yang dikonversi ke Wh.
+Kapasitas desain awal baterai dari pabrik.
+Jumlah perangkat USB PNP dalam Win32_PnPEntity.
+Daftar nama perangkat USB PNP yang sedang terdeteksi.
+Daya pengosongan saat ini; biasanya 0 ketika tidak mengosongkan daya.
+Teks kecepatan unduh yang dihasilkan menggunakan unit pilihan profil jaringan saat ini.
+Laju presentasi atau pembaruan bingkai aktual pada tampilan yang dipilih; cakupan pengukuran berbeda mengikuti platform dan bukan refresh rate tetap.
+Frame rate aktual dibagi dengan frame rate referensi 100% dalam profil.
+Kemajuan untuk cincin dalam profil waktu; mode waktu target menggunakan bagian yang tersisa.
+Mode biasa menampilkan kemajuan hari ini; mode waktu target menampilkan “Tersisa ??%”.
+Status pengumpulan aktual dan alasan tidak tersedia.
+Teks kecepatan unggah yang dihasilkan menggunakan unit pilihan profil jaringan saat ini.
+Jumlah kontainer yang sedang berjalan dari docker ps -q; diberikan ketika Docker CLI tersedia.
+Jumlah ID gambar unik dari docker images -q.
+Jumlah kecepatan unduh real-time untuk semua antarmuka jaringan yang terhubung dan bukan loopback.
+Jumlah kecepatan unduh sistem yang dikonversi ke Mbps.
+Tanggal driver yang dilaporkan oleh Win32_VideoController.
+Versi driver GPU yang dipilih, seperti dilaporkan oleh Win32_VideoController.
+ICMP menampilkan alamat target; TCP / UDP menampilkan “alamat:port”.
+Status atau galat tingkat rendah untuk pengujian terakhir yang gagal.
+Perkiraan detik yang tersisa hingga baterai habis dari pengelolaan daya Windows; variabel tidak tersedia jika sistem tidak dapat memperkirakannya.
+Perkiraan waktu hingga baterai terisi penuh, dihitung dari kapasitas tersisa, kapasitas penuh, dan daya pengisian real-time; hanya tersedia saat daya pengisian tersedia.
+Jumlah sensor kipas terpisah yang telah terdeteksi.
+RPM tertinggi antara kipas yang saat ini terlihat oleh LibreHardwareMonitor.
+Persen tertinggi antara sensor jenis Control dalam pemantauan perangkat keras.
+Jumlah berkas dalam daftar salinan berkas CF_HDROP.
+Profil firewall aktif saat ini: domain / privat / publik.
+Status konfigurasi aktif saat ini untuk Windows Firewall Policy.
+Jumlah volume disk tetap yang saat ini siap digunakan.
+Jumlah ruang tersedia untuk semua volume disk tetap yang siap digunakan.
+Daftar huruf drive disk tetap yang siap digunakan.
+Jumlah kapasitas semua volume disk tetap yang siap digunakan.
+Rasio ruang terpakai untuk semua disk tetap dibandingkan dengan jumlah kapasitas.
+Jumlah ruang terpakai pada semua volume disk tetap yang siap digunakan.
+FormFactor modul memori, seperti DIMM / SODIMM.
+Nilai .NET FrameworkDescription yang digunakan oleh proses saat ini.
+Rasio memori fisik tersedia dibandingkan dengan jumlah memori fisik.
+Frekuensi efektif saat ini dalam real-time yang dilaporkan oleh data kinerja Windows.
+Frekuensi efektif saat ini dalam real-time, dalam MHz.
+Persen frekuensi efektif saat ini dibandingkan dengan frekuensi maksimum; dapat melebihi 100% ketika peningkatan turbo diizinkan.
+Perkiraan durasi penggunaan saat baterai penuh yang dilaporkan Windows; 0 jika tidak tersedia.
+Nilai 100% pada cincin latensi setara dengan 999 ms.
+Kapasitas penuh yang dikonversi ke Wh.
+Kapasitas penuh yang dapat dijangkau oleh baterai saat ini.
+Penggunaan GPU proses setelah penghitung kinerja GPU Engine diagregatkan.
+Penggunaan proses Endfield Charge Plus saat ini dalam penghitung kinerja GPU Engine.
+Perkiraan persentase dari tingkat baterai XInput.
+Jumlah pengontrol terhubung pada slot XInput 0–3.
+Mengembalikan cabang ketika direktori kerja saat ini aplikasi adalah repositori Git.
+Hash pendek dan judul commit terbaru dalam direktori kerja saat ini.
+Status Git dalam direktori kerja saat ini: clean atau jumlah perubahan.
+Hasil go version yang ditemukan melalui PATH.
+Saldo kredit gratis pada akun DeepSeek API.
+Jumlah handle Windows yang dibuka oleh proses aplikasi saat ini.
+Selisih antara kapasitas modul memori fisik yang terpasang dengan jumlah memori fisik yang dapat digunakan oleh Windows.
+Rasio kapasitas penuh dibandingkan dengan kapasitas desain.
+Suhu titik panas inti atau GPU Hot Spot yang dilaporkan oleh sensor pemantauan perangkat keras.
+Jam saat ini (0–23).
+Apakah Microsoft-Hyper-V-All terpasang dan diaktifkan dalam Windows OptionalFeature.
+Daftar alamat unicast IPv4 pada antarmuka jaringan aktif.
+Daftar alamat unicast IPv6 pada antarmuka jaringan aktif.
+Rasio waktu menganggur CPU saat ini.
+Menampilkan lebar × tinggi ketika gambar DIB/DIBV5 dapat diurai.
+Penghitung kinerja InstructionsRetiredPersec dalam Windows Processor Information; hanya tersedia jika sistem memberikan penghitung tersebut.
+Nama semua antarmuka jaringan aktif, dipisahkan dengan koma.
+Daftar jenis antarmuka jaringan aktif, seperti Wireless80211 / Ethernet.
+Penghitung kinerja Interrupts/sec dalam Windows Processor Information.
+Waktu lokal saat ini dalam format ISO 8601.
+Baris pertama hasil java -version yang ditemukan melalui PATH.
+Rata-rata nilai mutlak selisih latensi antara sampel berhasil yang bersebelahan, sebagai perkiraan jitter.
+Rasio waktu CPU yang digunakan dalam mode kernel, tidak termasuk waktu menganggur.
+Kapasitas cache L2 yang dilaporkan oleh prosesor.
+Kapasitas cache L3 yang dilaporkan oleh prosesor.
+Mendeteksi proses model lokal yang umum, seperti Ollama, LM Studio dan llama-server.
+Waktu lokal keberhasilan terakhir untuk konfigurasi probe saat ini.
+Waktu lokal ketika aplikasi mendeteksi perubahan Clipboard Sequence Number.
+Jumlah laju tautan yang dilaporkan oleh semua antarmuka jaringan aktif.
+Jumlah prosesor logis yang terlihat oleh sistem.
+Rasio probe yang gagal atau kehabisan waktu di antara 20 probe terbaru untuk kombinasi alamat, protokol, dan port saat ini.
+Jumlah probe yang gagal atau kehabisan waktu untuk target saat ini dalam jendela statistik bergerak terbaru.
+Produsen prosesor.
+Frekuensi jam maksimum yang dilaporkan oleh Win32_Processor.
+Frekuensi jam maksimum dalam MHz.
+Laju tautan tunggal tertinggi antara semua antarmuka jaringan aktif.
+Frekuensi memori video GPU saat ini dalam real-time.
+Suhu memori video atau Memory Junction yang dilaporkan oleh sensor pemantauan perangkat keras.
+Jumlah memori video khusus yang digunakan oleh HUD bawaan.
+Penggunaan memori video khusus yang digunakan oleh HUD bawaan.
+Milidetik saat ini.
+Menit saat ini.
+Nilai Modified Page List Bytes dalam Windows.
+Jumlah tampilan yang terdeteksi oleh Windows saat ini.
+Jumlah detik yang telah berlalu dalam bulan ini.
+Persen waktu yang telah berlalu dari hari pertama bulan ini pada 00:00 hingga hari pertama bulan depan pada 00:00.
+Jumlah detik yang tersisa hingga hari pertama bulan depan.
+Angka bulan saat ini.
+Nilai Manufacturer dari Win32_BaseBoard.
+Nilai Product dari Win32_BaseBoard.
+Pembacaan tertinggi antara sensor suhu motherboard yang dapat dibaca oleh LibreHardwareMonitor.
+Hasil node --version yang ditemukan melalui PATH.
+Memori nonpaged pool dalam kernel Windows.
+Arsitektur Windows saat ini, seperti X64 / Arm64.
+Angka Build Windows saat ini.
+Deskripsi sistem operasi Windows dari .NET RuntimeInformation.
+Angka versi sistem operasi Windows.
+PCIe Link Generation saat ini dari nvidia-smi; hanya diberikan untuk NVIDIA ketika nvidia-smi tersedia.
+PCIe Link Width saat ini dari nvidia-smi.
+ID proses aplikasi saat ini.
+Jumlah terakumulasi paket unicast yang diterima oleh antarmuka jaringan aktif.
+Jumlah terakumulasi paket unicast yang dikirim oleh antarmuka jaringan aktif.
+Memori paged pool dalam kernel Windows.
+Persen muatan baterai yang tersisa saat ini.
+ID zona waktu lokal Windows saat ini dan offset UTC pada pergantian periode berikutnya; offset untuk area waktu musim panas dihitung secara otomatis berdasarkan tanggal pergantian.
+Nama Cina untuk periode saat ini: 高峰 atau 低谷.
+Tanggal dan waktu lokal pergantian waktu puncak / luar puncak berikutnya, dikonversi ke zona waktu pengguna Windows saat ini dalam format yyyy-MM-dd HH:mm:ss; waktu musim panas lokal diperhitungkan secara otomatis.
+Tanggal dan waktu Beijing untuk pergantian waktu puncak / luar puncak berikutnya, dalam format yyyy-MM-dd HH:mm:ss.
+Waktu lokal pergantian waktu puncak / luar puncak berikutnya, dikonversi ke zona waktu pengguna Windows saat ini dalam format HH:mm:ss; waktu musim panas lokal diperhitungkan secara otomatis.
+Waktu Beijing untuk pergantian waktu puncak / luar puncak berikutnya, dalam format HH:mm:ss.
+Teks “Waktu puncak: ??% berlalu” atau “Waktu luar puncak: ??% berlalu”.
+Persen waktu yang telah berlalu dalam periode puncak atau luar puncak saat ini.
+Jumlah detik yang tersisa hingga pergantian waktu puncak / luar puncak berikutnya.
+Teks “Waktu puncak tersisa ??:??:??” atau “Waktu luar puncak tersisa ??:??:??”.
+Zona waktu referensi tetap untuk aturan waktu puncak / luar puncak DeepSeek: waktu Beijing UTC+08:00.
+Jumlah inti fisik dalam semua soket prosesor.
+Indeks GPU fisik yang sesuai dengan penghitung kinerja GPU Windows.
+Port pengujian TCP / UDP; mode ICMP mengembalikan 0.
+Untuk GPU NVIDIA, dibaca melalui nvidia-smi power.limit; tidak tersedia untuk GPU lain tanpa antarmuka batas daya yang dapat diandalkan.
+Nilai valid tertinggi antara sensor daya CPU saat ini dalam LibreHardwareMonitor.
+GUID rencana daya aktif saat ini dari powercfg.
+Sumber daya saat ini: “Pasokan AC” atau “Baterai”.
+Pembacaan daya real-time dari sensor LibreHardwareMonitor; hanya tersedia jika diberikan oleh perangkat keras atau driver.
+80 karakter pertama teks papan klip saat ini setelah ruang kosong berlebihan dibuang.
+Nilai BitsPerPel yang dikembalikan oleh EnumDisplaySettings.
+Ketinggian tampilan utama Windows.
+Refresh rate untuk mode tampilan saat ini.
+Lebar tampilan utama Windows.
+Memori privat proses aplikasi saat ini.
+Arsitektur proses Endfield Charge Plus saat ini.
+Nilai Environment.ProcessorCount.
+Kecepatan aktual yang digunakan untuk perhitungan persen oleh profil jaringan saat ini.
+Mode persen untuk profil saat ini: Total / Download / Upload / Max.
+Teks seperti “50% / ↓ 50% / ↑ 50%” dihasilkan mengikuti mode; mode nilai lebih besar tidak menampilkan anak panah.
+Dihitung menggunakan mode persen dan “kecepatan pada 100%” yang dipilih dalam profil.
+Protokol pengujian saat ini: ICMP, TCP atau UDP.
+Nilai ProxyServer yang dikonfigurasikan oleh pengguna saat ini.
+Status ProxyEnable dalam Internet Settings pengguna saat ini.
+Alamat IPv4 publik yang dicari melalui api.ipify.org dengan cache 5 menit; permintaan hanya dikirim ketika variabel ini digunakan.
+Alamat IPv6 publik yang dicari melalui api6.ipify.org dengan cache 5 menit; variabel tidak tersedia jika tidak ada IPv6.
+Hasil python/py --version yang ditemukan melalui PATH.
+Nilai mutlak daya pengisian atau pengosongan daya saat ini. Beberapa model mungkin tidak memberikannya.
+Jumlah terakumulasi galat penerimaan pada antarmuka jaringan aktif.
+Jumlah probe berhasil untuk target saat ini dalam jendela statistik bergerak terbaru.
+Kapasitas baterai yang tersisa saat ini, dikonversi ke Wh.
+Kapasitas baterai yang tersisa saat ini.
+Status tingkat rendah yang dikembalikan oleh probe protokol, seperti Success, Connected, Response atau TimedOut.
+Hasil rustc --version yang ditemukan melalui PATH.
+Persen penskalaan tampilan yang dikonversi dari DPI sistem.
+Detik saat ini (s).
+Refresh rate saat ini untuk tampilan kedua.
+Resolusi saat ini untuk tampilan kedua.
+Jumlah terakumulasi galat pengiriman pada antarmuka jaringan aktif.
+Jumlah sampel probe untuk target saat ini dalam jendela statistik bergerak terbaru.
+Batas memori sistem bersama yang dapat digunakan oleh GPU saat ini.
+Rasio penggunaan memori GPU bersama dibandingkan dengan batas memori bersama.
+Memori sistem bersama yang digunakan oleh GPU saat ini.
+Perkiraan dBm yang dikonversi dari kualitas sinyal Windows WLAN; tersedia ketika terdapat koneksi Wi-Fi.
+Jumlah slot perangkat memori yang dilaporkan oleh Win32_PhysicalMemoryArray.
+Jumlah modul memori fisik yang terdeteksi saat ini.
+Konfigurasi SmartScreenEnabled dalam Windows Explorer.
+Jumlah soket prosesor dalam sistem.
+Nilai ConfiguredClockSpeed/Speed tertinggi yang dilaporkan oleh Win32_PhysicalMemory.
+Jumlah Standby Cache Core/Normal/Reserve dalam penghitung kinerja Windows Memory.
+Waktu proses aplikasi saat ini dimulai.
+Teks seperti “Sedang mengisi daya / Menggunakan baterai / Pasokan daya dihubungkan / Tidak diketahui”, dihasilkan berdasarkan status daya.
+Jumlah volume DriveType.Removable yang saat ini siap digunakan.
+Daftar huruf drive penyimpanan yang dapat dilepas saat ini.
+Jumlah kapasitas ruang swap.
+Ruang swap yang telah digunakan.
+Persen waktu aktivitas disk yang dilaporkan oleh penghitung kinerja disk sistem.
+Ruang volume sistem yang tersedia bagi pengguna biasa, sesuai definisi edisi macOS.
+Penghitung kinerja System Calls/sec dalam Windows System.
+DPI sistem Windows.
+Sistem berkas disk sistem, seperti NTFS.
+Ruang tersedia pada disk sistem Windows.
+Rasio ruang tersedia pada disk sistem dibandingkan dengan jumlah kapasitas.
+Jumlah kecepatan pembacaan dan penulisan disk sistem.
+Label volume disk sistem.
+Panjang antrean disk sistem saat ini.
+Kecepatan pembacaan disk sistem yang dilaporkan oleh penghitung kinerja disk logis Windows.
+Jalur akar drive yang berisi direktori sistem Windows, misalnya C:\\.
+Jumlah kapasitas disk sistem Windows.
+Rasio ruang terpakai pada disk sistem dibandingkan dengan jumlah kapasitas.
+Ruang terpakai pada disk sistem Windows.
+Kecepatan penulisan disk sistem yang dilaporkan oleh penghitung kinerja disk logis Windows.
+Durasi dari awal koneksi hingga berhasil tersambung dalam mode TCP.
+Jumlah koneksi TCP aktif yang dikembalikan oleh IPGlobalProperties.
+Nilai SpecVersion dari Win32_Tpm.
+Bagian waktu yang telah berlalu dalam siklus waktu target harian.
+Periode yang tersisa hingga waktu target berikutnya sebagai persen dari 24 jam.
+Jumlah detik yang tersisa hingga waktu target harian berikutnya.
+Teks status waktu target dalam bentuk “Tersisa ??%”.
+Waktu target harian yang ditetapkan dalam profil waktu saat ini.
+Alamat IPv4, IPv6 atau nama domain yang sedang digunakan oleh probe paket jaringan.
+Suhu sensor CPU; ditampilkan sebagai tidak tersedia jika perangkat, driver atau izin tidak mendukungnya.
+Suhu CPU tertinggi saat ini yang dibaca oleh LibreHardwareMonitor; tidak tersedia jika perangkat keras atau driver tidak mendukungnya.
+Suhu sensor CPU; ditampilkan sebagai tidak tersedia jika perangkat, driver atau izin tidak mendukungnya.
+Jumlah karakter teks papan klip saat ini.
+Tema yang sedang digunakan oleh Endfield Charge Plus.
+Jumlah utas dalam proses aplikasi saat ini.
+Perkiraan sisa waktu penggunaan baterai dari Windows; 0 jika tidak dapat diperkirakan.
+Perkiraan sisa waktu penggunaan dalam format HH:MM:SS; “Tidak diketahui” ditampilkan jika tidak dapat diperkirakan.
+Waktu saat ini pada komputer ini, akurat hingga detik.
+Batas waktu menunggu respons untuk satu probe ICMP/TCP/UDP.
+ID zona waktu lokal saat ini.
+PID proses dengan penggunaan CPU tertinggi.
+Penggunaan CPU yang dihitung dari selisih TotalProcessorTime proses.
+PID proses dengan I/O disk tertinggi.
+Jumlah laju byte I/O saat ini untuk proses tersebut.
+PID proses dengan set kerja terbesar.
+Working Set saat ini untuk proses dengan set kerja terbesar.
+Saldo isi ulang dalam akun DeepSeek API.
+Jumlah kecepatan unduh dan unggah keseluruhan sistem.
+Jumlah kapasitas memori fisik.
+Jumlah unduh dan unggah, dikonversi ke Mbps.
+Jumlah kapasitas memori video khusus ditambah batas memori bersama.
+Rasio jumlah penggunaan memori GPU dibandingkan dengan batas keseluruhan memori tersedia.
+Jumlah penggunaan memori video khusus dan memori GPU bersama.
+Jumlah byte terakumulasi yang diterima oleh semua antarmuka jaringan aktif sejak sistem dimulai kali ini.
+Jumlah byte terakumulasi yang dikirim oleh semua antarmuka jaringan aktif sejak sistem dimulai kali ini.
+Jumlah trafik penerimaan dan pengiriman terakumulasi.
+TTL respons ICMP berhasil yang terakhir; 0 untuk TCP/UDP.
+Jenis memori yang dilaporkan oleh SMBIOS, seperti DDR4 / DDR5 / LPDDR5.
+Status nilai Registry EnableLUA.
+Jumlah titik akhir pendengar UDP aktif yang dikembalikan oleh IPGlobalProperties.
+Offset zona waktu saat ini dari UTC dalam jam.
+Offset UTC saat ini; dalam Jam Dunia, offset tetap yang dipilih digunakan.
+Cap waktu Unix saat ini dalam milidetik (ms).
+Cap waktu Unix saat ini dalam detik (s).
+Nilai InstalledOn terbaru dalam Win32_QuickFixEngineering.
+Jumlah kecepatan unggah real-time untuk semua antarmuka jaringan yang terhubung dan bukan loopback.
+Jumlah kecepatan unggah sistem yang dikonversi ke Mbps.
+Jumlah detik Windows telah berjalan sejak permulaan sistem saat ini.
+Teks yang mudah dibaca untuk periode sistem berjalan.
+Penggunaan real-time tertinggi untuk mesin 3D pada GPU yang sedang dipilih.
+Statistik bergerak penggunaan CPU sepanjang 15 menit terbaru setelah variabel ini diaktifkan.
+Statistik bergerak penggunaan CPU sepanjang 1 menit terbaru setelah variabel ini diaktifkan.
+Statistik bergerak penggunaan CPU sepanjang 5 menit terbaru setelah variabel ini diaktifkan.
+Penggunaan real-time tertinggi untuk mesin perhitungan pada GPU yang sedang dipilih.
+Penggunaan real-time tertinggi untuk mesin penyalinan pada GPU yang sedang dipilih.
+Penggunaan CPU tertinggi yang diamati dalam jendela pengambilan sampel terbaru sepanjang maksimum 15 menit.
+Penggunaan real-time tertinggi untuk mesin dekode video pada GPU yang sedang dipilih.
+Penggunaan real-time tertinggi untuk mesin enkode video pada GPU yang sedang dipilih.
+Jumlah penggunaan CPU saat ini untuk seluruh komputer.
+Memori fisik yang sedang digunakan.
+Domain Windows atau nama komputer untuk pengguna saat ini.
+Rasio waktu CPU yang digunakan untuk kode mode pengguna.
+Perkiraan rasio throughput keseluruhan sistem dibandingkan dengan jumlah laju tautan antarmuka aktif.
+Mendeteksi apakah VPN aktif berdasarkan antarmuka jaringan aktif seperti Tunnel, PPP, WireGuard dan Wintun.
+Jumlah kapasitas memori video khusus untuk GPU yang sedang dipilih.
+Versi produk Endfield Charge Plus.
+Ruang alamat virtual sistem yang tersedia saat ini.
+Kombinasi batas semua layar aktif dalam CoreGraphics, diukur dalam titik logis.
+Jumlah ketinggian desktop virtual beberapa tampilan.
+Ukuran memori virtual proses aplikasi saat ini.
+Jumlah ruang alamat virtual yang dilaporkan oleh sistem.
+Rasio memori virtual terpakai dibandingkan dengan jumlah memori virtual.
+Ruang alamat virtual sistem yang sedang digunakan.
+Kombinasi batas semua layar aktif dalam CoreGraphics, diukur dalam titik logis.
+Jumlah lebar desktop virtual beberapa tampilan.
+Koordinat desktop global CoreGraphics dalam titik logis.
+Koordinat batas kiri desktop virtual beberapa tampilan.
+Koordinat desktop global CoreGraphics dalam titik logis.
+Koordinat batas atas desktop virtual beberapa tampilan.
+Tegangan real-time yang dilaporkan oleh antarmuka baterai Windows. Beberapa model mungkin tidak memberikannya.
+Tegangan inti GPU yang dilaporkan oleh sensor pemantauan perangkat keras.
+Jumlah distribusi WSL yang didaftarkan pengguna saat ini.
+Daftar distribusi yang dikembalikan oleh wsl -l -q.
+Jumlah set kerja vmmemWSL/vmmem.
+Mendeteksi berkas program WSL dan distribusi yang terdaftar.
+Jumlah detik yang telah berlalu sejak hari Senin minggu ini.
+Angka minggu saat ini mengikuti gaya ISO.
+Persen waktu yang telah berlalu dari Senin minggu ini pada 00:00 hingga Senin minggu depan pada 00:00.
+Jumlah detik yang tersisa hingga hari Senin minggu depan.
+Pita frekuensi antarmuka WLAN saat ini; sistem baru membaca Band secara langsung, sedangkan sistem lama memakai perkiraan jika dapat ditentukan.
+Kanal nirkabel antarmuka WLAN saat ini.
+Jenis radio WLAN saat ini, misalnya 802.11ax.
+Laju penyajian atau pembaruan gambar yang benar-benar diukur untuk jendela terpilih. Windows menghitung aliran penyajian dominan jendela tersebut; jendela lain dalam proses yang sama dihitung secara terpisah.
+Frame rate aktual dibagi dengan frame rate referensi 100% dalam profil.
+Status pengumpulan aktual dan alasan tidak tersedia.
+Jumlah pembaruan yang belum terpasang dan tidak disembunyikan, ditemukan oleh Microsoft.Update.Session.
+Status yang dihasilkan dari penanda mulai ulang tertunda dan pencarian pembaruan tersedia.
+Memori set kerja Endfield Charge Plus saat ini.
+Dikonversi dalam real-time menggunakan China Standard Time dalam Windows.
+Dikonversi dalam real-time menggunakan GMT Standard Time dalam Windows.
+Dikonversi dalam real-time menggunakan Eastern Standard Time dalam Windows.
+Dikonversi dalam real-time menggunakan Tokyo Standard Time dalam Windows.
+Jumlah detik yang telah berlalu dalam tahun ini.
+Persen waktu yang telah berlalu dari 1 Januari tahun ini hingga 1 Januari tahun depan.
+Jumlah detik yang tersisa hingga 1 Januari tahun depan.
+Tahun saat ini.
+Latensi saat ini
+Offset UTC lokal saat ini; Jam Dunia menggunakan offset UTC tetap yang dipilih.
+Kehilangan paket saat ini
+Periode saat ini
+Status saat ini
+Waktu saat ini
+Jenis transportasi saat ini: WIFI / CELLULAR / ETHERNET / VPN / NONE.
+Versi saat ini
+Nama hari saat ini; kunci yang setara dalam katalog desktop adalah time.day_of_week / time.day_of_week_en.
+Nilai saat ini: {0}. Unit: {1}.
+Nilai saat ini: {0}.
+Versi saat ini: v0.1.2
+Saat ini: v0.1.3
+Versi saat ini: v{0}
+Sedang aktif
+Sedang diedit
+Data khusus
+Koordinat sendiri
+Data khusus
+Profil khusus
+Profil khusus {0}
+Koordinat sendiri
+Nilai khusus dari sumber HTTP / JSON.
+Animasi pergantian
+Jumlah siklus
+Antrean rotasi
+Tampilkan profil dalam antrean di bawah secara bergantian.
+Antrean rotasi
+Animasi peralihan siklus
+Memutar antrean secara berurutan; antrean hanya merujuk profil yang masih ada.
+Dari atas ke bawah lalu kembali ke awal. Daftar merujuk profil yang ada.
+Bersepeda, klik & animasi
+Persentase aktivitas D:
+Sistem berkas D:
+Ruang tersedia D: (byte)
+Kesehatan D:
+I/O D: (B/s)
+Label D:
+Jumlah partisi D:
+Waktu menyala D: (jam)
+Panjang antrean D:
+Kecepatan baca D: (B/s)
+Status SMART D:
+Suhu D:
+Total kapasitas D: (byte)
+Status TRIM D:
+Penggunaan D:
+Ruang terpakai D: (byte)
+Kecepatan tulis D: (B/s)
+Latensi DNS (ms)
+Durasi resolusi DNS
+Server DNS
+Waktu DPC
+Target harian
+Target harian (HH:mm:ss)
+Gelap
+Data tersedia
+Pengelolaan data
+Properti data
+Konfigurasi sumber data
+Sumber data
+Total data
+Penggunaan data
+Data terpakai
+Data untuk '{0}' tidak tersedia atau tidak valid. Periksa ROOT/izin, dukungan perangkat, jendela yang dipilih dan pengaturan sumber data.
+Data profil HUD berikut tidak tersedia atau tidak valid:
+Interval pengambilan sampel data / ms
+Interval pengambilan sampel data / detik
+Interval pengambilan sampel data / detik (semua HUD)
+Sumber data ditambahkan.
+Konfigurasi sumber data
+Sumber data dihapus.
+Tanggal
+Tanggal dan waktu
+Hari
+Waktu berlalu hari ini (detik)
+Hari dalam minggu
+Nama hari (bahasa Inggris)
+Hari dalam tahun
+Progres hari
+Sisa waktu hari ini (detik)
+Total memori video khusus (byte)
+Penggunaan memori video khusus
+Memori video khusus terpakai (byte)
+DeepSeek API
+DeepSeek API
+Saldo DeepSeek
+Saldo DeepSeek dan periode sibuk
+Periode sibuk resmi DeepSeek (Beijing)
+DeepSeek {deepseek.period.name}
+Gateway bawaan
+Warna aksen bawaan dan aturan warna bersyarat.
+Pengaturan bawaan dipulihkan.
+Pemindaian terakhir Defender
+Status Defender
+Ancaman Defender
+Hapus
+Kesehatan kapasitas saat ini terhadap desain
+Kapasitas desain (Wh)
+Kapasitas desain (mWh)
+Lapisan desktop
+Repositori edisi desktop
+Terperinci
+Mendeteksi…
+Alat pengembang
+Perangkat
+Jumlah perangkat
+Daftar perangkat
+Produsen perangkat
+Model perangkat
+Durasi perangkat berjalan
+Dhaka, Thimphu
+Laporan diagnostik
+Nonaktif
+Buang perubahan
+Daya pengosongan (W)
+Mengosongkan daya
+Disk
+Tutup
+Layar
+Tampilan dan posisi
+Tampilan & Posisi: visibilitas, penempatan, penampilan dan pengambilan sampel. Konten HUD: profil, siklus dan aturan pemicu. Manajemen Data: Pustaka variabel, Data perangkat keras dan Konfigurasi Sumber Data. Fitur Eksperimen: beberapa HUD. Tentang: pembaruan, cadangan dan pemeliharaan.
+Isi tampilan
+Teks kecepatan unduh
+FPS layar
+FPS layar (Jalankan sebagai administrator)
+Persentase FPS layar
+Status FPS layar
+Mode tampilan
+Nama layar
+Persentase layar
+Progres tampilan
+Status tampilan
+Teks status tampilan
+Teks kecepatan unggah
+Tampilkan sesi media Windows di HUD.
+Opsi frame rate layar
+Mode tampilan
+Layar {0} · {1}×{2}{3}
+Tampilan, posisi & penampilan
+Kontainer Docker
+Image Docker
+Docker berjalan
+Domain
+Jangan peringatkan lagi untuk data ini
+Selesai
+Turun
+Unduh
+Kecepatan unduh (B/s)
+Kecepatan unduh (Mbps)
+Hanya unduh
+Kecepatan unduh
+Mengunduh pemasang driver resmi; wizard pemasangan akan dibuka setelah verifikasi.
+Posisi diseret · pulihkan jangkar yang dipilih
+Tampilan di atas aplikasi lain diizinkan.
+Tanggal driver
+Versi driver
+Pemasangan driver selesai. Keluar sepenuhnya dan buka ulang ECP sebagai administrator.
+Dubai, Abu Dhabi
+Gandakan
+Durasi
+Durasi / detik
+Aplikasi ECP
+Setiap HUD memiliki profil, rotasi, font, ukuran, visibilitas, dan layar target sendiri. Pilih instans lalu sesuaikan dalam dua tab pertama; Cari Posisi membuka pengaturan posisi. Garis tepi oranye dan label Sedang diedit tetap terlihat pada HUD terpilih selama Pengaturan terbuka. Gunakan Simpan dan Terapkan setelah menambah atau menghapus instans; menutup Pengaturan menghapus garis tepi tersebut. Interval pengambilan sampel dan pergantian melalui klik berlaku untuk semua HUD dan dapat diubah saat mengedit instans mana pun; bahasa dan startup bersifat global. Maksimum 16 HUD.
+Waktu Timur (AS dan Kanada)
+Sedang diedit: 
+Bagian waktu yang telah berlalu dari 00:00 hari ini hingga 00:00 hari berikutnya; kunci setara pada desktop adalah time.day.progress.
+Aktifkan dan pilih contoh
+Aktifkan rotasi otomatis
+Memungkinkan klik-sikling untuk melangkah melalui antrian bahkan dengan otomatis cycling off. Setiap HUD melangkah ke depan instansi sendiri dan mengatur ulang waktu siklusnya. area transparan tetap klik-through. antrian kosong atau item tunggal tidak berganti.
+Aktifkan area pemanggilan mouse
+Aktifkan beberapa HUD
+Memungkinkan beberapa HUD di bawah Fitur Eksperimen, tambahkan/ganti nama HUD sekunder dan pilih untuk diedit. HUD yang dipilih disorot. Simpan & Larapkan contoh baru sebelum memulainya. Menghapus contoh sekunder tidak menghapus HUD utama.
+Aktifkan izin notifikasi untuk aplikasi.
+Aktifkan probe
+Aktifkan Sakelar utama HUD di bawah Tampilan dan posisi; aktifkan Selalu tampil untuk HUD yang tetap. Pilih profil built-in di bawah Konten HUD → HUD Configuration dan lihat pra-nya. Klik Simpan dan Terapkan di kanan atas untuk menerapkan pengaturan pada HUD yang sedang berjalan.
+Aktifkan aturan ini
+Aktif
+Aktif: {0}
+Penyimpanan terenkripsi tidak tersedia, sehingga kunci API tidak dapat disimpan dengan aman.
+Penyimpanan terenkripsi tidak tersedia; kunci API tidak disimpan.
+Pengaturan Endfield Charge Plus
+Endfield Charge Plus sedang berjalan
+Pembaruan Endfield Charge Plus tersedia
+HUD status bergaya Endfield
+Titik akhir
+Bahasa Inggris
+Masukkan #RRGGBB atau #AARRGGBB.
+Masukkan kunci DeepSeek API di bawah Pengelolaan data → Konfigurasi sumber data, lalu Simpan dan Terapkan. Kunci-kunci tersebut dienkripsi untuk pengguna Windows saat ini dan mungkin perlu masuk kembali untuk akun atau mesin lain. Peak windows menggunakan waktu Beijing dan kalender liburan Cina; hari kerja makeup akhir pekan tetap off-peak.
+Masukkan angka.
+Masukkan waktu antara 00:00:00 dan 23:59:59.
+Masukkan bilangan bulat.
+Masukkan kunci API terlebih dahulu.
+Masukkan URL HTTP/HTTPS GET yang mengembalikan JSON dan beri nama sumber.\nPetakan jalur respons seperti data.value atau players[0].name ke nama variabel.\nAtur header yang diperlukan serta interval penyegaran dalam detik, aktifkan sumber, lalu pilih Simpan dan Terapkan.\nCari custom.<source>.<variable> di pustaka variabel dan gunakan dalam profil.
+Masukkan URL http/https.
+Galat
+Perkiraan waktu hingga habis
+Perkiraan waktu hingga penuh
+Perkiraan energi saat terisi penuh
+Eucla
+Pemanggilan peristiwa
+Aturan pemicu acara
+Keluar
+Fitur eksperimental
+Eksperimenal multiple HUD
+Ekspor
+Ekspor konfigurasi Endfield Charge Plus
+Ekspor konfigurasi
+Ekspor gagal.
+Ekspor gagal. Lihat log.
+Ekspor diagnostik perangkat keras
+Ekspor pengaturan atau membuat cadangan di bawah Tentang → Configuration & Maintenance. Import mengembalikan setup lengkap. Backup sebelum suntingan substansial. Rahasia yang dienkripsi untuk pengguna saat ini mungkin perlu masuk kembali ke mesin atau akun yang berbeda.
+Ekspor, impor dan backup
+Diekspor.
+Ekspresi
+Pembagi ekspresi tidak boleh 0
+Kesalahan ekspresi
+Kesalahan ekspresi (posisi {0}): {1}
+Fungsi ekspresi: len, contains, startswith, endswith, upper, lower, concat. Konversikan tipe dengan number, string, atau bool; periksa nilai dengan isnull, isempty, dan isnan. Rangkaian format token mendukung upper/lower, sub:start:length dengan indeks mulai dari nol, replace:old:new, serta math:add/sub/mul/div/round/floor/ceil/abs.
+FPS dan GPU target
+FPS dihitung dari cap waktu bingkai yang benar-benar ditampilkan oleh lapisan SurfaceFlinger yang dipilih.
+Nama layar FPS
+FPS dibagi laju bingkai yang ditetapkan sebagai 100% dalam profil.
+Nama jendela FPS
+Gagal
+Jumlah kipas
+Kecepatan kipas (ringkasan)
+Persentase kipas (ringkasan)
+Cepat (latensi)
+Pemetaan bidang (satu variabel = jalur JSON setiap baris)
+Jumlah berkas
+Cari dan salin variabel
+Temukan halaman yang tepat
+Dipicu sekali saat nilai berubah dari salah menjadi benar. Menerima true/false serta angka nol/bukan nol.
+Dipicu ketika perbandingan terpenuhi; kondisi yang terus berlangsung dapat memicu lagi setelah jeda.
+Dipicu saat nilai berubah; operator dan ambang diabaikan. Data yang tidak tersedia dan sampel pertama setelah data pulih tidak memicu tindakan.
+Profil firewall
+Status firewall
+Pengaturan bawaan pemasangan pertama dimuatkan; klik Simpan dan Terapkan di bagian kanan atas untuk menggunakannya.
+Jumlah disk tetap
+Ruang tersedia disk tetap (byte)
+Daftar disk tetap
+Total kapasitas disk tetap (byte)
+Penggunaan disk tetap
+Ruang terpakai disk tetap (byte)
+Fokus kotak jalan pintas dan tekan Ctrl atau Alt dengan huruf, digit atau tombol fungsi, kemudian Simpan dan Terapkan. F12 dan kombinasi yang terpelihara ditolak. Jika pendaftaran berkonflik, jalan pintas sebelumnya tetap aktif. Hapus dan simpan untuk menonaktifkannya.
+Ikuti sistem
+Skala font
+Layanan latar depan
+Izin layanan latar depan sudah dideklarasikan untuk HUD.
+Faktor bentuk
+Format
+v{0} ditemukan. Ketuk untuk melihat rilis.
+{0} ditemukan. Lihat Tentang untuk rincian pembaruan.
+Frame rate pada 100% / FPS
+Target FPS
+Versi kerangka kerja
+Memori kosong
+Persentase kosong
+Frekuensi GHz
+Frekuensi MHz
+Persentase frekuensi
+Dari sumber HTTP/JSON yang dikonfigurasi; pemetaan bidang menentukan maksud metrik.
+Lengkap
+Durasi penggunaan saat penuh (detik)
+Latensi pada 100% (ms)
+Kapasitas penuh (Wh)
+Kapasitas penuh (mWh)
+Energi saat terisi penuh diperkirakan dari energi tersisa dan persentase muatan, bukan kapasitas desain pabrikan.
+Lengkap: tarik balik item sebelumnya, kemudian tampilkan item berikutnya dengan keseluruhan urutan judul, riak dan perubahan bentuk.
+Lengkap: judul, riak, dan perubahan bentuk sebelum HUD akhir.
+Fungsi clamp memerlukan min <= max
+Fungsi sign tidak menerima NaN
+Fungsi {0} memerlukan 1–2 argumen
+Fungsi {0} memerlukan sedikitnya {1} argumen
+Fungsi {0} memerlukan {1} argumen
+URL GET
+GPU
+Perangkat GPU
+Frekuensi GPU
+Model GPU
+Suhu GPU
+Nama proses dengan penggunaan GPU tertinggi
+Penggunaan GPU proses tertinggi
+Penggunaan GPU
+Frekuensi GPU
+Frekuensi GPU; Android tidak menyediakan API publik dan node produsen berbeda antarperangkat.
+Memori GPU
+Model GPU dibaca dari node KGSL produsen; ketersediaan bergantung pada perangkat dan izin Root.
+Suhu GPU
+Suhu GPU; Android tidak menyediakan API publik (lihat androidNote).
+Penggunaan GPU
+Baterai gamepad
+Jumlah gamepad
+Nama gamepad
+Dapatkan HUD di layar, lalu aturnya secara pribadi.
+Melanjutkan dengan memulai
+Cabang Git
+Commit Git terakhir
+Status Git
+Berikan setiap HUD konten dan posisi yang berbeda.
+Skala global mengubah seluruh ukuran HUD; opacitas mengontrol visibilitasnya. Pilihan font mengubah rendering teks, dengan sistem fallback untuk glyphs yang hilang. Penampilan durasi mengontrol waktu tahan sementara; bounce dan ripple mengontrol perubahan penampilan gerakan. Reset Size & Animation mengembalikan kelompok nilai ini; gunakan Simpan dan Terapkan setelahnya.
+Ukuran font dan skala UI global
+Versi Golang
+Berikan akses
+Diberikan
+Saldo kredit gratis
+Nama adaptor grafis dibaca melalui EGL; kunci setara pada desktop adalah gpu.name.
+Dikelompokkan menurut fungsi; status umum dan metrik real-time ditampilkan lebih dahulu, diikuti nilai terperinci. Cari berdasarkan nama, kunci, atau kategori.
+Sumber HTTP / JSON
+Bidang HTTP
+Pemetaan bidang HTTP/JSON
+Konfigurasi HUD
+Konten HUD
+Konten dan data HUD
+Sakelar utama HUD
+Opasitas HUD
+Profil HUD
+PENGATURAN HUD
+Skala HUD
+Konten HUD / pemicu peristiwa
+Konten HUD / aturan
+Peringatan data HUD
+Peringatan data HUD
+Font HUD
+Sakelar utama HUD
+Opasitas HUD
+Skala HUD
+Layanan HUD
+Status HUD
+Jumlah handle
+Data perangkat keras
+Informasi perangkat keras
+Memori dicadangkan perangkat keras (byte)
+Sensor perangkat keras
+Kemampuan perangkat keras
+Kemampuan perangkat keras belum dipindai.
+Kemampuan perangkat keras dideteksi ulang.
+Interval pengambilan sampel perangkat keras / detik
+Sensor perangkat keras & driver
+Peubah-peubah perangkat keras dan kunci warisan
+Memiliki gambar
+Memiliki teks
+Hawaii
+Header (satu Key: Value per baris)
+Header dan pemetaan bidang tidak boleh null.
+Persentase kesehatan
+Beban tinggi: cpu.usage, Ambang >= 90, dan jeda pemicu 30 detik. Untuk melacak perubahan, gunakan media.title dengan mode perubahan nilai dan jeda yang sesuai. Pastikan variabel mengembalikan data yang valid sebelum mengandalkan pemicu.
+Kalender hari libur perlu diperbarui
+Nama host
+Host tidak terjangkau
+Zona panas tersedia dengan Selalu tampil off. Setel jangkar, ukuran, offset dan waktu tinggal. Daerah menggunakan batas tampilan target penuh dan ditempel ke layar. Tinggal selama interval yang dipilih untuk memanggil; pergi dan masuk kembali untuk memperkuat kembali. Anda dapat memajukan carousel pada setiap panggilan.
+Jarak X area / px
+Jarak Y area / px
+Waktu diam di area
+Tinggi area / px
+Posisi area
+Lebar area / px
+Suhu hotspot
+Jam
+Status Hyper-V
+ICMP diutamakan; jaringan terbatas beralih ke TCP / UDP. Target dan port diambil dari profil aktif.
+ICMP menggunakan Ping standar; TCP mengukur latensi koneksi port; UDP mengirim data probe dan menunggu respons layanan target.
+Pengujian ICMP, TCP atau UDP ke target yang ditetapkan; permintaan gagal melaporkan status tidak diketahui.
+Alamat IPv4
+Pencarian IPv4 gagal
+IPv4, IPv6, atau nama host.
+IPv4, IPv6, atau nama host; port hanya digunakan untuk TCP / UDP.
+IPv4, IPv6, atau nama host.
+Alamat IPv6
+Pencarian IPv6 gagal
+Ikon dan cincin kemajuan
+Ikon dan cincin kemajuan
+IDE berjalan
+Menganggur
+Persentase waktu menganggur
+Ukuran gambar
+Langsung
+Impor
+Impor konfigurasi Endfield Charge Plus
+Impor konfigurasi
+Impor gagal. Lihat log.
+Impor gagal: berkas tidak valid atau tidak dapat dibaca.
+Preferensi startup yang diimpor tidak dapat diterapkan. Periksa Aplikasi Startup Windows.
+Di AIDA64 Preferences → Hardware Monitoring → External Applications, pilih item dan aktifkan shared memory, Registry atau WMI. Terus AIDA64 berjalan, lalu refresh ECP Data perangkat keras. ECP membaca semua ekspor aktual, termasuk nomor, waktu dan teks; medan yang tidak diekspor atau terbatas lisensi tetap tidak tersedia.
+Berisi informasi perangkat, kemampuan, izin, dan konfigurasi yang dapat dibagikan kepada pengembang.
+Setelan independen dan berbagi
+Sensor dan ringkasan individual
+Info
+Sampel awal dan yang dipulihkan menetapkan garis dasar tanpa muncul.Setiap aturan memiliki cooldownnya sendiri; ambang batas yang berkelanjutan dapat dipicu lagi setelah berakhir. Aturan pencocokan memanggil item berikutnya dalam antrian contoh itu, atau profil aktif untuk antrian kosong. Aturan hanya bekerja dalam mode transient. Permintaan area aktif diprioritaskan; area aktif dan aturan melanjutkan antrean secara terpisah. Pengambilan sampel tetap berlangsung saat HUD tampil, sesuai interval global dan sumber data. Peristiwa yang terdeteksi saat sibuk digabung dan disimpan.
+Sisipkan variabel
+Periksa pembacaan nyata dan menyelesaikan masalah driver.
+Pemeriksaan, pencarian, salinan dan ekspor
+Pasang / perbarui PawnIO
+Nama instans
+Instruksi per detik
+Bilangan bulat
+Antarmuka
+Nama antarmuka
+Jenis antarmuka
+Bahasa antarmuka
+Bahasa antarmuka dan sistem default
+Nama antarmuka jaringan bawaan (LinkProperties.interfaceName).
+Garis Tanggal Internasional Barat
+Interupsi
+Interval / detik
+Aturan warna tidak valid pada baris {0}. Contoh: cpu.usage >= 80 => #FF4D4F
+Angka tidak valid: {0}
+Rute tidak valid
+Sumber tidak valid; konfigurasi valid terakhir dipertahankan:
+Target tidak valid
+Akhir pekan
+Dijeda
+Diputar
+Islamabad, Karachi
+Tanggal dan waktu ISO
+Konfigurasi JSON
+Jalur JSON tidak ada: 
+Nilai JSON adalah null
+Versi Java
+Jitter (ms)
+KB/s / MB/s (Otomatis)
+KB/s · MB/s (otomatis)
+Kabul
+Kathmandu
+Jaga konfigurasi dan memeriksa kegagalan.
+Menjaga HUD mengambang Endfield Charge Plus tetap berjalan.
+Menjaga HUD yang diposisikan dengan jangkar agar tidak tertutup bilah status atau poni layar.
+Penggunaan mode kernel
+Nama papan ketik
+Cache L2 (KB)
+Cache L3 (KB)
+Status LLM lokal
+Arah dengan laju lebih besar
+max(Unduh, Unggah)
+Nilai yang lebih besar mengurangi frekuensi pembaruan perangkat keras; jam tetap diperbarui setiap detik.
+Keberhasilan terakhir
+Terakhir diperbarui
+Galat terakhir
+Latensi (ms)
+Progres latensi
+Teks latensi
+Kemudian
+Status pengujian terbaru; kunci setara pada desktop adalah probe.status_text.
+Versi terbaru
+Versi terbaru: Pemeriksaan gagal
+Versi terbaru: Belum diperiksa
+Versi terbaru: Waktu habis; coba lagi
+Versi terbaru: Tidak tersedia
+Versi terbaru: v{0}
+Lapisan
+Timbal-asam
+Ikon kiri
+Info utama kiri
+Ikon kiri
+Info utama kiri
+Info utama kiri / Judul
+Info utama kiri
+Info utama kiri
+Sisa {0:0}%
+Tersisa {0}%
+Mengizinkan HUD ditampilkan di atas aplikasi lain; hanya diminta saat Anda mengaktifkan HUD mengambang.
+Litium ion
+Polimer litium
+Lisensi
+Kepulauan Line
+Kecepatan tautan (B/s)
+Pratinjau langsung
+API pembaruan langsung
+Pembaruan langsung tidak didukung atau belum diizinkan pada perangkat ini.
+{0} sumber HTTP dimuat
+Waktu lokal kueri saldo terakhir yang berhasil.
+Cari dan edit HUD terpilih
+Log
+Jumlah CPU logis yang tersedia bagi aplikasi dari Runtime.availableProcessors; batas daya atau proses dapat memengaruhi jumlahnya.
+Prosesor logis
+Log
+Log dan reset
+Folder log dibuka.
+Pulau Lord Howe
+Persentase kehilangan paket
+Hilang {probe.loss_percent|0}
+Hilang
+Memori rendah
+Pembacaan suhu, daya, dan tegangan tingkat rendah memerlukan PawnIO serta akses administrator. Pengguna AIDA64 dapat mengaktifkan memori bersama, Registry, atau WMI melalui Preferences → Hardware Monitoring → External Applications; semua item yang diekspor tersedia di sini. Pembacaan yang tidak tersedia ditampilkan sebagai --.
+Nama komputer
+Informasi utama ditampilkan di kiri; persen, kemajuan atau status ditampilkan di kanan.
+Produsen
+Petakan bidang JSON dari GET ke custom.source.variable; header dapat merujuk variabel lingkungan.
+Kepulauan Marquesas
+Frekuensi maksimum (GHz)
+Frekuensi maksimum (MHz)
+Latensi maksimum (ms)
+Kecepatan tautan maksimum (B/s)
+Maksimum
+Mbps memakai megabit per detik; KB/s / MB/s berganti secara otomatis sesuai kecepatan.
+Durasi pulang-pergi HTTP untuk permintaan resmi /user/balance terakhir; permintaan saldo memakai cache 1 menit.
+Alamat IP aktual dari respons Ping; alamat akhir terlihat setelah nama domain target berhasil diurai.
+Rata-rata latensi untuk 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+Durasi resolusi one.one.one.one oleh sistem lokal; dapat dipengaruhi cache DNS.
+Variabel kompatibilitas: gabungan alamat dan port saat ini.
+Deskripsi galat atau status untuk pengujian terakhir yang gagal.
+Latensi pada 100% cincin Ping, ditetapkan ke 999 ms.
+Rata-rata nilai mutlak selisih latensi antara sampel berhasil terbaru yang bersebelahan untuk target saat ini, sebagai perkiraan jitter jaringan.
+Waktu lokal respons berhasil terakhir dari target saat ini.
+Latensi pulang-pergi atau koneksi probe berhasil terakhir; kegagalan dianggap sebagai 999 ms.
+0 ms setara dengan 0%, sedangkan 999 ms atau lebih setara dengan 100%; cocok untuk cincin latensi.
+Menampilkan “20ms” saat berhasil; menampilkan status batas waktu habis atau galat saat gagal.
+Laju kehilangan paket dalam 20 pengujian terbaru untuk target saat ini.
+Jumlah sampel Ping yang gagal atau kehabisan waktu untuk target saat ini dalam jendela statistik bergerak terbaru.
+Latensi tertinggi antara 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+Latensi terendah antara 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+Apakah ICMP Ping terakhir berhasil.
+Variabel kompatibilitas: port TCP / UDP; 0 untuk ICMP.
+Progres cincin yang dikonversi dari latensi: 0 ms setara 0%, sedangkan 999 ms atau lebih setara 100%; batas waktu habis atau kegagalan setara 100%.
+Variabel kompatibilitas: protokol probe jaringan saat ini, ICMP, TCP, atau UDP.
+Jumlah sampel Ping berhasil untuk target saat ini dalam jendela statistik bergerak terbaru.
+Nama status asli yang dikembalikan oleh System.Net.NetworkInformation.IPStatus.
+Jumlah sampel Ping untuk target saat ini dalam jendela statistik bergerak terbaru.
+Status pengujian terakhir, misalnya “Daring”, “Waktu habis”, atau “Tidak terjangkau”.
+Alamat IP atau nama domain yang sedang diuji oleh profil saat ini.
+Batas waktu menunggu respons untuk satu Ping.
+TTL yang dikembalikan oleh respons berhasil terakhir.
+Pengukuran: {0} ({1}).
+Hasil pengukuran {0}.
+Media
+Media tersedia
+Informasi & kemajuan media
+Aplikasi sumber media
+Informasi media tidak tersedia
+Memori
+Clock memori (MHz)
+Suhu junction memori
+Total memori (byte)
+Memori terpakai (byte)
+Rincian memori
+Penggunaan memori
+Milidetik
+Latensi minimum (ms)
+Minimum
+Menit
+'{0}' tidak ada
+Tanda kutip penutup tidak ada
+Memori termodifikasi (byte)
+Salinan yang diubah telah dibuat; profil bawaan tidak berubah.
+Pembagi modulo tidak boleh 0
+Senin hingga Jumat, kecuali hari libur Tiongkok; akhir pekan tetap di luar jam sibuk meskipun dijadwalkan sebagai hari kerja pengganti.
+Jumlah monitor
+Bulan
+Waktu berlalu bulan ini (detik)
+Nama bulan
+Progres bulan
+Sisa waktu bulan ini (detik)
+Lainnya
+Moscow, Riyadh
+Produsen motherboard
+Model motherboard
+Suhu motherboard (ringkasan)
+Waktu Pegunungan (AS dan Kanada)
+Nama mouse
+Pindahkan aplikasi ke folder Applications sebelum mengaktifkan peluncuran saat login.
+Beberapa instans HUD
+Nama
+Nama (awalan variabel)
+Tampilan target pengukuran frame rate saat ini.
+Nama proses dengan penggunaan GPU tertinggi dalam penghitung kinerja GPU Engine.
+Nama slot pengontrol XInput yang terdeteksi saat ini.
+Nama host DNS.
+Nama perangkat papan ketik pertama yang dilaporkan oleh Win32_Keyboard.
+Nama komputer Windows.
+Nama bulan mengikuti pengaturan bahasa dan wilayah saat ini.
+Nama perangkat penunjuk pertama yang dilaporkan oleh Win32_PointingDevice.
+Nama lengkap model prosesor.
+Periode saat ini adalah PEAK atau OFF-PEAK.
+Nama rencana daya Windows yang sedang aktif.
+Nama tampilan profil HUD yang sedang dipilih.
+Nama perangkat tampilan Windows yang sedang aktif.
+Diberikan ketika perangkat tampilan aktif kedua terdeteksi.
+Nama tampilan zona waktu lokal saat ini.
+Nama proses dengan penggunaan CPU tertinggi dalam sampel terakhir.
+Nama proses dengan nilai Windows PerfProc IODataBytesPersec tertinggi.
+Nama proses dengan set kerja terbesar.
+Nama pengguna Windows saat ini.
+Nama antarmuka VPN aktif yang sedang terdeteksi.
+Jendela target pengukuran frame rate saat ini.
+Pembaruan langsung asli
+Pembaruan langsung asli dimulai
+Pembaruan langsung asli dihentikan
+Kurung keriting bertingkat tidak didukung.
+Jaringan
+Jaringan terhubung
+Antarmuka jaringan
+Pemeriksaan jaringan
+Jenis jaringan
+Satuan jaringan
+Akses jaringan
+Satuan tampilan jaringan dan dasar perhitungan persentase.
+Galat jaringan
+Opsi jaringan
+Profil jaringan dapat menggunakan unit byte otomatis atau Mbps; 1 MB/s sama dengan 8 Mbps. cincin membandingkan total, download, upload atau arah yang lebih besar dengan bandwidth referensi Anda. referensi menetapkan skala 100% dan tidak membatasi atau menanda tangani jaringan.
+Kecepatan jaringan
+Lalu lintas jaringan
+Jenis jaringan
+Jaringan tidak terjangkau
+Baru
+New Delhi, Mumbai
+Aturan baru
+Newfoundland
+Berikutnya →
+NiCd
+NiMH
+Tidak
+GPU tidak terdeteksi
+Tidak ada profil dipilih
+Tidak ada perubahan untuk disimpan
+Tidak ada berkas konfigurasi yang tersedia untuk dicadangkan.
+Tata letak khusus tidak didukung
+Belum ada sumber data yang dikonfigurasi.
+Belum ada data
+Tanpa satuan tetap
+Tidak ada
+Tanpa keluaran pulau dinamis
+Tampilan kiri/kanan terpisah tidak didukung
+Belum ada entri log.
+Tidak ada bab yang cocok
+Tidak ada variabel yang sesuai.
+Tidak ada jaringan tersedia saat ini.
+Tidak ditemukan rilis yang dipublikasikan.
+Belum ada aturan.
+Belum ada sampel yang dikumpulkan.
+Belum ada profil yang dimuat.
+Pintasan belum ditetapkan.
+Versi Node.js
+Tidak ada
+Memori nonpaged pool (byte)
+Tidak digunakan
+Tidak terkait dengan protokol ini
+Belum diizinkan
+Tidak didukung pada perangkat ini
+Tidak tersedia pada perangkat atau dalam status ini
+Belum diperiksa.
+Belum diberikan
+Tidak dilindungi
+Tidak berjalan
+Tidak didukung
+Tidak didukung oleh sistem
+Tidak ada media diputar
+Tidak ada perubahan untuk disimpan.
+Pemberitahuan
+Izin notifikasi
+Izin notifikasi telah diminta; HUD memerlukannya untuk notifikasi berkelanjutan.
+Notifikasi diizinkan.
+Notifikasi dinonaktifkan
+Nukuʻalofa, Apia
+Angka
+Referensi fungsi numerik
+NVIDIA SMI tersedia
+Oke
+Arsitektur OS
+Build OS
+Deskripsi OS
+Versi OS
+Nonaktif
+Ketika dinonaktifkan, kemajuan hari ini ditampilkan; ketika diaktifkan, bagian yang tersisa hingga waktu target harian ditampilkan.
+Di luar jam sibuk
+Mati: tampilkan kemajuan yang telah berlalu hari ini. Hidup: tampilkan bagian tersisa hingga waktu target harian berikutnya.
+Periode puncak resmi (waktu Beijing)
+Aktif
+Pada Android, izinkan tampilan di atas aplikasi lain dan notifikasi, lalu mulai HUD dari Beranda. Pengaturan disimpan otomatis. Pembacaan perangkat keras bergantung pada akses sistem. PawnIO dan antarmuka desktop AIDA64 hanya tersedia di Windows. Android menentukan tata letak notifikasi dan ukuran teks.
+Dengan baterai
+Dengan baterai
+Hidup: HUD selalu ditampilkan.\nMati: perubahan koneksi daya menampilkan Baterai; gerakkan penunjuk ke zona pemicu yang ditetapkan pada tampilan target untuk memanggil profil aktif.
+Hidup: HUD selalu ditampilkan.\nMati: perubahan koneksi daya menampilkan Baterai; gerakkan penunjuk ke tengah bagian atas tampilan target untuk memanggil profil aktif.
+Setelah ditemukan lapangan hardware yang setara, entri warisan duplikat meninggalkan perpustakaan sementara profil yang ada terus bekerja. Kunci baru mengidentifikasi perangkat dan sensor tertentu. Ringkasan tertinggi / rata-rata memiliki arti yang berbeda dan tetap terpisah. -- berarti tidak ada nilai yang valid saat ini tersedia.
+Satu CPU/GPU dapat mengekspos paket, inti, hotspot, memori, dan beberapa saluran daya. Nama yang sama dapat mewakili ukuran yang berbeda. Nilai sensor min/max adalah sejarah sesi, bukan batas perangkat keras. Informasi modul SMBIOS berasal dari firmware dan bukan tabel waktu SPD/XMP/EXPO yang lengkap.
+Satu setiap baris: variabel operator nilai => warna, contohnya cpu.usage >= 90 => #FF4D4F
+Daring
+Hanya satu baris teks didukung.
+Hanya metrik yang benar-benar disediakan platform ditampilkan sebagai tersedia.
+Hanya sebagian metrik ini yang dapat dibaca.
+Hanya digunakan setelah Anda sendiri mengaktifkan “Mulai saat boot”.
+Buka
+Buka navigasi
+Buka halaman rilis
+Buka pengaturan
+Buka pengaturan →
+Buka pengaturan sistem
+Buka folder konfigurasi dari bar atas dan folder log dari Tentang. Jaga status sumber atau diagnostik perangkat keras saat pemecahan masalah. Reset memuat default pertama kali berjalan; Simpan dan Terapkan berkomitmen mereka ke aplikasi yang sedang berjalan.
+Dibuka
+Operator
+Operator dan kondisi
+Jam biasa menggunakan waktu lokal. Jam Dunia menggunakan ofset UTC tetap tanpa DST otomatis. Mode target harian menunjukkan pecahan yang tersisa sampai target waktu berikutnya di zona yang dipilih; dengan itu mati, menunjukkan kemajuan hari yang telah berlalu.
+Lainnya
+Hamparan
+Hamparan disembunyikan
+Izin hamparan
+Izin hamparan belum diberikan: pengaturan sistem telah dibuka. Izinkan “Tampilkan di atas aplikasi lain”.
+Izin hamparan belum diberikan; mengaktifkan hamparan akan membuka halaman pengaturan sistem.
+Posisi dan tampilan hamparan
+Hamparan terlihat
+Generasi PCIe
+Jalur PCIe
+PID
+Waktu Pasifik (AS dan Kanada)
+Paket
+Pemeriksaan jaringan
+Pemeriksaan jaringan
+Paket diterima
+Paket dikirim
+Memori paged pool (byte)
+Kapasitas partisi dari Android StatFs; ruang tersedia tidak mencakup blok yang dicadangkan sistem.
+Dijeda
+Fields yang ditunda, live dan hilang
+PawnIO terpasang dan ECP berjalan dengan hak istimewa administrator; sensor yang didukung oleh perangkat keras dapat dibaca.
+PawnIO terpasang tetapi tidak dapat diakses (galat {0}); periksa pemuatan driver atau perbaiki pemasangannya.
+PawnIO terpasang; jalankan ECP sebagai administrator untuk membaca sensor tingkat rendah.
+PawnIO belum terpasang: suhu, daya dan tegangan CPU serta beberapa sensor motherboard memerlukan driver ini.
+Jam sibuk
+Periode jam sibuk
+Penggunaan CPU per inti
+Persen
+Dasar persentase
+Dasar persentase
+Periode di luar jam sibuk
+Periode jam sibuk
+Zona waktu lokal periode
+Nama periode
+Nama periode (bahasa Tionghoa)
+Tanggal dan waktu pergantian periode berikutnya
+Tanggal dan waktu lokal pergantian periode berikutnya
+Waktu pergantian periode berikutnya
+Waktu lokal pergantian periode berikutnya
+Progres periode
+Teks progres periode
+Sisa waktu periode (detik)
+Teks sisa waktu periode
+Zona waktu periode
+Pemeriksaan izin gagal; buka ulang halaman ini.
+Izin diperlukan
+Izin
+Izin hanya diminta ketika Anda mengaktifkan fitur yang memerlukannya.
+Tetap
+Modus Persisten dan Transisi
+Inti fisik
+Indeks fisik
+Jumlah inti fisik; kunci setara pada katalog desktop adalah cpu.physical_cores.
+Ping (Kompatibilitas)
+Tempatkan kunci dalam brace, diikuti dengan "Dan format tampilan". Gunakan 0 untuk bilangan bulat dan 0.0 / 0.00 untuk desimal tetap. teks literal mungkin mengelilingi token. perubahan format hanya ditampilkan.
+Posisi pemutaran
+Teks posisi pemutaran
+Progres pemutaran
+Teks progres pemutaran
+Status pemutaran
+Sedang diputar
+Permainannya berjalan sesuai dengan jadwal dan tingkat yang dilaporkan; jadwal yang ditunda tidak ekstrapolasi. sesi langsung tanpa durasi tidak memiliki persentase yang valid dan menunjukkan --. Pemain tanpa sesi terdaftar atau metadata artis / album yang hilang meninggalkan bidang-bidang tersebut tidak tersedia.
+Jenis koneksi daya
+Port
+Port tidak terjangkau
+Posisi
+Penempatan
+Batas daya (W)
+Daya maksimum (ringkasan)
+Rencana daya
+Nama rencana daya
+Sumber daya
+Daya (W)
+ABI pilihan Android (Build.SUPPORTED_ABIS); kunci setara pada katalog desktop adalah cpu.architecture.
+ABI pilihan sistem yang dibaca melalui Build.SUPPORTED_ABIS.
+Prasetel
+Prasetel + Jarak
+Prasetel + Jarak
+Nama prasetel
+Pratinjau HUD
+Pratinjau HUD
+Pratinjau gagal. Lihat log.
+Nilai utama
+Kedalaman warna layar utama
+Layar utama (otomatis)
+HUD utama
+Tinggi layar utama (px)
+Nama layar utama
+Refresh rate layar utama
+Lebar layar utama (px)
+Layar utama (otomatis)
+Ruang tersedia penyimpanan eksternal utama
+Persentase ruang kosong penyimpanan eksternal utama
+Total kapasitas penyimpanan eksternal utama
+Penggunaan penyimpanan eksternal utama
+Ruang terpakai penyimpanan eksternal utama
+Nilai utama
+Nilai utama / Judul
+Privat
+Memori privat (byte)
+Pengujian ICMP
+Status probe
+Pengujian TCP
+Target pemeriksaan
+Pengujian UDP
+Latensi probe
+Pengujian belum selesai
+Opsi probe
+Target pemeriksaan
+Tugas dan protokol probe
+Arsitektur proses
+Proses
+Jumlah prosesor
+Pengelolaan profil
+Nama profil
+Persentase profil
+Kecepatan dasar persentase profil (B/s)
+Mode persentase profil
+Teks persentase profil
+Perbedaan Simpan profil dan Simpan dan Terapkan
+Profil disimpan
+Profil & konten HUD
+Profil, posisi, antrian, aturan pemicu dan zona panas milik setiap instansi. Mengklik HUD hanya memajukan antriannya. interval pengambilan sampel, jalan pintas global dan pengaturan master klik-sikling dibagi. Simpan dan Terapkan berkomitmen seluruh konfigurasi.
+Kemajuan
+Nilai kemajuan
+Ekspresi kemajuan
+Nilai kemajuan
+Proyek dan lisensi
+Proyek GitHub
+Proyek dan lisensi
+Dilindungi
+Protokol
+Diberikan oleh API sistem Android; data yang tidak dapat dibaca dilaporkan sebagai tidak tersedia.
+Alamat proksi
+Proksi aktif
+Status proksi
+Publik
+IPv4 publik
+IPv6 publik
+Penerbitan gagal
+Versi Python
+Tautan cepat
+Keluar
+Rentang 3–3600 detik.
+Rentang {0}–{1}
+Daya (W)
+Status pemutaran mentah
+Periksa ulang
+Deteksi ulang
+Dibaca dari /proc/stat, /proc/cpuinfo, cpufreq, atau zona termal CPU; akses Root yang diizinkan dapat membaca node terbatas. Tidak tersedia tanpa sampel yang valid.
+Dibaca dari Android Build dan API sistem perangkat.
+Dibaca dari siaran baterai Android atau BatteryManager; tidak tersedia jika perangkat tidak memberikannya.
+Dibaca dari API memori Android atau /proc/meminfo; hanya pembacaan yang benar-benar diberikan oleh perangkat diterbitkan.
+Dibaca dari KGSL, Mali, devfreq, atau zona termal GPU; akses Root yang diizinkan dapat menambah akses. Tidak tersedia jika perangkat tidak menyediakan node terkait.
+Dibaca atau dihitung dari konfigurasi sumber DeepSeek; permintaan saldo memerlukan kunci API pengguna.
+Baca status driver di bagian atas. Jika PawnIO hilang, instal/update dan selesaikan Windows UAC; sepenuhnya keluar dari ECP setelahnya. Restart ECP sebagai administrator dan cek lagi. tombol restart menunggu proses lama keluar. Jika masih tidak tersedia, bedakan status driver inaccessible dari hardware yang tidak mengembalikan data, lalu ekspor diagnostik.
+Dibaca melalui TrafficStats atau API jaringan Android; ketersediaan bergantung pada versi sistem dan izin.
+Pengumpulan baca saja; tidak ada pengaturan sistem diubah. Tentukan sendiri apakah ECP diizinkan ketika pengelola Root meminta izin.
+Hanya dapat dibaca aplikasi sistem (API tersembunyi).
+Hanya dapat dibaca aplikasi vendor.
+Membaca data…
+Izin lokasi diperlukan untuk membaca nama Wi-Fi.
+Membaca peristiwa penyelesaian Present X11/XWayland. Wayland asli, aplikasi tanpa Present, atau sistem tanpa libxpresent1 tidak dapat diukur. Jumlah operasi menggambar dan refresh rate tetap tidak digunakan sebagai FPS.
+Membaca FPS aktual, bukan pengganti berupa refresh rate. Jendela merujuk lapisan SurfaceFlinger dan memerlukan ROOT; layar memerlukan dukungan penghitung bingkai produsen. Penghitung yang tidak dapat dikaitkan dengan layar tertentu pada sistem beberapa layar tidak tersedia.
+Laju penyajian atau pembaruan gambar yang benar-benar diukur untuk jendela terpilih. Windows menghitung aliran penyajian dominan jendela tersebut; jendela lain dalam proses yang sama dihitung secara terpisah. Layar menggunakan aliran penyajian dominannya. Pengukuran menghitung peristiwa bingkai yang benar-benar ditampilkan dan memerlukan izin pencatatan kinerja; nilainya bukan laju penyegaran tetap layar.
+Perlindungan real-time dinonaktifkan
+Galat penerimaan
+Diterima
+Direkomendasikan
+Saran penggunaan
+Mencatat aktivitas terperinci saat diaktifkan.
+Satuan acuan
+Segarkan
+Interval penyegaran / s
+Segarkan daftar, pilih jendela atau layar tujuan, lalu tetapkan FPS yang mewakili 100%. FPS jendela memakai aliran presentasi utama jendela yang dipilih; jendela lain dalam proses yang sama dihitung terpisah. FPS layar memakai aliran presentasi utama layar. Nilai ini adalah laju bingkai terukur, bukan laju penyegaran layar. Jika peristiwa atau izin tidak tersedia, informasi status ditampilkan; hak administrator mungkin diperlukan. Profil GPU biasa dapat memilih adaptor, sedangkan kunci sensor asli menunjuk perangkat yang dinyatakan.
+Segarkan sekarang
+Segarkan target
+Segarkan daftar jendela/layar
+Energi tersisa (Wh)
+Energi tersisa (mWh)
+Hapus
+Hapus instans terpilih
+Hapus aturan terpilih
+Status balasan
+Nama yang dilaporkan: {0}.
+Minta izin
+Permintaan gagal: {0}
+Permintaan gagal; periksa jaringan, URL, dan kredensial.
+Memerlukan ponsel yang sudah di-root; mengaktifkan pembacaan node CPU, GPU, termal, dan memori yang dibatasi.
+Memerlukan dukungan sistem serta izin untuk menampilkan notifikasi langsung.
+Memerlukan bentuk berwarna dari platform
+Atur ulang
+Reset semua
+Reset semua
+Pulihkan semua pengaturan bawaan?
+Atur ulang ke 100%
+Mulai ulang sebagai administrator
+Menunggu mulai ulang
+Status penggunaan dibatasi oleh sistem
+Minta izin ulang
+Ikon kanan
+Status kanan
+Ikon kanan
+Status kanan
+Status kanan / Cincin
+Status kanan / Judul
+Status kanan / Cincin
+Status kanan / Judul
+Cincin
+Ring variable dan range
+Sebaran riak
+Kekuatan riak
+Gulir ke atas
+Diperlukan akses Root.
+Root diizinkan; pembacaan bergantung pada node perangkat ini.
+Pembacaan perangkat keras melalui Root
+Root tidak tersedia atau ditolak; pembacaan biasa tetap aktif.
+Nama aturan
+Jalankan sebagai administrator
+Sedang berjalan
+Berjalan sebagai administrator
+Versi Rust
+Jendela sampel
+Pengambil sampel sedang berjalan
+Sampling dan kesegaran
+Pengambilan sampel dan penyegaran
+Simpan
+Simpan dan Terapkan
+Simpan dan Terapkan instans baru terlebih dahulu.
+Simpan dan Terapkan untuk menonaktifkan pintasan.
+Simpan dan Terapkan untuk mengaktifkan pintasan ini.
+Simpan dan Terapkan untuk menampilkan HUD baru sebelum mencari posisinya.
+Di samping profil, profil yang diedit dicatat; mengedit built-in membuat salinan kustom. Pratinjau menunjukkan edit saat ini. Simpan dan Terapkan di sebelah kanan atas menyimpan pengaturan lengkap dan menerapkannya ke HUD yang sedang berjalan.
+Nama salinan yang disimpan
+Gagal menyimpan
+Simpan log
+Simpan laporan
+Disimpan
+Penghemat baterai aktif
+Persentase skala
+Profil dibuat.
+Profil dihapus.
+Pengelolaan profil
+Nama profil
+Profil disimpan
+Profil, sumber data, interval penyegaran dan pengaturan tampilan akan dipulihkan ke bawaan pemasangan pertama. Tindakan ini tidak dapat dibatalkan.
+Scope of Jangan memperingatkan tentang data ini lagi
+Penyimpanan terbatas membatasi data yang dapat dibaca.
+Layar: Tengah bawah
+Layar: Kiri bawah
+Layar: Kanan bawah
+Kecerahan layar
+Layar: Tengah
+Layar: Kiri tengah
+Layar: Kanan tengah
+Status layar
+Layar: Tengah atas
+Layar: Kiri atas
+Layar: Kanan atas
+Layar mati
+Cari dengan nama, kunci atau kategori di bawah Pengelolaan data → Pustaka variabel. Pilih variabel untuk melihat artinya, jenisnya, unitnya, dan formatnya. Copy Variable Key berguna untuk cincin dan aturan; Copy Template termasuk braces untuk bidang teks.
+Cari berdasarkan nama, kunci, atau kategori; pilih variabel untuk melihat rinciannya.
+Cari bab atau kunci
+Cari bahasa
+Cari nama, ID sumber, atau variabel
+Cari variabel
+Cari: penggunaan CPU / cpu.usage
+Detik
+Nilai tambahan / Catatan
+Nilai tambahan / Catatan
+Nama layar kedua
+Refresh rate layar kedua
+Resolusi layar kedua
+Nilai tambahan / Catatan
+Nilai rahasia dapat memakai placeholder ${env:VARIABLE_NAME}.
+Boot Aman
+Keamanan
+Pilih variabel
+Pilih variabel di sebelah kiri untuk melihat maksud dan panduan penggunaannya.
+Pilih variabel di sebelah kiri untuk melihat maksud, unit dan penggunaan yang direkomendasikan.
+Pilih jendela
+Pilih profil HUD yang aktif. Mengedit profil bawaan membuat salinan; profil asli tetap tidak berubah.
+Lapisan SurfaceFlinger yang dipilih.
+Tampilan yang dipilih.
+Galat pengiriman
+Driver sensor terpasang
+Status driver sensor
+Versi driver sensor
+Terkirim
+Tetapkan kunci API
+Setel jalan pintas show/hide
+Jadikan aktif
+Pengaturan
+Settings.System.SCREEN_BRIGHTNESS (0-255); nilai tidak dianggap sebagai persentase.
+Bagikan
+Bagikan informasi aplikasi
+Bagikan konfigurasi
+Bagikan informasi perangkat dan kemampuan
+Bagikan log diagnostik
+Bagikan laporan diagnostik
+Bagikan log
+Batas memori bersama (byte)
+Penggunaan memori bersama
+Memori bersama terpakai (byte)
+Nama singkat
+Animasi tampil dengan pintasan
+Pintasan tampil/sembunyi semua HUD
+Pintas & mouse hot zones
+Interval yang lebih pendek mengambil sampel lebih cepat dan memakai lebih banyak sumber daya. Jam diperbarui setiap detik; API eksternal memiliki interval penyegarannya sendiri.
+Tampilkan HUD pertama Anda
+Menampilkan {0} item, termasuk sensor asli dan informasi firmware.
+Menampilkan pembacaan perangkat keras dari sistem dan driver. Sensor yang tidak disediakan atau tidak dapat diakses menampilkan --. Ekspor diagnostik untuk rinciannya. PawnIO dan antarmuka AIDA64 hanya tersedia di Windows.
+Menampilkan pembacaan yang benar-benar disediakan perangkat dan sistem. Item yang tidak tersedia menampilkan -- beserta sebabnya.
+Sinyal (dBm)
+Sederhana
+Sederhana memperpendek presentasi; Lengkap menggunakan panggilan lengkap. Roll Up memindahkan ikon, nilai, dan cincin di dalam kapsul yang tetap sementara mempertahankan jendela dan lapisannya. Roll berlaku untuk switch yang tetap; presentasi awal dan sementara mempertahankan siklus hidup normal mereka. DeepSeek peak transitions menjaga Lengkap animation.
+Ringkas: tampilkan HUD akhir dengan cepat.
+Ringkas: tarik balik item sebelumnya, kemudian tampilkan item berikutnya dengan cepat.
+Ukuran dan animasi
+Ukuran, ketebalan, font dan gerakan
+Jumlah slot
+Slot terpakai
+Lambat
+Status SmartScreen
+Jumlah soket
+Kepulauan Solomon, New Caledonia
+Beberapa jaringan memblokir ICMP; probe beralih ke TCP.
+Sumber
+Nama sumber harus unik dan hanya berisi huruf, angka, garis bawah, atau tanda hubung.
+Sumber harus berupa array JSON.
+Georgia Selatan
+Kecepatan
+Kecepatan (MHz)
+Memori siaga (byte)
+Jalankan Endfield Charge Plus setelah masuk Windows.
+Mulai HUD
+Waktu mulai
+Mulai dari profil built-in dan simpan untuk membuat salinan khusus, atau buat profil baru. Hapus menghapus profil kustom sementara prasetya asli tetap. Preview menggunakan edit saat ini dan data nyata; Simpan dan Terapkan berkomitmen untuk HUD yang sedang berjalan.
+Mulai saat boot
+Jalankan bersama Windows
+Memulai HUD memerlukan izin notifikasi untuk notifikasi berkelanjutannya.
+Startup dikelola oleh kebijakan sistem.
+Status
+Status / Kondisi
+Status / Kondisi
+Teks status
+Perhitungan status
+Status, cache dan kesalahan
+Status: terjadi galat saat memeriksa pembaruan
+Status: memeriksa GitHub…
+Status: versi lokal lebih baru dari versi daring terbaru
+Status: permintaan jaringan gagal ({0})
+Status: tidak ditemukan rilis yang dipublikasikan; repositori mungkin belum bersifat publik
+Status: Belum diperiksa
+Status: versi daring ditemukan, tetapi formatnya tidak dapat dibandingkan
+Status: versi terbaru
+Status: pembaruan tersedia
+Status: pemeriksaan pembaruan kehabisan waktu; coba lagi nanti
+Hentikan HUD
+Dihentikan
+Penyimpanan
+Jumlah perangkat penyimpanan
+Daftar perangkat penyimpanan
+Tunduk pada batas memulai dari latar belakang serta izin untuk mode tampilan terpilih.
+Akhiran
+Panggil HUD ketika data memenuhi aturan.
+Siapkan atau sembunyikan HUD sementara.
+Didukung
+Total ruang swap (byte)
+Ruang swap terpakai (byte)
+Sydney, Brisbane
+Sistem
+Persentase aktivitas disk sistem
+Ruang tersedia sistem (byte)
+Panggilan sistem
+Disk sistem
+DPI sistem
+Sistem berkas disk sistem
+Ruang kosong disk sistem (byte)
+Persentase ruang kosong disk sistem
+I/O disk sistem (B/s)
+Label disk sistem
+Panjang antrean disk sistem
+Kecepatan baca disk sistem (B/s)
+Akar drive sistem
+Status sistem
+Total kapasitas disk sistem (byte)
+Penggunaan disk sistem
+Ruang terpakai disk sistem (byte)
+Kecepatan tulis disk sistem (B/s)
+Bawaan sistem
+Status metrik sistem
+Bilah progres sistem
+Status sistem
+Penggunaan penyimpanan sistem
+SystemClock.elapsedRealtime()/1000. Jumlah detik sejak boot, termasuk saat perangkat dalam deep sleep.
+Durasi koneksi TCP
+Jumlah koneksi TCP
+TPM tersedia
+Versi TPM
+TTL kedaluwarsa
+Teks pembuka
+Tagline, judul, teks primer/sekundari dan nilai sisi kanan dapat mencampur teks literal dan token variabel. Gunakan sufiks kanan untuk satuan seperti %, °C atau GHz. Ikon mengidentifikasi konten; warna aksen menetapkan capsule dan warna cincin.
+Alamat target probe
+Layar tujuan
+Progres target
+Persentase waktu tersisa hingga target
+Waktu tersisa hingga target (detik)
+Teks waktu tersisa hingga target
+Nilai target
+Target ditutup
+Jendela tujuan
+Mode waktu target
+Mode waktu target
+Target mungkin adalah nama host, IPv4 atau IPv6. ICMP mengabaikan port; TCP/UDP menggunakannya. Kegagalan berarti bahwa target/protocol tidak menanggapi dengan sukses, tidak berarti bahwa seluruh PC offline. Server dapat memblokir ICMP atau tidak menanggapi UDP.
+Teheran
+Suhu
+Suhu (°C)
+Suhu maksimum (ringkasan)
+Templat
+Templat memakai {variable|format}. Ekspresi lanjutan memakai {= expression | format}; operator yang didukung meliputi + - * / % ^, perbandingan, && / || / !, ?:, ??, dan fungsi seperti if(), min/max/avg/sum/clamp/round. Progres juga dapat memakai = expression. Contoh: {= if(memory.usage >= 80, 'High', 'OK')}.
+Terminal berjalan
+Uji koneksi
+Sedang menguji…
+Teks
+Panjang teks
+Wilayah teks dan ikon
+Teks, jenis dan referensi pipeline
+Terima kasih kepada QinAnze atas karya sumber terbuka aslinya, serta kepada proyek Avalonia dan Jetpack Compose.
+API tersedia; sistem menentukan apakah pulau dinamis ditampilkan.
+Kunci API telah dihapus.
+Kunci API telah disimpan dalam bentuk dienkripsi.
+API pembaruan langsung / pulau dinamis Android untuk menampilkan konten HUD di sekitar bilah status.
+Versi Android terlalu lama untuk API ini.
+HUD telah dimulai.
+HUD telah dihentikan.
+Aplikasi belum memiliki izin untuk dimulai saat boot.
+Aplikasi tidak memiliki izin layanan latar depan.
+Aplikasi tidak memiliki izin akses jaringan.
+Layar pemberian izin telah dibuka; ketersediaan diperiksa ulang ketika Anda kembali.
+URL dasar tidak valid.
+Kurung keriting tidak berpasangan.
+Pemeriksaan kehabisan waktu; coba lagi.
+Kotak centang hanya membisukan peringatan secara permanen untuk variabel yang sudah tercantum dalam jendela ini. Variabel lain tetap memberi peringatan. Menutup seperti biasa hanya mengakui kejadian saat ini. Beberapa HUD dapat berbagi satu jendela; kesalahan ekspresi dibedakan menurut profil dan ekspresi. Membisukan peringatan tidak memperbaiki data atau menghentikan pengumpulan.
+Konfigurasi diimpor dan diterapkan.
+Animasi rotasi menggantikan mode animasi masing-masing profil.
+Antrean rotasi kosong. Tambahkan profil sebelum mengaktifkan rotasi otomatis.
+Perangkat tidak menyediakan node kernel yang sesuai.
+Perangkat tidak memiliki sensor tersebut.
+Checksum pemasang driver tidak valid.
+Driver sudah terpasang. Tutup lalu jalankan kembali ECP.
+Endpoint mengembalikan HTTP {0}.
+JSON yang diekspor dapat dipertukarkan dengan edisi desktop; impor divalidasi sebelum menggantikan konfigurasi saat ini.
+Ekspresi kosong.
+HUD mengambang aktif. Ketuk untuk membuka pengaturan.
+Pemasang berakhir dengan kode {0}.
+Log telah dikosongkan.
+Nilai maksimum harus lebih besar daripada minimum; jika tidak, cincin selalu bernilai 0.
+Nama tidak dapat kosong.
+Jaringan terhubung.
+Jaringan tidak dapat diakses saat ini.
+Permintaan jaringan gagal.
+Saluran notifikasi dinonaktifkan
+Hamparan memakai jendela aplikasi sistem yang sebenarnya; pulau dinamis memakai API pembaruan langsung bawaan Android.
+Platform tidak menerbitkan API ini.
+Nilai utama dan catatannya; mendukung {variable|format} dan {= expression}.
+Alamat target probe tidak dapat kosong.
+Antrean berisi satu profil; profil tersebut dipertahankan tanpa pergantian antara profil.
+Antrean kosong.
+Tag daring tidak dapat dibandingkan; lihat halaman rilis.
+Laporan tidak pernah berisi kunci API atau nilai header permintaan.
+Respons bukan JSON yang valid.
+Cincin memetakan proporsi (nilai − minimum) dalam rentang yang dikonfigurasi, lalu membatasinya ke 0–100%. Gunakan kunci variabel atau ekspresi numerik yang diawali =. Tetapkan nilai skala penuh yang wajar untuk suhu, lalu lintas jaringan, atau FPS. Rentang tidak mengubah nilai asli yang ditampilkan sebagai teks.
+Profil yang dipilih adalah profil yang sedang digunakan; satu profil selalu dipilih.
+Kecepatan dalam mode persen yang dipilih mencapai 100% pada nilai ini. Laju diseragamkan ke Byte/s sebelum perhitungan.
+Sistem mengizinkan notifikasi langsung.
+Sistem menentukan posisi, tampilan, dan kelayakan; pembacaan diperbarui paling sering sekali setiap 5 detik.
+Sistem telah mengizinkan fitur ini.
+Sistem membatasi frekuensi pembaruan
+Nama variabel kosong.
+Tema
+API ini tidak dapat menampilkan ikon.
+API ini tidak dapat menampilkan kemajuan.
+Backend ini bersifat eksperimental.
+Build ini belum memiliki sumber data sesi media bawaan pada platform ini. Bidang media tetap tidak tersedia.
+Sumber data ini dinonaktifkan.
+Perangkat atau kernel ini tidak menyediakan sumber data.
+Ini adalah pratinjau konten notifikasi; sistem menentukan tampilan dan posisinya.
+Proyek ini merupakan turunan dari QinAnze/zmd-charge dan didistribusikan dengan Lisensi MIT.
+Struktur ini dinonaktifkan. Ganti URL dengan alamat layanan yang sebenarnya, sesuaikan jalur dengan respons, lalu atur enabled menjadi true jika sudah siap. ${env:MY_API_KEY} membaca variabel lingkungan proses agar rahasia tidak ditulis langsung ke JSON.
+Jumlah utas
+Tiga siklus animasi
+Ambang
+Kurangi frekuensi saat tersembunyi
+Kurangi frekuensi saat layar mati
+Waktu
+Waktu tersisa (detik)
+Teks waktu tersisa
+Opsi waktu
+Opsi waktu langsung disimpan; mengedit konten atau nama akan membuat salinan.
+Teks waktu tersisa
+Zona waktu dan target harian
+Waktu, jaringan & profil FPS
+Waktu habis
+Linimasa tersedia
+Batas waktu / ms
+Batas waktu (ms)
+ID zona waktu
+Nama zona waktu
+Judul
+Judul / Kondisi
+Judul / Info utama kiri
+Judul / Status kanan
+Judul / Kondisi
+Judul / Info utama kiri
+Tahap judul
+Tokyo, Seoul
+Nama proses dengan penggunaan CPU tertinggi
+PID proses dengan penggunaan CPU tertinggi
+Penggunaan CPU proses tertinggi
+Tengah atas (area kerja)
+Nama proses dengan I/O disk tertinggi
+PID proses dengan I/O disk tertinggi
+I/O disk proses tertinggi
+Kiri atas (area kerja)
+Nama proses dengan penggunaan memori tertinggi
+PID proses dengan penggunaan memori tertinggi
+Penggunaan memori proses tertinggi
+Kanan atas (area kerja)
+Tengah atas
+Kiri atas
+Kanan atas
+Saldo isi ulang
+Total (Unduh + Unggah)
+Total kecepatan (B/s)
+Total byte
+Total data diunduh
+Total kecepatan (Mbps)
+Total batas memori (byte)
+Total penggunaan memori
+Total memori terpakai (byte)
+Total byte diterima
+Total byte dikirim
+Total byte ditransfer
+Total data diunggah
+Total kapasitas volume data aplikasi (StatFs); kunci setara pada desktop adalah disk.system.total_bytes.
+Laju aliran total
+Durasi trek
+Teks durasi trek
+Judul trek
+Unit lalu lintas dan referensi cincin
+Total byte diterima sejak boot dari TrafficStats; kunci setara pada desktop adalah network.total_received_bytes.
+Total byte dikirim sejak boot dari TrafficStats; kunci setara pada desktop adalah network.total_sent_bytes.
+Aturan pemicu
+Pengolahan masalah & peringatan
+Coba nama kunci variabel atau fitur, atau hapus pencarian.
+TTL ICMP
+Izinkan “Tampilkan di atas aplikasi lain” sebelum mengaktifkan HUD mengambang.
+Nonaktif
+Dua contoh yang berguna
+Jenis
+Jenis {0}
+Status UAC
+Jumlah koneksi UDP
+Skala UI
+USB / Perangkat
+Panduan / Bab {0:00}
+Offset UTC
+Offset UTC (jam)
+Zona waktu UTC
+Posisi HUD tidak ditemukan:
+Tidak tersedia
+Tidak tersedia biasanya berarti platform tidak ada API publik, perangkat tidak ada sensor terkait atau sampel belum diterima.
+Tidak tersedia jika tidak diberikan perangkat atau sumber.
+Memahami mode tampilan dan koordinat layar.
+Akhir ekspresi tidak terduga
+Satuan
+Cap waktu Unix (milidetik)
+Cap waktu Unix (detik)
+Cap waktu Unix
+Cap waktu Unix dalam detik; kunci setara pada katalog desktop adalah time.unix_seconds.
+Tidak diketahui
+Tidak terjangkau
+Karakter tidak dikenal '{0}'
+Konten tidak dikenal: {0}
+Tidak didukung
+Fungsi tidak didukung: {0}
+Naik
+Pembaruan terakhir dipasang
+Pembaruan tertunda
+Versi baru tersedia
+Waktu saldo diperbarui
+Pembaruan tersedia
+Unggah
+Kecepatan unggah (B/s)
+Kecepatan unggah (Mbps)
+Hanya unggah
+Proyek asal GitHub
+Proyek asal
+Durasi berjalan (detik)
+Teks durasi berjalan
+Penggunaan
+Penggunaan 3D
+Penggunaan rata-rata 15 menit
+Penggunaan rata-rata 1 menit
+Penggunaan rata-rata 5 menit
+Penggunaan mesin komputasi
+Penggunaan mesin penyalinan
+Penggunaan maksimum
+Penggunaan dekode video
+Penggunaan enkode video
+Informasi status seperti penggunaan, bagian tersisa atau kemajuan berlalu, yang juga dapat mengendalikan cincin kemajuan.
+Informasi status seperti penggunaan, bagian tersisa dan kemajuan berlalu; dapat mengendalikan cincin kemajuan.
+Gunakan +, -, *, /, % untuk sisa pembagian, ^ untuk pangkat, serta tanda kurung. Perbandingan mendukung >, >=, <, <=, ==, dan !=. Operator boolean mencakup &&, ||, !, dan and/or/not. Kondisi memakai test ? yes : no atau if(test, yes, no). ?? memberikan nilai pengganti untuk nilai null atau kosong.
+Gunakan Ctrl atau Alt bersama huruf, digit atau tombol fungsi (kecuali F12).
+Gunakan Ctrl atau Alt, dengan Shift bila perlu, bersama huruf, angka, atau F1–F24 (kecuali F12). Simpan untuk menerapkan; kosongkan untuk menonaktifkan.
+Gunakan Pengelolaan data → Data perangkat keras untuk memeriksa sensor dan bidang firmware. Carilah berdasarkan suhu, modul memori, nama perangkat atau ID asli. Pilih baris untuk menyalin tokennya. Export Diagnostics menyimpan snapshot JSON lokal dari status dan pembacaan saat ini.
+Gunakan Root untuk pengumpulan pembacaan
+Gunakan jangkar prasetel dengan offset, atau tentukan koordinat khusus.
+Gunakan custom.<source>.status / error untuk status sumber dan kegagalan. interval refresh mengontrol caching, bahkan dengan sampling global yang lebih cepat. Untuk 401/403, periksa autentikasi dan akses. Jalur JSON harus sesuai dengan struktur respons yang sebenarnya.
+Gunakan gejala untuk menemukan pengaturan yang tepat.
+Byte terpakai
+Digunakan TCP/UDP; diabaikan ICMP.
+Digunakan untuk laju jaringan, probe paket, saldo DeepSeek dan sumber HTTP khusus.
+Rasio ruang terpakai pada volume data aplikasi (1 - available/total, sama seperti df).
+Ruang terpakai pada volume data aplikasi (StatFs).
+Domain pengguna
+Panduan pengguna
+Nama pengguna
+Penggunaan mode pengguna
+Ruang volume data aplikasi yang tersedia bagi pengguna (StatFs.availableBytes).
+Menggunakan memori terpadu
+Menggunakan offset UTC tetap tanpa perubahan waktu musim panas. Target harian juga menggunakan zona ini.
+Menggunakan trafik semua antarmuka jaringan aktif. Persen di sebelah kanan dapat dihitung dari jumlah throughput, unduh saja, unggah saja atau arah dengan nilai yang lebih besar.
+Menggunakan antarmuka perangkat keras bawaan sistem. Data yang tersedia bergantung pada perangkat keras, driver, dan izin; PawnIO tidak diperlukan.
+Persentase pemakaian
+VPN aktif
+Nama VPN
+Status VPN
+VRAM (byte)
+Nilai
+Perubahan nilai
+Nilai tidak tersedia
+Nilai dalam milidetik; pengambilan sampel diperlambat saat HUD tersembunyi atau layar mati.
+Variabel
+Nama variabel
+Pustaka variabel
+Variabel
+Variabel dengan pembacaan
+Variabel, token & ekspresi
+Pemeriksaan dan izin produsen diperlukan
+Pencatatan log terperinci
+Versi
+Lihat pembaruan
+Memori virtual tersedia (byte)
+Tinggi desktop virtual (titik)
+Tinggi desktop virtual (px)
+Memori virtual (byte)
+Total memori virtual (byte)
+Penggunaan memori virtual
+Memori virtual terpakai (byte)
+Lebar desktop virtual (titik)
+Lebar desktop virtual (px)
+Koordinat X desktop virtual (titik)
+Koordinat X desktop virtual (px)
+Koordinat Y desktop virtual (titik)
+Koordinat Y desktop virtual (px)
+Virtualisasi aktif
+Visibilitas animasi dan ruang lingkup
+Tegangan (mV)
+Tegangan (V)
+VS Code berjalan
+Distribusi WSL
+Jumlah distribusi WSL
+Penggunaan memori WSL
+WSL berjalan
+Status WSL
+Menunggu
+Menunggu izin Root…
+Peringatan
+Variabel dipantau
+Situs web
+Waktu berlalu minggu ini (detik)
+Minggu dalam tahun
+Progres minggu
+Sisa waktu minggu ini (detik)
+Hari dalam minggu
+Jam sibuk hari kerja (Beijing; pisahkan titik koma)
+Saat rotasi otomatis aktif, animasi ini menggantikan pengaturan animasi masing-masing profil.
+Ketika dinonaktifkan, tidak ada output HUD ditampilkan.
+Saat dinonaktifkan, HUD muncul sesuai kebutuhan (peristiwa daya / pemicu tampilan).
+Jika aktif, HUD tidak menangkap sentuhan; input diteruskan ke aplikasi di bawahnya.
+Apakah pasokan daya eksternal sedang dihubungkan.
+Mendeteksi proses AMD Radeon Software atau jalur pemasangan bawaannya.
+Apakah Windows mendeteksi setidaknya satu koneksi jaringan tersedia; ini tidak menjamin akses Internet.
+Apakah baterai sedang diisi daya.
+Apakah baterai sedang digunakan dan dikosongkan dayanya.
+Mendeteksi proses latar belakang Docker Desktop / dockerd.
+Apakah papan klip saat ini berisi gambar dalam format Bitmap/DIB.
+Apakah papan klip Windows saat ini berisi teks Unicode.
+Mendeteksi proses IDE umum, seperti VS Code, Visual Studio, Rider dan IntelliJ/PyCharm.
+Apakah tanggal saat ini jatuh pada hari Sabtu atau Minggu.
+Apakah sistem memiliki nvidia-smi.exe yang dapat dijalankan.
+Apakah probe jaringan terakhir berhasil.
+Apakah waktu saat ini berada dalam periode luar puncak.
+Apakah waktu saat ini berada dalam periode puncak.
+Status proksi sistem dari sumber yang sama dengan network.proxy_status.
+Apakah mode penghemat baterai Windows aktif.
+Status nilai Registry UEFISecureBootEnabled.
+Mendeteksi proses Windows Terminal / PowerShell / cmd.
+Apakah jaringan bawaan saat ini tersedia, seperti dilaporkan oleh ConnectivityManager.
+Apakah waktu saat ini berada dalam periode tarif jam sibuk DeepSeek; kunci setara pada desktop adalah deepseek.period.is_peak.
+Apakah Win32_Tpm dapat ditampilkan.
+Mendeteksi pembaruan Windows tersedia serta status mulai ulang tertunda Windows Update / Component Based Servicing.
+Penanda heuristik untuk membedakan perangkat grafis terpadu atau memori terpadu yang umum dari kartu grafis khusus.
+Apakah fitur virtualisasi firmware diaktifkan; bergantung pada dukungan WMI.
+Deteksi VPN aktif dari sumber yang sama dengan network.vpn_status.
+Mendeteksi proses Code / Code - Insiders.
+Mendeteksi proses yang berkaitan dengan wsl/wslhost/vmmemWSL.
+Apakah {0} aktif atau benar.
+Mengapa HUD tidak terlihat
+Pita Wi-Fi
+Kanal Wi-Fi
+SSID Wi-Fi
+Standar Wi-Fi
+FPS jendela
+FPS jendela (Jalankan sebagai administrator)
+Persentase FPS jendela
+Status FPS jendela
+Nama jendela
+Persentase jendela
+Status jendela
+Opsi frame rate jendela
+Jumlah pembaruan Windows tertunda
+Status Windows Update
+Windows menonaktifkan startup aplikasi ini. Aktifkan kembali melalui Aplikasi Startup Windows.
+Variabel media Windows membaca sesi yang didaftarkan oleh pemutar media. Gunakan judul dan artis sebagai teks utama, waktu sebagai teks tambahan, serta media.progress untuk cincin dengan rentang 0–100.
+Area kerja vs. layar penuh
+Prasetting work-area menghindari taskbar, Docks dan reserved regions. Prasets layar menggunakan Lengkap display bound. Offsets memindahkan preset; koordinat kustom menentukan posisi secara langsung. Pilih target display pertama. koordinat negatif normal untuk display kiri dari atau di atas display utama.
+Set kerja (byte)
+Waktu Beijing
+Jam dunia
+Waktu London
+Waktu New York
+Waktu Tokyo
+X / px
+Jarak X / px
+Jarak X / px
+Y / px
+Jarak Y / px
+Jarak Y / px
+Yangon
+Tahun
+Waktu berlalu tahun ini (detik)
+Progres tahun
+Sisa waktu tahun ini (detik)
+Ya
+Anda menggunakan versi terbaru.
+Versi lokal Anda lebih baru dari rilis yang diterbitkan.
+Seng-udara
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 memilih satuan berdasarkan variabel; jangan tambahkan satuan yang sama dua kali. Rangkaian format dijalankan dari kiri ke kanan dan dapat mengubah angka atau memendekkan teks. Gunakan {= ...} untuk ekspresi di dalam teks, atau awali ekspresi cincin dengan =.
+bytes / gb:1
+bytes / speed menambahkan satuan ukuran atau laju transfer dalam byte secara otomatis. kb:n, mb:n, gb:n, dan tb:n membagi dengan pangkat 1024 dan menampilkan n angka desimal; tambahkan satuan yang diinginkan dalam profil. duration / duration-long memformat nilai dalam detik. Kolom tanggal dan waktu mendukung time:<date format>; time:relative memformat waktu relatif atau durasi.
+salinan
+cpu.usage atau = (cpu.usage + gpu.usage) / 2
+hari
+duration
+duration / duration-long
+contohnya 1.1.1.1 atau example.com
+Contoh: 1.1.1.1, 2606:4700:4700::1111, example.com
+Mis. Server saya – Status daring
+contohnya value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+dalam {0}
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (Diubah)
+{0} / {1} bab · Luring
+{0} GPU terdeteksi
+{0} yang lalu
+{0} sisa {1}
+{0} dari {1} metrik didukung
+Ada {0} profil dalam antrean; aktifkan rotasi otomatis untuk menggunakannya.
+Pengaturan {0} v{1}
+{0} berlalu {1:0}%
+{0} berlalu {1}%
+{0}: masukkan URL HTTP/HTTPS mutlak.
+{0}: berikan nama variabel dan jalur JSON.
+{0} hari {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Sebelumnya
+↓ {network.display_download}
+Kunci API
+Pengambilan bingkai aktif
+Menunggu sampel bingkai
+Memerlukan Windows 64 bit
+Pilih jendela yang sedang berjalan
+Jendela target ditutup; pilih jendela lain
+Layar terputus
+Pemetaan sumber tampilan tidak tersedia atau tidak dapat ditentukan di antara beberapa GPU
+Belum ada peristiwa bingkai yang valid untuk target ini
+Menunggu peristiwa bingkai; izin administrator mungkin diperlukan
+Akses ditolak; jalankan aplikasi sebagai administrator
+Menunggu peristiwa bingkai Present
+Memerlukan sesi X11/XWayland
+Server X tidak mendukung ekstensi Present
+Instal libxpresent1
+Antarmuka pengambilan Present tidak tersedia
+Memerlukan macOS
+Pengambilan bingkai tidak tersedia; periksa komponen aplikasi dan izin perekaman layar
+Target yang dipilih tidak tersedia
+Izin perekaman layar diperlukan; mulai ulang aplikasi setelah memberikannya
+Memerlukan macOS 12.3 atau yang lebih baru
+Pengambilan bingkai gagal: {0}
+Pengambilan bingkai berakhir ({0})
+Status ketersediaan akun yang dikembalikan oleh titik akhir saldo.
+Nama proses aplikasi
+Durasi aplikasi berjalan
+Teks durasi aplikasi berjalan
+Durasi aplikasi saat ini berjalan dalam bentuk teks yang mudah dibaca.
+Rata-rata latensi Ping
+Rata-rata latensi probe
+Rata-rata latensi untuk 20 probe Ping berhasil terbaru terhadap target saat ini.
+Rata-rata latensi untuk 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+Teks status baterai
+Tegangan baterai (V)
+Nilai ProtectionStatus BitLocker untuk volume sistem.
+Status BitLocker
+Nama CPU
+Penggunaan CPU
+Suhu sensor CPU; ditampilkan sebagai tidak tersedia jika perangkat, driver atau izin tidak mendukungnya.
+Tanggal dan waktu saat ini pada komputer ini.
+Tanggal saat ini pada komputer ini.
+Tanggal dan waktu lokal saat ini.
+Tanggal lokal saat ini dalam format yyyy-MM-dd.
+Jumlah penggunaan CPU saat ini untuk seluruh komputer.
+Ketersediaan DeepSeek API
+Status pengaktifan dan perlindungan real-time yang dilaporkan oleh Windows Defender WMI.
+Jumlah sampel probe gagal
+Nama lengkap model prosesor.
+Suhu inti GPU
+Tegangan inti GPU
+Nama GPU
+Versi VBIOS GPU
+Suhu GPU Core yang dilaporkan oleh sensor pemantauan perangkat keras; tidak tersedia jika perangkat keras atau driver tidak memberikannya.
+Tegangan inti GPU yang dilaporkan oleh sensor pemantauan perangkat keras.
+Latensi tertinggi antara 20 probe Ping berhasil terbaru terhadap target saat ini.
+Latensi tertinggi antara 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+ICMP TTL
+Waktu Ping berhasil terakhir
+Waktu probe berhasil terakhir
+Tegangan baterai real-time yang dikonversi ke volt.
+Penggunaan real-time GPU terpilih, berdasarkan mesin pemrosesan yang paling sibuk.
+Jumlah Ping hilang
+Latensi terendah antara 20 probe Ping berhasil terbaru terhadap target saat ini.
+Latensi terendah antara 20 sampel berhasil terbaru dalam konfigurasi probe saat ini.
+Latensi Ping tertinggi
+Latensi probe tertinggi
+Penggunaan memori
+Status Microsoft Defender
+Latensi Ping terendah
+Latensi probe terendah
+Status probe terbaru, misalnya “Daring”, “Waktu habis”, atau “Port tidak terjangkau”.
+Nama proses Endfield Charge Plus saat ini.
+Nama adaptor layar yang dipilih oleh profil saat ini.
+Ketersediaan jaringan
+Galat Ping
+Jitter Ping
+Latensi Ping
+Teks latensi Ping
+Latensi Ping pada 100%
+Kehilangan paket Ping
+Alamat respons Ping
+Teks status Ping
+Ping berhasil
+Ping TTL
+Target Ping
+Batas waktu Ping
+Titik akhir Ping/probe
+Port Ping/probe
+Protokol Ping/probe
+Titik akhir probe
+Galat probe
+Latensi probe
+Jitter latensi probe
+Teks latensi probe
+Latensi probe pada 100%
+Kehilangan paket probe
+Port probe
+Protokol probe
+Alamat respons probe
+Jumlah sampel probe
+Teks status probe
+Probe berhasil
+Status asli Ping
+Status asli probe
+Dibaca melalui antarmuka Windows BatteryTemperature; hanya tersedia jika diberikan oleh driver atau firmware.
+Status perlindungan real-time yang dilaporkan oleh Windows Defender WMI.
+Latensi pulang-pergi Ping berhasil terakhir. Untuk progres, kegagalan dihitung sebagai 999 ms.
+Latensi pulang-pergi atau koneksi probe berhasil terakhir; probe gagal dianggap sebagai 999 ms.
+Nilai SMBIOSBIOSVersion yang dilaporkan oleh Win32_BIOS.
+Jumlah detik sejak Windows dimulai pada sesi ini.
+Jumlah detik yang telah berlalu sejak proses aplikasi saat ini dimulai.
+Jumlah Ping dikirim
+Batas waktu satu probe
+Status konfigurasi aktif saat ini untuk Windows Firewall Policy.
+Jumlah Ping berhasil
+Jumlah sampel probe berhasil
+Status BitLocker disk sistem
+Durasi sistem berjalan
+Teks durasi sistem berjalan
+Status perlindungan disk sistem yang dilaporkan oleh antarmuka Windows Volume Encryption.
+Teks yang mudah dibaca untuk periode sistem berjalan.
+Teks seperti “Sedang mengisi daya / Menggunakan baterai / Pasokan daya dihubungkan / Tidak diketahui”, dihasilkan berdasarkan status daya.
+Teks seperti “20ms” saat berhasil, atau status batas waktu habis/galat saat gagal.
+Teks seperti “20ms” saat berhasil, atau status batas waktu habis atau tidak terjangkau saat gagal.
+Jumlah penggunaan GPU
+Memori fisik terpakai sebagai persen dari jumlah memori fisik.
+Versi VBIOS yang dilaporkan oleh nvidia-smi; tersedia jika didukung.
+Apakah Windows mendeteksi setidaknya satu koneksi jaringan tersedia; ini tidak menjamin akses Internet.
+Apakah konfigurasi Windows Firewall yang sedang aktif diaktifkan.
+Status Windows Firewall
+/proc/meminfo; memori tersedia menggunakan MemAvailable
+/proc/stat, /proc/cpuinfo, cpufreq atau hwmon
+/sys/class/power_supply; kapasitas diseragamkan ke mWh / Wh
+Hasil kueri aktual terhadap proses Linux atau alat yang terpasang lokal
+Ruang swap tersedia
+Mengisi daya dan mengosongkan daya
+DRM/hwmon atau NVIDIA nvidia-smi
+Perkiraan tidak tersedia
+Statistik sistem berkas titik mount saat ini atau /sys/dev/block/*/stat
+Versi kernel Linux
+Linux procfs, sysfs atau status waktu jalan saat ini
+Linux sysfs atau /proc/bus/input/devices
+Linux sysfs atau variabel EFI
+Tidak mengisi daya
+Tidak mengosongkan daya
+Jumlah proses
+Proses dalam /proc yang dapat dibaca oleh pengguna saat ini; penggunaan CPU dinormalisasi mengikuti jumlah prosesor logis
+Dibaca dari informasi layar Avalonia dalam sesi X11/XWayland saat ini.
+Dibaca dari papan klip aktual sesi grafis saat ini. Waktu pembaruan adalah saat ECP pertama kali mendeteksi perubahan.
+Kunci API yang valid diperlukan. Konfigurasi yang tidak ada atau permintaan yang gagal memberikan status yang jelas, bukan saldo rekaan.
+Penggunaan ruang swap
+Sistem perlu dimulai ulang
+Jumlah ruang swap
+Ruang swap terpakai
+Memakai probe ICMP/TCP/UDP aktual dari profil saat ini. Pesan status ditampilkan jika probe gagal atau tidak berlaku.
+{0}. Sumber data: {1}. Ditampilkan hanya ketika perangkat ini dan izin saat ini mendukung pengumpulan data.
+Memori aktif
+Ruang swap aktual yang tersedia dari sysctl vm.swapusage.
+Ruang swap aktual yang digunakan dari sysctl vm.swapusage.
+Resolusi piksel asli CoreGraphics / AppKit Retina backingScaleFactor; koordinat desktop menggunakan titik logis dan DPI adalah 96 dikalikan dengan faktor skala
+Selisih penghitung 64 bit antarmuka fisik en* macOS, tanpa menghitung ulang trafik VPN/loopback; atau kueri IP publik dan perhitungan profil yang sudah diterapkan
+Selisih tick CPU Mach atau sysctl
+Memori fisik bebas
+Perkiraan waktu pengisian daya IOPowerSources, hanya ditampilkan ketika sistem memberikan perkiraan.
+IOPowerSources; tidak ditampilkan tanpa baterai bawaan dan hanya ditampilkan ketika sistem memberikan data
+Memori tidak aktif
+GPU hemat daya
+Status perangkat hemat daya dari Metal isLowPower.
+Mach VM / sysctl; terpakai = active + wired + compressed, tersedia = total dikurangi terpakai; ini bukan tekanan memori
+Mach active_count dikalikan dengan ukuran halaman sistem.
+Mach free_count dikalikan dengan ukuran halaman sistem.
+Mach inactive_count dikalikan dengan ukuran halaman sistem.
+Mach wire_count dikalikan dengan ukuran halaman sistem.
+Batas set kerja yang direkomendasikan oleh Metal
+Informasi perangkat Metal; penggunaan GPU keseluruhan, suhu, dan penggunaan memori video tidak tersedia jika sistem tidak menyediakannya
+Metal hasUnifiedMemory. Memori terpadu tidak dihitung sebagai memori video khusus.
+Metal recommendedMaxWorkingSetSize: anggaran pemakaian, bukan kapasitas memori video atau penggunaan memori GPU.
+GPU yang dapat dilepas
+Status perangkat yang dapat dilepas dari Metal isRemovable.
+Waktu hingga baterai penuh
+Total ruang swap dari sysctl vm.swapusage, dialokasikan secara dinamis oleh sistem.
+Arsitektur memori terpadu
+Ruang disk tersedia bagi pengguna
+Memori terkunci
+macOS / .NET atau konfigurasi aktual dan hasil kueri untuk profil ini
+Papan klip macOS; waktu pembaruan adalah ketika ECP kali terakhir mendeteksi perubahan konten
+statfs f_bavail untuk volume APFS Data, tanpa ruang yang dicadangkan sistem.
+statfs untuk volume APFS Data; kapasitas mencakup ruang bersama dalam kontainer APFS yang sama
+{0}. Sumber data: {1}.
+Endfield Charge Plus
+Endfield Charge Plus For Linux
+Endfield Charge Plus For MacOS
+Endfield Charge Plus for Android
+Pengelolaan profil
+Pemilih melingkar
+Tindakan cepat
+Tahan tombol tengah mouse pada HUD, seret ke suatu profil, lalu lepaskan untuk beralih.
+Lepaskan di tengah atau di luar lingkaran untuk membatalkan.
+Durasi tekan tahan
+Ambang seret
+Ukuran lingkaran
+Aktifkan peralihan melingkar
+Profil dalam lingkaran
+Gunakan semua profil
+Pratinjau lingkaran
+Profil terpilih
+Tidak ada profil yang tersedia
+Halaman sebelumnya
+Halaman berikutnya
+Halaman {0} / {1}
+Tampilan
+Terang
+Klasik
+Lembut
+Radius sudut
+Opasitas lingkaran
+Atur ulang tema
+Pratinjau tema
+Gestur HUD
+Tahan tombol tengah
+Klik kiri
+Perubahan diterapkan setelah menekan «Simpan dan Terapkan».
+Tekan Esc untuk membatalkan.
+Peralihan profil
+Hanya pratinjau
+Tambahkan ke lingkaran
+Hapus dari lingkaran
+Pelacakan masalah
+Minimalkan jendela
+Maksimalkan jendela
+Pulihkan ukuran jendela
+Tutup jendela
+Sistem saat ini
+Penggunaan perangkat lunak
+Beban CPU sistem pada semua prosesor logis.
+RAM fisik yang terpakai dibagi total RAM fisik.
+VRAM khusus yang terpakai dibagi total VRAM khusus semua GPU. Memori bersama tidak disertakan.
+Waktu CPU Endfield Charge Plus dibagi waktu berlalu dan jumlah prosesor logis.
+RAM residen Endfield Charge Plus dibagi total RAM fisik. Termasuk halaman bersama yang residen.
+VRAM khusus yang dialokasikan ke Endfield Charge Plus dibagi total VRAM khusus. Memori GPU bersama tidak disertakan.
+Seluruh proses Endfield Charge Plus: pengaturan dan semua HUD. CPU dinormalisasi terhadap semua prosesor logis.
+RAM residen seluruh Endfield Charge Plus (pengaturan dan semua HUD), termasuk halaman bersama yang residen. Nilai: MiB/GiB; busur: bagian dari RAM fisik.
+VRAM khusus seluruh Endfield Charge Plus (pengaturan dan semua HUD), tidak termasuk memori GPU bersama. Nilai: MiB/GiB; busur: bagian dari total VRAM khusus.
+Kanal BiliBili pengembang
+Kanal YouTube pengembang
+Warna
+Cari profil
+Ganti profil dengan klik atau gulir
+Interval pergantian / detik
+Gulir ke atas untuk profil sebelumnya dan ke bawah untuk berikutnya.
+Profil yang tersedia
+Profil sebelumnya
+Profil berikutnya
+Jeda/lanjutkan pergantian otomatis
+Pratinjau profil saat ini
+Buka pengaturan
+Pintasan keyboard berfungsi saat aplikasi ini memiliki fokus.
+Biarkan HUD terlihat saat penunjuk berada di atas HUD atau area aktif

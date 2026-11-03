@@ -96,7 +96,7 @@ public static class ProfileDataWarnings
         lock (Gate) _displayedFaults = Faults().ToArray();
         if (_dialog is not null) { _details!.Text = body; return; }
         var close = new Button { Content = LocalizationManager.Text("知道了", "OK"), HorizontalAlignment = HorizontalAlignment.Right };
-        var ignore = new CheckBox { Name = "IgnoreCurrentDataWarningCheckBox", Content = LocalizationManager.Text("此数据不再提示", "Don't warn about this data again"), HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Center };
+        var ignore = new CheckBox { Name = "IgnoreCurrentDataWarningCheckBox", Content = new TextBlock { Text = LocalizationManager.Text("此数据不再提示", "Don't warn about this data again"), TextWrapping = Avalonia.Media.TextWrapping.Wrap }, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Center, Margin = new Avalonia.Thickness(0,0,16,0) };
         var error = new TextBlock { IsVisible = false, TextWrapping = Avalonia.Media.TextWrapping.Wrap };
         _details = new TextBlock { Text = body, TextWrapping = Avalonia.Media.TextWrapping.Wrap };
         var panel = new StackPanel { Margin = new Avalonia.Thickness(22), Spacing = 16 };

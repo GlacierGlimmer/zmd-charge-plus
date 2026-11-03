@@ -1,0 +1,21 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Australian time-zone city labels; proper nouns keep their established spelling in Finnish.",
+    "Alaska": "US state name; proper noun with the same spelling in Finnish.",
+    "Bangkok, Hanoi, Jakarta": "Asian time-zone city labels; proper nouns keep their established spelling in Finnish.",
+    "Buenos Aires, Brasilia": "South American time-zone city labels; proper nouns are unchanged in Finnish.",
+    "Dhaka, Thimphu": "Asian time-zone city labels; proper nouns keep their established spelling in Finnish.",
+    "Dubai, Abu Dhabi": "Middle Eastern time-zone city labels; proper nouns are unchanged in Finnish.",
+    "Eucla": "Australian locality used as a time-zone label; the proper noun is unchanged in Finnish.",
+    "Islamabad, Karachi": "Pakistani time-zone city labels; proper nouns are unchanged in Finnish.",
+    "Kabul": "Afghan capital used as a time-zone label; the proper noun is unchanged in Finnish.",
+    "Kathmandu": "Nepalese capital used as a time-zone label; the proper noun is unchanged in Finnish.",
+    "Media": "Finnish uses the same word for media, so this label is already native Finnish.",
+    "New Delhi, Mumbai": "Indian time-zone city labels; proper nouns keep their established spelling in Finnish.",
+    "Newfoundland": "Canadian province used as a time-zone label; the proper noun is unchanged in Finnish.",
+    "Nukuʻalofa, Apia": "Pacific time-zone city labels; proper nouns are unchanged in Finnish.",
+    "Sydney, Brisbane": "Australian time-zone city labels; proper nouns keep their established spelling in Finnish.",
+    "Yangon": "Myanmar city used as a time-zone label; the proper noun is unchanged in Finnish."
+  },
+  "notes": "Reviewed identical values for fi-FI: time-zone city labels (proper nouns) and the native Finnish word Media."
+}

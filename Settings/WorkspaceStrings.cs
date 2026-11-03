@@ -1,0 +1,47 @@
+namespace EndfieldChargePlus.Settings;
+internal static class WorkspaceStrings
+{
+    private static readonly System.Collections.Generic.Dictionary<string,string> Chinese = new() {
+        ["Profile management"]="方案管理",
+        ["Radial switcher"]="环形切换栏",
+        ["Quick actions"]="快捷操作",
+        ["Theme"]="主题",
+        ["Hold the middle mouse button on the HUD, drag to a profile, then release to switch."]="在 HUD 上长按鼠标中键，拖向方案后松开即可切换。",
+        ["Release in the centre or outside the ring to cancel."]="在中心或圆环外松开可取消切换。",
+        ["Hold delay"]="长按时间",
+        ["Drag threshold"]="拖动距离",
+        ["Ring size"]="圆盘大小",
+        ["Enable radial switching"]="启用环形切换",
+        ["Profiles in the ring"]="圆盘中的方案",
+        ["Use all profiles"]="使用全部方案",
+        ["Preview ring"]="预览圆盘",
+        ["Selected profile"]="所选方案",
+        ["No profiles available"]="暂无可用方案",
+        ["Previous page"]="上一页",
+        ["Next page"]="下一页",
+        ["Page {0} / {1}"]="第 {0} / {1} 页",
+        ["Appearance"]="外观",
+        ["Follow system"]="跟随系统",
+        ["Dark"]="深色",
+        ["Light"]="浅色",
+        ["Accent colour"]="强调色",
+        ["Classic"]="经典",
+        ["Soft"]="柔和",
+        ["Corner radius"]="圆角",
+        ["Ring opacity"]="圆盘不透明度",
+        ["Reset theme"]="重置主题",
+        ["Theme preview"]="主题预览",
+        ["HUD gestures"]="HUD 手势",
+        ["Middle button hold"]="长按鼠标中键",
+        ["Left click"]="鼠标左键单击",
+        ["Your changes apply after Save & Apply."]="点击“保存并应用”后更改生效。",
+        ["Press Esc to cancel."]="按 Esc 可取消。",
+        ["Profile switching"]="方案切换",
+        ["Preview only"]="仅供预览",
+        ["Add to ring"]="添加到圆盘",
+        ["Remove from ring"]="从圆盘移除",
+        ["Issue tracker"]="问题追踪",
+    };
+    internal static bool Has(string key)=>Chinese.ContainsKey(key);
+    internal static string Get(string key)=>LocalizationManager.Text(Chinese.GetValueOrDefault(key,key),key);
+}

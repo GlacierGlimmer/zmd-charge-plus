@@ -1,0 +1,43 @@
+{
+  "shared": {
+    "Interface": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Source": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Date": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Minimum": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Maximum": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Variable": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Variables": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Version": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Type": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Port": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Alaska": "Nom géographique usuel en français, orthographe identique.",
+    "Album": "Nom français désignant un album musical, identique à l’anglais.",
+    "Animation": "Nom français courant pour une animation de l’interface.",
+    "Berlin, Paris, Rome": "Noms français usuels de ces trois villes, vérifiés séparément.",
+    "Buenos Aires, Brasilia": "Noms de villes utilisés tels quels en français.",
+    "Condition": "Nom français courant pour une condition de déclenchement.",
+    "Eucla": "Nom propre de la localité australienne, conservé en français.",
+    "Expression": "Nom français courant désignant une expression calculée.",
+    "Formats": "Pluriel français du nom format, orthographe identique.",
+    "Islamabad, Karachi": "Noms français usuels de ces villes, conservés tels quels.",
+    "Minute": "Unité de temps dont le nom français a la même orthographe.",
+    "NiCd": "Abréviation chimique internationale du nickel-cadmium.",
+    "NiMH": "Abréviation chimique internationale du nickel-hydrure métallique.",
+    "Nukuʻalofa, Apia": "Noms propres de villes conservés dans l’usage français.",
+    "OK": "Indication de bon fonctionnement courante en français.",
+    "Position": "Nom français courant pour la position de l’affichage.",
+    "Public": "Adjectif français du profil réseau public, orthographe identique.",
+    "Simple": "Adjectif français du mode d’animation simple, orthographe identique.",
+    "Sydney, Brisbane": "Noms de villes australiennes conservés en français.",
+    "Type {0}": "Le nom français type est identique ; le paramètre numérique est conservé.",
+    "X / px": "Axe X avec unité technique px, mêmes symboles en français.",
+    "Y / px": "Axe Y avec unité technique px, mêmes symboles en français.",
+    "Zinc-air": "Désignation chimique française usuelle de cette pile."
+  },
+  "notes": [
+    "Traduction française relue sur les 2313 sources chinoises complètes, avec conservation des identifiants et des paramètres.",
+    "632 entrées de la base antérieure ont été réécrites individuellement : labels matériels composés, descriptions abrégées et textes d’interface.",
+    "Les 14 chapitres ont été rédigés en français et complétés avec les explications, fonctions et précautions du manuel canonique.",
+    "La couverture et les contrôles structurels ne constituent pas une autorisation d’exportation ni une validation visuelle sur les quatre plateformes."
+  ]
+}

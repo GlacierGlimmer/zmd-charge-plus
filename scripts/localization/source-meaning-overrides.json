@@ -1,0 +1,7 @@
+{
+  "Backup failed. See logs.": "备份失败，请查看日志。",
+  "Could not open the logs folder. See logs.": "无法打开日志文件夹，请查看日志。",
+  "Export failed. See logs.": "导出失败，请查看日志。",
+  "Import failed. See logs.": "导入失败，请查看日志。",
+  "Build  {0}": "构建日期  {0}"
+}

@@ -1,0 +1,16 @@
+{
+  "shared": {
+    "Alaska": "Alaska skrives likt på norsk og er det offisielle stedsnavnet.",
+    "Album": "Album er det vanlige norske substantivet for et musikkalbum.",
+    "Eucla": "Eucla er et australsk stedsnavn som skrives likt på norsk.",
+    "Hawaii": "Hawaii er det offisielle stedsnavnet også på norsk.",
+    "Kabul": "Kabul er det norske navnet på byen og skrives uendret.",
+    "Minimum": "Minimum er det vanlige norske substantivet for nedre grense.",
+    "Newfoundland": "Newfoundland er det norske navnet på øya og skrives uendret.",
+    "System": "System er det vanlige norske substantivet i systemkategorien.",
+    "Type": "Type er det vanlige norske substantivet for en kategori eller sort.",
+    "Type {0}": "Type er det vanlige norske ordet, og tallplassholderen står uendret.",
+    "Yangon": "Yangon er det offisielle stedsnavnet og brukes uendret på norsk."
+  },
+  "notes": "De elleve oppføringene er korte egennavn og fellesord som har samme skrivemåte i norsk bokmål som i den engelske kilen. De er gjennomgått én for én; ingen hele setninger står uoversatt. Øvrige stedsnavnlister er skrevet med norsk «og» foran siste element."
+}

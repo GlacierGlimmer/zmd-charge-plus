@@ -1,0 +1,11 @@
+{
+  "shared": {
+    "CPU": "Standard English acronym for the processor, used as-is in Hebrew technical interfaces.",
+    "GPU": "Standard English acronym for the graphics processor, used as-is in Hebrew technical interfaces.",
+    "PID": "Operating-system term for the process identifier, kept in Latin script in the Hebrew UI.",
+    "ICMP TTL": "Network protocol acronym plus its field name, which have no accepted Hebrew form.",
+    "Ping TTL": "Standard network diagnostic name and field abbreviation, kept in Latin script.",
+    "DeepSeek API": "Product proper noun together with the API acronym, which stays untranslated."
+  },
+  "notes": "Only real acronyms and proper nouns that the Hebrew interface keeps in Latin script are listed here. Every remaining message value is written in Hebrew."
+}

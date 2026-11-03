@@ -29,8 +29,8 @@ public partial class SettingsWindow
     {
         var panel=HardwarePanel;
         _hardwareStatus=new(){TextWrapping=TextWrapping.Wrap,Foreground=Brushes.Yellow};
-        _hardwareHint=new(){TextWrapping=TextWrapping.Wrap,Foreground=Brushes.Gray,FontSize=12};
-        _hardwareCount=new();_hardwareSearch=new(){Watermark="Search",MinWidth=220};
+        _hardwareHint=new(){TextWrapping=TextWrapping.Wrap,Foreground=Brushes.Gray,FontSize=12.5};
+        _hardwareCount=new(){TextWrapping=TextWrapping.Wrap};_hardwareSearch=new(){Watermark="Search",MinWidth=220};
         _hardwareList=new(){MinHeight=260,MaxHeight=480};
         _hardwareList.ItemsSource=_hardwareRows;
         _hardwareList.Styles.Add(new Style(s=>s.OfType<ListBoxItem>()){Setters={new Setter(ListBoxItem.HorizontalContentAlignmentProperty,Avalonia.Layout.HorizontalAlignment.Stretch)}});

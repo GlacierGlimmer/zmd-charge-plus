@@ -68,7 +68,7 @@ internal static class InteractionRegressionChecks
         var window=new SettingsWindow(settings,hud,runtime);window.Show();await Task.Delay(600);
         check(window.FindControl<TextBlock>("BuildDateText")!.Text==LocalizationManager.Text("构建日期  2026.10.18","Build  2026.10.18"),"The actual About control displays the current 2026.10.18 build date in the selected language.");
         string version=typeof(HudWindow).Assembly.GetName().Version!.ToString(3);
-        check(window.Title.Contains("v"+version) && window.Title.EndsWith("（Endministrator Mode）")==ProcessPrivileges.IsElevated,"Settings title reflects effective process privileges in the current locale.");
+        check(window.Title.Contains("v"+version) && window.Title==ProcessPrivileges.SettingsTitle(version),"Settings title uses the localized HUD settings caption.");
         check(hud.IsEditingHighlighted && !child.Hud.IsEditingHighlighted,"Opening Settings with multiple HUDs highlights the primary automatically.");
         ClickHud(hud,runtime);
         await Task.Delay(850);

@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (Modified)
+ CPU
+ FPS
+ GHz
+ copy
+ {time.utc_offset}
+ · Primary
+%
+'{0}' is not numeric
+(Language translations may not be 100% accurate)
+(modified)
++X is right, +Y is down.
++X right, +Y down.
++X right, +Y down. Changing the preset resets both offsets to zero.
+-- means no valid reading or an expression failure. Check meaning and units in the library, then the driver, API authentication, JSON path or FPS status. Formatting cannot turn missing data into a real measurement. Keep MB/s, Mbps, GiB and °C distinct.
+--, invalid expressions and units
+/ GB
+/// BATTERY
+/// CPU
+/// DEEPSEEK API
+/// DISPLAY FPS
+/// GPU
+/// MEMORY
+/// NETWORK
+/// NETWORK PROBE
+/// SYSTEM DISK
+/// TIME
+/// WINDOW FPS
+/// WORLD CLOCK
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 or 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0.4 – 1.4×. Applied on release.
+1 GPU detected: {0}
+1 profile is in the cycle queue.
+10% – 100%. Applied on release.
+100% Reference Speed
+100% is fully opaque.
+100% reference speed
+A copy was created from the built-in scheme; the preset is unchanged.
+A foreground service keeps the HUD alive; without it the system stops sampling.
+A media HUD template
+A real mapped field from the configured HTTP/JSON source.
+AC
+AC Connected
+AC Online
+AC power
+AIDA64 data available
+AIDA64 external applications
+AIDA64 transport
+API Latency Ms
+API Level
+API Status
+API request failed
+About
+About shows the version, architecture and update-check result. A network failure or unavailable remote version does not confirm that you are up to date. Check the status and retry. Development packages may retain the public version number; use their delivery notes to identify them.
+Accent Color
+Accent colour
+Active Interface Count
+Active Profile
+Active scheme
+Active when Always Visible is off. Matching rules summon the next carousel item, or the current profile if the queue is empty. Initial and recovered samples only establish a baseline. Hot-zone requests take priority; hot-zone and rule queues advance independently. Sampling continues during HUD presentations at the configured global and data-source intervals; detected events are coalesced while busy.
+ActivityManager.MemoryInfo.lowMemory.
+Actual SurfaceFlinger composition-frame counter rate with ROOT; unavailable when multiple displays cannot be attributed.
+Actual collection status and unavailable reason.
+Actual collection status.
+Actual playback information from Windows media sessions. Timeline positions are extrapolated while playing; unsupported fields remain unavailable.
+Adapter ID
+Add
+Add HUD
+Add a rule
+Add and enable a rule under HUD Content → Trigger Rules.\nEnter a variable key and choose Threshold, Change or Becomes True; configure the operator and value for thresholds.\nSet a cooldown, turn Always Visible off, then Save & Apply.
+Add one variable/operator/threshold => color rule per line. Rules change the accent based on load, temperature and other values. Thresholds use the variable's original unit. Use valid color values; missing measurements are not treated as zero.
+Add profiles to the queue and use Move Up/Down to order them. Removing from the queue does not delete the profile. Automatic cycling advances at the configured interval. An empty queue uses the active profile; a single-item queue cannot switch to a different item.
+Add rule
+Add to queue
+Address
+Adelaide, Darwin
+Adjust the options specific to each profile.
+Advance the carousel on each hot-zone summon
+Aggregates: min, max, avg and sum. Range/precision: clamp(value, min, max), round(value, digits), floor, ceil, abs and sign. Math: sqrt, pow, log, log10, exp, sin, cos and tan. percent(value, total) returns a percentage; between(value, min, max) tests an inclusive range.
+Alaska
+Album
+All Categories
+All HUDs share one sampling interval; shorter intervals use more resources. Clocks update by seconds, while HTTP and balance sources keep their own refresh/cache intervals. Faster global sampling does not bypass a source's cache.
+All categories
+Allow drawing over other apps in system settings.
+Already requested once; re-enable it in system settings.
+Always Visible
+Always Visible keeps the HUD on screen with an Always on Top or Desktop layer. With it off, power events, the mouse hot zone or trigger rules summon it temporarily, then retract it after the display duration. Turning off the Master Switch stops display for the session; the switch is re-enabled on the next app launch.
+Always on Top
+Always visible
+Amd Adrenalin Available
+American Samoa
+An elevated helper such as Shizuku would be required.
+An extra permission or special access is required.
+An import takes effect immediately; export the current configuration first if you want a backup.
+An ongoing notification must stay visible.
+An update is available.
+Android 13+ needs notification permission for the HUD's ongoing notification; requested only when the HUD starts.
+Android 16 or newer is required.
+Android EXTRA_HEALTH status code (GOOD/OVERHEAT/DEAD/...). For percentage health, use battery.health_percent.
+Android EXTRA_PLUGGED: AC / USB / WIRELESS / none.
+Android EXTRA_STATUS code (CHARGING/DISCHARGING/FULL/NOT_CHARGING).
+Android SoC model (Build.SOC_MODEL, API 31+). The equivalent desktop key is cpu.name.
+Android Version
+Android does not let an ordinary app read every hardware metric: GPU load, CPU temperature and part of the battery current are unavailable on most devices. ECP only shows what it really reads, marks the rest as unsupported, and never fabricates a value.
+Android exposes no public API for this.
+Android exposes no supported reading API for this metric; the app reports it as unavailable.
+Android native live update
+Android note
+Android publishes no public GPU load API.
+Android system
+Android v{0} is available on the releases page.
+Animation
+App Process
+App updates
+Applies to all settings and every HUD. Individual HUD size is multiplied by global UI scale.
+Applies to every persistent HUD, including experimental instances. Clicking a HUD advances its own carousel queue using its transition animation, even with auto cycling off, and restarts that HUD’s automatic cycle interval.
+Applying…
+Arbitrary views are not allowed; only official templates can be used.
+Architecture
+Artist
+Artist - title
+As appropriate for the value
+At most 600 entries and 3 log files are kept, so a long-running HUD can never fill the storage.
+Athens, Cairo, Helsinki
+Atlantic Time (Canada)
+Auckland, Fiji
+Authentication failed; check the API key.
+Author
+Authorization has not been granted.
+Auto / select target
+Auto Cycle
+Auto cycle is on, but the queue is empty. Add at least one profile.
+Auto cycle is on; {0} profiles will rotate in order.
+Automatic
+Automatic cycle
+Automatic units and pipelines
+Available
+Available Bytes
+Available Text
+Available bytes divided by total capacity from StatFs.
+Available logical CPU cores
+Available only in Always Visible mode. Each click advances through the automatic-cycle queue using its transition animation, even when automatic cycling is off. An empty or single-item queue does not switch.
+Available sensor count
+Available share
+Available when Always Visible is off. Position the hot zone within the full target display and adjust its size and dwell time.
+Avg Latency Ms
+Avoid cutout
+BIOS Date
+BIOS Version
+Background Count
+Backup
+Backup failed. See logs.
+Balance
+Balance / Period
+Balance Currency
+Balance Text
+Balance queries and peak/off-peak windows; the API key is encrypted with the Android Keystore.
+Balance query status; a missing key or failed request yields an explicit status.
+Bangkok, Hanoi, Jakarta
+Base URL
+Baselines, cooldown and queue
+Battery
+Battery Current
+Battery health status code
+Battery Status
+Battery Temperature
+Battery current
+Battery level
+Battery statistics are unavailable or restricted by the system.
+Battery temperature
+Battery temperature in °C; the desktop catalog spells this battery.temperature.
+Battery voltage
+BatteryManager energy counter, falling back to an estimate from the measured charge counter and voltage.
+Becomes true
+Beijing Time (UTC+08:00)
+Beijing, Hong Kong, Singapore
+Berlin, Paris, Rome
+Bitlocker Encryption Percent
+Bitlocker Status
+Boolean
+Boot Time
+Boot permission is declared; enable startup in settings.
+Bottom Center (above taskbar / Dock)
+Bottom Left (above taskbar / Dock)
+Bottom Right (above taskbar / Dock)
+Bottom center
+Bottom left
+Bottom right
+Bounce
+Buenos Aires, Brasilia
+Build  2026.10.27
+Build  {0}
+Build a carousel queue
+Build date
+Build.MANUFACTURER.
+Build.MODEL device model.
+Built-in profiles cannot be deleted
+Built-in schemes cannot be deleted.
+Built-in · saving changes creates a copy
+Built-in · zone and daily target are configurable; content edits create a copy
+Bus Speed
+Bytes
+C Active Percent
+C Filesystem
+C Free Bytes
+C Health
+C I/O B/s
+C Label
+C Partition Count
+C Power On Hours
+C Queue Length
+C Read B/s
+C Smart Status
+C Temperature
+C Total Bytes
+C Trim Status
+C Usage
+C Used Bytes
+C Write B/s
+CPU
+CPU Cores
+CPU Model
+CPU Temperature
+CPU Time Seconds
+CPU frequency
+CPU per core
+CPU sensor unavailable: the hardware or driver returned no valid temperature.
+CPU temperature
+CPU temperature status
+CPU temperature still shows --
+CPU temperature; Android exposes no public API.
+CPU total usage
+CPU usage
+CPU usage / cpu.usage
+Cache Bytes
+Cached (reclaimable) memory; the desktop catalog spells this memory.cache_bytes.
+Cached Memory
+Calculated from the device clock and profile settings.
+Cancel
+Cannot read the Windows startup task. See logs.
+Capability disclaimer
+Capacity and time formats
+Capacity, frequency, rate, balance, time, and other primary values.
+Cape Verde
+Capture target
+Center
+Center (work area)
+Center Left (work area)
+Center Right (work area)
+Center left
+Center right
+Central Time (US & Canada)
+Change this while editing any HUD. Save & Apply uses the same sampling interval for every HUD. Clocks update each second; external APIs retain their own refresh intervals.
+Changing
+Charge Counter
+Charge Rate Watts
+Charging
+Chatham Islands
+Chatham Islands summer offset
+Check Updates
+Check drivers and sensors under Settings → Data Management → Hardware Data.
+Check for updates
+Check permissions, device support and data sources. The checkbox permanently silences only the data listed in this window; other variables still produce warnings.
+Check the Master Switch and shortcut suppression, then confirm persistent vs. transient mode. Transient mode needs an event, hot zone or rule. Check the target display, coordinates, opacity and hot-zone switch. Saving a profile without Save & Apply can leave the running HUD on its old settings.
+Check this sensor or the AIDA64 sharing settings under Settings → Data Management → Hardware Data.
+Check updates
+Checking Android native live updates…
+Checking GitHub…
+Checking permissions and native live updates…
+Checking…
+Checks once at startup; you can also check manually.
+Chemistry
+Chinese (Simplified)
+Choose Full or Simple reveal animation for the shortcut; hiding plays a retract animation. It affects all HUDs while retaining their profiles and positions. In transient mode it summons once, then resumes event behavior. The latest rapid request wins. Shortcut suppression lasts for the session.
+Choose a language in the top bar, or select Follow system. The language preference is saved immediately; other pending edits still require Save & Apply. Unsupported system languages fall back to English. Settings, built-in profiles, data warnings and this manual follow the language. Variable keys, formulas and API JSON remain unchanged.
+Choose an installed font; the system supplies fallback glyphs for missing characters.
+Choose the GPU used by this profile when multiple adapters are detected.
+Choose the displayed scheme; saving a built-in creates a copy.
+Choose what the HUD shows and how it looks.
+Clear
+Clear search
+Clear shortcut
+Click a persistent HUD to switch
+Click a persistent HUD to switch profiles
+Click and press a shortcut
+Click-through
+Clipboard
+Collapsed: 
+Color
+Color rules · one per line: variable operator value => color
+Colour
+Combined rate of every active interface.
+Commit Available Bytes
+Commit Limit Bytes
+Commit Usage
+Commit Used Bytes
+Common formats
+Common token formats
+Comparison operator
+Completely free physical memory (MemFree).
+Condition
+Condition mode
+Conditional colors
+Config & Maintenance
+Config Folder
+Config backed up: {0}
+Config exported.
+Config imported and applied.
+Config imported and applied; previous config backed up as {0}.
+Configuration import and export
+Configuration, backup & maintenance
+Configure HTTP / JSON
+Configure balance queries and peak/off-peak windows. The API key is encrypted for the current Windows user.
+Configure hot-zone position and dwell
+Configure the DeepSeek API key under Data Management → Data Source Configuration → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.
+Configure the DeepSeek API key under Data Sources → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.
+Configured daily target time in hh:mm:ss format. The equivalent desktop key is time.target.value.
+Connect DeepSeek, HTTP JSON and AIDA64.
+Connected
+Connection failed
+Connection succeeded.
+Contents
+Context Switches
+Control how profiles alternate.
+Controls all HUD display functions.
+Controls the primary HUD and additional instances together. Automatic summons pause while hidden. Press again to restore the previous display mode; restarting restores visibility.
+Cooldown / seconds
+Coordinated Universal Time
+Copied: {0}
+Copy Key
+Copy Template
+Copy example
+Copy from the library, then build readable HUD text.
+Copy key
+Copy keys from the variable library. Network probes use the carousel's Packet Probe target and protocol, or the current profile when no probe profile is queued.
+Copy selected variable
+Copy template
+Copyable JSON structure
+Core Clock MHz
+Core Temperature Avg (summary)
+Core Voltage
+Cores
+Could not open the logs folder. See logs.
+Could not reach GitHub; retry later.
+Could not read update details; retry.
+Could not register the shortcut; another app may be using it. Choose another and Save & Apply.
+Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.
+Could not save this preference. Please try again.
+Could not start the HUD service; see the log on the Advanced page.
+Could not verify island eligibility
+Count
+Counts actual content-update frames, excluding idle frames. Requires Screen Recording permission; no images are saved. This may differ from internal application rendering/presentation FPS; static content can be 0 FPS.
+Create, save, delete and preview
+Credits
+Culture
+Currency code of the balance, normally CNY.
+Current Local Time (24h)
+Current Local Time (12h)
+Number of network interfaces that are up and are not loopback interfaces.
+Internal ID of the active HUD profile.
+Stable internal identifier of the selected GPU.
+IP address actually probed or returned by the target after name resolution.
+Processor architecture, such as x64 or ARM64.
+Currently available physical memory.
+Availability text generated from the current state: available or unavailable.
+ReleaseDate reported by Win32_BIOS.
+VBIOS version reported by nvidia-smi, when supported.
+Number of current processes with no main window handle.
+Total balance formatted as a currency string, such as “¥0.00”.
+Total DeepSeek API account balance in Chinese yuan.
+Instantaneous Android battery current. Charging or discharging is determined by EXTRA_STATUS rather than the sign of the current.
+EncryptionPercentage of the system volume.
+System drive protection state reported by the Windows Volume Encryption interface.
+Time of the current Windows boot, estimated from system uptime.
+Bus/BCLK frequency reported by a hardware monitoring sensor.
+PercentDiskTime of drive C:.
+File system of drive C:.
+Available space on drive C:.
+Windows Storage HealthStatus of the physical disk containing C:, when the Storage interface supports it.
+Combined current read and write rate of C:.
+Volume label of drive C:.
+Number of partitions associated with logical volume C: through Win32_LogicalDiskToPartition.
+PowerOnHours of the disk containing C:, when the device supports it.
+CurrentDiskQueueLength of C:.
+Live read rate of logical volume C: from Windows performance counters.
+Windows Storage OperationalStatus of the physical disk containing C:.
+Temperature from the Storage Reliability Counter of the disk containing C:, when the device supports it.
+Total capacity of drive C:.
+Windows DisableDeleteNotify state for the file system of C:.
+Percentage of drive C: space in use.
+Used space on drive C:.
+Live write rate of logical volume C: from Windows performance counters.
+Cumulative processor time consumed by the current application process.
+System cache size in bytes reported by Windows performance counters.
+Android BatteryManager charge counter. An unsupported result of Integer.MIN_VALUE is treated as missing data.
+Current charging power, usually 0 when the battery is not charging.
+Battery chemistry reported by Win32_Battery, such as lithium-ion or lithium-polymer.
+Unused portion of the system commit limit.
+Current Windows commit limit, generally determined by both physical memory and the page file.
+Committed memory as a percentage of the commit limit.
+Amount of memory committed by the system.
+Context Switches/sec from the Windows System performance counters.
+Live core clock of the selected GPU.
+Current average of available CPU core temperature sensors.
+CPU core voltage or highest effective voltage reported by hardware monitoring sensors.
+Number of physical GPUs currently detected by the system.
+Culture name of the current process, such as zh-CN.
+Current local time in 12-hour format, including AM or PM.
+Current local time in HH:mm:ss format.
+Battery cycle count supplied by the firmware or driver. Some devices may report 0.
+PercentDiskTime of drive D:.
+File system of drive D:.
+Available space on drive D:.
+Windows Storage HealthStatus of the physical disk containing D:, when the Storage interface supports it.
+Combined current read and write rate of D:.
+Volume label of drive D:.
+Number of partitions associated with logical volume D: through Win32_LogicalDiskToPartition.
+PowerOnHours of the disk containing D:, when the device supports it.
+CurrentDiskQueueLength of D:.
+Live read rate of logical volume D: from Windows performance counters.
+Windows Storage OperationalStatus of the physical disk containing D:.
+Temperature from the Storage Reliability Counter of the disk containing D:, when the device supports it.
+Total capacity of drive D:.
+Windows DisableDeleteNotify state for the file system of D:.
+Percentage of drive D: space in use.
+Used space on drive D:.
+Live write rate of logical volume D: from Windows performance counters.
+DNS lookup time for a hostname in the current probe cycle; 0 when the target is a direct IP address.
+DNS server addresses configured on active network interfaces.
+% DPC Time from the Windows Processor Information counters.
+Current date on this computer.
+Current date and time on this computer.
+Seconds elapsed since the start of the current day.
+English name of the current day of the week.
+Chinese name of the current day of the week.
+Ordinal day of the current date within the year.
+Percentage of the day elapsed from 00:00:00 today to 00:00:00 tomorrow.
+Seconds remaining until 00:00:00 tomorrow.
+Day of the month for the current date.
+Total dedicated video memory of the selected GPU.
+Used dedicated video memory as a percentage of its total capacity.
+Live dedicated video memory usage of the selected GPU.
+Gateway addresses configured on active network interfaces.
+Completion time of the most recent Quick Scan or Full Scan.
+Enabled and real-time protection states reported by Windows Defender WMI.
+Number of threats currently enumerated by MSFT_MpThreat.
+Current full-charge capacity divided by design capacity, equivalent to battery health.
+Design battery capacity converted to Wh.
+Original design capacity of the battery.
+Number of USB PNP devices in Win32_PnPEntity.
+Names of the USB PNP devices currently enumerated.
+Current discharging power, usually 0 when the battery is not discharging.
+Download rate formatted using the unit selected by the current network profile.
+Actual presentation or image update rate of the selected display. Collection coverage varies by platform; this is not the fixed refresh rate.
+Actual frame rate divided by the profile’s frame rate for 100%.
+Progress used by the clock profile’s ring; the remaining proportion in target-time mode.
+Elapsed day progress in normal mode, or “Remaining ??%” in target-time mode.
+Actual collection state and reason for unavailable data.
+Upload rate formatted using the unit selected by the current network profile.
+Number of running containers returned by docker ps -q, when the Docker CLI is available.
+Number of unique image IDs returned by docker images -q.
+Combined live download rate of all connected, non-loopback network interfaces.
+Total system download rate converted to Mbps.
+Driver date reported by Win32_VideoController.
+Driver version of the selected GPU reported by Win32_VideoController.
+Target address for ICMP, or “address:port” for TCP and UDP.
+Underlying status or error from the most recent failed probe.
+Seconds until battery depletion estimated by Windows power management. Unavailable if the system cannot estimate it.
+Estimated time to full charge calculated from remaining capacity, full-charge capacity and live charging power. Available only when charging power is known.
+Number of distinct fan sensors detected.
+Highest current fan RPM visible to LibreHardwareMonitor.
+Highest percentage reported by hardware monitoring sensors of type Control.
+Number of files in the CF_HDROP copied-file list.
+Active firewall profile: domain, private or public.
+State of the currently active Windows Firewall Policy configuration.
+Number of fixed disk volumes that are currently ready.
+Combined available space of all ready fixed disk volumes.
+Drive letters of the ready fixed disk volumes.
+Combined total capacity of all ready fixed disk volumes.
+Combined used space as a percentage of the total capacity of fixed disks.
+Combined used space of all ready fixed disk volumes.
+Memory module FormFactor, such as DIMM or SODIMM.
+.NET FrameworkDescription used by the current process.
+Available physical memory as a percentage of total physical memory.
+Current live effective CPU frequency reported by Windows performance data.
+Current live effective CPU frequency in MHz.
+Effective CPU frequency as a percentage of maximum frequency. May exceed 100% during turbo boost.
+Estimated full-battery runtime reported by Windows; 0 if unavailable.
+The latency ring reaches 100% at 999 ms.
+Full-charge capacity converted to Wh.
+Capacity to which the battery can currently be fully charged.
+Per-process GPU usage aggregated from GPU Engine performance counters.
+Utilization of the current Endfield Charge Plus process from GPU Engine performance counters.
+Approximate battery percentage converted from the XInput battery level.
+Number of connected controllers in XInput slots 0–3.
+Git branch when the application’s current working directory is a Git repository.
+Short hash and subject of the most recent commit in the current working directory.
+Git state of the current working directory: clean or the number of changes.
+Output of go version found on PATH.
+Promotional balance of the DeepSeek API account.
+Number of Windows handles opened by the current application process.
+Installed physical memory capacity minus the total physical memory available to Windows.
+Full-charge capacity as a percentage of design capacity.
+GPU hot spot temperature reported by hardware monitoring sensors.
+Current hour, from 0 to 23.
+Whether Microsoft-Hyper-V-All is installed and enabled in Windows OptionalFeature.
+IPv4 unicast addresses on active network interfaces.
+IPv6 unicast addresses on active network interfaces.
+Proportion of CPU time currently idle.
+Image width × height when a DIB or DIBV5 image can be decoded.
+InstructionsRetiredPersec from Windows Processor Information performance counters. Available only when the system exposes that counter.
+Names of all active network interfaces, separated by commas.
+Types of active network interfaces, such as Wireless80211 or Ethernet.
+Interrupts/sec from Windows Processor Information performance counters.
+ISO 8601 representation of the current local time.
+First line of java -version found on PATH.
+Mean absolute latency difference between adjacent successful samples, used as an approximation of jitter.
+Proportion of CPU time spent in kernel mode, excluding idle time.
+L2 cache capacity reported by the processor.
+L3 cache capacity reported by the processor.
+Detection of common local model processes, including Ollama, LM Studio and llama-server.
+Local time of the most recent successful probe with the current configuration.
+Local time when the application observed a change in the Clipboard Sequence Number.
+Sum of the link speeds reported by all active network interfaces.
+Total number of logical processors visible to the system.
+Failure or timeout percentage over the last 20 probes for the current address, protocol and port combination.
+Number of failed or timed-out probes for the current target in the latest rolling window.
+Processor manufacturer.
+Maximum clock frequency reported by Win32_Processor.
+Maximum clock frequency in MHz.
+Highest individual link speed among all active network interfaces.
+Live GPU memory clock frequency.
+Video memory or memory junction temperature reported by hardware monitoring sensors.
+Total dedicated video memory used by the default HUD.
+Used dedicated video memory shown by the default HUD.
+Current millisecond.
+Current minute.
+Windows Modified Page List Bytes.
+Number of displays currently detected by Windows.
+Seconds elapsed in the current month.
+Percentage elapsed from 00:00 on the first day of this month to 00:00 on the first day of next month.
+Seconds remaining until the first day of next month.
+Current month as a number.
+Manufacturer reported by Win32_BaseBoard.
+Product reported by Win32_BaseBoard.
+Highest motherboard temperature sensor value readable by LibreHardwareMonitor.
+Output of node --version found on PATH.
+Windows kernel nonpaged pool memory.
+Architecture of the current Windows installation, such as X64 or Arm64.
+Current Windows build number.
+Windows operating system description provided by .NET RuntimeInformation.
+Windows operating system version number.
+Current PCIe Link Generation from nvidia-smi. Available for NVIDIA hardware when nvidia-smi can run.
+Current PCIe Link Width from nvidia-smi.
+ID of the current application process.
+Cumulative unicast packets received by active network interfaces.
+Cumulative unicast packets sent by active network interfaces.
+Windows kernel paged pool memory.
+Current remaining battery charge as a percentage.
+Current Windows local time zone ID and the UTC offset at the next period switch. Daylight-saving offsets are calculated for the switch date.
+Chinese name of the current period: peak or off-peak.
+Date and time of the next peak/off-peak switch converted to the current Windows user’s local time zone, in yyyy-MM-dd HH:mm:ss format, including local daylight-saving rules.
+Beijing date and time of the next peak/off-peak switch, in yyyy-MM-dd HH:mm:ss format.
+Time of the next peak/off-peak switch converted to the current Windows user’s local time zone, in HH:mm:ss format, including local daylight-saving rules.
+Beijing time of the next peak/off-peak switch, in HH:mm:ss format.
+Text such as “Peak period ??% elapsed” or “Off-peak period ??% elapsed”.
+Percentage of the current peak or off-peak period that has elapsed.
+Seconds remaining until the next peak/off-peak period switch.
+Text such as “Peak period remaining ??:??:??” or “Off-peak period remaining ??:??:??”.
+Fixed reference time zone used by the DeepSeek peak/off-peak rules: Beijing time, UTC+08:00.
+Total number of physical cores across all processor sockets.
+Physical GPU index corresponding to Windows GPU performance counters.
+TCP or UDP probe port; 0 in ICMP mode.
+NVIDIA GPU power limit read using nvidia-smi power.limit. Unavailable for other GPUs without a reliable power-limit interface.
+Highest valid current CPU power sensor reading from LibreHardwareMonitor.
+GUID of the active power plan from powercfg.
+Current power source: AC power or battery.
+Live power sensor value from LibreHardwareMonitor. Available only when provided by the hardware or driver.
+First 80 characters of clipboard text after excess whitespace is removed.
+BitsPerPel returned by EnumDisplaySettings.
+Height of the Windows primary display.
+Refresh rate of the current display mode.
+Width of the Windows primary display.
+Private memory of the current application process.
+Architecture of the current Endfield Charge Plus process.
+Environment.ProcessorCount.
+Rate actually used by the current network profile to calculate its percentage.
+Current profile’s percentage mode: total, download, upload or the greater direction.
+Text such as “50%”, “↓ 50%” or “↑ 50%”, depending on the mode. The greater-direction mode has no arrow.
+Percentage calculated from the profile’s selected mode and the configured rate for 100%.
+Probe protocol currently in use: ICMP, TCP or UDP.
+ProxyServer configured for the current user.
+ProxyEnable state in the current user’s Internet Settings.
+Public IPv4 queried from api.ipify.org and cached for 5 minutes. Requests are made only while this variable is used.
+Public IPv6 queried from api6.ipify.org and cached for 5 minutes. Unavailable without IPv6 connectivity.
+Output of python or py --version found on PATH.
+Absolute value of current charging or discharging power. Some models do not provide it.
+Cumulative receive errors on active network interfaces.
+Successful probes for the current target in the latest rolling window.
+Current remaining battery capacity converted to Wh.
+Current remaining battery capacity.
+Underlying status returned by the protocol probe, such as Success, Connected, Response or TimedOut.
+Output of rustc --version found on PATH.
+Display scaling percentage calculated from system DPI.
+Current second.
+Current refresh rate of the second display.
+Current resolution of the second display.
+Cumulative send errors on active network interfaces.
+Number of probe samples for the current target in the latest rolling window.
+Maximum shared system memory available to the current GPU.
+Used shared GPU memory as a percentage of the shared memory limit.
+Shared system memory used by the current GPU.
+Approximate dBm converted from Windows WLAN signal quality. Available when connected to Wi-Fi.
+Total number of memory device slots reported by Win32_PhysicalMemoryArray.
+Number of physical memory modules currently enumerated.
+Windows Explorer SmartScreenEnabled configuration.
+Number of processor sockets in the system.
+Highest ConfiguredClockSpeed or Speed reported by Win32_PhysicalMemory.
+Sum of Standby Cache Core, Normal and Reserve from Windows Memory performance counters.
+Start time of the current application process.
+Text derived from the power state, such as “Charging”, “On battery”, “Plugged in” or “Unknown”.
+Number of ready volumes of type DriveType.Removable.
+Drive letters of the current removable storage volumes.
+Total swap space.
+Used swap space.
+Disk active time percentage reported by performance counters for the system drive.
+Space available to a regular user on the system volume, as defined by the macOS version.
+System Calls/sec from Windows System performance counters.
+Windows system DPI.
+File system of the system drive, such as NTFS.
+Available space on the Windows system drive.
+Free space on the system drive as a percentage of total capacity.
+Combined read and write rate of the system drive.
+Volume label of the system drive.
+Current disk queue length of the system drive.
+System drive read rate from Windows logical disk performance counters.
+Root of the drive containing the Windows system directory, such as C:\\.
+Total capacity of the Windows system drive.
+Used space on the system drive as a percentage of its total capacity.
+Used space on the Windows system drive.
+System drive write rate from Windows logical disk performance counters.
+Time from initiating a TCP connection until it succeeds, in TCP mode.
+Number of active TCP connections returned by IPGlobalProperties.
+SpecVersion reported by Win32_Tpm.
+Elapsed proportion of the daily target-time cycle.
+Time remaining until the next target as a percentage of 24 hours.
+Seconds remaining until the next daily target time.
+Target-time status text in the form “Remaining ??%”.
+Daily target time set in the current clock profile.
+IPv4 address, IPv6 address or hostname used by the current packet probe.
+CPU sensor temperature. Unavailable when unsupported by the device, driver or current permissions.
+Highest current CPU temperature read by LibreHardwareMonitor. Unavailable when unsupported by the hardware or driver.
+CPU sensor temperature. Unavailable when unsupported by the device, driver or current permissions.
+Number of characters in the current clipboard text.
+Theme currently used by Endfield Charge Plus.
+Number of threads in the current application process.
+Remaining battery runtime estimated by Windows; 0 if no estimate is available.
+Estimated remaining runtime formatted as HH:MM:SS; “Unknown” if no estimate is available.
+Current local time, to the second.
+Response timeout for a single ICMP, TCP or UDP probe.
+Current local time zone ID.
+PID of the process with the highest CPU usage.
+Process CPU usage calculated from the change in TotalProcessorTime.
+PID of the process with the highest disk I/O rate.
+Current total I/O rate of that process, in bytes per second.
+PID of the process with the largest working set.
+Current Working Set of the process with the largest working set.
+Topped-up balance of the DeepSeek API account.
+Combined total system download and upload rate.
+Total physical memory capacity.
+Combined download and upload rate converted to Mbps.
+Total dedicated video memory plus the shared memory limit.
+Total GPU memory in use as a percentage of the total available memory limit.
+Used dedicated video memory plus used shared GPU memory.
+Combined bytes received by all active network interfaces during the current boot.
+Combined bytes sent by all active network interfaces during the current boot.
+Combined cumulative received and sent traffic.
+TTL of the most recent successful ICMP response; 0 for TCP and UDP.
+Memory type reported by SMBIOS, such as DDR4, DDR5 or LPDDR5.
+EnableLUA registry state.
+Number of active UDP listening endpoints returned by IPGlobalProperties.
+Offset of the current time zone from UTC, in hours.
+Current UTC offset, or the selected fixed offset in World Clock.
+Current Unix timestamp in milliseconds.
+Current Unix timestamp in seconds.
+Most recent InstalledOn value in Win32_QuickFixEngineering.
+Combined live upload rate of all connected, non-loopback network interfaces.
+Total system upload rate converted to Mbps.
+Seconds elapsed since the current Windows boot.
+System uptime formatted as readable text.
+Highest live utilization of the selected GPU’s 3D engines.
+Rolling CPU usage average over the last 15 minutes since this variable was enabled.
+Rolling CPU usage average over the last minute since this variable was enabled.
+Rolling CPU usage average over the last 5 minutes since this variable was enabled.
+Highest live utilization of the selected GPU’s compute engines.
+Highest live utilization of the selected GPU’s copy engines.
+Highest observed CPU usage within a sampling window of up to 15 minutes.
+Highest live utilization of the selected GPU’s video decode engines.
+Highest live utilization of the selected GPU’s video encode engines.
+Current total CPU utilization for the whole computer.
+Physical memory currently in use.
+Windows domain or computer name associated with the current user.
+Proportion of CPU time spent running user-mode code.
+Approximate ratio of total system throughput to the combined link speeds of active interfaces.
+VPN activity detected from active Tunnel, PPP, WireGuard, Wintun and similar network interfaces.
+Total dedicated video memory capacity of the selected GPU.
+Endfield Charge Plus product version.
+Currently available system virtual address space.
+Combined CoreGraphics bounds of all active screens, in logical points.
+Total height of the multi-display virtual desktop.
+Virtual memory size of the current application process.
+Total virtual address space reported by the system.
+Used virtual memory as a percentage of total virtual memory.
+System virtual address space currently in use.
+Combined CoreGraphics bounds of all active screens, in logical points.
+Total width of the multi-display virtual desktop.
+CoreGraphics global desktop coordinate, in logical points.
+Left boundary coordinate of the multi-display virtual desktop.
+CoreGraphics global desktop coordinate, in logical points.
+Top boundary coordinate of the multi-display virtual desktop.
+Live voltage reported by the Windows battery interface. Some models do not provide it.
+GPU core voltage reported by hardware monitoring sensors.
+Number of WSL distributions registered for the current user.
+Distribution list returned by wsl -l -q.
+Combined working set of vmmemWSL and vmmem.
+Detection of the WSL executable and registered distributions.
+Seconds elapsed since the start of this week on Monday.
+Current ISO-style week number.
+Percentage elapsed from 00:00 on Monday this week to 00:00 on Monday next week.
+Seconds remaining until Monday next week.
+Frequency band of the current WLAN interface. Read directly from Band on newer systems, with an inferred fallback on older systems when possible.
+Wireless channel of the current WLAN interface.
+Current WLAN radio type, such as 802.11ax.
+The selected window's measured presentation/image-update rate. Windows counts that window's dominant presentation stream; other windows in the same process are counted separately.
+Actual frame rate divided by the profile’s frame rate for 100%.
+Actual collection state and reason for unavailable data.
+Number of uninstalled, non-hidden updates found by Microsoft.Update.Session.
+Status combining pending-restart flags and an available-update search.
+Current working set memory of Endfield Charge Plus.
+Live time converted using Windows China Standard Time.
+Live time converted using Windows GMT Standard Time.
+Live time converted using Windows Eastern Standard Time.
+Live time converted using Windows Tokyo Standard Time.
+Seconds elapsed in the current year.
+Percentage elapsed from January 1 this year to January 1 next year.
+Seconds remaining until January 1 next year.
+Current year.
+Current latency
+Current local UTC offset; World Clock uses the selected fixed UTC offset.
+Current packet loss
+Current period
+Current state
+Current time
+Current transport type: WIFI / CELLULAR / ETHERNET / VPN / NONE.
+Current version
+Current weekday name. Equivalent desktop keys are time.day_of_week and time.day_of_week_en.
+Current {0}, in {1}.
+Current {0}.
+Current: v0.1.2
+Current: v0.1.3
+Current: v{0}
+Currently active
+Currently editing
+Custom
+Custom Coordinates
+Custom Data
+Custom Profile
+Custom Profile {0}
+Custom coordinates
+Custom value mapped from an HTTP / JSON data source.
+Cycle Animation
+Cycle Count
+Cycle Queue
+Cycle profiles in the queue below.
+Cycle queue
+Cycle transition animation
+Cycles through the queue in order; the queue only references existing schemes.
+Cycles top to bottom, then returns to the first item. The queue only references existing profiles.
+Cycling, clicks & animations
+D Active Percent
+D Filesystem
+D Free Bytes
+D Health
+D I/O B/s
+D Label
+D Partition Count
+D Power On Hours
+D Queue Length
+D Read B/s
+D Smart Status
+D Temperature
+D Total Bytes
+D Trim Status
+D Usage
+D Used Bytes
+D Write B/s
+DNS Latency Ms
+DNS Resolve Time
+DNS Servers
+DPC Time
+Daily Target
+Daily target (HH:mm:ss)
+Dark
+Data Available
+Data Management
+Data Properties
+Data Source Configuration
+Data Sources
+Data Total
+Data Usage
+Data Used
+Data for '{0}' is unavailable or invalid. Check ROOT/permissions, device support, the selected window and data-source settings.
+Data is unavailable or invalid for these HUD profiles:
+Data sampling interval / ms
+Data sampling interval / seconds
+Data sampling interval / seconds (shared by all HUDs)
+Data source added.
+Data source configuration
+Data source removed.
+Date
+Datetime
+Day
+Day Elapsed Seconds
+Day Of Week
+Day Of Week En
+Day Of Year
+Day Progress
+Day Remaining Seconds
+Dedicated Total Bytes
+Dedicated Usage
+Dedicated Used Bytes
+DeepSeek API
+DeepSeek API Source
+DeepSeek balance
+DeepSeek balance and peak periods
+DeepSeek official peak windows (Beijing time)
+DeepSeek {deepseek.period.name}
+Default Gateways
+Default accent colour and conditional colour rules.
+Defaults were restored.
+Defender Last Scan
+Defender Status
+Defender Threats
+Delete
+Design Vs Current Health
+Design Wh
+Design mWh
+Desktop Layer
+Desktop repository
+Detailed
+Detecting…
+Developer
+Device
+Device Count
+Device List
+Device Manufacturer
+Device Model
+Device Uptime
+Dhaka, Thimphu
+Diagnostics report
+Disabled
+Discard changes
+Discharge Rate Watts
+Discharging
+Disk
+Dismiss
+Display
+Display & Position
+Display & Position: visibility, placement, appearance and sampling. HUD Content: profiles, cycling and trigger rules. Data Management: Variable Library, Hardware Data and Data Source Configuration. Experimental Features: multiple HUDs. About: updates, backup and maintenance.
+Display Content
+Display Download
+Display FPS
+Display FPS (Run as administrator required)
+Display FPS share
+Display FPS status
+Display Mode
+Display Name
+Display Percent
+Display Progress
+Display Status
+Display Status Text
+Display Upload
+Display a Windows media session in the HUD.
+Display frame-rate options
+Display mode
+Display {0} · {1}×{2}{3}
+Display, position & appearance
+Docker Containers
+Docker Images
+Docker Running
+Domain
+Don't warn about this data again
+Done
+Down
+Download
+Download B/s
+Download Mbps
+Download only
+Download rate
+Downloading the official driver installer; the setup wizard will open after verification.
+Dragged position · restore selected anchor
+Drawing over other apps is allowed.
+Driver Date
+Driver Version
+Driver installation completed. Exit and restart ECP as administrator.
+Dubai, Abu Dhabi
+Duplicate
+Duration
+Duration / s
+ECP App
+Each HUD has independent profiles, cycling, font, size, visibility and target display. Select an instance and adjust it in the first two tabs; Locate jumps to position settings. An orange outline and Currently editing label remain on the selected HUD while Settings is open. Save & Apply after adding or removing an instance; closing Settings clears the outline. Sampling interval and click switching are shared by all HUDs and can be changed while editing any instance; language and startup are global. Up to 16 HUDs.
+Eastern Time (US & Canada)
+Editing: 
+Percentage elapsed from today's 00:00 to tomorrow's 00:00; the equivalent desktop key is time.day.progress.
+Enable and select instances
+Enable automatic cycle
+Enable click cycling to advance through the queue even with automatic cycling off. Each HUD advances its own instance and resets its cycle timer. Transparent areas remain click-through. Empty or single-item queues do not switch.
+Enable mouse hot-zone summons
+Enable multiple HUD instances
+Enable multiple HUDs under Experimental Features, add/name a secondary HUD and select it for editing. The selected HUD is highlighted. Save & Apply a new instance before previewing it. Removing a secondary instance does not remove the primary HUD.
+Enable notification permission for the app.
+Enable probing
+Enable the HUD Master Switch under Display & Position; turn on Always Visible for a persistent HUD.\nChoose a built-in profile under HUD Content → HUD Configuration and preview it.\nClick Save & Apply at the top right to apply the settings to the running HUD.
+Enable this rule
+Enabled
+Enabled: {0}
+Encrypted storage is unavailable, so the API key cannot be saved safely.
+Encrypted storage is unavailable; the API key was not saved.
+Endfield Charge Plus Settings
+Endfield Charge Plus is running
+Endfield Charge Plus update available
+Endfield-style Status HUD
+Endpoint
+English
+Enter #RRGGBB or #AARRGGBB.
+Enter a DeepSeek API key under Data Management → Data Source Configuration, then Save & Apply. Keys are encrypted for the current Windows user and may need re-entry for another account or machine. Peak windows use Beijing time and the Chinese holiday calendar; weekend make-up workdays remain off-peak.
+Enter a number.
+Enter a time between 00:00:00 and 23:59:59.
+Enter a whole number.
+Enter an API key first.
+Enter an HTTP/HTTPS GET URL that returns JSON and name the source.\nMap response paths such as data.value or players[0].name to variable names.\nSet required headers and refresh seconds, enable the source, then Save & Apply.\nFind custom.<source>.<variable> in the library and use it in a profile.
+Enter an http/https URL.
+Error
+Estimated Time To Empty
+Estimated Time To Full
+Estimated full-charge energy
+Eucla
+Event summons
+Event trigger rules
+Exit
+Experimental Features
+Experimental multiple HUDs
+Export
+Export Endfield Charge Plus Config
+Export config
+Export failed.
+Export failed. See logs.
+Export hardware diagnostics
+Export settings or create a backup under About → Configuration & Maintenance. Import restores a complete setup. Back up before substantial edits. Secrets encrypted for the current user may need re-entry on a different machine or account.
+Export, import and backup
+Exported.
+Expression
+Expression divisor cannot be 0
+Expression error
+Expression error (position {0}): {1}
+Expression functions: len, contains, startswith, endswith, upper, lower and concat. Convert types with number, string or bool; inspect them with isnull, isempty and isnan. Token pipelines support upper/lower, zero-based sub:start:length, replace:old:new and math:add/sub/mul/div/round/floor/ceil/abs.
+FPS and GPU targets
+FPS computed from real displayed-frame timestamps of the selected SurfaceFlinger layer.
+FPS display name
+Measured FPS divided by the profile's frame rate represented by 100%.
+FPS window name
+Failed
+Fan Count
+Fan Speed (summary)
+Fan Speed Percent (summary)
+Fast (latency)
+Field mapping (one variable = JSON path per line)
+File Count
+Find and copy a variable
+Find the right page
+Fires on a false-to-true edge. Accepts true/false and numeric zero/nonzero.
+Fires when the comparison matches; a sustained condition can trigger again after cooldown.
+Fires when the value changes. Operator and threshold are ignored. Missing data and the first recovered sample do not trigger.
+Firewall Profile
+Firewall Status
+First-run defaults loaded; click Save & Apply to commit them.
+Fixed Count
+Fixed Free Bytes
+Fixed List
+Fixed Total Bytes
+Fixed Usage
+Fixed Used Bytes
+Focus the shortcut box and press Ctrl or Alt with a letter, digit or function key, then Save & Apply. F12 and reserved combinations are rejected. If registration conflicts, the previous shortcut remains active. Clear and save to disable it.
+Follow system
+Font scale
+Foreground service
+Foreground service permission is declared for the HUD.
+Form Factor
+Formats
+Found v{0}. Tap to view releases.
+Found {0}. See About for update details.
+Frame rate at 100% / FPS
+Frame-rate target
+Framework Version
+Free Memory
+Free Percent
+Frequency GHz
+Frequency MHz
+Frequency Percent
+From the configured HTTP/JSON source; field mappings define the metric.
+Full
+Full Life Seconds
+Latency at 100% (ms)
+Full Wh
+Full mWh
+Full-charge energy estimated from remaining energy and charge percentage, not rated design capacity.
+Full: retract the previous item, then reveal the next with the full title/ripple sequence.
+Full: title, ripple, and shape transition before the final HUD.
+Function clamp requires min <= max
+Function sign does not accept NaN
+Function {0} requires 1-2 arguments
+Function {0} requires at least {1} arguments
+Function {0} requires {1} arguments
+GET URL
+GPU
+GPU Device
+GPU Frequency
+GPU Model
+GPU Temperature
+GPU Top Name
+GPU Top Usage
+GPU Usage
+GPU frequency
+GPU frequency; no public Android API exists.
+GPU memory
+GPU model from the vendor KGSL node; availability depends on the device and Root authorization.
+GPU temperature
+GPU temperature; Android exposes no public API.
+GPU usage
+Gamepad Battery
+Gamepad Count
+Gamepad Name
+Get a HUD on screen, then customize it.
+Getting started
+Git Branch
+Git Last Commit
+Git Status
+Give each HUD its own content and position.
+Global Scale changes the whole HUD size; opacity controls its visibility. Font selection changes text rendering, with system fallback for missing glyphs. Display duration controls transient hold time; bounce and ripple controls change motion appearance. Reset Size & Animation restores this group of values; use Save & Apply afterwards.
+Global font size and UI scale
+Golang Version
+Grant access
+Granted
+Granted Balance
+Graphics adapter name read through EGL. The equivalent desktop key is gpu.name.
+Grouped by function; common status and live metrics come first, followed by detailed values. Search by name, key, or category.
+HTTP / JSON sources
+HTTP field
+HTTP/JSON field mapping
+HUD Configuration
+HUD Content
+HUD Content & Data
+HUD Master Switch
+HUD Opacity
+HUD Profiles
+HUD SETTINGS
+HUD Scale
+HUD content / event triggers
+HUD content / rules
+HUD data warning
+HUD data warnings
+HUD font
+HUD master switch
+HUD opacity
+HUD scale
+HUD service
+HUD status
+Handle Count
+Hardware Data
+Hardware Info
+Hardware Reserved Bytes
+Hardware Sensors
+Hardware capabilities
+Hardware capabilities have not been scanned yet.
+Hardware capabilities were re-detected.
+Hardware sampling interval / seconds
+Hardware sensors & drivers
+Hardware variables and legacy keys
+Has Image
+Has Text
+Hawaii
+Headers (one Key: Value per line)
+Headers and field mappings cannot be null.
+Health Percent
+High load: cpu.usage, Threshold >= 90, cooldown 30 seconds. Track changes: media.title with Change mode and a suitable cooldown. Confirm that the variable returns valid data before relying on a trigger.
+Holiday calendar needs an update
+Host Name
+Host unreachable
+Hot zones are available with Always Visible off. Set the anchor, size, offsets and dwell time. The region uses full target-display bounds and is clamped to the screen. Dwell for the chosen interval to summon; leave and re-enter to re-arm. You may advance the carousel on each summon.
+Hot-zone X offset / px
+Hot-zone Y offset / px
+Hot-zone dwell time
+Hot-zone height / px
+Hot-zone position
+Hot-zone width / px
+Hotspot Temperature
+Hour
+Hyper V Status
+ICMP is preferred; restricted networks fall back to TCP / UDP. Target and port come from the active scheme.
+ICMP uses Ping; TCP measures connect latency; UDP sends probe data and waits for a service response.
+ICMP, TCP or UDP probe to the configured target; a failed request reports unknown status.
+IPv4 Addresses
+IPv4 lookup failed
+IPv4, IPv6 or a host name.
+IPv4, IPv6 or a host name; the port is used by TCP / UDP only.
+IPv4, IPv6, or hostname.
+IPv6 Addresses
+IPv6 lookup failed
+Icons & Progress Ring
+Icons and progress ring
+Ide Running
+Idle
+Idle Percent
+Image Size
+Immediate
+Import
+Import Endfield Charge Plus Config
+Import config
+Import failed. See logs.
+Import failed: the file is invalid or unreadable.
+Imported startup preference could not be applied. Check Windows Startup Apps.
+In AIDA64 Preferences → Hardware Monitoring → External Applications, select the items and enable shared memory, Registry or WMI. Keep AIDA64 running, then refresh ECP Hardware Data. ECP reads all actual exports, including numbers, timings and text; unexported or license-limited fields remain unavailable.
+Includes device, capability, permission and configuration facts that can be shared with the developer.
+Independent and shared settings
+Individual sensors and summaries
+Info
+Initial and recovered samples establish a baseline without popping up. Each rule has its own cooldown; a sustained threshold can trigger again after it expires. Matching rules summon the next item in that instance's queue, or the active profile for an empty queue. Rules work only in transient mode. Hot-zone requests take priority; hot-zone and rule queues advance independently. Sampling continues during HUD presentations at the configured global and data-source intervals; detected events are coalesced while busy.
+Insert variable
+Inspect real readings and resolve driver issues.
+Inspect, search, copy and export
+Install / update PawnIO
+Instance name
+Instructions Per Second
+Integer
+Interface
+Interface Names
+Interface Types
+Interface language
+Interface language and system default
+Interface name of the default network (LinkProperties.interfaceName).
+International Date Line West
+Interrupts
+Interval / s
+Invalid color rule on line {0}. Example: cpu.usage >= 80 => #FF4D4F
+Invalid number: {0}
+Invalid route
+Invalid sources; keeping the last valid config: 
+Invalid target
+Is Weekend
+Is paused
+Is playing
+Islamabad, Karachi
+Iso
+JSON Config
+JSON path missing: 
+JSON value is null
+Java Version
+Jitter Ms
+KB/s / MB/s (Auto)
+KB/s · MB/s (auto)
+Kabul
+Kathmandu
+Keep your configuration and inspect failures.
+Keeps the Endfield Charge Plus overlay HUD running.
+Keeps the anchored HUD clear of the status bar and the display cutout.
+Kernel Usage
+Keyboard Name
+L2 Cache KB
+L3 Cache KB
+LLM Local Status
+Larger direction
+Larger of Down / Up
+Larger values update hardware less often; clocks still update every second.
+Last Success
+Last Updated
+Last error
+Latency Ms
+Latency Progress
+Latency Text
+Later
+Latest probe status; the desktop catalog spells this probe.status_text.
+Latest version
+Latest: check failed
+Latest: not checked
+Latest: timed out
+Latest: unavailable
+Latest: v{0}
+Layer
+Lead-acid
+Left Icon
+Left Main Info
+Left icon
+Left info
+Left info / Title
+Left main info
+Left main information
+Left {0:0}%
+Left {0}%
+Lets the HUD draw over other apps; only requested when you enable the floating HUD.
+Li-ion
+Li-polymer
+License
+Line Islands
+Link Speed B/s
+Live preview
+Live update API
+Live updates are unsupported or not authorized on this device.
+Loaded {0} HTTP data source(s)
+Local time of the last successful balance query.
+Locate and edit selected HUD
+Log
+Logical CPUs available to the app from Runtime.availableProcessors; power or process limits can affect the count.
+Logical Processors
+Logs
+Logs and reset
+Logs folder opened.
+Lord Howe Island
+Loss Percent
+Loss {probe.loss_percent|0}
+Lost
+Low Memory
+Low-level temperature, power and voltage readings require PawnIO and administrator access. AIDA64 users can enable shared memory, Registry or WMI under Preferences → Hardware Monitoring → External Applications; all exported items are available here. Missing readings show --.
+Machine Name
+Main information appears on the left; percentage, progress, or status appears on the right.
+Manufacturer
+Map GET JSON fields to custom.source.variable; headers may reference environment variables.
+Marquesas Islands
+Max Frequency GHz
+Max Frequency MHz
+Max Latency Ms
+Max Link Speed B/s
+Maximum
+Mbps uses megabits/s; KB/s / MB/s switches automatically by rate.
+HTTP round-trip time of the latest official /user/balance request. Balance requests are cached for 1 minute.
+Actual IP address returned by a Ping response. For a hostname, the final address is visible after successful name resolution.
+Average latency of the last 20 successful samples for the current probe configuration.
+Time taken by the local system to resolve one.one.one.one. May be affected by the DNS cache.
+Compatibility variable: current address and port combination.
+Error or status description from the most recent failed probe.
+Latency corresponding to 100% on the Ping ring, fixed at 999 ms.
+Mean absolute latency difference between adjacent recent successful samples for the current target, used to approximate network jitter.
+Local time of the most recent successful response from the current target.
+Round-trip or connection latency of the most recent successful probe. A failed probe is treated as 999 ms.
+0 ms maps to 0%, and 999 ms or more maps to 100%. Suitable for a latency ring.
+Text such as “20ms” on success, or a timeout/error state on failure.
+Packet loss percentage over the last 20 probes of the current target.
+Failed or timed-out Ping samples for the current target in the latest rolling window.
+Highest latency among the last 20 successful samples for the current probe configuration.
+Lowest latency among the last 20 successful samples for the current probe configuration.
+Whether the most recent ICMP Ping succeeded.
+Compatibility variable: TCP or UDP port; 0 for ICMP.
+Latency mapped to ring progress: 0 ms is 0%, 999 ms or more is 100%, and timeout or failure is 100%.
+Compatibility variable: current network probe protocol, ICMP, TCP or UDP.
+Successful Ping samples for the current target in the latest rolling window.
+Raw state name returned by System.Net.NetworkInformation.IPStatus.
+Number of Ping samples for the current target in the latest rolling window.
+Most recent probe status, such as “Online”, “Timed out” or “Unreachable”.
+IP address or hostname being probed by the current profile.
+Response timeout for a single Ping.
+TTL returned by the most recent successful response.
+Measured {0} ({1}).
+Measured {0}.
+Media
+Media available
+Media information & progress
+Media source app
+Media unavailable
+Memory
+Memory Clock MHz
+Memory Junction Temperature
+Memory Total Bytes
+Memory Used Bytes
+Memory detail
+Memory usage
+Millisecond
+Min Latency Ms
+Minimum
+Minute
+Missing '{0}'
+Missing closing quote
+Modified Bytes
+Modified copy created; the built-in preset is unchanged.
+Modulo divisor cannot be 0
+Monday to Friday, excluding Chinese holidays; weekends remain off-peak even on makeup workdays.
+Monitor Count
+Month
+Month Elapsed Seconds
+Month Name
+Month Progress
+Month Remaining Seconds
+More
+Moscow, Riyadh
+Motherboard Manufacturer
+Motherboard Model
+Motherboard Temperature (summary)
+Mountain Time (US & Canada)
+Mouse Name
+Move the app into Applications before enabling launch at login.
+Multiple HUD instances
+Name
+Name (variable prefix)
+Name reported for Display.
+Name reported for GPU Top.
+Name reported for Gamepad.
+Name reported for Host.
+Name reported for Keyboard.
+Name reported for Machine.
+Name reported for Month.
+Name reported for Mouse.
+Name reported for Name.
+Name reported for Period.
+Name reported for Power Plan.
+Name reported for Preset.
+Name reported for Primary.
+Name reported for Secondary.
+Name reported for Timezone.
+Name reported for Top CPU.
+Name reported for Top Disk.
+Name reported for Top Memory.
+Name reported for User.
+Name reported for VPN.
+Name reported for Window.
+Native live update
+Native live update started
+Native live update stopped
+Nested braces are not supported.
+Network
+Network Connected
+Network Interface
+Network Probe
+Network Type
+Network Unit
+Network access
+Network display unit and percentage basis.
+Network error
+Network options
+Network profiles can use automatic byte units or Mbps; 1 MB/s equals 8 Mbps. The ring compares total, download, upload or the larger direction with your reference bandwidth. The reference sets the 100% scale and does not limit or benchmark the network.
+Network rates
+Network traffic
+Network type
+Network unreachable
+New
+New Delhi, Mumbai
+New rule
+Newfoundland
+Next →
+NiCd
+NiMH
+No
+No GPU detected
+No active profile
+No changes to save
+No config file is available to back up.
+No custom layout
+No data source configured yet.
+No data yet
+No fixed unit
+No formatting
+No island output
+No left/right split
+No log entries yet.
+No matching chapters
+No matching variable.
+No network is currently available.
+No published release was found.
+No rules yet.
+No sample has been collected yet.
+No scheme is loaded yet.
+No shortcut configured.
+Node.js Version
+None
+Nonpaged Pool Bytes
+Not active
+Not applicable to this protocol
+Not authorized
+Not available on this device
+Not available on this device or scenario
+Not checked yet.
+Not granted
+Not protected
+Not running
+Not supported
+Not supported by the system
+Nothing playing
+Nothing to save.
+Notice
+Notification permission
+Notification permission requested; the HUD needs it for its ongoing notification.
+Notifications are allowed.
+Notifications are disabled
+Nukuʻalofa, Apia
+Number
+Numeric function reference
+Nvidia Smi Available
+OK
+OS Architecture
+OS Build
+OS Description
+OS Version
+Off
+Off shows today's progress; on shows the remaining share until the daily target.
+Off-peak
+Off: show today's elapsed progress. On: show the remaining share until the next daily target time.
+Official peak windows (Beijing time)
+On
+On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.
+On Battery
+On battery
+On: keep the HUD visible.\nOff: power changes show Battery; move the pointer into the configured hot zone on the target display to summon the active profile.
+On: keep the HUD visible.\nOff: power changes show Battery; move the pointer to the top-center of the target display to summon the active profile.
+Once equivalent hardware fields are discovered, duplicate legacy entries leave the library while existing profiles keep working. New keys identify a specific device and sensor. Highest/average summaries have different meanings and remain separate. -- means no valid value is currently available.
+One CPU/GPU may expose package, core, hotspot, memory and multiple power channels. Similar names can represent different measurements. Sensor min/max values are session history, not hardware limits. SMBIOS module information comes from firmware and is not a complete SPD/XMP/EXPO timing table.
+One per line: variable operator value => colour, e.g. cpu.usage >= 90 => #FF4D4F
+Online
+Only a single line of text is supported.
+Only metrics the platform really produces are shown as available.
+Only part of this metric can be read.
+Only used after you turn on "start on boot" yourself.
+Open
+Open navigation
+Open releases
+Open settings
+Open settings →
+Open system settings
+Open the config folder from the top bar and the logs folder from About. Keep source status or hardware diagnostics when troubleshooting. Reset loads first-run defaults; Save & Apply commits them to the running app.
+Opened
+Operator
+Operators and conditions
+Ordinary clocks use local time. World Clock uses a fixed UTC offset without automatic DST. Daily-target mode shows the remaining fraction until the next target time in the chosen zone; with it off, it shows elapsed day progress.
+Other
+Overlay
+Overlay hidden
+Overlay permission
+Overlay permission is missing: the system settings were opened, please allow "Display over other apps".
+Overlay permission is not granted yet; enabling the overlay opens the system settings page.
+Overlay position and appearance
+Overlay visible
+PCIe Gen
+PCIe Lanes
+PID
+Pacific Time (US & Canada)
+Package
+Packet Probe
+Packet probe
+Packets Received
+Packets Sent
+Paged Pool Bytes
+Partition capacity from Android StatFs; available space excludes reserved blocks.
+Paused
+Paused, live and missing fields
+PawnIO is installed and ECP is elevated; sensors supported by the hardware can be read.
+PawnIO is installed but cannot be accessed (error {0}); check driver loading or repair its installation.
+PawnIO is installed; run ECP as administrator to read low-level sensors.
+PawnIO is missing: CPU temperature, power, voltage and some motherboard sensors require it.
+Peak
+Peak Period
+Per-core CPU usage
+Percent
+Percent Basis
+Percent basis
+Period Is Off Peak
+Period Is Peak
+Period Local Timezone
+Period Name
+Period Name Zh
+Period Next Switch Datetime
+Period Next Switch Datetime Local
+Period Next Switch Time
+Period Next Switch Time Local
+Period Progress
+Period Progress Text
+Period Remaining Seconds
+Period Remaining Text
+Period Timezone
+Permission detection failed; reopen this page.
+Permission required
+Permissions
+Permissions are requested only when you turn on the feature that needs them.
+Persistent
+Persistent and transient modes
+Physical Cores
+Physical Index
+Physical core count; the desktop catalog spells this cpu.physical_cores.
+Ping (Compatibility)
+Place the key in braces, followed by | and a display format. Use 0 for integers and 0.0 / 0.00 for fixed decimals. Literal text may surround tokens. Formatting changes display only.
+Playback position
+Playback position text
+Playback progress
+Playback progress text
+Playback status
+Playing
+Playing progress follows the reported timeline and rate; paused timelines do not extrapolate. Live sessions without a duration have no valid percentage and show --. Players without registered sessions or missing artist/album metadata leave those fields unavailable.
+Plugged
+Port
+Port unreachable
+Position
+Positioning
+Power Limit W
+Power Max (summary)
+Power Plan
+Power Plan Name
+Power Source
+Power W
+Preferred Android ABI (Build.SUPPORTED_ABIS). The equivalent desktop key is cpu.architecture.
+Preferred system ABI from Build.SUPPORTED_ABIS.
+Preset
+Preset + Offset
+Preset + offset
+Preset Name
+Preview
+Preview HUD
+Preview failed. See logs.
+Primary
+Primary Color Depth
+Primary Display (Auto)
+Primary HUD
+Primary Height Px
+Primary Name
+Primary Refresh Rate
+Primary Width Px
+Primary display (auto)
+Primary external storage available
+Primary external storage free percent
+Primary external storage total
+Primary external storage usage
+Primary external storage used
+Primary value
+Primary value / Title
+Private
+Private Memory Bytes
+Probe ICMP
+Probe Status
+Probe TCP
+Probe Target
+Probe UDP
+Probe latency
+Probe not completed
+Probe options
+Probe target
+Probe targets and protocols
+Process Architecture
+Processes
+Processor Count
+Profile Management
+Profile Name
+Profile Percent
+Profile Percent B/s
+Profile Percent Mode
+Profile Percent Text
+Profile Save vs. Save & Apply
+Profile saved
+Profiles & HUD content
+Profiles, positions, queues, trigger rules and hot zones belong to each instance. Clicking a HUD advances only its queue. Sampling interval, global shortcut and the click-cycling master setting are shared. Save & Apply commits the whole configuration.
+Progress
+Progress Value
+Progress expression
+Progress value
+Project & License
+Project GitHub
+Project and license
+Protected
+Protocol
+Provided by Android system APIs; unreadable data is reported as unavailable.
+Proxy Address
+Proxy Enabled
+Proxy Status
+Public
+Public IPv4
+Public IPv6
+Publishing failed
+Python Version
+Quick links
+Quit
+Range 3 – 3600 seconds.
+Range {0} – {1}
+Rate Watts
+Raw playback status
+Re-check
+Re-detect
+Read from /proc/stat, /proc/cpuinfo, cpufreq or CPU thermal zones; authorized Root can read restricted nodes. Unavailable without a valid sample.
+Read from Android Build and device system APIs.
+Read from Android battery broadcasts or BatteryManager; unavailable when the device does not provide it.
+Read from Android memory APIs or /proc/meminfo; only readings provided by the device are published.
+Read from KGSL, Mali, devfreq or GPU thermal zones; authorized Root can supplement access. Unavailable when the device provides no node.
+Read or calculated from the DeepSeek source configuration; balance requests need the user's API key.
+Read the driver status at the top. If PawnIO is missing, install/update it and complete Windows UAC; fully exit ECP afterwards.\nRestart ECP as administrator and check again. The restart button waits for the old process to exit.\nIf it remains unavailable, distinguish inaccessible-driver status from hardware returning no data, then export diagnostics.
+Read through TrafficStats or Android networking APIs; availability depends on OS version and permissions.
+Read-only collection; no system settings are modified. Choose whether to allow ECP in your Root manager.
+Readable only by system apps (hidden API).
+Readable only by vendor applications.
+Reading data…
+Reading the Wi-Fi name needs location permission.
+Reads X11/XWayland Present completion events. Native Wayland, applications without Present, or missing libxpresent1 cannot be measured. Paint-operation counts and fixed refresh rates are excluded.
+Reads actual FPS, never a refresh-rate substitute. Windows correspond to SurfaceFlinger layers and need ROOT; displays need vendor frame-counter support. Ambiguous multi-display counters are unavailable.
+The selected window's measured presentation/image-update rate. Windows counts that window's dominant presentation stream; other windows in the same process are counted separately. Displays use their dominant presentation stream. These measurements count actually displayed frame events and require performance-logging access; they are not the fixed display refresh rate.
+Real-time protection off
+Receive Errors
+Received
+Recommended
+Recommended Use
+Records detailed activity when enabled.
+Reference unit
+Refresh
+Refresh / s
+Refresh and select a window/display target, then set the FPS represented by 100%. Window FPS uses the selected window's dominant presentation stream; other windows in the same process are counted separately. Display FPS uses the display's dominant presentation stream. These are measured frame rates, not the display refresh rate. Missing events or permissions produce status information; administrator access may be needed. Ordinary GPU profiles can select an adapter, while raw sensor keys identify their stated device.
+Refresh now
+Refresh targets
+Refresh window/display list
+Remaining Wh
+Remaining mWh
+Remove
+Remove selected instance
+Remove selected rule
+Reply Status
+Reported name: {0}.
+Request authorization
+Request failed: {0}
+Request failed; check the network, URL and credentials.
+Requires an already rooted phone; enables readings from restricted CPU, GPU, thermal and memory nodes.
+Requires system support and permission to show live updates.
+Requires the platform colorized shape
+Reset
+Reset All
+Reset all
+Reset everything to defaults?
+Reset to 100%
+Restart as administrator
+Restart pending
+Restricted usage scenarios
+Retry authorization
+Right Icon
+Right Status
+Right icon
+Right status
+Right status / Ring
+Right status / Title
+Right status / ring
+Right status / title
+Ring
+Ring variable and range
+Ripple Spread
+Ripple Strength
+Roll Up
+Root access would be required.
+Root granted; readings depend on this device's nodes.
+Root hardware readings
+Root unavailable or denied; ordinary readings remain active.
+Rule name
+Run as administrator
+Running
+Running as administrator
+Rust Version
+Sample window
+Sampler running
+Sampling and freshness
+Sampling and refresh
+Save
+Save & Apply
+Save & Apply the new instance first.
+Save & Apply to disable the shortcut.
+Save & Apply to enable this shortcut.
+Save & Apply to show a new HUD before locating it.
+Save beside the profile records the edited profile; editing a built-in creates a custom copy. Preview shows the current edit. Save & Apply at the top right saves the full settings and applies them to the running HUD.
+Save copy as
+Save failed
+Save log
+Save report
+Saved
+Saver On
+Scale Percent
+Scheme created.
+Scheme deleted.
+Scheme management
+Scheme name
+Scheme saved.
+Schemes, data sources, refresh intervals and display settings return to first-run defaults. This cannot be undone.
+Scope of Don't warn about this data again
+Scoped storage limits what can be read.
+Screen Bottom Center
+Screen Bottom Left
+Screen Bottom Right
+Screen Brightness
+Screen Center
+Screen Center Left
+Screen Center Right
+Screen State
+Screen Top Center
+Screen Top Left
+Screen Top Right
+Screen off
+Search by name, key or category under Data Management → Variable Library. Select a variable to see its meaning, type, unit and formats. Copy Variable Key is useful for rings and rules; Copy Template includes braces for text fields.
+Search by name, key, or category; select a variable for details.
+Search chapters or keys
+Search languages
+Search name, source ID or variable
+Search variables
+Search: CPU usage / cpu.usage
+Second
+Secondary / Note
+Secondary / note
+Secondary Name
+Secondary Refresh Rate
+Secondary Resolution
+Secondary value
+Secrets may use ${env:VARIABLE_NAME} placeholders.
+Secure Boot
+Security
+Select a variable
+Select a variable on the left to view its meaning and usage guidance.
+Select a variable on the left to view its meaning, unit, and recommended use.
+Select a window
+Select the active HUD profile. Editing a built-in profile creates a copy; the original stays unchanged.
+Selected SurfaceFlinger layer.
+Selected display.
+Send Errors
+Sensor driver installed
+Sensor driver status
+Sensor driver version
+Sent
+Set API key
+Set a show/hide shortcut
+Set active
+Settings
+Settings.System.SCREEN_BRIGHTNESS (0-255).
+Share
+Share app info
+Share configuration
+Share device and capability info
+Share diagnostics log
+Share diagnostics report
+Share log
+Shared Limit Bytes
+Shared Usage
+Shared Used Bytes
+Short name
+Shortcut show animation
+Shortcut to show / hide all HUDs
+Shortcuts & mouse hot zones
+Shorter intervals sample faster and use more resources. Clocks update each second; external APIs retain their own refresh intervals.
+Show your first HUD
+Showing {0} items, including sensors and firmware information.
+Shows hardware readings provided by the system and drivers. Sensors that are not exposed or accessible show --. Export diagnostics for details. PawnIO and the AIDA64 interface are Windows-only.
+Shows readings actually provided by the device and system. Unavailable items show -- and their reason.
+Signal dBm
+Simple
+Simple shortens the presentation; Full uses the complete summon. Roll Up moves icons, values and the ring inside a persistent capsule while retaining its window and layer. Roll applies to persistent switches; initial and transient presentations keep their normal show/retract lifecycle. DeepSeek peak transitions keep Full animation.
+Simple: quickly reveal the final HUD.
+Simple: retract the previous item, then quickly reveal the next.
+Size & Animation
+Size, opacity, fonts and motion
+Slot Count
+Slot Used
+Slow
+Smartscreen Status
+Socket Count
+Solomon Islands, New Caledonia
+Some networks block ICMP; the probe falls back to TCP.
+Source
+Source names must be unique and use letters, digits, underscores or hyphens.
+Sources must be a JSON array.
+South Georgia
+Speed
+Speed MHz
+Standby Bytes
+Start Endfield Charge Plus after Windows sign-in.
+Start HUD
+Start Time
+Start from a built-in profile and Save to create a custom copy, or create a new profile. Delete removes custom profiles while original presets remain. Preview uses the current edit and real data; Save & Apply commits it to the running HUD.
+Start on boot
+Start with Windows
+Starting the HUD needs notification permission for its ongoing notification.
+Startup is managed by system policy.
+Status
+Status / Condition
+Status / condition
+Status Text
+Status calculation
+Status, cache and errors
+Status: an error occurred while checking for updates
+Status: checking GitHub…
+Status: local version is newer than the latest online version
+Status: network request failed ({0})
+Status: no published release found; the repository may not be public yet
+Status: not checked
+Status: remote version found, but its format cannot be compared
+Status: up to date
+Status: update available
+Status: update check timed out; try again later
+Stop HUD
+Stopped
+Storage
+Storage Count
+Storage List
+Subject to background-start limits and permissions for the selected display mode.
+Suffix
+Summon a HUD when data meets a rule.
+Summon or temporarily hide the HUD.
+Supported
+Swap Total Bytes
+Swap Used Bytes
+Sydney, Brisbane
+System
+System Active Percent
+System Available Bytes
+System Calls
+System Disk
+System Dpi
+System Filesystem
+System Free Bytes
+System Free Percent
+System I/O B/s
+System Label
+System Queue Length
+System Read B/s
+System Root
+System Status
+System Total Bytes
+System Usage
+System Used Bytes
+System Write B/s
+System default
+System metric status
+System progress bar
+System status
+System storage usage
+Seconds since boot from SystemClock.elapsedRealtime()/1000, including deep sleep.
+TCP Connect Time
+TCP Connections
+TPM Present
+TPM Version
+TTL expired
+Tagline
+Tagline, title, primary/secondary text and the right-side value can mix literal text and variable tokens. Use the right suffix for units such as %, °C or GHz. Icons identify the content; the accent color sets the capsule and ring color.
+Target
+Target Display
+Target Progress
+Target Remaining Percent
+Target Remaining Seconds
+Target Remaining Text
+Target Value
+Target unavailable
+Target window
+Target-time Mode
+Target-time mode
+Targets may be hostnames, IPv4 or IPv6. ICMP ignores the port; TCP/UDP use it. Failure means that target/protocol did not respond successfully, not necessarily that the whole PC is offline. Servers may block ICMP or not reply to UDP.
+Tehran
+Temperature
+Temperature C
+Temperature Max (summary)
+Template
+Templates use {variable|format}. Advanced expressions use {= expression | format}; supported operators include + - * / % ^, comparisons, && / || / !, ?:, ??, and functions such as if(), min/max/avg/sum/clamp/round. Progress may also be an = expression. Example: {= if(memory.usage >= 80, 'High', 'OK')}.
+Terminal Running
+Test connection
+Testing…
+Text
+Text Length
+Text regions and icons
+Text, types and pipeline reference
+Thanks to QinAnze for the original open-source work, and to the Avalonia and Jetpack Compose projects.
+The API is available; the system decides whether to show the island.
+The API key was removed.
+The API key was saved encrypted.
+The Android live update / island API used to show HUD content around the status bar.
+The Android version is too low for this API.
+The HUD has started.
+The HUD has stopped.
+The app is missing boot permission.
+The app is missing foreground service permission.
+The app is missing network access permission.
+The authorization screen was opened; availability is re-checked on return.
+The base URL is invalid.
+The braces do not match.
+The check timed out; retry.
+The checkbox permanently silences only the variables already listed in the current warning window. Other variables still warn. Closing normally acknowledges that incident. Multiple HUDs can share one warning window; expression faults are distinguished by profile and expression. Suppression does not repair or stop collection.
+The configuration was imported and applied.
+The cycle animation overrides each scheme's own animation mode.
+The cycle queue is empty. Add profiles before enabling auto cycle.
+The device does not expose the matching kernel node.
+The device has no such sensor.
+The driver installer checksum is invalid.
+The driver is installed. Exit and restart ECP.
+The endpoint returned HTTP {0}.
+The exported JSON is interchangeable with the desktop editions; an import is validated before it replaces the current configuration.
+The expression is empty.
+The floating HUD is active. Tap to open settings.
+The installer exited with code {0}.
+The log was cleared.
+The maximum must exceed the minimum, otherwise the ring is always 0.
+The name cannot be empty.
+The network is connected.
+The network is unreachable right now.
+The network request failed.
+The notification channel is disabled
+The overlay uses a real system application window; the island uses the native Android live update API.
+The platform does not publish this API.
+The primary value and its note; supports {variable|format} and {= expression}.
+The probe target cannot be empty.
+The queue has one profile; it will stay on that profile.
+The queue is empty.
+The remote tag cannot be compared; see releases.
+The report never contains the API key or request header values.
+The response is not valid JSON.
+The ring maps (value − minimum) over the configured range, clamped to 0–100%. Use a variable key or a numeric expression beginning with =. Set a sensible full-scale value for temperature, traffic or FPS. The range does not change the raw text reading.
+The selected profile is the active profile; one profile is always selected.
+The selected rate reaches 100% at this value. Rates are normalized to Byte/s before calculation.
+The system allows live update notifications.
+The system controls placement, appearance and eligibility; readings update at most every 5 seconds.
+The system has already allowed this feature.
+The system throttles update frequency
+The variable name is empty.
+Theme
+This API cannot show icons.
+This API cannot show progress.
+This backend is experimental.
+This build has no native media-session data source on this platform. Media fields remain unavailable.
+This data source is turned off.
+This device or kernel does not provide the data source.
+This previews notification content; the system controls its appearance and placement.
+This project is a derivative of QinAnze/zmd-charge and is distributed under the MIT License.
+This structure is disabled. Replace the URL with your real endpoint, adjust paths to the response and set enabled to true when ready. ${env:MY_API_KEY} reads a process environment variable instead of putting a secret directly in JSON.
+Thread Count
+Three cycle animations
+Threshold
+Throttle while hidden
+Throttle while the screen is off
+Time
+Time Remaining Seconds
+Time Remaining Text
+Time options
+Time options save directly; editing content or the name creates a copy.
+Time remaining text
+Time zone and daily target
+Time, network & FPS profiles
+Timed out
+Timeline available
+Timeout / ms
+Timeout Ms
+Timezone ID
+Timezone Name
+Title
+Title / Condition
+Title / Left info
+Title / Right status
+Title / condition
+Title / left info
+Title Stage
+Tokyo, Seoul
+Top CPU Name
+Top CPU PID
+Top CPU Usage
+Top Center (work area)
+Top Disk Name
+Top Disk PID
+Top Disk Usage
+Top Left (work area)
+Top Memory Name
+Top Memory PID
+Top Memory Usage
+Top Right (work area)
+Top center
+Top left
+Top right
+Topped Up Balance
+Total (Down + Up)
+Total B/s
+Total Bytes
+Total Downloaded
+Total Mbps
+Total Memory Limit Bytes
+Total Memory Usage
+Total Memory Used Bytes
+Total Received Bytes
+Total Sent Bytes
+Total Transferred Bytes
+Total Uploaded
+Total size of the app data volume from StatFs. The equivalent desktop key is disk.system.total_bytes.
+Total throughput
+Track duration
+Track duration text
+Track title
+Traffic units and ring reference
+Total bytes received since boot from TrafficStats. The equivalent desktop key is network.total_received_bytes.
+Total bytes sent since boot from TrafficStats. The equivalent desktop key is network.total_sent_bytes.
+Trigger rules
+Troubleshooting & warnings
+Try a variable key or feature name, or clear the search.
+Ttl
+Turn on "Display over other apps" before enabling the floating HUD.
+Turned off
+Two useful examples
+Type
+Type {0}
+UAC Status
+UDP Connections
+UI scale
+USB / Devices
+USER MANUAL  /  CHAPTER {0:00}
+UTC Offset
+UTC Offset Hours
+UTC time zone
+Unable to locate HUD: 
+Unavailable
+Unavailable usually means the platform has no public API, the device has no sensor, or no sample has arrived yet.
+Unavailable when the hardware or source does not provide it.
+Understand display modes and screen coordinates.
+Unexpected end of expression
+Unit
+Unix Milliseconds
+Unix Seconds
+Unix Timestamp
+Unix timestamp in seconds. The equivalent desktop key is time.unix_seconds.
+Unknown
+Unreachable
+Unrecognized character '{0}'
+Unrecognized content: {0}
+Unsupported
+Unsupported function: {0}
+Up
+Update Last Installed
+Update Pending
+Update available
+Updated At
+Updates available
+Upload
+Upload B/s
+Upload Mbps
+Upload only
+Upstream GitHub
+Upstream project
+Uptime Seconds
+Uptime Text
+Usage
+Usage 3d
+CPU usage (15-minute average)
+CPU usage (1-minute average)
+CPU usage (5-minute average)
+Usage Compute
+Usage Copy
+Usage Max
+Usage Video Decode
+Usage Video Encode
+Usage, remaining share or elapsed progress, optionally driving the ring.
+Usage, remaining share, elapsed progress, and other status values; can drive the progress ring.
+Use +, -, *, /, % remainder, ^ power and parentheses. Comparisons support >, >=, <, <=, == and !=. Boolean operators include &&, ||, ! and and/or/not. Conditions use test ? yes : no or if(test, yes, no). ?? supplies a fallback for null/empty values.
+Use Ctrl or Alt with a letter, digit or function key (except F12).
+Use Ctrl or Alt, optionally Shift, with a letter, digit or F1–F24 (except F12). Save to apply; leave blank to disable.
+Use Data Management → Hardware Data to inspect sensors and firmware fields. Search by temperature, memory module, device name or original ID. Select a row to copy its token. Export Diagnostics saves a local JSON snapshot of the current status and readings.
+Use Root for readings
+Use a preset anchor with offsets, or specify custom coordinates.
+Use custom.<source>.status / error for source state and failures. The refresh interval controls caching, even with faster global sampling. For 401/403, check authentication and access. JSON paths must match the actual response structure.
+Use the symptom to find the right setting.
+Used Bytes
+Used by TCP / UDP; ignored by ICMP.
+Used for network rates, packet probing, DeepSeek balance and custom HTTP sources.
+Used share of the app data volume.
+Used space of the app data volume (StatFs).
+User Domain
+User Manual
+User Name
+User Usage
+User-available space of the app data volume (StatFs.availableBytes).
+Uses Unified Memory
+Uses a fixed UTC offset without daylight-saving changes. The daily target uses this zone too.
+Uses all active interfaces. Calculate the right-side percentage from total traffic, download, upload, or the larger direction.
+Using native system hardware interfaces. Available data depends on hardware, drivers and permissions; PawnIO is not required.
+Utilization Percent
+VPN Active
+VPN Name
+VPN Status
+VRAM Bytes
+Value
+Value changes
+Value is unavailable
+Values are milliseconds; sampling slows down while the HUD is hidden or the screen is off.
+Variable
+Variable Key
+Variable Library
+Variables
+Variables with a reading
+Variables, tokens & expressions
+Vendor review and authorization required
+Verbose logging
+Version
+View update
+Virtual Available Bytes
+Virtual Height Points
+Virtual Height Px
+Virtual Memory Bytes
+Virtual Total Bytes
+Virtual Usage
+Virtual Used Bytes
+Virtual Width Points
+Virtual Width Px
+Virtual X Points
+Virtual X Px
+Virtual Y Points
+Virtual Y Px
+Virtualization Enabled
+Visibility animation and scope
+Voltage Mv
+Voltage V
+Vscode Running
+WSL Distro
+WSL Distro Count
+WSL Memory Usage
+WSL Running
+WSL Status
+Waiting
+Waiting for Root authorization…
+Warning
+Watched variable
+Website
+Week Elapsed Seconds
+Week Of Year
+Week Progress
+Week Remaining Seconds
+Weekday
+Weekday peak windows (Beijing time; separate with semicolons)
+When auto cycle is enabled, this animation overrides each profile's own animation setting.
+When off, no HUD output is shown at all.
+When off, the HUD appears on demand (power events / reveal trigger).
+When on, the HUD never consumes touches; input goes to the app underneath.
+Whether external power is currently connected.
+Detection of AMD Radeon Software processes or their default installation path.
+Whether Windows detects at least one available network connection. This does not guarantee internet access.
+Whether the battery is currently charging.
+Whether the battery is currently discharging.
+Detection of Docker Desktop or dockerd background processes.
+Whether the current clipboard contains a Bitmap or DIB image.
+Whether the current Windows clipboard contains Unicode text.
+Detection of common IDE processes, including VS Code, Visual Studio, Rider, IntelliJ and PyCharm.
+Whether the current date falls on Saturday or Sunday.
+Whether nvidia-smi.exe is available for the system to run.
+Whether the most recent network probe succeeded.
+Whether the current time falls in an off-peak period.
+Whether the current time falls in a peak period.
+System proxy state from the same source as network.proxy_status.
+Whether Windows battery saver is enabled.
+UEFISecureBootEnabled registry state.
+Detection of Windows Terminal, PowerShell or cmd processes.
+Whether ConnectivityManager reports an available current default network.
+Whether the current time is in a DeepSeek peak billing period. The equivalent desktop key is deepseek.period.is_peak.
+Whether Win32_Tpm can be enumerated.
+Detection of available Windows updates and pending restarts from Windows Update or Component Based Servicing.
+Heuristic marker distinguishing typical integrated or unified-memory devices from discrete graphics cards.
+Whether firmware virtualization is enabled. Requires WMI support.
+Active VPN detection from the same source as network.vpn_status.
+Detection of Code or Code - Insiders processes.
+Detection of wsl, wslhost and vmmemWSL processes.
+Whether {0} is enabled or true.
+Why the HUD is not visible
+Wi-Fi Band
+Wi-Fi Channel
+Wi-Fi SSID
+Wi-Fi Standard
+Window FPS
+Window FPS (Run as administrator required)
+Window FPS share
+Window FPS status
+Window Name
+Window Percent
+Window Status
+Window frame-rate options
+Windows Update Pending Count
+Windows Update Status
+Windows disabled startup for this app. Re-enable it in Windows Startup Apps.
+Windows media variables read sessions registered by a player. Use title/artist as the primary text, times as secondary text, and media.progress for a 0–100 ring.
+Work area vs. full screen
+Work-area presets avoid taskbars, Docks and reserved regions. Screen presets use full display bounds. Offsets move a preset; custom coordinates specify the position directly. Select the target display first. Negative coordinates are normal for displays left of or above the primary display.
+Working Set Bytes
+World Beijing
+World Clock
+World London
+World Nyc
+World Tokyo
+X / px
+X Offset / px
+X offset / px
+Y / px
+Y Offset / px
+Y offset / px
+Yangon
+Year
+Year Elapsed Seconds
+Year Progress
+Year Remaining Seconds
+Yes
+You're up to date.
+Your local version is newer.
+Zinc-air
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 chooses units based on the variable; avoid adding the same unit twice. Format pipelines run left to right and can transform numbers or shorten text. Use {= ...} for inline expressions, or start a ring expression with =.
+bytes / gb:1
+bytes / speed add automatic byte-size or byte-rate units. kb:n, mb:n, gb:n and tb:n divide by powers of 1024 with n decimals; add the desired unit in the profile. duration / duration-long format seconds. Date/time fields support time:<date format>; time:relative formats relative time or duration.
+copy
+cpu.usage or = (cpu.usage + gpu.usage) / 2
+d
+duration
+duration / duration-long
+e.g. 1.1.1.1 or example.com
+e.g. 1.1.1.1, 2606:4700:4700::1111, or example.com
+e.g. My Server - Online
+e.g. value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+in {0}
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (Modified)
+{0} / {1} chapters · Offline
+{0} GPUs detected
+{0} ago
+{0} left {1}
+{0} of {1} metrics supported
+{0} profiles are queued; enable auto cycle to use them.
+{0} v{1} Settings
+{0} {1:0}% elapsed
+{0} {1}% elapsed
+{0}: enter an absolute HTTP/HTTPS URL.
+{0}: provide variable names and JSON paths.
+{0}d {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Previous
+↓ {network.display_download}
+API key
+Frame capture active
+Waiting for frames
+Requires 64-bit Windows
+Select a running window
+Target window closed; select another window
+Display disconnected
+Display source mapping unavailable or ambiguous across GPUs
+No valid frame events for this target
+Waiting for frame events; administrator access may be needed
+Access denied; run the app as administrator
+Waiting for Present frames
+An X11/XWayland session is required
+X server lacks Present
+Install libxpresent1
+Present API unavailable
+Requires macOS
+Frame capture unavailable; check app components and Screen Recording permission
+Selected target is unavailable
+Screen Recording permission required; relaunch after granting
+Requires macOS 12.3 or newer
+Frame capture failed: {0}
+Frame capture exited ({0})
+Account availability state returned by the balance endpoint.
+Application Process Name
+Application Uptime
+Application Uptime Text
+Application uptime formatted as readable text.
+Average Ping Latency
+Average Probe Latency
+Average latency of the current target’s last 20 successful Ping probes.
+Average latency of the last 20 successful samples for the current probe configuration.
+Battery Status Text
+Battery Voltage (V)
+BitLocker ProtectionStatus of the system volume.
+BitLocker Status
+CPU Name
+CPU Usage
+CPU sensor temperature. Unavailable when unsupported by the device, driver or current permissions.
+Current date and time on this computer.
+Current date on this computer.
+Current local date and time.
+Current local date in yyyy-MM-dd format.
+Current total CPU utilization for the whole computer.
+DeepSeek API Availability
+Enabled and real-time protection states reported by Windows Defender WMI.
+Failed Probe Sample Count
+Full processor model name.
+GPU Core Temperature
+GPU Core Voltage
+GPU Name
+GPU VBIOS Version
+GPU core temperature reported by hardware monitoring sensors. Unavailable when not exposed by the hardware or driver.
+GPU core voltage reported by hardware monitoring sensors.
+Highest latency among the current target’s last 20 successful Ping probes.
+Highest latency among the last 20 successful samples for the current probe configuration.
+ICMP TTL
+Last Successful Ping
+Last Successful Probe
+Live battery voltage converted to volts.
+Live utilization of the selected GPU, using its busiest engine.
+Lost Ping Count
+Lowest latency among the current target’s last 20 successful Ping probes.
+Lowest latency among the last 20 successful samples for the current probe configuration.
+Maximum Ping Latency
+Maximum Probe Latency
+Memory Usage
+Microsoft Defender Status
+Minimum Ping Latency
+Minimum Probe Latency
+Most recent probe state, such as “Online”, “Timed out” or “Port unreachable”.
+Name of the current Endfield Charge Plus process.
+Name of the display adapter selected by the current profile.
+Network Availability
+Ping Error
+Ping Jitter
+Ping Latency
+Ping Latency Text
+Ping Latency at 100%
+Ping Packet Loss
+Ping Response Address
+Ping Status Text
+Ping Success
+Ping TTL
+Ping Target
+Ping Timeout
+Ping/Probe Endpoint
+Ping/Probe Port
+Ping/Probe Protocol
+Probe Endpoint
+Probe Error
+Probe Latency
+Probe Latency Jitter
+Probe Latency Text
+Probe Latency at 100%
+Probe Packet Loss
+Probe Port
+Probe Protocol
+Probe Response Address
+Probe Sample Count
+Probe Status Text
+Probe Success
+Raw Ping Status
+Raw Probe Status
+Read through the Windows BatteryTemperature interface, only when supplied by the driver or firmware.
+Real-time protection state reported by Windows Defender WMI.
+Round-trip latency of the most recent successful Ping. Failure counts as 999 ms for progress.
+Round-trip or connection latency of the most recent successful probe. A failed probe is treated as 999 ms.
+SMBIOSBIOSVersion reported by Win32_BIOS.
+Seconds elapsed since the current Windows boot.
+Seconds elapsed since the current application process started.
+Sent Ping Count
+Single Probe Timeout
+State of the currently active Windows Firewall Policy configuration.
+Successful Ping Count
+Successful Probe Sample Count
+System Drive BitLocker Status
+System Uptime
+System Uptime Text
+System drive protection state reported by the Windows Volume Encryption interface.
+System uptime formatted as readable text.
+Text derived from the power state, such as “Charging”, “On battery”, “Plugged in” or “Unknown”.
+Text such as “20ms” on success, or a timeout/error state on failure.
+Text such as “20ms” on success, or the corresponding timeout or unreachable state.
+Total GPU Usage
+Used physical memory as a percentage of total physical memory.
+VBIOS version reported by nvidia-smi, when supported.
+Whether Windows detects at least one available network connection. This does not guarantee internet access.
+Whether the active Windows Firewall configuration is enabled.
+Windows Firewall Status
+/proc/meminfo; available memory uses MemAvailable
+/proc/stat, /proc/cpuinfo, cpufreq or hwmon
+/sys/class/power_supply; capacity is normalized to mWh / Wh
+Actual queries of Linux processes or locally installed tools
+Available Swap Space
+Charging and discharging
+DRM/hwmon or NVIDIA nvidia-smi
+Estimate unavailable
+File system statistics for the current mount or /sys/dev/block/*/stat
+Linux Kernel Version
+Linux procfs, sysfs or the current runtime state
+Linux sysfs or /proc/bus/input/devices
+Linux sysfs or EFI variables
+Not charging
+Not discharging
+Process Count
+Processes readable by the current user in /proc; CPU usage is normalized by the logical processor count
+Read from Avalonia screen information in the current X11/XWayland session.
+Read from the real clipboard of the current graphical session. The update time is when ECP first observes a change.
+Requires a valid API key. Missing configuration or failed requests produce an explicit status, never an invented balance.
+Swap Usage
+System Restart Required
+Total Swap Space
+Used Swap Space
+Uses real ICMP/TCP/UDP probes from the current profile. Failed or inapplicable probes show a status message.
+{0}. Data source: {1}. Listed only when collection is supported by this device and current permissions.
+Active Memory
+Actual available swap from sysctl vm.swapusage.
+Actual used swap from sysctl vm.swapusage.
+CoreGraphics native pixel resolution / AppKit Retina backingScaleFactor; desktop coordinates use logical points and DPI is 96 multiplied by the scale factor
+Differences in 64-bit counters for macOS en* physical interfaces, excluding duplicate VPN/loopback traffic; or implemented public-IP queries and profile calculations
+Differences in Mach CPU ticks or sysctl
+Free Physical Memory
+IOPowerSources charging-time estimate, shown only when the system supplies an estimate.
+IOPowerSources; omitted without a built-in battery and listed only when the system provides data
+Inactive Memory
+Low-Power GPU
+Low-power device state from Metal isLowPower.
+Mach VM / sysctl; used = active + wired + compressed, available = total minus used; this is not memory pressure
+Mach active_count multiplied by the system page size.
+Mach free_count multiplied by the system page size.
+Mach inactive_count multiplied by the system page size.
+Mach wire_count multiplied by the system page size.
+Metal Recommended Working Set Limit
+Metal device information; global GPU usage, temperature and video memory usage are unavailable when not exposed by the system
+Metal hasUnifiedMemory. Unified memory is not counted as dedicated video memory.
+Metal recommendedMaxWorkingSetSize: a budget, not video memory capacity or GPU memory usage.
+Removable GPU
+Removable device state from Metal isRemovable.
+Time Until Full Charge
+Total swap from sysctl vm.swapusage, dynamically allocated by the system.
+Unified Memory Architecture
+User-Available Disk Space
+Wired Memory
+macOS / .NET or the actual configuration and query results for this profile
+macOS clipboard; update time is when ECP last observed a content change
+statfs f_bavail for the APFS Data volume, excluding system-reserved space.
+statfs for the APFS Data volume; capacity includes space shared within the same APFS container
+{0}. Data source: {1}.
+Endfield Charge Plus
+Endfield Charge Plus For Linux
+Endfield Charge Plus For MacOS
+Endfield Charge Plus for Android
+Profile management
+Radial switcher
+Quick actions
+Hold the middle mouse button on the HUD, drag to a profile, then release to switch.
+Release in the centre or outside the ring to cancel.
+Hold delay
+Drag threshold
+Ring size
+Enable radial switching
+Profiles in the ring
+Use all profiles
+Preview ring
+Selected profile
+No profiles available
+Previous page
+Next page
+Page {0} / {1}
+Appearance
+Light
+Classic
+Soft
+Corner radius
+Ring opacity
+Reset theme
+Theme preview
+HUD gestures
+Middle button hold
+Left click
+Your changes apply after Save & Apply.
+Press Esc to cancel.
+Profile switching
+Preview only
+Add to ring
+Remove from ring
+Issue tracker
+Minimize window
+Maximize window
+Restore window
+Close window
+Current system
+Software usage
+System CPU load across all logical processors.
+Used physical RAM divided by total physical RAM.
+Used dedicated VRAM divided by total dedicated VRAM across GPUs. Shared memory is excluded.
+Endfield Charge Plus CPU time divided by elapsed time and logical processor count.
+Endfield Charge Plus resident RAM divided by total physical RAM. Includes shared resident pages.
+Endfield Charge Plus dedicated VRAM divided by total dedicated VRAM. Shared GPU memory is excluded.
+Entire Endfield Charge Plus process: Settings and all HUDs. CPU is normalized to all logical processors.
+Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.
+Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.
+Author's BiliBili channel
+Author's YouTube channel
+Colors
+Search profiles
+Click or scroll to switch profiles
+Cycle interval / sec
+Scroll up for previous; scroll down for next.
+Available profiles
+Previous profile
+Next profile
+Pause / resume auto cycle
+Preview current profile
+Open Settings
+Keyboard shortcuts work while this app is focused.
+Keep HUD visible while hovering over it or the hot zone

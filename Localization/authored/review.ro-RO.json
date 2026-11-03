@@ -1,0 +1,24 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Nume proprii de orașe australiene din lista de fusuri orare; în română se scriu identic.",
+    "Alaska": "Nume propriu de regiune (fus orar) care se scrie identic în română.",
+    "Album": "Etichetă standard pentru metadatele muzicale, identică în română.",
+    "Artist": "Etichetă standard pentru metadatele muzicale, identică în română.",
+    "Auckland, Fiji": "Nume proprii din lista de fusuri orare, fără formă românească distinctă.",
+    "Bangkok, Hanoi, Jakarta": "Nume proprii de orașe din lista de fusuri orare; scrierea română este identică.",
+    "Clipboard": "Termen IT împrumutat, folosit identic în interfața românească Windows.",
+    "Dhaka, Thimphu": "Nume proprii de capitale din lista de fusuri orare, identice în română.",
+    "Dubai, Abu Dhabi": "Nume proprii de orașe din lista de fusuri orare, identice în română.",
+    "Eucla": "Nume propriu al localității australiene care dă numele fusului orar.",
+    "Hawaii": "Nume propriu de stat și fus orar, scris identic în română.",
+    "Islamabad, Karachi": "Nume proprii de orașe pakistaneze din lista de fusuri orare.",
+    "Kabul": "Nume propriu de capitală folosit ca etichetă de fus orar.",
+    "New Delhi, Mumbai": "Nume proprii de orașe indiene din lista de fusuri orare.",
+    "Newfoundland": "Nume propriu de regiune canadiană folosit ca etichetă de fus orar.",
+    "Nukuʻalofa, Apia": "Nume proprii de capitale din lista de fusuri orare, identice în română.",
+    "OK": "Confirmare universală folosită ca atare în interfața românească.",
+    "Sydney, Brisbane": "Nume proprii de orașe australiene din lista de fusuri orare.",
+    "Yangon": "Nume propriu de oraș folosit ca etichetă de fus orar, identic în română."
+  },
+  "notes": "Valori identice cu engleza sunt exclusiv nume proprii (toponime din lista de fusuri orare, etichete de metadate media) și termeni IT împrumutați, verificate individual; niciun enunț englez nu este păstrat ca traducere."
+}

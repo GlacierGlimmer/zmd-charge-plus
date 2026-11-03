@@ -16,9 +16,10 @@ public partial class App : Application
     private HudWindow? _hud;
     private CustomHudRuntime? _runtime;
     private WindowsTrayIcon? _tray;
-    private DesktopGlobalHotkey? _hudHotkey;
     private TrayMenuWindow? _trayMenu;
     private SettingsWindow? _settingsWindow;
+    private readonly UpdateReminderPresenter _updateReminder = new();
+    private bool _exiting;
     private IClassicDesktopStyleApplicationLifetime? _desktop;
     private CancellationTokenSource? _activationListenerCts;
 
@@ -34,8 +35,12 @@ public partial class App : Application
             AppLog.Info("Avalonia framework initialization completed; loading settings.");
             var settings = SettingsManager.Load();
             LocalizationManager.Initialize(settings.UiLanguage);
+            WorkspaceTheme.Apply(new Avalonia.Controls.Border(),settings.Workspace);
             GlobalAppearance.SetPreferences(settings.GlobalFontScale,settings.GlobalUiScale);
-            StartupManager.Apply(settings.StartWithWindows);
+            // Registry/Windows Startup Apps is authoritative, including when a
+            // user disabled startup outside ECP. Opening a copy must not re-enable it.
+            if(!StartupManager.IsPackaged)
+                settings=settings with {StartWithWindows=StartupManager.ReadUnpackagedAtLaunch().IsEnabled};
 
             _hud = new HudWindow();
             _hud.ApplySettings(settings);
@@ -44,17 +49,7 @@ public partial class App : Application
             _runtime.ApplySettings(settings);
             _runtime.Start();
 
-            try
-            {
-                _hudHotkey = new DesktopGlobalHotkey(() =>
-                {
-                    if (_settingsWindow?.IsRecordingHudHotkey == true) return;
-                    if (_runtime is not null) _ = _runtime.ToggleUserVisibilityAsync();
-                });
-                if (!_hudHotkey.TryUpdate(settings.HudToggleHotkey))
-                    AppLog.Warn($"HUD shortcut could not be registered (Windows error {_hudHotkey.LastError}).");
-            }
-            catch (Exception ex) { AppLog.Error("Unable to initialize the HUD shortcut.", ex); }
+            InitializeQuickHotkeys(settings,OpenSettingsWindow);
 
             // Normal interactive launch opens Settings. Windows autostart stays silent:
             // only the tray icon and startup HUD presentation are shown.
@@ -81,7 +76,7 @@ public partial class App : Application
     private SettingsWindow CreateSettingsWindow(AppSettings settings)
     {
         var window = new SettingsWindow(settings, _hud!, _runtime!);
-        window.AttachHudHotkey(_hudHotkey);
+        window.AttachQuickHotkeys(_quickHotkeys);
         window.Closed += (_, _) =>
         {
             if (ReferenceEquals(_settingsWindow, window))
@@ -157,17 +152,16 @@ public partial class App : Application
 
         await Dispatcher.UIThread.InvokeAsync(() =>
         {
+            if (_exiting) return;
             if (_settingsWindow is not null)
                 _settingsWindow.ApplyUpdateCheckResult(result);
 
             if (result.HasUpdate)
             {
-                string latest = result.LatestVersionText
-                    .Replace("最新版本：", "", StringComparison.Ordinal)
-                    .Replace("Latest: ", "", StringComparison.Ordinal);
-                _tray?.ShowNotification(
-                    LocalizationManager.Text("Endfield Charge Plus 有新版本", "Endfield Charge Plus update available"),
-                    LocalizationManager.Formatted($"发现 {latest}。可在“关于”页面查看更新状态。", (System.FormattableString)$"Found {latest}. See About for update details."));
+                if (_tray is not null && OperatingSystem.IsWindows())
+                    _tray.ShowNotification(result.NotificationTitle, result.NotificationMessage);
+                else
+                    _updateReminder.Present(result);
             }
         });
     }
@@ -200,7 +194,10 @@ public partial class App : Application
     {
         if (_trayMenu is { IsVisible: true })
         {
-            CloseTrayMenu();
+            // Show is idempotent: raw/semantic shell notifications and the
+            // taskbar's activation changes must not close a freshly opened menu.
+            // The existing menu stays non-activating so moving into it never
+            // steals focus from Explorer's hidden notification icons flyout.
             return;
         }
 
@@ -247,6 +244,8 @@ public partial class App : Application
 
     private void OnDesktopExit(object? sender, ControlledApplicationLifetimeExitEventArgs e)
     {
+        _exiting = true;
+        _updateReminder.Close();
         AppLog.Info("Desktop lifetime is exiting.");
         _activationListenerCts?.Cancel();
         _activationListenerCts?.Dispose();
@@ -254,8 +253,7 @@ public partial class App : Application
         CloseTrayMenu();
         _tray?.Dispose();
         _tray = null;
-        _hudHotkey?.Dispose();
-        _hudHotkey = null;
+        _quickHotkeys?.Dispose();_quickHotkeys=null;
         _runtime?.Dispose();
         _runtime = null;
         _hud?.Close();

@@ -1,166 +1,69 @@
-# Notices / 来源与第三方许可
+# Endfield Charge Plus
 
-## 原项目 / Upstream
+来源、署名与第三方组件 / Origin, attribution and third-party components
 
-Endfield Charge Plus is a modified derivative of the HUD project
-[QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge).
-本项目基于 QinAnze 的 zmd-charge 进行二次开发，保留原项目来源和署名。
+## 项目来源 / Origin
 
-The original project's README identifies its license as MIT. The upstream
-repository did not expose a standalone LICENSE file at the time this notice
-was prepared; no unverified original copyright wording is asserted here.
-The MIT LICENSE in this repository covers GlacierGlimmer's contributions;
-original code/assets remain subject to their applicable upstream terms.
+本项目基于 [QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge) 修改和扩展。保留原项目 **QinAnze** 的来源与署名；上游 README 标示 MIT。ECP 自有新增贡献的许可见本仓库 LICENSE；原始代码、资源及第三方组件各自适用的版权和许可继续有效。
 
-## Third-party components / 第三方组件
+Endfield Charge Plus is a modified derivative of QinAnze/zmd-charge. Original attribution to QinAnze is retained; the upstream README identifies MIT. This repository's LICENSE covers ECP's own additions. Original code/assets and third-party components remain subject to their applicable terms.
 
-### Avalonia UI 11.2.1
+本项目为社区独立项目，与《明日方舟：终末地》的开发、发行方不存在官方授权或隶属关系。相关商标属于各自权利人。
 
+This is an independent community project, without official affiliation or endorsement from the developers/publishers of Arknights: Endfield. Trademarks belong to their respective owners.
 
-Direct packages:
+开发与维护 / Developer and maintainer: **GlacierGlimmer冰川雪貓**  
+项目网站 / Website: https://zmd-bar.x-neko.com
 
-- `Avalonia` 11.2.1
-- `Avalonia.Desktop` 11.2.1
-- `Avalonia.Themes.Fluent` 11.2.1
-- `Avalonia.Fonts.Inter` 11.2.1
+## 桌面 UI 与运行环境 / Desktop UI and runtime
 
-Avalonia is distributed under the MIT license.
+- Filee 圆盘几何代码：Copyright (c) 2026 Myeonggu Kim (KnifeLemon) and Filee contributors，MIT。https://github.com/KnifeLemon/Filee 。许可原文随包放在 Licenses/Filee-MIT.txt。
 
-Project: https://github.com/AvaloniaUI/Avalonia
+The radial geometry is adapted from Filee under MIT; its copyright and license text are preserved in Licenses/Filee-MIT.txt.
 
-### Inter typeface
+- Avalonia、Avalonia.Desktop、Avalonia.Themes.Fluent、Avalonia.Fonts.Inter：本项目使用 11.2.1，MIT。https://github.com/AvaloniaUI/Avalonia
+- Inter 字体：The Inter Project Authors，SIL Open Font License 1.1。https://github.com/rsms/inter
+- .NET 自包含运行环境及随其分发的组件：适用 Microsoft .NET 对应的许可与第三方声明。https://github.com/dotnet/runtime
 
-`Avalonia.Fonts.Inter` bundles the Inter typeface used by the application UI.
+The four Avalonia packages above are used under MIT. The bundled Inter typeface retains its OFL terms. Self-contained builds also carry the .NET runtime; retain its license and third-party notices when redistributing it.
 
-- Typeface: Inter
-- Copyright: The Inter Project Authors
-- License: SIL Open Font License 1.1 (OFL-1.1)
-- Project: https://github.com/rsms/inter
+## 离线字体 / Offline fonts
 
-The typeface is used unmodified by Endfield Charge Plus.
+附带的 Noto Serif Tibetan、Noto Sans Gothic、Noto Sans Deseret 为未修改的字体，用于相应字符回退。版权属于各字体的 The Noto Project Authors；各字体对应的 SIL Open Font License 1.1、版权署名和保留名称以原文为准。
 
-### Microsoft .NET packages
-
-- `System.Management` 10.0.2 — MIT
-- `System.Security.Cryptography.ProtectedData` 8.0.0 — MIT
-
-Project: https://github.com/dotnet/runtime
-
-### LibreHardwareMonitorLib 0.9.6
-
-- Package: `LibreHardwareMonitorLib` 0.9.6
-- License: Mozilla Public License 2.0 (MPL-2.0)
-- Project: https://github.com/LibreHardwareMonitor/LibreHardwareMonitor
-
-It is used for hardware sensor values that Windows does not expose through a stable generic API, such as supported CPU/GPU temperatures, clocks, voltage, power, motherboard temperature and fan sensors. If a sensor is not exposed by the machine or driver, Endfield Charge Plus leaves the related value unavailable rather than manufacturing a value.
-
-LibreHardwareMonitor itself includes additional third-party components under their own terms; see the upstream project's third-party notices for those transitive components.
-
-Windows low-level sensor access additionally requires the separately installed PawnIO driver. ECP's explicit installation button downloads the unmodified official PawnIO 2.2.0 setup from https://github.com/namazso/PawnIO.Setup/releases/tag/2.2.0 and verifies its published SHA-256 before launching its own installer. PawnIO is not embedded in the ECP executable and is subject to its upstream terms. AIDA64 integration reads its documented external-application exports; AIDA64 and CPUID's proprietary SDKs are not included.
-
-### Runtime / transitive dependencies
-
-Self-contained builds also carry the .NET runtime and transitive dependencies brought in by the packages above. Their original license metadata and upstream notices remain applicable. When preparing a public binary release, keep this notice together with the source release information and retain all license files required by the corresponding upstream components.
+The unmodified Noto fallback fonts retain their original author notices and OFL terms. See Assets/Fonts for source details and the adjacent OFL texts; directory portable builds place them in Licenses/Fonts.
 
 
-Windows FPS collector: Intel PresentMon 2.6.0 (MIT), https://github.com/GameTechDev/PresentMon/tree/v2.6.0 . ECP uses its ETW decoder with an output-only window attribution extension and a small support adapter; see native/ECPFrames/README.md and Assets/PresentMon/LICENSE.txt.
+## Windows 传感器与帧率组件 / Windows sensors and frame capture
 
-媒体与事件呼出的设计参考社区贡献 https://github.com/GlacierGlimmer/zmd-charge-plus/pull/7 ，翻滚交互参考 https://github.com/GlacierGlimmer/zmd-charge-plus/issues/12 。本轮按当前多 HUD 架构重新实现；Windows 媒体读取使用系统 GSMTC API，不包含第三方媒体桥接程序。
+- System.Management 10.0.2、System.Security.Cryptography.ProtectedData 8.0.0：MIT，https://github.com/dotnet/runtime
+- LibreHardwareMonitorLib 0.9.6：MPL-2.0，https://github.com/LibreHardwareMonitor/LibreHardwareMonitor 。其内部第三方组件继续适用各自上游条款。无法取得的传感器值显示不可用。
+- Intel PresentMon 2.6.0：MIT，https://github.com/GameTechDev/PresentMon/tree/v2.6.0 。ECP 使用其 ETW 解码器，并加入输出窗口归属和小型支持适配；源码及构建说明见 native/ECPFrames，原许可在 Assets/PresentMon/LICENSE.txt，目录便携包中为 Licenses/PresentMon-LICENSE.txt。
+- PawnIO：可选、独立安装的底层访问驱动。只有用户选择安装时才从官方项目下载安装程序并校验。https://github.com/namazso/PawnIO.Setup 。ECP 便携包不嵌入该驱动。
+- AIDA64 接入读取用户启用的本机导出；AIDA64 程序及 CPUID 专有 SDK 均未随 ECP 分发，也不因接口接入而获得其授权。
 
-### Noto Serif Tibetan
+LibreHardwareMonitor retains its MPL-2.0 and transitive-component terms. PresentMon retains its original MIT notice. PawnIO is a separate optional installation. AIDA64 and CPUID proprietary software/SDKs are not bundled.
 
-Bundled unmodified from https://github.com/google/fonts/tree/main/ofl/notoseriftibetan for Tibetan glyph fallback. Original font and license are retained in Assets/Fonts. Font SHA-256: 060ec022b04c306de3f58d051fb0e1cf81a5b610c5910fbfc43bba154c057cda.
+媒体与事件呼出的设计参考社区贡献 https://github.com/GlacierGlimmer/zmd-charge-plus/pull/7 ，翻滚交互参考 https://github.com/GlacierGlimmer/zmd-charge-plus/issues/12 。ECP 按当前多 HUD 架构实现，Windows 媒体数据使用系统 GSMTC API。
 
-Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tibetan)
+## 许可文件与再分发 / License files and redistribution
 
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-https://scripts.sil.org/OFL
+本仓库 LICENSE、字体 OFL、采集器许可及运行环境附带的许可原文不因本文的排版或说明调整而改变。Windows 目录便携包将它们集中放在 Licenses；其他平台请保留对应安装包内的许可目录及资源文件。第三方组件的版本号与许可证版本用于识别实际组件及条款，不是 Endfield Charge Plus 的产品版本。
+
+License texts and original copyright notices are preserved. Windows directory portable packages collect them under Licenses; other platforms retain their corresponding packaged resources. Third-party/library/license versions identify those components and terms, independently of the ECP product version.
+
+隐私、本地数据位置、联网功能与权限说明见 PRIVACY.md。请在再分发时保留所需版权和许可，不要将本文当作替代第三方完整许可的授权文本。
+
+See PRIVACY.md for data locations, network access and permissions. Retain required copyright/license files when redistributing; this explanatory index does not replace full third-party license terms.
 
 
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
+## Platform artwork and motion
 
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
+Ring geometry, staggered opening, hover springs and page-reveal timing: adapted from KnifeLemon/Filee, copyright (c) 2026 Myeonggu Kim and Filee contributors, MIT. The original license is retained.
+- Windows: Microsoft standard four-square SVG, https://commons.wikimedia.org/wiki/File:Windows_logo_-_2021.svg (public-domain geometry; Microsoft trademark).
+- macOS: Apple navigation SVG, https://www.apple.com/ ; cropped viewport, official light-on-dark fill. Apple trademark.
+- Linux: Tux by Larry Ewing, vector by Garrett LeSage, refined by IFo Hancroft; https://github.com/garrett/Tux (CC0/public domain).
+- Android: https://developer.android.com/static/images/brand/android-head_flat.svg . The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License. https://creativecommons.org/licenses/by/3.0/ . Android is a trademark of Google LLC.
+SVG rendering: Avalonia.Svg.Skia / Svg.Skia (MIT, Wieslaw Soltes), Svg.Custom / SVG.NET (MS-PL), ExCSS (MIT); AndroidSVG (Apache-2.0, Paul LeBeau). https://github.com/wieslawsoltes/Svg.Skia ; https://github.com/BigBadaboom/androidsvg .
 
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
+About UI SVG assets: Lucide (ISC, https://github.com/lucide-icons/lucide; original notice in Lucide-LICENSE.txt) and Simple Icons (CC0, https://github.com/simple-icons/simple-icons; original notice in SimpleIcons-LICENSE.txt). BiliBili/YouTube/GitHub marks identify their linked services. Endfield Charge Plus uses its own supplied SVG brand asset.

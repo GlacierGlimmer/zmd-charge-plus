@@ -11,6 +11,7 @@ public sealed partial class CustomHudRuntime
     {
         if (_disposed) return Task.CompletedTask;
         IsUserHidden = hidden;
+        _hud.CancelRadial();
         CancelRevision();
         // A shortcut may interrupt Save & Apply's retract animation.
         if (_pendingSettings is { } pending)

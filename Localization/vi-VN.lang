@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (Đã sửa đổi)
+CPU
+ FPS
+ GHz
+ bản sao
+ {time.utc_offset}
+ · Chính
+%
+'{0}' không phải là số
+(Bản dịch có thể không chính xác 100%)
+(đã sửa đổi)
++X sang phải, +Y xuống dưới.
++X sang phải, +Y xuống dưới.
++X sang phải, +Y xuống dưới. Đổi vị trí có sẵn đặt cả hai độ lệch về 0.
+-- không có đọc hợp lệ hoặc không có lỗi biểu hiện. Kiểm tra ý nghĩa và đơn vị trong thư viện, sau đó là trình điều khiển, xác thực API, đường JSON hoặc trạng thái FPS.
+, biểu hiện và đơn vị không hợp lệ --
+/ GB
+/// Pin
+/// CPU
+/// API DEEPSEEK
+/// FPS màn hình
+/// GPU
+/// Bộ nhớ
+/// Mạng
+/// Kiểm tra mạng
+/// Ổ đĩa hệ thống
+/// Thời gian
+/// FPS cửa sổ
+/// Đồng hồ thế giới
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 hoặc 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0.4–1.4×. Áp dụng khi thả thanh trượt.
+Phát hiện 1 GPU: {0}
+Có 1 cấu hình trong hàng đợi luân phiên.
+10%–100%. Áp dụng khi thả thanh trượt.
+Tốc độ tham chiếu 100%
+100% là hoàn toàn không trong suốt.
+Tốc độ tham chiếu 100%
+Đã tạo bản sao từ cấu hình tích hợp; cấu hình gốc không đổi.
+Dịch vụ nền trước duy trì HUD; nếu không có, hệ thống sẽ dừng lấy mẫu.
+Một mẫu HUD media template
+Trường dữ liệu thực được ánh xạ từ nguồn HTTP/JSON đã cấu hình.
+AC
+Đã cắm điện
+Đang dùng nguồn AC
+Đã cắm điện
+Dữ liệu AIDA64 khả dụng
+AIDA64 ứng dụng bên ngoài
+Phương thức truyền AIDA64
+Độ trễ API (ms)
+Cấp API
+Trạng thái API
+Yêu cầu API thất bại
+Giới thiệu
+Về phiên bản, kiến trúc và kết quả kiểm tra cập nhật. Một lỗi mạng hoặc phiên bản từ xa không sẵn sàng không xác nhận rằng bạn đang cập nhật. kiểm tra trạng thái và thử lại.
+Màu nhấn
+Màu nhấn
+Số giao diện mạng đang hoạt động
+Cấu hình hiện tại
+Cấu hình hiện tại
+Có hiệu lực khi tắt Luôn hiển thị. Quy tắc khớp sẽ gọi mục tiếp theo trong hàng đợi luân phiên, hoặc cấu hình hiện tại nếu hàng đợi trống. Mẫu đầu tiên và mẫu đầu sau khi dữ liệu phục hồi chỉ thiết lập mốc so sánh. Yêu cầu từ vùng kích hoạt được ưu tiên; vùng kích hoạt và quy tắc tiến trong hàng đợi độc lập. Dữ liệu vẫn được lấy khi HUD hiển thị theo chu kỳ chung và chu kỳ của nguồn. Các sự kiện phát hiện khi đang bận được gộp và giữ lại.
+ActivityManager.MemoryInfo.lowMemory: hệ thống có báo thiếu bộ nhớ hay không.
+Tốc độ thay đổi bộ đếm khung hình tổng hợp thực của SurfaceFlinger với ROOT; không khả dụng khi không xác định được bộ đếm thuộc màn hình nào trong hệ thống nhiều màn hình. Đây không phải tần số quét.
+Trạng thái thu thập thực tế và lý do không khả dụng.
+Trạng thái thu thập thực tế.
+Thông tin phát thực tế từ phiên đa phương tiện Windows. Vị trí trên dòng thời gian được ngoại suy trong khi phát; trường không được hỗ trợ vẫn không khả dụng.
+ID bộ điều hợp
+Thêm
+Thêm HUD
+Thêm quy tắc
+Thêm và bật một quy tắc trong Nội dung HUD → Quy tắc kích hoạt.\nNhập khóa biến và chọn Ngưỡng, thay đổi giá trị hoặc chuyển thành đúng; đặt toán tử và giá trị cho điều kiện ngưỡng.\nĐặt thời gian chờ giữa các lần kích hoạt, tắt Luôn hiển thị rồi chọn Lưu và áp dụng.
+Thêm một biến/operator/Ngưỡng => quy tắc màu cho mỗi dòng.Công tắc thay đổi giọng dựa trên tải, nhiệt độ và các giá trị khác.Ngưỡng sử dụng đơn vị ban đầu của biến.Sử dụng giá trị màu hợp lệ; các phép đo thiếu không được coi là không.
+Thêm hồ sơ vào hàng và sử dụng Move Up/Down để đặt hàng chúng.Vì loại bỏ từ hàng không không xóa hồ sơ.Thay xe tự động tiến lên trong khoảng thời gian được cấu hình.Một hàng không trống sử dụng hồ sơ hoạt động; một hàng đơn không thể chuyển sang một mục khác.
+Thêm quy tắc
+Thêm vào hàng đợi
+Địa chỉ
+Adelaide, Darwin
+Điều chỉnh các tùy chọn cụ thể cho từng hồ sơ.
+Chuyển đến mục tiếp theo mỗi lần gọi HUD qua vùng kích hoạt
+Tổng hợp: min, max, avg, sum. Phạm vi và độ chính xác: clamp(value, min, max), round(value, digits), floor, ceil, abs, sign. Toán học: sqrt, pow, log, log10, exp, sin, cos, tan. percent(value, total) trả về tỷ lệ phần trăm; between(value, min, max) kiểm tra phạm vi bao gồm cả hai đầu mút.
+Alaska
+Album
+Tất cả danh mục
+Tất cả các HUD đều chia sẻ một khoảng thời gian lấy mẫu; khoảng thời gian ngắn hơn sử dụng nhiều tài nguyên hơn. Đồng hồ cập nhật theo giây, trong khi các nguồn HTTP và cân bằng giữ khoảng thời gian tự mình làm mới / lưu trữ cache.
+Tất cả danh mục
+Cho phép hiển thị trên ứng dụng khác trong cài đặt hệ thống.
+Đã yêu cầu một lần; hãy bật lại trong cài đặt hệ thống.
+Luôn hiển thị
+Luôn hiển thị giữ HUD trên màn hình ở lớp luôn trên cùng hoặc lớp màn hình nền. Khi tắt tùy chọn này, sự kiện nguồn điện, vùng kích hoạt chuột hoặc quy tắc sẽ gọi HUD tạm thời; HUD thu lại khi hết thời gian hiển thị. Tắt công tắc chính sẽ dừng hiển thị trong phiên hiện tại; công tắc được bật lại ở lần khởi động ứng dụng tiếp theo.
+Luôn trên cùng
+Luôn hiển thị
+AMD Adrenalin khả dụng
+Samoa thuộc Mỹ
+Cần công cụ hỗ trợ có quyền nâng cao, chẳng hạn Shizuku.
+Cần quyền bổ sung hoặc quyền truy cập đặc biệt.
+Nhập cấu hình có hiệu lực ngay; hãy xuất cấu hình hiện tại trước nếu cần bản sao lưu.
+Thông báo thường trực phải luôn hiển thị.
+Có bản cập nhật mới.
+Android 13 trở lên cần quyền thông báo cho thông báo thường trực của HUD; chỉ yêu cầu khi bắt đầu HUD.
+Cần Android 16 trở lên.
+Mã tình trạng Android EXTRA_HEALTH (GOOD/OVERHEAT/DEAD/...). Dùng battery.health_percent để xem tỷ lệ sức khỏe pin.
+Android EXTRA_PLUGGED: AC / USB / WIRELESS / không cắm nguồn.
+Mã số Android EXTRA_STATUS (CHARGING/DISCHARGING/FULL/NOT_CHARGING).
+Mẫu SoC Android (Build.SOC_MODEL, API 31+); khóa tương ứng trên máy tính là cpu.name.
+Phiên bản Android
+Android không cho ứng dụng thông thường đọc mọi chỉ số phần cứng: tải GPU, nhiệt độ CPU và một phần số liệu dòng pin không khả dụng trên đa số thiết bị. ECP chỉ hiển thị dữ liệu thực sự đọc được, đánh dấu phần còn lại là không hỗ trợ và không tạo giá trị giả.
+Android không cung cấp API công khai cho chức năng này.
+Android không cung cấp API đọc được hỗ trợ cho chỉ số này; ứng dụng báo không khả dụng.
+Cập nhật trực tiếp gốc Android
+Lưu ý về Android
+Android không cung cấp API công khai cho tải GPU.
+Hệ thống Android
+Android v{0} đã có trên trang phát hành.
+Hoạt ảnh
+Tiến trình ứng dụng
+Cập nhật ứng dụng
+Áp dụng cho toàn bộ cài đặt và mọi HUD. Kích thước riêng của từng HUD được nhân với tỷ lệ giao diện toàn cục.
+Áp dụng cho mọi HUD thường trực, kể cả các phiên bản thử nghiệm. Nhấp HUD để chuyển mục trong hàng đợi riêng bằng hoạt ảnh chuyển của HUD đó, ngay cả khi tắt luân phiên tự động, đồng thời bắt đầu lại chu kỳ tự động của chính HUD đó.
+Đang áp dụng…
+Không được dùng giao diện tùy ý; chỉ hỗ trợ các mẫu chính thức.
+Kiến trúc
+Nghệ sĩ
+Nghệ sĩ - tiêu đề
+Theo giá trị
+Chỉ giữ tối đa 600 mục và 3 tệp nhật ký, nên HUD chạy lâu cũng không làm đầy bộ nhớ lưu trữ.
+Athens, Cairo, Helsinki
+Giờ Đại Tây Dương (Canada)
+Auckland, Fiji
+Xác thực thất bại; kiểm tra khóa API.
+Tác giả
+Chưa được cấp quyền.
+Tự động / chọn đích
+Luân phiên tự động
+Luân phiên tự động đang bật nhưng hàng đợi trống. Hãy thêm ít nhất một cấu hình.
+Đã bật luân phiên; {0} cấu hình hiển thị theo thứ tự.
+Tự động
+Luân phiên tự động
+Các đơn vị và đường ống tự động
+Khả dụng
+Byte khả dụng
+Văn bản trạng thái khả dụng
+Số byte khả dụng chia tổng dung lượng từ StatFs.
+Số lõi CPU lôgic khả dụng
+Chỉ dùng trong chế độ Luôn hiển thị. Mỗi lần nhấp chuyển đến mục tiếp theo trong hàng đợi bằng hoạt ảnh chuyển, ngay cả khi tắt luân phiên tự động. Hàng đợi trống hoặc chỉ có một mục sẽ không chuyển.
+Số cảm biến khả dụng
+Tỷ lệ khả dụng
+Dùng khi tắt Luôn hiển thị. Đặt vùng kích hoạt trong toàn bộ giới hạn màn hình đích, rồi chỉnh kích thước và thời gian giữ con trỏ.
+Độ trễ trung bình (ms)
+Tránh phần khuyết màn hình
+Ngày BIOS
+Phiên bản BIOS
+Số tiến trình nền
+Sao lưu
+Sao lưu thất bại. Xem nhật ký.
+Số dư
+Số dư / khung giờ
+Đơn vị tiền tệ số dư
+Văn bản số dư
+Truy vấn số dư và khung giờ cao điểm/thấp điểm; khóa API được mã hóa bằng Android Keystore.
+Trạng thái truy vấn số dư; thiếu khóa hoặc yêu cầu thất bại đều trả về trạng thái rõ ràng.
+Bangkok, Hà Nội, Jakarta
+URL cơ sở
+Đường cơ sở, mức độ giảm và xếp hàng
+Pin
+Dòng điện pin
+Mã tình trạng pin
+Mã trạng thái pin
+Nhiệt độ pin
+Dòng điện pin
+Mức pin
+Thống kê pin không khả dụng hoặc bị hệ thống hạn chế.
+Nhiệt độ pin
+Nhiệt độ pin Android tính bằng °C; khóa tương ứng trên máy tính là battery.temperature.
+Điện áp pin
+Ưu tiên bộ đếm năng lượng BatteryManager; nếu không có, ước tính năng lượng còn lại từ bộ đếm điện tích và điện áp đo được.
+Chuyển thành đúng
+Giờ Bắc Kinh (UTC+08:00)
+Bắc Kinh, Hồng Kông, Singapore
+Berlin, Paris, Rome
+Tỷ lệ mã hóa BitLocker
+Trạng thái BitLocker
+Luận lý
+Thời điểm khởi động
+Đã khai báo quyền khởi động cùng thiết bị; bật tùy chọn này trong cài đặt.
+Dưới giữa (trên thanh tác vụ / Dock)
+Dưới trái (trên thanh tác vụ / Dock)
+Dưới phải (trên thanh tác vụ / Dock)
+Dưới giữa
+Dưới trái
+Dưới phải
+Độ nảy
+Buenos Aires, Brasilia
+Bản dựng 2026.10.27
+Bản dựng {0}
+Tạo hàng đợi luân phiên
+Ngày bản dựng
+Nhà sản xuất từ Build.MANUFACTURER.
+Mẫu thiết bị từ Build.MODEL.
+Không thể xóa cấu hình tích hợp
+Không thể xóa cấu hình tích hợp
+Tích hợp · lưu thay đổi tạo bản sao
+Tích hợp · có thể chỉnh múi giờ và giờ mục tiêu hằng ngày; sửa nội dung sẽ tạo bản sao
+Tốc độ bus
+Byte
+Tỷ lệ hoạt động ổ C:
+Hệ thống tệp ổ C:
+Dung lượng trống ổ C: (byte)
+Tình trạng ổ C:
+I/O ổ C: (B/s)
+Nhãn ổ C:
+Số phân vùng ổ C:
+Thời gian bật nguồn ổ C: (giờ)
+Độ dài hàng đợi ổ C:
+Tốc độ đọc ổ C: (B/s)
+Trạng thái SMART ổ C:
+Nhiệt độ ổ C:
+Tổng dung lượng ổ C: (byte)
+Trạng thái TRIM ổ C:
+Mức sử dụng ổ C:
+Dung lượng đã dùng ổ C: (byte)
+Tốc độ ghi ổ C: (B/s)
+CPU
+Số lõi CPU vật lý
+Mẫu CPU
+Nhiệt độ CPU
+Thời gian CPU (giây)
+Tần số CPU
+CPU theo từng lõi
+Cảm biến CPU không khả dụng: phần cứng hoặc trình điều khiển không trả về nhiệt độ hợp lệ.
+Nhiệt độ CPU
+Trạng thái nhiệt độ CPU
+Nhiệt độ CPU vẫn hiển thị --
+Nhiệt độ CPU; Android không có API công khai (xem androidNote).
+Mức sử dụng CPU tổng thể
+Mức sử dụng CPU
+Mức sử dụng CPU / cpu.usage
+Dung lượng bộ nhớ đệm (byte)
+Bộ nhớ đệm Android có thể thu hồi; khóa tương ứng trên máy tính là memory.cache_bytes.
+Bộ nhớ đệm
+Tính từ đồng hồ thiết bị và cài đặt cấu hình.
+Hủy
+Không đọc được tác vụ khởi động Windows. Xem nhật ký.
+Giới hạn khả năng thiết bị
+Các định dạng thời gian và năng lực
+Giá trị chính: dung lượng, tần số, tốc độ, số dư và thời gian.
+Cabo Verde
+Đích thu thập
+Chính giữa
+Chính giữa (vùng làm việc)
+Giữa trái (vùng làm việc)
+Giữa phải (vùng làm việc)
+Giữa trái
+Giữa phải
+Giờ miền Trung (Mỹ và Canada)
+Có thể thay đổi khi chỉnh sửa bất kỳ HUD nào. Lưu và Áp dụng dùng cùng một chu kỳ lấy mẫu cho mọi HUD. Đồng hồ cập nhật mỗi giây; API ngoài giữ chu kỳ làm mới riêng.
+Đang thay đổi
+Bộ đếm điện tích
+Công suất sạc (W)
+Đang sạc
+Quần đảo Chatham
+Độ lệch giờ mùa hè của quần đảo Chatham
+Kiểm tra cập nhật
+Kiểm tra trình điều khiển và cảm biến tại Cài đặt → Quản lý dữ liệu → Dữ liệu phần cứng.
+Kiểm tra xem có những cập nhật không
+Kiểm tra quyền truy cập, khả năng hỗ trợ của thiết bị và nguồn dữ liệu. Ô chọn chỉ tắt vĩnh viễn cảnh báo cho dữ liệu được liệt kê trong cửa sổ này. Các biến khác vẫn được cảnh báo.
+Kiểm tra các chuyển đổi chủ và tắt đường tắt, sau đó xác nhận chế độ liên tục vs. chuyển tiếp. chế độ chuyển tiếp cần một sự kiện, vùng nóng hoặc quy tắc. Kiểm tra màn hình mục tiêu, các phối hợp, độ không rõ và chuyển đổi vùng nóng. Việc lưu hồ sơ mà không cần Lưu và áp dụng có thể khiến HUD đang chạy ở các cài đặt cũ.
+Kiểm tra cảm biến này hoặc cài đặt chia sẻ AIDA64 tại Cài đặt → Quản lý dữ liệu → Dữ liệu phần cứng.
+Kiểm tra cập nhật
+Đang kiểm tra cập nhật trực tiếp gốc Android…
+Đang kiểm tra GitHub…
+Đang kiểm tra quyền và cập nhật trực tiếp gốc…
+Đang kiểm tra…
+Kiểm tra một lần khi khởi động; bạn cũng có thể kiểm tra thủ công.
+Thành phần hóa học
+Tiếng Trung (Giản thể)
+Chọn Đầy đủ hoặc Đơn giản tiết lộ hoạt hình cho đường tắt; ẩn chơi một hoạt hình rút lại. Nó ảnh hưởng đến tất cả các HUD trong khi vẫn giữ hồ sơ và vị trí của họ. Trong chế độ tạm thời nó triệu tập một lần, sau đó nối lại hành vi sự kiện. yêu cầu nhanh mới nhất thắng.
+Chọn ngôn ngữ ở thanh trên cùng hoặc chọn theo ngôn ngữ hệ thống. Lựa chọn ngôn ngữ được lưu ngay; các thay đổi khác vẫn cần Lưu và áp dụng. Nếu ngôn ngữ hệ thống không được hỗ trợ, ứng dụng dùng tiếng Anh. Cài đặt, hồ sơ tích hợp, cảnh báo dữ liệu và hướng dẫn này dùng ngôn ngữ đã chọn. Khóa biến, công thức và JSON của API không thay đổi.
+Chọn phông đã cài; hệ thống bổ sung ký tự còn thiếu.
+Nếu có nhiều GPU, chọn GPU cho cấu hình này.
+Chọn cấu hình hiển thị; lưu thay đổi cấu hình tích hợp sẽ tạo bản sao.
+Chọn những gì HUD hiển thị và cách nó trông.
+Xóa
+Xóa tìm kiếm
+Xóa phím tắt
+Nhấp vào HUD liên tục để chuyển đổi
+Nhấp HUD thường trực để đổi cấu hình
+Nhấp rồi nhấn phím tắt
+Cho nhấp xuyên qua
+Bảng tạm
+Đã thu gọn: 
+Màu
+Mỗi dòng một quy tắc màu: biến toán tử giá trị => màu
+Màu
+Tổng tốc độ của mọi giao diện mạng đang hoạt động.
+Bộ nhớ cam kết còn trống (byte)
+Giới hạn bộ nhớ cam kết (byte)
+Mức sử dụng bộ nhớ cam kết
+Bộ nhớ cam kết đã dùng (byte)
+Định dạng thông dụng
+Các định dạng mã thông báo phổ biến
+Toán tử so sánh
+Bộ nhớ vật lý hoàn toàn trống (MemFree); cùng tên được dùng trên bản máy tính macOS.
+Điều kiện
+Chế độ điều kiện
+Màu sắc điều kiện
+Thiết lập và bảo trì
+Thư mục cấu hình
+Đã sao lưu thiết lập: {0}
+Đã xuất thiết lập.
+Đã nhập và áp dụng thiết lập.
+Đã nhập và áp dụng; bản sao trước: {0}.
+Nhập và xuất cấu hình
+Thiết lập, sao lưu và bảo trì
+Định cấu hình HTTP / JSON
+Đặt truy vấn số dư và khung giờ cao điểm/thấp điểm. Khóa API được mã hóa cho người dùng Windows hiện tại.
+Cài đặt vị trí hot-zone và dwell
+Trước tiên đặt khóa DeepSeek API tại Quản lý dữ liệu → Cấu hình nguồn dữ liệu → DeepSeek API. Khung giờ cao điểm/thấp điểm cũng được đặt tại đó. Không có khóa sẽ không có dữ liệu số dư.
+Trước tiên đặt khóa DeepSeek API tại Nguồn dữ liệu → DeepSeek API. Khung giờ cao điểm/thấp điểm cũng được đặt tại đó. Không có khóa sẽ không có dữ liệu số dư.
+Giờ mục tiêu hằng ngày trong cấu hình (hh:mm:ss); khóa tương ứng trên máy tính là time.target.value.
+Kết nối DeepSeek, HTTP JSON và AIDA64.
+Đã kết nối
+Kết nối thất bại
+Kết nối thành công.
+Mục lục
+Chuyển ngữ cảnh
+Kiểm soát cách các hồ sơ thay thế.
+Điều khiển mọi chức năng hiển thị HUD.
+Điều khiển HUD chính và các HUD bổ sung cùng lúc. Tạm dừng gọi tự động khi ẩn. Nhấn lại để khôi phục chế độ hiển thị trước đó; khởi động lại ứng dụng sẽ hiện HUD trở lại.
+Thời gian chờ / giây
+Giờ Phối hợp Quốc tế
+Đã sao chép: {0}
+Sao chép tên biến
+Sao chép mẫu
+Sao chép ví dụ
+Tải lại từ thư viện, sau đó tạo ra văn bản HUD dễ đọc.
+Sao chép tên biến
+Sao chép khóa từ thư viện biến. Phép dò mạng dùng đích và giao thức của cấu hình Dò gói tin trong hàng đợi, hoặc cấu hình hiện tại nếu không có cấu hình dò nào trong hàng đợi.
+Sao chép biến đã chọn
+Sao chép mẫu
+Cấu trúc JSON có thể sao chép được
+Xung nhịp lõi (MHz)
+Nhiệt độ lõi trung bình (tổng hợp)
+Điện áp lõi
+Lõi
+Không mở được thư mục nhật ký. Xem nhật ký.
+Không thể kết nối GitHub; thử lại sau.
+Không đọc được chi tiết cập nhật; hãy thử lại.
+Không đăng ký được phím tắt; có thể ứng dụng khác đang dùng. Đổi rồi lưu và áp dụng.
+Không đăng ký được phím tắt này; có thể đang được sử dụng. Giữ nguyên phím tắt cũ. Hãy chọn tổ hợp khác.
+Không lưu được lựa chọn. Hãy thử lại.
+Không thể khởi động dịch vụ HUD; xem nhật ký trên trang Nâng cao.
+Không thể xác minh điều kiện hiển thị đảo động
+Số lượng
+Đếm các khung hình có nội dung thực sự cập nhật, loại trừ khung hình không đổi. Cần quyền Ghi màn hình; không lưu hình ảnh. Có thể khác FPS kết xuất/trình bày nội bộ của ứng dụng; nội dung tĩnh có thể là 0 FPS.
+Tạo, lưu, xóa và xem trước
+Ghi công
+Thiết đặt vùng
+Mã tiền tệ của số dư, thường là CNY; không tự tạo tỷ giá.
+Giờ hiện tại (24 giờ)
+Giờ hiện tại dạng 12 giờ
+Số giao diện mạng đang ở trạng thái Up và không phải loopback.
+ID nội bộ của cấu hình HUD đang hoạt động.
+Mã định danh nội bộ ổn định của GPU được chọn.
+Địa chỉ IP thực được dò hoặc trả về từ đích sau khi phân giải tên.
+Kiến trúc bộ xử lý, chẳng hạn x64 hoặc ARM64.
+Bộ nhớ vật lý hiện khả dụng.
+Văn bản “Khả dụng / Không khả dụng” được tạo từ trạng thái hiện tại.
+ReleaseDate do Win32_BIOS báo cáo.
+Phiên bản VBIOS do nvidia-smi báo cáo, nếu được hỗ trợ.
+Số tiến trình hiện không có handle cửa sổ chính.
+Tổng số dư được định dạng thành chuỗi tiền tệ, chẳng hạn “¥0.00”.
+Tổng số dư tài khoản DeepSeek API tính bằng nhân dân tệ.
+Dòng pin tức thời trên Android; xác định sạc hay xả bằng EXTRA_STATUS, không dựa vào dấu của dòng điện.
+EncryptionPercentage của ổ đĩa hệ thống.
+Trạng thái bảo vệ ổ đĩa hệ thống do giao diện Windows Volume Encryption báo cáo.
+Thời điểm khởi động Windows của phiên này, ước tính từ thời gian hệ thống hoạt động.
+Tần số Bus/BCLK do cảm biến giám sát phần cứng báo cáo.
+Bộ đếm PercentDiskTime Windows của ổ C: (%).
+Hệ thống tệp của ổ C:.
+Dung lượng còn trống của ổ C: (byte).
+HealthStatus từ Windows Storage cho đĩa vật lý chứa C:; khả dụng nếu giao diện hỗ trợ.
+Tổng tốc độ đọc và ghi tức thời của ổ C:.
+Nhãn volume ổ C:.
+Số phân vùng liên kết với ổ lôgic C: qua Win32_LogicalDiskToPartition.
+PowerOnHours của đĩa chứa C:; chỉ cung cấp khi thiết bị hỗ trợ.
+CurrentDiskQueueLength của ổ C: (số mục).
+Tốc độ đọc tức thời của ổ lôgic C: từ bộ đếm hiệu năng Windows.
+OperationalStatus từ Windows Storage của đĩa vật lý chứa C:.
+Nhiệt độ Storage Reliability Counter của đĩa chứa C:; chỉ có khi thiết bị hỗ trợ.
+Tổng dung lượng ổ C: (byte).
+Trạng thái Windows DisableDeleteNotify của hệ thống tệp ổ C:.
+Phần trăm dung lượng đã dùng của ổ C: (%).
+Dung lượng đã dùng của ổ C: (byte).
+Tốc độ ghi tức thời của ổ lôgic C: từ bộ đếm hiệu năng Windows.
+Tổng thời gian bộ xử lý mà tiến trình ứng dụng hiện tại đã sử dụng.
+Dung lượng bộ nhớ đệm hệ thống tính bằng byte từ bộ đếm hiệu năng Windows.
+Bộ đếm điện tích Android BatteryManager; giá trị không được hỗ trợ Integer.MIN_VALUE được coi là thiếu dữ liệu.
+Công suất sạc hiện tại, thường là 0 khi không sạc pin.
+Thành phần hóa học pin do Win32_Battery báo cáo, chẳng hạn lithium-ion hoặc lithium-polymer.
+Phần chưa dùng trong giới hạn bộ nhớ cam kết của hệ thống.
+Giới hạn bộ nhớ cam kết hiện tại của Windows, thường phụ thuộc cả RAM và tệp hoán trang.
+Tỷ lệ bộ nhớ cam kết đã dùng so với giới hạn cam kết.
+Lượng bộ nhớ hệ thống đã cam kết.
+Bộ đếm Context Switches/sec trong Windows System.
+Xung nhịp lõi tức thời của GPU được chọn.
+Nhiệt độ trung bình hiện tại của các cảm biến lõi CPU khả dụng.
+Điện áp lõi CPU hoặc điện áp hiệu dụng cao nhất do cảm biến giám sát phần cứng báo cáo.
+Số GPU vật lý mà hệ thống hiện phát hiện được.
+Tên vùng văn hóa của tiến trình hiện tại, ví dụ zh-CN.
+Giờ cục bộ hiện tại dạng 12 giờ, kèm AM hoặc PM.
+Giờ cục bộ hiện tại theo định dạng HH:mm:ss.
+Số chu kỳ pin do firmware hoặc trình điều khiển cung cấp; một số thiết bị có thể trả về 0.
+Bộ đếm PercentDiskTime Windows của ổ D: (%).
+Hệ thống tệp của ổ D:.
+Dung lượng còn trống của ổ D: (byte).
+HealthStatus từ Windows Storage cho đĩa vật lý chứa D:; khả dụng nếu giao diện hỗ trợ.
+Tổng tốc độ đọc và ghi tức thời của ổ D:.
+Nhãn volume ổ D:.
+Số phân vùng liên kết với ổ lôgic D: qua Win32_LogicalDiskToPartition.
+PowerOnHours của đĩa chứa D:; chỉ cung cấp khi thiết bị hỗ trợ.
+CurrentDiskQueueLength của ổ D: (số mục).
+Tốc độ đọc tức thời của ổ lôgic D: từ bộ đếm hiệu năng Windows.
+OperationalStatus từ Windows Storage của đĩa vật lý chứa D:.
+Nhiệt độ Storage Reliability Counter của đĩa chứa D:; chỉ có khi thiết bị hỗ trợ.
+Tổng dung lượng ổ D: (byte).
+Trạng thái Windows DisableDeleteNotify của hệ thống tệp ổ D:.
+Phần trăm dung lượng đã dùng của ổ D: (%).
+Dung lượng đã dùng của ổ D: (byte).
+Tốc độ ghi tức thời của ổ lôgic D: từ bộ đếm hiệu năng Windows.
+Thời gian phân giải DNS cho tên miền trong chu kỳ dò hiện tại; 0 nếu đích là địa chỉ IP trực tiếp.
+Các địa chỉ máy chủ DNS được cấu hình trên giao diện mạng đang hoạt động.
+Bộ đếm % DPC Time trong Windows Processor Information.
+Ngày hiện tại của thiết bị này.
+Ngày và giờ hiện tại của thiết bị này.
+Số giây đã trôi qua từ đầu ngày hôm nay.
+Tên tiếng Anh của thứ hiện tại trong tuần.
+Tên tiếng Trung của thứ hiện tại trong tuần.
+Số thứ tự của ngày hiện tại trong năm.
+Tỷ lệ thời gian đã trôi qua từ 00:00:00 hôm nay đến 00:00:00 ngày mai.
+Số giây còn lại đến 00:00:00 ngày mai.
+Ngày trong tháng của ngày hiện tại.
+Tổng dung lượng bộ nhớ video chuyên dụng của GPU được chọn.
+Tỷ lệ bộ nhớ video chuyên dụng đã dùng so với tổng dung lượng.
+Mức sử dụng bộ nhớ video chuyên dụng tức thời của GPU được chọn.
+Địa chỉ cổng mặc định được cấu hình trên các giao diện mạng đang hoạt động.
+Thời điểm hoàn tất Quick Scan hoặc Full Scan gần nhất.
+Trạng thái bật và bảo vệ thời gian thực do Windows Defender WMI báo cáo.
+Số mối đe dọa hiện được MSFT_MpThreat liệt kê.
+Dung lượng sạc đầy hiện tại chia dung lượng thiết kế, tương đương sức khỏe pin.
+Dung lượng thiết kế pin đổi sang Wh.
+Dung lượng thiết kế ban đầu của pin.
+Số thiết bị USB PNP trong Win32_PnPEntity.
+Tên các thiết bị USB PNP hiện được liệt kê.
+Công suất xả hiện tại, thường là 0 khi pin không xả.
+Tốc độ tải xuống được định dạng theo đơn vị của cấu hình mạng hiện tại.
+Tốc độ trình bày hoặc cập nhật khung hình thực của màn hình được chọn. Phạm vi đo khác nhau theo nền tảng; đây không phải tần số quét cố định.
+Tốc độ khung hình thực chia tốc độ tương ứng với 100% trong cấu hình.
+Giá trị tiến trình cho vòng của cấu hình đồng hồ; dùng phần còn lại khi ở chế độ giờ mục tiêu.
+Chế độ thường hiển thị tiến trình ngày đã trôi qua; chế độ mục tiêu hiển thị “Còn lại ??%”.
+Trạng thái thu thập thực tế và lý do không khả dụng.
+Tốc độ tải lên được định dạng theo đơn vị của cấu hình mạng hiện tại.
+Số container đang chạy từ docker ps -q, chỉ cung cấp khi Docker CLI khả dụng.
+Số ID image duy nhất từ docker images -q.
+Tổng tốc độ tải xuống tức thời của mọi giao diện mạng đã kết nối, không gồm loopback.
+Tổng tốc độ tải xuống hệ thống đổi sang Mbps.
+Ngày trình điều khiển do Win32_VideoController báo cáo.
+Phiên bản trình điều khiển GPU được chọn do Win32_VideoController báo cáo.
+Địa chỉ đích đối với ICMP, hoặc “địa chỉ:cổng” đối với TCP/UDP.
+Trạng thái hoặc lỗi cấp thấp của phép dò thất bại gần nhất.
+Số giây đến khi cạn pin do Windows quản lý nguồn ước tính; không khả dụng nếu hệ thống không thể ước tính.
+Thời gian sạc đầy ước tính từ dung lượng còn lại, dung lượng sạc đầy và công suất sạc tức thời; chỉ cung cấp khi biết công suất sạc.
+Số cảm biến quạt riêng biệt được phát hiện.
+RPM quạt cao nhất hiện đọc được bằng LibreHardwareMonitor.
+Tỷ lệ cao nhất do cảm biến giám sát phần cứng loại Control báo cáo.
+Số tệp trong danh sách tệp đã sao chép CF_HDROP.
+Cấu hình tường lửa đang hoạt động: domain / private / public.
+Trạng thái cấu hình Windows Firewall Policy hiện đang hoạt động.
+Số ổ đĩa cố định hiện sẵn sàng.
+Tổng dung lượng còn trống của mọi ổ đĩa cố định sẵn sàng.
+Ký tự ổ đĩa của các ổ cố định sẵn sàng.
+Tổng dung lượng của mọi ổ đĩa cố định sẵn sàng.
+Tỷ lệ tổng dung lượng đã dùng so với tổng dung lượng các ổ cố định.
+Tổng dung lượng đã dùng của mọi ổ đĩa cố định sẵn sàng.
+FormFactor mô-đun bộ nhớ, chẳng hạn DIMM / SODIMM.
+.NET FrameworkDescription mà tiến trình hiện tại sử dụng.
+Bộ nhớ vật lý khả dụng tính theo phần trăm tổng bộ nhớ vật lý.
+Tần số hiệu dụng tức thời của CPU do dữ liệu hiệu năng Windows báo cáo.
+Tần số hiệu dụng tức thời của CPU tính bằng MHz.
+Tần số CPU hiệu dụng tính theo phần trăm tần số tối đa; có thể vượt 100% khi tăng tốc turbo.
+Thời gian sử dụng khi pin đầy do Windows ước tính; 0 nếu không khả dụng.
+Vòng độ trễ đạt 100% tại 999 ms.
+Dung lượng sạc đầy đổi sang Wh.
+Dung lượng mà pin hiện có thể sạc đầy.
+Mức sử dụng GPU theo tiến trình, tổng hợp từ các bộ đếm hiệu năng GPU Engine.
+Mức sử dụng GPU của tiến trình Endfield Charge Plus hiện tại từ bộ đếm GPU Engine.
+Tỷ lệ pin xấp xỉ đổi từ mức pin XInput.
+Số tay cầm được kết nối trong các khe XInput 0–3.
+Nhánh Git nếu thư mục làm việc hiện tại của ứng dụng là kho Git.
+Hash ngắn và tiêu đề commit gần nhất trong thư mục làm việc hiện tại.
+Trạng thái Git của thư mục làm việc hiện tại: sạch hoặc số thay đổi.
+Kết quả go version được tìm qua PATH.
+Số dư tín dụng miễn phí trong tài khoản DeepSeek API.
+Số handle Windows mà tiến trình ứng dụng hiện tại đang mở.
+Chênh lệch giữa dung lượng các mô-đun RAM đã lắp và tổng bộ nhớ vật lý Windows có thể dùng.
+Tỷ lệ dung lượng sạc đầy so với dung lượng thiết kế.
+Nhiệt độ điểm nóng lõi hoặc GPU Hot Spot do cảm biến phần cứng báo cáo.
+Giờ hiện tại (0–23).
+Microsoft-Hyper-V-All có được cài và bật trong Windows OptionalFeature hay không.
+Các địa chỉ IPv4 unicast trên giao diện mạng đang hoạt động.
+Các địa chỉ IPv6 unicast trên giao diện mạng đang hoạt động.
+Tỷ lệ thời gian CPU nhàn rỗi hiện tại.
+Chiều rộng × chiều cao khi có thể phân tích hình ảnh DIB/DIBV5.
+Bộ đếm InstructionsRetiredPersec trong Windows Processor Information; chỉ có khi hệ thống cung cấp bộ đếm này.
+Tên mọi giao diện mạng đang hoạt động, phân cách bằng dấu phẩy.
+Các loại giao diện mạng đang hoạt động, chẳng hạn Wireless80211 / Ethernet.
+Bộ đếm Interrupts/sec trong Windows Processor Information.
+Giờ cục bộ hiện tại theo ISO 8601.
+Dòng đầu kết quả java -version được tìm qua PATH.
+Trung bình trị tuyệt đối chênh lệch độ trễ giữa các mẫu thành công liền kề, dùng để ước tính jitter.
+Tỷ lệ thời gian CPU ở chế độ kernel, không gồm thời gian nhàn rỗi.
+Dung lượng bộ nhớ đệm L2 do bộ xử lý báo cáo.
+Dung lượng bộ nhớ đệm L3 do bộ xử lý báo cáo.
+Phát hiện các tiến trình mô hình cục bộ phổ biến như Ollama, LM Studio và llama-server.
+Giờ cục bộ của lần thành công gần nhất theo cấu hình dò hiện tại.
+Giờ cục bộ khi ứng dụng phát hiện Clipboard Sequence Number thay đổi.
+Tổng tốc độ liên kết do mọi giao diện mạng đang hoạt động báo cáo.
+Số bộ xử lý lôgic mà hệ thống nhận biết.
+Tỷ lệ thất bại hoặc hết thời gian trong 20 phép dò gần nhất của tổ hợp địa chỉ, giao thức và cổng hiện tại.
+Số phép dò thất bại hoặc hết thời gian đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Nhà sản xuất bộ xử lý.
+Tần số xung nhịp tối đa do Win32_Processor báo cáo.
+Tần số xung nhịp tối đa tính bằng MHz.
+Tốc độ một liên kết cao nhất trong các giao diện mạng đang hoạt động.
+Xung nhịp bộ nhớ video GPU tức thời.
+Nhiệt độ bộ nhớ video hoặc Memory Junction do cảm biến phần cứng báo cáo.
+Tổng bộ nhớ video chuyên dụng dùng cho HUD tích hợp.
+Mức sử dụng bộ nhớ video chuyên dụng dùng cho HUD tích hợp.
+Mili giây hiện tại.
+Phút hiện tại.
+Giá trị Modified Page List Bytes của Windows.
+Số màn hình Windows hiện phát hiện được.
+Số giây đã trôi qua trong tháng này.
+Tỷ lệ thời gian đã trôi qua từ 00:00 ngày đầu tháng này đến 00:00 ngày đầu tháng sau.
+Số giây còn lại đến đầu tháng sau.
+Số tháng hiện tại.
+Manufacturer từ Win32_BaseBoard.
+Product từ Win32_BaseBoard.
+Giá trị cao nhất trong các cảm biến nhiệt độ bo mạch chủ mà LibreHardwareMonitor đọc được.
+Kết quả node --version được tìm qua PATH.
+Bộ nhớ nonpaged pool trong kernel Windows.
+Kiến trúc Windows hiện tại, chẳng hạn X64 / Arm64.
+Số bản dựng Windows hiện tại.
+Mô tả hệ điều hành Windows từ .NET RuntimeInformation.
+Số phiên bản hệ điều hành Windows.
+PCIe Link Generation hiện tại từ nvidia-smi; chỉ có trên NVIDIA khi nvidia-smi khả dụng.
+PCIe Link Width hiện tại từ nvidia-smi.
+ID tiến trình ứng dụng hiện tại.
+Tổng số gói unicast nhận được trên các giao diện mạng đang hoạt động.
+Tổng số gói unicast đã gửi trên các giao diện mạng đang hoạt động.
+Bộ nhớ paged pool trong kernel Windows.
+Phần trăm điện tích pin còn lại.
+ID múi giờ Windows cục bộ và độ lệch UTC tại lần chuyển khung giờ kế tiếp; tự tính giờ mùa hè theo ngày chuyển.
+Tên tiếng Trung của khung giờ hiện tại: 高峰 hoặc 低谷.
+Ngày giờ cục bộ của lần chuyển cao điểm/thấp điểm kế tiếp, đổi sang múi giờ người dùng Windows hiện tại theo yyyy-MM-dd HH:mm:ss; tự tính giờ mùa hè.
+Ngày giờ Bắc Kinh của lần chuyển cao điểm/thấp điểm kế tiếp theo yyyy-MM-dd HH:mm:ss.
+Giờ cục bộ của lần chuyển cao điểm/thấp điểm kế tiếp, đổi sang múi giờ người dùng Windows hiện tại theo HH:mm:ss; tự tính giờ mùa hè.
+Giờ Bắc Kinh của lần chuyển cao điểm/thấp điểm kế tiếp theo HH:mm:ss.
+Văn bản “Cao điểm: đã qua ??%” hoặc “Thấp điểm: đã qua ??%”.
+Tỷ lệ thời gian đã trôi qua trong khung giờ cao điểm hoặc thấp điểm hiện tại.
+Số giây còn lại đến lần chuyển cao điểm/thấp điểm tiếp theo.
+Văn bản “Cao điểm còn ??:??:??” hoặc “Thấp điểm còn ??:??:??”.
+Múi giờ tham chiếu cố định của quy tắc cao điểm/thấp điểm DeepSeek: giờ Bắc Kinh UTC+08:00.
+Tổng số lõi vật lý trên mọi socket bộ xử lý.
+Chỉ số GPU vật lý tương ứng với bộ đếm hiệu năng GPU Windows.
+Cổng kiểm tra TCP/UDP; chế độ ICMP trả về 0.
+Đọc nvidia-smi power.limit cho GPU NVIDIA; không cung cấp cho GPU khác nếu thiếu giao diện giới hạn công suất đáng tin cậy.
+Giá trị hợp lệ cao nhất trong các cảm biến công suất CPU hiện tại của LibreHardwareMonitor.
+GUID gói nguồn đang hoạt động từ powercfg.
+Nguồn điện hiện tại: “Nguồn AC” hoặc “Pin”.
+Công suất tức thời từ cảm biến LibreHardwareMonitor; chỉ có nếu phần cứng hoặc trình điều khiển cung cấp.
+80 ký tự đầu của văn bản bảng tạm sau khi loại bỏ khoảng trắng dư.
+BitsPerPel do EnumDisplaySettings trả về.
+Chiều cao màn hình chính Windows.
+Tần số quét của chế độ màn hình hiện tại.
+Chiều rộng màn hình chính Windows.
+Bộ nhớ riêng của tiến trình ứng dụng hiện tại.
+Kiến trúc tiến trình Endfield Charge Plus hiện tại.
+Giá trị Environment.ProcessorCount.
+Tốc độ thực dùng để tính tỷ lệ phần trăm trong cấu hình mạng hiện tại.
+Chế độ tỷ lệ của cấu hình hiện tại: Total / Download / Upload / Max.
+Văn bản như “50% / ↓ 50% / ↑ 50%” theo chế độ; chế độ hướng lớn hơn không hiển thị mũi tên.
+Tính từ chế độ tỷ lệ và “tốc độ tại 100%” được chọn trong cấu hình.
+Giao thức kiểm tra hiện tại: ICMP, TCP hoặc UDP.
+ProxyServer được người dùng hiện tại cấu hình.
+Trạng thái ProxyEnable trong Internet Settings của người dùng hiện tại.
+Địa chỉ IPv4 công khai truy vấn qua api.ipify.org, lưu đệm 5 phút; chỉ gửi yêu cầu khi biến được sử dụng.
+Địa chỉ IPv6 công khai truy vấn qua api6.ipify.org, lưu đệm 5 phút; không khả dụng nếu không có IPv6.
+Kết quả python/py --version được tìm qua PATH.
+Giá trị tuyệt đối công suất sạc hoặc xả hiện tại; một số thiết bị có thể không cung cấp.
+Tổng số lỗi nhận tích lũy trên các giao diện mạng đang hoạt động.
+Số phép dò thành công đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Dung lượng pin còn lại hiện tại đổi sang Wh.
+Dung lượng pin còn lại hiện tại.
+Trạng thái cấp thấp do giao thức dò trả về, chẳng hạn Success, Connected, Response hoặc TimedOut.
+Kết quả rustc --version được tìm qua PATH.
+Tỷ lệ co giãn màn hình đổi từ DPI hệ thống.
+Giây hiện tại (s).
+Tần số quét hiện tại của màn hình thứ hai.
+Độ phân giải hiện tại của màn hình thứ hai.
+Tổng số lỗi gửi tích lũy trên các giao diện mạng đang hoạt động.
+Số mẫu dò đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Giới hạn bộ nhớ hệ thống dùng chung mà GPU hiện tại có thể sử dụng.
+Tỷ lệ bộ nhớ GPU dùng chung đã sử dụng so với giới hạn.
+Bộ nhớ hệ thống dùng chung mà GPU hiện tại đang sử dụng.
+dBm ước tính từ chất lượng tín hiệu Windows WLAN; có khi kết nối Wi-Fi.
+Số khe thiết bị bộ nhớ do Win32_PhysicalMemoryArray báo cáo.
+Số mô-đun bộ nhớ vật lý hiện được liệt kê.
+Cấu hình SmartScreenEnabled trong Windows Explorer.
+Số socket bộ xử lý trong hệ thống.
+ConfiguredClockSpeed/Speed cao nhất do Win32_PhysicalMemory báo cáo.
+Tổng Standby Cache Core/Normal/Reserve trong bộ đếm Windows Memory.
+Thời điểm tiến trình ứng dụng hiện tại bắt đầu.
+Văn bản trạng thái nguồn, chẳng hạn “Đang sạc / Dùng pin / Đã cắm nguồn / Không rõ”.
+Số ổ DriveType.Removable hiện sẵn sàng.
+Danh sách ký tự ổ đĩa của thiết bị lưu trữ tháo rời hiện tại.
+Tổng dung lượng swap.
+Dung lượng swap đã sử dụng.
+Phần trăm thời gian hoạt động ổ đĩa từ bộ đếm hiệu năng ổ hệ thống.
+Dung lượng ổ hệ thống khả dụng cho người dùng thông thường, theo định nghĩa của bản macOS.
+Bộ đếm System Calls/sec trong Windows System.
+DPI hệ thống Windows.
+Hệ thống tệp của ổ hệ thống, chẳng hạn NTFS.
+Dung lượng còn trống trên ổ hệ thống Windows.
+Tỷ lệ dung lượng còn trống so với tổng dung lượng ổ hệ thống.
+Tổng tốc độ đọc và ghi của ổ hệ thống.
+Nhãn ổ đĩa hệ thống.
+Độ dài hàng đợi hiện tại của ổ hệ thống.
+Tốc độ đọc ổ hệ thống từ bộ đếm hiệu năng ổ lôgic Windows.
+Đường dẫn gốc ổ đĩa chứa thư mục hệ thống Windows, chẳng hạn C:\\.
+Tổng dung lượng ổ hệ thống Windows.
+Tỷ lệ dung lượng đã dùng so với tổng dung lượng ổ hệ thống.
+Dung lượng đã dùng trên ổ hệ thống Windows.
+Tốc độ ghi ổ hệ thống từ bộ đếm hiệu năng ổ lôgic Windows.
+Thời gian từ bắt đầu kết nối đến khi thành công trong chế độ TCP.
+Số kết nối TCP đang hoạt động do IPGlobalProperties trả về.
+SpecVersion từ Win32_Tpm.
+Phần thời gian đã trôi qua trong chu kỳ giờ mục tiêu hằng ngày.
+Thời gian còn lại đến mục tiêu kế tiếp tính theo phần trăm 24 giờ.
+Số giây còn lại đến giờ mục tiêu hằng ngày kế tiếp.
+Văn bản trạng thái giờ mục tiêu dạng “Còn lại ??%”.
+Giờ mục tiêu hằng ngày được đặt trong cấu hình thời gian hiện tại.
+Địa chỉ IPv4, IPv6 hoặc tên miền hiện dùng để dò gói tin mạng.
+Nhiệt độ cảm biến CPU; không khả dụng nếu thiết bị, trình điều khiển hoặc quyền không hỗ trợ.
+Nhiệt độ CPU cao nhất hiện đọc được bằng LibreHardwareMonitor; không khả dụng nếu phần cứng hoặc trình điều khiển không hỗ trợ.
+Nhiệt độ cảm biến CPU; không khả dụng nếu thiết bị, trình điều khiển hoặc quyền không hỗ trợ.
+Số ký tự văn bản trong bảng tạm hiện tại.
+Chủ đề mà Endfield Charge Plus đang sử dụng.
+Số luồng trong tiến trình ứng dụng hiện tại.
+Thời gian dùng pin còn lại do Windows ước tính; 0 nếu không thể ước tính.
+Thời gian dùng pin còn lại ước tính theo HH:MM:SS; hiển thị “Không rõ” nếu không thể ước tính.
+Giờ hiện tại trên máy tính, chính xác đến giây.
+Giới hạn chờ phản hồi cho một phép dò ICMP/TCP/UDP.
+ID múi giờ cục bộ hiện tại.
+PID tiến trình có mức sử dụng CPU cao nhất.
+Mức sử dụng CPU tính từ chênh lệch TotalProcessorTime của tiến trình.
+PID tiến trình có I/O đĩa cao nhất.
+Tổng tốc độ I/O byte hiện tại của tiến trình đó.
+PID tiến trình có working set lớn nhất.
+Working Set hiện tại của tiến trình có working set lớn nhất.
+Số dư đã nạp trong tài khoản DeepSeek API.
+Tổng tốc độ tải xuống và tải lên toàn hệ thống.
+Tổng dung lượng bộ nhớ vật lý.
+Tổng tải xuống và tải lên đổi sang Mbps.
+Tổng dung lượng bộ nhớ video chuyên dụng cộng giới hạn bộ nhớ dùng chung.
+Tỷ lệ tổng mức sử dụng bộ nhớ GPU so với tổng giới hạn khả dụng.
+Tổng mức sử dụng bộ nhớ video chuyên dụng và bộ nhớ GPU dùng chung.
+Tổng byte nhận tích lũy trên mọi giao diện mạng đang hoạt động kể từ lần khởi động hệ thống này.
+Tổng byte gửi tích lũy trên mọi giao diện mạng đang hoạt động kể từ lần khởi động hệ thống này.
+Tổng lưu lượng nhận và gửi tích lũy.
+TTL của phản hồi ICMP thành công gần nhất; 0 đối với TCP/UDP.
+Loại bộ nhớ do SMBIOS báo cáo, chẳng hạn DDR4 / DDR5 / LPDDR5.
+Trạng thái giá trị Registry EnableLUA.
+Số điểm cuối lắng nghe UDP đang hoạt động do IPGlobalProperties trả về.
+Độ lệch múi giờ hiện tại so với UTC tính bằng giờ.
+Độ lệch UTC hiện tại; Đồng hồ thế giới dùng độ lệch cố định đã chọn.
+Dấu thời gian Unix hiện tại tính bằng mili giây (ms).
+Dấu thời gian Unix hiện tại tính bằng giây (s).
+InstalledOn mới nhất trong Win32_QuickFixEngineering.
+Tổng tốc độ tải lên tức thời của mọi giao diện mạng kết nối, không gồm loopback.
+Tổng tốc độ tải lên hệ thống đổi sang Mbps.
+Số giây Windows đã hoạt động kể từ lần khởi động hệ thống này.
+Thời gian hệ thống hoạt động dưới dạng văn bản dễ đọc.
+Mức sử dụng tức thời cao nhất của các engine 3D trên GPU được chọn.
+Thống kê trượt mức sử dụng CPU trong 15 phút gần nhất kể từ khi kích hoạt biến.
+Thống kê trượt mức sử dụng CPU trong 1 phút gần nhất kể từ khi kích hoạt biến.
+Thống kê trượt mức sử dụng CPU trong 5 phút gần nhất kể từ khi kích hoạt biến.
+Mức sử dụng tức thời cao nhất của các engine tính toán trên GPU được chọn.
+Mức sử dụng tức thời cao nhất của các engine sao chép trên GPU được chọn.
+Mức sử dụng CPU cao nhất trong cửa sổ lấy mẫu gần nhất, tối đa 15 phút.
+Mức sử dụng tức thời cao nhất của các engine giải mã video trên GPU được chọn.
+Mức sử dụng tức thời cao nhất của các engine mã hóa video trên GPU được chọn.
+Tổng mức sử dụng CPU hiện tại của toàn máy tính.
+Bộ nhớ vật lý hiện đang dùng.
+Miền Windows hoặc tên máy tính của người dùng hiện tại.
+Tỷ lệ thời gian CPU thực thi mã ở chế độ người dùng.
+Tỷ lệ thông lượng toàn hệ thống ước tính so với tổng tốc độ liên kết giao diện hoạt động.
+Phát hiện VPN dựa vào các giao diện hoạt động như Tunnel, PPP, WireGuard và Wintun.
+Tổng dung lượng bộ nhớ video chuyên dụng của GPU được chọn.
+Phiên bản sản phẩm Endfield Charge Plus.
+Không gian địa chỉ ảo hiện khả dụng của hệ thống.
+Giới hạn kết hợp mọi màn hình hoạt động trong CoreGraphics, tính bằng điểm lôgic.
+Tổng chiều cao màn hình nền ảo trên nhiều màn hình.
+Kích thước bộ nhớ ảo của tiến trình ứng dụng hiện tại.
+Tổng không gian địa chỉ ảo do hệ thống báo cáo.
+Tỷ lệ bộ nhớ ảo đã dùng so với tổng bộ nhớ ảo.
+Không gian địa chỉ ảo hệ thống đang sử dụng.
+Giới hạn kết hợp mọi màn hình hoạt động trong CoreGraphics, tính bằng điểm lôgic.
+Tổng chiều rộng màn hình nền ảo trên nhiều màn hình.
+Tọa độ màn hình nền toàn cục CoreGraphics tính bằng điểm lôgic.
+Tọa độ cạnh trái màn hình nền ảo trên nhiều màn hình.
+Tọa độ màn hình nền toàn cục CoreGraphics tính bằng điểm lôgic.
+Tọa độ cạnh trên màn hình nền ảo trên nhiều màn hình.
+Điện áp tức thời từ giao diện pin Windows; một số thiết bị có thể không cung cấp.
+Điện áp lõi GPU do cảm biến giám sát phần cứng báo cáo.
+Số bản phân phối WSL mà người dùng hiện tại đã đăng ký.
+Danh sách bản phân phối do wsl -l -q trả về.
+Tổng working set của vmmemWSL/vmmem.
+Phát hiện tệp thực thi WSL và các bản phân phối đã đăng ký.
+Số giây đã trôi qua kể từ thứ Hai tuần này.
+Số tuần hiện tại theo quy tắc ISO.
+Tỷ lệ thời gian đã trôi qua từ 00:00 thứ Hai tuần này đến 00:00 thứ Hai tuần sau.
+Số giây còn lại đến thứ Hai tuần sau.
+Băng tần giao diện WLAN hiện tại; hệ thống mới đọc Band trực tiếp, hệ thống cũ ước tính nếu xác định được.
+Kênh không dây của giao diện WLAN hiện tại.
+Loại vô tuyến WLAN hiện tại, chẳng hạn 802.11ax.
+Tốc độ trình bày hoặc cập nhật hình ảnh thực đo của cửa sổ được chọn. Windows đếm luồng trình bày chủ đạo của cửa sổ đó; các cửa sổ khác thuộc cùng tiến trình được đếm riêng.
+Tốc độ khung hình thực chia tốc độ tương ứng 100% trong cấu hình.
+Trạng thái thu thập thực tế và lý do không khả dụng.
+Số bản cập nhật chưa cài và không bị ẩn do Microsoft.Update.Session tìm được.
+Trạng thái tổng hợp từ cờ cần khởi động lại và kết quả tìm bản cập nhật khả dụng.
+Bộ nhớ working set hiện tại của Endfield Charge Plus.
+Chuyển đổi thời gian thực bằng China Standard Time của Windows.
+Chuyển đổi thời gian thực bằng GMT Standard Time của Windows.
+Chuyển đổi thời gian thực bằng Eastern Standard Time của Windows.
+Chuyển đổi thời gian thực bằng Tokyo Standard Time của Windows.
+Số giây đã trôi qua trong năm này.
+Tỷ lệ thời gian đã trôi qua từ ngày 1 tháng 1 năm nay đến ngày 1 tháng 1 năm sau.
+Số giây còn lại đến ngày 1 tháng 1 năm sau.
+Năm hiện tại.
+Độ trễ hiện tại
+Độ lệch UTC cục bộ hiện tại; đồng hồ thế giới dùng độ lệch cố định đã chọn.
+Tỷ lệ mất gói hiện tại
+Khung giờ hiện tại
+Trạng thái hiện tại
+Giờ hiện tại
+Loại kết nối hiện tại: WIFI / CELLULAR / ETHERNET / VPN / NONE.
+Phiên bản hiện tại
+Tên thứ hiện tại; các khóa tương ứng trên máy tính là time.day_of_week / time.day_of_week_en.
+Giá trị hiện tại: {0}. Đơn vị: {1}.
+Giá trị hiện tại: {0}.
+Phiên bản hiện tại: v0.1.2
+Hiện tại: v0.1.3
+Phiên bản hiện tại: v{0}
+Đang hoạt động
+Đang chỉnh sửa
+Tùy chỉnh
+Tọa độ riêng
+Dữ liệu tùy chỉnh
+Cấu hình tùy chỉnh
+Cấu hình tùy chỉnh {0}
+Tọa độ riêng
+Giá trị tùy chỉnh từ nguồn HTTP / JSON.
+Hoạt ảnh chuyển
+Số chu kỳ
+Hàng đợi luân phiên
+Luân phiên theo danh sách bên dưới.
+Hàng đợi luân phiên
+Hoạt ảnh chuyển khi luân phiên
+Luân phiên hàng đợi theo thứ tự; hàng đợi chỉ tham chiếu các cấu hình hiện có.
+Từ trên xuống rồi về đầu. Danh sách tham chiếu cấu hình hiện có.
+Chuyến đi xe đạp, nhấp chuột và hoạt hình
+Tỷ lệ hoạt động ổ D:
+Hệ thống tệp ổ D:
+Dung lượng trống ổ D: (byte)
+Tình trạng ổ D:
+I/O ổ D: (B/s)
+Nhãn ổ D:
+Số phân vùng ổ D:
+Thời gian bật nguồn ổ D: (giờ)
+Độ dài hàng đợi ổ D:
+Tốc độ đọc ổ D: (B/s)
+Trạng thái SMART ổ D:
+Nhiệt độ ổ D:
+Tổng dung lượng ổ D: (byte)
+Trạng thái TRIM ổ D:
+Mức sử dụng ổ D:
+Dung lượng đã dùng ổ D: (byte)
+Tốc độ ghi ổ D: (B/s)
+Độ trễ DNS (ms)
+Thời gian phân giải DNS
+Máy chủ DNS
+Thời gian DPC
+Mục tiêu hằng ngày
+Mục tiêu hằng ngày (HH:mm:ss)
+Tối
+Dữ liệu khả dụng
+Quản lý dữ liệu
+Thuộc tính dữ liệu
+Cấu hình nguồn dữ liệu
+Nguồn dữ liệu
+Tổng dữ liệu
+Mức sử dụng dữ liệu
+Dữ liệu đã dùng
+Dữ liệu của '{0}' không khả dụng hoặc không hợp lệ. Kiểm tra ROOT/quyền, khả năng hỗ trợ thiết bị, cửa sổ được chọn và cài đặt nguồn dữ liệu.
+Dữ liệu của các cấu hình HUD sau không khả dụng hoặc không hợp lệ:
+Chu kỳ lấy mẫu dữ liệu / ms
+Chu kỳ lấy mẫu / giây
+Chu kỳ lấy mẫu / giây (mọi HUD)
+Đã thêm nguồn dữ liệu.
+Các cấu hình nguồn dữ liệu:
+Đã xóa nguồn dữ liệu.
+Ngày
+Ngày và giờ
+Ngày
+Thời gian đã qua trong ngày (giây)
+Ngày trong tuần
+Tên thứ bằng tiếng Anh
+Ngày trong năm
+Tiến độ trong ngày
+Thời gian còn lại trong ngày (giây)
+Tổng bộ nhớ video chuyên dụng (byte)
+Mức dùng bộ nhớ video chuyên dụng
+Bộ nhớ video chuyên dụng đã dùng (byte)
+API DeepSeek
+Nguồn DeepSeek API
+Số dư DeepSeek
+DeepSeek cân bằng và thời gian đỉnh cao
+Giờ cao điểm chính thức DeepSeek (Bắc Kinh)
+DeepSeek {deepseek.period.name}
+Cổng mạng mặc định
+Màu nhấn mặc định và các quy tắc màu theo điều kiện.
+Đã khôi phục cài đặt mặc định.
+Lần quét Defender gần nhất
+Trạng thái Defender
+Mối đe dọa Defender
+Xóa
+Sức khỏe theo dung lượng hiện tại so với thiết kế
+Dung lượng thiết kế (Wh)
+Dung lượng thiết kế (mWh)
+Lớp màn hình nền
+Kho mã bản máy tính
+Chi tiết
+Đang phát hiện…
+Công cụ phát triển
+Thiết bị
+Số thiết bị
+Danh sách thiết bị
+Nhà sản xuất thiết bị
+Mẫu thiết bị
+Thời gian thiết bị hoạt động
+Dhaka, Thimphu
+Báo cáo chẩn đoán
+Đã tắt
+Bỏ thay đổi
+Công suất xả (W)
+Đang xả
+Ổ đĩa
+Đóng
+Màn hình
+Hiển thị và vị trí
+Khán giả: hiển thị, vị trí, ngoại hình và lấy mẫu HUD Nội dung: hồ sơ, xe đạp và các quy tắc kích hoạt Quản lý dữ liệu: Thư viện biến, dữ liệu phần cứng và cấu hình nguồn dữ liệu Các tính năng thử nghiệm: nhiều HUDs. Về: cập nhật, sao lưu và bảo trì.
+Nội dung hiển thị
+Văn bản tốc độ tải xuống
+FPS màn hình
+FPS màn hình (Chạy với quyền quản trị)
+Tỷ lệ FPS màn hình
+Trạng thái FPS màn hình
+Chế độ hiển thị
+Tên màn hình
+Tỷ lệ màn hình
+Tiến trình hiển thị
+Trạng thái hiển thị
+Văn bản trạng thái hiển thị
+Văn bản tốc độ tải lên
+Khám chiếu phiên bản truyền thông Windows trong HUD.
+Tùy chọn tốc độ khung hình màn hình
+Chế độ hiển thị
+Màn hình {0} · {1}×{2}{3}
+Khán giả, vị trí và ngoại hình
+Container Docker
+Image Docker
+Docker đang chạy
+Miền
+Không cảnh báo lại về dữ liệu này
+Xong
+Xuống
+Tải xuống
+Tốc độ tải xuống (B/s)
+Tốc độ tải xuống (Mbps)
+Chỉ tải xuống
+Tốc độ tải xuống
+Đang tải trình điều khiển chính thức; mở bộ cài sau xác minh.
+Vị trí đã kéo · khôi phục điểm neo đã chọn
+Được phép hiển thị trên ứng dụng khác.
+Ngày trình điều khiển
+Phiên bản trình điều khiển
+Đã cài trình điều khiển. Thoát hẳn rồi mở ECP bằng quyền quản trị.
+Dubai, Abu Dhabi
+Nhân bản
+Thời lượng
+Thời lượng / giây
+Ứng dụng ECP
+Mỗi HUD có cấu hình, luân phiên, phông chữ, kích thước, chế độ hiển thị và màn hình đích riêng. Chọn một HUD rồi chỉnh trong hai thẻ đầu; Định vị mở cài đặt vị trí. Viền cam và nhãn Đang chỉnh sửa luôn đánh dấu HUD được chọn khi Cài đặt mở. Dùng Lưu và Áp dụng sau khi thêm hoặc xóa HUD; đóng Cài đặt sẽ xóa viền. Chu kỳ lấy mẫu và chuyển bằng nhấp được dùng chung, có thể chỉnh từ bất kỳ HUD nào; ngôn ngữ và khởi động là toàn cục. Tối đa 16 HUD.
+Giờ miền Đông (Mỹ và Canada)
+Đang chỉnh sửa: 
+Tỷ lệ thời gian đã trôi qua từ 00:00 hôm nay đến 00:00 ngày mai; danh mục máy tính dùng tên time.day.progress.
+Đăng và chọn các ví dụ.
+Bật luân phiên tự động
+Cho phép click cycling để tiến qua hàng đợi ngay cả khi tự động tắt. Mỗi HUD tiến lên phiên bản riêng của nó và đặt lại bộ hẹn giờ chu kỳ của nó.
+Bật vùng chuột gọi HUD
+Bật nhiều HUD
+Khả năng nhiều HUD dưới các tính năng thử nghiệm, thêm/chên một HUD thứ cấp và chọn nó để chỉnh sửa. HUD được chọn được nhấn mạnh. Lưu và áp dụng một bản sao mới trước khi xem trước nó.
+Bật quyền thông báo cho ứng dụng.
+Bật phép dò
+Động cơ chuyển đổi HUD Master trong mục Hiển thị và vị trí; bật Luôn hiển thị cho HUD bền vững. Chọn một hồ sơ tích hợp trong mục Nội dung HUD → HUD Configuration và xem trước nó. Bấm Lưu và áp dụng ở phía trên bên phải để áp dụng các cài đặt cho HUD đang chạy.
+Bật quy tắc này
+Đã bật
+Đã bật: {0}
+Kho lưu trữ mã hóa không khả dụng, nên không thể lưu khóa API an toàn.
+Kho lưu trữ mã hóa không khả dụng; khóa API chưa được lưu.
+Cài đặt Endfield Charge Plus
+Endfield Charge Plus đang chạy
+Có bản cập nhật Endfield Charge Plus
+HUD trạng thái phong cách Endfield
+Điểm cuối
+Tiếng Anh
+Nhập #RRGGBB hoặc #AARRGGBB.
+Nhập khóa API DeepSeek trong mục Quản lý dữ liệu → Cấu hình nguồn dữ liệu, sau đó Lưu và áp dụng.Các khóa được mã hóa cho người dùng Windows hiện tại và có thể cần phải nhập lại cho một tài khoản hoặc máy khác.Đường cửa sổ đỉnh sử dụng thời gian Bắc Kinh và lịch lễ Trung Quốc; ngày làm nở cuối tuần vẫn không có đỉnh.
+Nhập một số.
+Nhập thời gian từ 00:00:00 đến 23:59:59.
+Nhập một số nguyên.
+Nhập khóa API trước.
+Nhập URL HTTP/HTTPS GET trả về JSON và đặt tên cho nguồn.\nÁnh xạ các đường dẫn trong phản hồi, như data.value hoặc players[0].name, tới tên biến.\nĐặt các tiêu đề yêu cầu cần thiết và khoảng làm mới tính bằng giây, bật nguồn rồi chọn Lưu và áp dụng.\nTìm custom.<source>.<variable> trong thư viện biến và dùng biến đó trong hồ sơ.
+Nhập URL http/https.
+Lỗi
+Ước tính thời gian đến khi hết pin
+Ước tính thời gian đến khi đầy pin
+Năng lượng sạc đầy ước tính
+Eucla
+Hiện theo sự kiện
+Các quy tắc kích hoạt sự kiện
+Thoát
+Tính năng thử nghiệm
+Các thử nghiệm đa HUDs
+Xuất
+Xuất cấu hình Endfield Charge Plus
+Xuất cấu hình
+Xuất thất bại.
+Xuất thất bại. Xem nhật ký.
+Xuất chẩn đoán phần cứng
+Xuất khẩu cài đặt hoặc tạo sao lưu dưới Giới thiệu → Configuration & Maintenance.Import khôi phục lại một thiết lập hoàn chỉnh.Lưu trữ trước khi chỉnh sửa đáng kể.Các bí mật được mã hóa cho người dùng hiện tại có thể cần phải nhập lại trên máy tính hoặc tài khoản khác.
+Xuất khẩu, nhập khẩu và sao lưu
+Đã xuất.
+Biểu thức
+Số chia trong biểu thức không được bằng 0
+Lỗi biểu thức
+Lỗi biểu thức (vị trí {0}): {1}
+Các hàm biểu thức: len, contains, startswith, endswith, upper, lower, concat. Chuyển đổi kiểu bằng number, string hoặc bool; kiểm tra giá trị bằng isnull, isempty và isnan. Chuỗi định dạng của mã thay thế hỗ trợ upper/lower, sub:start:length với chỉ số bắt đầu từ 0, replace:old:new và math:add/sub/mul/div/round/floor/ceil/abs.
+FPS và GPU mục tiêu
+FPS tính từ dấu thời gian của các khung hình thực được hiển thị trên lớp SurfaceFlinger đã chọn.
+Tên màn hình đo FPS
+FPS chia cho tốc độ khung hình tương ứng 100% đã đặt trong hồ sơ.
+Tên cửa sổ đo FPS
+Thất bại
+Số quạt
+Tốc độ quạt (tổng hợp)
+Phần trăm tốc độ quạt (tổng hợp)
+Nhanh (độ trễ)
+Ánh xạ trường (mỗi dòng một biến = đường dẫn JSON)
+Số tệp
+Tìm và sao chép biến số
+Tìm đúng trang
+Kích hoạt khi sai thành đúng. Nhận true/false và 0/khác 0.
+Kích hoạt khi so sánh đúng; có thể lặp sau thời gian chờ nếu điều kiện còn đúng.
+Kích hoạt khi đổi giá trị, bỏ qua toán tử và ngưỡng. Thiếu dữ liệu và mẫu đầu khi phục hồi không kích hoạt.
+Cấu hình tường lửa
+Trạng thái tường lửa
+Đã tải mặc định ban đầu. Nhấn Lưu và áp dụng.
+Số ổ cố định
+Dung lượng trống ổ cố định (byte)
+Danh sách ổ cố định
+Tổng dung lượng ổ cố định (byte)
+Mức sử dụng ổ cố định
+Dung lượng đã dùng ổ cố định (byte)
+Nhấn vào hộp tắt và nhấn Ctrl hoặc Alt bằng một chữ cái, chữ số hoặc phím chức năng, sau đó Lưu và áp dụng. F12 và các kết hợp được đặt lại sẽ bị từ chối. Nếu đăng ký xung đột, lối tắt trước đó vẫn hoạt động.
+Theo hệ thống
+Tỷ lệ chữ
+Dịch vụ nền trước
+Đã khai báo quyền dịch vụ nền trước cho HUD.
+Kiểu dáng
+Định dạng
+Tìm thấy v{0}. Chạm để xem các bản phát hành.
+Tìm thấy {0}. Xem chi tiết cập nhật trong Giới thiệu.
+Tốc độ khung ở 100% / FPS
+Mục tiêu FPS
+Phiên bản framework
+Bộ nhớ trống
+Tỷ lệ trống
+Tần số GHz
+Tần số MHz
+Tỷ lệ tần số
+Từ nguồn HTTP/JSON đã cấu hình; ánh xạ trường xác định ý nghĩa chỉ số.
+Đầy đủ
+Thời gian dùng pin đầy (giây)
+Độ trễ tương ứng 100% (ms)
+Dung lượng sạc đầy (Wh)
+Dung lượng sạc đầy (mWh)
+Năng lượng khi sạc đầy được ước tính từ năng lượng còn lại và tỷ lệ điện tích, không phải dung lượng thiết kế định mức.
+Đầy đủ: thu mục trước rồi hiện mục sau với tiêu đề và gợn.
+Đầy đủ: tiêu đề, gợn và đổi hình trước HUD cuối.
+Hàm clamp yêu cầu min <= max
+Hàm sign không chấp nhận NaN
+Hàm {0} yêu cầu 1–2 đối số
+Hàm {0} yêu cầu ít nhất {1} đối số
+Hàm {0} yêu cầu {1} đối số
+URL GET
+GPU
+Thiết bị GPU
+Tần số GPU
+Mẫu GPU
+Nhiệt độ GPU
+Tên tiến trình dùng GPU cao nhất
+Mức sử dụng GPU của tiến trình cao nhất
+Mức sử dụng GPU
+Tần số GPU
+Tần số GPU; Android không có API công khai và các node nhà sản xuất khác nhau giữa thiết bị.
+Bộ nhớ GPU
+Mẫu GPU từ node KGSL của nhà sản xuất; phụ thuộc thiết bị và quyền Root.
+Nhiệt độ GPU
+Nhiệt độ GPU; Android không có API công khai (xem androidNote).
+Mức sử dụng GPU
+Pin tay cầm
+Số tay cầm
+Tên tay cầm
+Nhận HUD trên màn hình, sau đó tùy chỉnh nó.
+Bắt đầu sử dụng
+Nhánh Git
+Commit Git gần nhất
+Trạng thái Git
+Cho mỗi HUD nội dung và vị trí riêng của nó.
+Scale Global thay đổi toàn bộ kích thước HUD; độ mờ kiểm soát khả năng hiển thị của nó. Chọn phông chữ thay đổi độ phân phối văn bản, với hệ thống fallback cho các glyphs thiếu. Khán giả thời gian hiển thị kiểm soát thời gian tạm thời; bounce và ripple kiểm soát thay đổi hình ảnh chuyển động. Reset Size & Animation khôi phục nhóm giá trị này; sử dụng Lưu và áp dụng sau đó.
+Cỡ chữ và tỷ lệ giao diện toàn cục
+Phiên bản Golang
+Cấp quyền truy cập
+Đã cấp
+Số dư tín dụng miễn phí
+Tên bộ điều hợp đồ họa đọc qua EGL; khóa tương ứng trên máy tính là gpu.name.
+Nhóm theo chức năng; trạng thái thông dụng và số liệu tức thời đứng trước, sau đó là các giá trị chi tiết. Tìm theo tên, khóa hoặc danh mục.
+Nguồn HTTP / JSON
+Trường HTTP
+Ánh xạ trường HTTP/JSON
+Cấu hình HUD
+Nội dung HUD
+Nội dung và dữ liệu HUD
+Bật/tắt HUD
+Độ mờ HUD
+Cấu hình HUD
+CÀI ĐẶT HUD
+Tỷ lệ HUD
+Nội dung HUD / kích hoạt theo sự kiện
+Nội dung HUD / quy tắc
+Cảnh báo dữ liệu HUD
+Cảnh báo dữ liệu HUD
+Phông chữ HUD
+Bật/tắt HUD
+Độ mờ HUD
+Tỷ lệ HUD
+Dịch vụ HUD
+Trạng thái HUD
+Số handle
+Dữ liệu phần cứng
+Thông tin phần cứng
+Bộ nhớ dành riêng cho phần cứng (byte)
+Cảm biến phần cứng
+Khả năng phần cứng
+Chưa quét khả năng phần cứng.
+Đã dò lại khả năng phần cứng.
+Chu kỳ lấy mẫu phần cứng / giây
+Các cảm biến phần cứng và trình điều khiển
+Các biến phần cứng và chìa khóa di sản
+Có hình ảnh
+Có văn bản
+Hawaii
+Header (mỗi dòng một Key: Value)
+Header và ánh xạ trường không được là null.
+Tỷ lệ sức khỏe
+Tải cao: cpu.usage, Ngưỡng >= 90 và thời gian chờ giữa các lần kích hoạt là 30 giây. Theo dõi thay đổi bằng media.title ở chế độ thay đổi giá trị với thời gian chờ phù hợp. Hãy xác nhận biến trả về dữ liệu hợp lệ trước khi sử dụng quy tắc kích hoạt.
+Cần cập nhật lịch ngày nghỉ
+Tên máy chủ
+Không tới được máy chủ
+Các vùng nóng có sẵn với Luôn hiển thị off. Đặt neo, kích thước, sự thay đổi và thời gian lưu trú. Khu vực sử dụng giới hạn màn hình mục tiêu đầy đủ và được gắn vào màn hình. lưu trú trong khoảng thời gian được chọn để gọi; rời và nhập lại để tái trang bị. Bạn có thể tiến bộ vòng xoắn trên mỗi cuộc gọi.
+Lệch X vùng / px
+Lệch Y vùng / px
+Thời gian lưu chuột
+Cao vùng / px
+Vị trí vùng
+Rộng vùng / px
+Nhiệt độ điểm nóng
+Giờ
+Trạng thái Hyper-V
+Ưu tiên ICMP; mạng hạn chế sẽ chuyển sang TCP / UDP. Đích và cổng lấy từ cấu hình đang hoạt động.
+ICMP dùng Ping; TCP đo trễ kết nối; UDP gửi dữ liệu rồi chờ dịch vụ trả lời.
+Dò ICMP, TCP hoặc UDP đến đích đã đặt; yêu cầu thất bại báo trạng thái không rõ.
+Địa chỉ IPv4
+Tra cứu IPv4 thất bại
+IPv4, IPv6 hoặc tên máy chủ.
+IPv4, IPv6 hoặc tên máy chủ; cổng chỉ dùng với TCP / UDP.
+IPv4, IPv6 hoặc tên máy.
+Địa chỉ IPv6
+Tra cứu IPv6 thất bại
+Biểu tượng và vòng tiến độ
+Biểu tượng và vòng tiến độ
+IDE đang chạy
+Nhàn rỗi
+Tỷ lệ nhàn rỗi
+Kích thước hình ảnh
+Ngay lập tức
+Nhập
+Nhập cấu hình Endfield Charge Plus
+Nhập cấu hình
+Nhập thất bại. Xem nhật ký.
+Nhập thất bại: tệp không hợp lệ hoặc không đọc được.
+Không áp dụng được khởi động đã nhập. Kiểm tra ứng dụng khởi động Windows.
+Trong AIDA64 Preferences → Hardware Monitoring → External Applications, chọn các mục cần xuất rồi bật bộ nhớ dùng chung, Registry hoặc WMI. Giữ AIDA64 chạy, sau đó làm mới Dữ liệu phần cứng trong ECP. ECP đọc mọi dữ liệu thực sự được xuất, gồm số, thông số thời gian và văn bản; các trường không được xuất hoặc bị giới hạn bởi giấy phép vẫn không khả dụng.
+Gồm thông tin thiết bị, khả năng, quyền và cấu hình có thể chia sẻ với nhà phát triển.
+Các thiết lập độc lập và chia sẻ
+Các cảm biến cá nhân và bản tóm tắt
+Thông tin
+Các mẫu ban đầu và các mẫu được phục hồi thiết lập một đường cơ sở mà không xuất hiện. Mỗi quy tắc có độ làm mát của riêng mình; một ngưỡng duy trì có thể kích hoạt lại sau khi hết hạn. Các quy tắc phù hợp gọi mục tiếp theo trong hàng đợi của trường hợp đó, hoặc hồ sơ hoạt động cho một hàng đợi trống. Các quy tắc chỉ hoạt động trong chế độ tạm thời. Yêu cầu từ vùng kích hoạt được ưu tiên; vùng kích hoạt và quy tắc tiến trong hàng đợi độc lập. Dữ liệu vẫn được lấy khi HUD hiển thị theo chu kỳ chung và chu kỳ của nguồn. Các sự kiện phát hiện khi đang bận được gộp và giữ lại.
+Chèn biến
+Kiểm tra số lượng đọc thực tế và giải quyết các vấn đề về trình điều khiển.
+Kiểm tra, tìm kiếm, sao chép và xuất khẩu
+Cài đặt / cập nhật PawnIO
+Tên phiên bản HUD
+Số lệnh mỗi giây
+Số nguyên
+Giao diện
+Tên giao diện mạng
+Loại giao diện mạng
+Ngôn ngữ giao diện
+Ngôn ngữ giao diện và hệ thống mặc định của giao diện
+Tên giao diện của mạng mặc định (LinkProperties.interfaceName).
+Phía tây đường đổi ngày quốc tế
+Ngắt
+Chu kỳ / giây
+Quy tắc màu không hợp lệ ở dòng {0}. Ví dụ: cpu.usage >= 80 => #FF4D4F
+Số không hợp lệ: {0}
+Tuyến không hợp lệ
+Nguồn không hợp lệ; giữ thiết lập hợp lệ trước:
+Đích không hợp lệ
+Cuối tuần
+Tạm dừng
+Đang phát
+Islamabad, Karachi
+Ngày giờ ISO
+Thiết lập JSON
+Thiếu đường dẫn JSON: 
+Giá trị JSON là null
+Phiên bản Java
+Jitter (ms)
+KB/s / MB/s (Tự động)
+KB/s · MB/s (tự động)
+Kabul
+Kathmandu
+Giữ cấu hình của bạn và kiểm tra các lỗi.
+Duy trì hoạt động HUD nổi của Endfield Charge Plus.
+Giữ HUD được neo tránh thanh trạng thái và phần khuyết màn hình.
+Mức sử dụng chế độ kernel
+Tên bàn phím
+Bộ nhớ đệm L2 (KB)
+Bộ nhớ đệm L3 (KB)
+Trạng thái LLM cục bộ
+Hướng có tốc độ lớn hơn
+max(Tải xuống, Tải lên)
+Chu kỳ lớn cập nhật phần cứng ít hơn; đồng hồ vẫn mỗi giây.
+Lần thành công gần nhất
+Cập nhật gần nhất
+Lỗi gần nhất
+Độ trễ (ms)
+Tiến trình độ trễ
+Văn bản độ trễ
+Để sau
+Trạng thái dò mới nhất; khóa tương ứng trên máy tính là probe.status_text.
+Phiên bản mới nhất
+Phiên bản mới nhất: Kiểm tra thất bại
+Phiên bản mới nhất: Chưa kiểm tra
+Phiên bản mới nhất: Hết thời gian; thử lại
+Phiên bản mới nhất: Không có dữ liệu
+Phiên bản mới nhất: v{0}
+Lớp hiển thị
+Chì-axit
+Biểu tượng trái
+Thông tin chính bên trái
+Biểu tượng trái
+Thông tin chính bên trái
+Thông tin chính bên trái / Tiêu đề
+Thông tin chính bên trái
+Thông tin chính bên trái
+Còn {0:0}%
+Còn lại {0}%
+Cho HUD hiển thị trên các ứng dụng khác; chỉ yêu cầu khi bạn bật HUD nổi.
+Lithium-ion
+Lithium-polymer
+Giấy phép
+Quần đảo Line
+Tốc độ liên kết (B/s)
+Xem trước trực tiếp
+API cập nhật trực tiếp
+Thiết bị không hỗ trợ hoặc chưa cấp quyền cập nhật trực tiếp.
+Đã tải {0} nguồn HTTP
+Giờ cục bộ của truy vấn số dư thành công gần nhất.
+Định vị và sửa HUD đã chọn
+Nhật ký
+Số CPU lôgic ứng dụng có thể dùng từ Runtime.availableProcessors; giới hạn nguồn hoặc tiến trình có thể ảnh hưởng số lượng.
+Bộ xử lý lôgic
+Nhật ký
+Nhật ký và đặt lại
+Đã mở thư mục nhật ký.
+Đảo Lord Howe
+Tỷ lệ mất gói
+Mất {probe.loss_percent|0}
+Đã mất
+Bộ nhớ thấp
+Nhiệt độ, công suất và điện áp cấp thấp cần PawnIO cùng quyền quản trị. Người dùng AIDA64 có thể bật bộ nhớ chia sẻ, Registry hoặc WMI tại Preferences → Hardware Monitoring → External Applications; mọi mục được xuất đều có ở đây. Số liệu không có hiện --.
+Tên máy tính
+Thông tin chính bên trái; phần trăm, tiến độ hoặc trạng thái bên phải.
+Nhà sản xuất
+Ánh xạ trường GET JSON sang custom.source.variable; header có thể tham chiếu biến môi trường.
+Quần đảo Marquesas
+Tần số tối đa (GHz)
+Tần số tối đa (MHz)
+Độ trễ tối đa (ms)
+Tốc độ liên kết tối đa (B/s)
+Tối đa
+Mbps là megabit/giây; KB/s và MB/s đổi tự động theo tốc độ.
+Thời gian khứ hồi HTTP của yêu cầu chính thức /user/balance gần nhất; yêu cầu số dư được lưu đệm 1 phút.
+IP thực từ phản hồi Ping; với tên miền, địa chỉ cuối xuất hiện sau khi phân giải thành công.
+Độ trễ trung bình của 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+Thời gian hệ thống cục bộ phân giải one.one.one.one; có thể chịu ảnh hưởng của bộ nhớ đệm DNS.
+Biến tương thích: tổ hợp địa chỉ và cổng hiện tại.
+Mô tả lỗi hoặc trạng thái của phép dò thất bại gần nhất.
+Độ trễ ứng với 100% vòng Ping, cố định ở 999 ms.
+Trung bình trị tuyệt đối chênh lệch độ trễ giữa các mẫu thành công liền kề gần nhất của đích hiện tại, dùng ước tính jitter mạng.
+Giờ cục bộ của phản hồi thành công gần nhất từ đích hiện tại.
+Độ trễ khứ hồi hoặc kết nối của phép dò thành công gần nhất; phép dò thất bại được coi là 999 ms.
+0 ms ứng với 0%, từ 999 ms trở lên ứng với 100%; phù hợp cho vòng độ trễ.
+Văn bản như “20ms” khi thành công, hoặc trạng thái hết thời gian/lỗi khi thất bại.
+Tỷ lệ mất gói trong 20 phép dò gần nhất đến đích hiện tại.
+Số mẫu Ping thất bại hoặc hết thời gian đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Độ trễ cao nhất trong 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+Độ trễ thấp nhất trong 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+Lần ICMP Ping gần nhất có thành công hay không.
+Biến tương thích: cổng TCP/UDP; 0 đối với ICMP.
+Độ trễ đổi thành tiến trình vòng: 0 ms là 0%, từ 999 ms là 100%; hết thời gian hoặc thất bại là 100%.
+Biến tương thích: giao thức dò mạng hiện tại, ICMP, TCP hoặc UDP.
+Số mẫu Ping thành công đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Tên trạng thái gốc do System.Net.NetworkInformation.IPStatus trả về.
+Số mẫu Ping đến đích hiện tại trong cửa sổ thống kê trượt gần nhất.
+Trạng thái dò gần nhất, như “Trực tuyến”, “Hết thời gian” hoặc “Không thể truy cập”.
+Địa chỉ IP hoặc tên máy chủ mà cấu hình hiện tại đang dò.
+Giới hạn chờ phản hồi của một Ping.
+TTL của phản hồi thành công gần nhất.
+Đo được: {0} ({1}).
+Giá trị đo {0}.
+Đa phương tiện
+Thông tin đa phương tiện khả dụng
+Thông tin truyền thông & tiến bộ
+Ứng dụng nguồn đa phương tiện
+Thông tin đa phương tiện không khả dụng
+Bộ nhớ
+Xung nhịp bộ nhớ (MHz)
+Nhiệt độ tiếp giáp bộ nhớ
+Tổng bộ nhớ (byte)
+Bộ nhớ đã dùng (byte)
+Chi tiết bộ nhớ
+Mức sử dụng bộ nhớ
+Mili giây
+Độ trễ tối thiểu (ms)
+Tối thiểu
+Phút
+Thiếu '{0}'
+Thiếu dấu nháy đóng
+Bộ nhớ đã sửa đổi (byte)
+Đã tạo bản sao sửa đổi; cấu hình tích hợp giữ nguyên.
+Số chia của phép lấy dư không được bằng 0
+Thứ Hai–Sáu trừ lễ Trung Quốc; cuối tuần vẫn thấp điểm kể cả làm bù.
+Số màn hình
+Tháng
+Thời gian đã qua trong tháng (giây)
+Tên tháng
+Tiến trình tháng
+Thời gian còn lại trong tháng (giây)
+Thêm
+Moscow, Riyadh
+Nhà sản xuất bo mạch chủ
+Mẫu bo mạch chủ
+Nhiệt độ bo mạch chủ (tổng hợp)
+Giờ miền Núi (Mỹ và Canada)
+Tên chuột
+Chuyển ứng dụng vào Applications trước khi bật chạy lúc đăng nhập.
+Nhiều phiên bản HUD
+Tên
+Tên (tiền tố biến)
+Màn hình đích đang đo tốc độ khung hình.
+Tên tiến trình dùng GPU cao nhất trong bộ đếm GPU Engine.
+Tên khe tay cầm XInput hiện được phát hiện.
+Tên máy chủ DNS.
+Tên bàn phím đầu tiên do Win32_Keyboard báo cáo.
+Tên máy tính Windows.
+Tên tháng theo ngôn ngữ và khu vực hiện tại.
+Tên thiết bị trỏ đầu tiên do Win32_PointingDevice báo cáo.
+Tên đầy đủ của mẫu bộ xử lý.
+Khung giờ hiện tại: PEAK hoặc OFF-PEAK.
+Tên gói nguồn Windows đang hoạt động.
+Tên hiển thị của cấu hình HUD được chọn.
+Tên thiết bị màn hình Windows đang hoạt động.
+Cung cấp khi phát hiện màn hình hoạt động thứ hai.
+Tên hiển thị của múi giờ cục bộ hiện tại.
+Tên tiến trình dùng CPU cao nhất trong mẫu gần nhất.
+Tên tiến trình có Windows PerfProc IODataBytesPersec cao nhất.
+Tên tiến trình có working set lớn nhất.
+Tên người dùng Windows hiện tại.
+Tên giao diện VPN hoạt động hiện được phát hiện.
+Cửa sổ đích đang đo tốc độ khung hình.
+Cập nhật trực tiếp gốc
+Đã bắt đầu cập nhật trực tiếp gốc
+Đã dừng cập nhật trực tiếp gốc
+Không hỗ trợ dấu ngoặc nhọn lồng nhau.
+Mạng
+Mạng đã kết nối
+Giao diện mạng
+Kiểm tra mạng
+Loại mạng
+Đơn vị mạng
+Truy cập mạng
+Đơn vị hiển thị mạng và cơ sở tính phần trăm.
+Lỗi mạng
+Tùy chọn mạng
+Hồ sơ mạng có thể tự chọn đơn vị byte hoặc dùng Mbps; 1 MB/s bằng 8 Mbps. Vòng so sánh tổng tốc độ, tải xuống, tải lên hoặc chiều có tốc độ lớn hơn với băng thông tham chiếu. Giá trị tham chiếu đặt thang 100%, không giới hạn tốc độ hay đo hiệu năng tối đa của mạng.
+Tốc độ mạng
+Lưu lượng mạng
+Loại mạng
+Không tới được mạng
+Mới
+New Delhi, Mumbai
+Quy tắc mới
+Newfoundland
+Chương sau →
+NiCd
+NiMH
+Không
+Không tìm thấy GPU
+Chưa có cấu hình hoạt động
+Không có thay đổi để lưu
+Không có tệp thiết lập để sao lưu.
+Không hỗ trợ bố cục tùy chỉnh
+Chưa cấu hình nguồn dữ liệu nào.
+Chưa có dữ liệu
+Không có đơn vị cố định
+Không
+Không xuất ra đảo động
+Không hỗ trợ chia trái/phải
+Chưa có mục nhật ký.
+Không tìm thấy chương
+Không có biến phù hợp.
+Hiện không có mạng khả dụng.
+Không tìm thấy bản phát hành đã công bố.
+Chưa có quy tắc.
+Chưa thu thập mẫu nào.
+Chưa nạp cấu hình nào.
+Chưa đặt phím tắt.
+Phiên bản Node.js
+Không
+Bộ nhớ nonpaged pool (byte)
+Không hoạt động
+Không áp dụng cho giao thức này
+Chưa được cấp quyền
+Không khả dụng trên thiết bị này
+Không khả dụng trên thiết bị hoặc trong tình huống này
+Chưa kiểm tra.
+Chưa cấp
+Không được bảo vệ
+Không chạy
+Không hỗ trợ
+Hệ thống không hỗ trợ
+Không có nội dung đang phát
+Không có thay đổi để lưu.
+Thông báo
+Quyền thông báo
+Đã yêu cầu quyền thông báo; HUD cần quyền này cho thông báo thường trực.
+Được phép gửi thông báo.
+Thông báo bị tắt
+Nukuʻalofa, Apia
+Số
+Các hàm số tham chiếu hàm số
+NVIDIA SMI khả dụng
+Đã hiểu
+Kiến trúc hệ điều hành
+Bản dựng hệ điều hành
+Mô tả hệ điều hành
+Phiên bản hệ điều hành
+Đã tắt
+Tắt để hiện tiến trình ngày đã qua; bật để hiện phần còn lại đến giờ mục tiêu hằng ngày.
+Thấp điểm
+Tắt: tiến độ hôm nay. Bật: tỷ lệ còn lại đến giờ mục tiêu tiếp theo.
+Khung giờ cao điểm chính thức (giờ Bắc Kinh)
+Bật
+Trên Android, cho phép hiển thị trên ứng dụng khác và thông báo, rồi khởi động HUD từ Trang chủ. Cài đặt được lưu tự động. Số đo phần cứng phụ thuộc vào quyền truy cập hệ thống. PawnIO và giao diện AIDA64 trên máy tính chỉ dành cho Windows. Android kiểm soát bố cục và cỡ chữ thông báo.
+Dùng pin
+Dùng pin
+Bật: giữ HUD hiển thị.\nTắt: thay đổi nguồn điện hiện Pin; đưa con trỏ vào vùng kích hoạt đã cấu hình trên màn hình đích để gọi cấu hình đang hoạt động.
+Bật: giữ HUD hiển thị.\nTắt: thay đổi nguồn điện hiện Pin; đưa con trỏ đến giữa cạnh trên màn hình đích để gọi cấu hình đang hoạt động.
+Khi các trường phần cứng tương đương được phát hiện, các mục di sản trùng lặp rời khỏi thư viện trong khi các hồ sơ hiện có tiếp tục hoạt động.Các khóa mới xác định một thiết bị và cảm biến cụ thể.Tóm tắt cao nhất/gần trung bình có ý nghĩa khác nhau và vẫn tách biệt. -- nghĩa là không có giá trị hợp lệ hiện có.
+Một CPU/GPU có thể phơi bày gói, lõi, điểm nóng, bộ nhớ và nhiều kênh điện năng.Các tên tương tự có thể đại diện cho các phép đo khác nhau.Huyện tích cảm biến min/max là lịch sử phiên, không phải giới hạn phần cứng. Thông tin về mô-đun SMBIOS đến từ phần mềm và không phải là bảng thời gian SPD/XMP/EXPO đầy đủ.
+Mỗi dòng: biến toán tử giá trị => màu, ví dụ cpu.usage >= 90 => #FF4D4F
+Trực tuyến
+Chỉ hỗ trợ một dòng văn bản.
+Chỉ các chỉ số thực sự do nền tảng cung cấp mới được hiển thị là khả dụng.
+Chỉ đọc được một phần chỉ số này.
+Chỉ sử dụng sau khi bạn tự bật "Khởi động khi bật máy".
+Mở
+Mở điều hướng
+Mở các bản phát hành
+Mở cài đặt
+Mở cài đặt →
+Mở cài đặt hệ thống
+Mở thư mục config từ thanh trên cùng và thư mục logs từ Giới thiệu. Giữ trạng thái nguồn hoặc chẩn đoán phần cứng khi khắc phục sự cố. Reset loads default run đầu tiên; Lưu và áp dụng cam kết chúng vào ứng dụng đang chạy.
+Đã mở
+Toán tử
+Các nhà khai thác và điều kiện
+Đồng hồ bình thường sử dụng thời gian địa phương. Đồng hồ thế giới sử dụng một thời gian UTC cố định không có DST tự động. chế độ mục tiêu hàng ngày cho thấy phần còn lại cho đến thời gian mục tiêu tiếp theo trong khu vực được chọn; khi nó tắt, nó cho thấy tiến bộ ngày qua.
+Khác
+Lớp phủ
+Đã ẩn lớp phủ
+Quyền lớp phủ
+Chưa có quyền lớp phủ: đã mở cài đặt hệ thống, hãy cho phép “Hiển thị trên ứng dụng khác”.
+Chưa được cấp quyền lớp phủ; bật lớp phủ sẽ mở trang cài đặt hệ thống.
+Vị trí và giao diện lớp phủ
+Lớp phủ đang hiển thị
+Thế hệ PCIe
+Số làn PCIe
+PID
+Giờ Thái Bình Dương (Mỹ và Canada)
+Gói
+Kiểm tra mạng
+Kiểm tra mạng
+Gói đã nhận
+Gói đã gửi
+Bộ nhớ paged pool (byte)
+Dung lượng phân vùng từ Android StatFs; dung lượng khả dụng không gồm các khối dự trữ.
+Tạm dừng
+Các trường tạm dừng, live và missing fields
+PawnIO đã cài, ECP chạy quyền quản trị; đọc được cảm biến được hỗ trợ.
+Không truy cập PawnIO (lỗi {0}); kiểm tra nạp hoặc sửa cài đặt.
+PawnIO đã được cài đặt. Chạy ECP với quyền quản trị để đọc các cảm biến cấp thấp.
+Chưa cài PawnIO. Nhiệt độ, công suất, điện áp CPU và một số cảm biến bo mạch chủ cần trình điều khiển này.
+Cao điểm
+Khung giờ cao điểm
+Mức sử dụng từng lõi CPU
+Phần trăm
+Cơ sở phần trăm
+Cơ sở phần trăm
+Đang trong khung giờ thấp điểm
+Đang trong khung giờ cao điểm
+Múi giờ cục bộ của khung giờ
+Tên khung giờ
+Tên khung giờ bằng tiếng Trung
+Ngày giờ chuyển khung giờ kế tiếp
+Ngày giờ cục bộ chuyển khung giờ kế tiếp
+Giờ chuyển khung giờ kế tiếp
+Giờ cục bộ chuyển khung giờ kế tiếp
+Tiến trình khung giờ
+Văn bản tiến trình khung giờ
+Thời gian còn lại của khung giờ (giây)
+Văn bản thời gian còn lại của khung giờ
+Múi giờ khung giờ
+Phát hiện quyền thất bại; hãy mở lại trang này.
+Cần cấp quyền
+Quyền
+Chỉ yêu cầu quyền khi bạn bật tính năng cần quyền đó.
+Thường trực
+Các chế độ liên tục và tạm thời
+Số lõi vật lý
+Chỉ số vật lý
+Số lõi vật lý; khóa tương ứng trên máy tính là cpu.physical_cores.
+Ping (Tương thích)
+Đặt khóa vào các nắp, sau đó là chữ cái, và định dạng hiển thị. Sử dụng 0 cho số nguyên và 0.0 / 0.00 cho số thập phân cố định.
+Vị trí phát
+Văn bản vị trí phát
+Tiến trình phát
+Văn bản tiến trình phát
+Trạng thái phát
+Đang phát
+Trò chơi tiến bộ theo thời gian báo cáo và tỷ lệ; thời gian tạm dừng không phân tích. các phiên trực tiếp không có thời gian không có tỷ lệ phần trăm hợp lệ và hiển thị --. Người chơi không có phiên đăng ký hoặc thiếu metadata nghệ sĩ / album để lại các trường không sẵn sàng.
+Loại nguồn đã cắm
+Cổng
+Không tới được cổng
+Vị trí
+Cách định vị
+Giới hạn công suất (W)
+Công suất cao nhất (tổng hợp)
+Gói nguồn
+Tên gói nguồn
+Nguồn điện
+Công suất (W)
+ABI ưu tiên Android (Build.SUPPORTED_ABIS); khóa tương ứng trên máy tính là cpu.architecture.
+ABI ưu tiên của hệ thống từ Build.SUPPORTED_ABIS.
+Vị trí có sẵn
+Vị trí có sẵn + Độ lệch
+Vị trí có sẵn + Độ lệch
+Tên cấu hình có sẵn
+Xem trước HUD
+Xem trước HUD
+Xem trước thất bại. Xem nhật ký.
+Giá trị chính
+Độ sâu màu màn hình chính
+Màn hình chính (tự động)
+HUD chính
+Chiều cao màn hình chính (px)
+Tên màn hình chính
+Tần số quét màn hình chính
+Chiều rộng màn hình chính (px)
+Màn hình chính (tự động)
+Dung lượng trống bộ nhớ ngoài chính
+Tỷ lệ dung lượng trống bộ nhớ ngoài chính
+Tổng dung lượng bộ nhớ ngoài chính
+Mức sử dụng bộ nhớ ngoài chính
+Dung lượng đã dùng bộ nhớ ngoài chính
+Giá trị chính
+Giá trị chính / Tiêu đề
+Riêng
+Bộ nhớ riêng (byte)
+Phép dò ICMP
+Trạng thái phép dò
+Phép dò TCP
+Đích đầu dò
+Phép dò UDP
+Độ trễ phép dò
+Chưa kiểm tra xong
+Tùy chọn phép dò
+Đích đầu dò
+Các mục tiêu và giao thức của các cuộc thăm dò
+Kiến trúc tiến trình
+Tiến trình
+Số bộ xử lý
+Quản lý cấu hình
+Tên cấu hình
+Tỷ lệ trong cấu hình
+Tốc độ tính tỷ lệ trong cấu hình (B/s)
+Chế độ tỷ lệ trong cấu hình
+Văn bản tỷ lệ trong cấu hình
+Lưu hồ sơ và Lưu và áp dụng
+Đã lưu cấu hình
+Hồ sơ và nội dung HUD
+Các hồ sơ, vị trí, hàng, quy tắc kích hoạt và vùng nóng thuộc về từng trường hợp. Nhấp vào một HUD chỉ tiến lên hàng. Khoảng thời gian lấy mẫu, đường tắt toàn cầu và cài đặt chính nhấp chuột được chia sẻ. Lưu và áp dụng cam kết toàn bộ cấu hình.
+Tiến độ
+Giá trị tiến độ
+Biểu thức tiến độ
+Giá trị tiến độ
+Dự án và giấy phép
+Dự án GitHub
+Dự án và giấy phép
+Được bảo vệ
+Giao thức
+Do API hệ thống Android cung cấp; dữ liệu không đọc được sẽ báo không khả dụng.
+Địa chỉ proxy
+Proxy đã bật
+Trạng thái proxy
+Công cộng
+IPv4 công khai
+IPv6 công khai
+Xuất bản thất bại
+Phiên bản Python
+Liên kết nhanh
+Thoát
+Khoảng 3–3600 giây.
+Khoảng {0}–{1}
+Công suất (W)
+Trạng thái phát gốc
+Kiểm tra lại
+Phát hiện lại
+Đọc từ /proc/stat, /proc/cpuinfo, cpufreq hoặc vùng nhiệt CPU. Root được cấp quyền có thể đọc nút bị hạn chế. Không khả dụng nếu không có mẫu hợp lệ.
+Đọc từ Android Build và API hệ thống của thiết bị.
+Đọc từ thông báo phát về pin của Android hoặc BatteryManager; không khả dụng nếu thiết bị không cung cấp giá trị.
+Đọc từ API bộ nhớ Android hoặc /proc/meminfo; chỉ công bố số liệu do thiết bị cung cấp.
+Đọc từ KGSL, Mali, devfreq hoặc vùng nhiệt GPU. Root được cấp quyền có thể bổ sung quyền truy cập. Không khả dụng nếu thiết bị không cung cấp nút.
+Đọc hoặc tính từ cấu hình nguồn DeepSeek; yêu cầu số dư cần khóa API người dùng.
+Nếu PawnIO bị mất, hãy cài đặt/ Cập nhật nó và hoàn thành Windows UAC; hoàn toàn thoát khỏi ECP sau đó. khởi động lại ECP như người quản trị và kiểm tra lại. nút khởi động lại chờ quá trình cũ ra đi. Nếu nó vẫn không có sẵn, hãy phân biệt trạng thái không truy cập của trình điều khiển từ phần cứng không trả lại dữ liệu, sau đó xuất khẩu chẩn đoán.
+Đọc qua TrafficStats hoặc API mạng Android; khả năng cung cấp phụ thuộc phiên bản hệ điều hành và quyền.
+Chỉ thu thập bằng cách đọc, không sửa cài đặt hệ thống. Chọn có cho phép ECP trong trình quản lý Root hay không.
+Chỉ ứng dụng hệ thống đọc được (API ẩn).
+Chỉ ứng dụng của nhà sản xuất đọc được.
+Đang đọc dữ liệu…
+Cần quyền vị trí để đọc tên Wi-Fi.
+Đọc sự kiện hoàn tất Present của X11/XWayland. Không đo được Wayland gốc, ứng dụng không dùng Present hoặc khi thiếu libxpresent1. Không dùng số thao tác vẽ hay tần số quét cố định.
+Đọc FPS thực tế, không thay bằng tần số quét. Cửa sổ tương ứng lớp SurfaceFlinger và cần ROOT; màn hình cần bộ đếm khung hình của nhà sản xuất. Không dùng bộ đếm nhiều màn hình không thể quy thuộc rõ ràng.
+Tốc độ trình bày hoặc cập nhật hình ảnh thực đo của cửa sổ được chọn. Windows đếm luồng trình bày chủ đạo của cửa sổ đó; các cửa sổ khác thuộc cùng tiến trình được đếm riêng. Màn hình sử dụng luồng trình bày chủ đạo của mình. Phép đo đếm sự kiện của các khung hình thực sự được hiển thị và cần quyền ghi nhật ký hiệu năng; đây không phải tần số quét cố định của màn hình.
+Bảo vệ thời gian thực đang tắt
+Lỗi nhận
+Đã nhận
+Khuyến nghị
+Cách dùng đề xuất
+Ghi hoạt động chi tiết khi bật.
+Đơn vị tham chiếu
+Làm mới
+Làm mới / giây
+Tới thiệu và chọn mục tiêu cửa sổ/màn hình, sau đó đặt FPS đại diện bằng 100%. Window FPS sử dụng dòng trình bày thống trị của cửa sổ được chọn; các cửa sổ khác trong cùng quá trình được tính riêng. Display FPS sử dụng dòng trình bày thống trị của màn hình. Đây là tỷ lệ khung hình được đo, chứ không phải tỷ lệ tươi mới của màn hình. Sự kiện hoặc quyền hạn bị thiếu tạo ra thông tin trạng thái; quyền truy cập quản trị viên có thể cần thiết.
+Làm mới ngay
+Làm mới danh sách đích
+Làm mới cửa sổ/màn hình
+Năng lượng còn lại (Wh)
+Năng lượng còn lại (mWh)
+Xóa
+Xóa phiên bản đã chọn
+Xóa quy tắc đã chọn
+Trạng thái phản hồi
+Tên được báo: {0}.
+Yêu cầu cấp quyền
+Yêu cầu thất bại: {0}
+Yêu cầu thất bại; kiểm tra mạng, URL và thông tin xác thực.
+Yêu cầu điện thoại đã Root; cho phép đọc các nút CPU, GPU, nhiệt và bộ nhớ bị hạn chế.
+Cần hệ thống hỗ trợ và quyền hiển thị cập nhật trực tiếp.
+Cần hình dạng có màu do nền tảng cung cấp
+Đặt lại
+Đặt lại tất cả
+Đặt lại tất cả
+Đặt lại mọi thứ về mặc định?
+Đặt lại về 100%
+Khởi động lại với quyền quản trị
+Đang chờ khởi động lại
+Tình huống sử dụng bị hạn chế
+Yêu cầu cấp quyền lại
+Biểu tượng phải
+Trạng thái bên phải
+Biểu tượng phải
+Trạng thái bên phải
+Trạng thái bên phải / Vòng chỉ báo
+Trạng thái bên phải / Tiêu đề
+Trạng thái bên phải / Vòng chỉ báo
+Trạng thái bên phải / Tiêu đề
+Vòng chỉ báo
+Đổi biến và phạm vi vòng tròn
+Độ lan gợn
+Cường độ gợn
+Cuộn lên
+Cần quyền truy cập Root.
+Đã cấp Root; số liệu phụ thuộc vào các nút của thiết bị này.
+Đọc phần cứng bằng Root
+Root không khả dụng hoặc bị từ chối; việc đọc thông thường vẫn hoạt động.
+Tên quy tắc
+Chạy với quyền quản trị
+Đang chạy
+Đang chạy với quyền quản trị
+Phiên bản Rust
+Cửa sổ mẫu
+Bộ lấy mẫu đang chạy
+Việc lấy mẫu và tươi mới
+Lấy mẫu và làm mới
+Lưu
+Lưu và áp dụng
+Trước tiên hãy Lưu và Áp dụng HUD mới.
+Lưu và áp dụng để tắt phím tắt.
+Lưu và áp dụng để bật phím tắt.
+Lưu và Áp dụng để hiển thị HUD mới trước khi định vị.
+Bên cạnh hồ sơ ghi lại hồ sơ đã chỉnh sửa; chỉnh sửa một bản in tích hợp tạo ra một bản sao tùy chỉnh. Preview cho thấy chỉnh sửa hiện tại. Lưu và áp dụng ở phía trên bên phải lưu đầy đủ cài đặt và áp dụng chúng cho HUD đang chạy.
+Lưu bản sao dưới tên
+Lưu thất bại
+Lưu nhật ký
+Lưu báo cáo
+Đã lưu
+Tiết kiệm pin đang bật
+Tỷ lệ co giãn
+Đã tạo cấu hình.
+Đã xóa cấu hình.
+Quản lý cấu hình
+Tên cấu hình
+Đã lưu cấu hình
+Các cấu hình, nguồn dữ liệu, chu kỳ làm mới và cài đặt hiển thị sẽ trở về mặc định lần chạy đầu. Không thể hoàn tác.
+Phạm vi của tùy chọn Không cảnh báo lại về dữ liệu này
+Bộ nhớ có phạm vi giới hạn dữ liệu có thể đọc.
+Màn hình: Dưới giữa
+Màn hình: Dưới trái
+Màn hình: Dưới phải
+Độ sáng màn hình
+Màn hình: Chính giữa
+Màn hình: Giữa trái
+Màn hình: Giữa phải
+Trạng thái màn hình
+Màn hình: Trên giữa
+Màn hình: Trên trái
+Màn hình: Trên phải
+Màn hình tắt
+Tìm kiếm theo tên, khóa hoặc danh mục dưới Quản lý dữ liệu → Thư viện biến. Chọn một biến để xem ý nghĩa, loại, đơn vị và định dạng của nó. Copy Variable Key có ích cho vòng và quy tắc; Copy Template bao gồm các dây đeo cho các trường văn bản.
+Tìm theo tên, khóa hoặc danh mục; chọn một biến để xem chi tiết.
+Tìm chương hoặc tên biến
+Tìm ngôn ngữ
+Tìm tên, ID nguồn hoặc biến
+Tìm biến
+Tìm: mức dùng CPU / cpu.usage
+Giây
+Giá trị phụ / Ghi chú
+Giá trị phụ / Ghi chú
+Tên màn hình thứ hai
+Tần số quét màn hình thứ hai
+Độ phân giải màn hình thứ hai
+Giá trị phụ / Ghi chú
+Giá trị bí mật có thể dùng chỗ giữ ${env:VARIABLE_NAME}.
+Khởi động an toàn
+Bảo mật
+Chọn biến
+Chọn biến bên trái để xem ý nghĩa, đơn vị và cách dùng.
+Chọn biến bên trái để xem ý nghĩa, đơn vị và cách dùng.
+Chọn cửa sổ
+Cấu hình được chọn là hiện tại. Sửa cấu hình tích hợp tạo bản sao, giữ nguyên bản gốc.
+Lớp SurfaceFlinger được chọn.
+Màn hình được chọn.
+Lỗi gửi
+Đã cài trình điều khiển cảm biến
+Trạng thái trình điều khiển cảm biến
+Phiên bản trình điều khiển cảm biến
+Đã gửi
+Đặt khóa API
+Đặt một đường tắt show/hide
+Đặt làm cấu hình hoạt động
+Cài đặt
+Settings.System.SCREEN_BRIGHTNESS (0–255); không coi đây là phần trăm.
+Chia sẻ
+Chia sẻ thông tin ứng dụng
+Chia sẻ cấu hình
+Chia sẻ thông tin thiết bị và khả năng
+Chia sẻ nhật ký chẩn đoán
+Chia sẻ báo cáo chẩn đoán
+Chia sẻ nhật ký
+Giới hạn bộ nhớ dùng chung (byte)
+Mức dùng bộ nhớ dùng chung
+Bộ nhớ dùng chung đã dùng (byte)
+Tên ngắn
+Hoạt ảnh hiện bằng phím tắt
+Phím tắt hiện/ẩn mọi HUD
+Khót đường & chuột hot zones
+Chu kỳ ngắn lấy mẫu nhanh hơn và dùng nhiều tài nguyên hơn. Đồng hồ cập nhật mỗi giây; API ngoài giữ chu kỳ làm mới riêng.
+Hãy cho thấy HUD đầu tiên của bạn
+Hiển thị {0} mục, gồm cảm biến và firmware.
+Hiển thị số liệu phần cứng thực sự do hệ thống và trình điều khiển cung cấp. Cảm biến không được công khai hoặc không có quyền truy cập sẽ hiện --. Xuất chẩn đoán để xem chi tiết. PawnIO và giao diện AIDA64 chỉ có trên Windows.
+Hiển thị số liệu thực sự do thiết bị và hệ thống cung cấp. Mục không khả dụng hiện -- và lý do.
+Tín hiệu (dBm)
+Đơn giản
+Đơn giản rút ngắn bài thuyết trình; Đầy đủ sử dụng cuộc gọi đầy đủ. Roll Up di chuyển các biểu tượng, giá trị và nhẫn bên trong một viên nang liên tục trong khi vẫn giữ cửa sổ và lớp của nó. Roll áp dụng cho các chuyển đổi liên tục; trình bày ban đầu và tạm thời giữ chu kỳ sống biểu diễn / rút lại bình thường của họ.
+Đơn giản: hiện nhanh HUD cuối.
+Đơn giản: thu mục trước rồi hiện nhanh mục sau.
+Kích thước và hoạt ảnh
+Kích thước, độ mờ, phông chữ và chuyển động
+Số khe cắm
+Số khe đã dùng
+Chậm
+Trạng thái SmartScreen
+Số socket
+Quần đảo Solomon, New Caledonia
+Một số mạng chặn ICMP; phép dò sẽ chuyển sang TCP.
+Nguồn
+Tên nguồn phải duy nhất và chỉ chứa chữ cái, chữ số, dấu gạch dưới hoặc gạch nối.
+Nguồn phải là một mảng JSON.
+Nam Georgia
+Tốc độ
+Tốc độ (MHz)
+Bộ nhớ chờ (byte)
+Chạy Endfield Charge Plus sau khi đăng nhập Windows.
+Bắt đầu HUD
+Thời điểm bắt đầu
+Bắt đầu từ một hồ sơ tích hợp và Save để tạo một bản sao tùy chỉnh, hoặc tạo một hồ sơ mới. Delete loại bỏ các hồ sơ tùy chỉnh trong khi các cài đặt trước gốc vẫn còn. Preview sử dụng chỉnh sửa hiện tại và dữ liệu thực; Lưu và áp dụng cam kết nó với HUD đang chạy.
+Chạy khi khởi động thiết bị
+Khởi động cùng Windows
+Bắt đầu HUD cần quyền thông báo để hiển thị thông báo thường trực.
+Khởi động do chính sách hệ thống quản lý.
+Trạng thái
+Trạng thái / Điều kiện
+Trạng thái / Điều kiện
+Văn bản trạng thái
+Tính trạng thái
+Tình trạng, bộ nhớ cache và lỗi
+Trạng thái: có lỗi khi kiểm tra cập nhật
+Trạng thái: đang kiểm tra GitHub…
+Trạng thái: phiên bản cục bộ mới hơn phiên bản trực tuyến mới nhất
+Trạng thái: yêu cầu mạng thất bại ({0})
+Trạng thái: không tìm thấy bản phát hành đã công bố; kho lưu trữ có thể chưa được công khai
+Trạng thái: Chưa kiểm tra
+Trạng thái: tìm thấy phiên bản từ xa nhưng không thể so sánh định dạng
+Trạng thái: đã cập nhật
+Trạng thái: có bản cập nhật
+Trạng thái: kiểm tra cập nhật hết thời gian; thử lại sau
+Dừng HUD
+Đã dừng
+Lưu trữ
+Số thiết bị lưu trữ
+Danh sách thiết bị lưu trữ
+Tuân theo giới hạn khởi chạy nền và các quyền của chế độ hiển thị được chọn.
+Hậu tố
+Gọi HUD khi dữ liệu đáp ứng một quy tắc.
+Đưa ra hoặc giấu tạm thời HUD.
+Được hỗ trợ
+Tổng dung lượng swap (byte)
+Dung lượng swap đã dùng (byte)
+Sydney, Brisbane
+Hệ thống
+Tỷ lệ hoạt động ổ hệ thống
+Dung lượng khả dụng ổ hệ thống (byte)
+Lời gọi hệ thống
+Ổ đĩa hệ thống
+DPI hệ thống
+Hệ thống tệp ổ hệ thống
+Dung lượng trống ổ hệ thống (byte)
+Tỷ lệ dung lượng trống ổ hệ thống
+I/O ổ hệ thống (B/s)
+Nhãn ổ hệ thống
+Độ dài hàng đợi ổ hệ thống
+Tốc độ đọc ổ hệ thống (B/s)
+Gốc ổ hệ thống
+Trạng thái hệ thống
+Tổng dung lượng ổ hệ thống (byte)
+Mức sử dụng ổ hệ thống
+Dung lượng đã dùng ổ hệ thống (byte)
+Tốc độ ghi ổ hệ thống (B/s)
+Mặc định hệ thống
+Trạng thái chỉ số hệ thống
+Thanh tiến trình hệ thống
+Trạng thái hệ thống
+Mức sử dụng lưu trữ hệ thống
+SystemClock.elapsedRealtime()/1000. Số giây kể từ khi khởi động, bao gồm thời gian ngủ sâu.
+Thời gian kết nối TCP
+Số kết nối TCP
+Có TPM
+Phiên bản TPM
+TTL hết hạn
+Dòng dẫn
+Tagline, tiêu đề, văn bản tiểu học/tế học và giá trị bên phải có thể trộn lẫn văn bản chính và các mã biến. Sử dụng hậu tố phải cho các đơn vị như %, °C hoặc GHz. Các biểu tượng xác định nội dung; màu nhấn đặt màu của viên và màu nhẫn.
+Đích
+Màn hình đích
+Tiến trình mục tiêu
+Tỷ lệ thời gian còn lại đến mục tiêu
+Thời gian còn lại đến mục tiêu (giây)
+Văn bản thời gian còn lại đến mục tiêu
+Giá trị mục tiêu
+Đích không khả dụng
+Cửa sổ đích
+Chế độ giờ mục tiêu
+Chế độ giờ mục tiêu
+Các mục tiêu có thể là tên máy chủ, IPv4 hoặc IPv6. ICMP bỏ qua cổng; TCP/UDP sử dụng nó. Sự thất bại có nghĩa là mục tiêu/bản lý không đáp ứng thành công, không nhất thiết là toàn bộ PC đang offline.
+Tehran
+Nhiệt độ
+Nhiệt độ (°C)
+Nhiệt độ cao nhất (tổng hợp)
+Mẫu
+Biến, mẫu và biểu thức: {variable|format}  {= expression | format}\nTra cứu hàm và định dạng: + - * / % ^  > >= < <= == !=  && / || / !  ?:  ??  if() min/max/avg/sum/clamp/round\nGiá trị tiến độ: = expression\nVí dụ: {= if(memory.usage >= 80, 'High', 'OK')}
+Terminal đang chạy
+Kiểm tra kết nối
+Đang kiểm tra…
+Văn bản
+Độ dài văn bản
+Các vùng văn bản và biểu tượng văn bản
+Văn bản, loại và tham chiếu đường ống dẫn
+Cảm ơn QinAnze về công trình mã nguồn mở ban đầu, cùng các dự án Avalonia và Jetpack Compose.
+API khả dụng; hệ thống quyết định có hiện đảo động hay không.
+Đã xóa khóa API.
+Khóa API đã được lưu dưới dạng mã hóa.
+API cập nhật trực tiếp / đảo động Android để hiện nội dung HUD quanh thanh trạng thái.
+Phiên bản Android quá cũ cho API này.
+HUD đã bắt đầu.
+HUD đã dừng.
+Ứng dụng thiếu quyền chạy lúc khởi động thiết bị.
+Ứng dụng thiếu quyền dịch vụ nền trước.
+Ứng dụng thiếu quyền truy cập mạng.
+Đã mở màn hình cấp quyền; sẽ kiểm tra lại tính khả dụng khi quay lại.
+URL cơ sở không hợp lệ.
+Các dấu ngoặc nhọn không khớp.
+Kiểm tra đã hết thời gian; thử lại.
+Ô chọn chỉ tắt vĩnh viễn cảnh báo của những biến đã được liệt kê trong cửa sổ hiện tại. Các biến khác vẫn cảnh báo. Đóng cửa sổ bình thường chỉ xác nhận sự cố hiện tại. Nhiều HUD có thể dùng chung một cửa sổ; lỗi biểu thức được phân biệt theo hồ sơ và biểu thức. Tắt cảnh báo không sửa dữ liệu và không dừng thu thập.
+Đã nhập và áp dụng thiết lập.
+Hoạt ảnh luân phiên thay thế chế độ hoạt ảnh riêng của mỗi cấu hình.
+Hàng đợi luân phiên trống. Thêm cấu hình trước khi bật luân phiên tự động.
+Thiết bị không cung cấp nút nhân tương ứng.
+Thiết bị không có cảm biến này.
+Mã kiểm tra bộ cài trình điều khiển không hợp lệ.
+Trình điều khiển đã được cài đặt. Thoát rồi khởi động lại ECP.
+Điểm cuối trả về HTTP {0}.
+JSON xuất ra có thể trao đổi với các bản máy tính; dữ liệu nhập được xác thực trước khi thay thế cấu hình hiện tại.
+Biểu thức trống.
+HUD nổi đang hoạt động. Chạm để mở cài đặt.
+Trình cài đặt thoát với mã {0}.
+Đã xóa nhật ký.
+Giá trị tối đa phải lớn hơn tối thiểu; nếu không, vòng luôn ở 0.
+Tên không được để trống.
+Mạng đã kết nối.
+Hiện không thể truy cập mạng.
+Yêu cầu mạng thất bại.
+Kênh thông báo bị tắt
+Lớp phủ dùng cửa sổ ứng dụng hệ thống thực; đảo động dùng API cập nhật trực tiếp gốc Android.
+Nền tảng không công khai API này.
+Giá trị chính và ghi chú; hỗ trợ {variable|format} và {= expression}.
+Đích dò không được để trống.
+Danh sách có một cấu hình; cấu hình đó tiếp tục hiển thị.
+Hàng đợi trống.
+Không thể so sánh thẻ từ xa; xem các bản phát hành.
+Báo cáo không bao giờ chứa khóa API hay giá trị header yêu cầu.
+Phản hồi không phải JSON hợp lệ.
+Vòng biểu diễn tỷ lệ của (giá trị − giá trị tối thiểu) trong phạm vi đã đặt và giới hạn kết quả ở 0–100%. Dùng khóa biến hoặc biểu thức số bắt đầu bằng =. Đặt giá trị toàn thang phù hợp cho nhiệt độ, lưu lượng mạng hoặc FPS. Phạm vi này không thay đổi giá trị gốc hiển thị bằng văn bản.
+Cấu hình được chọn là hiện tại; luôn giữ một mục được chọn.
+Tốc độ đạt 100% ở giá trị này; chuẩn hóa về Byte/s trước tính.
+Hệ thống cho phép thông báo cập nhật trực tiếp.
+Hệ thống quyết định vị trí, giao diện và điều kiện hiển thị; dữ liệu cập nhật tối đa một lần mỗi 5 giây.
+Hệ thống đã cho phép tính năng này.
+Hệ thống giới hạn tần suất cập nhật
+Tên biến để trống.
+Chủ đề
+API này không thể hiện biểu tượng.
+API này không thể hiện tiến trình.
+Bộ xử lý nền này đang thử nghiệm.
+Bản dựng hiện tại chưa có nguồn dữ liệu phiên đa phương tiện gốc trên nền tảng này. Các trường đa phương tiện sẽ không khả dụng.
+Nguồn dữ liệu này đang tắt.
+Thiết bị hoặc nhân này không cung cấp nguồn dữ liệu.
+Đây là bản xem trước nội dung thông báo; hệ thống quyết định giao diện và vị trí.
+Dự án này là bản phái sinh của QinAnze/zmd-charge và được phân phối theo giấy phép MIT.
+Cấu trúc này đang bị tắt. Thay URL bằng địa chỉ dịch vụ thực, chỉnh các đường dẫn theo phản hồi rồi đặt enabled thành true khi đã sẵn sàng. ${env:MY_API_KEY} đọc biến môi trường của tiến trình, giúp tránh ghi trực tiếp giá trị bí mật vào JSON.
+Số luồng
+Ba vòng hoạt hình.
+Ngưỡng
+Giảm tần suất khi ẩn
+Giảm tần suất khi màn hình tắt
+Thời gian
+Thời gian còn lại (giây)
+Văn bản thời gian còn lại
+Tùy chọn thời gian
+Tùy chọn thời gian được lưu trực tiếp; sửa nội dung hoặc tên sẽ tạo bản sao.
+Văn bản thời gian còn lại
+Khu vực thời gian và mục tiêu hàng ngày
+Thời gian, mạng lưới & hồ sơ FPS
+Hết thời gian
+Dòng thời gian khả dụng
+Giới hạn thời gian / ms
+Giới hạn thời gian (ms)
+ID múi giờ
+Tên múi giờ
+Tiêu đề
+Tiêu đề / Điều kiện
+Tiêu đề / Thông tin chính bên trái
+Tiêu đề / Trạng thái bên phải
+Tiêu đề / Điều kiện
+Tiêu đề / Thông tin chính bên trái
+Giai đoạn tiêu đề
+Tokyo, Seoul
+Tên tiến trình dùng CPU cao nhất
+PID tiến trình dùng CPU cao nhất
+Mức sử dụng CPU của tiến trình cao nhất
+Trên giữa (vùng làm việc)
+Tên tiến trình có I/O đĩa cao nhất
+PID tiến trình có I/O đĩa cao nhất
+I/O đĩa của tiến trình cao nhất
+Trên trái (vùng làm việc)
+Tên tiến trình dùng bộ nhớ nhiều nhất
+PID tiến trình dùng bộ nhớ nhiều nhất
+Mức dùng bộ nhớ của tiến trình cao nhất
+Trên phải (vùng làm việc)
+Trên giữa
+Trên trái
+Trên phải
+Số dư đã nạp
+Tổng (Tải xuống + Tải lên)
+Tổng tốc độ (B/s)
+Tổng byte
+Tổng dữ liệu tải xuống
+Tổng tốc độ (Mbps)
+Tổng giới hạn bộ nhớ (byte)
+Tổng mức sử dụng bộ nhớ
+Tổng bộ nhớ đã dùng (byte)
+Tổng byte nhận
+Tổng byte gửi
+Tổng byte truyền
+Tổng dữ liệu tải lên
+Tổng dung lượng ổ dữ liệu ứng dụng từ StatFs; khóa tương ứng trên máy tính là disk.system.total_bytes.
+Tổng thông lượng
+Thời lượng bản nhạc
+Văn bản thời lượng bản nhạc
+Tiêu đề bản nhạc
+Các đơn vị giao thông và vòng tham chiếu đường giao thông
+Tổng byte nhận kể từ khởi động từ TrafficStats; khóa tương ứng trên máy tính là network.total_received_bytes.
+Tổng byte gửi kể từ khởi động từ TrafficStats; khóa tương ứng trên máy tính là network.total_sent_bytes.
+Quy tắc kích hoạt
+Giải quyết vấn đề & cảnh báo
+Thử tên khóa biến hoặc tên tính năng, hoặc xóa tìm kiếm.
+TTL ICMP
+Bật “Hiển thị trên ứng dụng khác” trước khi bật HUD nổi.
+Đã tắt
+Hai ví dụ hữu ích.
+Loại
+Loại {0}
+Trạng thái UAC
+Số kết nối UDP
+Tỷ lệ giao diện
+USB / Thiết bị
+Hướng dẫn / Chương {0:00}
+Độ lệch UTC
+Độ lệch UTC (giờ)
+Múi giờ UTC
+Không định vị được HUD:
+Không có dữ liệu
+Không khả dụng thường có nghĩa nền tảng không có API công khai, thiết bị không có cảm biến hoặc chưa nhận được mẫu.
+Không có nếu phần cứng hoặc nguồn không cung cấp.
+Hiểu được các chế độ hiển thị và các phối hợp màn hình.
+Biểu thức kết thúc bất ngờ
+Đơn vị
+Dấu thời gian Unix (mili giây)
+Dấu thời gian Unix (giây)
+Dấu thời gian Unix
+Dấu thời gian Unix tính bằng giây; khóa tương ứng trên máy tính là time.unix_seconds.
+Không xác định
+Không thể truy cập
+Ký tự không nhận dạng được '{0}'
+Nội dung không nhận dạng được: {0}
+Không hỗ trợ
+Hàm không được hỗ trợ: {0}
+Lên
+Bản cập nhật cài gần nhất
+Đang chờ cập nhật
+Có bản cập nhật
+Thời điểm cập nhật số dư
+Có các bản cập nhật
+Tải lên
+Tốc độ tải lên (B/s)
+Tốc độ tải lên (Mbps)
+Chỉ tải lên
+Dự án gốc GitHub
+Dự án gốc
+Thời gian hoạt động (giây)
+Văn bản thời gian hoạt động
+Mức sử dụng
+Mức sử dụng 3D
+Mức sử dụng trung bình 15 phút
+Mức sử dụng trung bình 1 phút
+Mức sử dụng trung bình 5 phút
+Mức sử dụng engine tính toán
+Mức sử dụng engine sao chép
+Mức sử dụng tối đa
+Mức sử dụng giải mã video
+Mức sử dụng mã hóa video
+Mức sử dụng, tỷ lệ còn lại hoặc tiến trình đã qua; có thể dùng để điều khiển vòng.
+Trạng thái: mức dùng, phần còn lại, tiến độ; có thể điều khiển vòng.
+Dùng +, -, *, /, % để lấy phần dư, ^ để tính lũy thừa và dấu ngoặc đơn. Phép so sánh hỗ trợ >, >=, <, <=, == và !=. Toán tử lôgic gồm &&, ||, ! và and/or/not. Điều kiện dùng test ? yes : no hoặc if(test, yes, no). ?? cung cấp giá trị thay thế khi giá trị là null hoặc rỗng.
+Dùng Ctrl hoặc Alt cùng chữ cái, chữ số hoặc phím chức năng (trừ F12).
+Ctrl hoặc Alt cùng chữ, số hoặc F1–F24 trừ F12; Shift tùy chọn. Lưu để áp dụng, để trống để tắt.
+Sử dụng Quản lý dữ liệu → Dữ liệu phần cứng để kiểm tra cảm biến và các trường firmware. Tìm kiếm theo nhiệt độ, mô-đun bộ nhớ, tên thiết bị hoặc ID gốc. Chọn một hàng để sao chép mã thông báo của nó. Export Diagnostics lưu một bản chụp nhanh JSON địa phương về tình trạng và độ đọc hiện tại.
+Dùng Root để đọc dữ liệu
+Dùng điểm neo có sẵn cùng độ lệch, hoặc nhập tọa độ tùy chỉnh.
+Sử dụng custom.<source>.status / error cho trạng thái nguồn và lỗi.Chỉ lệ tần hóa kiểm soát cache, ngay cả khi lấy mẫu toàn cầu nhanh hơn.Đối với 401/403, kiểm tra xác thực và truy cập.Các con đường JSON phải phù hợp với cấu trúc phản ứng thực tế.
+Sử dụng triệu chứng để tìm ra đúng thiết lập.
+Byte đã dùng
+Dùng cho TCP/UDP, ICMP bỏ qua.
+Dùng cho tốc độ mạng, dò gói tin, số dư DeepSeek và nguồn HTTP tùy chỉnh.
+Tỷ lệ đã dùng của ổ dữ liệu ứng dụng (1 - available/total, giống df).
+Dung lượng đã dùng của ổ dữ liệu ứng dụng (StatFs).
+Miền người dùng
+Hướng dẫn sử dụng
+Tên người dùng
+Mức sử dụng chế độ người dùng
+Dung lượng ổ dữ liệu ứng dụng khả dụng cho người dùng (StatFs.availableBytes).
+Dùng bộ nhớ hợp nhất
+Độ lệch UTC cố định, không giờ mùa hè; mục tiêu ngày dùng cùng múi giờ.
+Mọi giao diện đang hoạt động. Phần trăm theo tổng, tải xuống, tải lên hoặc hướng lớn hơn.
+Sử dụng giao diện phần cứng gốc của hệ thống. Dữ liệu khả dụng phụ thuộc phần cứng, trình điều khiển và quyền truy cập; không cần PawnIO.
+Tỷ lệ sử dụng
+VPN đang hoạt động
+Tên VPN
+Trạng thái VPN
+VRAM (byte)
+Giá trị
+Đổi giá trị
+Giá trị không khả dụng
+Đơn vị mili giây; giảm tần suất lấy mẫu khi HUD ẩn hoặc màn hình tắt.
+Biến
+Tên biến
+Thư viện biến
+Biến
+Biến có số liệu
+Các biến, mã thông báo và biểu hiện
+Cần nhà sản xuất xét duyệt và cấp quyền
+Ghi nhật ký chi tiết
+Phiên bản
+Xem bản cập nhật
+Bộ nhớ ảo khả dụng (byte)
+Chiều cao màn hình nền ảo (điểm)
+Chiều cao màn hình nền ảo (px)
+Bộ nhớ ảo (byte)
+Tổng bộ nhớ ảo (byte)
+Mức sử dụng bộ nhớ ảo
+Bộ nhớ ảo đã dùng (byte)
+Chiều rộng màn hình nền ảo (điểm)
+Chiều rộng màn hình nền ảo (px)
+Tọa độ X màn hình nền ảo (điểm)
+Tọa độ X màn hình nền ảo (px)
+Tọa độ Y màn hình nền ảo (điểm)
+Tọa độ Y màn hình nền ảo (px)
+Đã bật ảo hóa
+Sự hiển thị hoạt hình và phạm vi của hoạt hình
+Điện áp (mV)
+Điện áp (V)
+VS Code đang chạy
+Bản phân phối WSL
+Số bản phân phối WSL
+Mức dùng bộ nhớ WSL
+WSL đang chạy
+Trạng thái WSL
+Đang chờ
+Đang chờ quyền Root…
+Cảnh báo
+Biến theo dõi
+Trang web
+Thời gian đã qua trong tuần (giây)
+Tuần trong năm
+Tiến trình tuần
+Thời gian còn lại trong tuần (giây)
+Thứ trong tuần
+Khung cao điểm ngày thường (Bắc Kinh; tách bằng dấu chấm phẩy)
+Khi luân phiên tự động, hoạt ảnh này thay thế thiết lập của từng cấu hình.
+Khi tắt, không hiển thị bất kỳ đầu ra HUD nào.
+Khi tắt, HUD xuất hiện khi cần (sự kiện nguồn hoặc điều kiện hiện).
+Khi bật, HUD không chặn thao tác chạm; đầu vào chuyển tới ứng dụng bên dưới.
+Nguồn điện ngoài hiện có được kết nối hay không.
+Phát hiện tiến trình AMD Radeon Software hoặc đường dẫn cài đặt mặc định.
+Windows có phát hiện ít nhất một kết nối mạng khả dụng hay không; không đảm bảo truy cập Internet.
+Pin hiện có đang sạc hay không.
+Pin hiện có đang xả hay không.
+Phát hiện tiến trình nền Docker Desktop / dockerd.
+Bảng tạm hiện có chứa hình Bitmap/DIB hay không.
+Bảng tạm Windows hiện có chứa văn bản Unicode hay không.
+Phát hiện tiến trình IDE phổ biến, như VS Code, Visual Studio, Rider và IntelliJ/PyCharm.
+Ngày hiện tại có rơi vào thứ Bảy hoặc Chủ nhật hay không.
+Hệ thống có nvidia-smi.exe để chạy hay không.
+Phép dò mạng gần nhất có thành công hay không.
+Giờ hiện tại có nằm trong khung giờ thấp điểm hay không.
+Giờ hiện tại có nằm trong khung giờ cao điểm hay không.
+Trạng thái proxy hệ thống từ cùng nguồn với network.proxy_status.
+Chế độ tiết kiệm pin Windows có được bật hay không.
+Trạng thái Registry UEFISecureBootEnabled.
+Phát hiện tiến trình Windows Terminal / PowerShell / cmd.
+ConnectivityManager có báo mạng mặc định hiện tại khả dụng hay không.
+Giờ hiện tại có nằm trong khung tính phí cao điểm DeepSeek hay không; khóa tương ứng trên máy tính là deepseek.period.is_peak.
+Có liệt kê được Win32_Tpm hay không.
+Phát hiện bản cập nhật Windows khả dụng và trạng thái chờ khởi động lại từ Windows Update / Component Based Servicing.
+Dấu hiệu suy đoán để phân biệt thiết bị đồ họa tích hợp hoặc bộ nhớ hợp nhất phổ biến với card đồ họa rời.
+Ảo hóa firmware có được bật hay không; cần hỗ trợ WMI.
+Phát hiện VPN hoạt động từ cùng nguồn với network.vpn_status.
+Phát hiện tiến trình Code / Code - Insiders.
+Phát hiện tiến trình liên quan wsl/wslhost/vmmemWSL.
+{0} có hoạt động hoặc đúng không.
+Tại sao HUD không thể nhìn thấy được?
+Băng tần Wi-Fi
+Kênh Wi-Fi
+SSID Wi-Fi
+Chuẩn Wi-Fi
+FPS cửa sổ
+FPS cửa sổ (Chạy với quyền quản trị)
+Tỷ lệ FPS cửa sổ
+Trạng thái FPS cửa sổ
+Tên cửa sổ
+Tỷ lệ cửa sổ
+Trạng thái cửa sổ
+Tùy chọn tốc độ khung hình cửa sổ
+Số bản cập nhật Windows đang chờ
+Trạng thái Windows Update
+Windows đã tắt khởi động. Bật lại trong ứng dụng khởi động.
+Các biến đa phương tiện Windows đọc phiên do trình phát đăng ký. Dùng tiêu đề và nghệ sĩ làm nội dung chính, thời gian làm nội dung phụ và media.progress cho vòng có phạm vi 0–100.
+Khu vực làm việc so với màn hình đầy đủ
+Các thiết lập sẵn của work-area tránh các taskbar, Docks và khu vực được đặt. Screen presets sử dụng giới hạn hiển thị đầy đủ. Offsets di chuyển một thiết lập sẵn; các phối hợp tùy chỉnh chỉ định vị trí trực tiếp. Chọn mục tiêu hiển thị trước. Các phối hợp tiêu cực là bình thường cho các màn hình bên trái hoặc trên màn hình chính.
+Working set (byte)
+Giờ Bắc Kinh
+Đồng hồ thế giới
+Giờ Luân Đôn
+Giờ New York
+Giờ Tokyo
+X / px
+Độ lệch X / px
+Độ lệch X / px
+Y / px
+Độ lệch Y / px
+Độ lệch Y / px
+Yangon
+Năm
+Thời gian đã qua trong năm (giây)
+Tiến trình năm
+Thời gian còn lại trong năm (giây)
+Có
+Bạn đang dùng phiên bản mới nhất.
+Phiên bản cục bộ của bạn mới hơn bản đã phát hành.
+Kẽm-không khí
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 chọn đơn vị theo biến; tránh thêm cùng một đơn vị hai lần. Chuỗi định dạng chạy từ trái sang phải và có thể biến đổi số hoặc rút ngắn văn bản. Dùng {= ...} cho biểu thức trong văn bản, hoặc bắt đầu biểu thức của vòng bằng =.
+bytes / gb:1
+bytes / speed tự động thêm đơn vị kích thước hoặc tốc độ truyền tính bằng byte. kb:n, mb:n, gb:n và tb:n chia cho lũy thừa của 1024 và hiển thị n chữ số thập phân; thêm đơn vị mong muốn trong hồ sơ. duration / duration-long định dạng giá trị tính bằng giây. Trường ngày giờ hỗ trợ time:<date format>; time:relative định dạng thời gian tương đối hoặc khoảng thời gian.
+bản sao
+cpu.usage hoặc = (cpu.usage + gpu.usage) / 2
+ngày
+duration
+duration / duration-long
+Ví dụ: 1.1.1.1 hoặc example.com
+Ví dụ: 1.1.1.1, 2606:4700:4700::1111, example.com
+VD: Máy chủ của tôi – Trực tuyến
+Ví dụ: value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+trong {0}
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (Đã sửa đổi)
+{0} / {1} chương · Ngoại tuyến
+Phát hiện {0} GPU
+{0} trước
+{0} còn {1}
+Hỗ trợ {0} trong {1} chỉ số
+Đã thêm {0} cấu hình; bật luân phiên tự động để dùng.
+Cài đặt {0} v{1}
+{0} đã qua {1:0}%
+{0} đã qua {1}%
+{0}: nhập URL HTTP/HTTPS tuyệt đối.
+{0}: cung cấp tên biến và đường dẫn JSON.
+{0} ngày {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Chương trước
+↓ {network.display_download}
+Khóa API
+Đang thu thập khung hình
+Đang chờ mẫu khung hình
+Cần Windows 64 bit
+Chọn một cửa sổ đang chạy
+Cửa sổ đích đã đóng; hãy chọn cửa sổ khác
+Màn hình đã ngắt kết nối
+Không thể ánh xạ nguồn hiển thị hoặc không xác định được nguồn giữa nhiều GPU
+Chưa có sự kiện khung hình hợp lệ cho đích này
+Đang chờ sự kiện khung hình; có thể cần quyền quản trị viên
+Truy cập bị từ chối; hãy chạy ứng dụng với quyền quản trị viên
+Đang chờ sự kiện khung hình Present
+Cần phiên X11/XWayland
+Máy chủ X không hỗ trợ phần mở rộng Present
+Cài đặt libxpresent1
+Giao diện thu thập Present không khả dụng
+Cần macOS
+Không thể thu thập khung hình; hãy kiểm tra thành phần ứng dụng và quyền ghi màn hình
+Đích đã chọn không khả dụng
+Cần quyền ghi màn hình; hãy khởi động lại ứng dụng sau khi cấp quyền
+Cần macOS 12.3 trở lên
+Thu thập khung hình thất bại: {0}
+Quá trình thu thập khung hình đã kết thúc ({0})
+Trạng thái khả dụng của tài khoản do điểm cuối số dư trả về.
+Tên tiến trình ứng dụng
+Thời gian ứng dụng hoạt động
+Văn bản thời gian ứng dụng hoạt động
+Thời gian tiến trình ứng dụng hiện tại đã chạy, được định dạng dễ đọc.
+Độ trễ Ping trung bình
+Độ trễ phép dò trung bình
+Độ trễ trung bình của 20 phép dò Ping thành công gần nhất đến đích hiện tại.
+Độ trễ trung bình của 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+Văn bản trạng thái pin
+Điện áp pin (V)
+ProtectionStatus của BitLocker trên ổ đĩa hệ thống.
+Trạng thái BitLocker
+Tên CPU
+Mức sử dụng CPU
+Nhiệt độ cảm biến CPU. Không khả dụng nếu thiết bị, trình điều khiển hoặc quyền hiện tại không hỗ trợ.
+Ngày và giờ hiện tại trên máy tính này.
+Ngày hiện tại trên máy tính này.
+Ngày giờ cục bộ hiện tại.
+Ngày cục bộ hiện tại theo yyyy-MM-dd.
+Tổng mức sử dụng CPU hiện tại của toàn máy tính.
+Trạng thái khả dụng của DeepSeek API
+Trạng thái bật và bảo vệ thời gian thực do Windows Defender WMI báo cáo.
+Số mẫu dò thất bại
+Tên đầy đủ của mẫu bộ xử lý.
+Nhiệt độ lõi GPU
+Điện áp lõi GPU
+Tên GPU
+Phiên bản VBIOS GPU
+Nhiệt độ lõi GPU do cảm biến phần cứng báo cáo; không khả dụng nếu phần cứng hoặc trình điều khiển không cung cấp.
+Điện áp lõi GPU do cảm biến giám sát phần cứng báo cáo.
+Độ trễ cao nhất trong 20 phép dò Ping thành công gần nhất đến đích hiện tại.
+Độ trễ cao nhất trong 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+TTL ICMP
+Lần Ping thành công gần nhất
+Lần dò thành công gần nhất
+Điện áp pin tức thời đổi sang vôn.
+Mức sử dụng tức thời của GPU được chọn, lấy engine bận nhất.
+Số Ping bị mất
+Độ trễ thấp nhất trong 20 phép dò Ping thành công gần nhất đến đích hiện tại.
+Độ trễ thấp nhất trong 20 mẫu thành công gần nhất theo cấu hình dò hiện tại.
+Độ trễ Ping tối đa
+Độ trễ phép dò tối đa
+Mức sử dụng bộ nhớ
+Trạng thái Microsoft Defender
+Độ trễ Ping tối thiểu
+Độ trễ phép dò tối thiểu
+Trạng thái dò mới nhất, như “Trực tuyến”, “Hết thời gian” hoặc “Không thể truy cập cổng”.
+Tên tiến trình Endfield Charge Plus hiện tại.
+Tên bộ điều hợp màn hình được cấu hình hiện tại chọn.
+Mạng khả dụng
+Lỗi Ping
+Jitter Ping
+Độ trễ Ping
+Văn bản độ trễ Ping
+Độ trễ Ping tại 100%
+Tỷ lệ mất gói Ping
+Địa chỉ phản hồi Ping
+Văn bản trạng thái Ping
+Ping thành công
+TTL Ping
+Đích Ping
+Giới hạn thời gian Ping
+Điểm cuối Ping/phép dò
+Cổng Ping/phép dò
+Giao thức Ping/phép dò
+Điểm cuối phép dò
+Lỗi phép dò
+Độ trễ phép dò
+Jitter độ trễ phép dò
+Văn bản độ trễ phép dò
+Độ trễ phép dò tại 100%
+Tỷ lệ mất gói phép dò
+Cổng phép dò
+Giao thức phép dò
+Địa chỉ phản hồi phép dò
+Số mẫu dò
+Văn bản trạng thái phép dò
+Phép dò thành công
+Trạng thái Ping gốc
+Trạng thái phép dò gốc
+Đọc qua giao diện Windows BatteryTemperature, chỉ khi trình điều khiển hoặc firmware cung cấp.
+Trạng thái bảo vệ thời gian thực do Windows Defender WMI báo cáo.
+Độ trễ khứ hồi của Ping thành công gần nhất; thất bại tính là 999 ms cho tiến trình vòng.
+Độ trễ khứ hồi hoặc kết nối của phép dò thành công gần nhất; phép dò thất bại được coi là 999 ms.
+SMBIOSBIOSVersion do Win32_BIOS báo cáo.
+Số giây kể từ lần khởi động Windows hiện tại.
+Số giây kể từ khi tiến trình ứng dụng hiện tại bắt đầu.
+Số Ping đã gửi
+Giới hạn thời gian một phép dò
+Trạng thái cấu hình Windows Firewall Policy hiện đang hoạt động.
+Số Ping thành công
+Số mẫu dò thành công
+Trạng thái BitLocker ổ hệ thống
+Thời gian hệ thống hoạt động
+Văn bản thời gian hệ thống hoạt động
+Trạng thái bảo vệ ổ hệ thống do giao diện Windows Volume Encryption báo cáo.
+Thời gian hệ thống hoạt động dưới dạng văn bản dễ đọc.
+Văn bản theo trạng thái nguồn, như “Đang sạc”, “Dùng pin”, “Đã cắm nguồn” hoặc “Không rõ”.
+Văn bản như “20ms” khi thành công, hoặc trạng thái hết thời gian/lỗi khi thất bại.
+Văn bản như “20ms” khi thành công, hoặc trạng thái hết thời gian hay không thể truy cập tương ứng.
+Tổng mức sử dụng GPU
+Bộ nhớ vật lý đã dùng tính theo phần trăm tổng bộ nhớ vật lý.
+Phiên bản VBIOS do nvidia-smi báo cáo, nếu được hỗ trợ.
+Windows có phát hiện ít nhất một kết nối mạng khả dụng hay không; điều này không đảm bảo truy cập Internet.
+Cấu hình Windows Firewall hiện hoạt động có được bật hay không.
+Trạng thái Windows Firewall
+/proc/meminfo; bộ nhớ khả dụng dùng MemAvailable
+/proc/stat, /proc/cpuinfo, cpufreq hoặc hwmon
+/sys/class/power_supply; dung lượng được chuẩn hóa về mWh / Wh
+Truy vấn thực tế các tiến trình Linux hoặc công cụ được cài cục bộ
+Dung lượng swap còn trống
+Sạc và xả
+DRM/hwmon hoặc NVIDIA nvidia-smi
+Không thể ước tính
+Thống kê hệ thống tệp của điểm gắn kết hiện tại hoặc /sys/dev/block/*/stat
+Phiên bản kernel Linux
+Linux procfs, sysfs hoặc trạng thái chạy hiện tại
+Linux sysfs hoặc /proc/bus/input/devices
+Linux sysfs hoặc các biến EFI
+Không sạc
+Không xả
+Số tiến trình
+Các tiến trình người dùng hiện tại đọc được trong /proc; mức sử dụng CPU được chuẩn hóa theo số bộ xử lý lôgic
+Đọc từ thông tin màn hình Avalonia trong phiên X11/XWayland hiện tại.
+Đọc bảng tạm thực của phiên đồ họa hiện tại. Thời điểm cập nhật là lúc ECP lần đầu nhận biết thay đổi.
+Cần khóa API hợp lệ. Thiếu cấu hình hoặc yêu cầu thất bại đều báo trạng thái rõ ràng, không tạo số dư giả.
+Mức sử dụng swap
+Hệ thống cần khởi động lại
+Tổng dung lượng swap
+Dung lượng swap đã dùng
+Dùng phép dò ICMP/TCP/UDP thực theo cấu hình hiện tại; thất bại hoặc không áp dụng sẽ hiện thông báo trạng thái.
+{0}. Nguồn dữ liệu: {1}. Chỉ liệt kê khi thiết bị và quyền hiện tại hỗ trợ thu thập.
+Bộ nhớ hoạt động
+Dung lượng swap thực còn trống từ sysctl vm.swapusage.
+Dung lượng swap thực đã dùng từ sysctl vm.swapusage.
+Độ phân giải điểm ảnh gốc CoreGraphics / AppKit Retina backingScaleFactor; tọa độ máy tính dùng điểm lôgic và DPI bằng 96 nhân hệ số tỷ lệ
+Chênh lệch bộ đếm 64 bit của các giao diện vật lý en* macOS, không tính trùng lưu lượng VPN/loopback; hoặc truy vấn IP công khai và phép tính cấu hình đã triển khai
+Chênh lệch tick CPU Mach hoặc sysctl
+Bộ nhớ vật lý còn trống
+Ước tính thời gian sạc từ IOPowerSources, chỉ hiển thị khi hệ thống cung cấp.
+IOPowerSources; ẩn nếu không có pin tích hợp, chỉ liệt kê khi hệ thống cung cấp dữ liệu
+Bộ nhớ không hoạt động
+GPU tiết kiệm điện
+Trạng thái thiết bị tiết kiệm điện từ Metal isLowPower.
+Mach VM / sysctl; đã dùng = active + wired + compressed, khả dụng = tổng trừ đã dùng; đây không phải áp lực bộ nhớ
+Mach active_count nhân kích thước trang hệ thống.
+Mach free_count nhân kích thước trang hệ thống.
+Mach inactive_count nhân kích thước trang hệ thống.
+Mach wire_count nhân kích thước trang hệ thống.
+Giới hạn working set Metal khuyến nghị
+Thông tin thiết bị Metal; mức sử dụng GPU toàn cục, nhiệt độ và mức dùng bộ nhớ video không khả dụng nếu hệ thống không cung cấp
+Metal hasUnifiedMemory. Bộ nhớ hợp nhất không được tính là bộ nhớ video chuyên dụng.
+Metal recommendedMaxWorkingSetSize: ngân sách sử dụng, không phải dung lượng bộ nhớ video hay mức dùng bộ nhớ GPU.
+GPU tháo rời được
+Trạng thái thiết bị tháo rời từ Metal isRemovable.
+Thời gian đến khi sạc đầy
+Tổng swap từ sysctl vm.swapusage, được hệ thống cấp phát động.
+Kiến trúc bộ nhớ hợp nhất
+Dung lượng đĩa khả dụng cho người dùng
+Bộ nhớ cố định trong RAM
+macOS / .NET hoặc cấu hình thực và kết quả truy vấn của cấu hình này
+Bảng tạm macOS; thời điểm cập nhật là lúc ECP gần nhất nhận biết nội dung thay đổi
+statfs f_bavail của ổ APFS Data, không gồm dung lượng hệ thống dự trữ.
+statfs của ổ APFS Data; dung lượng gồm không gian dùng chung trong cùng container APFS
+{0}. Nguồn dữ liệu: {1}.
+Endfield Charge Plus
+Endfield Charge Plus For Linux
+Endfield Charge Plus For MacOS
+Endfield Charge Plus for Android
+Quản lý hồ sơ
+Bộ chọn vòng tròn
+Thao tác nhanh
+Nhấn giữ nút chuột giữa trên HUD, kéo về phía một hồ sơ rồi thả nút để chuyển.
+Thả nút ở tâm hoặc bên ngoài vòng tròn để hủy.
+Thời gian nhấn giữ
+Ngưỡng kéo
+Kích thước vòng tròn
+Bật chuyển bằng vòng tròn
+Hồ sơ trong vòng tròn
+Dùng tất cả hồ sơ
+Xem trước vòng tròn
+Hồ sơ đã chọn
+Không có hồ sơ khả dụng
+Trang trước
+Trang tiếp
+Trang {0} / {1}
+Giao diện
+Sáng
+Cổ điển
+Dịu nhẹ
+Bán kính góc
+Độ đục của vòng tròn
+Đặt lại chủ đề
+Xem trước chủ đề
+Cử chỉ HUD
+Nhấn giữ nút chuột giữa
+Nhấp chuột trái
+Các thay đổi có hiệu lực sau khi nhấn «Lưu và áp dụng».
+Nhấn Esc để hủy.
+Chuyển hồ sơ
+Chỉ xem trước
+Thêm vào vòng tròn
+Xóa khỏi vòng tròn
+Theo dõi sự cố
+Thu nhỏ cửa sổ
+Phóng to cửa sổ
+Khôi phục kích thước cửa sổ
+Đóng cửa sổ
+Hệ thống hiện tại
+Tài nguyên phần mềm
+Mức sử dụng CPU của hệ thống trên tất cả bộ xử lý lô-gic.
+RAM vật lý đã dùng chia cho tổng RAM vật lý.
+VRAM chuyên dụng đã dùng chia cho tổng VRAM chuyên dụng của các GPU. Không bao gồm bộ nhớ dùng chung.
+Thời gian CPU của Endfield Charge Plus chia cho thời gian đã trôi qua và số bộ xử lý lô-gic.
+RAM thường trú của Endfield Charge Plus chia cho tổng RAM vật lý. Bao gồm các trang dùng chung đang thường trú.
+VRAM chuyên dụng được cấp cho Endfield Charge Plus chia cho tổng VRAM chuyên dụng. Không bao gồm bộ nhớ GPU dùng chung.
+Toàn bộ tiến trình Endfield Charge Plus: phần cài đặt và tất cả HUD. CPU được chuẩn hóa theo tất cả bộ xử lý lô-gic.
+RAM thường trú của toàn bộ Endfield Charge Plus (cài đặt và tất cả HUD), gồm các trang dùng chung thường trú. Giá trị: MiB/GiB; cung tròn: tỷ lệ RAM vật lý.
+VRAM chuyên dụng của toàn bộ Endfield Charge Plus (cài đặt và tất cả HUD), không gồm bộ nhớ GPU dùng chung. Giá trị: MiB/GiB; cung tròn: tỷ lệ tổng VRAM chuyên dụng.
+Kênh BiliBili của tác giả
+Kênh YouTube của tác giả
+Màu sắc
+Tìm hồ sơ
+Đổi hồ sơ bằng cách nhấp hoặc cuộn
+Khoảng thời gian chuyển / giây
+Cuộn lên để về hồ sơ trước, cuộn xuống để sang hồ sơ tiếp theo.
+Hồ sơ khả dụng
+Hồ sơ trước
+Hồ sơ tiếp theo
+Tạm dừng/tiếp tục chuyển tự động
+Xem trước hồ sơ hiện tại
+Mở cài đặt
+Phím tắt chỉ hoạt động khi ứng dụng này có tiêu điểm.
+Giữ HUD hiển thị khi trỏ chuột lên HUD hoặc vùng kích hoạt

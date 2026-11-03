@@ -1,0 +1,28 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "De australiska ortnamnen stavas likadant på svenska.",
+    "Alaska": "Alaska är det svenska ortnamnet med samma stavning.",
+    "Artist": "Artist är det etablerade svenska ordet för musikartist.",
+    "Auckland, Fiji": "Nya zeeländska och fijianska ortnamn stavas likadant på svenska.",
+    "Bangkok, Hanoi, Jakarta": "Dessa stadsnamn har samma stavning på svenska.",
+    "Dhaka, Thimphu": "Dessa stadsnamn har samma stavning på svenska.",
+    "Dubai, Abu Dhabi": "Dessa stadsnamn har samma stavning på svenska.",
+    "Eucla": "Eucla är ett australiskt ortnamn som stavas likadant på svenska.",
+    "Hawaii": "Hawaii är det svenska ortnamnet med samma stavning.",
+    "Islamabad, Karachi": "Dessa stadsnamn har samma stavning på svenska.",
+    "Kabul": "Kabul är det svenska stadsnamnet med samma stavning.",
+    "Line Islands": "Line Islands är en ögrupp vars namn används oförändrat på svenska.",
+    "New Delhi, Mumbai": "Dessa stadsnamn har samma stavning på svenska.",
+    "Newfoundland": "Newfoundland är det svenska ortnamnet med samma stavning.",
+    "Nukuʻalofa, Apia": "Dessa stilla havstäder stavas likadant på svenska.",
+    "Sydney, Brisbane": "Dessa australiska stadsnamn stavas likadant på svenska.",
+    "Tokyo, Seoul": "Dessa stadsnamn har samma stavning på svenska.",
+    "Yangon": "Yangon är det svenska stadsnamnet med samma stavning.",
+    "d": "d är enhetsbeteckningen för dagar i tidsformatet."
+  },
+  "notes": [
+    "Svensk översättning skriven direkt från de kinesiska källbetydelserna med engelska som teknisk referens.",
+    "Platshållare, variabelnycklar, API-namn, sökvägar och formattoken är oförändrade.",
+    "Ortnamn och enhetsbeteckningen d har samma stavning på svenska och granskas här."
+  ]
+}

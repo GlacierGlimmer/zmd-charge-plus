@@ -1,0 +1,20 @@
+{
+  "shared": {
+    "Port": "A native UI/technical noun with the same spelling as English; reviewed individually.",
+    "Disk": "Disk is the established Turkish computing noun for a storage disk.",
+    "Adelaide, Darwin": "These city names retain the same spelling in Turkish geographic usage.",
+    "Alaska": "Alaska is the standard Turkish spelling of the geographic name.",
+    "Auckland, Fiji": "These geographic names retain their established spellings in Turkish.",
+    "Buenos Aires, Brasilia": "These capital city names retain their established spellings in Turkish.",
+    "Eucla": "Eucla is a geographic proper name, retained in Turkish time-zone labels.",
+    "Hawaii": "Hawaii is an accepted Turkish spelling of the geographic proper name.",
+    "Newfoundland": "Newfoundland is retained as the geographic proper name in this time-zone label.",
+    "Nukuʻalofa, Apia": "These Pacific city proper names retain the native spelling and punctuation.",
+    "Yangon": "Yangon is the standard Turkish spelling of the geographic proper name."
+  },
+  "notes": [
+    "Metric-summary draft files were not merged: Chinese source includes additional collection details.",
+    "Root compared the full Chinese source, rewrote the mechanically composed captions and both disk schemas, and reviewed the 14-chapter PC guide. Platform-specific guides and independent visual review remain pending.",
+    "Root compared the full Chinese source, rewrote the mechanically composed captions and both disk schemas, and reviewed the 14-chapter PC guide. Platform-specific guides and independent visual review remain pending."
+  ]
+}

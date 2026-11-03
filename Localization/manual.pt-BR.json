@@ -1,93 +1,93 @@
 {
   "_labels": [
-    "Como usar",
-    "Detalhes e cuidados",
+    "Passos",
+    "Observações e configurações",
     "Exemplo",
-    "Copie o exemplo e adapte os valores. Nomes de variáveis, funções e sintaxe do código permanecem iguais.",
-    "Referência de funções e formatos"
+    "Copie o exemplo e adapte os valores. Preserve os nomes de variáveis e funções, assim como a sintaxe.",
+    "Funções e formatação"
   ],
   "start": [
     "Primeiros passos",
-    "Mostre seu primeiro HUD e personalize o conteúdo.",
-    "Ative o HUD em Exibição e posição. Ative a exibição permanente.\nEscolha um perfil integrado em Conteúdo do HUD e abra a prévia.\nUse Salvar e aplicar na parte superior.",
-    "Salvar no editor guarda o perfil; editar um perfil integrado cria uma cópia personalizada. A prévia não substitui os ajustes em uso. Salvar e aplicar confirma e aplica as alterações ao HUD."
+    "Mostre seu primeiro HUD e personalize-o.",
+    "Ative o HUD em Exibição e posição. Para mantê-lo visível, ative Sempre visível.\nEm Conteúdo do HUD, escolha um perfil integrado e abra a prévia.\nAplique as configurações pelo botão na parte superior da janela.",
+    "Salvar, ao lado do seletor de perfis, copia o conteúdo para o editor. Alterar um perfil integrado cria uma cópia própria. A prévia não substitui a configuração em uso. Somente Aplicar salva todas as configurações e as aplica ao HUD em execução."
   ],
   "display": [
     "Exibição, posição e aparência",
-    "Ajuste o monitor e o modo de exibição.",
-    "Escolha o monitor e uma posição predefinida ou coordenadas próprias.\nAjuste tamanho, opacidade e fonte.\nSelecione exibição permanente ou temporária e aplique.",
-    "A área de trabalho evita a barra de tarefas; a posição relativa à tela usa seus limites completos. Coordenadas negativas são normais com vários monitores. O modo temporário aparece por um evento e depois se recolhe. A coleta é compartilhada; relógios e APIs mantêm seus próprios intervalos.\n\nEscolha um idioma ou siga o sistema na parte superior. Só o idioma é salvo imediatamente; as outras edições continuam no editor. Idiomas ou textos ausentes usam inglês. Seus textos e nomes de variáveis são preservados."
+    "Ajuste a visibilidade, a tela e a apresentação.",
+    "Selecione a tela de destino e uma posição predefinida ou coordenadas personalizadas.\nAjuste o tamanho, a opacidade e a fonte.\nEscolha a exibição permanente ou temporária e aplique as configurações.",
+    "As posições da área de trabalho levam em conta a barra de tarefas. As posições de tela usam a tela inteira; coordenadas negativas são normais com vários monitores. No modo temporário, um evento mostra o HUD e depois ele se recolhe. O intervalo de amostragem é compartilhado por todos os HUDs. Relógios e fontes externas mantêm seus próprios intervalos de atualização.\n\nNa parte superior, escolha um idioma ou siga o idioma do sistema. A escolha de idioma é salva imediatamente e as outras alterações não salvas permanecem no editor. Idiomas não compatíveis e textos sem tradução usam inglês. Textos personalizados e nomes de variáveis são preservados.\nO menu de idioma permite ajustar separadamente a escala global de fonte e interface entre 75 % e 200 %. A escala individual do HUD é multiplicada pela escala global da interface."
   ],
   "profiles": [
-    "Perfis e conteúdo",
-    "Configure textos, ícones e o anel.",
-    "Crie um perfil ou edite uma cópia de um perfil integrado.\nPreencha título, valores principal e secundário, sufixo, ícones e cor.\nEscolha a variável e os limites do anel, confira a prévia e aplique.",
-    "Textos aceitam variáveis entre chaves. O anel converte a faixa escolhida em 0–100%, sem alterar o número escrito. As regras de cor usam a unidade original. Excluir um perfil personalizado não remove os integrados."
+    "Perfis e conteúdo do HUD",
+    "Defina os textos, os ícones e o anel de progresso.",
+    "Crie um perfil ou edite uma cópia de um perfil integrado.\nPreencha o título, os valores principal e secundário, o sufixo, os ícones e a cor.\nEscolha a variável do anel e seu intervalo de valores, confira a prévia e aplique o resultado.",
+    "Os campos de texto aceitam texto normal e variáveis entre chaves. O anel converte o intervalo configurado para uma escala de 0 a 100 %, sem alterar o valor original exibido. As regras de cor usam as unidades originais. Somente perfis personalizados podem ser excluídos; os modelos integrados são preservados."
   ],
   "variables": [
     "Variáveis, modelos e expressões",
-    "Encontre os dados e defina sua apresentação.",
-    "Procure uma variável em Gerenciamento de dados e leia a descrição e a unidade.\nCopie o nome para regras e anéis, ou o modelo para textos.\nConsulte os exemplos e a referência abaixo.",
-    "Os formatos são aplicados da esquerda para a direita. 0.0 usa uma casa decimal; auto:1 escolhe a unidade automaticamente, sem precisar repeti-la no texto. Funções e nomes antigos permanecem válidos. Itens duplicados ficam ocultos, mas os resumos continuam disponíveis. -- significa ausência de leitura válida."
+    "Combine os dados disponíveis para criar textos legíveis.",
+    "Pesquise uma variável em Gerenciamento de dados e leia sua descrição e unidade.\nCopie a chave para regras ou para o anel e o modelo para os campos de texto.\nUse os exemplos e a referência de funções para definir a formatação.",
+    "As etapas de formatação são executadas da esquerda para a direita. 0.0 mostra uma casa decimal; auto:1 escolhe uma unidade adequada. Não acrescente novamente unidades já fornecidas automaticamente. Os nomes de funções não são traduzidos. As chaves antigas continuam compatíveis e entradas duplicadas deixam de aparecer na biblioteca. As variáveis de resumo mantêm seu significado específico. -- indica ausência de dados válidos."
   ],
   "hardware": [
-    "Sensores e drivers",
-    "Verifique temperaturas e medições ausentes.",
-    "Abra Gerenciamento de dados → Dados de hardware e confira o driver.\nSe PawnIO estiver ausente, instale-o e aceite a confirmação do Windows.\nEncerre ECP completamente e abra novamente como administrador.\nAtualize, busque o sensor e copie a variável ou exporte o diagnóstico.",
-    "Permissão de administrador não substitui o driver. Valores sem suporte ficam indisponíveis. Núcleo, pacote, ponto quente e memória são sensores distintos. Mínimos e máximos são o histórico desta sessão, não os limites nominais. SMBIOS não fornece uma tabela SPD/XMP/EXPO completa."
+    "Sensores de hardware e drivers",
+    "Confira as leituras e investigue temperaturas indisponíveis.",
+    "Abra Gerenciamento de dados → Dados de hardware e confira o estado do driver.\nSe necessário, instale PawnIO, aceite a solicitação do Windows e feche ECP completamente.\nReabra ECP como administrador e atualize as leituras.\nPesquise um sensor, copie sua variável ou exporte o diagnóstico.",
+    "Permissões de administrador não substituem um driver ausente. Leituras sem suporte continuam indisponíveis. Temperaturas de núcleo, pacote, ponto quente e memória são medições diferentes. Mínimo e máximo vêm da sessão atual de amostragem e não são os limites do hardware. Dados de memória SMBIOS não substituem tabelas SPD/XMP/EXPO completas."
   ],
   "sources": [
-    "Configuração das fontes",
+    "Configurar fontes de dados",
     "Conecte DeepSeek, APIs JSON e AIDA64.",
-    "Informe a chave DeepSeek e aplique.\nEm HTTP, defina nome, URL GET, cabeçalhos, intervalo e caminhos JSON; ative a fonte.\nUse custom.<source>.<variable> no perfil.\nNo AIDA64, selecione os itens e habilite a exportação por memória compartilhada, registro ou WMI. Mantenha o AIDA64 aberto.",
-    "A chave DeepSeek é criptografada para o usuário atual do Windows. Os períodos seguem o horário de Pequim; fins de semana são fora de pico. Verifique status e error nas falhas HTTP. Coletar mais rápido não ignora o cache. Variáveis de ambiente evitam segredos gravados diretamente no JSON. ECP lê apenas o que AIDA64 realmente exporta."
+    "Insira a chave DeepSeek e aplique as configurações.\nPara HTTP, defina nome, endereço GET, cabeçalhos, intervalo e caminhos JSON. Ative a fonte após configurá-la.\nDepois use custom.<source>.<variable> no HUD.\nNo AIDA64, ative as exportações necessárias por memória compartilhada, Registro ou WMI e mantenha AIDA64 em execução.",
+    "A chave DeepSeek é criptografada para a conta atual do Windows. Os períodos seguem o horário de Pequim; fins de semana permanecem fora de pico. status e error ajudam a diagnosticar erros HTTP. Reduzir o intervalo global não ignora o cache. Variáveis de ambiente evitam chaves em texto sem criptografia dentro do JSON. ECP só lê dados realmente exportados pelo AIDA64."
   ],
   "cycle": [
-    "Alternância e animações",
-    "Exiba vários perfis em sequência.",
-    "Adicione perfis à lista e ajuste a ordem.\nAtive a alternância automática e seu intervalo, se desejar.\nEscolha animação simples, completa ou rolagem para cima.\nAtive a troca por clique para avançar manualmente.",
-    "Remover da lista não exclui o perfil. Uma lista vazia usa o perfil atual; com um único item não há troca para outro perfil. A rolagem move o conteúdo no modo permanente. Cada HUD tem sua lista; clicar reinicia seu temporizador. Mudanças de período DeepSeek usam animação completa."
+    "Alternância de perfis, cliques e animações",
+    "Mostre vários perfis em sequência.",
+    "Adicione perfis à fila de alternância e organize a ordem.\nSe necessário, ative a alternância automática e defina o intervalo.\nEscolha uma animação simples, completa ou de rolagem para cima.\nAtive a troca de perfil ao clicar para controle manual.",
+    "Remover um item da fila não exclui o perfil. Uma fila vazia usa o perfil atual; uma fila com um único item não muda para outro perfil. A animação de rolagem move o conteúdo de um HUD que permanece visível. Cada HUD usa sua própria fila e um clique reinicia seu temporizador. Mudanças de período do DeepSeek mantêm a animação completa."
   ],
   "summons": [
     "Atalhos e áreas do mouse",
-    "Mostre ou oculte os HUDs quando precisar.",
-    "Defina um atalho com Ctrl ou Alt, opcionalmente Shift, e aplique.\nEscolha uma animação simples ou completa para mostrar. Ocultar também reproduz uma animação de saída.\nNo modo temporário, habilite uma área e ajuste âncora, tamanho, deslocamento e permanência.",
-    "F12 e combinações reservadas são rejeitados; um conflito mantém o atalho anterior. O atalho controla todos os HUDs sem mudar posições. A ocultação vale apenas nesta sessão. As áreas ficam dentro da tela inteira. Saia e entre novamente para reativar; também podem avançar a lista."
+    "Mostre e oculte os HUDs quando precisar.",
+    "Insira um atalho com Ctrl ou Alt e, opcionalmente, Shift; depois aplique-o.\nEscolha a aparição simples ou completa; ao ocultar, o HUD usa a animação de recolhimento.\nNo modo temporário, ative uma área do mouse e ajuste posição, tamanho, deslocamento e tempo de permanência.",
+    "F12 e combinações reservadas são rejeitadas. Se o atalho estiver ocupado, o anterior continua ativo. O atalho controla todos os HUDs e preserva suas posições. O estado oculto vale somente para a sessão atual. As áreas do mouse usam os limites completos da tela e ficam restritas a eles. Sair e entrar novamente permite outra ativação; opcionalmente, essa ação também avança na fila de perfis."
   ],
   "triggers": [
-    "Regras de acionamento",
-    "Mostre um HUD temporário conforme os dados.",
-    "Adicione e ative uma regra em Conteúdo do HUD.\nEscolha variável e modo: limiar, mudança de valor ou passagem para verdadeiro.\nDefina a espera, desative a exibição permanente e aplique.",
-    "A primeira amostra e a recuperação de dados apenas estabelecem a referência. Uma condição contínua pode acionar novamente após a espera. Regras e listas são independentes por HUD. Exemplos: cpu.usage >= 90 com espera de 30 segundos, ou mudança de media.title para anunciar uma música."
+    "Regras de ativação",
+    "Mostre temporariamente um HUD quando os dados atenderem a uma condição.",
+    "Adicione e ative uma regra em Conteúdo do HUD.\nEscolha a variável e uma condição de limite, mudança de valor ou transição para verdadeiro.\nDefina o intervalo mínimo entre ativações, desative Sempre visível e aplique as configurações.",
+    "A primeira leitura e o retorno de dados ausentes apenas estabelecem a referência. Uma condição de limite que permanece atendida pode ativar o HUD novamente após o intervalo mínimo. Regras e filas são configuradas por HUD. Exemplos: cpu.usage >= 90 com um intervalo mínimo de 30 segundos, ou uma mudança em media.title ao trocar de música."
   ],
   "special": [
-    "Relógio, rede e FPS",
-    "Ajuste os recursos específicos dos perfis.",
-    "No relógio mundial, escolha um deslocamento UTC fixo e um horário-alvo diário opcional.\nNa rede, escolha unidade e largura de banda de referência do anel.\nNas sondas, defina destino e protocolo; TCP/UDP usam uma porta.\nPara FPS, atualize a lista e selecione janela ou tela.",
-    "Deslocamentos fixos não acompanham o horário de verão. 1 MB/s equivale a 8 Mbps; a referência não limita a conexão. Uma sonda com falha não comprova falta total de internet. FPS mede quadros apresentados, não a taxa fixa da tela; pode exigir administrador. A GPU é escolhida por perfil."
+    "Horário, rede e FPS",
+    "Entenda as configurações específicas de cada perfil.",
+    "Para o relógio mundial, selecione um deslocamento UTC fixo e, se necessário, um horário-alvo diário.\nDefina as unidades de rede e a largura de banda de referência do anel.\nPara testes de rede, escolha o destino e o protocolo; TCP e UDP usam a porta informada.\nPara FPS, atualize a lista e selecione uma janela ou tela.",
+    "Deslocamentos UTC fixos não seguem o horário de verão. 1 MB/s equivale a 8 Mbps; o valor de referência do anel não limita a conexão. Uma falha no teste não comprova uma interrupção geral da Internet. FPS mede imagens realmente apresentadas, não a taxa de atualização fixa da tela. Podem ser necessárias permissões de administrador. A GPU selecionada vale para o perfil correspondente."
   ],
   "media": [
-    "Mídia e progresso",
-    "Use a sessão de mídia do Windows.",
-    "Use media.title_artist para título e artista.\nUse media.position_text e media.duration_text para os tempos.\nNo anel, escolha media.progress com faixa de 0 a 100.",
-    "O player precisa publicar uma sessão de mídia do Windows. A posição avança conforme a linha do tempo e a velocidade informadas, e fica parada em pausa. Transmissões sem duração não têm porcentagem válida. Metadados não fornecidos ficam indisponíveis."
+    "Informações de mídia e reprodução",
+    "Mostre os dados da sessão de mídia do Windows.",
+    "Use media.title_artist para o título e o artista.\nAdicione media.position_text e media.duration_text para os tempos.\nUse media.progress como variável do anel, com intervalo de 0 a 100.",
+    "O reprodutor deve fornecer uma sessão de mídia do Windows. Durante a reprodução, a posição segue a linha do tempo e a velocidade informadas; ao pausar, ela para de avançar. Transmissões ao vivo sem duração não fornecem uma porcentagem válida. Metadados não fornecidos pelo reprodutor permanecem indisponíveis."
   ],
   "instances": [
-    "Vários HUDs experimentais",
-    "Crie exibições independentes.",
-    "Ative vários HUDs em Recursos experimentais.\nAdicione um HUD secundário, dê um nome e selecione-o para editar.\nSalve e aplique novas instâncias antes da prévia.",
-    "O HUD selecionado fica destacado. Cada um tem posição, perfis, lista, regras e áreas próprias. Intervalo de coleta, atalho global e opção geral de troca por clique são compartilhados. Clicar avança somente o HUD clicado. Excluir um secundário não remove o principal."
+    "Experimental: vários HUDs",
+    "Configure várias exibições de informações de forma independente.",
+    "Ative várias instâncias de HUD em Recursos experimentais.\nAdicione um HUD secundário, dê um nome a ele e selecione-o para edição.\nAplique as novas instâncias antes de usar sua prévia.",
+    "O HUD em edição é destacado. Perfis, posição, fila, regras e áreas do mouse são definidos por instância. O intervalo de amostragem, o atalho global e a opção geral de clique são compartilhados. Um clique avança somente o HUD correspondente. Remover uma instância secundária não remove o HUD principal."
   ],
   "maintenance": [
-    "Configuração e manutenção",
-    "Faça cópias e consulte diagnósticos.",
-    "Exporte a configuração ou faça um backup em Sobre antes de mudanças importantes.\nImporte para restaurar.\nAbra os registros ou a pasta de configuração para investigar falhas.\nDepois de redefinir, aplique os ajustes carregados.",
-    "Chaves criptografadas podem precisar ser informadas novamente em outro PC ou conta Windows. Falha ao buscar atualizações não confirma que a versão é a mais recente. Pacotes de desenvolvimento podem manter o mesmo número; confira a descrição do pacote."
+    "Configuração, backup e manutenção",
+    "Salve as configurações e investigue erros.",
+    "Antes de mudanças importantes, exporte ou faça um backup da configuração em Sobre.\nImporte uma configuração para restaurá-la.\nAbra os logs ou a pasta de configurações para investigar problemas.\nApós restaurar os padrões, clique em Aplicar para salvá-los.",
+    "Após mudar de computador ou conta, talvez seja necessário inserir novamente as chaves criptografadas. Uma falha na busca de atualizações não significa que a versão esteja atualizada. Pacotes de desenvolvimento podem manter o mesmo número de versão; consulte as informações do pacote entregue."
   ],
   "troubleshooting": [
-    "Problemas e avisos",
-    "Confira exibição e fontes de dados.",
-    "Se o HUD não aparecer, verifique ativação, ocultação por atalho, modo, monitor, coordenadas e opacidade.\nNo modo temporário, confira evento, área ou regra.\nPara --, verifique sensor, permissões, chave API, caminho JSON e expressão.",
-    "-- não é zero real; mudar o formato não corrige a coleta. A caixa de seleção do aviso silencia permanentemente apenas as variáveis listadas nessa janela. As demais continuam avisando. Fechar normalmente confirma só esse incidente. Erros de expressão são separados por perfil e expressão. Silenciar não repara nem interrompe a coleta."
+    "Solução de problemas e avisos",
+    "Confira o modo de exibição e as fontes de dados.",
+    "Se o HUD não aparecer, confira o interruptor principal, o estado oculto, o modo, a tela de destino, a posição e a opacidade.\nNo modo temporário, confira o evento esperado, a área do mouse ou a regra.\nSe aparecer --, confira o sensor, as permissões, a chave de API, o caminho JSON ou a expressão.",
+    "-- não representa um zero real; a formatação não substitui uma medição ausente. A caixa de seleção silencia permanentemente os avisos somente das variáveis já listadas na janela. Outras variáveis continuam gerando avisos. Fechar a janela normalmente confirma apenas essa ocorrência. Erros de expressão são diferenciados por perfil e expressão. Silenciar um aviso não repara nem encerra a coleta de dados."
   ]
 }

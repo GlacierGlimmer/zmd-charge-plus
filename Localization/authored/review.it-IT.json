@@ -1,0 +1,29 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Nomi geografici usati con la stessa grafia in italiano.",
+    "Alaska": "Nome geografico invariato nell’uso italiano.",
+    "Album": "Nome italiano corrente per un album musicale, invariato.",
+    "Buenos Aires, Brasilia": "Nomi di città conservati nella grafia italiana usuale.",
+    "Dubai, Abu Dhabi": "Nomi di città conservati nella grafia italiana usuale.",
+    "Eucla": "Nome proprio della località australiana, invariato in italiano.",
+    "Hawaii": "Nome geografico normalmente conservato in italiano.",
+    "Islamabad, Karachi": "Nomi di città conservati nella grafia italiana usuale.",
+    "Kabul": "Nome geografico usato anche in italiano con questa grafia.",
+    "NiCd": "Abbreviazione chimica internazionale del nichel-cadmio.",
+    "NiMH": "Abbreviazione chimica internazionale del nichel-metallo idruro.",
+    "No": "Negazione italiana con la stessa grafia della parola inglese.",
+    "Nukuʻalofa, Apia": "Nomi geografici propri conservati nell’uso italiano.",
+    "OK": "Indicazione di funzionamento corretto comunemente usata in italiano.",
+    "Online": "Prestito di uso comune in italiano per lo stato di connessione.",
+    "Sydney, Brisbane": "Nomi di città australiane conservati nell’uso italiano.",
+    "X / px": "Asse X e unità tecnica px, simboli invariati in italiano.",
+    "Y / px": "Asse Y e unità tecnica px, simboli invariati in italiano.",
+    "Yangon": "Nome proprio della città usato con questa grafia in italiano."
+  },
+  "notes": [
+    "Le 2313 voci sono state tradotte e riviste sulle fonti cinesi complete; conservati parametri e identificatori tecnici.",
+    "Le vecchie etichette composte e le spiegazioni abbreviate sono state riscritte individualmente in italiano.",
+    "Il manuale contiene 14 capitoli in italiano con procedure, riferimenti alle funzioni e note del manuale canonico.",
+    "La copertura strutturale non autorizza l’esportazione e non sostituisce la verifica visiva sulle quattro piattaforme."
+  ]
+}

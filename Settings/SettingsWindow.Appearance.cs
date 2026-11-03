@@ -5,7 +5,7 @@ public partial class SettingsWindow
 {
     private async Task ApplyGlobalAppearanceAsync(double font,double ui)
     {
-        font=GlobalAppearance.NormalizeScale(font);ui=GlobalAppearance.NormalizeScale(ui);
+        font=GlobalAppearance.NormalizeFontScale(font);ui=GlobalAppearance.NormalizeUiScale(ui);
         static AppSettings Scale(AppSettings value,double font,double ui)=>value with {
             GlobalFontScale=font,GlobalUiScale=ui,
             HudInstances=value.HudInstances.Select(i=>i with {Settings=i.Settings with {GlobalFontScale=font,GlobalUiScale=ui}}).ToList() };

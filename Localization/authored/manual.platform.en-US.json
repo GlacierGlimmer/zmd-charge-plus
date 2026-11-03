@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Steps",
+    "Details",
+    "Example",
+    "Variable keys and examples stay unchanged.",
+    "Function reference"
+  ],
+  "linux": {
+    "sources": [
+      "Data source configuration",
+      "Connect DeepSeek and HTTP JSON services.",
+      "Open Data Management → Data Source Configuration and enter your DeepSeek API key.\nFor HTTP, set a name, GET URL, headers, refresh interval and JSON field mappings; enable the source.\nSave & Apply, then copy custom.<source>.<variable> from the Variable Library into a profile.",
+      "DeepSeek peak windows use Beijing time and the Chinese holiday calendar; weekends remain off-peak even on make-up workdays. HTTP refresh intervals control caching independently of global sampling. Inspect custom.<source>.status and custom.<source>.error after failures; 401/403 usually require checking authentication and access. JSON paths must match the real response. ${env:MY_API_KEY} reads a process environment variable. PawnIO and the AIDA64 desktop interface are Windows-only."
+    ],
+    "media": [
+      "Media sessions",
+      "The current native build has no media-session collector.",
+      "Open Data Management → Variable Library and check the available fields.\nChoose a profile whose variables are supported on this machine.\nReplace unavailable media fields with another supported measurement, then Save & Apply.",
+      "This build does not expose native player sessions. A Windows media profile does not enable a native collector when imported. Missing titles, timelines or progress are unavailable rather than invented. The Windows media-session permission model does not apply here."
+    ],
+    "hardware": [
+      "Hardware sensors and Linux access",
+      "Use detected Linux interfaces and inspect missing readings.",
+      "Open Data Management → Hardware Data and refresh detection.\nSearch by device, sensor or original ID; select a row and copy its template to your HUD.\nIf a reading is missing, inspect its availability and export diagnostics before changing permissions.",
+      "CPU readings use /proc/stat, /proc/cpuinfo, cpufreq or hwmon. GPU access depends on DRM/hwmon or NVIDIA nvidia-smi. Linux drivers and file permissions determine which thermal, power and voltage nodes exist and can be read. A supported node must return real data; unavailable readings remain --. PawnIO and AIDA64 are not Linux backends. Sensor package/core/hotspot channels can represent different measurements; a maximum is not automatically a rated hardware limit."
+    ],
+    "special": [
+      "Time, network and FPS profiles",
+      "Choose units and targets that match the native data source.",
+      "Choose a World Clock UTC offset or a daily target time in the profile.\nFor network traffic, select automatic byte units or Mbps and set the ring reference.\nFor FPS, refresh the window/display list, choose a live target and set the frame rate represented by 100%, then Save & Apply.",
+      "World Clock uses a fixed UTC offset without automatic daylight-saving changes. 1 MB/s equals 8 Mbps; ring reference bandwidth sets the scale and does not limit network speed. ICMP ignores ports; TCP/UDP probes use the configured port. A failed probe is not proof that the whole device is offline. Linux counts X11 Present completion events and requires an X11/XWayland session with the Present extension and libXpresent. Native Wayland windows without a visible X11 presentation stream cannot be measured by this backend. Before a real frame stream has been observed, missing events mean unavailable data. After real frames have initialized sampling, an idle stream can report 0 FPS; monitor refresh rate is never substituted."
+    ],
+    "maintenance": [
+      "Configuration, backup and native secrets",
+      "Back up settings and understand what a configuration file contains.",
+      "Before large edits, export settings or create a backup under About → Configuration & Maintenance.\nImport a configuration to restore it; use the top bar for the config folder and About for logs.\nAfter loading defaults, Save & Apply to commit them; inspect update status before deciding that a build is current.",
+      "Linux protects the API key with AES-GCM using a private local key file at secrets/master.key under the configuration directory. That file requires private Unix permissions. Exported configuration alone does not transfer the local encryption key; moving to another installation may require re-entering the API key. A failed update check or unavailable remote version does not confirm that you are up to date. Retain source status and local hardware diagnostics when investigating failures."
+    ],
+    "troubleshooting": [
+      "Missing HUDs and readings",
+      "Separate visibility, source and native permission problems.",
+      "Check the Master Switch, shortcut suppression, target display, coordinates and opacity.\nUse Always Visible for a persistent HUD; transient mode requires a configured event, hot zone or rule.\nConfirm the variable and unit in the library, inspect native capture/source status, then Save & Apply any changes.",
+      "Unavailable readings remain --; formatting cannot repair an inaccessible sensor or invalid expression. Check JSON paths, API authentication and platform capture permissions as appropriate. Do not install a Windows driver to repair a native interface. The warning checkbox silences only the variables listed in that warning, keeps other variables active, and does not repair or stop collection."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Data source configuration",
+      "Connect DeepSeek and HTTP JSON services.",
+      "Open Data Management → Data Source Configuration and enter your DeepSeek API key.\nFor HTTP, set a name, GET URL, headers, refresh interval and JSON field mappings; enable the source.\nSave & Apply, then copy custom.<source>.<variable> from the Variable Library into a profile.",
+      "DeepSeek peak windows use Beijing time and the Chinese holiday calendar; weekends remain off-peak even on make-up workdays. HTTP refresh intervals control caching independently of global sampling. Inspect custom.<source>.status and custom.<source>.error after failures; 401/403 usually require checking authentication and access. JSON paths must match the real response. ${env:MY_API_KEY} reads a process environment variable. PawnIO and the AIDA64 desktop interface are Windows-only."
+    ],
+    "media": [
+      "Media sessions",
+      "The current native build has no media-session collector.",
+      "Open Data Management → Variable Library and check the available fields.\nChoose a profile whose variables are supported on this machine.\nReplace unavailable media fields with another supported measurement, then Save & Apply.",
+      "This build does not expose native player sessions. A Windows media profile does not enable a native collector when imported. Missing titles, timelines or progress are unavailable rather than invented. The Windows media-session permission model does not apply here."
+    ],
+    "hardware": [
+      "Hardware data on macOS",
+      "Read system-provided measurements and respect device limitations.",
+      "Open Data Management → Hardware Data and refresh detection.\nSearch the detected devices and fields, then copy a supported variable into a profile.\nWhen data is missing, check the status and export diagnostics; do not assume administrator access creates a sensor API.",
+      "CPU and memory statistics use Mach or sysctl; battery information comes from native power interfaces. Storage uses APFS Data volume statistics and may share capacity within one container. GPU values depend on the Metal/system interfaces actually exposed. A GPU memory budget is not dedicated physical VRAM. Temperatures or power values that the hardware and OS do not expose remain --. This build does not use PawnIO or the Windows AIDA64 interface."
+    ],
+    "special": [
+      "Time, network and FPS profiles",
+      "Choose units and targets that match the native data source.",
+      "Choose a World Clock UTC offset or a daily target time in the profile.\nFor network traffic, select automatic byte units or Mbps and set the ring reference.\nFor FPS, refresh the window/display list, choose a live target and set the frame rate represented by 100%, then Save & Apply.",
+      "World Clock uses a fixed UTC offset without automatic daylight-saving changes. 1 MB/s equals 8 Mbps; ring reference bandwidth sets the scale and does not limit network speed. ICMP ignores ports; TCP/UDP probes use the configured port. A failed probe is not proof that the whole device is offline. macOS uses ScreenCaptureKit complete frames and requires Screen Recording permission. Idle, blank and suspended frames are excluded. If capture is denied or the target disappears, inspect the status instead of treating the display refresh rate as FPS."
+    ],
+    "maintenance": [
+      "Configuration, backup and native secrets",
+      "Back up settings and understand what a configuration file contains.",
+      "Before large edits, export settings or create a backup under About → Configuration & Maintenance.\nImport a configuration to restore it; use the top bar for the config folder and About for logs.\nAfter loading defaults, Save & Apply to commit them; inspect update status before deciding that a build is current.",
+      "The API key is stored in macOS Keychain; the configuration keeps a reference, not a portable copy of the secret. Importing configuration into a different account or machine may require entering the API key again. Allow a legitimate Keychain access request if the system asks. A failed update check or unavailable remote version does not confirm that you are up to date. Retain source status and local hardware diagnostics when investigating failures."
+    ],
+    "troubleshooting": [
+      "Missing HUDs and readings",
+      "Separate visibility, source and native permission problems.",
+      "Check the Master Switch, shortcut suppression, target display, coordinates and opacity.\nUse Always Visible for a persistent HUD; transient mode requires a configured event, hot zone or rule.\nConfirm the variable and unit in the library, inspect native capture/source status, then Save & Apply any changes.",
+      "Unavailable readings remain --; formatting cannot repair an inaccessible sensor or invalid expression. Check JSON paths, API authentication and platform capture permissions as appropriate. Do not install a Windows driver to repair a native interface. The warning checkbox silences only the variables listed in that warning, keeps other variables active, and does not repair or stop collection."
+    ]
+  },
+  "android": {
+    "start": [
+      "Getting started on Android",
+      "Start the HUD with the permissions required by the selected output.",
+      "Open Home and inspect Permissions; allow drawing over other apps for the overlay and allow notifications when requested.\nChoose a profile under HUD Content and a display mode under Display & Position; enable the HUD master switch.\nReturn to Home and press Start HUD; use Stop HUD there when you want to stop the service.",
+      "General settings save automatically. Profile edits use their own Save action; editing a built-in profile creates a custom copy. The running overlay and the native live update are different outputs, with different OS capabilities. Starting the app alone does not guarantee that the foreground HUD service is running."
+    ],
+    "display": [
+      "Display, position and global appearance",
+      "Configure the overlay or the system-controlled live update.",
+      "In Display & Position, choose Overlay or the supported Native live update output.\nFor the overlay, select Always visible, an anchor plus offsets or custom coordinates; adjust size, opacity, cutout avoidance and click-through.\nOpen Language → Global font size and UI scale to scale the settings and HUD from 75% to 200%; Reset to 100% restores the global factors.",
+      "Click-through passes touches to the app below. Start on boot is subject to Android background-start restrictions and the selected output permissions. Native live updates require a supported Android version and system eligibility; Android controls their layout and text size. Overlay styling cannot force the system notification to use the same geometry. An individual HUD size is multiplied by global UI scale."
+    ],
+    "profiles": [
+      "Profiles and HUD content",
+      "Edit text, icons, expressions and the progress ring.",
+      "Select a built-in profile or create a custom profile under HUD Content.\nEdit tagline, title, primary/secondary text, right value, suffix, icons and accent color; preview the result.\nSet a progress variable or an expression beginning with =, choose its minimum and maximum, then Save the profile.",
+      "Editing a built-in profile saves a custom copy; it does not overwrite the original preset. The ring maps the current value over the configured range and clamps the result to 0–100%; it does not change the raw text reading. Use appropriate units and full-scale values. Conditional color rules use the original measurement unit; unavailable data is not a measured zero."
+    ],
+    "variables": [
+      "Variables, tokens and expressions",
+      "Copy an Android-supported field and keep code unchanged.",
+      "Open Data Management → Variable Library and search a name or key.\nRead its meaning, unit, availability and Android source note; copy the variable or token into a profile.\nUse {cpu.usage|0} for formatted text, or = (cpu.usage + gpu.usage) / 2 for a numeric expression; preview and Save.",
+      "Variable keys, function names and format pipes are code and stay untranslated. bytes and speed format byte sizes/rates; gb:2 uses powers of 1024, while duration formats seconds. Expression functions cover arithmetic, conditions, text and missing values. Data that cannot be collected remains unavailable. A desktop variable may have an Android alias or no Android reader; check the actual library rather than assuming an imported key is supported."
+    ],
+    "hardware": [
+      "Hardware data and optional Root",
+      "Read actual Android capabilities without substituting desktop drivers.",
+      "Open Data Management → Hardware Data to inspect detected fields and their availability.\nIf the phone is already rooted, open Experimental Features → Use Root for readings and choose whether to authorize ECP in your Root manager.\nRefresh detection, inspect the resulting source status and copy a supported field or export diagnostics.",
+      "Root access is optional and does not root the phone. It supplements read access to vendor CPU/GPU, thermal and memory nodes; a device without a compatible node still has no reading. Ordinary battery and memory collectors continue without Root. Missing values are unavailable, never an invented zero. PawnIO and the Windows AIDA64 interface do not run on Android. Full-charge battery energy may be estimated from measured energy and charge percentage; it is not a rated design capacity."
+    ],
+    "sources": [
+      "DeepSeek and HTTP JSON sources",
+      "Configure services and inspect actual response status.",
+      "Open Data Management → Data Source Configuration and enter a DeepSeek API key; save it with the key action.\nFor an HTTP source, enter a name, JSON GET URL, headers, interval and field paths; enable the configured source.\nFind custom.<source>.<variable> in the library; inspect custom.<source>.status and custom.<source>.error if it fails.",
+      "The API key is encrypted with Android Keystore; a configuration export is not a portable secret backup. Re-enter the key when another installation cannot resolve it. DeepSeek windows use Beijing time and the Chinese holiday calendar, with weekend make-up workdays still off-peak. HTTP caching follows each source interval. Match JSON paths to the real response and check authentication for 401/403. ${env:MY_API_KEY} works only if that process environment variable exists. The example JSON starts disabled; replace its URL and mappings before enabling it."
+    ],
+    "cycle": [
+      "Automatic cycling and animation",
+      "Order profiles and choose the overlay transition.",
+      "Save the profiles you want to cycle, then add them to the Cycle queue in HUD Content.\nUse Up and Down to reorder entries, or Remove to take an entry out of the queue.\nEnable automatic cycling, set an interval from 3 to 3600 seconds, and choose Simple or Full for the overlay transition.",
+      "Removing a queue entry does not delete its profile. The cycle transition overrides the individual profile animation. An empty queue uses the active profile; one item cannot cycle to a different profile. Android currently exposes Simple and Full overlay transitions; desktop Roll Up is not an Android transition. The native live update is rendered by Android rather than the overlay animation engine."
+    ],
+    "summons": [
+      "Showing and stopping the Android HUD",
+      "Use Android controls rather than desktop shortcuts or mouse hot zones.",
+      "Use Home → Start HUD to start the selected output and Home → Stop HUD to stop it.\nFor a persistent overlay, enable Always visible in Display & Position.\nFor on-demand overlay display, disable Always visible and check the supported power-event behavior and display duration.",
+      "The Android UI has no desktop global show/hide keyboard shortcut or mouse hot-zone editor. These settings from a desktop import do not create Android controls. The HUD master switch suppresses output; a background service and its foreground notification may still have their own running state. Use Stop HUD to stop the service."
+    ],
+    "triggers": [
+      "Event rules and Android limits",
+      "Check supported behavior before relying on an imported rule.",
+      "Check the variable and live value in Data Management before configuring a profile.\nUse Android automatic cycling or supported power-event display for the available automatic behavior.\nConfirm the actual HUD state on Home and keep Always visible enabled when a persistent display is required.",
+      "This Android settings UI does not provide the desktop Trigger Rules editor or its per-instance rule queue. Importing a desktop threshold/change rule does not make that feature available. A data warning is a source failure notification, not an automatic threshold rule. Do not depend on an unimplemented rule for a reminder."
+    ],
+    "special": [
+      "Time, network and Android FPS",
+      "Choose genuine measurements and supported targets.",
+      "Set a World Clock UTC offset or daily target; fixed offsets do not automatically follow daylight-saving changes.\nChoose automatic byte units or Mbps for network traffic, and configure the ICMP/TCP/UDP target and port as appropriate.\nFor FPS, authorize Root when needed, refresh targets, select the SurfaceFlinger layer or display and set the frame rate represented by 100%.",
+      "1 MB/s equals 8 Mbps. The ring reference sets the scale and does not cap bandwidth. ICMP ignores ports; a failed TCP/UDP/ICMP target is not proof of a total network outage. Window FPS comes from real displayed-frame timestamps for the selected SurfaceFlinger layer. Display FPS requires a vendor composition-frame counter and cannot be attributed when multiple displays are ambiguous. Unsupported or missing frame data stays unavailable; refresh rate is never substituted."
+    ],
+    "media": [
+      "Media-session availability",
+      "The current Android build has no player-session source.",
+      "Check the Android Variable Library for supported fields.\nChoose a profile backed by those fields, such as time, battery or memory.\nReplace imported desktop media fields before saving a profile intended for Android.",
+      "This build does not read player title, artist or playback timeline from Android media sessions. Overlay or notification permission does not grant a media collector that the app has not implemented. Imported media keys stay unavailable rather than displaying a fabricated track or progress value."
+    ],
+    "instances": [
+      "Multiple HUDs and mobile scope",
+      "Android currently controls one active HUD output.",
+      "Select the active profile in HUD Content.\nUse the cycle queue when you want several profiles to share that output over time.\nUse global font and UI scale for the settings and HUD; use the overlay size controls for its individual size.",
+      "The desktop multi-instance editor and its independently positioned HUD windows are not implemented in this Android UI. An imported desktop instance list does not create multiple Android overlay windows. Overlay and Native live update are selectable output modes, not two independently configured desktop instances. Language and the global appearance factors apply across the app."
+    ],
+    "maintenance": [
+      "Configuration, diagnostics and updates",
+      "Use Android file pickers and preserve the source of failures.",
+      "Before major changes, use Experimental Features to export the configuration with the system file picker.\nImport a saved JSON configuration to restore it, or export logs and diagnostics to investigate a failure.\nCheck the app version and update status in About; use Reset only when you intend to restore first-install defaults.",
+      "API keys are protected by Android Keystore and are not portable clear-text fields in an exported configuration. A different installation or account may require entering the key again. Reset restores profiles, sources, refresh intervals and display settings after confirmation. A failed remote update check does not establish that the installed version is current. Sampling slows down while hidden or screen-off according to the configured intervals."
+    ],
+    "troubleshooting": [
+      "Visibility, missing data and warning scope",
+      "Check Android permission and actual collector status.",
+      "Check Home → Permissions and running status, then the HUD master switch and the selected output mode.\nFor overlays, check Always visible, coordinates, opacity and overlay permission; for live updates, inspect the system eligibility status.\nFor -- readings, inspect the variable source, Root availability when applicable, API authentication or JSON paths, and export diagnostics.",
+      "Missing data is not zero, and a text format cannot repair a sensor or expression. Some vendor/SELinux restrictions remain even with an allowed overlay. The warning checkbox permanently suppresses only the variables already listed in that warning; other variables continue to warn. Dismissing without the checkbox acknowledges that incident. Suppression does not repair the source or stop collection."
+    ]
+  }
+}

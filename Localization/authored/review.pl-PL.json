@@ -1,0 +1,24 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Geographical proper names with the same conventional Polish spelling.",
+    "Alaska": "Geographical proper name with the same conventional Polish spelling.",
+    "Dhaka, Thimphu": "Geographical proper names with the same conventional Polish spelling.",
+    "Eucla": "Geographical proper name with the same conventional Polish spelling.",
+    "Kabul": "Geographical proper name with the same conventional Polish spelling.",
+    "Nukuʻalofa, Apia": "Geographical proper names with the same conventional Polish spelling.",
+    "Sydney, Brisbane": "Geographical proper names with the same conventional Polish spelling.",
+    "Album": "Album is an established Polish noun with the same spelling.",
+    "Minimum": "Minimum is an established Polish noun with the same spelling.",
+    "Operator": "Operator is an established Polish noun for an operator with the same spelling.",
+    "System": "System is an established Polish noun with the same spelling.",
+    "d": "d is a Polish abbreviation of doba or dni in compact durations.",
+    "{0}d {1:00}:{2:00}:{3:00}": "d is a Polish abbreviation of doba or dni; duration format placeholders are preserved."
+  },
+  "notes": [
+    "All 2313 active-message keys and all 14 manual chapters were authored without any online translation service.",
+    "Descriptions follow the complete Chinese source meaning, including WMI and performance counter names, permissions, caches, unavailable readings, platform APIs and collector limitations.",
+    "The SystemClock.elapsedRealtime()/1000 description includes deep sleep. The two period percentage templates explicitly express elapsed time.",
+    "Technical literals, protocols, function and variable names and code examples retain their syntax.",
+    "Structural checks are not evidence of native-speaker review or all-platform visual review; neither has been performed."
+  ]
+}

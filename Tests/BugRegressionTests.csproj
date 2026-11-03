@@ -15,6 +15,9 @@
     <Compile Include="NavigationManualChecks.cs" />
     <Compile Include="LocalizationRegressionChecks.cs" />
     <Compile Include="AppearanceLanguageChecks.cs" />
+    <Compile Include="WindowFrameChecks.cs" />
+    <Compile Include="LanguageSwitchLayoutChecks.cs" />
+    <Compile Include="ProfileScrollChecks.cs" />
     <None Include="Fixtures/presentmon2.6-replay.csv" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../EndfieldChargePlus.csproj" />
   </ItemGroup>

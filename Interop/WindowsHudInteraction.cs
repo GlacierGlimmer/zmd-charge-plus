@@ -15,14 +15,15 @@ internal sealed class WindowsHudInteraction : IDisposable
     private readonly Func<PixelPoint,bool> _contains;
     private readonly Func<PixelRect> _bounds;
     private readonly Action _clicked;
+    private readonly Action<int>? _scrolled;
     private IntPtr _input,_parent;
     private bool _enabled,_pressed,_disposed;
     private PixelRect _lastBounds;
     private bool _lastTopmost;
     internal IntPtr InputHandle => _input;
-    internal WindowsHudInteraction(IntPtr owner,Func<PixelPoint,bool> contains,Action clicked,Func<PixelRect>? bounds=null)
+    internal WindowsHudInteraction(IntPtr owner,Func<PixelPoint,bool> contains,Action clicked,Func<PixelRect>? bounds=null,Action<int>? scrolled=null)
     {
-        _owner=owner;_contains=contains;_clicked=clicked;
+        _owner=owner;_contains=contains;_clicked=clicked;_scrolled=scrolled;
         _bounds=bounds ?? (()=> { GetWindowRect(owner,out var r);return new(r.Left,r.Top,r.Right-r.Left,r.Bottom-r.Top); });
     }
     internal void SetEnabled(bool enabled)
@@ -83,6 +84,11 @@ internal sealed class WindowsHudInteraction : IDisposable
             try {
                 if(message==0x21) return new(3); // MA_NOACTIVATE.
                 if(message==0x84) return new(1);
+                if(message==0x20A && owner._enabled)
+                {
+                    long value=lparam.ToInt64();var point=new PixelPoint(unchecked((short)value),unchecked((short)(value>>16)));
+                    if(owner._contains(point)){owner._scrolled?.Invoke(unchecked((short)(wparam.ToInt64()>>16)));return IntPtr.Zero;}
+                }
                 if(message==0x201) { owner._pressed=owner._enabled && owner.Inside(lparam);if(owner._pressed) SetCapture(hwnd);return IntPtr.Zero; }
                 if(message==0x202) {
                     bool clicked=owner._enabled && owner._pressed && owner.Inside(lparam);

@@ -44,11 +44,11 @@ internal static class DataWarningRegressionChecks
             var dialog=Dialog!;var checkbox=dialog.GetLogicalDescendants().OfType<CheckBox>().Single(c=>c.Name=="IgnoreCurrentDataWarningCheckBox");
             var close=dialog.GetLogicalDescendants().OfType<Button>().Single(c=>c.Content?.ToString()=="知道了");
             var p=checkbox.TranslatePoint(default,dialog);var q=close.TranslatePoint(default,dialog);
-            check(checkbox.Content?.ToString()=="此数据不再提示" && checkbox.IsChecked!=true && p!.Value.X<q!.Value.X,"The exact requested unchecked option sits to the left of OK in the footer.");
+            check((checkbox.Content is TextBlock label ? label.Text : checkbox.Content?.ToString())=="此数据不再提示" && checkbox.IsChecked!=true && p!.Value.X<q!.Value.X,"The exact requested unchecked option sits to the left of OK in the footer.");
             LocalizationManager.SetLanguage(AppLanguage.French);
             check(close.Content?.ToString()=="OK" && Details.Contains("metric.one"),"An open warning follows the selected language while keeping variable identifiers.");
             LocalizationManager.SetLanguage(AppLanguage.SimplifiedChinese);
-            check(close.Content?.ToString()=="知道了" && checkbox.Content?.ToString()=="此数据不再提示","The warning restores the requested Chinese captions after a language round trip.");
+            check(close.Content?.ToString()=="知道了" && (checkbox.Content is TextBlock restoredLabel ? restoredLabel.Text : checkbox.Content?.ToString())=="此数据不再提示","The warning restores the requested Chinese captions after a language round trip.");
             if(Environment.GetEnvironmentVariable("ECP_WARNING_AUDIT") is { Length:>0 } audit)
             {
                 Directory.CreateDirectory(audit);

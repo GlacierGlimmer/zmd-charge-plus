@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (Modified)
+ CPU
+ FPS
+ GHz
+ copy
+ {time.utc_offset}
+ · Primary
+%
+'{0}' is not numeric
+(Language translations may not be 100% accurate)
+(modified)
++X is right, +Y is down.
++X right, +Y down.
++X right, +Y down. Changing the preset resets both offsets to zero.
+-- means no valid reading or an expression failure. Check meaning and units in the library, then the driver, API authentication, JSON path or FPS status. Formatting cannot turn missing data into a real measurement. Keep MB/s, Mbps, GiB and °C distinct.
+--, invalid expressions and units
+/ GB
+/// BATTERY
+/// CPU
+/// DEEPSEEK API
+/// DISPLAY FPS
+/// GPU
+/// MEMORY
+/// NETWORK
+/// NETWORK PROBE
+/// SYSTEM DISK
+/// TIME
+/// WINDOW FPS
+/// WORLD CLOCK
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 or 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0.4 – 1.4×. Applied on release.
+1 GPU detected: {0}
+1 profile is in the cycle queue.
+10% – 100%. Applied on release.
+100% Reference Speed
+100% is fully opaque.
+100% reference speed
+A copy was created from the built-in scheme; the preset is unchanged.
+android.service.foreground_required
+A media HUD template
+A real mapped field from the configured HTTP/JSON source.
+AC
+AC Connected
+AC Online
+AC power
+windows.aida64.available
+windows.aida64.external_applications
+windows.aida64.transport
+API Latency Ms
+android.device.api_level
+android.island.api_status
+API request failed
+About
+About shows the version, architecture and update-check result. A network failure or unavailable remote version does not confirm that you are up to date. Check the status and retry. Development packages may retain the public version number; use their delivery notes to identify them.
+Accent Color
+Accent colour
+Active Interface Count
+Active Profile
+Active scheme
+Active when Always Visible is off. Matching rules summon the next carousel item, or the current profile if the queue is empty. Initial and recovered samples only establish a baseline.
+android.memory.low_memory_api.description
+android.frames.surfaceflinger_counter
+Actual collection status and unavailable reason.
+Actual collection status.
+windows.media.session_description
+Adapter ID
+Add
+Add HUD
+Add a rule
+Add and enable a rule under HUD Content → Trigger Rules.\nEnter a variable key and choose Threshold, Change or Becomes True; configure the operator and value for thresholds.\nSet a cooldown, turn Always Visible off, then Save & Apply.
+Add one variable/operator/threshold => color rule per line. Rules change the accent based on load, temperature and other values. Thresholds use the variable's original unit. Use valid color values; missing measurements are not treated as zero.
+Add profiles to the queue and use Move Up/Down to order them. Removing from the queue does not delete the profile. Automatic cycling advances at the configured interval. An empty queue uses the active profile; a single-item queue cannot switch to a different item.
+Add rule
+Add to queue
+Address
+Adelaide, Darwin
+Adjust the options specific to each profile.
+Advance the carousel on each hot-zone summon
+Aggregates: min, max, avg and sum. Range/precision: clamp(value, min, max), round(value, digits), floor, ceil, abs and sign. Math: sqrt, pow, log, log10, exp, sin, cos and tan. percent(value, total) returns a percentage; between(value, min, max) tests an inclusive range.
+Alaska
+windows.media.album
+All Categories
+All HUDs share one sampling interval; shorter intervals use more resources. Clocks update by seconds, while HTTP and balance sources keep their own refresh/cache intervals. Faster global sampling does not bypass a source's cache.
+All categories
+android.permission.overlay.required
+android.permission.requested_before
+Always Visible
+Always Visible keeps the HUD on screen with an Always on Top or Desktop layer. With it off, power events, the mouse hot zone or trigger rules summon it temporarily, then retract it after the display duration. Turning off the Master Switch stops display for the session; the switch is re-enabled on the next app launch.
+Always on Top
+Always visible
+Amd Adrenalin Available
+American Samoa
+android.permission.shizuku_required
+android.permission.special_access_required
+An import takes effect immediately; export the current configuration first if you want a backup.
+android.island.notification_required
+An update is available.
+android.permission.notification.android13
+android.island.android16_required
+android.battery.health_code.description
+android.battery.plugged_code.description
+android.battery.status_code.description
+android.cpu.soc_model.description
+android.device.android_version
+android.hardware.availability_notice
+android.capability.no_public_api
+android.capability.unsupported_metric
+android.island.native_android
+android.hardware.platform_note
+android.gpu.no_public_load_api
+android.island.provider.android_system
+android.update.available_version
+Animation
+App Process
+android.update.notification_channel
+Applies to all settings and every HUD. Individual HUD size is multiplied by global UI scale.
+Applies to every persistent HUD, including experimental instances. Clicking a HUD advances its own carousel queue using its transition animation, even with auto cycling off, and restarts that HUD’s automatic cycle interval.
+Applying…
+android.island.official_templates_only
+Architecture
+windows.media.artist
+windows.media.artist_and_title
+As appropriate for the value
+At most 600 entries and 3 log files are kept, so a long-running HUD can never fill the storage.
+Athens, Cairo, Helsinki
+Atlantic Time (Canada)
+Auckland, Fiji
+Authentication failed; check the API key.
+Author
+android.permission.not_authorized
+Auto / select target
+Auto Cycle
+Auto cycle is on, but the queue is empty. Add at least one profile.
+Auto cycle is on; {0} profiles will rotate in order.
+Automatic
+Automatic cycle
+Automatic units and pipelines
+Available
+Available Bytes
+Available Text
+android.storage.available_fraction.description
+Available logical CPU cores
+Available only in Always Visible mode. Each click advances through the automatic-cycle queue using its transition animation, even when automatic cycling is off. An empty or single-item queue does not switch.
+Available sensor count
+Available share
+Available when Always Visible is off. Position the hot zone within the full target display and adjust its size and dwell time.
+Avg Latency Ms
+android.display.avoid_cutout
+BIOS Date
+BIOS Version
+Background Count
+Backup
+Backup failed. See logs.
+Balance
+Balance / Period
+Balance Currency
+Balance Text
+android.deepseek.keystore_notice
+Balance query status; a missing key or failed request yields an explicit status.
+Bangkok, Hanoi, Jakarta
+Base URL
+Baselines, cooldown and queue
+Battery
+Battery Current
+Battery Health
+Battery Status
+Battery Temperature
+Battery current
+Battery level
+android.battery.statistics_restricted
+Battery temperature
+android.battery.temperature.description
+Battery voltage
+android.battery.energy_counter.description
+Becomes true
+Beijing Time (UTC+08:00)
+Beijing, Hong Kong, Singapore
+Berlin, Paris, Rome
+Bitlocker Encryption Percent
+Bitlocker Status
+Boolean
+Boot Time
+android.permission.boot.declared
+Bottom Center (above taskbar / Dock)
+Bottom Left (above taskbar / Dock)
+Bottom Right (above taskbar / Dock)
+Bottom center
+Bottom left
+Bottom right
+Bounce
+Buenos Aires, Brasilia
+Build  2026.10.18
+Build  {0}
+Build a carousel queue
+Build date
+android.device.manufacturer.description
+android.device.model.description
+Built-in profiles cannot be deleted
+Built-in schemes cannot be deleted.
+Built-in · saving changes creates a copy
+Built-in · zone and daily target are configurable; content edits create a copy
+Bus Speed
+Bytes
+C Active Percent
+C Filesystem
+C Free Bytes
+C Health
+C I/O B/s
+C Label
+C Partition Count
+C Power On Hours
+C Queue Length
+C Read B/s
+C Smart Status
+C Temperature
+C Total Bytes
+C Trim Status
+C Usage
+C Used Bytes
+C Write B/s
+CPU
+CPU Cores
+CPU Model
+CPU Temperature
+CPU Time Seconds
+CPU frequency
+CPU per core
+CPU sensor unavailable: the hardware or driver returned no valid temperature.
+CPU temperature
+CPU temperature status
+CPU temperature still shows --
+android.cpu.temperature.unsupported
+CPU total usage
+CPU usage
+CPU usage / cpu.usage
+Cache Bytes
+android.memory.cached.description
+Cached Memory
+Calculated from the device clock and profile settings.
+Cancel
+windows.startup.task_unreadable
+android.hardware.capability_disclaimer
+Capacity and time formats
+Capacity, frequency, rate, balance, time, and other primary values.
+Cape Verde
+Capture target
+Center
+Center (work area)
+Center Left (work area)
+Center Right (work area)
+Center left
+Center right
+Central Time (US & Canada)
+Change this while editing any HUD. Save & Apply uses the same sampling interval for every HUD. Clocks update each second; external APIs retain their own refresh intervals.
+Changing
+Charge Counter
+Charge Rate Watts
+Charging
+Chatham Islands
+Chatham Islands summer offset
+Check Updates
+Check drivers and sensors under Settings → Data Management → Hardware Data.
+Check for updates
+Check permissions, device support and data sources. The checkbox permanently silences only the data listed in this window; other variables still produce warnings.
+Check the Master Switch and shortcut suppression, then confirm persistent vs. transient mode. Transient mode needs an event, hot zone or rule. Check the target display, coordinates, opacity and hot-zone switch. Saving a profile without Save & Apply can leave the running HUD on its old settings.
+windows.hardware.check_sensor_or_aida64
+Check updates
+android.island.checking_native
+Checking GitHub…
+android.island.checking_permissions
+Checking…
+Checks once at startup; you can also check manually.
+Chemistry
+Chinese (Simplified)
+Choose Full or Simple reveal animation for the shortcut; hiding plays a retract animation. It affects all HUDs while retaining their profiles and positions. In transient mode it summons once, then resumes event behavior. The latest rapid request wins. Shortcut suppression lasts for the session.
+Choose a language in the top bar, or select Follow system. The language preference is saved immediately; other pending edits still require Save & Apply. Unsupported system languages fall back to English. Settings, built-in profiles, data warnings and this manual follow the language. Variable keys, formulas and API JSON remain unchanged.
+Choose an installed font; the system supplies fallback glyphs for missing characters.
+Choose the GPU used by this profile when multiple adapters are detected.
+Choose the displayed scheme; saving a built-in creates a copy.
+Choose what the HUD shows and how it looks.
+Clear
+Clear search
+Clear shortcut
+Click a persistent HUD to switch
+Click a persistent HUD to switch profiles
+Click and press a shortcut
+Click-through
+Clipboard
+Collapsed: 
+Color
+Color rules · one per line: variable operator value => color
+Colour
+Combined rate of every active interface.
+Commit Available Bytes
+Commit Limit Bytes
+Commit Usage
+Commit Used Bytes
+Common formats
+Common token formats
+Comparison operator
+Completely free physical memory (MemFree).
+Condition
+Condition mode
+Conditional colors
+Config & Maintenance
+Config Folder
+Config backed up: {0}
+Config exported.
+Config imported and applied.
+Config imported and applied; previous config backed up as {0}.
+Configuration import and export
+Configuration, backup & maintenance
+Configure HTTP / JSON
+windows.deepseek.dpapi_notice
+Configure hot-zone position and dwell
+Configure the DeepSeek API key under Data Management → Data Source Configuration → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.
+Configure the DeepSeek API key under Data Sources → DeepSeek API first. Peak/off-peak windows are set there too. Balance data is unavailable without a key.
+Configured daily target time (hh:mm:ss).
+windows.data_sources.available_integrations
+Connected
+Connection failed
+Connection succeeded.
+Contents
+Context Switches
+Control how profiles alternate.
+Controls all HUD display functions.
+Controls the primary HUD and additional instances together. Automatic summons pause while hidden. Press again to restore the previous display mode; restarting restores visibility.
+Cooldown / seconds
+Coordinated Universal Time
+Copied: {0}
+Copy Key
+Copy Template
+Copy example
+Copy from the library, then build readable HUD text.
+Copy key
+Copy keys from the variable library. Network probes use the carousel's Packet Probe target and protocol, or the current profile when no probe profile is queued.
+Copy selected variable
+Copy template
+Copyable JSON structure
+Core Clock MHz
+Core Temperature Avg (summary)
+Core Voltage
+Cores
+Could not open the logs folder. See logs.
+Could not reach GitHub; retry later.
+Could not read update details; retry.
+Could not register the shortcut; another app may be using it. Choose another and Save & Apply.
+Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.
+Could not save this preference. Please try again.
+android.service.start_failed
+android.island.eligibility_unknown
+Count
+macos.frames.screen_recording_description
+Create, save, delete and preview
+Credits
+Culture
+Currency code of the balance, normally CNY.
+Current
+Current 12h
+Current Active Interface Count.
+Current Active Profile.
+Current Adapter ID.
+Current Address.
+Current Architecture.
+Current Available Bytes, reported in Byte.
+Current Available Text.
+windows.hardware.current_bios_date
+Current BIOS Version.
+Current Background Count.
+Current Balance Text.
+Current Balance, reported in CNY.
+android.battery.current.description
+Current Bitlocker Encryption Percent, reported in %.
+Current Bitlocker Status.
+Current Boot Time.
+Current Bus Speed, reported in MHz.
+Current C Active Percent, reported in %.
+Current C Filesystem.
+Current C Free Bytes, reported in Byte.
+Current C Health.
+Current C I/O B/s, reported in Byte/s.
+Current C Label.
+windows.hardware.current_c_partition_count
+Current C Power On Hours, reported in h.
+Current C Queue Length, reported in items.
+Current C Read B/s, reported in Byte/s.
+Current C Smart Status.
+Current C Temperature, reported in °C.
+Current C Total Bytes, reported in Byte.
+Current C Trim Status.
+Current C Usage, reported in %.
+Current C Used Bytes, reported in Byte.
+Current C Write B/s, reported in Byte/s.
+Current CPU Time Seconds, reported in s.
+Current Cache Bytes, reported in Byte.
+android.battery.charge_counter.description
+Current Charge Rate Watts, reported in W.
+windows.hardware.current_chemistry
+Current Commit Available Bytes, reported in Byte.
+Current Commit Limit Bytes, reported in Byte.
+Current Commit Usage, reported in %.
+Current Commit Used Bytes, reported in Byte.
+Current Context Switches, reported in /s.
+Current Core Clock MHz, reported in MHz.
+Current Core Temperature Avg (summary), reported in °C.
+Current Core Voltage, reported in V.
+Current Count.
+Current Culture.
+Current Current 12h.
+Current Current.
+Current Cycle Count.
+Current D Active Percent, reported in %.
+Current D Filesystem.
+Current D Free Bytes, reported in Byte.
+Current D Health.
+Current D I/O B/s, reported in Byte/s.
+Current D Label.
+windows.hardware.current_d_partition_count
+Current D Power On Hours, reported in h.
+Current D Queue Length, reported in items.
+Current D Read B/s, reported in Byte/s.
+Current D Smart Status.
+Current D Temperature, reported in °C.
+Current D Total Bytes, reported in Byte.
+Current D Trim Status.
+Current D Usage, reported in %.
+Current D Used Bytes, reported in Byte.
+Current D Write B/s, reported in Byte/s.
+Current DNS Resolve Time, reported in ms.
+Current DNS Servers.
+Current DPC Time, reported in %.
+Current Date.
+Current Datetime.
+Current Day Elapsed Seconds, reported in s.
+Current Day Of Week En.
+Current Day Of Week.
+Current Day Of Year, reported in days.
+Current Day Progress, reported in %.
+Current Day Remaining Seconds, reported in s.
+Current Day, reported in 日.
+Current Dedicated Total Bytes, reported in Byte.
+Current Dedicated Usage, reported in %.
+Current Dedicated Used Bytes, reported in Byte.
+Current Default Gateways.
+Current Defender Last Scan.
+windows.hardware.current_defender_status
+Current Defender Threats, reported in items.
+Current Design Vs Current Health, reported in %.
+Current Design Wh, reported in Wh.
+Current Design mWh, reported in mWh.
+windows.hardware.current_device_count
+Current Device List.
+Current Discharge Rate Watts, reported in W.
+Current Display Download.
+Current Display FPS, reported in FPS.
+Current Display Percent, reported in %.
+Current Display Progress, reported in %.
+Current Display Status Text.
+Current Display Status.
+Current Display Upload.
+Current Docker Containers, reported in count.
+Current Docker Images, reported in count.
+Current Download B/s, reported in Byte/s.
+Current Download Mbps, reported in Mbps.
+windows.hardware.current_driver_date
+windows.hardware.current_driver_version
+Current Endpoint.
+Current Error.
+windows.hardware.current_estimated_time_to_empty_reported_in_s
+Current Estimated Time To Full, reported in s.
+Current Fan Count.
+windows.hardware.current_fan_speed_summary_reported_in_rpm
+Current Fan Speed Percent (summary), reported in %.
+Current File Count.
+Current Firewall Profile.
+Current Firewall Status.
+Current Fixed Count.
+Current Fixed Free Bytes, reported in Byte.
+Current Fixed List.
+Current Fixed Total Bytes, reported in Byte.
+Current Fixed Usage, reported in %.
+Current Fixed Used Bytes, reported in Byte.
+Current Form Factor.
+Current Framework Version.
+Current Free Percent, reported in %.
+Current Frequency GHz, reported in GHz.
+Current Frequency MHz, reported in MHz.
+Current Frequency Percent, reported in %.
+Current Full Life Seconds, reported in s.
+Current Full Scale Ms, reported in ms.
+Current Full Wh, reported in Wh.
+Current Full mWh, reported in mWh.
+windows.hardware.current_gpu_top_usage_reported_in
+windows.hardware.current_gpu_usage_reported_in
+Current Gamepad Battery, reported in %.
+Current Gamepad Count.
+Current Git Branch.
+Current Git Last Commit.
+Current Git Status.
+Current Golang Version.
+Current Granted Balance, reported in CNY.
+Current Handle Count.
+Current Hardware Reserved Bytes, reported in Byte.
+Current Health Percent, reported in %.
+Current Hotspot Temperature, reported in °C.
+Current Hour, reported in 时.
+Current Hyper V Status.
+Current IPv4 Addresses.
+Current IPv6 Addresses.
+Current Idle Percent, reported in %.
+Current Image Size.
+Current Instructions Per Second, reported in instr/s.
+Current Interface Names.
+Current Interface Types.
+Current Interrupts, reported in /s.
+Current Iso.
+Current Java Version.
+Current Jitter Ms, reported in ms.
+Current Kernel Usage, reported in %.
+Current L2 Cache KB, reported in KB.
+Current L3 Cache KB, reported in KB.
+Current LLM Local Status.
+Current Last Success.
+Current Last Updated.
+Current Link Speed B/s, reported in bit/s.
+Current Logical Processors, reported in threads.
+Current Loss Percent, reported in %.
+Current Lost, reported in count.
+Current Manufacturer.
+windows.hardware.current_max_frequency_ghz_reported_in_ghz
+Current Max Frequency MHz, reported in MHz.
+Current Max Link Speed B/s, reported in bit/s.
+Current Memory Clock MHz, reported in MHz.
+Current Memory Junction Temperature, reported in °C.
+Current Memory Total Bytes, reported in Byte.
+Current Memory Used Bytes, reported in Byte.
+Current Millisecond, reported in ms.
+Current Minute, reported in 分.
+Current Modified Bytes, reported in Byte.
+Current Monitor Count.
+Current Month Elapsed Seconds, reported in s.
+Current Month Progress, reported in %.
+Current Month Remaining Seconds, reported in s.
+Current Month, reported in 月.
+windows.hardware.current_motherboard_manufacturer
+windows.hardware.current_motherboard_model
+windows.hardware.current_motherboard_temperature_summary_reported_in_c
+Current Node Version.
+Current Nonpaged Pool Bytes, reported in Byte.
+Current OS Architecture.
+Current OS Build.
+Current OS Description.
+Current OS Version.
+Current PCIe Gen, reported in Gen.
+Current PCIe Lanes, reported in lane.
+Current PID.
+Current Packets Received, reported in 包.
+Current Packets Sent, reported in 包.
+Current Paged Pool Bytes, reported in Byte.
+Current Percent, reported in %.
+Current Period Local Timezone.
+Current Period Name Zh.
+Current Period Next Switch Datetime Local.
+Current Period Next Switch Datetime.
+Current Period Next Switch Time Local.
+Current Period Next Switch Time.
+Current Period Progress Text.
+Current Period Progress, reported in %.
+Current Period Remaining Seconds, reported in s.
+Current Period Remaining Text.
+Current Period Timezone.
+Current Physical Cores, reported in cores.
+Current Physical Index.
+Current Port.
+Current Power Limit W, reported in W.
+windows.hardware.current_power_max_summary_reported_in_w
+Current Power Plan.
+Current Power Source.
+windows.hardware.current_power_w_reported_in_w
+Current Preview.
+Current Primary Color Depth, reported in bit.
+Current Primary Height Px, reported in px.
+Current Primary Refresh Rate, reported in Hz.
+Current Primary Width Px, reported in px.
+Current Private Memory Bytes, reported in Byte.
+Current Process Architecture.
+Current Processor Count.
+Current Profile Percent B/s, reported in Byte/s.
+Current Profile Percent Mode.
+Current Profile Percent Text.
+Current Profile Percent, reported in %.
+Current Protocol.
+Current Proxy Address.
+Current Proxy Status.
+Current Public IPv4.
+Current Public IPv6.
+Current Python Version.
+Current Rate Watts, reported in W.
+Current Receive Errors, reported in count.
+Current Received, reported in count.
+Current Remaining Wh, reported in Wh.
+Current Remaining mWh, reported in mWh.
+Current Reply Status.
+Current Rust Version.
+Current Scale Percent, reported in %.
+Current Second, reported in s.
+Current Secondary Refresh Rate, reported in Hz.
+Current Secondary Resolution.
+Current Send Errors, reported in count.
+Current Sent, reported in count.
+Current Shared Limit Bytes, reported in Byte.
+Current Shared Usage, reported in %.
+Current Shared Used Bytes, reported in Byte.
+Current Signal dBm, reported in dBm.
+windows.hardware.current_slot_count
+Current Slot Used, reported in count.
+Current Smartscreen Status.
+Current Socket Count.
+windows.hardware.current_speed_mhz_reported_in_mhz
+Current Standby Bytes, reported in Byte.
+Current Start Time.
+Current Status Text.
+Current Storage Count.
+Current Storage List.
+Current Swap Total Bytes, reported in Byte.
+Current Swap Used Bytes, reported in Byte.
+Current System Active Percent, reported in %.
+Current System Available Bytes, reported in Byte.
+Current System Calls, reported in /s.
+Current System Dpi, reported in DPI.
+Current System Filesystem.
+Current System Free Bytes, reported in Byte.
+Current System Free Percent, reported in %.
+Current System I/O B/s, reported in Byte/s.
+Current System Label.
+Current System Queue Length, reported in items.
+Current System Read B/s, reported in Byte/s.
+Current System Root.
+Current System Total Bytes, reported in Byte.
+Current System Usage, reported in %.
+Current System Used Bytes, reported in Byte.
+Current System Write B/s, reported in Byte/s.
+Current TCP Connect Time, reported in ms.
+Current TCP Connections, reported in count.
+windows.hardware.current_tpm_version
+Current Target Progress, reported in %.
+Current Target Remaining Percent, reported in %.
+Current Target Remaining Seconds, reported in s.
+Current Target Remaining Text.
+Current Target Value.
+Current Target.
+Current Temperature C, reported in °C.
+windows.hardware.current_temperature_max_summary_reported_in_c
+Current Temperature, reported in °C.
+Current Text Length, reported in 字符.
+Current Theme.
+Current Thread Count.
+Current Time Remaining Seconds, reported in s.
+Current Time Remaining Text.
+Current Time.
+Current Timeout Ms, reported in ms.
+Current Timezone ID.
+Current Top CPU PID.
+Current Top CPU Usage, reported in %.
+Current Top Disk PID.
+Current Top Disk Usage, reported in Byte/s.
+Current Top Memory PID.
+Current Top Memory Usage, reported in Byte.
+Current Topped Up Balance, reported in CNY.
+Current Total B/s, reported in Byte/s.
+Current Total Bytes, reported in Byte.
+Current Total Mbps, reported in Mbps.
+Current Total Memory Limit Bytes, reported in Byte.
+Current Total Memory Usage, reported in %.
+Current Total Memory Used Bytes, reported in Byte.
+Current Total Received Bytes, reported in Byte.
+Current Total Sent Bytes, reported in Byte.
+Current Total Transferred Bytes, reported in Byte.
+Current Ttl.
+windows.hardware.current_type
+Current UAC Status.
+Current UDP Connections, reported in count.
+Current UTC Offset Hours, reported in h.
+Current UTC offset; the selected fixed offset in World Clock.
+Current Unix Milliseconds, reported in ms.
+Current Unix Seconds, reported in s.
+windows.hardware.current_update_last_installed
+Current Upload B/s, reported in Byte/s.
+Current Upload Mbps, reported in Mbps.
+Current Uptime Seconds, reported in s.
+Current Uptime Text.
+Current Usage 3d, reported in %.
+Current Usage Avg 15m, reported in %.
+Current Usage Avg 1m, reported in %.
+Current Usage Avg 5m, reported in %.
+Current Usage Compute, reported in %.
+Current Usage Copy, reported in %.
+Current Usage Max, reported in %.
+Current Usage Video Decode, reported in %.
+Current Usage Video Encode, reported in %.
+Current Usage, reported in %.
+Current Used Bytes, reported in Byte.
+Current User Domain.
+Current User Usage, reported in %.
+Current Utilization Percent, reported in %.
+Current VPN Status.
+Current VRAM Bytes, reported in Byte.
+Current Version.
+Current Virtual Available Bytes, reported in Byte.
+macos.display.virtual_height_points.description
+Current Virtual Height Px, reported in px.
+Current Virtual Memory Bytes, reported in Byte.
+Current Virtual Total Bytes, reported in Byte.
+Current Virtual Usage, reported in %.
+Current Virtual Used Bytes, reported in Byte.
+macos.display.virtual_width_points.description
+Current Virtual Width Px, reported in px.
+macos.display.virtual_x_points.description
+Current Virtual X Px, reported in px.
+macos.display.virtual_y_points.description
+Current Virtual Y Px, reported in px.
+Current Voltage Mv, reported in mV.
+Current Voltage V, reported in V.
+Current WSL Distro Count.
+Current WSL Distro.
+Current WSL Memory Usage, reported in Byte.
+Current WSL Status.
+Current Week Elapsed Seconds, reported in s.
+Current Week Of Year, reported in 周.
+Current Week Progress, reported in %.
+Current Week Remaining Seconds, reported in s.
+Current Wi-Fi Band.
+Current Wi-Fi Channel.
+Current Wi-Fi Standard.
+Current Window FPS, reported in FPS.
+Current Window Percent, reported in %.
+Current Window Status.
+windows.update.pending_count.description
+windows.update.status.description
+Current Working Set Bytes, reported in Byte.
+Current World Beijing.
+Current World London.
+Current World Nyc.
+Current World Tokyo.
+Current Year Elapsed Seconds, reported in s.
+Current Year Progress, reported in %.
+Current Year Remaining Seconds, reported in s.
+Current Year, reported in years.
+Current latency
+Current local UTC offset; World Clock uses the selected fixed UTC offset.
+Current loss
+Current period
+Current state
+Current time
+android.network.transport.description
+Current version
+Current weekday name.
+Current {0}, reported in {1}.
+Current {0}.
+Current: v0.1.2
+Current: v0.1.3
+Current: v{0}
+Currently active
+Currently editing
+Custom
+Custom Coordinates
+Custom Data
+Custom Profile
+Custom Profile {0}
+Custom coordinates
+Custom value mapped from an HTTP / JSON data source.
+Cycle Animation
+Cycle Count
+Cycle Queue
+Cycle profiles in the queue below.
+Cycle queue
+Cycle transition animation
+Cycles through the queue in order; the queue only references existing schemes.
+Cycles top to bottom, then returns to the first item. The queue only references existing profiles.
+Cycling, clicks & animations
+D Active Percent
+D Filesystem
+D Free Bytes
+D Health
+D I/O B/s
+D Label
+D Partition Count
+D Power On Hours
+D Queue Length
+D Read B/s
+D Smart Status
+D Temperature
+D Total Bytes
+D Trim Status
+D Usage
+D Used Bytes
+D Write B/s
+DNS Latency Ms
+DNS Resolve Time
+DNS Servers
+DPC Time
+Daily Target
+Daily target (HH:mm:ss)
+Dark
+Data Available
+Data Management
+Data Properties
+Data Source Configuration
+Data Sources
+Data Total
+Data Usage
+Data Used
+android.warning.metric_unavailable
+Data is unavailable or invalid for these HUD profiles:
+Data sampling interval / ms
+Data sampling interval / seconds
+Data sampling interval / seconds (shared by all HUDs)
+Data source added.
+Data source configuration
+Data source removed.
+Date
+Datetime
+Day
+Day Elapsed Seconds
+Day Of Week
+Day Of Week En
+Day Of Year
+Day Progress
+Day Remaining Seconds
+Dedicated Total Bytes
+Dedicated Usage
+Dedicated Used Bytes
+DeepSeek API
+DeepSeek API Source
+DeepSeek balance
+DeepSeek balance and peak periods
+DeepSeek official peak windows (Beijing time)
+DeepSeek {deepseek.period.name}
+Default Gateways
+Default accent colour and conditional colour rules.
+Defaults were restored.
+Defender Last Scan
+Defender Status
+Defender Threats
+Delete
+Design Vs Current Health
+Design Wh
+Design mWh
+Desktop Layer
+Desktop repository
+Detailed
+Detecting…
+Developer
+Device
+Device Count
+Device List
+android.device.manufacturer
+android.device.model
+android.device.uptime
+Dhaka, Thimphu
+Diagnostics report
+Disabled
+Discard changes
+Discharge Rate Watts
+Discharging
+Disk
+Dismiss
+Display
+Display & Position
+Display & Position: visibility, placement, appearance and sampling. HUD Content: profiles, cycling and trigger rules. Data Management: Variable Library, Hardware Data and Data Source Configuration. Experimental Features: multiple HUDs. About: updates, backup and maintenance.
+Display Content
+Display Download
+Display FPS
+Display FPS (Run as administrator required)
+Display FPS share
+Display FPS status
+Display Mode
+Display Name
+Display Percent
+Display Progress
+Display Status
+Display Status Text
+Display Upload
+windows.media.hud_description
+Display frame-rate options
+Display mode
+Display {0} · {1}×{2}{3}
+Display, position & appearance
+Docker Containers
+Docker Images
+Docker Running
+Domain
+Don't warn about this data again
+Done
+Down
+Download
+Download B/s
+Download Mbps
+Download only
+Download rate
+Downloading the official driver installer; the setup wizard will open after verification.
+Dragged position · restore selected anchor
+android.permission.overlay.granted
+Driver Date
+Driver Version
+Driver installation completed. Exit and restart ECP as administrator.
+Dubai, Abu Dhabi
+Duplicate
+Duration
+Duration / s
+ECP App
+Each HUD has independent profiles, cycling, font, size, visibility and target display. Select an instance and adjust it in the first two tabs; Locate jumps to position settings. An orange outline and Currently editing label remain on the selected HUD while Settings is open. Save & Apply after adding or removing an instance; closing Settings clears the outline. Sampling interval and click switching are shared by all HUDs and can be changed while editing any instance; language and startup are global. Up to 16 HUDs.
+Eastern Time (US & Canada)
+Editing: 
+Elapsed share of the current day; the desktop catalog spells this time.day.progress.
+Enable and select instances
+Enable automatic cycle
+Enable click cycling to advance through the queue even with automatic cycling off. Each HUD advances its own instance and resets its cycle timer. Transparent areas remain click-through. Empty or single-item queues do not switch.
+Enable mouse hot-zone summons
+Enable multiple HUD instances
+Enable multiple HUDs under Experimental Features, add/name a secondary HUD and select it for editing. The selected HUD is highlighted. Save & Apply a new instance before previewing it. Removing a secondary instance does not remove the primary HUD.
+android.permission.notification.required
+Enable probing
+Enable the HUD Master Switch under Display & Position; turn on Always Visible for a persistent HUD.\nChoose a built-in profile under HUD Content → HUD Configuration and preview it.\nClick Save & Apply at the top right to apply the settings to the running HUD.
+Enable this rule
+Enabled
+Enabled: {0}
+Encrypted storage is unavailable, so the API key cannot be saved safely.
+Encrypted storage is unavailable; the API key was not saved.
+Endfield Charge Plus Settings
+android.service.running_title
+Endfield Charge Plus update available
+Endfield-style Status HUD
+Endpoint
+English
+Enter #RRGGBB or #AARRGGBB.
+windows.manual.deepseek_windows_setup
+Enter a number.
+Enter a time between 00:00:00 and 23:59:59.
+Enter a whole number.
+Enter an API key first.
+Enter an HTTP/HTTPS GET URL that returns JSON and name the source.\nMap response paths such as data.value or players[0].name to variable names.\nSet required headers and refresh seconds, enable the source, then Save & Apply.\nFind custom.<source>.<variable> in the library and use it in a profile.
+Enter an http/https URL.
+Error
+Estimated Time To Empty
+Estimated Time To Full
+Estimated full-charge energy
+Eucla
+Event summons
+Event trigger rules
+Exit
+Experimental Features
+Experimental multiple HUDs
+Export
+Export Endfield Charge Plus Config
+Export config
+Export failed.
+Export failed. See logs.
+Export hardware diagnostics
+Export settings or create a backup under About → Configuration & Maintenance. Import restores a complete setup. Back up before substantial edits. Secrets encrypted for the current user may need re-entry on a different machine or account.
+Export, import and backup
+Exported.
+Expression
+Expression divisor cannot be 0
+Expression error
+Expression error (position {0}): {1}
+Expression functions: len, contains, startswith, endswith, upper, lower and concat. Convert types with number, string or bool; inspect them with isnull, isempty and isnan. Token pipelines support upper/lower, zero-based sub:start:length, replace:old:new and math:add/sub/mul/div/round/floor/ceil/abs.
+FPS and GPU targets
+android.frames.surfaceflinger_timestamps
+FPS display name
+FPS divided by the profile's full-scale frame rate.
+FPS window name
+Failed
+Fan Count
+Fan Speed (summary)
+Fan Speed Percent (summary)
+Fast (latency)
+Field mapping (one variable = JSON path per line)
+File Count
+Find and copy a variable
+Find the right page
+Fires on a false-to-true edge. Accepts true/false and numeric zero/nonzero.
+Fires when the comparison matches; a sustained condition can trigger again after cooldown.
+Fires when the value changes. Operator and threshold are ignored. Missing data and the first recovered sample do not trigger.
+Firewall Profile
+Firewall Status
+First-run defaults loaded; click Save & Apply to commit them.
+Fixed Count
+Fixed Free Bytes
+Fixed List
+Fixed Total Bytes
+Fixed Usage
+Fixed Used Bytes
+Focus the shortcut box and press Ctrl or Alt with a letter, digit or function key, then Save & Apply. F12 and reserved combinations are rejected. If registration conflicts, the previous shortcut remains active. Clear and save to disable it.
+Follow system
+Font scale
+android.service.foreground
+android.permission.foreground.declared
+Form Factor
+Formats
+android.update.notification_message
+Found {0}. See About for update details.
+Frame rate at 100% / FPS
+Frame-rate target
+Framework Version
+Free Memory
+Free Percent
+Frequency GHz
+Frequency MHz
+Frequency Percent
+From the configured HTTP/JSON source; field mappings define the metric.
+Full
+Full Life Seconds
+Full Scale Ms
+Full Wh
+Full mWh
+Full-charge energy estimated from remaining energy and charge percentage, not rated design capacity.
+Full: retract the previous item, then reveal the next with the full title/ripple sequence.
+Full: title, ripple, and shape transition before the final HUD.
+Function clamp requires min <= max
+Function sign does not accept NaN
+Function {0} requires 1-2 arguments
+Function {0} requires at least {1} arguments
+Function {0} requires {1} arguments
+GET URL
+GPU
+GPU Device
+GPU Frequency
+GPU Model
+GPU Temperature
+GPU Top Name
+GPU Top Usage
+GPU Usage
+GPU frequency
+android.gpu.frequency.unsupported
+GPU memory
+android.gpu.kgsl_model.description
+GPU temperature
+android.gpu.temperature.unsupported
+GPU usage
+Gamepad Battery
+Gamepad Count
+Gamepad Name
+Get a HUD on screen, then customize it.
+Getting started
+Git Branch
+Git Last Commit
+Git Status
+Give each HUD its own content and position.
+Global Scale changes the whole HUD size; opacity controls its visibility. Font selection changes text rendering, with system fallback for missing glyphs. Display duration controls transient hold time; bounce and ripple controls change motion appearance. Reset Size & Animation restores this group of values; use Save & Apply afterwards.
+Global font size and UI scale
+Golang Version
+Grant access
+Granted
+Granted Balance
+android.gpu.egl_name.description
+Grouped by function; common status and live metrics come first, followed by detailed values. Search by name, key, or category.
+HTTP / JSON sources
+HTTP field
+HTTP/JSON field mapping
+HUD Configuration
+HUD Content
+HUD Content & Data
+HUD Master Switch
+HUD Opacity
+HUD Profiles
+HUD SETTINGS
+HUD Scale
+HUD content / event triggers
+HUD content / rules
+HUD data warning
+HUD data warnings
+HUD font
+HUD master switch
+HUD opacity
+HUD scale
+android.service.notification_channel
+HUD status
+Handle Count
+Hardware Data
+Hardware Info
+Hardware Reserved Bytes
+Hardware Sensors
+android.hardware.capabilities
+android.hardware.not_scanned
+android.hardware.rescanned
+Hardware sampling interval / seconds
+Hardware sensors & drivers
+Hardware variables and legacy keys
+Has Image
+Has Text
+Hawaii
+Headers (one Key: Value per line)
+Headers and field mappings cannot be null.
+Health Percent
+High load: cpu.usage, Threshold >= 90, cooldown 30 seconds. Track changes: media.title with Change mode and a suitable cooldown. Confirm that the variable returns valid data before relying on a trigger.
+Holiday calendar needs an update
+Host Name
+Host unreachable
+Hot zones are available with Always Visible off. Set the anchor, size, offsets and dwell time. The region uses full target-display bounds and is clamped to the screen. Dwell for the chosen interval to summon; leave and re-enter to re-arm. You may advance the carousel on each summon.
+Hot-zone X offset / px
+Hot-zone Y offset / px
+Hot-zone dwell time
+Hot-zone height / px
+Hot-zone position
+Hot-zone width / px
+Hotspot Temperature
+Hour
+Hyper V Status
+ICMP is preferred; restricted networks fall back to TCP / UDP. Target and port come from the active scheme.
+ICMP uses Ping; TCP measures connect latency; UDP sends probe data and waits for a service response.
+ICMP, TCP or UDP probe to the configured target; a failed request reports unknown status.
+IPv4 Addresses
+IPv4 lookup failed
+IPv4, IPv6 or a host name.
+IPv4, IPv6 or a host name; the port is used by TCP / UDP only.
+IPv4, IPv6, or hostname.
+IPv6 Addresses
+IPv6 lookup failed
+Icons & Progress Ring
+Icons and progress ring
+Ide Running
+Idle
+Idle Percent
+Image Size
+Immediate
+Import
+Import Endfield Charge Plus Config
+Import config
+Import failed. See logs.
+Import failed: the file is invalid or unreadable.
+windows.startup.import_not_applied
+windows.aida64.setup_instructions
+Includes device, capability, permission and configuration facts that can be shared with the developer.
+Independent and shared settings
+Individual sensors and summaries
+Info
+Initial and recovered samples establish a baseline without popping up. Each rule has its own cooldown; a sustained threshold can trigger again after it expires. Matching rules summon the next item in that instance's queue, or the active profile for an empty queue. Rules work only in transient mode.
+Insert variable
+Inspect real readings and resolve driver issues.
+Inspect, search, copy and export
+windows.pawnio.install_or_update
+Instance name
+Instructions Per Second
+Integer
+Interface
+Interface Names
+Interface Types
+Interface language
+Interface language and system default
+android.network.link_properties.description
+International Date Line West
+Interrupts
+Interval / s
+Invalid color rule on line {0}. Example: cpu.usage >= 80 => #FF4D4F
+Invalid number: {0}
+Invalid route
+Invalid sources; keeping the last valid config: 
+Invalid target
+Is Weekend
+windows.media.is_paused
+windows.media.is_playing
+Islamabad, Karachi
+Iso
+JSON Config
+JSON path missing: 
+JSON value is null
+Java Version
+Jitter Ms
+KB/s / MB/s (Auto)
+KB/s · MB/s (auto)
+Kabul
+Kathmandu
+Keep your configuration and inspect failures.
+android.service.channel_description
+android.display.cutout_clearance_description
+Kernel Usage
+Keyboard Name
+L2 Cache KB
+L3 Cache KB
+LLM Local Status
+Larger direction
+Larger of Down / Up
+Larger values update hardware less often; clocks still update every second.
+Last Success
+Last Updated
+Last error
+Latency Ms
+Latency Progress
+Latency Text
+Later
+Latest probe status; the desktop catalog spells this probe.status_text.
+Latest version
+Latest: check failed
+Latest: not checked
+Latest: timed out
+Latest: unavailable
+Latest: v{0}
+Layer
+Lead-acid
+Left Icon
+Left Main Info
+Left icon
+Left info
+Left info / Title
+Left main info
+Left main information
+Left {0:0}%
+Left {0}%
+android.permission.overlay.explanation
+Li-ion
+Li-polymer
+License
+Line Islands
+Link Speed B/s
+Live preview
+android.island.live_update_api
+android.island.unsupported_or_unauthorized
+Loaded {0} HTTP data source(s)
+Local time of the last successful balance query.
+Locate and edit selected HUD
+Log
+android.cpu.available_cores.description
+Logical Processors
+Logs
+Logs and reset
+Logs folder opened.
+Lord Howe Island
+Loss Percent
+Loss {probe.loss_percent|0}
+Lost
+Low Memory
+windows.hardware.low_level_notice
+Machine Name
+Main information appears on the left; percentage, progress, or status appears on the right.
+Manufacturer
+Map GET JSON fields to custom.source.variable; headers may reference environment variables.
+Marquesas Islands
+Max Frequency GHz
+Max Frequency MHz
+Max Latency Ms
+Max Link Speed B/s
+Maximum
+Mbps uses megabits/s; KB/s / MB/s switches automatically by rate.
+Measured API Latency Ms (ms).
+Measured Address.
+Measured Avg Latency Ms (ms).
+Measured DNS Latency Ms (ms).
+Measured Endpoint.
+Measured Error.
+Measured Full Scale Ms (ms).
+Measured Jitter Ms (ms).
+Measured Last Success.
+Measured Latency Ms (ms).
+Measured Latency Progress (%).
+Measured Latency Text.
+Measured Loss Percent (%).
+Measured Lost (count).
+Measured Max Latency Ms (ms).
+Measured Min Latency Ms (ms).
+Measured Online.
+Measured Port.
+Measured Progress (%).
+Measured Protocol.
+Measured Received (count).
+Measured Reply Status.
+Measured Sent (count).
+Measured Status Text.
+Measured Target.
+Measured Timeout Ms (ms).
+Measured Ttl.
+Measured {0} ({1}).
+Measured {0}.
+windows.media.category
+windows.media.available
+Media information & progress
+windows.media.source_app
+windows.media.unavailable
+Memory
+Memory Clock MHz
+Memory Junction Temperature
+Memory Total Bytes
+Memory Used Bytes
+Memory detail
+Memory usage
+Millisecond
+Min Latency Ms
+Minimum
+Minute
+Missing '{0}'
+Missing closing quote
+Modified Bytes
+Modified copy created; the built-in preset is unchanged.
+Modulo divisor cannot be 0
+Monday to Friday, excluding Chinese holidays; weekends remain off-peak even on makeup workdays.
+Monitor Count
+Month
+Month Elapsed Seconds
+Month Name
+Month Progress
+Month Remaining Seconds
+More
+Moscow, Riyadh
+Motherboard Manufacturer
+Motherboard Model
+Motherboard Temperature (summary)
+Mountain Time (US & Canada)
+Mouse Name
+macos.startup.move_to_applications
+Multiple HUD instances
+Name
+Name (variable prefix)
+Name reported for Display.
+windows.hardware.name_reported_for_gpu_top
+Name reported for Gamepad.
+Name reported for Host.
+windows.hardware.name_reported_for_keyboard
+Name reported for Machine.
+Name reported for Month.
+windows.hardware.name_reported_for_mouse
+Name reported for Name.
+Name reported for Period.
+Name reported for Power Plan.
+Name reported for Preset.
+Name reported for Primary.
+Name reported for Secondary.
+Name reported for Timezone.
+Name reported for Top CPU.
+windows.hardware.name_reported_for_top_disk
+Name reported for Top Memory.
+Name reported for User.
+Name reported for VPN.
+Name reported for Window.
+android.island.native_live_update
+android.island.started
+android.island.stopped
+Nested braces are not supported.
+Network
+Network Connected
+Network Interface
+Network Probe
+Network Type
+Network Unit
+Network access
+Network display unit and percentage basis.
+Network error
+Network options
+Network profiles can use automatic byte units or Mbps; 1 MB/s equals 8 Mbps. The ring compares total, download, upload or the larger direction with your reference bandwidth. The reference sets the 100% scale and does not limit or benchmark the network.
+Network rates
+Network traffic
+Network type
+Network unreachable
+New
+New Delhi, Mumbai
+New rule
+Newfoundland
+Next →
+NiCd
+NiMH
+No
+No GPU detected
+No active profile
+No changes to save
+No config file is available to back up.
+android.island.no_custom_layout
+No data source configured yet.
+No data yet
+No fixed unit
+No formatting
+android.island.provider.none
+android.island.no_left_right_split
+No log entries yet.
+No matching chapters
+No matching variable.
+No network is currently available.
+No published release or tag was found.
+No rules yet.
+No sample has been collected yet.
+No scheme is loaded yet.
+No shortcut configured.
+Node Version
+None
+Nonpaged Pool Bytes
+Not active
+Not applicable to this protocol
+Not authorized
+Not available on this device
+Not available on this device or scenario
+Not checked yet.
+Not granted
+Not protected
+Not running
+Not supported
+Not supported by the system
+windows.media.nothing_playing
+Nothing to save.
+Notice
+android.permission.notification
+android.permission.notification.requested
+android.permission.notification.granted
+android.permission.notifications_disabled
+Nukuʻalofa, Apia
+Number
+Numeric function reference
+Nvidia Smi Available
+OK
+OS Architecture
+OS Build
+OS Description
+OS Version
+Off
+Off shows today's progress; on shows the remaining share until the daily target.
+Off-peak
+Off: show today's elapsed progress. On: show the remaining share until the next daily target time.
+Official peak windows (Beijing time)
+On
+android.manual.android_startup
+On Battery
+On battery
+On: keep the HUD visible.\nOff: power changes show Battery; move the pointer into the configured hot zone on the target display to summon the active profile.
+On: keep the HUD visible.\nOff: power changes show Battery; move the pointer to the top-center of the target display to summon the active profile.
+Once equivalent hardware fields are discovered, duplicate legacy entries leave the library while existing profiles keep working. New keys identify a specific device and sensor. Highest/average summaries have different meanings and remain separate. -- means no valid value is currently available.
+One CPU/GPU may expose package, core, hotspot, memory and multiple power channels. Similar names can represent different measurements. Sensor min/max values are session history, not hardware limits. SMBIOS module information comes from firmware and is not a complete SPD/XMP/EXPO timing table.
+One per line: variable operator value => colour, e.g. cpu.usage >= 90 => #FF4D4F
+Online
+android.island.single_line_only
+Only metrics the platform really produces are shown as available.
+Only part of this metric can be read.
+android.permission.boot.when_used
+Open
+android.navigation.open_drawer
+Open releases
+Open settings
+Open settings →
+Open system settings
+Open the config folder from the top bar and the logs folder from About. Keep source status or hardware diagnostics when troubleshooting. Reset loads first-run defaults; Save & Apply commits them to the running app.
+Opened
+Operator
+Operators and conditions
+Ordinary clocks use local time. World Clock uses a fixed UTC offset without automatic DST. Daily-target mode shows the remaining fraction until the next target time in the chosen zone; with it off, it shows elapsed day progress.
+Other
+android.overlay
+android.overlay.hidden
+android.permission.overlay
+android.permission.overlay.missing_settings_opened
+android.permission.overlay.not_granted
+android.overlay.position_and_appearance
+android.overlay.visible
+PCIe Gen
+PCIe Lanes
+PID
+Pacific Time (US & Canada)
+android.device.package
+Packet Probe
+Packet probe
+Packets Received
+Packets Sent
+Paged Pool Bytes
+android.storage.statfs.description
+windows.media.paused
+Paused, live and missing fields
+windows.pawnio.ready_elevated
+windows.pawnio.inaccessible
+windows.pawnio.elevation_required
+windows.pawnio.missing
+Peak
+Peak Period
+Per-core CPU usage
+Percent
+Percent Basis
+Percent basis
+Period Is Off Peak
+Period Is Peak
+Period Local Timezone
+Period Name
+Period Name Zh
+Period Next Switch Datetime
+Period Next Switch Datetime Local
+Period Next Switch Time
+Period Next Switch Time Local
+Period Progress
+Period Progress Text
+Period Remaining Seconds
+Period Remaining Text
+Period Timezone
+android.permission.detection_failed
+Permission required
+android.permission.page
+android.permission.request_on_use
+Persistent
+Persistent and transient modes
+Physical Cores
+Physical Index
+Physical core count; the desktop catalog spells this cpu.physical_cores.
+Ping (Compatibility)
+Place the key in braces, followed by | and a display format. Use 0 for integers and 0.0 / 0.00 for fixed decimals. Literal text may surround tokens. Formatting changes display only.
+windows.media.position
+windows.media.position_text
+windows.media.progress
+windows.media.progress_text
+windows.media.status
+windows.media.playing
+Playing progress follows the reported timeline and rate; paused timelines do not extrapolate. Live sessions without a duration have no valid percentage and show --. Players without registered sessions or missing artist/album metadata leave those fields unavailable.
+Plugged
+Port
+Port unreachable
+Position
+Positioning
+Power Limit W
+Power Max (summary)
+Power Plan
+Power Plan Name
+Power Source
+Power W
+android.cpu.preferred_abi.description
+android.cpu.system_abi.description
+Preset
+Preset + Offset
+Preset + offset
+Preset Name
+Preview
+Preview HUD
+Preview failed. See logs.
+Primary
+Primary Color Depth
+Primary Display (Auto)
+Primary HUD
+Primary Height Px
+Primary Name
+Primary Refresh Rate
+Primary Width Px
+Primary display (auto)
+android.storage.external.available
+android.storage.external.free_percent
+android.storage.external.total
+android.storage.external.usage
+android.storage.external.used
+Primary value
+Primary value / Title
+Private
+Private Memory Bytes
+Probe ICMP
+Probe Status
+Probe TCP
+Probe Target
+Probe UDP
+Probe latency
+Probe not completed
+Probe options
+Probe target
+Probe targets and protocols
+Process Architecture
+Processes
+Processor Count
+Profile Management
+Profile Name
+Profile Percent
+Profile Percent B/s
+Profile Percent Mode
+Profile Percent Text
+Profile Save vs. Save & Apply
+Profile saved
+Profiles & HUD content
+Profiles, positions, queues, trigger rules and hot zones belong to each instance. Clicking a HUD advances only its queue. Sampling interval, global shortcut and the click-cycling master setting are shared. Save & Apply commits the whole configuration.
+Progress
+Progress Value
+Progress expression
+Progress value
+Project & License
+Project GitHub
+Project and license
+Protected
+Protocol
+android.hardware.native_apis.description
+Proxy Address
+Proxy Enabled
+Proxy Status
+Public
+Public IPv4
+Public IPv6
+Publishing failed
+Python Version
+Quick links
+Quit
+Range 3 – 3600 seconds.
+Range {0} – {1}
+Rate Watts
+windows.media.raw_status
+Re-check
+Re-detect
+android.cpu.root_nodes.description
+android.device.build_apis.description
+android.battery.native_apis.description
+android.memory.native_apis.description
+android.gpu.root_nodes.description
+Read or calculated from the DeepSeek source configuration; balance requests need the user's API key.
+windows.manual.pawnio_repair
+android.network.traffic_stats.description
+android.root.read_only_notice
+android.capability.hidden_api
+android.capability.vendor_only
+Reading data…
+android.permission.wifi_location_required
+linux.frames.xpresent_description
+android.frames.root_and_vendor_requirements
+windows.frames.present_events_description
+Real-time protection off
+Receive Errors
+Received
+Recommended
+Recommended Use
+Records detailed activity when enabled.
+Reference unit
+Refresh
+Refresh / s
+Refresh and select a window/display target, then set the FPS represented by 100%. Window FPS uses the selected window's dominant presentation stream; other windows in the same process are counted separately. Display FPS uses the display's dominant presentation stream. These are measured frame rates, not the display refresh rate. Missing events or permissions produce status information; administrator access may be needed. Ordinary GPU profiles can select an adapter, while raw sensor keys identify their stated device.
+Refresh now
+Refresh targets
+Refresh window/display list
+Remaining Wh
+Remaining mWh
+Remove
+Remove selected instance
+Remove selected rule
+Reply Status
+Reported name: {0}.
+android.permission.request_authorization
+Request failed: {0}
+Request failed; check the network, URL and credentials.
+android.root.explanation
+android.island.system_permission_required
+android.island.platform_colorized_shape
+Reset
+Reset All
+Reset all
+Reset everything to defaults?
+Reset to 100%
+Restart as administrator
+Restart pending
+android.island.scenario_restricted
+android.permission.retry_authorization
+Right Icon
+Right Status
+Right icon
+Right status
+Right status / Ring
+Right status / Title
+Right status / ring
+Right status / title
+Ring
+Ring variable and range
+Ripple Spread
+Ripple Strength
+Roll Up
+android.root.required
+android.root.granted
+android.root.hardware_readings
+android.root.unavailable
+Rule name
+Run as administrator
+Running
+Running as administrator
+Rust Version
+Sample window
+Sampler running
+Sampling and freshness
+Sampling and refresh
+Save
+Save & Apply
+Save & Apply the new instance first.
+Save & Apply to disable the shortcut.
+Save & Apply to enable this shortcut.
+Save & Apply to show a new HUD before locating it.
+Save beside the profile records the edited profile; editing a built-in creates a custom copy. Preview shows the current edit. Save & Apply at the top right saves the full settings and applies them to the running HUD.
+Save copy as
+Save failed
+Save log
+Save report
+Saved
+Saver On
+Scale Percent
+Scheme created.
+Scheme deleted.
+Scheme management
+Scheme name
+Scheme saved.
+Schemes, data sources, refresh intervals and display settings return to first-run defaults. This cannot be undone.
+Scope of Don't warn about this data again
+android.storage.scoped_limits
+Screen Bottom Center
+Screen Bottom Left
+Screen Bottom Right
+android.display.brightness
+Screen Center
+Screen Center Left
+Screen Center Right
+android.display.screen_state
+Screen Top Center
+Screen Top Left
+Screen Top Right
+android.sampling.screen_off
+Search by name, key or category under Data Management → Variable Library. Select a variable to see its meaning, type, unit and formats. Copy Variable Key is useful for rings and rules; Copy Template includes braces for text fields.
+Search by name, key, or category; select a variable for details.
+Search chapters or keys
+Search languages, regions or language codes
+Search name, source ID or variable
+Search variables
+Search: CPU usage / cpu.usage
+Second
+Secondary / Note
+Secondary / note
+Secondary Name
+Secondary Refresh Rate
+Secondary Resolution
+Secondary value
+Secrets may use ${env:VARIABLE_NAME} placeholders.
+Secure Boot
+Security
+Select a variable
+Select a variable on the left to view its meaning and usage guidance.
+Select a variable on the left to view its meaning, unit, and recommended use.
+Select a window
+Select the active HUD profile. Editing a built-in profile creates a copy; the original stays unchanged.
+android.frames.surfaceflinger_layer.description
+Selected display.
+Send Errors
+Sensor driver installed
+Sensor driver status
+Sensor driver version
+Sent
+Set API key
+Set a show/hide shortcut
+Set active
+Settings
+android.display.brightness.description
+android.share.action
+android.share.app_info
+android.share.configuration
+android.share.device_info
+android.share.diagnostics_log
+android.share.diagnostics_report
+android.share.log
+Shared Limit Bytes
+Shared Usage
+Shared Used Bytes
+Short name
+Shortcut show animation
+Shortcut to show / hide all HUDs
+Shortcuts & mouse hot zones
+Shorter intervals sample faster and use more resources. Clocks update each second; external APIs retain their own refresh intervals.
+Show your first HUD
+Showing {0} items, including sensors and firmware information.
+Shows hardware readings provided by the system and drivers. Sensors that are not exposed or accessible show --. Export diagnostics for details. PawnIO and the AIDA64 interface are Windows-only.
+Shows readings actually provided by the device and system. Unavailable items show -- and their reason.
+Signal dBm
+Simple
+Simple shortens the presentation; Full uses the complete summon. Roll Up moves icons, values and the ring inside a persistent capsule while retaining its window and layer. Roll applies to persistent switches; initial and transient presentations keep their normal show/retract lifecycle. DeepSeek peak transitions keep Full animation.
+Simple: quickly reveal the final HUD.
+Simple: retract the previous item, then quickly reveal the next.
+Size & Animation
+Size, opacity, fonts and motion
+Slot Count
+Slot Used
+Slow
+Smartscreen Status
+Socket Count
+Solomon Islands, New Caledonia
+Some networks block ICMP; the probe falls back to TCP.
+Source
+Source names must be unique and use letters, digits, underscores or hyphens.
+Sources must be a JSON array.
+South Georgia
+Speed
+Speed MHz
+Standby Bytes
+windows.startup.after_windows_sign_in
+android.service.start
+Start Time
+Start from a built-in profile and Save to create a custom copy, or create a new profile. Delete removes custom profiles while original presets remain. Preview uses the current edit and real data; Save & Apply commits it to the running HUD.
+android.startup.start_on_boot
+windows.startup.start_with_windows
+android.permission.service_notification_required
+Startup is managed by system policy.
+Status
+Status / Condition
+Status / condition
+Status Text
+Status calculation
+Status, cache and errors
+Status: an error occurred while checking for updates
+Status: checking GitHub…
+Status: local version is newer than the latest online version
+Status: network request failed ({0})
+Status: no release/tag found; the repository may not be public yet
+Status: not checked
+Status: remote version found, but its format cannot be compared
+Status: up to date
+Status: update available
+Status: update check timed out; try again later
+android.service.stop
+Stopped
+Storage
+Storage Count
+Storage List
+android.startup.background_limits
+Suffix
+Summon a HUD when data meets a rule.
+Summon or temporarily hide the HUD.
+Supported
+Swap Total Bytes
+Swap Used Bytes
+Sydney, Brisbane
+System
+System Active Percent
+System Available Bytes
+System Calls
+System Disk
+System Dpi
+System Filesystem
+System Free Bytes
+System Free Percent
+System I/O B/s
+System Label
+System Queue Length
+System Read B/s
+System Root
+System Status
+System Total Bytes
+System Usage
+System Used Bytes
+System Write B/s
+System default
+android.island.metric_status
+android.island.system_progress_bar
+android.island.system_status
+android.island.system_storage_usage
+android.device.uptime.description
+TCP Connect Time
+TCP Connections
+TPM Present
+TPM Version
+TTL expired
+Tagline
+Tagline, title, primary/secondary text and the right-side value can mix literal text and variable tokens. Use the right suffix for units such as %, °C or GHz. Icons identify the content; the accent color sets the capsule and ring color.
+Target
+Target Display
+Target Progress
+Target Remaining Percent
+Target Remaining Seconds
+Target Remaining Text
+Target Value
+Target unavailable
+Target window
+Target-time Mode
+Target-time mode
+Targets may be hostnames, IPv4 or IPv6. ICMP ignores the port; TCP/UDP use it. Failure means that target/protocol did not respond successfully, not necessarily that the whole PC is offline. Servers may block ICMP or not reply to UDP.
+Tehran
+Temperature
+Temperature C
+Temperature Max (summary)
+Template
+Templates use {variable|format}. Advanced expressions use {= expression | format}; supported operators include + - * / % ^, comparisons, && / || / !, ?:, ??, and functions such as if(), min/max/avg/sum/clamp/round. Progress may also be an = expression. Example: {= if(memory.usage >= 80, 'High', 'OK')}.
+Terminal Running
+Test connection
+Testing…
+Text
+Text Length
+Text regions and icons
+Text, types and pipeline reference
+Thanks to QinAnze for the original open-source work, and to the Avalonia and Jetpack Compose projects.
+android.island.system_controls_visibility
+The API key was removed.
+The API key was saved encrypted.
+android.island.description
+android.capability.android_version_too_old
+The HUD has started.
+The HUD has stopped.
+android.permission.boot.missing
+android.permission.foreground.missing
+android.permission.network.missing
+android.island.authorization_launched
+The base URL is invalid.
+The braces do not match.
+The check timed out; retry.
+The checkbox permanently silences only the variables already listed in the current warning window. Other variables still warn. Closing normally acknowledges that incident. Multiple HUDs can share one warning window; expression faults are distinguished by profile and expression. Suppression does not repair or stop collection.
+The configuration was imported and applied.
+The cycle animation overrides each scheme's own animation mode.
+The cycle queue is empty. Add profiles before enabling auto cycle.
+android.capability.kernel_node_missing
+The device has no such sensor.
+windows.driver.checksum_invalid
+windows.driver.restart_required
+The endpoint returned HTTP {0}.
+android.configuration.desktop_interchange_notice
+The expression is empty.
+android.service.running_description
+The installer exited with code {0}.
+The log was cleared.
+The maximum must exceed the minimum, otherwise the ring is always 0.
+The name cannot be empty.
+The network is connected.
+The network is unreachable right now.
+The network request failed.
+android.island.notification_channel_disabled
+android.display.overlay_and_island_explanation
+The platform does not publish this API.
+The primary value and its note; supports {variable|format} and {= expression}.
+The probe target cannot be empty.
+The queue has one profile; it will stay on that profile.
+The queue is empty.
+The remote tag cannot be compared; see releases.
+The report never contains the API key or request header values.
+The response is not valid JSON.
+The ring maps (value − minimum) over the configured range, clamped to 0–100%. Use a variable key or a numeric expression beginning with =. Set a sensible full-scale value for temperature, traffic or FPS. The range does not change the raw text reading.
+The selected profile is the active profile; one profile is always selected.
+The selected rate reaches 100% at this value. Rates are normalized to Byte/s before calculation.
+android.permission.live_update.granted
+android.island.system_placement_and_interval
+The system has already allowed this feature.
+android.island.update_frequency_limited
+The variable name is empty.
+Theme
+android.island.no_icons
+android.island.no_progress
+android.island.experimental
+This build has no native media-session data source on this platform. Media fields remain unavailable.
+This data source is turned off.
+This device or kernel does not provide the data source.
+android.island.preview_notice
+This project is a derivative of QinAnze/zmd-charge and is distributed under the MIT License.
+This structure is disabled. Replace the URL with your real endpoint, adjust paths to the response and set enabled to true when ready. ${env:MY_API_KEY} reads a process environment variable instead of putting a secret directly in JSON.
+Thread Count
+Three cycle animations
+Threshold
+android.sampling.throttle_hidden
+android.sampling.throttle_screen_off
+Time
+Time Remaining Seconds
+Time Remaining Text
+Time options
+Time options save directly; editing content or the name creates a copy.
+Time remaining text
+Time zone and daily target
+Time, network & FPS profiles
+Timed out
+windows.media.timeline_available
+Timeout / ms
+Timeout Ms
+Timezone ID
+Timezone Name
+Title
+Title / Condition
+Title / Left info
+Title / Right status
+Title / condition
+Title / left info
+Title Stage
+Tokyo, Seoul
+Top CPU Name
+Top CPU PID
+Top CPU Usage
+Top Center (work area)
+Top Disk Name
+Top Disk PID
+Top Disk Usage
+Top Left (work area)
+Top Memory Name
+Top Memory PID
+Top Memory Usage
+Top Right (work area)
+Top center
+Top left
+Top right
+Topped Up Balance
+Total (Down + Up)
+Total B/s
+Total Bytes
+Total Downloaded
+Total Mbps
+Total Memory Limit Bytes
+Total Memory Usage
+Total Memory Used Bytes
+Total Received Bytes
+Total Sent Bytes
+Total Transferred Bytes
+Total Uploaded
+android.storage.data_volume_total.description
+Total throughput
+windows.media.duration
+windows.media.duration_text
+windows.media.track_title
+Traffic units and ring reference
+android.network.received_since_boot.description
+android.network.sent_since_boot.description
+Trigger rules
+Troubleshooting & warnings
+Try a variable key or feature name, or clear the search.
+Ttl
+android.permission.overlay.enable_first
+Turned off
+Two useful examples
+Type
+Type {0}
+UAC Status
+UDP Connections
+UI scale
+USB / Devices
+USER MANUAL  /  CHAPTER {0:00}
+UTC Offset
+UTC Offset Hours
+UTC time zone
+Unable to locate HUD: 
+Unavailable
+Unavailable usually means the platform has no public API, the device has no sensor, or no sample has arrived yet.
+Unavailable when the hardware or source does not provide it.
+Understand display modes and screen coordinates.
+Unexpected end of expression
+Unit
+Unix Milliseconds
+Unix Seconds
+Unix Timestamp
+Unix timestamp in seconds.
+Unknown
+Unreachable
+Unrecognized character '{0}'
+Unrecognized content: {0}
+Unsupported
+Unsupported function: {0}
+Up
+Update Last Installed
+Update Pending
+Update available
+Updated At
+Updates available
+Upload
+Upload B/s
+Upload Mbps
+Upload only
+Upstream GitHub
+Upstream project
+Uptime Seconds
+Uptime Text
+Usage
+Usage 3d
+Usage Avg 15m
+Usage Avg 1m
+Usage Avg 5m
+Usage Compute
+Usage Copy
+Usage Max
+Usage Video Decode
+Usage Video Encode
+Usage, remaining share or elapsed progress, optionally driving the ring.
+Usage, remaining share, elapsed progress, and other status values; can drive the progress ring.
+Use +, -, *, /, % remainder, ^ power and parentheses. Comparisons support >, >=, <, <=, == and !=. Boolean operators include &&, ||, ! and and/or/not. Conditions use test ? yes : no or if(test, yes, no). ?? supplies a fallback for null/empty values.
+Use Ctrl or Alt with a letter, digit or function key (except F12).
+Use Ctrl or Alt, optionally Shift, with a letter, digit or F1–F24 (except F12). Save to apply; leave blank to disable.
+Use Data Management → Hardware Data to inspect sensors and firmware fields. Search by temperature, memory module, device name or original ID. Select a row to copy its token. Export Diagnostics saves a local JSON snapshot of the current status and readings.
+android.root.use_for_readings
+Use a preset anchor with offsets, or specify custom coordinates.
+Use custom.<source>.status / error for source state and failures. The refresh interval controls caching, even with faster global sampling. For 401/403, check authentication and access. JSON paths must match the actual response structure.
+Use the symptom to find the right setting.
+Used Bytes
+Used by TCP / UDP; ignored by ICMP.
+Used for network rates, packet probing, DeepSeek balance and custom HTTP sources.
+android.storage.data_volume_usage.description
+android.storage.data_volume_used.description
+User Domain
+User Manual
+User Name
+User Usage
+android.storage.data_volume_available.description
+Uses Unified Memory
+Uses a fixed UTC offset without daylight-saving changes. The daily target uses this zone too.
+Uses all active interfaces. Calculate the right-side percentage from total traffic, download, upload, or the larger direction.
+Using native system hardware interfaces. Available data depends on hardware, drivers and permissions; PawnIO is not required.
+Utilization Percent
+VPN Active
+VPN Name
+VPN Status
+VRAM Bytes
+Value
+Value changes
+Value is unavailable
+android.sampling.hidden_screen_off_notice
+Variable
+Variable Key
+Variable Library
+Variables
+Variables with a reading
+Variables, tokens & expressions
+android.island.vendor_authorization_required
+Verbose logging
+Version
+View update
+Virtual Available Bytes
+macos.display.virtual_height_points
+Virtual Height Px
+Virtual Memory Bytes
+Virtual Total Bytes
+Virtual Usage
+Virtual Used Bytes
+macos.display.virtual_width_points
+Virtual Width Px
+macos.display.virtual_x_points
+Virtual X Px
+macos.display.virtual_y_points
+Virtual Y Px
+Virtualization Enabled
+Visibility animation and scope
+Voltage Mv
+Voltage V
+Vscode Running
+WSL Distro
+WSL Distro Count
+WSL Memory Usage
+WSL Running
+WSL Status
+Waiting
+android.root.awaiting_authorization
+Warning
+Watched variable
+Website
+Week Elapsed Seconds
+Week Of Year
+Week Progress
+Week Remaining Seconds
+Weekday
+Weekday peak windows (Beijing time; separate with semicolons)
+When auto cycle is enabled, this animation overrides each profile's own animation setting.
+When off, no HUD output is shown at all.
+When off, the HUD appears on demand (power events / reveal trigger).
+android.overlay.touch_through
+Whether ac online is active or true.
+Whether amd adrenalin available is active or true.
+Whether available is active or true.
+Whether charging is active or true.
+Whether discharging is active or true.
+Whether docker running is active or true.
+Whether has image is active or true.
+Whether has text is active or true.
+Whether ide running is active or true.
+Whether is weekend is active or true.
+Whether nvidia smi available is active or true.
+Whether online is active or true.
+Whether period is off peak is active or true.
+Whether period is peak is active or true.
+Whether proxy enabled is active or true.
+Whether saver on is active or true.
+Whether secure boot is active or true.
+Whether terminal running is active or true.
+android.network.default_available.description
+Whether the current time is a DeepSeek peak window.
+windows.hardware.whether_tpm_present_is_active_or_true
+Whether update pending is active or true.
+Whether uses unified memory is active or true.
+windows.hardware.whether_virtualization_enabled_is_active_or_true
+Whether vpn active is active or true.
+Whether vscode running is active or true.
+Whether wsl running is active or true.
+Whether {0} is active or true.
+Why the HUD is not visible
+Wi-Fi Band
+Wi-Fi Channel
+Wi-Fi SSID
+Wi-Fi Standard
+Window FPS
+Window FPS (Run as administrator required)
+Window FPS share
+Window FPS status
+Window Name
+Window Percent
+Window Status
+Window frame-rate options
+windows.update.pending_count
+windows.update.status
+windows.startup.disabled_by_windows
+windows.media.hud_usage_instructions
+Work area vs. full screen
+Work-area presets avoid taskbars, Docks and reserved regions. Screen presets use full display bounds. Offsets move a preset; custom coordinates specify the position directly. Select the target display first. Negative coordinates are normal for displays left of or above the primary display.
+Working Set Bytes
+World Beijing
+World Clock
+World London
+World Nyc
+World Tokyo
+X / px
+X Offset / px
+X offset / px
+Y / px
+Y Offset / px
+Y offset / px
+Yangon
+Year
+Year Elapsed Seconds
+Year Progress
+Year Remaining Seconds
+Yes
+You're up to date.
+Your local version is newer.
+Zinc-air
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 chooses units based on the variable; avoid adding the same unit twice. Format pipelines run left to right and can transform numbers or shorten text. Use {= ...} for inline expressions, or start a ring expression with =.
+bytes / gb:1
+bytes / speed add automatic byte-size or byte-rate units. kb:n, mb:n, gb:n and tb:n divide by powers of 1024 with n decimals; add the desired unit in the profile. duration / duration-long format seconds. Date/time fields support time:<date format>; time:relative formats relative time or duration.
+copy
+cpu.usage or = (cpu.usage + gpu.usage) / 2
+d
+duration
+duration / duration-long
+e.g. 1.1.1.1 or example.com
+e.g. 1.1.1.1, 2606:4700:4700::1111, or example.com
+e.g. My Server - Online
+e.g. value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+in {0}
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (Modified)
+{0} / {1} chapters · Offline
+{0} GPUs detected
+{0} ago
+{0} left {1}
+{0} of {1} metrics supported
+{0} profiles are queued; enable auto cycle to use them.
+{0} v{1} Settings
+{0} {1:0}%
+{0} {1}%
+{0}: enter an absolute HTTP/HTTPS URL.
+{0}: provide variable names and JSON paths.
+{0}d {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Previous
+↓ {network.display_download}
+API key
+Frame capture active
+Waiting for frames
+windows.frames.requires_windows_x64
+Select a running window
+Target window closed; select another window
+Display disconnected
+Display source mapping unavailable or ambiguous across GPUs
+No valid frame events for this target
+Waiting for frame events; administrator access may be needed
+Access denied; run the app as administrator
+Waiting for Present frames
+linux.frames.x11_required
+X server lacks Present
+linux.frames.libxpresent_required
+Present API unavailable
+macos.frames.requires_macos
+macos.frames.capture_unavailable
+Selected target is unavailable
+macos.permission.screen_recording_required
+macos.frames.requires_macos12_3
+Frame capture failed: {0}
+Frame capture exited ({0})
+Account availability state returned by the balance endpoint.
+Application Process Name
+Application Uptime
+Application Uptime Text
+Application uptime formatted as readable text.
+Average Ping Latency
+Average Probe Latency
+Average latency of the current target’s last 20 successful Ping probes.
+Average latency of the last 20 successful samples for the current probe configuration.
+Battery Status Text
+Battery Voltage (V)
+BitLocker ProtectionStatus of the system volume.
+BitLocker Status
+CPU Name
+CPU Usage
+CPU sensor temperature. Unavailable when unsupported by the device, driver or current permissions.
+Current date and time on this computer.
+Current date on this computer.
+Current local date and time.
+Current local date in yyyy-MM-dd format.
+Current total CPU utilization for the whole computer.
+DeepSeek API Availability
+windows.defender.protection_status.description
+Failed Probe Sample Count
+Full processor model name.
+GPU Core Temperature
+GPU Core Voltage
+GPU Name
+GPU VBIOS Version
+GPU core temperature reported by hardware monitoring sensors. Unavailable when not exposed by the hardware or driver.
+GPU core voltage reported by hardware monitoring sensors.
+Highest latency among the current target’s last 20 successful Ping probes.
+Highest latency among the last 20 successful samples for the current probe configuration.
+ICMP TTL
+Last Successful Ping
+Last Successful Probe
+Live battery voltage converted to volts.
+Live utilization of the selected GPU, using its busiest engine.
+Lost Ping Count
+Lowest latency among the current target’s last 20 successful Ping probes.
+Lowest latency among the last 20 successful samples for the current probe configuration.
+Maximum Ping Latency
+Maximum Probe Latency
+Memory Usage
+Microsoft Defender Status
+Minimum Ping Latency
+Minimum Probe Latency
+Most recent probe state, such as “Online”, “Timed out” or “Port unreachable”.
+Name of the current Endfield Charge Plus process.
+Name of the display adapter selected by the current profile.
+Network Availability
+Ping Error
+Ping Jitter
+Ping Latency
+Ping Latency Text
+Ping Latency at 100%
+Ping Packet Loss
+Ping Response Address
+Ping Status Text
+Ping Success
+Ping TTL
+Ping Target
+Ping Timeout
+Ping/Probe Endpoint
+Ping/Probe Port
+Ping/Probe Protocol
+Probe Endpoint
+Probe Error
+Probe Latency
+Probe Latency Jitter
+Probe Latency Text
+Probe Latency at 100%
+Probe Packet Loss
+Probe Port
+Probe Protocol
+Probe Response Address
+Probe Sample Count
+Probe Status Text
+Probe Success
+Raw Ping Status
+Raw Probe Status
+windows.battery.temperature_api.description
+windows.defender.realtime_protection.description
+Round-trip latency of the most recent successful Ping. Failure counts as 999 ms for progress.
+Round-trip or connection latency of the most recent successful probe. A failed probe is treated as 999 ms.
+windows.hardware.smbiosbiosversion_reported_by_win32_bios
+windows.uptime.boot_seconds.description
+Seconds elapsed since the current application process started.
+Sent Ping Count
+Single Probe Timeout
+windows.firewall.policy.description
+Successful Ping Count
+Successful Probe Sample Count
+System Drive BitLocker Status
+System Uptime
+System Uptime Text
+windows.encryption.system_drive.description
+System uptime formatted as readable text.
+Text derived from the power state, such as “Charging”, “On battery”, “Plugged in” or “Unknown”.
+Text such as “20ms” on success, or a timeout/error state on failure.
+Text such as “20ms” on success, or the corresponding timeout or unreachable state.
+Total GPU Usage
+Used physical memory as a percentage of total physical memory.
+linux.gpu.vbios_nvidia_smi.description
+windows.network.available.description
+windows.firewall.enabled.description
+windows.firewall.status
+linux.memory.meminfo_description
+linux.cpu.procfs_description
+linux.battery.sysfs_description
+linux.processes.actual_queries_description
+Available Swap Space
+Charging and discharging
+linux.gpu.drm_hwmon_description
+Estimate unavailable
+linux.disk.filesystem_statistics_description
+linux.os.kernel_version
+linux.metrics.procfs_sysfs_description
+linux.input.devices_description
+linux.firmware.efi_description
+Not charging
+Not discharging
+Process Count
+linux.processes.procfs_description
+linux.display.x11_description
+linux.clipboard.graphical_session_description
+Requires a valid API key. Missing configuration or failed requests produce an explicit status, never an invented balance.
+Swap Usage
+System Restart Required
+Total Swap Space
+Used Swap Space
+Uses real ICMP/TCP/UDP probes from the current profile. Failed or inapplicable probes show a status message.
+{0}. Data source: {1}. Listed only when collection is supported by this device and current permissions.
+macos.memory.active
+macos.memory.swap_available.description
+macos.memory.swap_used.description
+macos.display.retina_native_resolution.description
+macos.network.physical_interface_counters.description
+macos.cpu.mach_ticks.description
+macos.memory.free_physical
+macos.battery.charge_time_estimate.description
+macos.battery.io_power_sources.description
+macos.memory.inactive
+macos.gpu.low_power
+macos.gpu.low_power.description
+macos.memory.mach_vm.description
+macos.memory.active.description
+macos.memory.free_physical.description
+macos.memory.inactive.description
+macos.memory.wired.description
+macos.gpu.recommended_working_set
+macos.gpu.metal_device_information.description
+macos.gpu.unified_memory.description
+macos.gpu.recommended_working_set.description
+macos.gpu.removable
+macos.gpu.removable.description
+Time Until Full Charge
+macos.memory.swap_total.description
+macos.gpu.unified_memory
+User-Available Disk Space
+macos.memory.wired
+macos.metrics.native_configuration.description
+macos.clipboard.change_time.description
+macos.disk.apfs_available.description
+macos.disk.apfs_capacity.description
+{0}. Data source: {1}.
+windows.title
+linux.title
+macos.title
+android.title
+Profile management
+Radial switcher
+Quick actions
+Hold the middle mouse button on the HUD, drag to a profile, then release to switch.
+Release in the centre or outside the ring to cancel.
+Hold delay
+Drag threshold
+Ring size
+Enable radial switching
+Profiles in the ring
+Use all profiles
+Preview ring
+Selected profile
+No profiles available
+Previous page
+Next page
+Page {0} / {1}
+Appearance
+Light
+Classic
+Soft
+Corner radius
+Ring opacity
+Reset theme
+Theme preview
+HUD gestures
+Middle button hold
+Left click
+Your changes apply after Save & Apply.
+Press Esc to cancel.
+Profile switching
+Preview only
+Add to ring
+Remove from ring
+Issue tracker
+Minimize window
+Maximize window
+Restore window
+Close window
+Current system
+Software usage
+System CPU load across all logical processors.
+Used physical RAM divided by total physical RAM.
+Used dedicated VRAM divided by total dedicated VRAM across GPUs. Shared memory is excluded.
+Endfield Charge Plus CPU time divided by elapsed time and logical processor count.
+Endfield Charge Plus resident RAM divided by total physical RAM. Includes shared resident pages.
+Endfield Charge Plus dedicated VRAM divided by total dedicated VRAM. Shared GPU memory is excluded.
+Entire Endfield Charge Plus process: Settings and all HUDs. CPU is normalized to all logical processors.
+Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.
+Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.
+Author's BiliBili channel
+Author's YouTube channel
+Colors
+Search profiles
+Click or scroll to switch profiles
+Cycle Interval / sec
+Scroll up for previous; scroll down for next.
+Available profiles
+Previous profile
+Next profile
+Pause / resume auto cycle
+Preview current profile
+Open Settings
+Keyboard shortcuts work while this app is focused.
+Keep HUD visible while hovering over it or the hot zone

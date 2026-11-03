@@ -8,7 +8,7 @@ public partial class HudWindow
 {
     private CancellationTokenSource? _rollRevision;
     internal bool IsRolling=>_rollRevision is not null && ReferenceEquals(_rollRevision,_cts);
-    public async Task RollToPersistentAsync(HudRenderData data,Func<CancellationToken,Task<HudRenderData>>? refresh=null)
+    public async Task RollToPersistentAsync(HudRenderData data,Func<CancellationToken,Task<HudRenderData>>? refresh=null,int direction=-1)
     {
         if (_closed) return;
         if (!IsVisible || !_persistent)
@@ -24,11 +24,11 @@ public partial class HudWindow
         SetPersistentFinalState();
         try
         {
-            await HudAnimations.RollOut().RunAsync(ContentHost,token);
+            await HudAnimations.RollOut(direction).RunAsync(ContentHost,token);
             token.ThrowIfCancellationRequested();
             ApplyRenderData(data);
-            ContentHost.RenderTransform=new TranslateTransform(0,HudAnimations.RollDistance);
-            await HudAnimations.RollIn().RunAsync(ContentHost,token);
+            ContentHost.RenderTransform=new TranslateTransform(0,(direction>0?-1:1)*HudAnimations.RollDistance);
+            await HudAnimations.RollIn(direction).RunAsync(ContentHost,token);
             token.ThrowIfCancellationRequested();
         }
         catch (OperationCanceledException) { }

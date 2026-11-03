@@ -25,8 +25,9 @@ public partial class SettingsWindow
         switch(target)
         {
             case "display":MainSettingsTabs.SelectedItem=DisplayPage;break;
-            case "hud":MainSettingsTabs.SelectedItem=HudContentPage;Customizer.SelectProfileEditor();break;
-            case "rules":MainSettingsTabs.SelectedItem=HudContentPage;Customizer.SelectTriggerRules();break;
+            case "hud": case "rules": case "ring": case "cycle":
+                MainSettingsTabs.SelectedItem=HudContentPage;Customizer.SelectWorkspaceSection(target);break;
+            case "quick":MainSettingsTabs.SelectedItem=QuickActionsPage;break;
             case "variables":MainSettingsTabs.SelectedItem=DataManagementPage;DataManagementTabs.SelectedIndex=0;break;
             case "hardware":MainSettingsTabs.SelectedItem=DataManagementPage;DataManagementTabs.SelectedItem=HardwarePage;break;
             case "sources":MainSettingsTabs.SelectedItem=DataManagementPage;DataManagementTabs.SelectedIndex=2;break;
@@ -34,5 +35,6 @@ public partial class SettingsWindow
             case "about":MainSettingsTabs.SelectedItem=AboutPage;break;
             case "manual":MainSettingsTabs.SelectedItem=ManualPage;break;
         }
+        if (_workspaceReady) SyncWorkspaceNavigation();
     }
 }

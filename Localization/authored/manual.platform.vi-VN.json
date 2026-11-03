@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Các bước",
+    "Chi tiết",
+    "Ví dụ",
+    "Giữ nguyên khóa biến và các ví dụ.",
+    "Tra cứu hàm"
+  ],
+  "linux": {
+    "sources": [
+      "Cấu hình nguồn dữ liệu",
+      "Kết nối DeepSeek và các dịch vụ HTTP JSON.",
+      "Mở Quản lý dữ liệu → Cấu hình nguồn dữ liệu rồi nhập khóa API DeepSeek.\nVới HTTP, đặt tên, URL GET, header, chu kỳ làm mới và ánh xạ trường JSON; bật nguồn.\nNhấn Lưu và áp dụng, rồi sao chép custom.<source>.<variable> từ Thư viện biến vào cấu hình.",
+      "Khung giờ cao điểm DeepSeek theo giờ Bắc Kinh và lịch nghỉ lễ Trung Quốc; cuối tuần vẫn là thấp điểm kể cả ngày làm bù. Chu kỳ làm mới HTTP điều khiển bộ nhớ đệm riêng, độc lập với lấy mẫu toàn cục. Khi lỗi, kiểm tra custom.<source>.status và custom.<source>.error; mã 401/403 thường cần kiểm tra xác thực và quyền truy cập. Đường dẫn JSON phải khớp phản hồi thực tế. ${env:MY_API_KEY} đọc biến môi trường của tiến trình. PawnIO và giao diện AIDA64 trên máy tính chỉ có trên Windows."
+    ],
+    "media": [
+      "Phiên đa phương tiện",
+      "Bản dựng gốc hiện tại không có bộ thu thập phiên đa phương tiện.",
+      "Mở Quản lý dữ liệu → Thư viện biến và kiểm tra các trường hiện có.\nChọn cấu hình dùng các biến được máy này hỗ trợ.\nThay trường đa phương tiện không khả dụng bằng phép đo khác được hỗ trợ, rồi nhấn Lưu và áp dụng.",
+      "Bản dựng này không cung cấp phiên của trình phát gốc. Nhập cấu hình đa phương tiện Windows không bật được bộ thu thập gốc. Tiêu đề, dòng thời gian hoặc tiến độ bị thiếu vẫn không khả dụng, không được tạo dữ liệu giả. Mô hình cấp quyền phiên đa phương tiện Windows không áp dụng ở đây."
+    ],
+    "hardware": [
+      "Cảm biến phần cứng và quyền truy cập Linux",
+      "Dùng giao diện Linux đã phát hiện và kiểm tra số liệu bị thiếu.",
+      "Mở Quản lý dữ liệu → Dữ liệu phần cứng và làm mới việc phát hiện.\nTìm theo thiết bị, cảm biến hoặc ID gốc; chọn một dòng và sao chép mẫu vào HUD.\nNếu thiếu số liệu, kiểm tra khả năng sử dụng và xuất chẩn đoán trước khi thay đổi quyền.",
+      "Số liệu CPU dùng /proc/stat, /proc/cpuinfo, cpufreq hoặc hwmon. Truy cập GPU phụ thuộc DRM/hwmon hoặc NVIDIA nvidia-smi. Trình điều khiển Linux và quyền tệp quyết định nút nhiệt độ, công suất và điện áp nào tồn tại, nút nào đọc được. Nút được hỗ trợ phải trả dữ liệu thực; số liệu không khả dụng vẫn là --. PawnIO và AIDA64 không phải bộ đọc nền của Linux. Các kênh package, lõi và điểm nóng có thể đo những đại lượng khác nhau; giá trị lớn nhất không mặc nhiên là giới hạn định mức phần cứng."
+    ],
+    "special": [
+      "Cấu hình thời gian, mạng và FPS",
+      "Chọn đơn vị và đích phù hợp với nguồn dữ liệu gốc.",
+      "Chọn độ lệch UTC của Đồng hồ thế giới hoặc giờ mục tiêu hằng ngày trong cấu hình.\nVới lưu lượng mạng, chọn đơn vị byte tự động hoặc Mbps và đặt mốc tham chiếu cho vòng.\nVới FPS, làm mới danh sách cửa sổ/màn hình, chọn đích đang hoạt động và đặt tốc độ khung hình tương ứng 100%, rồi nhấn Lưu và áp dụng.",
+      "Đồng hồ thế giới dùng độ lệch UTC cố định, không tự điều chỉnh giờ mùa hè. 1 MB/s bằng 8 Mbps; băng thông tham chiếu của vòng chỉ đặt thang đo, không giới hạn tốc độ mạng. ICMP bỏ qua cổng; phép dò TCP/UDP dùng cổng đã đặt. Một phép dò thất bại không chứng minh toàn bộ thiết bị ngoại tuyến. Linux đếm sự kiện hoàn tất X11 Present và cần phiên X11/XWayland có phần mở rộng Present cùng libXpresent. Cửa sổ Wayland gốc không có luồng trình bày X11 nhìn thấy được sẽ không đo được bằng bộ đọc này. Trước khi một luồng khung hình thực sự được quan sát, việc thiếu sự kiện nghĩa là dữ liệu không khả dụng. Sau khi các khung hình thực sự đã khởi tạo việc lấy mẫu, một luồng nhàn rỗi có thể báo 0 FPS; không bao giờ thay bằng tần số quét màn hình."
+    ],
+    "maintenance": [
+      "Cấu hình, sao lưu và bảo vệ khóa trên hệ thống gốc",
+      "Sao lưu cài đặt và hiểu nội dung tệp cấu hình.",
+      "Trước khi sửa nhiều, xuất cài đặt hoặc tạo bản sao lưu trong Giới thiệu → Thiết lập và bảo trì.\nNhập cấu hình để khôi phục; dùng thanh trên cùng để mở thư mục cấu hình và Giới thiệu để mở nhật ký.\nSau khi nạp mặc định, nhấn Lưu và áp dụng để ghi nhận; kiểm tra trạng thái cập nhật trước khi kết luận bản dựng đã mới nhất.",
+      "Linux bảo vệ khóa API bằng AES-GCM với tệp khóa cục bộ riêng tư tại secrets/master.key trong thư mục cấu hình. Tệp này cần quyền Unix riêng tư. Chỉ xuất cấu hình không chuyển theo khóa mã hóa cục bộ; khi chuyển sang bản cài khác có thể cần nhập lại khóa API. Kiểm tra cập nhật thất bại hoặc không lấy được phiên bản từ xa không xác nhận bạn đang dùng bản mới nhất. Giữ trạng thái nguồn và chẩn đoán phần cứng cục bộ khi điều tra lỗi."
+    ],
+    "troubleshooting": [
+      "HUD và số liệu bị thiếu",
+      "Phân biệt lỗi hiển thị, nguồn và quyền của hệ thống gốc.",
+      "Kiểm tra Bật/tắt HUD, việc ẩn bằng phím tắt, màn hình đích, tọa độ và độ mờ.\nDùng Luôn hiển thị để HUD thường trực; chế độ tạm thời cần sự kiện, vùng kích hoạt hoặc quy tắc đã thiết lập.\nXác nhận biến và đơn vị trong thư viện, kiểm tra trạng thái thu thập gốc hoặc nguồn, rồi Lưu và áp dụng các thay đổi.",
+      "Số liệu không khả dụng vẫn là --; định dạng không sửa được cảm biến không thể truy cập hoặc biểu thức sai. Tùy trường hợp, kiểm tra đường dẫn JSON, xác thực API và quyền thu thập của nền tảng. Không cài trình điều khiển Windows để sửa giao diện gốc. Ô chọn cảnh báo chỉ tắt cảnh báo cho các biến được liệt kê trong cảnh báo đó; các biến khác vẫn cảnh báo, và thao tác này không sửa hay dừng thu thập."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Cấu hình nguồn dữ liệu",
+      "Kết nối DeepSeek và các dịch vụ HTTP JSON.",
+      "Mở Quản lý dữ liệu → Cấu hình nguồn dữ liệu rồi nhập khóa API DeepSeek.\nVới HTTP, đặt tên, URL GET, header, chu kỳ làm mới và ánh xạ trường JSON; bật nguồn.\nNhấn Lưu và áp dụng, rồi sao chép custom.<source>.<variable> từ Thư viện biến vào cấu hình.",
+      "Khung giờ cao điểm DeepSeek theo giờ Bắc Kinh và lịch nghỉ lễ Trung Quốc; cuối tuần vẫn là thấp điểm kể cả ngày làm bù. Chu kỳ làm mới HTTP điều khiển bộ nhớ đệm riêng, độc lập với lấy mẫu toàn cục. Khi lỗi, kiểm tra custom.<source>.status và custom.<source>.error; mã 401/403 thường cần kiểm tra xác thực và quyền truy cập. Đường dẫn JSON phải khớp phản hồi thực tế. ${env:MY_API_KEY} đọc biến môi trường của tiến trình. PawnIO và giao diện AIDA64 trên máy tính chỉ có trên Windows."
+    ],
+    "media": [
+      "Phiên đa phương tiện",
+      "Bản dựng gốc hiện tại không có bộ thu thập phiên đa phương tiện.",
+      "Mở Quản lý dữ liệu → Thư viện biến và kiểm tra các trường hiện có.\nChọn cấu hình dùng các biến được máy này hỗ trợ.\nThay trường đa phương tiện không khả dụng bằng phép đo khác được hỗ trợ, rồi nhấn Lưu và áp dụng.",
+      "Bản dựng này không cung cấp phiên của trình phát gốc. Nhập cấu hình đa phương tiện Windows không bật được bộ thu thập gốc. Tiêu đề, dòng thời gian hoặc tiến độ bị thiếu vẫn không khả dụng, không được tạo dữ liệu giả. Mô hình cấp quyền phiên đa phương tiện Windows không áp dụng ở đây."
+    ],
+    "hardware": [
+      "Dữ liệu phần cứng trên macOS",
+      "Đọc phép đo hệ thống thực sự cung cấp và lưu ý giới hạn thiết bị.",
+      "Mở Quản lý dữ liệu → Dữ liệu phần cứng và làm mới việc phát hiện.\nTìm thiết bị và trường đã phát hiện, rồi sao chép biến được hỗ trợ vào cấu hình.\nKhi thiếu dữ liệu, kiểm tra trạng thái và xuất chẩn đoán; đừng cho rằng quyền quản trị có thể tạo ra API cảm biến.",
+      "Thống kê CPU và bộ nhớ dùng Mach hoặc sysctl; thông tin pin đến từ giao diện nguồn điện gốc. Dung lượng lưu trữ dùng thống kê ổ APFS Data và có thể chia sẻ sức chứa trong cùng một container. Giá trị GPU phụ thuộc các giao diện Metal/hệ thống thực sự được cung cấp. Ngân sách bộ nhớ GPU không phải VRAM vật lý chuyên dụng. Nhiệt độ hoặc công suất mà phần cứng và hệ điều hành không cung cấp vẫn là --. Bản dựng này không dùng PawnIO hay giao diện AIDA64 Windows."
+    ],
+    "special": [
+      "Cấu hình thời gian, mạng và FPS",
+      "Chọn đơn vị và đích phù hợp với nguồn dữ liệu gốc.",
+      "Chọn độ lệch UTC của Đồng hồ thế giới hoặc giờ mục tiêu hằng ngày trong cấu hình.\nVới lưu lượng mạng, chọn đơn vị byte tự động hoặc Mbps và đặt mốc tham chiếu cho vòng.\nVới FPS, làm mới danh sách cửa sổ/màn hình, chọn đích đang hoạt động và đặt tốc độ khung hình tương ứng 100%, rồi nhấn Lưu và áp dụng.",
+      "Đồng hồ thế giới dùng độ lệch UTC cố định, không tự điều chỉnh giờ mùa hè. 1 MB/s bằng 8 Mbps; băng thông tham chiếu của vòng chỉ đặt thang đo, không giới hạn tốc độ mạng. ICMP bỏ qua cổng; phép dò TCP/UDP dùng cổng đã đặt. Một phép dò thất bại không chứng minh toàn bộ thiết bị ngoại tuyến. macOS dùng khung hình hoàn chỉnh từ ScreenCaptureKit và cần quyền Ghi màn hình. Không tính khung hình không hoạt động, trống hoặc bị tạm ngưng. Nếu bị từ chối thu thập hoặc đích biến mất, hãy xem trạng thái thay vì coi tần số quét màn hình là FPS."
+    ],
+    "maintenance": [
+      "Cấu hình, sao lưu và bảo vệ khóa trên hệ thống gốc",
+      "Sao lưu cài đặt và hiểu nội dung tệp cấu hình.",
+      "Trước khi sửa nhiều, xuất cài đặt hoặc tạo bản sao lưu trong Giới thiệu → Thiết lập và bảo trì.\nNhập cấu hình để khôi phục; dùng thanh trên cùng để mở thư mục cấu hình và Giới thiệu để mở nhật ký.\nSau khi nạp mặc định, nhấn Lưu và áp dụng để ghi nhận; kiểm tra trạng thái cập nhật trước khi kết luận bản dựng đã mới nhất.",
+      "Khóa API được lưu trong macOS Keychain; cấu hình giữ tham chiếu, không giữ bản sao bí mật có thể chuyển sang máy khác. Nhập cấu hình vào tài khoản hoặc máy khác có thể cần nhập lại khóa API. Cho phép yêu cầu truy cập Keychain hợp lệ nếu hệ thống hỏi. Kiểm tra cập nhật thất bại hoặc không lấy được phiên bản từ xa không xác nhận bạn đang dùng bản mới nhất. Giữ trạng thái nguồn và chẩn đoán phần cứng cục bộ khi điều tra lỗi."
+    ],
+    "troubleshooting": [
+      "HUD và số liệu bị thiếu",
+      "Phân biệt lỗi hiển thị, nguồn và quyền của hệ thống gốc.",
+      "Kiểm tra Bật/tắt HUD, việc ẩn bằng phím tắt, màn hình đích, tọa độ và độ mờ.\nDùng Luôn hiển thị để HUD thường trực; chế độ tạm thời cần sự kiện, vùng kích hoạt hoặc quy tắc đã thiết lập.\nXác nhận biến và đơn vị trong thư viện, kiểm tra trạng thái thu thập gốc hoặc nguồn, rồi Lưu và áp dụng các thay đổi.",
+      "Số liệu không khả dụng vẫn là --; định dạng không sửa được cảm biến không thể truy cập hoặc biểu thức sai. Tùy trường hợp, kiểm tra đường dẫn JSON, xác thực API và quyền thu thập của nền tảng. Không cài trình điều khiển Windows để sửa giao diện gốc. Ô chọn cảnh báo chỉ tắt cảnh báo cho các biến được liệt kê trong cảnh báo đó; các biến khác vẫn cảnh báo, và thao tác này không sửa hay dừng thu thập."
+    ]
+  },
+  "android": {
+    "start": [
+      "Bắt đầu trên Android",
+      "Cấp quyền cần thiết cho kiểu đầu ra đã chọn và khởi động HUD.",
+      "Mở Trang chủ và kiểm tra Quyền; cho phép hiển thị trên ứng dụng khác để dùng lớp phủ và cho phép thông báo khi được hỏi.\nChọn cấu hình trong Nội dung HUD và chế độ trong Hiển thị và vị trí; bật Bật/tắt HUD.\nQuay lại Trang chủ và nhấn Bắt đầu HUD; dùng Dừng HUD tại đó khi muốn dừng dịch vụ.",
+      "Cài đặt chung được lưu tự động. Sửa cấu hình có thao tác Lưu riêng; sửa cấu hình tích hợp tạo một bản sao tùy chỉnh. Lớp phủ đang chạy và cập nhật trực tiếp gốc là hai đầu ra khác nhau, với khả năng hệ điều hành khác nhau. Chỉ mở ứng dụng không đảm bảo dịch vụ HUD tiền cảnh đang chạy."
+    ],
+    "display": [
+      "Hiển thị, vị trí và diện mạo toàn cục",
+      "Thiết lập lớp phủ hoặc cập nhật trực tiếp do hệ thống điều khiển.",
+      "Trong Hiển thị và vị trí, chọn Lớp phủ hoặc Cập nhật trực tiếp gốc nếu được hỗ trợ.\nVới lớp phủ, chọn Luôn hiển thị, điểm neo kèm độ lệch hoặc tọa độ tùy chỉnh; chỉnh kích thước, độ mờ, tránh phần khuyết màn hình và cho chạm xuyên.\nMở Ngôn ngữ → Cỡ chữ và tỷ lệ giao diện toàn cục để đổi cài đặt và HUD từ 75% đến 200%; đặt lại 100% sẽ khôi phục các hệ số toàn cục.",
+      "Cho chạm xuyên sẽ chuyển thao tác chạm xuống ứng dụng bên dưới. Khởi động khi bật máy chịu giới hạn khởi chạy nền của Android và quyền của đầu ra đã chọn. Cập nhật trực tiếp gốc cần phiên bản Android được hỗ trợ và đủ điều kiện của hệ thống; Android kiểm soát bố cục cùng cỡ chữ. Giao diện lớp phủ không thể buộc thông báo hệ thống có cùng hình dạng và kích thước. Kích thước riêng của HUD được nhân với tỷ lệ giao diện toàn cục."
+    ],
+    "profiles": [
+      "Cấu hình và nội dung HUD",
+      "Sửa văn bản, biểu tượng, biểu thức và vòng tiến độ.",
+      "Chọn cấu hình tích hợp hoặc tạo cấu hình tùy chỉnh trong Nội dung HUD.\nSửa dòng dẫn, tiêu đề, văn bản chính/phụ, giá trị bên phải, hậu tố, biểu tượng và màu nhấn; xem trước kết quả.\nĐặt biến tiến độ hoặc biểu thức bắt đầu bằng =, chọn giá trị nhỏ nhất và lớn nhất, rồi Lưu cấu hình.",
+      "Sửa cấu hình tích hợp sẽ lưu bản sao tùy chỉnh, không ghi đè mẫu gốc. Vòng ánh xạ giá trị hiện tại lên khoảng đã đặt và chặn kết quả trong 0–100%; không thay đổi số liệu văn bản gốc. Dùng đơn vị và mốc toàn thang phù hợp. Quy tắc màu có điều kiện dùng đơn vị đo gốc; dữ liệu không khả dụng không phải số 0 đã đo được."
+    ],
+    "variables": [
+      "Biến, token và biểu thức",
+      "Sao chép trường Android hỗ trợ và giữ nguyên mã.",
+      "Mở Quản lý dữ liệu → Thư viện biến và tìm tên hoặc khóa.\nĐọc ý nghĩa, đơn vị, khả năng sử dụng và ghi chú nguồn Android; sao chép biến hoặc token vào cấu hình.\nDùng {cpu.usage|0} cho văn bản có định dạng, hoặc = (cpu.usage + gpu.usage) / 2 cho biểu thức số; xem trước rồi Lưu.",
+      "Khóa biến, tên hàm và các bước định dạng sau dấu | là mã, không dịch. bytes và speed định dạng kích thước hoặc tốc độ byte; gb:2 dùng lũy thừa 1024, còn duration định dạng giây. Hàm biểu thức xử lý số học, điều kiện, văn bản và giá trị thiếu. Dữ liệu không thu thập được vẫn không khả dụng. Biến máy tính có thể có bí danh Android hoặc không có bộ đọc trên Android; kiểm tra thư viện thực tế thay vì mặc nhiên cho rằng khóa nhập vào được hỗ trợ."
+    ],
+    "hardware": [
+      "Dữ liệu phần cứng và Root tùy chọn",
+      "Đọc theo khả năng thực của Android, không thay bằng trình điều khiển máy tính.",
+      "Mở Quản lý dữ liệu → Dữ liệu phần cứng để xem các trường phát hiện được và khả năng sử dụng.\nNếu điện thoại đã có Root, mở Tính năng thử nghiệm → Dùng Root để đọc dữ liệu và quyết định cấp quyền ECP trong trình quản lý Root.\nLàm mới phát hiện, kiểm tra trạng thái nguồn sau đó và sao chép trường được hỗ trợ hoặc xuất chẩn đoán.",
+      "Quyền Root là tùy chọn và không root điện thoại. Nó bổ sung quyền đọc các nút CPU/GPU, nhiệt độ và bộ nhớ của nhà sản xuất; thiết bị không có nút tương thích vẫn không có số liệu. Bộ thu thập pin và bộ nhớ thông thường tiếp tục hoạt động khi không có Root. Giá trị thiếu là không khả dụng, không bao giờ là số 0 tạo ra. PawnIO và giao diện AIDA64 Windows không chạy trên Android. Năng lượng pin khi đầy có thể được ước tính từ năng lượng đo được và phần trăm sạc; không phải dung lượng thiết kế định mức."
+    ],
+    "sources": [
+      "Nguồn DeepSeek và HTTP JSON",
+      "Thiết lập dịch vụ và xem trạng thái phản hồi thực.",
+      "Mở Quản lý dữ liệu → Cấu hình nguồn dữ liệu và nhập khóa API DeepSeek; lưu bằng thao tác dành cho khóa.\nVới nguồn HTTP, nhập tên, URL GET trả JSON, header, chu kỳ và đường dẫn trường; bật nguồn đã cấu hình.\nTìm custom.<source>.<variable> trong thư viện; khi lỗi, xem custom.<source>.status và custom.<source>.error.",
+      "Khóa API được mã hóa bằng Android Keystore; xuất cấu hình không phải bản sao lưu bí mật có thể chuyển sang nơi khác. Nhập lại khóa nếu bản cài khác không thể đọc được. Khung giờ DeepSeek theo giờ Bắc Kinh và lịch nghỉ lễ Trung Quốc; ngày làm bù cuối tuần vẫn là thấp điểm. Bộ nhớ đệm HTTP theo chu kỳ riêng của từng nguồn. Khớp đường dẫn JSON với phản hồi thực và kiểm tra xác thực cho 401/403. ${env:MY_API_KEY} chỉ hoạt động nếu biến môi trường đó tồn tại trong tiến trình. JSON ví dụ ban đầu bị tắt; thay URL và ánh xạ trước khi bật."
+    ],
+    "cycle": [
+      "Luân phiên tự động và hoạt ảnh",
+      "Sắp xếp cấu hình và chọn hiệu ứng chuyển lớp phủ.",
+      "Lưu các cấu hình muốn luân phiên rồi thêm vào Hàng đợi luân phiên trong Nội dung HUD.\nDùng Lên và Xuống để đổi thứ tự, hoặc Xóa để bỏ mục khỏi hàng đợi.\nBật luân phiên tự động, đặt khoảng từ 3 đến 3600 giây và chọn Đơn giản hoặc Đầy đủ cho hiệu ứng chuyển lớp phủ.",
+      "Bỏ mục hàng đợi không xóa cấu hình. Hiệu ứng luân phiên được ưu tiên hơn hoạt ảnh riêng của cấu hình. Hàng đợi trống dùng cấu hình đang chọn; một mục không thể chuyển sang cấu hình khác. Android hiện có hiệu ứng lớp phủ Đơn giản và Đầy đủ; Cuộn lên của máy tính không phải hiệu ứng Android. Cập nhật trực tiếp gốc do Android dựng, không dùng bộ máy hoạt ảnh lớp phủ."
+    ],
+    "summons": [
+      "Hiển thị và dừng HUD Android",
+      "Dùng điều khiển Android thay cho phím tắt máy tính hay vùng chuột.",
+      "Dùng Trang chủ → Bắt đầu HUD để chạy đầu ra đã chọn và Trang chủ → Dừng HUD để dừng.\nMuốn lớp phủ thường trực, bật Luôn hiển thị trong Hiển thị và vị trí.\nMuốn lớp phủ xuất hiện khi cần, tắt Luôn hiển thị và kiểm tra hành vi sự kiện nguồn điện cùng thời lượng hiển thị được hỗ trợ.",
+      "Giao diện Android không có phím tắt bàn phím hiện/ẩn toàn cục hay trình sửa vùng kích hoạt chuột của máy tính. Nhập các cài đặt đó từ máy tính không tạo điều khiển Android. Bật/tắt HUD ngăn đầu ra; dịch vụ nền và thông báo tiền cảnh của nó vẫn có thể có trạng thái chạy riêng. Dùng Dừng HUD để dừng dịch vụ."
+    ],
+    "triggers": [
+      "Quy tắc sự kiện và giới hạn Android",
+      "Kiểm tra hành vi được hỗ trợ trước khi phụ thuộc quy tắc nhập vào.",
+      "Kiểm tra biến và giá trị trực tiếp trong Quản lý dữ liệu trước khi thiết lập cấu hình.\nDùng luân phiên tự động Android hoặc hiển thị theo sự kiện nguồn điện được hỗ trợ cho hành vi tự động hiện có.\nXác nhận trạng thái HUD thực trong Trang chủ và giữ Luôn hiển thị bật nếu cần hiển thị thường trực.",
+      "Giao diện cài đặt Android này không có trình sửa Quy tắc kích hoạt của máy tính hay hàng đợi quy tắc riêng từng phiên bản HUD. Nhập quy tắc ngưỡng/thay đổi từ máy tính không làm tính năng đó khả dụng. Cảnh báo dữ liệu là thông báo nguồn lỗi, không phải quy tắc ngưỡng tự động. Không dựa vào quy tắc chưa được triển khai để nhắc việc."
+    ],
+    "special": [
+      "Thời gian, mạng và FPS Android",
+      "Chọn số đo thực và đích được hỗ trợ.",
+      "Đặt độ lệch UTC Đồng hồ thế giới hoặc mục tiêu hằng ngày; độ lệch cố định không tự theo giờ mùa hè.\nChọn đơn vị byte tự động hoặc Mbps cho lưu lượng mạng; đặt đích ICMP/TCP/UDP và cổng phù hợp.\nVới FPS, cấp Root khi cần, làm mới đích, chọn lớp SurfaceFlinger hoặc màn hình và đặt tốc độ khung hình ứng với 100%.",
+      "1 MB/s bằng 8 Mbps. Mốc tham chiếu vòng đặt thang đo, không giới hạn băng thông. ICMP bỏ qua cổng; đích TCP/UDP/ICMP thất bại không chứng minh toàn mạng ngừng hoạt động. FPS cửa sổ lấy từ dấu thời gian khung hình thực sự được hiển thị của lớp SurfaceFlinger đã chọn. FPS màn hình cần bộ đếm khung hình tổng hợp của nhà sản xuất và không thể gán đúng màn hình khi nhiều màn hình gây mơ hồ. Dữ liệu khung hình không hỗ trợ hoặc bị thiếu vẫn không khả dụng; không bao giờ thay bằng tần số quét."
+    ],
+    "media": [
+      "Khả năng sử dụng phiên đa phương tiện",
+      "Bản Android hiện tại không có nguồn phiên trình phát.",
+      "Kiểm tra các trường được hỗ trợ trong Thư viện biến Android.\nChọn cấu hình dựa trên những trường đó, như thời gian, pin hoặc bộ nhớ.\nThay các trường đa phương tiện máy tính đã nhập trước khi lưu cấu hình dùng cho Android.",
+      "Bản dựng này không đọc tiêu đề, nghệ sĩ hay dòng thời gian phát từ phiên đa phương tiện Android. Quyền lớp phủ hoặc thông báo không cung cấp bộ thu thập đa phương tiện mà ứng dụng chưa triển khai. Khóa đa phương tiện nhập vào vẫn không khả dụng, không hiển thị bài hát hay tiến độ giả."
+    ],
+    "instances": [
+      "Nhiều HUD và phạm vi trên di động",
+      "Android hiện điều khiển một đầu ra HUD đang hoạt động.",
+      "Chọn cấu hình đang dùng trong Nội dung HUD.\nDùng hàng đợi luân phiên khi muốn nhiều cấu hình dùng chung đầu ra đó theo thời gian.\nDùng cỡ chữ và tỷ lệ giao diện toàn cục cho cài đặt cùng HUD; dùng điều khiển kích thước lớp phủ cho kích thước riêng.",
+      "Trình sửa nhiều phiên bản HUD của máy tính và các cửa sổ HUD có vị trí độc lập chưa được triển khai trong UI Android này. Nhập danh sách phiên bản HUD máy tính không tạo nhiều cửa sổ lớp phủ Android. Lớp phủ và Cập nhật trực tiếp gốc là các chế độ đầu ra để chọn, không phải hai phiên bản HUD máy tính được cấu hình độc lập. Ngôn ngữ và các hệ số diện mạo toàn cục áp dụng khắp ứng dụng."
+    ],
+    "maintenance": [
+      "Cấu hình, chẩn đoán và cập nhật",
+      "Dùng trình chọn tệp Android và giữ thông tin nguồn lỗi.",
+      "Trước thay đổi lớn, dùng Tính năng thử nghiệm để xuất cấu hình qua trình chọn tệp hệ thống.\nNhập cấu hình JSON đã lưu để khôi phục, hoặc xuất nhật ký cùng chẩn đoán để điều tra lỗi.\nKiểm tra phiên bản ứng dụng và trạng thái cập nhật trong Giới thiệu; chỉ dùng Đặt lại khi muốn trở về mặc định của lần cài đầu.",
+      "Khóa API được Android Keystore bảo vệ và không phải trường bí mật văn bản thuần có thể chuyển đi trong cấu hình xuất. Bản cài hoặc tài khoản khác có thể cần nhập lại khóa. Sau khi xác nhận, Đặt lại khôi phục cấu hình, nguồn, chu kỳ làm mới và cài đặt hiển thị. Kiểm tra cập nhật từ xa thất bại không chứng minh phiên bản đã cài là mới nhất. Việc lấy mẫu chậm lại khi ẩn hoặc tắt màn hình theo các chu kỳ đã đặt."
+    ],
+    "troubleshooting": [
+      "Hiển thị, thiếu dữ liệu và phạm vi cảnh báo",
+      "Kiểm tra quyền Android và trạng thái bộ thu thập thực tế.",
+      "Kiểm tra Trang chủ → Quyền và trạng thái chạy, rồi Bật/tắt HUD cùng chế độ đầu ra đã chọn.\nVới lớp phủ, kiểm tra Luôn hiển thị, tọa độ, độ mờ và quyền lớp phủ; với cập nhật trực tiếp, xem trạng thái đủ điều kiện hệ thống.\nVới số liệu --, kiểm tra nguồn biến, khả năng dùng Root nếu liên quan, xác thực API hoặc đường dẫn JSON, rồi xuất chẩn đoán.",
+      "Dữ liệu thiếu không phải số 0, và định dạng văn bản không sửa được cảm biến hay biểu thức. Một số giới hạn nhà sản xuất/SELinux vẫn tồn tại dù lớp phủ đã được cho phép. Ô chọn cảnh báo tắt vĩnh viễn cảnh báo chỉ cho những biến đã được liệt kê trong cảnh báo đó; biến khác tiếp tục cảnh báo. Đóng mà không chọn ô chỉ xác nhận sự cố lần đó. Tắt cảnh báo không sửa nguồn hoặc dừng thu thập."
+    ]
+  }
+}

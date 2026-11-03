@@ -1,0 +1,4414 @@
+{
+  "schema": 1,
+  "resourceDate": "20261020",
+  "fieldCount": 2470,
+  "strategy": "Rename only platform-specific field IDs in place; preserve all value rows and their line indices. English source rows retain legacy lookup compatibility.",
+  "fields": [
+    {
+      "index": 50,
+      "key": "android.service.foreground_required",
+      "source": "A foreground service keeps the HUD alive; without it the system stops sampling.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 57,
+      "key": "windows.aida64.available",
+      "source": "AIDA64 data available",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ],
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 58,
+      "key": "windows.aida64.external_applications",
+      "source": "AIDA64 external applications",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 59,
+      "key": "windows.aida64.transport",
+      "source": "AIDA64 transport",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ],
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 61,
+      "key": "android.device.api_level",
+      "source": "API Level",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 62,
+      "key": "android.island.api_status",
+      "source": "API Status",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 72,
+      "key": "android.memory.low_memory_api.description",
+      "source": "ActivityManager.MemoryInfo.lowMemory.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 73,
+      "key": "android.frames.surfaceflinger_counter",
+      "source": "Actual SurfaceFlinger composition-frame counter rate with ROOT; unavailable when multiple displays cannot be attributed.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 76,
+      "key": "windows.media.session_description",
+      "source": "Actual playback information from Windows media sessions. Timeline positions are extrapolated while playing; unsupported fields remain unavailable.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 92,
+      "key": "windows.media.album",
+      "source": "Album",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 96,
+      "key": "android.permission.overlay.required",
+      "source": "Allow drawing over other apps in system settings.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 97,
+      "key": "android.permission.requested_before",
+      "source": "Already requested once; re-enable it in system settings.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 104,
+      "key": "android.permission.shizuku_required",
+      "source": "An elevated helper such as Shizuku would be required.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 105,
+      "key": "android.permission.special_access_required",
+      "source": "An extra permission or special access is required.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 107,
+      "key": "android.island.notification_required",
+      "source": "An ongoing notification must stay visible.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 109,
+      "key": "android.permission.notification.android13",
+      "source": "Android 13+ needs notification permission for the HUD's ongoing notification; requested only when the HUD starts.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 110,
+      "key": "android.island.android16_required",
+      "source": "Android 16 or newer is required.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 111,
+      "key": "android.battery.health_code.description",
+      "source": "Android EXTRA_HEALTH status code (GOOD/OVERHEAT/DEAD/...).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 112,
+      "key": "android.battery.plugged_code.description",
+      "source": "Android EXTRA_PLUGGED: AC / USB / WIRELESS / none.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 113,
+      "key": "android.battery.status_code.description",
+      "source": "Android EXTRA_STATUS code (CHARGING/DISCHARGING/FULL/NOT_CHARGING).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 114,
+      "key": "android.cpu.soc_model.description",
+      "source": "Android SoC model (Build.SOC_MODEL, API 31+).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 115,
+      "key": "android.device.android_version",
+      "source": "Android Version",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 116,
+      "key": "android.hardware.availability_notice",
+      "source": "Android does not let an ordinary app read every hardware metric: GPU load, CPU temperature and part of the battery current are unavailable on most devices. ECP only shows what it really reads, marks the rest as unsupported, and never fabricates a value.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/about/AboutScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 117,
+      "key": "android.capability.no_public_api",
+      "source": "Android exposes no public API for this.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 118,
+      "key": "android.capability.unsupported_metric",
+      "source": "Android exposes no supported reading API for this metric; the app reports it as unavailable.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 119,
+      "key": "android.island.native_android",
+      "source": "Android native live update",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 120,
+      "key": "android.hardware.platform_note",
+      "source": "Android note",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/variables/VariablesScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 121,
+      "key": "android.gpu.no_public_load_api",
+      "source": "Android publishes no public GPU load API.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 122,
+      "key": "android.island.provider.android_system",
+      "source": "Android system",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 123,
+      "key": "android.update.available_version",
+      "source": "Android v{0} is available on the releases page.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/components/UpdateUi.kt"
+        ]
+      }
+    },
+    {
+      "index": 126,
+      "key": "android.update.notification_channel",
+      "source": "App updates",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/update/UpdateNotification.kt"
+        ]
+      }
+    },
+    {
+      "index": 130,
+      "key": "android.island.official_templates_only",
+      "source": "Arbitrary views are not allowed; only official templates can be used.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 132,
+      "key": "windows.media.artist",
+      "source": "Artist",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 133,
+      "key": "windows.media.artist_and_title",
+      "source": "Artist - title",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 141,
+      "key": "android.permission.not_authorized",
+      "source": "Authorization has not been granted.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 152,
+      "key": "android.storage.available_fraction.description",
+      "source": "Available bytes divided by total capacity from StatFs.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 159,
+      "key": "android.display.avoid_cutout",
+      "source": "Avoid cutout",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 169,
+      "key": "android.deepseek.keystore_notice",
+      "source": "Balance queries and peak/off-peak windows; the API key is encrypted with the Android Keystore.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/datasources/DataSourcesScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 181,
+      "key": "android.battery.statistics_restricted",
+      "source": "Battery statistics are unavailable or restricted by the system.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 183,
+      "key": "android.battery.temperature.description",
+      "source": "Battery temperature in °C; the desktop catalog spells this battery.temperature.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 185,
+      "key": "android.battery.energy_counter.description",
+      "source": "BatteryManager energy counter, falling back to an estimate from the measured charge counter and voltage.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 194,
+      "key": "android.permission.boot.declared",
+      "source": "Boot permission is declared; enable startup in settings.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 207,
+      "key": "android.device.manufacturer.description",
+      "source": "Build.MANUFACTURER.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 208,
+      "key": "android.device.model.description",
+      "source": "Build.MODEL device model.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 243,
+      "key": "android.cpu.temperature.unsupported",
+      "source": "CPU temperature; Android exposes no public API.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 248,
+      "key": "android.memory.cached.description",
+      "source": "Cached (reclaimable) memory; the desktop catalog spells this memory.cache_bytes.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 252,
+      "key": "windows.startup.task_unreadable",
+      "source": "Cannot read the Windows startup task. See logs.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "linux": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "macos": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ]
+      }
+    },
+    {
+      "index": 253,
+      "key": "android.hardware.capability_disclaimer",
+      "source": "Capability disclaimer",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/about/AboutScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 277,
+      "key": "windows.hardware.check_sensor_or_aida64",
+      "source": "Check this sensor or the AIDA64 sharing settings under Settings → Data Management → Hardware Data.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ProfileDataWarnings.cs"
+        ],
+        "linux": [
+          "Customization\\ProfileDataWarnings.cs"
+        ],
+        "macos": [
+          "Customization\\ProfileDataWarnings.cs"
+        ]
+      }
+    },
+    {
+      "index": 279,
+      "key": "android.island.checking_native",
+      "source": "Checking Android native live updates…",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 281,
+      "key": "android.island.checking_permissions",
+      "source": "Checking permissions and native live updates…",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 325,
+      "key": "windows.deepseek.dpapi_notice",
+      "source": "Configure balance queries and peak/off-peak windows. The API key is encrypted for the current Windows user.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "LocalizationManager.cs"
+        ],
+        "linux": [
+          "LocalizationManager.cs"
+        ],
+        "macos": [
+          "LocalizationManager.cs"
+        ],
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/i18n/Strings.kt"
+        ]
+      }
+    },
+    {
+      "index": 330,
+      "key": "windows.data_sources.available_integrations",
+      "source": "Connect DeepSeek, HTTP JSON and AIDA64.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 361,
+      "key": "android.service.start_failed",
+      "source": "Could not start the HUD service; see the log on the Advanced page.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 362,
+      "key": "android.island.eligibility_unknown",
+      "source": "Could not verify island eligibility",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 364,
+      "key": "macos.frames.screen_recording_description",
+      "source": "Counts actual content-update frames, excluding idle frames. Requires Screen Recording permission; no images are saved. This may differ from internal application rendering/presentation FPS; static content can be 0 FPS.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\HudCustomizerView.Frames.cs"
+        ]
+      }
+    },
+    {
+      "index": 378,
+      "key": "windows.hardware.current_bios_date",
+      "source": "Current BIOS Date.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 383,
+      "key": "android.battery.current.description",
+      "source": "Current Battery Current, reported in mA.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 394,
+      "key": "windows.hardware.current_c_partition_count",
+      "source": "Current C Partition Count.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 407,
+      "key": "android.battery.charge_counter.description",
+      "source": "Current Charge Counter, reported in µAh.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 409,
+      "key": "windows.hardware.current_chemistry",
+      "source": "Current Chemistry.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 429,
+      "key": "windows.hardware.current_d_partition_count",
+      "source": "Current D Partition Count.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 457,
+      "key": "windows.hardware.current_defender_status",
+      "source": "Current Defender Status.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 462,
+      "key": "windows.hardware.current_device_count",
+      "source": "Current Device Count.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 476,
+      "key": "windows.hardware.current_driver_date",
+      "source": "Current Driver Date.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 477,
+      "key": "windows.hardware.current_driver_version",
+      "source": "Current Driver Version.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 480,
+      "key": "windows.hardware.current_estimated_time_to_empty_reported_in_s",
+      "source": "Current Estimated Time To Empty, reported in s.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 483,
+      "key": "windows.hardware.current_fan_speed_summary_reported_in_rpm",
+      "source": "Current Fan Speed (summary), reported in RPM.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 504,
+      "key": "windows.hardware.current_gpu_top_usage_reported_in",
+      "source": "Current GPU Top Usage, reported in %.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 505,
+      "key": "windows.hardware.current_gpu_usage_reported_in",
+      "source": "Current GPU Usage, reported in %.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 541,
+      "key": "windows.hardware.current_max_frequency_ghz_reported_in_ghz",
+      "source": "Current Max Frequency GHz, reported in GHz.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ],
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 556,
+      "key": "windows.hardware.current_motherboard_manufacturer",
+      "source": "Current Motherboard Manufacturer.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 557,
+      "key": "windows.hardware.current_motherboard_model",
+      "source": "Current Motherboard Model.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 558,
+      "key": "windows.hardware.current_motherboard_temperature_summary_reported_in_c",
+      "source": "Current Motherboard Temperature (summary), reported in °C.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 587,
+      "key": "windows.hardware.current_power_max_summary_reported_in_w",
+      "source": "Current Power Max (summary), reported in W.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 590,
+      "key": "windows.hardware.current_power_w_reported_in_w",
+      "source": "Current Power W, reported in W.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 626,
+      "key": "windows.hardware.current_slot_count",
+      "source": "Current Slot Count.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 630,
+      "key": "windows.hardware.current_speed_mhz_reported_in_mhz",
+      "source": "Current Speed MHz, reported in MHz.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 656,
+      "key": "windows.hardware.current_tpm_version",
+      "source": "Current TPM Version.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 664,
+      "key": "windows.hardware.current_temperature_max_summary_reported_in_c",
+      "source": "Current Temperature Max (summary), reported in °C.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 691,
+      "key": "windows.hardware.current_type",
+      "source": "Current Type.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 698,
+      "key": "windows.hardware.current_update_last_installed",
+      "source": "Current Update Last Installed.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 721,
+      "key": "macos.display.virtual_height_points.description",
+      "source": "Current Virtual Height Points, reported in pt.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 727,
+      "key": "macos.display.virtual_width_points.description",
+      "source": "Current Virtual Width Points, reported in pt.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 729,
+      "key": "macos.display.virtual_x_points.description",
+      "source": "Current Virtual X Points, reported in pt.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 731,
+      "key": "macos.display.virtual_y_points.description",
+      "source": "Current Virtual Y Points, reported in pt.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 749,
+      "key": "windows.update.pending_count.description",
+      "source": "Current Windows Update Pending Count.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 750,
+      "key": "windows.update.status.description",
+      "source": "Current Windows Update Status.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 766,
+      "key": "android.network.transport.description",
+      "source": "Current transport: WIFI / CELLULAR / ETHERNET / VPN / NONE.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 824,
+      "key": "android.warning.metric_unavailable",
+      "source": "Data for '{0}' is unavailable or invalid. Check ROOT/permissions, device support, the selected window and data-source settings.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudDataWarnings.kt",
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/components/ProfileDataPrompt.kt"
+        ]
+      }
+    },
+    {
+      "index": 868,
+      "key": "android.device.manufacturer",
+      "source": "Device Manufacturer",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 869,
+      "key": "android.device.model",
+      "source": "Device Model",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 870,
+      "key": "android.device.uptime",
+      "source": "Device Uptime",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 895,
+      "key": "windows.media.hud_description",
+      "source": "Display a Windows media session in the HUD.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 914,
+      "key": "android.permission.overlay.granted",
+      "source": "Drawing over other apps is allowed.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 933,
+      "key": "android.permission.notification.required",
+      "source": "Enable notification permission for the app.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 942,
+      "key": "android.service.running_title",
+      "source": "Endfield Charge Plus is running",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudNotificationFactory.kt"
+        ]
+      }
+    },
+    {
+      "index": 948,
+      "key": "windows.manual.deepseek_windows_setup",
+      "source": "Enter a DeepSeek API key under Data Management → Data Source Configuration, then Save & Apply. Keys are encrypted for the current Windows user and may need re-entry for another account or machine. Peak windows use Beijing time and the Chinese holiday calendar; weekend make-up workdays remain off-peak.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 980,
+      "key": "android.frames.surfaceflinger_timestamps",
+      "source": "FPS computed from real displayed-frame timestamps of the selected SurfaceFlinger layer.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1008,
+      "key": "android.service.foreground",
+      "source": "Foreground service",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1009,
+      "key": "android.permission.foreground.declared",
+      "source": "Foreground service permission is declared for the HUD.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1012,
+      "key": "android.update.notification_message",
+      "source": "Found v{0}. Tap to view releases.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/update/UpdateNotification.kt"
+        ]
+      }
+    },
+    {
+      "index": 1046,
+      "key": "android.gpu.frequency.unsupported",
+      "source": "GPU frequency; no public Android API exists.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1048,
+      "key": "android.gpu.kgsl_model.description",
+      "source": "GPU model from the vendor KGSL node; availability depends on the device and Root authorization.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1050,
+      "key": "android.gpu.temperature.unsupported",
+      "source": "GPU temperature; Android exposes no public API.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1067,
+      "key": "android.gpu.egl_name.description",
+      "source": "Graphics adapter name read through EGL.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1088,
+      "key": "android.service.notification_channel",
+      "source": "HUD service",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudNotificationFactory.kt"
+        ]
+      }
+    },
+    {
+      "index": 1095,
+      "key": "android.hardware.capabilities",
+      "source": "Hardware capabilities",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1096,
+      "key": "android.hardware.not_scanned",
+      "source": "Hardware capabilities have not been scanned yet.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1097,
+      "key": "android.hardware.rescanned",
+      "source": "Hardware capabilities were re-detected.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1143,
+      "key": "windows.startup.import_not_applied",
+      "source": "Imported startup preference could not be applied. Check Windows Startup Apps.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "linux": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "macos": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ]
+      }
+    },
+    {
+      "index": 1144,
+      "key": "windows.aida64.setup_instructions",
+      "source": "In AIDA64 Preferences → Hardware Monitoring → External Applications, select the items and enable shared memory, Registry or WMI. Keep AIDA64 running, then refresh ECP Hardware Data. ECP reads all actual exports, including numbers, timings and text; unexported or license-limited fields remain unavailable.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 1153,
+      "key": "windows.pawnio.install_or_update",
+      "source": "Install / update PawnIO",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\SettingsWindow.Hardware.cs"
+        ],
+        "linux": [
+          "Settings\\SettingsWindow.Hardware.cs"
+        ],
+        "macos": [
+          "Settings\\SettingsWindow.Hardware.cs"
+        ]
+      }
+    },
+    {
+      "index": 1162,
+      "key": "android.network.link_properties.description",
+      "source": "Interface name of the default network (LinkProperties.interfaceName).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1172,
+      "key": "windows.media.is_paused",
+      "source": "Is paused",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1173,
+      "key": "windows.media.is_playing",
+      "source": "Is playing",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1186,
+      "key": "android.service.channel_description",
+      "source": "Keeps the Endfield Charge Plus overlay HUD running.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudNotificationFactory.kt"
+        ]
+      }
+    },
+    {
+      "index": 1187,
+      "key": "android.display.cutout_clearance_description",
+      "source": "Keeps the anchored HUD clear of the status bar and the display cutout.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1221,
+      "key": "android.permission.overlay.explanation",
+      "source": "Lets the HUD draw over other apps; only requested when you enable the floating HUD.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1228,
+      "key": "android.island.live_update_api",
+      "source": "Live update API",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1229,
+      "key": "android.island.unsupported_or_unauthorized",
+      "source": "Live updates are unsupported or not authorized on this device.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1234,
+      "key": "android.cpu.available_cores.description",
+      "source": "Logical CPUs available to the app from Runtime.availableProcessors; power or process limits can affect the count.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1244,
+      "key": "windows.hardware.low_level_notice",
+      "source": "Low-level temperature, power and voltage readings require PawnIO and administrator access. AIDA64 users can enable shared memory, Registry or WMI under Preferences → Hardware Monitoring → External Applications; all exported items are available here. Missing readings show --.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\SettingsWindow.Hardware.cs"
+        ]
+      }
+    },
+    {
+      "index": 1285,
+      "key": "windows.media.category",
+      "source": "Media",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1286,
+      "key": "windows.media.available",
+      "source": "Media available",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1288,
+      "key": "windows.media.source_app",
+      "source": "Media source app",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1289,
+      "key": "windows.media.unavailable",
+      "source": "Media unavailable",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\MediaSessionProvider.cs"
+        ]
+      }
+    },
+    {
+      "index": 1320,
+      "key": "macos.startup.move_to_applications",
+      "source": "Move the app into Applications before enabling launch at login.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Settings\\StartupManager.cs"
+        ]
+      }
+    },
+    {
+      "index": 1325,
+      "key": "windows.hardware.name_reported_for_gpu_top",
+      "source": "Name reported for GPU Top.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1328,
+      "key": "windows.hardware.name_reported_for_keyboard",
+      "source": "Name reported for Keyboard.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1331,
+      "key": "windows.hardware.name_reported_for_mouse",
+      "source": "Name reported for Mouse.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1340,
+      "key": "windows.hardware.name_reported_for_top_disk",
+      "source": "Name reported for Top Disk.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1345,
+      "key": "android.island.native_live_update",
+      "source": "Native live update",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt",
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1346,
+      "key": "android.island.started",
+      "source": "Native live update started",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1347,
+      "key": "android.island.stopped",
+      "source": "Native live update stopped",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1376,
+      "key": "android.island.no_custom_layout",
+      "source": "No custom layout",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1381,
+      "key": "android.island.provider.none",
+      "source": "No island output",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1382,
+      "key": "android.island.no_left_right_split",
+      "source": "No left/right split",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1406,
+      "key": "windows.media.nothing_playing",
+      "source": "Nothing playing",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\MediaSessionProvider.cs"
+        ]
+      }
+    },
+    {
+      "index": 1409,
+      "key": "android.permission.notification",
+      "source": "Notification permission",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1410,
+      "key": "android.permission.notification.requested",
+      "source": "Notification permission requested; the HUD needs it for its ongoing notification.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1411,
+      "key": "android.permission.notification.granted",
+      "source": "Notifications are allowed.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1412,
+      "key": "android.permission.notifications_disabled",
+      "source": "Notifications are disabled",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1428,
+      "key": "android.manual.android_startup",
+      "source": "On Android, allow overlays and notifications, then start the HUD from Home. Settings save automatically. Hardware readings depend on system access. PawnIO and the AIDA64 desktop interface are Windows-only. Android controls notification layout and text size.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {}
+    },
+    {
+      "index": 1437,
+      "key": "android.island.single_line_only",
+      "source": "Only a single line of text is supported.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1440,
+      "key": "android.permission.boot.when_used",
+      "source": "Only used after you turn on \"start on boot\" yourself.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1442,
+      "key": "android.navigation.open_drawer",
+      "source": "Open navigation",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/navigation/EcpApp.kt"
+        ]
+      }
+    },
+    {
+      "index": 1453,
+      "key": "android.overlay",
+      "source": "Overlay",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt",
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1454,
+      "key": "android.overlay.hidden",
+      "source": "Overlay hidden",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1455,
+      "key": "android.permission.overlay",
+      "source": "Overlay permission",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1456,
+      "key": "android.permission.overlay.missing_settings_opened",
+      "source": "Overlay permission is missing: the system settings were opened, please allow \"Display over other apps\".",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1457,
+      "key": "android.permission.overlay.not_granted",
+      "source": "Overlay permission is not granted yet; enabling the overlay opens the system settings page.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1458,
+      "key": "android.overlay.position_and_appearance",
+      "source": "Overlay position and appearance",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1459,
+      "key": "android.overlay.visible",
+      "source": "Overlay visible",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1464,
+      "key": "android.device.package",
+      "source": "Package",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/about/AboutScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1470,
+      "key": "android.storage.statfs.description",
+      "source": "Partition capacity from Android StatFs; available space excludes reserved blocks.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1471,
+      "key": "windows.media.paused",
+      "source": "Paused",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\MediaSessionProvider.cs"
+        ]
+      }
+    },
+    {
+      "index": 1473,
+      "key": "windows.pawnio.ready_elevated",
+      "source": "PawnIO is installed and ECP is elevated; sensors supported by the hardware can be read.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1474,
+      "key": "windows.pawnio.inaccessible",
+      "source": "PawnIO is installed but cannot be accessed (error {0}); check driver loading or repair its installation.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1475,
+      "key": "windows.pawnio.elevation_required",
+      "source": "PawnIO is installed; run ECP as administrator to read low-level sensors.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1476,
+      "key": "windows.pawnio.missing",
+      "source": "PawnIO is missing: CPU temperature, power, voltage and some motherboard sensors require it.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1497,
+      "key": "android.permission.detection_failed",
+      "source": "Permission detection failed; reopen this page.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1499,
+      "key": "android.permission.page",
+      "source": "Permissions",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1500,
+      "key": "android.permission.request_on_use",
+      "source": "Permissions are requested only when you turn on the feature that needs them.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1508,
+      "key": "windows.media.position",
+      "source": "Playback position",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1509,
+      "key": "windows.media.position_text",
+      "source": "Playback position text",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1510,
+      "key": "windows.media.progress",
+      "source": "Playback progress",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1511,
+      "key": "windows.media.progress_text",
+      "source": "Playback progress text",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1512,
+      "key": "windows.media.status",
+      "source": "Playback status",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1513,
+      "key": "windows.media.playing",
+      "source": "Playing",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\MediaSessionProvider.cs"
+        ]
+      }
+    },
+    {
+      "index": 1526,
+      "key": "android.cpu.preferred_abi.description",
+      "source": "Preferred Android ABI (Build.SUPPORTED_ABIS).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1527,
+      "key": "android.cpu.system_abi.description",
+      "source": "Preferred system ABI from Build.SUPPORTED_ABIS.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1544,
+      "key": "android.storage.external.available",
+      "source": "Primary external storage available",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1545,
+      "key": "android.storage.external.free_percent",
+      "source": "Primary external storage free percent",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1546,
+      "key": "android.storage.external.total",
+      "source": "Primary external storage total",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1547,
+      "key": "android.storage.external.usage",
+      "source": "Primary external storage usage",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1548,
+      "key": "android.storage.external.used",
+      "source": "Primary external storage used",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1585,
+      "key": "android.hardware.native_apis.description",
+      "source": "Provided by Android system APIs; unreadable data is reported as unavailable.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1599,
+      "key": "windows.media.raw_status",
+      "source": "Raw playback status",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1602,
+      "key": "android.cpu.root_nodes.description",
+      "source": "Read from /proc/stat, /proc/cpuinfo, cpufreq or CPU thermal zones; authorized Root can read restricted nodes. Unavailable without a valid sample.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1603,
+      "key": "android.device.build_apis.description",
+      "source": "Read from Android Build and device system APIs.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1604,
+      "key": "android.battery.native_apis.description",
+      "source": "Read from Android battery broadcasts or BatteryManager; unavailable when the device does not provide it.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1605,
+      "key": "android.memory.native_apis.description",
+      "source": "Read from Android memory APIs or /proc/meminfo; only readings provided by the device are published.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1606,
+      "key": "android.gpu.root_nodes.description",
+      "source": "Read from KGSL, Mali, devfreq or GPU thermal zones; authorized Root can supplement access. Unavailable when the device provides no node.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1608,
+      "key": "windows.manual.pawnio_repair",
+      "source": "Read the driver status at the top. If PawnIO is missing, install/update it and complete Windows UAC; fully exit ECP afterwards.\nRestart ECP as administrator and check again. The restart button waits for the old process to exit.\nIf it remains unavailable, distinguish inaccessible-driver status from hardware returning no data, then export diagnostics.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 1609,
+      "key": "android.network.traffic_stats.description",
+      "source": "Read through TrafficStats or Android networking APIs; availability depends on OS version and permissions.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/AndroidVariableDescriptions.kt"
+        ]
+      }
+    },
+    {
+      "index": 1610,
+      "key": "android.root.read_only_notice",
+      "source": "Read-only collection; no system settings are modified. Choose whether to allow ECP in your Root manager.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1611,
+      "key": "android.capability.hidden_api",
+      "source": "Readable only by system apps (hidden API).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1612,
+      "key": "android.capability.vendor_only",
+      "source": "Readable only by vendor applications.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1614,
+      "key": "android.permission.wifi_location_required",
+      "source": "Reading the Wi-Fi name needs location permission.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1615,
+      "key": "linux.frames.xpresent_description",
+      "source": "Reads X11/XWayland Present completion events. Native Wayland, applications without Present, or missing libxpresent1 cannot be measured. Paint-operation counts and fixed refresh rates are excluded.",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\HudCustomizerView.Frames.cs"
+        ]
+      }
+    },
+    {
+      "index": 1616,
+      "key": "android.frames.root_and_vendor_requirements",
+      "source": "Reads actual FPS, never a refresh-rate substitute. Windows correspond to SurfaceFlinger layers and need ROOT; displays need vendor frame-counter support. Ambiguous multi-display counters are unavailable.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/content/ContentScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1617,
+      "key": "windows.frames.present_events_description",
+      "source": "Reads displayed frame events: the selected window uses its process's dominant swap chain; displays use their dominant presentation stream. Performance logging access is required. This is not the fixed display refresh rate.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\HudCustomizerView.Frames.cs"
+        ]
+      }
+    },
+    {
+      "index": 1638,
+      "key": "android.permission.request_authorization",
+      "source": "Request authorization",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1641,
+      "key": "android.root.explanation",
+      "source": "Requires an already rooted phone; enables readings from restricted CPU, GPU, thermal and memory nodes.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1642,
+      "key": "android.island.system_permission_required",
+      "source": "Requires system support and permission to show live updates.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1643,
+      "key": "android.island.platform_colorized_shape",
+      "source": "Requires the platform colorized shape",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1651,
+      "key": "android.island.scenario_restricted",
+      "source": "Restricted usage scenarios",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1652,
+      "key": "android.permission.retry_authorization",
+      "source": "Retry authorization",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1666,
+      "key": "android.root.required",
+      "source": "Root access would be required.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1667,
+      "key": "android.root.granted",
+      "source": "Root granted; readings depend on this device's nodes.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1668,
+      "key": "android.root.hardware_readings",
+      "source": "Root hardware readings",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1669,
+      "key": "android.root.unavailable",
+      "source": "Root unavailable or denied; ordinary readings remain active.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1700,
+      "key": "android.storage.scoped_limits",
+      "source": "Scoped storage limits what can be read.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1704,
+      "key": "android.display.brightness",
+      "source": "Screen Brightness",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1708,
+      "key": "android.display.screen_state",
+      "source": "Screen State",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1712,
+      "key": "android.sampling.screen_off",
+      "source": "Screen off",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1735,
+      "key": "android.frames.surfaceflinger_layer.description",
+      "source": "Selected SurfaceFlinger layer.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1746,
+      "key": "android.display.brightness.description",
+      "source": "Settings.System.SCREEN_BRIGHTNESS (0-255).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1747,
+      "key": "android.share.action",
+      "source": "Share",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1748,
+      "key": "android.share.app_info",
+      "source": "Share app info",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/about/AboutScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1749,
+      "key": "android.share.configuration",
+      "source": "Share configuration",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1750,
+      "key": "android.share.device_info",
+      "source": "Share device and capability info",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/about/AboutScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1751,
+      "key": "android.share.diagnostics_log",
+      "source": "Share diagnostics log",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1752,
+      "key": "android.share.diagnostics_report",
+      "source": "Share diagnostics report",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1753,
+      "key": "android.share.log",
+      "source": "Share log",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1787,
+      "key": "windows.startup.after_windows_sign_in",
+      "source": "Start Endfield Charge Plus after Windows sign-in.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "LocalizationManager.cs"
+        ],
+        "linux": [
+          "LocalizationManager.cs"
+        ],
+        "macos": [
+          "LocalizationManager.cs"
+        ],
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/i18n/Strings.kt"
+        ]
+      }
+    },
+    {
+      "index": 1788,
+      "key": "android.service.start",
+      "source": "Start HUD",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1791,
+      "key": "android.startup.start_on_boot",
+      "source": "Start on boot",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt",
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1792,
+      "key": "windows.startup.start_with_windows",
+      "source": "Start with Windows",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "LocalizationManager.cs"
+        ],
+        "linux": [
+          "LocalizationManager.cs"
+        ],
+        "macos": [
+          "LocalizationManager.cs"
+        ],
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/i18n/Strings.kt"
+        ]
+      }
+    },
+    {
+      "index": 1793,
+      "key": "android.permission.service_notification_required",
+      "source": "Starting the HUD needs notification permission for its ongoing notification.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1811,
+      "key": "android.service.stop",
+      "source": "Stop HUD",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudNotificationFactory.kt",
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/home/HomeScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1816,
+      "key": "android.startup.background_limits",
+      "source": "Subject to background-start limits and permissions for the selected display mode.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1844,
+      "key": "android.island.metric_status",
+      "source": "System metric status",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/datasources/DataSourcesScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1845,
+      "key": "android.island.system_progress_bar",
+      "source": "System progress bar",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/content/ContentScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1846,
+      "key": "android.island.system_status",
+      "source": "System status",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/content/ContentScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1847,
+      "key": "android.island.system_storage_usage",
+      "source": "System storage usage",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/datasources/DataSourcesScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1848,
+      "key": "android.device.uptime.description",
+      "source": "SystemClock.elapsedRealtime()/1000.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 1882,
+      "key": "android.island.system_controls_visibility",
+      "source": "The API is available; the system decides whether to show the island.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1885,
+      "key": "android.island.description",
+      "source": "The Android live update / island API used to show HUD content around the status bar.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1886,
+      "key": "android.capability.android_version_too_old",
+      "source": "The Android version is too low for this API.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1889,
+      "key": "android.permission.boot.missing",
+      "source": "The app is missing boot permission.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1890,
+      "key": "android.permission.foreground.missing",
+      "source": "The app is missing foreground service permission.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1891,
+      "key": "android.permission.network.missing",
+      "source": "The app is missing network access permission.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1892,
+      "key": "android.island.authorization_launched",
+      "source": "The authorization screen was opened; availability is re-checked on return.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1900,
+      "key": "android.capability.kernel_node_missing",
+      "source": "The device does not expose the matching kernel node.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1902,
+      "key": "windows.driver.checksum_invalid",
+      "source": "The driver installer checksum is invalid.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1903,
+      "key": "windows.driver.restart_required",
+      "source": "The driver is installed. Exit and restart ECP.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Interop\\HardwareSensorDriver.cs"
+        ]
+      }
+    },
+    {
+      "index": 1905,
+      "key": "android.configuration.desktop_interchange_notice",
+      "source": "The exported JSON is interchangeable with the desktop editions; an import is validated before it replaces the current configuration.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1907,
+      "key": "android.service.running_description",
+      "source": "The floating HUD is active. Tap to open settings.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/service/HudNotificationFactory.kt"
+        ]
+      }
+    },
+    {
+      "index": 1915,
+      "key": "android.island.notification_channel_disabled",
+      "source": "The notification channel is disabled",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1916,
+      "key": "android.display.overlay_and_island_explanation",
+      "source": "The overlay uses a real system application window; the island uses the native Android live update API.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1928,
+      "key": "android.permission.live_update.granted",
+      "source": "The system allows live update notifications.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1929,
+      "key": "android.island.system_placement_and_interval",
+      "source": "The system controls placement, appearance and eligibility; readings update at most every 5 seconds.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1931,
+      "key": "android.island.update_frequency_limited",
+      "source": "The system throttles update frequency",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1934,
+      "key": "android.island.no_icons",
+      "source": "This API cannot show icons.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1935,
+      "key": "android.island.no_progress",
+      "source": "This API cannot show progress.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1936,
+      "key": "android.island.experimental",
+      "source": "This backend is experimental.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 1940,
+      "key": "android.island.preview_notice",
+      "source": "This previews notification content; the system controls its appearance and placement.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/content/ContentScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1946,
+      "key": "android.sampling.throttle_hidden",
+      "source": "Throttle while hidden",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1947,
+      "key": "android.sampling.throttle_screen_off",
+      "source": "Throttle while the screen is off",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 1957,
+      "key": "windows.media.timeline_available",
+      "source": "Timeline available",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 1998,
+      "key": "android.storage.data_volume_total.description",
+      "source": "Total size of the app data volume (StatFs).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2000,
+      "key": "windows.media.duration",
+      "source": "Track duration",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2001,
+      "key": "windows.media.duration_text",
+      "source": "Track duration text",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2002,
+      "key": "windows.media.track_title",
+      "source": "Track title",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2004,
+      "key": "android.network.received_since_boot.description",
+      "source": "TrafficStats total received bytes since boot.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2005,
+      "key": "android.network.sent_since_boot.description",
+      "source": "TrafficStats total sent bytes since boot.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2010,
+      "key": "android.permission.overlay.enable_first",
+      "source": "Turn on \"Display over other apps\" before enabling the floating HUD.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 2070,
+      "key": "android.root.use_for_readings",
+      "source": "Use Root for readings",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 2077,
+      "key": "android.storage.data_volume_usage.description",
+      "source": "Used share of the app data volume.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2078,
+      "key": "android.storage.data_volume_used.description",
+      "source": "Used space of the app data volume (StatFs).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2083,
+      "key": "android.storage.data_volume_available.description",
+      "source": "User-available space of the app data volume (StatFs.availableBytes).",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2096,
+      "key": "android.sampling.hidden_screen_off_notice",
+      "source": "Values are milliseconds; sampling slows down while the HUD is hidden or the screen is off.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 2103,
+      "key": "android.island.vendor_authorization_required",
+      "source": "Vendor review and authorization required",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/localization/EcpMessages.kt"
+        ]
+      }
+    },
+    {
+      "index": 2108,
+      "key": "macos.display.virtual_height_points",
+      "source": "Virtual Height Points",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2114,
+      "key": "macos.display.virtual_width_points",
+      "source": "Virtual Width Points",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2116,
+      "key": "macos.display.virtual_x_points",
+      "source": "Virtual X Points",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2118,
+      "key": "macos.display.virtual_y_points",
+      "source": "Virtual Y Points",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2131,
+      "key": "android.root.awaiting_authorization",
+      "source": "Waiting for Root authorization…",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/advanced/AdvancedScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 2144,
+      "key": "android.overlay.touch_through",
+      "source": "When on, the HUD never consumes touches; input goes to the app underneath.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "app/src/main/java/com/glacierglimmer/endfieldchargeplus/ui/screens/display/DisplayScreen.kt"
+        ]
+      }
+    },
+    {
+      "index": 2163,
+      "key": "android.network.default_available.description",
+      "source": "Whether the current default network is available.",
+      "platform": "android",
+      "reason": "Android API, permission contract, display backend, app lifecycle or Android-only setting",
+      "sourceFiles": {
+        "android": [
+          "core/src/main/kotlin/com/glacierglimmer/endfieldchargeplus/core/metrics/VariableRegistry.kt"
+        ]
+      }
+    },
+    {
+      "index": 2165,
+      "key": "windows.hardware.whether_tpm_present_is_active_or_true",
+      "source": "Whether tpm present is active or true.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2168,
+      "key": "windows.hardware.whether_virtualization_enabled_is_active_or_true",
+      "source": "Whether virtualization enabled is active or true.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2186,
+      "key": "windows.update.pending_count",
+      "source": "Windows Update Pending Count",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2187,
+      "key": "windows.update.status",
+      "source": "Windows Update Status",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "VariableCatalog"
+        ],
+        "linux": [
+          "VariableCatalog"
+        ]
+      }
+    },
+    {
+      "index": 2188,
+      "key": "windows.startup.disabled_by_windows",
+      "source": "Windows disabled startup for this app. Re-enable it in Windows Startup Apps.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "linux": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ],
+        "macos": [
+          "Settings\\SettingsWindow.axaml.cs"
+        ]
+      }
+    },
+    {
+      "index": 2189,
+      "key": "windows.media.hud_usage_instructions",
+      "source": "Windows media variables read sessions registered by a player. Use title/artist as the primary text, times as secondary text, and media.progress for a 0–100 ring.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "linux": [
+          "Settings\\UserManualContent.cs"
+        ],
+        "macos": [
+          "Settings\\UserManualContent.cs"
+        ]
+      }
+    },
+    {
+      "index": 2280,
+      "key": "windows.frames.requires_windows_x64",
+      "source": "Requires 64-bit Windows",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2289,
+      "key": "linux.frames.x11_required",
+      "source": "An X11/XWayland session is required",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2291,
+      "key": "linux.frames.libxpresent_required",
+      "source": "Install libxpresent1",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2293,
+      "key": "macos.frames.requires_macos",
+      "source": "Requires macOS",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2294,
+      "key": "macos.frames.capture_unavailable",
+      "source": "Frame capture unavailable; check app components and Screen Recording permission",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2296,
+      "key": "macos.permission.screen_recording_required",
+      "source": "Screen Recording permission required; relaunch after granting",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2297,
+      "key": "macos.frames.requires_macos12_3",
+      "source": "Requires macOS 12.3 or newer",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "linux": [
+          "Customization\\FrameRateStatus.cs"
+        ],
+        "macos": [
+          "Customization\\FrameRateStatus.cs"
+        ]
+      }
+    },
+    {
+      "index": 2322,
+      "key": "windows.defender.protection_status.description",
+      "source": "Enabled and real-time protection states reported by Windows Defender WMI.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2381,
+      "key": "windows.battery.temperature_api.description",
+      "source": "Read through the Windows BatteryTemperature interface, only when supplied by the driver or firmware.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2382,
+      "key": "windows.defender.realtime_protection.description",
+      "source": "Real-time protection state reported by Windows Defender WMI.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2385,
+      "key": "windows.hardware.smbiosbiosversion_reported_by_win32_bios",
+      "source": "SMBIOSBIOSVersion reported by Win32_BIOS.",
+      "platform": "windows",
+      "reason": "Description names a Windows-only data source or monitoring engine",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2386,
+      "key": "windows.uptime.boot_seconds.description",
+      "source": "Seconds elapsed since the current Windows boot.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2390,
+      "key": "windows.firewall.policy.description",
+      "source": "State of the currently active Windows Firewall Policy configuration.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2396,
+      "key": "windows.encryption.system_drive.description",
+      "source": "System drive protection state reported by the Windows Volume Encryption interface.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2403,
+      "key": "linux.gpu.vbios_nvidia_smi.description",
+      "source": "VBIOS version reported by nvidia-smi, when supported.",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2404,
+      "key": "windows.network.available.description",
+      "source": "Whether Windows detects at least one available network connection. This does not guarantee internet access.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2405,
+      "key": "windows.firewall.enabled.description",
+      "source": "Whether the active Windows Firewall configuration is enabled.",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2406,
+      "key": "windows.firewall.status",
+      "source": "Windows Firewall Status",
+      "platform": "windows",
+      "reason": "Windows collection or integration; portable HUD controls remain common",
+      "sourceFiles": {
+        "windows": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "linux": [
+          "Customization\\ContextualVariableText.cs"
+        ],
+        "macos": [
+          "Customization\\ContextualVariableText.cs"
+        ]
+      }
+    },
+    {
+      "index": 2407,
+      "key": "linux.memory.meminfo_description",
+      "source": "/proc/meminfo; available memory uses MemAvailable",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2408,
+      "key": "linux.cpu.procfs_description",
+      "source": "/proc/stat, /proc/cpuinfo, cpufreq or hwmon",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2409,
+      "key": "linux.battery.sysfs_description",
+      "source": "/sys/class/power_supply; capacity is normalized to mWh / Wh",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2410,
+      "key": "linux.processes.actual_queries_description",
+      "source": "Actual queries of Linux processes or locally installed tools",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2413,
+      "key": "linux.gpu.drm_hwmon_description",
+      "source": "DRM/hwmon or NVIDIA nvidia-smi",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2415,
+      "key": "linux.disk.filesystem_statistics_description",
+      "source": "File system statistics for the current mount or /sys/dev/block/*/stat",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2416,
+      "key": "linux.os.kernel_version",
+      "source": "Linux Kernel Version",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2417,
+      "key": "linux.metrics.procfs_sysfs_description",
+      "source": "Linux procfs, sysfs or the current runtime state",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2418,
+      "key": "linux.input.devices_description",
+      "source": "Linux sysfs or /proc/bus/input/devices",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2419,
+      "key": "linux.firmware.efi_description",
+      "source": "Linux sysfs or EFI variables",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2423,
+      "key": "linux.processes.procfs_description",
+      "source": "Processes readable by the current user in /proc; CPU usage is normalized by the logical processor count",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2424,
+      "key": "linux.display.x11_description",
+      "source": "Read from Avalonia screen information in the current X11/XWayland session.",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2425,
+      "key": "linux.clipboard.graphical_session_description",
+      "source": "Read from the real clipboard of the current graphical session. The update time is when ECP first observes a change.",
+      "platform": "linux",
+      "reason": "Linux kernel, sysfs/procfs, desktop-session or Present API integration",
+      "sourceFiles": {
+        "linux": [
+          "Customization\\LinuxVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2433,
+      "key": "macos.memory.active",
+      "source": "Active Memory",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2434,
+      "key": "macos.memory.swap_available.description",
+      "source": "Actual available swap from sysctl vm.swapusage.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2435,
+      "key": "macos.memory.swap_used.description",
+      "source": "Actual used swap from sysctl vm.swapusage.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2436,
+      "key": "macos.display.retina_native_resolution.description",
+      "source": "CoreGraphics native pixel resolution / AppKit Retina backingScaleFactor; desktop coordinates use logical points and DPI is 96 multiplied by the scale factor",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2437,
+      "key": "macos.network.physical_interface_counters.description",
+      "source": "Differences in 64-bit counters for macOS en* physical interfaces, excluding duplicate VPN/loopback traffic; or implemented public-IP queries and profile calculations",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2438,
+      "key": "macos.cpu.mach_ticks.description",
+      "source": "Differences in Mach CPU ticks or sysctl",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2439,
+      "key": "macos.memory.free_physical",
+      "source": "Free Physical Memory",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2440,
+      "key": "macos.battery.charge_time_estimate.description",
+      "source": "IOPowerSources charging-time estimate, shown only when the system supplies an estimate.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2441,
+      "key": "macos.battery.io_power_sources.description",
+      "source": "IOPowerSources; omitted without a built-in battery and listed only when the system provides data",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2442,
+      "key": "macos.memory.inactive",
+      "source": "Inactive Memory",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2443,
+      "key": "macos.gpu.low_power",
+      "source": "Low-Power GPU",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2444,
+      "key": "macos.gpu.low_power.description",
+      "source": "Low-power device state from Metal isLowPower.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2445,
+      "key": "macos.memory.mach_vm.description",
+      "source": "Mach VM / sysctl; used = active + wired + compressed, available = total minus used; this is not memory pressure",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2446,
+      "key": "macos.memory.active.description",
+      "source": "Mach active_count multiplied by the system page size.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2447,
+      "key": "macos.memory.free_physical.description",
+      "source": "Mach free_count multiplied by the system page size.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2448,
+      "key": "macos.memory.inactive.description",
+      "source": "Mach inactive_count multiplied by the system page size.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2449,
+      "key": "macos.memory.wired.description",
+      "source": "Mach wire_count multiplied by the system page size.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2450,
+      "key": "macos.gpu.recommended_working_set",
+      "source": "Metal Recommended Working Set Limit",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2451,
+      "key": "macos.gpu.metal_device_information.description",
+      "source": "Metal device information; global GPU usage, temperature and video memory usage are unavailable when not exposed by the system",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2452,
+      "key": "macos.gpu.unified_memory.description",
+      "source": "Metal hasUnifiedMemory. Unified memory is not counted as dedicated video memory.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2453,
+      "key": "macos.gpu.recommended_working_set.description",
+      "source": "Metal recommendedMaxWorkingSetSize: a budget, not video memory capacity or GPU memory usage.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2454,
+      "key": "macos.gpu.removable",
+      "source": "Removable GPU",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2455,
+      "key": "macos.gpu.removable.description",
+      "source": "Removable device state from Metal isRemovable.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2457,
+      "key": "macos.memory.swap_total.description",
+      "source": "Total swap from sysctl vm.swapusage, dynamically allocated by the system.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2458,
+      "key": "macos.gpu.unified_memory",
+      "source": "Unified Memory Architecture",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2460,
+      "key": "macos.memory.wired",
+      "source": "Wired Memory",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2461,
+      "key": "macos.metrics.native_configuration.description",
+      "source": "macOS / .NET or the actual configuration and query results for this profile",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2462,
+      "key": "macos.clipboard.change_time.description",
+      "source": "macOS clipboard; update time is when ECP last observed a content change",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2463,
+      "key": "macos.disk.apfs_available.description",
+      "source": "statfs f_bavail for the APFS Data volume, excluding system-reserved space.",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    },
+    {
+      "index": 2464,
+      "key": "macos.disk.apfs_capacity.description",
+      "source": "statfs for the APFS Data volume; capacity includes space shared within the same APFS container",
+      "platform": "macos",
+      "reason": "macOS frameworks, Metal/Mach/APFS data, Screen Recording permission or launch-at-login integration",
+      "sourceFiles": {
+        "macos": [
+          "Customization\\MacVariableCatalog.cs"
+        ]
+      }
+    }
+  ],
+  "counts": {
+    "windows": 94,
+    "linux": 18,
+    "macos": 45,
+    "android": 186
+  },
+  "titleFields": [
+    "windows.title",
+    "linux.title",
+    "macos.title",
+    "android.title"
+  ],
+  "coreSha256": "35e7a40b74b70669b0a44367c7a1e098b0c75e6e7e9e8c42bd54fccab7d0731e"
+}

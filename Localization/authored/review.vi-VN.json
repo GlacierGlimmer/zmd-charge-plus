@@ -1,0 +1,36 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Alaska": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Athens, Cairo, Helsinki": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Auckland, Fiji": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Berlin, Paris, Rome": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Buenos Aires, Brasilia": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Dhaka, Thimphu": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Dubai, Abu Dhabi": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Eucla": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Hawaii": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Islamabad, Karachi": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Kabul": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Kathmandu": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Moscow, Riyadh": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "New Delhi, Mumbai": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Newfoundland": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Nukuʻalofa, Apia": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Sydney, Brisbane": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Tehran": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Tokyo, Seoul": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "Yangon": "Tên địa danh được giữ theo cách viết quốc tế thông dụng.",
+    "AC": "Ký hiệu dòng điện xoay chiều trong nguồn điện được giữ nguyên.",
+    "Album": "Album là từ vay mượn thông dụng cho tập hợp bản ghi âm.",
+    "NiCd": "Ký hiệu hóa học pin niken-cadmium được giữ nguyên.",
+    "NiMH": "Ký hiệu hóa học pin niken-metal hydride được giữ nguyên.",
+    "X / px": "Ký hiệu trục X và đơn vị điểm ảnh quốc tế được giữ nguyên.",
+    "Y / px": "Ký hiệu trục Y và đơn vị điểm ảnh quốc tế được giữ nguyên."
+  },
+  "notes": [
+    "All 2313 active keys were inspected and source-complete definitions were authored; explicit Vietnamese entries are recorded in vi-native-complete.tsv and vi-native-review.tsv.",
+    "Native revisions replace old word-order fragments and inaccurate Primary, Node, sampling, status and memory labels. Fourteen full native manual chapters cover actual settings, permissions, queues and unavailable behavior.",
+    "SystemClock.elapsedRealtime includes deep sleep. Independent cross-check, platform-specific manual adaptation and visual verification remain integration tasks; this authoring metadata does not authorize distribution."
+  ]
+}

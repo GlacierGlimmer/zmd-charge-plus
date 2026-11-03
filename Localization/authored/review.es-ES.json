@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "Variable": "Spanish singular noun for a variable; identical spelling to English.",
+    "Variables": "Spanish plural noun for variables; identical spelling to English.",
+    "Error": "Spanish noun for an error; identical spelling to English.",
+    "Color": "Spanish noun for colour; identical spelling to English.",
+    "AC": "Conventional alternating-current label used for power-source telemetry.",
+    "Alaska": "Spanish proper name for Alaska has the same spelling.",
+    "Buenos Aires, Brasilia": "Spanish place names for Buenos Aires and Brasilia retain these spellings.",
+    "Bytes": "Established Spanish plural for the computing unit byte.",
+    "Eucla": "Australian locality name retained in Spanish.",
+    "Islamabad, Karachi": "Spanish spellings of these city names match the source.",
+    "Kabul": "Spanish spelling of the city name matches the source.",
+    "NiCd": "Chemical abbreviation for nickel-cadmium batteries, independent of UI language.",
+    "NiMH": "Chemical abbreviation for nickel-metal-hydride batteries, independent of UI language.",
+    "No": "Native Spanish negative response.",
+    "Simple": "Native Spanish adjective for the simple animation mode.",
+    "X / px": "X-coordinate label with the standard pixel unit.",
+    "Y / px": "Y-coordinate label with the standard pixel unit.",
+    "d": "Spanish duration abbreviation for dia, retained as a compact unit.",
+    "{0}d {1:00}:{2:00}:{3:00}": "Compact duration pattern with Spanish d for days and unchanged numeric format arguments."
+  },
+  "notes": [
+    "All 2313 active keys were reviewed against the full Chinese source, including API identifiers, sample counters, permissions and platform limitations. Native manual has 14 chapters. These authored files do not authorize distribution."
+  ]
+}

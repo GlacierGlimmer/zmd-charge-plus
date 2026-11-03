@@ -16,7 +16,8 @@ public partial class HudCustomizerView
         FrameFullScaleBox.Value=(decimal)profile.FrameFullScaleFps;
         FrameDisplayTargetCombo.SelectedItem=null; FrameWindowTargetCombo.SelectedItem=null;
         RefreshFrameTargets();
-        FrameCaptureHint.Text=LocalizationManager.Text("读取实际显示帧事件。窗口按所属进程的主交换链统计；显示器按其主呈现流统计。需要性能日志权限。不是固定屏幕刷新率。","Reads displayed frame events: the selected window uses its process's dominant swap chain; displays use their dominant presentation stream. Performance logging access is required. This is not the fixed display refresh rate.");
+        // The English argument is a stable message ID; its bundled en-US value describes per-window attribution.
+        FrameCaptureHint.Text=LocalizationManager.Text("读取实际显示帧事件。窗口按所选窗口的主呈现流统计，同一进程中的其他窗口分别统计；显示器按其主呈现流统计。需要性能日志权限。不是固定屏幕刷新率。","Reads displayed frame events: the selected window uses its process's dominant swap chain; displays use their dominant presentation stream. Performance logging access is required. This is not the fixed display refresh rate.");
     }
     private void RefreshFrameTargets()
     {

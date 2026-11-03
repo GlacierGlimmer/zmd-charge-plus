@@ -1,0 +1,23 @@
+{
+  "shared": {
+    "AC": "Korronte alternoaren ingelesezko laburdura teknikoa; ez da aldatzen etengailuen etiketan.",
+    "Adelaide, Darwin": "Australiako ordu-eremuen hirien izen propioak dira; jatorrizko grafia gordetzen da.",
+    "Alaska": "Alaskako ordu-eremuaren izen propioa; grafia bera erabiltzen da euskaraz.",
+    "Auckland, Fiji": "Zeelanda Berriko eta Fijiko hirien izen propioak; ez dute itzulpen-formarik.",
+    "Bangkok, Hanoi, Jakarta": "Asiako hirien izen propioak dira, eta grafia bera erabiltzen da euskaraz.",
+    "Buenos Aires, Brasilia": "Hego Amerikako hirien izen propioak; jatorrizko grafian uzten dira.",
+    "Dhaka, Thimphu": "Bangladesh eta Bhutango hiriburuak dira; izen propioak grafia berean.",
+    "Dubai, Abu Dhabi": "Arabiar Emirerri Batuetako hirien izen propioak dira, grafia berarekin.",
+    "Eucla": "Australiako ordu-eremu bereziaren izen propioa; ez da itzultzen.",
+    "Hawaii": "Hawaiiko ordu-eremuaren izen propioa; euskaraz ere Hawaii idazten da.",
+    "Islamabad, Karachi": "Pakistango hirien izen propioak dira eta grafia bera erabiltzen dute.",
+    "Kabul": "Afganistango hiriburuaren izen propioa; euskaraz Kabul idazten da.",
+    "New Delhi, Mumbai": "Indiako hirien izen propioak; ingelesezko grafia estandarra gordetzen da.",
+    "NiCd": "Nikel-kadmio bateriaren laburdura kimiko teknikoa da, nazioartean finkatua.",
+    "NiMH": "Nikel-metal hidruro bateriaren laburdura kimikoa da, nazioartean finkatua.",
+    "Nukuʻalofa, Apia": "Tongako eta Samoako hiriburuen izen propioak; grafia berean uzten dira.",
+    "Sydney, Brisbane": "Australiako hirien izen propioak dira, eta grafia bera erabiltzen da.",
+    "Yangon": "Mianmarreko hiriaren izen propioa; euskaraz Yangon erabiltzen da."
+  },
+  "notes": "Izen propioak, hiri-zerrendak eta laburdura kimiko edo teknikoak dira. Hizkuntza horietan ez dute forma alternatiborik, beraz balioa ingelesezko grafia berean mantentzen da, gainerako testua euskaraz dagoelarik."
+}

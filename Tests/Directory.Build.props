@@ -2,4 +2,7 @@
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'BugRegressionTests'">
     <BaseIntermediateOutputPath>obj-bugs\</BaseIntermediateOutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'StoreUpgradeTests'">
+    <BaseIntermediateOutputPath>obj-store-upgrade\</BaseIntermediateOutputPath>
+  </PropertyGroup>
 </Project>

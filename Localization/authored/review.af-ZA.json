@@ -1,0 +1,27 @@
+{
+  "shared": {
+    "/// BATTERY": "Battery is ook die Afrikaanse woord; die HUD-opskrif bly onveranderd.",
+    "Adelaide, Darwin": "Australiese plekname word in Afrikaans onveranderd gespel.",
+    "Alaska": "Die plekaaname Alaska word in Afrikaans dieselfde gespel.",
+    "Album": "Album is die Afrikaanse leenwoord vir 'n musiekalbum.",
+    "Battery": "Battery is die gewone Afrikaanse woord vir 'n battery.",
+    "Dhaka, Thimphu": "Buitelandse hoofstadname bly in Afrikaans onveranderd.",
+    "Eucla": "Die plekaaname Eucla word in Afrikaans dieselfde gespel.",
+    "Hawaii": "Die plekaaname Hawaii word in Afrikaans dieselfde gespel.",
+    "Interval / s": "Interval is die Afrikaanse term; die eenheid s bly onveranderd.",
+    "Islamabad, Karachi": "Pakistaanse plekname bly in Afrikaans onveranderd.",
+    "Later": "Later is dieselfde woord in Afrikaans en Engels.",
+    "Media": "Media is die Afrikaanse leenwoord vir mediainhoud.",
+    "Minimum": "Minimum is dieselfde woord in Afrikaans.",
+    "Newfoundland": "Die Kanadese plekaaname Newfoundland bly onveranderd.",
+    "NiCd": "NiCd is 'n chemiese afkorting wat onveranderd bly.",
+    "NiMH": "NiMH is 'n chemiese afkorting wat onveranderd bly.",
+    "Nukuʻalofa, Apia": "Pasifiese plekname bly in Afrikaans onveranderd.",
+    "OK": "OK is 'n internasionale bevestiging wat onveranderd bly.",
+    "Ring": "Ring is dieselfde Afrikaanse woord vir die vorderingsring.",
+    "Status": "Status is dieselfde woord in Afrikaans.",
+    "Sydney, Brisbane": "Australiese plekname bly in Afrikaans onveranderd.",
+    "Yangon": "Die plekaaname Yangon word in Afrikaans dieselfde gespel."
+  },
+  "notes": "Afrikaans shares spelling with English only for these proper names, chemical abbreviations and loanwords; every other message is translated."
+}

@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Schritte",
+    "Einzelheiten",
+    "Beispiel",
+    "Variablenschlüssel und Beispiele bleiben unverändert.",
+    "Funktionsreferenz"
+  ],
+  "linux": {
+    "sources": [
+      "Datenquellen konfigurieren",
+      "DeepSeek und HTTP-JSON-Dienste anbinden.",
+      "Öffne Datenverwaltung → Datenquellen und gib deinen DeepSeek-API-Schlüssel ein.\nTrage für HTTP einen Namen, eine GET-URL, Kopfzeilen, das Aktualisierungsintervall und die Zuordnungen der JSON-Felder ein; aktiviere die Quelle.\nWähle Übernehmen und kopiere anschließend custom.<source>.<variable> aus der Variablenbibliothek in ein Profil.",
+      "Die DeepSeek-Spitzenzeiten richten sich nach der Pekinger Zeit und dem chinesischen Feiertagskalender; Wochenenden gelten auch bei nachgeholten Arbeitstagen als Nebenzeit. Die HTTP-Aktualisierungsintervalle steuern den Cache unabhängig vom globalen Abtastintervall. Prüfe nach einem Fehler custom.<source>.status und custom.<source>.error; bei 401/403 sind meist Anmeldung und Zugriffsrechte zu prüfen. Die JSON-Pfade müssen zur tatsächlichen Antwort passen. ${env:MY_API_KEY} liest eine Umgebungsvariable des Prozesses. PawnIO und die AIDA64-Desktopschnittstelle stehen nur unter Windows zur Verfügung."
+    ],
+    "media": [
+      "Mediensitzungen",
+      "Diese native Version besitzt keine Datenerfassung für Mediensitzungen.",
+      "Öffne Datenverwaltung → Variablen und prüfe die verfügbaren Felder.\nWähle ein Profil mit Variablen, die auf diesem Gerät unterstützt werden.\nErsetze nicht verfügbare Medienfelder durch andere unterstützte Messwerte und wähle Übernehmen.",
+      "Diese Version stellt keine nativen Wiedergabesitzungen bereit. Durch den Import eines Windows-Medienprofils wird keine native Datenerfassung hinzugefügt. Fehlende Titel, Zeitleisten oder Fortschrittswerte bleiben nicht verfügbar; sie werden nicht erfunden. Das Windows-Berechtigungsmodell für Mediensitzungen gilt hier nicht."
+    ],
+    "hardware": [
+      "Hardwaresensoren und Linux-Zugriff",
+      "Erkannte Linux-Schnittstellen verwenden und fehlende Messwerte untersuchen.",
+      "Öffne Datenverwaltung → Hardwaredaten und aktualisiere die Erkennung.\nSuche nach Gerät, Sensor oder ursprünglicher ID; wähle eine Zeile und kopiere ihre Vorlage in dein HUD.\nPrüfe bei fehlenden Werten zuerst deren Verfügbarkeit und exportiere die Diagnose, bevor du Berechtigungen änderst.",
+      "CPU-Messwerte stammen aus /proc/stat, /proc/cpuinfo, cpufreq oder hwmon. Der GPU-Zugriff hängt von DRM/hwmon oder NVIDIA nvidia-smi ab. Linux-Treiber und Dateiberechtigungen bestimmen, welche Temperatur-, Leistungs- und Spannungsknoten vorhanden und lesbar sind. Ein unterstützter Knoten muss echte Daten liefern; nicht verfügbare Werte bleiben --. PawnIO und AIDA64 sind keine Linux-Datenquellen. Package-, Kern- und Hotspot-Sensoren können unterschiedliche Größen messen; ein gemessener Höchstwert ist nicht automatisch ein vom Hersteller festgelegter Hardwaregrenzwert."
+    ],
+    "special": [
+      "Profile für Zeit, Netzwerk und FPS",
+      "Zur nativen Datenquelle passende Einheiten und Ziele wählen.",
+      "Wähle im Profil einen festen UTC-Versatz für die Weltuhr oder eine tägliche Zielzeit.\nWähle für den Netzwerkverkehr automatische Byteeinheiten oder Mbps und stelle den Referenzwert des Rings ein.\nAktualisiere für FPS die Fenster-/Bildschirmliste, wähle ein aktives Ziel und lege fest, welche Bildrate 100% entspricht; wähle danach Übernehmen.",
+      "Die Weltuhr verwendet einen festen UTC-Versatz ohne automatische Sommerzeitumstellung. 1 MB/s entspricht 8 Mbps; die Referenzbandbreite legt nur den Maßstab des Rings fest und begrenzt nicht die Netzwerkgeschwindigkeit. ICMP ignoriert Ports; TCP-/UDP-Prüfungen verwenden den eingestellten Port. Eine fehlgeschlagene Prüfung belegt nicht, dass das gesamte Gerät offline ist. Linux zählt abgeschlossene X11-Present-Ereignisse und benötigt eine X11-/XWayland-Sitzung mit der Present-Erweiterung und libXpresent. Native Wayland-Fenster ohne sichtbaren X11-Präsentationsstrom kann diese Datenquelle nicht messen. Bevor ein echter Framestrom beobachtet wurde, bedeuten fehlende Ereignisse, dass keine Daten verfügbar sind. Nachdem echte Frames die Abtastung initialisiert haben, kann ein ruhender Framestrom 0 FPS melden; die Bildwiederholfrequenz des Monitors wird nie als Ersatz eingesetzt."
+    ],
+    "maintenance": [
+      "Konfiguration, Sicherung und native Geheimnisse",
+      "Einstellungen sichern und den Inhalt der Konfigurationsdatei verstehen.",
+      "Exportiere vor größeren Änderungen die Einstellungen oder lege unter Über → Konfiguration und Wartung eine Sicherung an.\nImportiere eine Konfiguration, um sie wiederherzustellen; den Konfigurationsordner öffnest du oben im Fenster, die Protokolle findest du unter Über.\nBestätige geladene Standardwerte mit Übernehmen; prüfe den Aktualisierungsstatus, bevor du annimmst, dass die installierte Version aktuell ist.",
+      "Unter Linux wird der API-Schlüssel mit AES-GCM und einer privaten lokalen Schlüsseldatei secrets/master.key im Konfigurationsverzeichnis geschützt. Diese Datei benötigt private Unix-Zugriffsrechte. Ein Konfigurationsexport überträgt den lokalen Verschlüsselungsschlüssel nicht; bei einem Wechsel zu einer anderen Installation kann die erneute Eingabe des API-Schlüssels nötig sein. Eine fehlgeschlagene Aktualisierungsprüfung oder eine nicht abrufbare Versionsnummer bestätigt nicht, dass die installierte Version aktuell ist. Bewahre zur Fehleranalyse den Quellenstatus und lokale Hardwarediagnosen auf."
+    ],
+    "troubleshooting": [
+      "Fehlende HUDs und Messwerte",
+      "Sichtbarkeit, Datenquellen und native Berechtigungen getrennt prüfen.",
+      "Prüfe den HUD-Hauptschalter, das Ausblenden per Tastenkürzel, den Zielbildschirm, die Koordinaten und die Deckkraft.\nAktiviere Immer sichtbar für ein dauerhaftes HUD; für vorübergehendes Einblenden muss ein Ereignis, eine aktive Mauszone oder eine Regel eingerichtet sein.\nPrüfe Variable und Einheit in der Bibliothek sowie den Status der nativen Erfassung oder Datenquelle und bestätige Änderungen mit Übernehmen.",
+      "Nicht verfügbare Werte bleiben --; eine Formatierung repariert weder einen unzugänglichen Sensor noch einen ungültigen Ausdruck. Prüfe je nach Ursache JSON-Pfade, API-Authentifizierung und die Erfassungsberechtigungen der Plattform. Ein Windows-Treiber repariert keine native Schnittstelle. Das Kontrollkästchen im Warnfenster unterdrückt nur weitere Warnungen zu den dort aufgelisteten Variablen; andere Variablen können weiterhin warnen. Die Unterdrückung repariert die Quelle nicht und beendet auch nicht deren Erfassung."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Datenquellen konfigurieren",
+      "DeepSeek und HTTP-JSON-Dienste anbinden.",
+      "Öffne Datenverwaltung → Datenquellen und gib deinen DeepSeek-API-Schlüssel ein.\nTrage für HTTP einen Namen, eine GET-URL, Kopfzeilen, das Aktualisierungsintervall und die Zuordnungen der JSON-Felder ein; aktiviere die Quelle.\nWähle Übernehmen und kopiere anschließend custom.<source>.<variable> aus der Variablenbibliothek in ein Profil.",
+      "Die DeepSeek-Spitzenzeiten richten sich nach der Pekinger Zeit und dem chinesischen Feiertagskalender; Wochenenden gelten auch bei nachgeholten Arbeitstagen als Nebenzeit. Die HTTP-Aktualisierungsintervalle steuern den Cache unabhängig vom globalen Abtastintervall. Prüfe nach einem Fehler custom.<source>.status und custom.<source>.error; bei 401/403 sind meist Anmeldung und Zugriffsrechte zu prüfen. Die JSON-Pfade müssen zur tatsächlichen Antwort passen. ${env:MY_API_KEY} liest eine Umgebungsvariable des Prozesses. PawnIO und die AIDA64-Desktopschnittstelle stehen nur unter Windows zur Verfügung."
+    ],
+    "media": [
+      "Mediensitzungen",
+      "Diese native Version besitzt keine Datenerfassung für Mediensitzungen.",
+      "Öffne Datenverwaltung → Variablen und prüfe die verfügbaren Felder.\nWähle ein Profil mit Variablen, die auf diesem Gerät unterstützt werden.\nErsetze nicht verfügbare Medienfelder durch andere unterstützte Messwerte und wähle Übernehmen.",
+      "Diese Version stellt keine nativen Wiedergabesitzungen bereit. Durch den Import eines Windows-Medienprofils wird keine native Datenerfassung hinzugefügt. Fehlende Titel, Zeitleisten oder Fortschrittswerte bleiben nicht verfügbar; sie werden nicht erfunden. Das Windows-Berechtigungsmodell für Mediensitzungen gilt hier nicht."
+    ],
+    "hardware": [
+      "Hardwaredaten unter macOS",
+      "Vom System bereitgestellte Messwerte lesen und Gerätegrenzen beachten.",
+      "Öffne Datenverwaltung → Hardwaredaten und aktualisiere die Erkennung.\nDurchsuche die erkannten Geräte und Felder und kopiere eine unterstützte Variable in ein Profil.\nPrüfe bei fehlenden Daten den Status und exportiere die Diagnose; Administratorrechte erzeugen keine zuvor fehlende Sensor-API.",
+      "CPU- und Speicherstatistiken werden über Mach oder sysctl ermittelt; Batteriedaten stammen aus nativen Energieschnittstellen. Der Speicherplatz wird anhand der APFS-Data-Volume-Statistik erfasst; mehrere Volumes können sich die Kapazität eines Containers teilen. GPU-Werte hängen von den tatsächlich bereitgestellten Metal-/Systemschnittstellen ab. Ein GPU-Speicherbudget ist kein dedizierter physischer VRAM. Temperaturen oder Leistungswerte, die Hardware und Betriebssystem nicht bereitstellen, bleiben --. Diese Version verwendet weder PawnIO noch die Windows-AIDA64-Schnittstelle."
+    ],
+    "special": [
+      "Profile für Zeit, Netzwerk und FPS",
+      "Zur nativen Datenquelle passende Einheiten und Ziele wählen.",
+      "Wähle im Profil einen festen UTC-Versatz für die Weltuhr oder eine tägliche Zielzeit.\nWähle für den Netzwerkverkehr automatische Byteeinheiten oder Mbps und stelle den Referenzwert des Rings ein.\nAktualisiere für FPS die Fenster-/Bildschirmliste, wähle ein aktives Ziel und lege fest, welche Bildrate 100% entspricht; wähle danach Übernehmen.",
+      "Die Weltuhr verwendet einen festen UTC-Versatz ohne automatische Sommerzeitumstellung. 1 MB/s entspricht 8 Mbps; die Referenzbandbreite legt nur den Maßstab des Rings fest und begrenzt nicht die Netzwerkgeschwindigkeit. ICMP ignoriert Ports; TCP-/UDP-Prüfungen verwenden den eingestellten Port. Eine fehlgeschlagene Prüfung belegt nicht, dass das gesamte Gerät offline ist. macOS erfasst vollständige Frames über ScreenCaptureKit und benötigt die Berechtigung zur Bildschirmaufnahme. Inaktive, leere und ausgesetzte Frames werden ausgeschlossen. Wird die Aufnahme verweigert oder verschwindet das Ziel, prüfe den Status; die Bildwiederholfrequenz des Bildschirms darf nicht als FPS-Wert behandelt werden."
+    ],
+    "maintenance": [
+      "Konfiguration, Sicherung und native Geheimnisse",
+      "Einstellungen sichern und den Inhalt der Konfigurationsdatei verstehen.",
+      "Exportiere vor größeren Änderungen die Einstellungen oder lege unter Über → Konfiguration und Wartung eine Sicherung an.\nImportiere eine Konfiguration, um sie wiederherzustellen; den Konfigurationsordner öffnest du oben im Fenster, die Protokolle findest du unter Über.\nBestätige geladene Standardwerte mit Übernehmen; prüfe den Aktualisierungsstatus, bevor du annimmst, dass die installierte Version aktuell ist.",
+      "Der API-Schlüssel liegt im macOS-Schlüsselbund; die Konfiguration enthält nur einen Verweis und keine übertragbare Kopie des Geheimnisses. Nach einem Import in ein anderes Konto oder auf einen anderen Rechner kann die erneute Eingabe des API-Schlüssels nötig sein. Erlaube eine berechtigte Schlüsselbundabfrage, wenn das System danach fragt. Eine fehlgeschlagene Aktualisierungsprüfung oder eine nicht abrufbare Versionsnummer bestätigt nicht, dass die installierte Version aktuell ist. Bewahre zur Fehleranalyse den Quellenstatus und lokale Hardwarediagnosen auf."
+    ],
+    "troubleshooting": [
+      "Fehlende HUDs und Messwerte",
+      "Sichtbarkeit, Datenquellen und native Berechtigungen getrennt prüfen.",
+      "Prüfe den HUD-Hauptschalter, das Ausblenden per Tastenkürzel, den Zielbildschirm, die Koordinaten und die Deckkraft.\nAktiviere Immer sichtbar für ein dauerhaftes HUD; für vorübergehendes Einblenden muss ein Ereignis, eine aktive Mauszone oder eine Regel eingerichtet sein.\nPrüfe Variable und Einheit in der Bibliothek sowie den Status der nativen Erfassung oder Datenquelle und bestätige Änderungen mit Übernehmen.",
+      "Nicht verfügbare Werte bleiben --; eine Formatierung repariert weder einen unzugänglichen Sensor noch einen ungültigen Ausdruck. Prüfe je nach Ursache JSON-Pfade, API-Authentifizierung und die Erfassungsberechtigungen der Plattform. Ein Windows-Treiber repariert keine native Schnittstelle. Das Kontrollkästchen im Warnfenster unterdrückt nur weitere Warnungen zu den dort aufgelisteten Variablen; andere Variablen können weiterhin warnen. Die Unterdrückung repariert die Quelle nicht und beendet auch nicht deren Erfassung."
+    ]
+  },
+  "android": {
+    "start": [
+      "Erste Schritte unter Android",
+      "Das HUD mit den für den gewählten Ausgabemodus nötigen Berechtigungen starten.",
+      "Öffne die Startseite und prüfe Berechtigungen; erlaube für das Overlay die Anzeige über anderen Apps und bei Nachfrage Benachrichtigungen.\nWähle unter HUD-Inhalte ein Profil und unter Anzeige & Position einen Anzeigemodus; schalte den HUD-Hauptschalter ein.\nKehre zur Startseite zurück und tippe auf HUD starten; mit HUD stoppen beendest du dort den Dienst.",
+      "Allgemeine Einstellungen werden automatisch gespeichert. Profiländerungen besitzen eine eigene Speicheraktion; beim Bearbeiten eines integrierten Profils entsteht eine benutzerdefinierte Kopie. Das laufende Overlay und die systemeigene Echtzeitaktualisierung sind unterschiedliche Ausgabemodi mit unterschiedlichen Betriebssystemfunktionen. Allein das Öffnen der App bedeutet nicht, dass der HUD-Vordergrunddienst läuft."
+    ],
+    "display": [
+      "Anzeige, Position und globales Erscheinungsbild",
+      "Overlay oder systemgesteuerte Echtzeitaktualisierung konfigurieren.",
+      "Wähle unter Anzeige & Position das Overlay oder die unterstützte systemeigene Echtzeitaktualisierung.\nWähle für das Overlay Immer sichtbar, einen Anker mit Versätzen oder eigene Koordinaten; stelle Größe, Deckkraft, die Vermeidung von Bildschirmaussparungen und das Durchlassen von Berührungen ein.\nÖffne Language → Globale Schriftgröße und UI-Skalierung, um Einstellungen und HUD zwischen 75% und 200% zu skalieren; Auf 100% zurücksetzen stellt die globalen Faktoren wieder her.",
+      "Das Durchlassen von Berührungen leitet Eingaben an die darunterliegende App weiter. Der Start beim Hochfahren unterliegt den Android-Beschränkungen für Hintergrundstarts und den Berechtigungen des gewählten Ausgabemodus. Systemeigene Echtzeitaktualisierungen benötigen eine unterstützte Android-Version und die Freigabe durch das System; Android steuert deren Layout und Schriftgröße. Overlay-Einstellungen können die Systembenachrichtigung nicht auf dieselbe Geometrie zwingen. Die individuelle HUD-Größe wird mit der globalen UI-Skalierung multipliziert."
+    ],
+    "profiles": [
+      "Profile und HUD-Inhalte",
+      "Texte, Symbole, Ausdrücke und den Fortschrittsring bearbeiten.",
+      "Wähle unter HUD-Inhalte ein integriertes Profil oder erstelle ein eigenes.\nBearbeite Zusatzzeile, Titel, Haupt- und Nebentext, rechten Wert, Suffix, Symbole und Akzentfarbe; prüfe die Vorschau.\nLege eine Fortschrittsvariable oder einen mit = beginnenden Ausdruck sowie Minimum und Maximum fest und speichere das Profil.",
+      "Änderungen an einem integrierten Profil werden als eigene Kopie gespeichert; die ursprüngliche Vorlage wird nicht überschrieben. Der Ring bildet den aktuellen Wert im eingestellten Bereich ab und begrenzt das Ergebnis auf 0–100%; der als Text angezeigte Rohwert ändert sich dadurch nicht. Wähle passende Einheiten und Werte für den Skalenendpunkt. Bedingte Farbregeln verwenden die ursprüngliche Messeinheit; nicht verfügbare Daten sind keine gemessene Null."
+    ],
+    "variables": [
+      "Variablen, Platzhalter und Ausdrücke",
+      "Ein unter Android unterstütztes Feld kopieren und den Code unverändert lassen.",
+      "Öffne Datenverwaltung → Variablen und suche nach Name oder Schlüssel.\nLies Bedeutung, Einheit, Verfügbarkeit und den Hinweis zur Android-Quelle; kopiere die Variable oder den Platzhalter in ein Profil.\nVerwende {cpu.usage|0} für formatierten Text oder = (cpu.usage + gpu.usage) / 2 für einen numerischen Ausdruck; prüfe die Vorschau und speichere.",
+      "Variablenschlüssel, Funktionsnamen und Formatangaben nach dem senkrechten Strich sind Code und werden nicht übersetzt. bytes und speed formatieren Bytegrößen beziehungsweise Übertragungsraten; gb:2 verwendet Potenzen von 1024, duration formatiert Sekunden. Ausdrucksfunktionen unterstützen Rechnen, Bedingungen, Text und fehlende Werte. Nicht erfassbare Daten bleiben nicht verfügbar. Eine Desktopvariable kann unter Android einen anderen Schlüssel besitzen oder gar nicht erfasst werden; prüfe die tatsächliche Bibliothek, statt bei einem importierten Schlüssel von Unterstützung auszugehen."
+    ],
+    "hardware": [
+      "Hardwaredaten und optionaler Root-Zugriff",
+      "Tatsächliche Android-Funktionen nutzen und keine Desktoptreiber ersetzen.",
+      "Öffne Datenverwaltung → Hardwaredaten und prüfe die erkannten Felder und deren Verfügbarkeit.\nIst das Telefon bereits gerootet, öffne Experimentell → Root für Messwerte verwenden und entscheide in deiner Root-Verwaltung, ob ECP Zugriff erhalten soll.\nAktualisiere die Erkennung, prüfe den neuen Quellenstatus und kopiere ein unterstütztes Feld oder exportiere die Diagnose.",
+      "Root-Zugriff ist optional und rootet das Telefon nicht. Er ergänzt den Lesezugriff auf herstellerspezifische CPU-/GPU-, Temperatur- und Speicherknoten; ohne passenden Geräteknoten gibt es weiterhin keinen Messwert. Die gewöhnliche Batterie- und Speichererfassung arbeitet auch ohne Root. Fehlende Daten bleiben nicht verfügbar und werden nie durch eine erfundene Null ersetzt. PawnIO und die Windows-AIDA64-Schnittstelle laufen nicht unter Android. Die Batterieenergie bei voller Ladung kann aus gemessener Energie und Ladeprozentsatz geschätzt werden; sie ist keine vom Hersteller angegebene Auslegungskapazität."
+    ],
+    "sources": [
+      "DeepSeek- und HTTP-JSON-Datenquellen",
+      "Dienste konfigurieren und den tatsächlichen Antwortstatus prüfen.",
+      "Öffne Datenverwaltung → Datenquellen und gib einen DeepSeek-API-Schlüssel ein; speichere ihn mit der zugehörigen Schlüsselaktion.\nTrage für eine HTTP-Quelle einen Namen, eine JSON-GET-URL, Kopfzeilen, ein Intervall und Feldpfade ein und aktiviere sie.\nSuche custom.<source>.<variable> in der Bibliothek; prüfe bei einem Fehler custom.<source>.status und custom.<source>.error.",
+      "Der API-Schlüssel wird mit Android Keystore verschlüsselt; ein Konfigurationsexport ist keine übertragbare Sicherung des Geheimnisses. Gib den Schlüssel erneut ein, wenn eine andere Installation ihn nicht auflösen kann. Die DeepSeek-Zeitfenster richten sich nach Pekinger Zeit und chinesischem Feiertagskalender; nachgeholte Arbeitstage am Wochenende bleiben Nebenzeit. HTTP verwendet das Cacheintervall der jeweiligen Quelle. Passe JSON-Pfade an die echte Antwort an und prüfe bei 401/403 die Authentifizierung. ${env:MY_API_KEY} funktioniert nur, wenn die entsprechende Umgebungsvariable im Prozess existiert. Das JSON-Beispiel ist zunächst deaktiviert; ersetze URL und Zuordnungen, bevor du es aktivierst."
+    ],
+    "cycle": [
+      "Automatischer Wechsel und Animation",
+      "Profile anordnen und den Übergang des Overlays wählen.",
+      "Speichere die gewünschten Profile und füge sie unter HUD-Inhalte zur Wechselwarteschlange hinzu.\nÄndere die Reihenfolge mit Nach oben und Nach unten oder entferne einen Eintrag mit Entfernen.\nAktiviere den automatischen Wechsel, stelle ein Intervall von 3 bis 3600 Sekunden ein und wähle Einfach oder Vollständig für den Overlay-Übergang.",
+      "Das Entfernen eines Warteschlangeneintrags löscht nicht dessen Profil. Die Wechselanimation hat Vorrang vor der Animation des einzelnen Profils. Bei leerer Warteschlange wird das aktive Profil verwendet; ein einzelner Eintrag kann nicht zu einem anderen Profil wechseln. Android bietet derzeit die Overlay-Übergänge Einfach und Vollständig; das Hochrollen der Desktopversion ist hier kein Übergang. Die systemeigene Echtzeitaktualisierung wird von Android und nicht vom Animationssystem des Overlays dargestellt."
+    ],
+    "summons": [
+      "Das Android-HUD anzeigen und beenden",
+      "Android-Bedienelemente statt Desktop-Tastenkürzeln und Mausaktivzonen verwenden.",
+      "Starte den gewählten Ausgabemodus über Startseite → HUD starten und beende ihn über Startseite → HUD stoppen.\nAktiviere unter Anzeige & Position Immer sichtbar für ein dauerhaft eingeblendetes Overlay.\nDeaktiviere Immer sichtbar für ein bedarfsweises Overlay und prüfe das unterstützte Verhalten bei Stromversorgungsereignissen sowie die Anzeigedauer.",
+      "Die Android-Oberfläche enthält weder das globale Desktop-Tastenkürzel zum Ein-/Ausblenden noch einen Editor für aktive Mauszonen. Importierte Desktopeinstellungen erzeugen solche Android-Bedienelemente nicht. Der HUD-Hauptschalter unterdrückt die Ausgabe; Hintergrunddienst und Vordergrundbenachrichtigung können weiterhin einen eigenen Betriebszustand haben. Verwende HUD stoppen, um den Dienst zu beenden."
+    ],
+    "triggers": [
+      "Ereignisregeln und Android-Grenzen",
+      "Unterstütztes Verhalten prüfen, bevor du dich auf importierte Regeln verlässt.",
+      "Prüfe Variable und aktuellen Messwert in der Datenverwaltung, bevor du ein Profil einrichtest.\nNutze den automatischen Android-Profilwechsel oder das unterstützte Einblenden bei Stromversorgungsereignissen.\nPrüfe den tatsächlichen HUD-Zustand auf der Startseite und lasse Immer sichtbar aktiviert, wenn eine dauerhafte Anzeige erforderlich ist.",
+      "Diese Android-Einstellungsoberfläche enthält den Desktopeditor für Auslöseregeln und dessen instanzbezogene Regelwarteschlange nicht. Der Import einer Desktopregel für Schwellenwerte oder Änderungen macht diese Funktion nicht verfügbar. Eine Datenwarnung meldet einen Quellenfehler und ist keine automatische Schwellenwertregel. Verlasse dich bei einer Erinnerung nicht auf eine nicht implementierte Regel."
+    ],
+    "special": [
+      "Zeit, Netzwerk und Android-FPS",
+      "Echte Messwerte und unterstützte Ziele wählen.",
+      "Stelle einen UTC-Versatz für die Weltuhr oder eine tägliche Zielzeit ein; feste Versätze wechseln nicht automatisch zwischen Sommer- und Winterzeit.\nWähle automatische Byteeinheiten oder Mbps für den Netzwerkverkehr und konfiguriere je nach Verfahren ICMP-/TCP-/UDP-Ziel und Port.\nErlaube bei Bedarf Root für die FPS-Erfassung, aktualisiere die Ziele, wähle die SurfaceFlinger-Ebene oder den Bildschirm und lege die Bildrate fest, die 100% entspricht.",
+      "1 MB/s entspricht 8 Mbps. Der Referenzwert des Rings bestimmt den Maßstab und begrenzt keine Bandbreite. ICMP ignoriert Ports; ein fehlgeschlagenes TCP-/UDP-/ICMP-Ziel beweist keinen vollständigen Netzwerkausfall. Fenster-FPS beruhen auf echten Zeitstempeln angezeigter Frames der gewählten SurfaceFlinger-Ebene. Bildschirm-FPS benötigen einen herstellerspezifischen Zähler zusammengesetzter Frames; bei nicht eindeutig zuordenbaren mehreren Bildschirmen ist keine Zuordnung möglich. Nicht unterstützte oder fehlende Framedaten bleiben nicht verfügbar; die Bildwiederholfrequenz wird nie als Ersatz verwendet."
+    ],
+    "media": [
+      "Verfügbarkeit von Mediensitzungen",
+      "Die aktuelle Android-Version hat keine Datenquelle für Wiedergabesitzungen.",
+      "Prüfe die unterstützten Felder in der Android-Variablenbibliothek.\nWähle ein Profil mit solchen Feldern, etwa Zeit, Batterie oder Speicher.\nErsetze importierte Desktop-Medienfelder, bevor du ein für Android bestimmtes Profil speicherst.",
+      "Diese Version liest weder Titel und Interpret noch die Wiedergabezeitleiste aus Android-Mediensitzungen. Eine Overlay- oder Benachrichtigungsberechtigung ergänzt keine in der App fehlende Mediensitzungserfassung. Importierte Medienschlüssel bleiben nicht verfügbar, statt einen erfundenen Titel oder Fortschrittswert anzuzeigen."
+    ],
+    "instances": [
+      "Mehrere HUDs und der Funktionsumfang auf Mobilgeräten",
+      "Android steuert derzeit eine aktive HUD-Ausgabe.",
+      "Wähle unter HUD-Inhalte das aktive Profil.\nVerwende die Wechselwarteschlange, wenn sich mehrere Profile diese Ausgabe nacheinander teilen sollen.\nNutze die globale Schrift- und UI-Skalierung für Einstellungen und HUD; die individuelle Overlay-Größe stellst du mit den Größenreglern des Overlays ein.",
+      "Der Desktopeditor für mehrere Instanzen und dessen unabhängig positionierte HUD-Fenster sind in dieser Android-Oberfläche nicht implementiert. Eine importierte Desktop-Instanzliste erstellt keine mehreren Android-Overlay-Fenster. Overlay und systemeigene Echtzeitaktualisierung sind wählbare Ausgabemodi, keine zwei unabhängig konfigurierten Desktopinstanzen. Sprache und globale Skalierungsfaktoren gelten in der gesamten App."
+    ],
+    "maintenance": [
+      "Konfiguration, Diagnose und Updates",
+      "Android-Dateiauswahl verwenden und Fehlerursachen nachvollziehbar halten.",
+      "Exportiere vor größeren Änderungen unter Experimentell die Konfiguration über die Systemdateiauswahl.\nImportiere eine gespeicherte JSON-Konfiguration zur Wiederherstellung oder exportiere Protokolle und Diagnose zur Fehleranalyse.\nPrüfe unter Über die App-Version und den Aktualisierungsstatus; verwende Zurücksetzen nur, wenn du die Standardwerte der Erstinstallation wiederherstellen möchtest.",
+      "API-Schlüssel werden durch Android Keystore geschützt und sind keine übertragbaren Klartextfelder im Konfigurationsexport. Bei einer anderen Installation oder einem anderen Konto kann die erneute Eingabe nötig sein. Nach Bestätigung stellt Zurücksetzen Profile, Quellen, Aktualisierungsintervalle und Anzeigeeinstellungen wieder her. Eine fehlgeschlagene Online-Aktualisierungsprüfung belegt nicht, dass die installierte Version aktuell ist. Bei verborgenem HUD oder ausgeschaltetem Bildschirm wird die Erfassung entsprechend den eingestellten Intervallen verlangsamt."
+    ],
+    "troubleshooting": [
+      "Sichtbarkeit, fehlende Daten und der Geltungsbereich von Warnungen",
+      "Android-Berechtigungen und den tatsächlichen Erfassungsstatus prüfen.",
+      "Prüfe auf der Startseite die Berechtigungen und den Betriebszustand, danach den HUD-Hauptschalter und den gewählten Ausgabemodus.\nPrüfe bei Overlays Immer sichtbar, Koordinaten, Deckkraft und die Overlay-Berechtigung; prüfe bei Echtzeitaktualisierungen, ob das System ihre Nutzung zulässt.\nPrüfe bei -- die Variablenquelle, gegebenenfalls den Root-Zugriff, die API-Authentifizierung oder JSON-Pfade und exportiere die Diagnose.",
+      "Fehlende Daten sind keine Null, und ein Textformat repariert weder Sensoren noch Ausdrücke. Einige Hersteller-/SELinux-Beschränkungen bleiben auch bei erlaubtem Overlay bestehen. Das Kontrollkästchen im Warnfenster unterdrückt dauerhaft nur weitere Warnungen zu den bereits dort aufgelisteten Variablen; andere Variablen warnen weiter. Das Schließen ohne Häkchen bestätigt nur diesen Vorfall. Die Unterdrückung repariert die Quelle nicht und beendet deren Erfassung nicht."
+    ]
+  }
+}

@@ -104,7 +104,7 @@
                      HorizontalAlignment="Center" Foreground="White"/>
         </StackPanel>
 
-        <Grid x:Name="ContentClip" Width="560" Height="60" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border x:Name="ContentClip" Background="Transparent" CornerRadius="30" Width="560" Height="60" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Center">
           <Grid x:Name="ContentHost">
             <Grid.RenderTransform><TranslateTransform Y="0"/></Grid.RenderTransform>
         <Grid x:Name="BoltIcon"
@@ -209,7 +209,7 @@
           </Grid>
         </Grid>
           </Grid>
-        </Grid>
+        </Border>
       </Grid>
     </Grid>
   </Grid>

@@ -48,7 +48,7 @@ public static class FrameRateMetrics
     public static void Add(IDictionary<string,object?> values, string kind, FrameReading reading, double fullScale)
     {
         string prefix=$"frame.{kind}.";
-        values[prefix+"status"]=reading.Status;
+        values[prefix+"status"]=FrameRateStatus.Localize(reading.Status);
         values[prefix+"name"]=reading.TargetName;
         values[prefix+"fps"]=reading.Fps;
         values[prefix+"percent"]=reading.Fps is double fps && double.IsFinite(fps) && fps>=0 && double.IsFinite(fullScale) && fullScale>0

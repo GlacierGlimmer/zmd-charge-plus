@@ -1,0 +1,10 @@
+{
+  "shared": {
+    "Eucla": "Austrālijas apvidus nosaukums; latviešu valodā lieto oriģinālo rakstību.",
+    "GET URL": "HTTP metodes GET un saīsinājuma URL apzīmējums, ko latviski nelieto citādi.",
+    "NiCd": "Akumulatora ķīmijas starptautiskais saīsinājums, ko lieto arī latviešu tekstos.",
+    "NiMH": "Niķeļa-metālu hidrīda akumulatora starptautiskais saīsinājums.",
+    "d": "Dienas mērvienības starptautiskais apzīmējums, kas paliek nemainīgs."
+  },
+  "notes": "lv-LV: values that the Latvian UI keeps in their original English form (proper place name, HTTP/URL label, battery-chemistry abbreviations, SI-style day unit)."
+}

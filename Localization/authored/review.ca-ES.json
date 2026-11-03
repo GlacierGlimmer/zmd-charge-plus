@@ -1,0 +1,25 @@
+{
+  "shared": {
+    "Alaska": "Topònim que s'escriu igual en català, sense forma alternativa.",
+    "Auckland, Fiji": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Bangkok, Hanoi, Jakarta": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Bytes": "Unitat de mesura informàtica que en català també s'escriu bytes.",
+    "Color": "Paraula catalana idèntica a l'anglesa per al color.",
+    "Dubai, Abu Dhabi": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Error": "Paraula catalana idèntica a l'anglesa per a l'error.",
+    "Eucla": "Topònim australià que s'escriu igual en català.",
+    "Formats": "Paraula catalana idèntica a l'anglesa en plural.",
+    "Hawaii": "Topònim que s'escriu igual en català, sense forma alternativa.",
+    "Islamabad, Karachi": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Kabul": "Topònim que s'escriu igual en català, sense forma alternativa.",
+    "No": "Resposta negativa catalana idèntica a l'anglesa.",
+    "Nukuʻalofa, Apia": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Port": "Paraula catalana idèntica a l'anglesa per al port.",
+    "Sydney, Brisbane": "Topònims que s'escriuen igual en català, sense forma alternativa.",
+    "Text": "Paraula catalana idèntica a l'anglesa per al text.",
+    "Variable": "Paraula catalana idèntica a l'anglesa per a la variable.",
+    "Variables": "Paraula catalana idèntica a l'anglesa en plural.",
+    "d": "Abreviatura catalana de dia, idèntica a la de l'anglès."
+  },
+  "notes": "Valors que coincideixen amb l'anglès perquè són topònims, manlleus tècnics o paraules catalanes amb la mateixa forma; la resta del catàleg és traducció nadiua."
+}

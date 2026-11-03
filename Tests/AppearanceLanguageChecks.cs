@@ -23,9 +23,9 @@ internal static class AppearanceLanguageChecks
     private static T Named<T>(Control root,string name) where T:Control =>root.GetLogicalDescendants().OfType<T>().Single(c=>c.Name==name);
     private static async Task Exercise(Action<bool,string> check)
     {
-        check(LocalizationManager.SupportedLanguages.Count==146 && LocalizationManager.SupportedLanguages.Count(l=>l.MinecraftCode is not null)==143,"The offline catalog includes every verified Java language and preserves the three additional ECP languages.");
-        check(LocalizationManager.NormalizePreference("en_pt")=="en-x-pirate" && LocalizationManager.ResolvePreference("Auto","zh-Hant-HK")==LocalizationManager.SupportedLanguages.Single(l=>l.Code=="zh-HK").Language,"Minecraft identifiers and system script/region tags resolve correctly.");
-        check(LocalizationManager.PreferenceFor(LocalizationManager.ResolvePreference("Auto","nb-NO"))=="no-NO" && LocalizationManager.PreferenceFor(LocalizationManager.ResolvePreference("Auto","sr-Cyrl-RS"))=="sr-Cyrl","Norwegian and Cyrillic Serbian do not select the wrong language.");
+        check(LocalizationManager.SupportedLanguages.Count==20,"The offline catalog contains only the original 20 basic languages.");
+        check(LocalizationManager.NormalizePreference("en_pt")=="en-US" && LocalizationManager.ResolvePreference("Auto","zh-Hant-HK")==AppLanguage.TraditionalChinese,"Minecraft identifiers and system script/region tags resolve correctly.");
+        check(LocalizationManager.PreferenceFor(LocalizationManager.ResolvePreference("Auto","nb-NO"))=="en-US" && LocalizationManager.PreferenceFor(LocalizationManager.ResolvePreference("Auto","sr-Cyrl-RS"))=="en-US","Removed languages safely fall back to English.");
         LocalizationManager.Initialize("zh-CN");
         var settings=new AppSettings {HudEnabled=false,UiLanguage="zh-CN",MultiHudEnabled=true,HudInstances=new(){new() {Id="appearance-child",Name="Child HUD",Settings=new AppSettings{HudEnabled=false}}}};
         var hud=new HudWindow();using var runtime=new CustomHudRuntime(hud);runtime.ApplySettings(settings);
@@ -43,7 +43,7 @@ internal static class AppearanceLanguageChecks
             button.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));await Task.Delay(120);
             var selector=main.OwnedWindows.OfType<LanguageSelectionWindow>().Single();
             var list=Named<ListBox>(selector,"LanguageList");var search=Named<TextBox>(selector,"LanguageSearch");
-            check(list.Items.Count==147,"The language page shows Auto plus every native language/region entry.");
+            check(list.Items.Count==21,"The language page shows Auto plus every native language entry.");
             var firstLanguage=list.GetVisualDescendants().OfType<ListBoxItem>().First(c=>c.IsEffectivelyVisible);
             check(Math.Abs(firstLanguage.Bounds.Height-36)<1 && list.Bounds.Width<=560,"Language entries use the compact 36-pixel row and narrow centered list at default scale.");
             var notice=Named<TextBlock>(selector,"LanguageTranslationNotice");
@@ -72,13 +72,13 @@ internal static class AppearanceLanguageChecks
             double after=main.FindControl<Button>("SaveBtn")!.GetVisualDescendants().OfType<TextBlock>().First().FontSize;
             check(Math.Abs(before-after)<.01,"Repeated appearance refreshes do not compound font sizes.");
             Capture(selector,"language-page.png");Capture(main,"settings-scaled.png");
-            foreach(var code in new[]{"uk-UA","ta-IN","mn-MN","ar-SA"})
+            foreach(var code in new[]{"ja-JP","ko-KR","fa-IR","ar-SA"})
             {
                 search.Text=code;await Task.Delay(40);list.SelectedItem=list.Items[0];await Task.Delay(100);
                 check(LocalizationManager.Preference==code && notice.Text!="(Language translations may not be 100% accurate)","The language notice updates with the selected screenshot locale: "+code);
-                check(notice.FlowDirection==(code=="ar-SA" ? Avalonia.Media.FlowDirection.RightToLeft : Avalonia.Media.FlowDirection.LeftToRight),"The notice uses the selected language's writing direction: "+code);
+                check(notice.FlowDirection==(LocalizationManager.SupportedLanguages.Single(l=>l.Code==code).RightToLeft ? Avalonia.Media.FlowDirection.RightToLeft : Avalonia.Media.FlowDirection.LeftToRight),"The notice uses the selected language's writing direction: "+code);
                 var chapters=UserManualContent.Chapters;
-                check(chapters.Count==14 && chapters.All(c=>c.Title.Value!=c.Title.En),"Every chapter title uses the native screenshot language: "+code);
+                check(chapters.Count>=15 && chapters.All(c=>c.Title.Value!=c.Title.En),"Every chapter title uses the native screenshot language: "+code);
                 check(chapters.All(c=>c.Blocks.Any(b=>b.Kind=="steps" && b.Body.Localized is {Length:>30})),"Each chapter has authored native instructions rather than English fallback: "+code);
                 GlobalAppearance.Apply(selector,1,1);GlobalAppearance.Apply(main,1,1);await Task.Delay(80);
                 Capture(selector,code+"-language-notice.png");

@@ -11,11 +11,17 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 if(args.Length<2)throw new ArgumentException("Usage: LocaleTools <repository> <output-directory> [--rewrite]");
 string root=Path.GetFullPath(args[0]),output=Path.GetFullPath(args[1]);
+// These stable generic keys deliberately omit raw Chinese exception details,
+// or receive a runtime build-date argument. Preserve their real argument shape
+// rather than treating interpolated diagnostic content as a required UI slot.
+string meaningPath=Path.Combine(root,"scripts","localization","source-meaning-overrides.json");
+var sourceMeanings=File.Exists(meaningPath) ? JsonSerializer.Deserialize<Dictionary<string,string>>(File.ReadAllText(meaningPath))! : new Dictionary<string,string>();
 var catalog=new SortedDictionary<string,string>(StringComparer.Ordinal);
 var origins=new Dictionary<string,HashSet<string>>(StringComparer.Ordinal);
 void Add(string? zh,string? en,string origin)
 {
     if(string.IsNullOrWhiteSpace(en) || en.Length>18000)return;
+    if(sourceMeanings.TryGetValue(en,out var meaning))zh=meaning;
     if(zh?.StartsWith("{}",StringComparison.Ordinal)==true)zh=zh[2..];
     if(!catalog.ContainsKey(en) || HasChinese(zh) && !HasChinese(catalog[en]))catalog[en]=string.IsNullOrEmpty(zh) ? en : zh;
     if(!origins.TryGetValue(en,out var set))origins[en]=set=new();set.Add(origin);
@@ -27,7 +33,8 @@ string? Value(ExpressionSyntax? e)=>e switch {
     CastExpressionSyntax c=>Value(c.Expression),
     ParenthesizedExpressionSyntax p=>Value(p.Expression),
     _=>null};
-foreach(string path in Directory.EnumerateFiles(root,"*.cs",SearchOption.AllDirectories).Where(p=>!Regex.IsMatch(Path.GetRelativePath(root,p),@"^(bin|obj|Tests|artifacts|publish|packaging|scripts)[\\/]|[\\/]Linux[^\\/]*\.cs$")))
+bool linuxRepository=Path.GetFileName(root).EndsWith("-for-linux",StringComparison.OrdinalIgnoreCase);
+foreach(string path in Directory.EnumerateFiles(root,"*.cs",SearchOption.AllDirectories).Where(p=>!Regex.IsMatch(Path.GetRelativePath(root,p),@"^(bin|obj|Tests|artifacts|publish|packaging|scripts)[\\/]") && (linuxRepository || !Regex.IsMatch(p,@"[\\/]Linux[^\\/]*\.cs$"))))
 {
     var tree=CSharpSyntaxTree.ParseText(File.ReadAllText(path));var syntax=tree.GetRoot();string origin=Path.GetRelativePath(root,path);
     foreach(var inv in syntax.DescendantNodes().OfType<InvocationExpressionSyntax>())
@@ -75,14 +82,21 @@ var language=assembly.GetType("EndfieldChargePlus.AppLanguage")!;
 localization.GetMethod("SetLanguage")!.Invoke(null,new[]{Enum.Parse(language,"English")});
 var variableCatalog=assembly.GetType("EndfieldChargePlus.Customization.VariableCatalog")!;
 var variableLocalizer=assembly.GetType("EndfieldChargePlus.Customization.VariableLocalization")!.GetMethod("Localize")!;
+var sourceDefinition=assembly.GetType("EndfieldChargePlus.Customization.VariableLocalization")!.GetMethod("SourceDefinition",BindingFlags.Static|BindingFlags.NonPublic)!;
 var variableMetadata=new SortedDictionary<string,Dictionary<string,string>>(StringComparer.Ordinal);
+var variableChinese=new SortedDictionary<string,Dictionary<string,string>>(StringComparer.Ordinal);
 foreach(var item in (IEnumerable)variableCatalog.GetProperty("AllBuiltIns")!.GetValue(null)!)
 {
-    object english=variableLocalizer.Invoke(null,new[]{item})!;
+    // Runtime English can use reviewed, expanded resource values. Extraction
+    // needs the stable lookup IDs, not those rendered values.
+    object english=sourceDefinition.Invoke(null,new[]{item})!;
     var fields=new Dictionary<string,string>();
+    var chineseFields=new Dictionary<string,string>();
     foreach(string property in new[]{"Name","Category","Description","ValueType","RecommendedUse","RecommendedFormats"})Add(item.GetType().GetProperty(property)!.GetValue(item)?.ToString(),english.GetType().GetProperty(property)!.GetValue(english)?.ToString(),"VariableCatalog");
     foreach(string property in new[]{"Name","Category","Description","ValueType","RecommendedUse","RecommendedFormats"})fields[property]=english.GetType().GetProperty(property)!.GetValue(english)?.ToString() ?? "";
+    foreach(string property in new[]{"Name","Category","Description","ValueType","RecommendedUse","RecommendedFormats"})chineseFields[property]=item.GetType().GetProperty(property)!.GetValue(item)?.ToString() ?? "";
     variableMetadata[item.GetType().GetProperty("Key")!.GetValue(item)!.ToString()!]=fields;
+    variableChinese[item.GetType().GetProperty("Key")!.GetValue(item)!.ToString()!]=chineseFields;
 }
 foreach(var zone in (IEnumerable)assembly.GetType("EndfieldChargePlus.Customization.WorldClockTimeZones")!.GetField("All")!.GetValue(null)!)
     Add(zone.GetType().GetProperty("Zh")!.GetValue(zone)?.ToString(),zone.GetType().GetProperty("En")!.GetValue(zone)?.ToString(),"WorldClockTimeZones");
@@ -115,6 +129,7 @@ var options=new JsonSerializerOptions{WriteIndented=true,Encoder=System.Text.Enc
 File.WriteAllText(Path.Combine(output,"catalog.zh-CN.json"),JsonSerializer.Serialize(catalog,options));
 File.WriteAllText(Path.Combine(output,"catalog.origins.json"),JsonSerializer.Serialize(origins,options));
 File.WriteAllText(Path.Combine(output,"catalog.variables.json"),JsonSerializer.Serialize(variableMetadata,options));
+File.WriteAllText(Path.Combine(output,"catalog.variables.zh-CN.json"),JsonSerializer.Serialize(variableChinese,options));
 if(args.Contains("--manual"))
 {
     var manualType=assembly.GetType("EndfieldChargePlus.Settings.UserManualContent")!;

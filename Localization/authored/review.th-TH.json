@@ -1,0 +1,14 @@
+{
+  "shared": {
+    "AC": "สัญลักษณ์ไฟฟ้ากระแสสลับที่ใช้กับแหล่งจ่ายไฟ",
+    "NiCd": "สัญลักษณ์ทางเคมีของแบตเตอรี่นิกเกิลแคดเมียม",
+    "NiMH": "สัญลักษณ์ทางเคมีของแบตเตอรี่นิกเกิลเมทัลไฮไดรด์",
+    "X / px": "สัญลักษณ์แกน X และหน่วยพิกเซลสากล",
+    "Y / px": "สัญลักษณ์แกน Y และหน่วยพิกเซลสากล"
+  },
+  "notes": [
+    "All 2313 active entries were inspected. Full definitions and native label revisions are explicitly recorded in th-native-complete.tsv and th-native-review.tsv; fourteen complete Thai chapters are authored.",
+    "Revisions replace old word-order fragments, inaccurate Primary/storage names and untranslated time/version labels. Collection interfaces, permission limits, cache windows, statistics and executable tokens are preserved.",
+    "SystemClock.elapsedRealtime includes deep sleep. Independent semantic cross-check, platform-specific manual adaptation and visual review remain integration tasks; authoring metadata does not authorize distribution."
+  ]
+}

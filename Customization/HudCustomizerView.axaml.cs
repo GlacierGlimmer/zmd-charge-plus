@@ -203,6 +203,15 @@ public partial class HudCustomizerView : UserControl
         ProfileCombo.SelectionChanged += OnProfileChanged;
         AutoCycleSwitch.IsCheckedChanged += (_, _) => UpdateCycleControls();
         CycleProfileList.SelectionChanged += (_, _) => UpdateCycleButtons();
+        // The list's own scroller has already handled this bubbling request.
+        // A background queue rebuild must not scroll the surrounding editor;
+        // keep normal focus/keyboard scrolling when the user edits the queue.
+        CycleProfileList.AddHandler(Control.RequestBringIntoViewEvent, (_, e) =>
+        {
+            if (!CycleProfileList.IsKeyboardFocusWithin && !CycleAddBtn.IsKeyboardFocusWithin
+                && !CycleRemoveBtn.IsKeyboardFocusWithin && !CycleMoveUpBtn.IsKeyboardFocusWithin
+                && !CycleMoveDownBtn.IsKeyboardFocusWithin) e.Handled = true;
+        }, RoutingStrategies.Bubble);
         CycleAddBtn.Click += OnCycleAdd;
         CycleRemoveBtn.Click += OnCycleRemove;
         CycleMoveUpBtn.Click += OnCycleMoveUp;
@@ -219,27 +228,20 @@ public partial class HudCustomizerView : UserControl
         CopyVariableKeyBtn.Click += OnCopyVariableKey;
         CopyVariableTemplateBtn.Click += OnCopyVariableTemplate;
 
-        bool discoveryStarted = false;
-        AttachedToVisualTree += async (_, _) =>
+        // Merely opening the profile editor must not initialize every sensor,
+        // motherboard bus, storage controller and network adapter. Hardware Data
+        // and profiles that reference sensor variables own that work on demand.
+        bool discoveryStarted=false;
+        async Task DiscoverGpuChoices()
         {
-            if (discoveryStarted) return;
-            discoveryStarted = true;
-            await Task.Run(() =>
-            {
-                GpuAdapterCatalog.GetAdapters();
-                if(DiscoverHardware is not null)return;
-                using var provider = new AdvancedVariableProvider();
-                provider.EnrichAsync(new Dictionary<string, object?>(), new CustomHudSettings(),
-                    new HashSet<string> { "hardware.sensor_count" }, null, CancellationToken.None)
-                    .GetAwaiter().GetResult();
-            });
+            if(discoveryStarted || !GpuOptionsPanel.IsVisible)return;
+            discoveryStarted=true;
+            await Task.Run(()=>GpuAdapterCatalog.GetAdapters());
             RefreshGpuAdapters();
-            if(DiscoverHardware is not null)await DiscoverHardware();
-            if (_selectedIndex >= 0 && _selectedIndex < _profiles.Count) SelectGpuAdapter(_profiles[_selectedIndex].GpuAdapterId);
-            RebuildVariableCategories();
-            RefreshVariableList();
-            UpdateContextOptionsUi();
-        };
+            if(_selectedIndex>=0 && _selectedIndex<_profiles.Count)SelectGpuAdapter(_profiles[_selectedIndex].GpuAdapterId);
+        }
+        AttachedToVisualTree+=async(_,_)=>await DiscoverGpuChoices();
+        GpuOptionsPanel.PropertyChanged+=async(_,e)=>{if(e.Property==IsVisibleProperty && GpuOptionsPanel.IsVisible)await DiscoverGpuChoices();};
         RebuildVariableCategories();
         ClearVariableDetail();
         UpdateContextOptionsUi();
@@ -294,6 +296,7 @@ public partial class HudCustomizerView : UserControl
 
     public void ApplyLocalization()
     {
+        InitializeRadialEditor();
         string? selectedId = _selectedIndex >= 0 && _selectedIndex < _profiles.Count
             ? _profiles[_selectedIndex].Id
             : null;
@@ -378,6 +381,7 @@ public partial class HudCustomizerView : UserControl
         _loading = true;
         SetPreviewHud(hud);
         _loaded = HudSettingsNormalizer.Normalize(settings ?? CustomHudSettings.CreateDefault());
+        _radialProfileIds = _loaded.RadialProfileIds?.ToList();
         LoadTriggerRules(_loaded.Triggers);
         AutoCycleSwitch.IsChecked = _loaded.AutoCycle;
         CycleSecondsBox.Value = _loaded.CycleSeconds;
@@ -401,7 +405,6 @@ public partial class HudCustomizerView : UserControl
             ? HttpJsonCommentExample
             : JsonSerializer.Serialize(_httpSources, _json);
 
-        RefreshGpuAdapters();
         RebuildProfileCombo(_loaded.ActiveProfileId);
         _selectedIndex = ProfileCombo.SelectedIndex;
         LoadCurrentProfile();
@@ -410,6 +413,7 @@ public partial class HudCustomizerView : UserControl
         RebuildVariableCategories();
         RefreshVariableList();
         _loading = false;
+        UpdateTriggerValidation();
         UpdateContextOptionsUi();
         UpdateCycleControls();
     }
@@ -424,6 +428,7 @@ public partial class HudCustomizerView : UserControl
             Triggers=ExportTriggerRules(),
             CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
             CycleProfileIds = GetSanitizedCycleProfileIds(),
+            RadialProfileIds = _radialProfileIds?.Where(id => _profiles.Any(p => p.Id == id)).ToList(),
             CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
             ActiveProfileId = _selectedIndex >= 0 && _selectedIndex < _profiles.Count
                 ? _profiles[_selectedIndex].Id
@@ -453,6 +458,7 @@ public partial class HudCustomizerView : UserControl
         if (selected < 0 && _profiles.Count > 0)
             selected = 0;
         ProfileCombo.SelectedIndex = selected;
+        RefreshWorkflowProfiles();
     }
 
     private static string ProfileDisplayName(HudProfile profile) =>
@@ -473,9 +479,30 @@ public partial class HudCustomizerView : UserControl
     private void OnProfileChanged(object? sender, SelectionChangedEventArgs e)
     {
         if (_loading) return;
-        _selectedIndex = ProfileCombo.SelectedIndex;
+        _requestedProfileId=_profiles.ElementAtOrDefault(ProfileCombo.SelectedIndex)?.Id;
+        if(_profileSelectionPending)return;
+        _profileSelectionPending=true;
+        // Saving may rebuild ComboBox.Items. Do not mutate a selection model
+        // inside its SelectionChanged batch; commit the latest request afterwards.
+        Avalonia.Threading.Dispatcher.UIThread.Post(CommitProfileSelection,Avalonia.Threading.DispatcherPriority.Input);
+    }
+    private bool _profileSelectionPending;
+    private string? _requestedProfileId;
+    private void CommitProfileSelection()
+    {
+        _profileSelectionPending=false;
+        string? requested=_requestedProfileId;
+        if(_loading || requested is null || !_profiles.Any(p=>p.Id==requested))return;
+        try { SaveCurrentProfile(); }
+        catch(FormatException ex)
+        {
+            ProfileStatusText.Text=ex.Message;_loading=true;ProfileCombo.SelectedIndex=_selectedIndex;_loading=false;return;
+        }
+        _selectedIndex=_profiles.FindIndex(p=>p.Id==requested);
+        _loading=true;ProfileCombo.SelectedIndex=_selectedIndex;_loading=false;
         LoadCurrentProfile();
         UpdateContextOptionsUi();
+        RefreshWorkflowProfiles();
     }
 
     private void LoadCurrentProfile()
@@ -923,7 +950,7 @@ public partial class HudCustomizerView : UserControl
         {
             var profile = _profiles.FirstOrDefault(p => string.Equals(p.Id, id, StringComparison.OrdinalIgnoreCase));
             if (profile is not null)
-                CycleProfileList.Items.Add(ProfileDisplayName(profile));
+                CycleProfileList.Items.Add(new ListBoxItem{Tag=profile.Id,Content=WorkflowProfileRow(profile,CycleProfileList.Items.Count+1),Padding=new(8),MinHeight=42,HorizontalContentAlignment=Avalonia.Layout.HorizontalAlignment.Stretch});
         }
 
         if (_cycleProfileIds.Count > 0)
@@ -958,6 +985,7 @@ public partial class HudCustomizerView : UserControl
                 : LocalizationManager.Formatted($"已配置 {_cycleProfileIds.Count} 个轮播方案；开启自动轮播后生效。", (System.FormattableString)$"{_cycleProfileIds.Count} profiles are queued; enable auto cycle to use them.")
         };
         UpdateCycleButtons();
+        _refreshCycleWorkspace?.Invoke();
     }
 
     private void UpdateCycleControls()
@@ -965,7 +993,7 @@ public partial class HudCustomizerView : UserControl
         if (CycleOptionsPanel is null) return;
         // Queue editing remains available while cycling is disabled so users can prepare the
         // order first. Only the runtime behaviour is controlled by the switch.
-        CycleOptionsPanel.Opacity = AutoCycleSwitch.IsChecked == true ? 1.0 : 0.88;
+        CycleOptionsPanel.Opacity = 1;
         RefreshCycleEditor();
     }
 
@@ -1015,6 +1043,7 @@ public partial class HudCustomizerView : UserControl
 
     private void OnAddProfile(object? sender, RoutedEventArgs e)
     {
+        try { SaveCurrentProfile(); } catch(FormatException ex) { ProfileStatusText.Text=ex.Message;return; }
         int number = _profiles.Count(p => !p.IsBuiltIn) + 1;
         var created = new HudProfile
         {
@@ -1087,6 +1116,7 @@ public partial class HudCustomizerView : UserControl
                 AutoCycle = AutoCycleSwitch.IsChecked == true,
                 CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
                 CycleProfileIds = GetSanitizedCycleProfileIds(),
+            RadialProfileIds = _radialProfileIds?.Where(id => _profiles.Any(p => p.Id == id)).ToList(),
                 CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
                 ActiveProfileId = _profiles[_selectedIndex].Id,
                 DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),

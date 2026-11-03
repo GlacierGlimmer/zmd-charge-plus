@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Adımlar",
+    "Ayrıntılar",
+    "Örnek",
+    "Değişken anahtarları ve örnekler değişmeden kalır.",
+    "İşlev başvurusu"
+  ],
+  "linux": {
+    "sources": [
+      "Veri kaynağı yapılandırması",
+      "DeepSeek ve HTTP JSON hizmetlerini bağlayın.",
+      "Veri yönetimi → Veri kaynağı ayarları bölümünü açıp DeepSeek API anahtarınızı girin.\nHTTP için ad, GET adresi, üstbilgiler, yenileme aralığı ve JSON alan eşlemelerini tanımlayıp kaynağı etkinleştirin.\nKaydet ve uygula düğmesine basın, ardından Değişken kitaplığından custom.<source>.<variable> adını bir profile kopyalayın.",
+      "DeepSeek yoğun saat pencereleri Pekin saatini ve Çin tatil takvimini kullanır; telafi çalışması olan hafta sonları da yoğun olmayan dönemde kalır. HTTP yenileme aralıkları önbelleği genel örneklemeden bağımsız olarak yönetir. Hatalardan sonra custom.<source>.status ve custom.<source>.error alanlarını inceleyin; 401/403 genellikle kimlik doğrulamanın ve erişimin denetlenmesini gerektirir. JSON yolları gerçek yanıtla eşleşmelidir. ${env:MY_API_KEY} bir süreç ortam değişkenini okur. PawnIO ve AIDA64 masaüstü arayüzü yalnızca Windows'ta bulunur."
+    ],
+    "media": [
+      "Medya oturumları",
+      "Mevcut yerel sürümde medya oturumu toplayıcısı yoktur.",
+      "Veri yönetimi → Değişken kitaplığı bölümünü açıp kullanılabilir alanları kontrol edin.\nDeğişkenleri bu makinede desteklenen bir profil seçin.\nKullanılamayan medya alanlarını desteklenen başka bir ölçümle değiştirip Kaydet ve uygula düğmesine basın.",
+      "Bu sürüm yerel oynatıcı oturumlarını sunmaz. İçe aktarılan bir Windows medya profili yerel bir toplayıcıyı etkinleştirmez. Eksik başlık, zaman çizelgesi veya ilerleme bilgisi uydurulmaz; kullanılamaz olarak kalır. Windows medya oturumu izin modeli burada geçerli değildir."
+    ],
+    "hardware": [
+      "Donanım sensörleri ve Linux erişimi",
+      "Algılanan Linux arayüzlerini kullanın ve eksik okumaları inceleyin.",
+      "Veri yönetimi → Donanım verileri bölümünü açıp algılamayı yenileyin.\nAygıt, sensör veya özgün kimliğe göre arayın; bir satır seçip şablonunu HUD'ınıza kopyalayın.\nBir okuma eksikse kullanılabilirliğini inceleyin ve izinleri değiştirmeden önce tanılamayı dışa aktarın.",
+      "CPU okumaları /proc/stat, /proc/cpuinfo, cpufreq veya hwmon kullanır. GPU erişimi DRM/hwmon ya da NVIDIA nvidia-smi üzerinden sağlanır. Hangi termal, güç ve gerilim düğümlerinin var olduğunu ve okunabildiğini Linux sürücüleri ile dosya izinleri belirler. Desteklenen bir düğüm gerçek veri döndürmelidir; kullanılamayan okumalar -- olarak kalır. PawnIO ve AIDA64 birer Linux arka ucu değildir. Sensör paket/çekirdek/sıcak nokta kanalları farklı ölçümleri temsil edebilir; en yüksek değer otomatik olarak donanımın anma sınırı değildir."
+    ],
+    "special": [
+      "Saat, ağ ve FPS profilleri",
+      "Yerel veri kaynağına uyan birimleri ve hedefleri seçin.",
+      "Profilde bir Dünya Saati UTC farkı veya günlük hedef saat seçin.\nAğ trafiği için otomatik bayt birimlerini ya da Mbps'yi seçip halka referansını ayarlayın.\nFPS için pencere/ekran listesini yenileyin, canlı bir hedef seçin ve %100'ün temsil ettiği kare hızını belirleyip Kaydet ve uygula düğmesine basın.",
+      "Dünya Saati, yaz saati değişikliklerini otomatik izlemeyen sabit bir UTC farkı kullanır. 1 MB/s, 8 Mbps'ye eşittir; halka referans bant genişliği ölçeği belirler ve ağ hızını sınırlamaz. ICMP bağlantı noktalarını yok sayar; TCP/UDP yoklamaları yapılandırılan bağlantı noktasını kullanır. Başarısız bir yoklama, aygıtın tümüyle çevrimdışı olduğunun kanıtı değildir. Linux, X11 Present tamamlanma olaylarını sayar ve Present uzantısı ile libXpresent bulunan bir X11/XWayland oturumu gerektirir. Görünür bir X11 sunum akışı olmayan yerel Wayland pencereleri bu arka uçla ölçülemez. Gerçek bir kare akışı gözlenmeden önce eksik olaylar, verinin kullanılamadığı anlamına gelir. Gerçek kareler örneklemeyi başlattıktan sonra boşta bir akış 0 FPS bildirebilir; monitör yenileme hızı hiçbir zaman bunun yerine konmaz."
+    ],
+    "maintenance": [
+      "Yapılandırma, yedekleme ve yerel sırlar",
+      "Ayarları yedekleyin ve bir yapılandırma dosyasının neler içerdiğini bilin.",
+      "Büyük düzenlemelerden önce Hakkında → Ayarlar ve bakım bölümünden ayarları dışa aktarın veya bir yedek oluşturun.\nYapılandırmayı geri yüklemek için içe aktarın; yapılandırma klasörü için üst çubuğu, günlükler için Hakkında bölümünü kullanın.\nVarsayılanları yükledikten sonra Kaydet ve uygula ile onaylayın; bir sürümün güncel olduğuna karar vermeden önce güncelleme durumunu inceleyin.",
+      "Linux, API anahtarını yapılandırma dizini altındaki secrets/master.key özel yerel anahtar dosyasını kullanarak AES-GCM ile korur. Bu dosya özel Unix izinleri gerektirir. Yalnızca dışa aktarılan yapılandırma yerel şifreleme anahtarını taşımaz; başka bir kuruluma geçerken API anahtarının yeniden girilmesi gerekebilir. Başarısız bir güncelleme denetimi veya erişilemeyen uzak sürüm, güncel olduğunuzu doğrulamaz. Sorunları araştırırken kaynak durumunu ve yerel donanım tanılamasını saklayın."
+    ],
+    "troubleshooting": [
+      "Eksik HUD'lar ve okumalar",
+      "Görünürlük, kaynak ve yerel izin sorunlarını ayırın.",
+      "Ana anahtarı, kısayolla gizlemeyi, hedef ekranı, koordinatları ve opaklığı denetleyin.\nKalıcı bir HUD için her zaman görünür seçeneğini kullanın; geçici mod yapılandırılmış bir olay, sıcak bölge veya kural gerektirir.\nKitaplıktaki değişkeni ve birimi doğrulayın, yerel yakalama/kaynak durumunu inceleyin, ardından değişiklikleri Kaydet ve uygula ile uygulayın.",
+      "Kullanılamayan okumalar -- olarak kalır; biçimlendirme erişilemeyen bir sensörü ya da geçersiz bir ifadeyi onaramaz. JSON yollarını, API kimlik doğrulamasını ve platform yakalama izinlerini duruma göre denetleyin. Yerel bir arayüzü onarmak için Windows sürücüsü kurmayın. Uyarı onay kutusu yalnızca o uyarıda listelenen değişkenleri susturur, diğer değişkenleri etkin tutar ve veri toplamayı onarmaz veya durdurmaz."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Veri kaynağı yapılandırması",
+      "DeepSeek ve HTTP JSON hizmetlerini bağlayın.",
+      "Veri yönetimi → Veri kaynağı ayarları bölümünden DeepSeek API anahtarınızı girin.\nHTTP kaynağı için ad, GET adresi, üstbilgiler, yenileme aralığı ve JSON alan eşlemelerini ayarlayıp kaynağı açın.\nKaydet ve uygula sonrasında Değişken kitaplığındaki custom.<source>.<variable> alanını profile ekleyin.",
+      "DeepSeek yoğun dönemleri Pekin saatine ve Çin tatil takvimine göre belirlenir; telafi çalışması olan hafta sonları da yoğun olmayan dönem sayılır. HTTP yenileme aralıkları, önbelleği genel örneklemeden bağımsız yönetir. Hata durumunda custom.<source>.status ve custom.<source>.error alanlarına bakın; 401/403 için genellikle kimlik doğrulama ve erişim denetlenmelidir. JSON yolları gerçek yanıtla örtüşmelidir. ${env:MY_API_KEY} süreç ortam değişkenini okur. PawnIO ve AIDA64 masaüstü arayüzü yalnızca Windows içindir."
+    ],
+    "media": [
+      "Medya oturumları",
+      "Bu yerel sürümde medya oturumu toplayıcısı bulunmuyor.",
+      "Veri yönetimi → Değişken kitaplığında hangi alanların sunulduğuna bakın.\nDeğişkenleri bu makinede desteklenen bir profil seçin.\nKullanılamayan medya alanlarının yerine desteklenen başka bir ölçüm koyup Kaydet ve uygula düğmesine basın.",
+      "Bu sürüm yerel oynatıcı oturumlarını açığa çıkarmaz. İçe aktarılan bir Windows medya profili yerel bir toplayıcıyı etkinleştirmez. Eksik başlık, zaman çizelgesi veya ilerleme uydurulmaz, kullanılamaz olarak kalır. Windows'un medya oturumu izin modeli burada geçerli değildir."
+    ],
+    "hardware": [
+      "macOS'ta donanım verileri",
+      "Sistemin sağladığı ölçümleri okuyun ve aygıt sınırlarına saygı gösterin.",
+      "Veri yönetimi → Donanım verileri bölümünü açıp algılamayı yenileyin.\nAlgılanan aygıtlar ve alanlar arasında arama yapın, desteklenen bir değişkeni profile kopyalayın.\nVeri eksikse durumu denetleyin ve tanılamayı dışa aktarın; yönetici erişiminin bir sensör API'si oluşturduğunu varsaymayın.",
+      "CPU ve bellek istatistikleri Mach veya sysctl üzerinden alınır; pil bilgisi yerel güç arayüzlerinden gelir. Depolama, APFS Data birimi istatistiklerini kullanır ve tek bir kapsayıcı içinde kapasiteyi paylaşabilir. GPU değerleri Metal/sistem arayüzlerinin gerçekte sunduğu verilere bağlıdır. GPU bellek bütçesi, ayrılmış fiziksel VRAM değildir. Donanımın ve işletim sisteminin sunmadığı sıcaklık veya güç değerleri -- olarak kalır. Bu sürüm PawnIO veya Windows AIDA64 arayüzünü kullanmaz."
+    ],
+    "special": [
+      "Saat, ağ ve FPS profilleri",
+      "Yerel veri kaynağına uygun birimleri ve hedefleri seçin.",
+      "Profile bir Dünya Saati UTC farkı ya da günlük hedef saat belirleyin.\nAğ trafiği için otomatik bayt birimlerini veya Mbps'yi seçin ve halka referansını ayarlayın.\nFPS için pencere/ekran listesini yenileyip canlı bir hedef seçin, %100'ün temsil ettiği kare hızını girin ve Kaydet ve uygula düğmesine basın.",
+      "Dünya Saati, yaz saati uygulamasını otomatik izlemeyen sabit bir UTC farkı kullanır. 1 MB/s = 8 Mbps; halka referans bant genişliği yalnızca ölçeği belirler, ağ hızını sınırlamaz. ICMP bağlantı noktası kullanmaz; TCP/UDP yoklamaları yapılandırılan bağlantı noktasına gider. Başarısız bir yoklama, tüm aygıtın çevrimdışı olduğunu kanıtlamaz. macOS, ScreenCaptureKit tam karelerini kullanır ve Ekran Kaydı izni gerektirir. Boşta, boş ve askıya alınmış kareler hariç tutulur. Yakalama reddedilirse veya hedef kaybolursa, ekran yenileme hızını FPS yerine koymak yerine durumu inceleyin."
+    ],
+    "maintenance": [
+      "Yapılandırma, yedekleme ve yerel sırlar",
+      "Ayarları yedekleyin ve yapılandırma dosyasının kapsamını bilin.",
+      "Büyük değişikliklerden önce Hakkında → Ayarlar ve bakım bölümünden ayarları dışa aktarın ya da yedek alın.\nGeri yüklemek için bir yapılandırmayı içe aktarın; yapılandırma klasörüne üst çubuktan, günlüklere Hakkında bölümünden ulaşın.\nVarsayılanları yükledikten sonra Kaydet ve uygula ile bunları onaylayın; güncel olduğuna karar vermeden önce güncelleme durumunu denetleyin.",
+      "API anahtarı macOS Keychain içinde saklanır; yapılandırma sırrın taşınabilir bir kopyasını değil, bir referansını tutar. Yapılandırmayı farklı bir hesaba veya makineye aktarmak API anahtarının yeniden girilmesini gerektirebilir. Sistem isterse meşru bir Keychain erişim isteğine izin verin. Başarısız bir güncelleme denetimi ya da erişilemeyen uzak sürüm, güncel olduğunuzu doğrulamaz. Sorun araştırırken kaynak durumunu ve yerel donanım tanılamasını saklayın."
+    ],
+    "troubleshooting": [
+      "Eksik HUD'lar ve okumalar",
+      "Görünürlük, kaynak ve yerel izin sorunlarını birbirinden ayırın.",
+      "Ana anahtarı, kısayolla gizlemeyi, hedef ekranı, koordinatları ve opaklığı kontrol edin.\nKalıcı bir HUD için her zaman görünür seçeneğini açın; geçici modda bir olay, sıcak bölge veya kural tanımlı olmalıdır.\nKitaplıktaki değişkeni ve birimini doğrulayıp yerel yakalama/kaynak durumunu inceleyin, sonra değişiklikleri Kaydet ve uygula ile uygulayın.",
+      "Kullanılamayan okumalar -- olarak kalır; biçimlendirme erişilemeyen bir sensörü veya geçersiz bir ifadeyi düzeltemez. JSON yollarını, API kimlik doğrulamasını ve platform yakalama izinlerini uygun biçimde denetleyin. Yerel bir arayüzü onarmak için Windows sürücüsü yüklemeyin. Uyarı onay kutusu yalnızca o uyarıda listelenen değişkenleri susturur, diğer değişkenleri etkin bırakır ve veri toplamayı ne onarır ne de durdurur."
+    ]
+  },
+  "android": {
+    "start": [
+      "Android'de başlarken",
+      "HUD'ı seçilen çıktının gerektirdiği izinlerle başlatın.",
+      "Ana Sayfa bölümünü açıp İzinler'i inceleyin; üst katman için diğer uygulamaların üzerinde gösterme iznini, istendiğinde bildirim iznini verin.\nHUD içeriği altında bir profil, Görünüm ve konum altında bir gösterim kipi seçip HUD ana anahtarını açın.\nAna Sayfa'ya dönüp HUD'ı başlat düğmesine basın; hizmeti durdurmak istediğinizde aynı yerdeki HUD'ı durdur düğmesini kullanın.",
+      "Genel ayarlar otomatik kaydedilir. Profil düzenlemeleri kendi Kaydet işlemini kullanır; yerleşik bir profili düzenlemek özel bir kopya oluşturur. Çalışan üst katman ile yerel canlı güncelleme farklı çıktılardır ve işletim sisteminin farklı yeteneklerini kullanır. Uygulamayı açmak tek başına ön plan HUD hizmetinin çalıştığını garanti etmez."
+    ],
+    "display": [
+      "Görünüm, konum ve genel görünüş",
+      "Üst katmanı veya sistem tarafından yönetilen canlı güncellemeyi yapılandırın.",
+      "Görünüm ve konum bölümünde Üst katman ya da desteklenen yerel canlı güncelleme çıktısını seçin.\nÜst katman için her zaman görünür seçeneğini açın; dayanak ve kaydırma değerleri ya da özel koordinatlar seçip boyut, opaklık, çentikten kaçınma ve tıklamaları geçirme ayarlarını düzenleyin.\nDil → Genel yazı boyutu ve arayüz ölçeği bölümünden ayarları ve HUD'ı %75 ile %200 arasında ölçekleyin; %100'e sıfırla genel çarpanları geri yükler.",
+      "Tıklamaları geçirme, dokunmaları alttaki uygulamaya iletir. Açılışta başlat, Android'in arka plan başlatma kısıtlamalarına ve seçilen çıktının izinlerine tabidir. Yerel canlı güncellemeler desteklenen bir Android sürümü ve sistem uygunluğu gerektirir; düzenini ve yazı boyutunu Android belirler. Üst katman biçimlendirmesi sistem bildirimini aynı geometriyi kullanmaya zorlayamaz. Tek bir HUD'un boyutu genel arayüz ölçeğiyle çarpılır."
+    ],
+    "profiles": [
+      "Profiller ve HUD içeriği",
+      "Metni, simgeleri, ifadeleri ve ilerleme halkasını düzenleyin.",
+      "HUD içeriği altında yerleşik bir profil seçin veya özel bir profil oluşturun.\nSlogan, başlık, birincil/ikincil metin, sağdaki değer, son ek, simgeler ve vurgu rengini düzenleyip sonucu önizleyin.\nBir ilerleme değişkeni ya da = ile başlayan bir ifade ayarlayın, alt ve üst sınırlarını seçin ve profili kaydedin.",
+      "Yerleşik bir profili düzenlemek özel bir kopya kaydeder; özgün ön ayarın üzerine yazmaz. Halka, geçerli değeri yapılandırılan aralığa oranlar ve sonucu %0–100 aralığına sıkıştırır; ham metin okumasını değiştirmez. Uygun birimleri ve tam ölçek değerlerini kullanın. Koşullu renk kuralları özgün ölçüm birimini kullanır; kullanılamayan veri ölçülmüş bir sıfır değildir."
+    ],
+    "variables": [
+      "Değişkenler, belirteçler ve ifadeler",
+      "Android'in desteklediği bir alanı kopyalayın ve kodu değiştirmeden koruyun.",
+      "Veri yönetimi → Değişken kitaplığı bölümünü açıp bir ad veya anahtar arayın.\nAnlamını, birimini, kullanılabilirliğini ve Android kaynak notunu okuyun; değişkeni veya belirteci profile kopyalayın.\nBiçimlendirilmiş metin için {cpu.usage|0}, sayısal ifade için = (cpu.usage + gpu.usage) / 2 kullanın; önizleyip kaydedin.",
+      "Değişken anahtarları, işlev adları ve biçim boruları koddur ve çevrilmez. bytes ve speed bayt boyutlarını ya da hızlarını biçimlendirir; gb:2 1024'ün kuvvetlerini kullanır, duration ise saniyeleri biçimlendirir. İfade işlevleri aritmetik, koşullar, metin ve eksik değerleri kapsar. Toplanamayan veri kullanılamaz olarak kalır. Bir masaüstü değişkeninin Android takma adı olabilir ya da hiç Android okuyucusu olmayabilir; içe aktarılan bir anahtarın desteklendiğini varsaymak yerine gerçek kitaplığı denetleyin."
+    ],
+    "hardware": [
+      "Donanım verileri ve isteğe bağlı Root",
+      "Masaüstü sürücülerinin yerine koymadan gerçek Android yeteneklerini okuyun.",
+      "Veri yönetimi → Donanım verileri bölümünü açıp algılanan alanları ve kullanılabilirliklerini inceleyin.\nTelefon zaten rootluysa Deneysel özellikler → Okumalar için Root kullan bölümünü açın ve Root yöneticinizde ECP'ye yetki verip vermeyeceğinizi seçin.\nAlgılamayı yenileyin, oluşan kaynak durumunu inceleyin ve desteklenen bir alanı kopyalayın ya da tanılamayı dışa aktarın.",
+      "Root erişimi isteğe bağlıdır ve telefonu rootlamaz. Satıcıya özgü CPU/GPU, termal ve bellek düğümlerine okuma erişimini tamamlar; uyumlu düğümü olmayan bir aygıtta yine de okuma olmaz. Sıradan pil ve bellek toplayıcıları Root olmadan çalışmaya devam eder. Eksik değerler kullanılamaz olarak kalır, asla uydurma bir sıfır değildir. PawnIO ve Windows AIDA64 arayüzü Android'de çalışmaz. Tam şarj pil enerjisi, ölçülen enerji ve şarj yüzdesinden tahmin edilebilir; bu, anma tasarım kapasitesi değildir."
+    ],
+    "sources": [
+      "DeepSeek ve HTTP JSON kaynakları",
+      "Hizmetleri yapılandırın ve gerçek yanıt durumunu inceleyin.",
+      "Veri yönetimi → Veri kaynağı ayarları bölümünü açıp bir DeepSeek API anahtarı girin; anahtarı API anahtarını ayarla işlemiyle kaydedin.\nBir HTTP kaynağı için ad, JSON GET adresi, üstbilgiler, aralık ve alan yollarını girin; yapılandırılan kaynağı etkinleştirin.\nKitaplıkta custom.<source>.<variable> alanını bulun; başarısız olursa custom.<source>.status ve custom.<source>.error alanlarını inceleyin.",
+      "API anahtarı Android Keystore ile şifrelenir; yapılandırma dışa aktarımı taşınabilir bir sır yedeği değildir. Başka bir kurulum anahtarı çözemezse yeniden girin. DeepSeek dönemleri Pekin saatini ve Çin tatil takvimini kullanır; hafta sonu telafi çalışmaları yine yoğun olmayan dönemdedir. HTTP önbelleği her kaynağın kendi aralığını izler. JSON yollarını gerçek yanıtla eşleştirin ve 401/403 için kimlik doğrulamasını denetleyin. ${env:MY_API_KEY} yalnızca o süreç ortam değişkeni mevcutsa çalışır. Örnek JSON devre dışı başlar; etkinleştirmeden önce adresini ve eşlemelerini değiştirin."
+    ],
+    "cycle": [
+      "Otomatik döngü ve animasyon",
+      "Profilleri sıralayın ve üst katman geçişini seçin.",
+      "Döngüde göstermek istediğiniz profilleri kaydedin, ardından bunları HUD içeriğindeki döngü listesine ekleyin.\nSıralamak için Yukarı ve Aşağı, listeden çıkarmak için Kaldır düğmelerini kullanın.\nOtomatik döngüyü açın, 3 ile 3600 saniye arasında bir aralık girin ve üst katman geçişi için Basit ya da Tam seçeneğini belirleyin.",
+      "Bir liste öğesini kaldırmak profilini silmez. Döngü geçişi, profil bazındaki animasyonun önüne geçer. Boş liste etkin profili kullanır; tek öğe başka bir profile geçemez. Android şu anda Basit ve Tam üst katman geçişlerini sunar; masaüstündeki Yukarı kaydırma bir Android geçişi değildir. Yerel canlı güncelleme, üst katman animasyon motoru yerine Android tarafından çizilir."
+    ],
+    "summons": [
+      "Android HUD'ı gösterme ve durdurma",
+      "Masaüstü kısayolları veya fare sıcak bölgeleri yerine Android denetimlerini kullanın.",
+      "Seçilen çıktıyı başlatmak için Ana Sayfa → HUD'ı başlat, durdurmak için Ana Sayfa → HUD'ı durdur yolunu kullanın.\nKalıcı bir üst katman için Görünüm ve konum bölümünde her zaman görünür seçeneğini etkinleştirin.\nİsteğe bağlı gösterim için her zaman görünür seçeneğini kapatın ve desteklenen güç olayı davranışı ile gösterim süresini kontrol edin.",
+      "Android arayüzünde masaüstündeki genel göster/gizle klavye kısayolu veya fare sıcak bölgesi düzenleyicisi yoktur. Masaüstünden içe aktarılan bu ayarlar Android denetimleri oluşturmaz. HUD ana anahtarı çıktıyı bastırır; arka plan hizmeti ve ön plan bildirimi kendi çalışma durumlarına sahip olabilir. Hizmeti durdurmak için HUD'ı durdur düğmesini kullanın."
+    ],
+    "triggers": [
+      "Olay kuralları ve Android sınırları",
+      "İçe aktarılan bir kurala güvenmeden önce desteklenen davranışı denetleyin.",
+      "Bir profil yapılandırmadan önce değişkeni ve canlı değeri Veri yönetimi bölümünde kontrol edin.\nKullanılabilir otomatik davranış için Android'in otomatik döngüsünü veya desteklenen güç olayı gösterimini kullanın.\nAna Sayfa'da gerçek HUD durumunu doğrulayın ve kalıcı bir gösterim gerekiyorsa her zaman görünür seçeneğini açık tutun.",
+      "Bu Android ayarlar arayüzü, masaüstündeki Tetikleme kuralları düzenleyicisini veya HUD örneği başına kural kuyruğunu sunmaz. Masaüstü eşik/değişim kuralını içe aktarmak bu özelliği kullanılabilir hale getirmez. Veri uyarısı bir kaynak hatası bildirimidir, otomatik eşik kuralı değildir. Bir hatırlatıcıyı uygulanmamış bir kurala bağlamayın."
+    ],
+    "special": [
+      "Saat, ağ ve Android FPS",
+      "Gerçek ölçümleri ve desteklenen hedefleri seçin.",
+      "Bir Dünya Saati UTC farkı veya günlük hedef belirleyin; sabit farklar yaz saati değişikliklerini otomatik izlemez.\nAğ trafiği için otomatik bayt birimlerini ya da Mbps'yi seçin ve ICMP/TCP/UDP hedefi ile bağlantı noktasını uygun şekilde yapılandırın.\nFPS için gerektiğinde Root yetkisi verin, hedefleri yenileyin, SurfaceFlinger katmanını veya ekranı seçin ve %100'ün temsil ettiği kare hızını ayarlayın.",
+      "1 MB/s = 8 Mbps. Halka referansı ölçeği belirler ve bant genişliğini sınırlamaz. ICMP bağlantı noktası kullanmaz; başarısız bir TCP/UDP/ICMP hedefi, ağın tümüyle kesildiğinin kanıtı değildir. Pencere FPS'i seçilen SurfaceFlinger katmanı için gerçek görüntülenen kare zaman damgalarından gelir. Ekran FPS'i satıcıya özgü bir kompozisyon-kare sayacı gerektirir ve birden fazla ekran belirsiz olduğunda atfedilemez. Desteklenmeyen veya eksik kare verisi kullanılamaz olarak kalır; yenileme hızı hiçbir zaman bunun yerine konmaz."
+    ],
+    "media": [
+      "Medya oturumu kullanılabilirliği",
+      "Mevcut Android sürümünde oynatıcı oturumu kaynağı yoktur.",
+      "Desteklenen alanlar için Android Değişken kitaplığını kontrol edin.\nZaman, pil veya bellek gibi bu alanlarla desteklenen bir profil seçin.\nAndroid'e yönelik kaydetmeden önce içe aktarılmış masaüstü medya alanlarını değiştirin.",
+      "Bu sürüm, oynatıcı başlığını, sanatçıyı veya oynatma zaman çizelgesini Android medya oturumlarından okumaz. Üst katman ya da bildirim izni, uygulamanın uygulamadığı bir medya toplayıcısı kazandırmaz. İçe aktarılan medya anahtarları, uydurulmuş bir parça veya ilerleme değeri göstermek yerine kullanılamaz olarak kalır."
+    ],
+    "instances": [
+      "Birden fazla HUD ve mobil kapsam",
+      "Android şu anda tek bir etkin HUD çıktısını yönetir.",
+      "HUD içeriğinde etkin profili seçin.\nBirkaç profilin zaman içinde aynı çıktıyı paylaşmasını istiyorsanız döngü listesini kullanın.\nAyarlar ve HUD için genel yazı tipi ve arayüz ölçeğini, HUD'un kendi boyutu için üst katman boyut denetimlerini kullanın.",
+      "Masaüstündeki çoklu HUD düzenleyicisi ve bağımsız konumlanan HUD pencereleri bu Android arayüzünde uygulanmamıştır. İçe aktarılan bir masaüstü örnek listesi birden fazla Android üst katman penceresi oluşturmaz. Üst katman ve yerel canlı güncelleme, seçilebilir çıktı kipleri olup iki ayrı masaüstü örneği değildir. Dil ve genel görünüş çarpanları uygulamanın tamamına uygulanır."
+    ],
+    "maintenance": [
+      "Yapılandırma, tanılama ve güncellemeler",
+      "Android dosya seçicilerini kullanın ve hataların kaynağını koruyun.",
+      "Büyük değişikliklerden önce Deneysel özellikler bölümünden yapılandırmayı sistem dosya seçicisiyle dışa aktarın.\nKaydedilmiş bir JSON yapılandırmasını geri yüklemek için içe aktarın ya da bir hatayı araştırmak için günlükleri ve tanılamayı dışa aktarın.\nHakkında bölümünde uygulama sürümünü ve güncelleme durumunu denetleyin; Sıfırla seçeneğini yalnızca ilk kurulum varsayılanlarına dönmek istediğinizde kullanın.",
+      "API anahtarları Android Keystore ile korunur ve dışa aktarılan yapılandırmada taşınabilir düz metin alanları değildir. Farklı bir kurulum veya hesap anahtarın yeniden girilmesini gerektirebilir. Sıfırla, onaydan sonra profilleri, kaynakları, yenileme aralıklarını ve görünüm ayarlarını ilk durumuna döndürür. Başarısız bir uzak güncelleme denetimi, kurulu sürümün güncel olduğunu kanıtlamaz. Gizliyken veya ekran kapalıyken örnekleme, yapılandırılan aralıklara göre yavaşlar."
+    ],
+    "troubleshooting": [
+      "Görünürlük, eksik veri ve uyarı kapsamı",
+      "Android iznini ve gerçek toplayıcı durumunu denetleyin.",
+      "Ana Sayfa → İzinler bölümünü ve çalışma durumunu, ardından HUD ana anahtarını ve seçili çıktı kipini kontrol edin.\nÜst katman için her zaman görünür seçeneğini, koordinatları, opaklığı ve üst katman iznini; canlı güncelleme için sistem uygunluk durumunu inceleyin.\n-- okumalar için değişken kaynağını, gerektiğinde Root kullanılabilirliğini, API kimlik doğrulamasını veya JSON yollarını inceleyin ve tanılamayı dışa aktarın.",
+      "Eksik veri sıfır değildir ve bir metin biçimi sensörü ya da ifadeyi onaramaz. Üst katmana izin verilse bile bazı satıcı/SELinux kısıtlamaları sürer. Uyarı onay kutusu yalnızca o uyarıda zaten listelenen değişkenleri kalıcı olarak susturur; diğer değişkenler uyarmaya devam eder. Onay kutusu işaretlenmeden kapatmak o olayı kabul etmek anlamına gelir. Susturma kaynağı onarmaz veya veri toplamayı durdurmaz."
+    ]
+  }
+}

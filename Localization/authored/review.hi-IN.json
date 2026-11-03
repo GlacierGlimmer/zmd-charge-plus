@@ -1,0 +1,16 @@
+{
+  "shared": {
+    "AC": "बिजली की आपूर्ति के लिए प्रचलित अंतरराष्ट्रीय संक्षिप्त संकेत AC ज्यों का त्यों रखा है।",
+    "NiCd": "निकेल-कैडमियम बैटरी का मानक रासायनिक संक्षिप्त संकेत ज्यों का त्यों रखा है।",
+    "NiMH": "निकेल-मेटल हाइड्राइड बैटरी का मानक रासायनिक संक्षिप्त संकेत ज्यों का त्यों रखा है।",
+    "X / px": "निर्देशांक अक्ष X और पिक्सेल की अंतरराष्ट्रीय इकाई px कोड के अनुरूप रखे गए हैं।",
+    "Y / px": "निर्देशांक अक्ष Y और पिक्सेल की अंतरराष्ट्रीय इकाई px कोड के अनुरूप रखे गए हैं।"
+  },
+  "notes": [
+    "2336 authored UI messages cover the current complete source. Existing hi-native-complete.tsv and hi-native-review.tsv are retained. New statuses are literal native translations in finish-hi-bo-statuses.tsv.",
+    "Six previously unchanged flags reviewed: Ping Jitter now names variation in ping latency; AC/NiCd/NiMH and axis/unit labels retain only reviewed technical notation.",
+    "All 36 inherited separator constructions were reopened against Chinese meanings and rewritten as complete native labels or explanatory sentences in hi-resume-natural-captions.tsv; full original/source/translation proof is retained.",
+    "Recovered existing native Hindi desktop guide, inspected all 14 chapters and refined save/apply behavior, global scale, caching, cooldown, queue, warnings and selected-window FPS attribution. Authored full Linux/macOS/Android platform sidecar: 109 fields.",
+    "Structural checks and source-identifier checks are evidence aids only. Independent native-language cross-check and visual review remain required; no distribution authorization is granted."
+  ]
+}

@@ -26,11 +26,12 @@ public sealed partial class CustomHudRuntime
         {
             var local = instance.Settings with { MultiHudEnabled=false, HudInstances=new(),
                 HudEnabled=settings.HudEnabled && instance.Settings.HudEnabled,
-                SamplingIntervalSeconds=settings.SamplingIntervalSeconds, ClickToCycle=settings.ClickToCycle, UiLanguage=settings.UiLanguage,
+                Workspace=settings.Workspace,SamplingIntervalSeconds=settings.SamplingIntervalSeconds, ClickToCycle=settings.ClickToCycle, UiLanguage=settings.UiLanguage,
                 HudHotkeyShowAnimation=settings.HudHotkeyShowAnimation,
                 GlobalFontScale=settings.GlobalFontScale,GlobalUiScale=settings.GlobalUiScale };
             if (_instances.TryGetValue(instance.Id, out var existing) && !existing.Hud.IsClosed)
             {
+                existing.Runtime._cyclePaused=_cyclePaused;
                 if (System.Text.Json.JsonSerializer.Serialize(existing.Runtime._appSettings)!=System.Text.Json.JsonSerializer.Serialize(local))
                 {
                     existing.Runtime.ApplySettings(local);
@@ -44,7 +45,7 @@ public sealed partial class CustomHudRuntime
                 try
                 {
                     hud=new HudWindow(); hud.ApplySettings(local);
-                    child=new CustomHudRuntime(hud,_variables) { _isChild=true };
+                    child=new CustomHudRuntime(hud,_variables) { _isChild=true,_cyclePaused=_cyclePaused,_selectionOwner=this,_selectionInstanceId=instance.Id };
                     child.IsUserHidden=IsUserHidden;
                     child.ApplySettings(local); _instances.Add(instance.Id,(hud,child)); child.Start();
                 }

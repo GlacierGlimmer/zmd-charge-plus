@@ -5,6 +5,7 @@ publish/
 dist/
 artifacts/
 TestResults/
+/portable-host.exe
 
 # IDE and local state
 .vs/
@@ -41,6 +42,7 @@ settings.*.json
 
 # Isolated official-period regression output
 **/obj-period/
+**/obj-store-upgrade/
 
 # Avalonia task and isolated regression/native build caches
 **/.avalonia-build-tasks/
@@ -50,3 +52,19 @@ native/ECPFrames/build/
 # Local Python tooling caches
 __pycache__/
 *.py[cod]
+
+# Retired Setup work is kept outside this repository.
+/packaging/native-setup/
+/packaging/windows-setup/
+/scripts/package-setup.ps1
+/Tests/SetupEngineTests/
+/Tests/InstallerStartupTests.csproj
+/Tests/InstallerStartupChecks.cs
+
+# Store keeps the v0.1.1 single-application registration; retired extras are local.
+/packaging/windows-store/uninstaller/
+/packaging/windows-store/create-admin-host.ps1
+/packaging/windows-store/entry-languages.json
+/packaging/windows-store/uninstall-languages.json
+/packaging/windows-store/Assets/Uninstall*
+/packaging/windows-store/Assets/uninstall.*

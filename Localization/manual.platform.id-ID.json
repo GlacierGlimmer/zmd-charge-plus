@@ -1,0 +1,171 @@
+{
+  "_labels": [
+    "Langkah",
+    "Rincian",
+    "Contoh",
+    "Kunci variabel dan contoh tetap tidak berubah.",
+    "Referensi fungsi"
+  ],
+  "linux": {
+    "sources": [
+      "Konfigurasi sumber data",
+      "Hubungkan DeepSeek dan layanan HTTP JSON.",
+      "Buka Pengelolaan data → Konfigurasi sumber data, lalu masukkan kunci API DeepSeek.\nUntuk HTTP, atur nama, URL GET, header, interval penyegaran, dan pemetaan bidang JSON; aktifkan sumbernya.\nKlik Simpan dan Terapkan, lalu salin custom.<source>.<variable> dari Pustaka variabel ke profil.",
+      "Periode sibuk DeepSeek mengikuti waktu Beijing dan kalender hari libur Tiongkok; akhir pekan tetap di luar jam sibuk meskipun dijadikan hari kerja pengganti. Interval penyegaran HTTP mengatur cache secara terpisah dari pengambilan sampel global. Setelah kegagalan, periksa custom.<source>.status dan custom.<source>.error; kode 401/403 biasanya memerlukan pemeriksaan autentikasi dan akses. Jalur JSON harus sesuai dengan respons sebenarnya. ${env:MY_API_KEY} membaca variabel lingkungan proses. PawnIO dan antarmuka desktop AIDA64 hanya tersedia di Windows."
+    ],
+    "media": [
+      "Sesi media",
+      "Build native saat ini tidak memiliki pengumpul sesi media.",
+      "Buka Pengelolaan data → Pustaka variabel dan periksa bidang yang tersedia.\nPilih profil dengan variabel yang didukung pada komputer ini.\nGanti bidang media yang tidak tersedia dengan pengukuran lain yang didukung, lalu klik Simpan dan Terapkan.",
+      "Build ini tidak menyediakan sesi pemutar native. Mengimpor profil media Windows tidak mengaktifkan pengumpul native. Judul, linimasa, atau progres yang tidak ada tetap tidak tersedia, bukan diisi dengan data buatan. Model izin sesi media Windows tidak berlaku di sini."
+    ],
+    "hardware": [
+      "Sensor perangkat keras dan akses Linux",
+      "Gunakan antarmuka Linux yang terdeteksi dan periksa pembacaan yang hilang.",
+      "Buka Pengelolaan data → Data perangkat keras dan segarkan deteksi.\nCari berdasarkan perangkat, sensor, atau ID asli; pilih baris dan salin templatnya ke HUD.\nJika pembacaan tidak ada, periksa ketersediaannya dan ekspor diagnostik sebelum mengubah izin.",
+      "Pembacaan CPU memakai /proc/stat, /proc/cpuinfo, cpufreq, atau hwmon. Akses GPU bergantung pada DRM/hwmon atau NVIDIA nvidia-smi. Driver Linux dan izin berkas menentukan simpul suhu, daya, serta tegangan yang ada dan dapat dibaca. Simpul yang didukung harus memberikan data nyata; pembacaan yang tidak tersedia tetap --. PawnIO dan AIDA64 bukan backend Linux. Kanal sensor paket, inti, dan hotspot dapat mengukur hal berbeda; nilai maksimum tidak otomatis menjadi batas spesifikasi perangkat keras."
+    ],
+    "special": [
+      "Profil waktu, jaringan, dan FPS",
+      "Pilih satuan dan target yang sesuai dengan sumber data native.",
+      "Pilih offset UTC Jam dunia atau waktu target harian pada profil.\nUntuk lalu lintas jaringan, pilih satuan byte otomatis atau Mbps dan atur acuan cincin.\nUntuk FPS, segarkan daftar jendela/layar, pilih target yang aktif, dan atur laju bingkai yang mewakili 100%; lalu klik Simpan dan Terapkan.",
+      "Jam dunia memakai offset UTC tetap tanpa perubahan waktu musim panas otomatis. 1 MB/s setara dengan 8 Mbps; bandwidth acuan cincin menentukan skala dan tidak membatasi kecepatan jaringan. ICMP mengabaikan port; probe TCP/UDP memakai port yang dikonfigurasi. Probe yang gagal tidak membuktikan seluruh perangkat sedang luring. Linux menghitung peristiwa penyelesaian X11 Present dan memerlukan sesi X11/XWayland dengan ekstensi Present serta libXpresent. Jendela Wayland native tanpa aliran presentasi X11 yang terlihat tidak dapat diukur oleh backend ini. Sebelum aliran frame nyata teramati, peristiwa yang hilang berarti data tidak tersedia. Setelah frame nyata menginisialisasi pengambilan sampel, aliran yang menganggur dapat melaporkan 0 FPS; laju penyegaran monitor tidak pernah digunakan sebagai pengganti."
+    ],
+    "maintenance": [
+      "Konfigurasi, cadangan, dan penyimpanan rahasia native",
+      "Cadangkan pengaturan dan pahami isi berkas konfigurasi.",
+      "Sebelum perubahan besar, ekspor pengaturan atau buat cadangan pada Tentang → Pengaturan dan pemeliharaan.\nImpor konfigurasi untuk memulihkannya; buka folder konfigurasi dari bilah atas dan log dari Tentang.\nSetelah memuat nilai bawaan, klik Simpan dan Terapkan untuk menerapkannya; periksa status pembaruan sebelum menyimpulkan build sudah terkini.",
+      "Linux melindungi kunci API dengan AES-GCM menggunakan berkas kunci lokal privat di secrets/master.key dalam direktori konfigurasi. Berkas itu memerlukan izin Unix privat. Ekspor konfigurasi saja tidak memindahkan kunci enkripsi lokal; saat pindah ke instalasi lain, Anda mungkin perlu memasukkan kunci API lagi. Pemeriksaan pembaruan yang gagal atau versi jarak jauh yang tidak tersedia tidak memastikan Anda memakai versi terbaru. Simpan status sumber dan diagnostik perangkat keras lokal saat menyelidiki kegagalan."
+    ],
+    "troubleshooting": [
+      "HUD dan pembacaan yang hilang",
+      "Bedakan masalah visibilitas, sumber, dan izin native.",
+      "Periksa Sakelar utama HUD, penyembunyian melalui pintasan, layar target, koordinat, dan opasitas.\nGunakan Selalu tampil untuk HUD permanen; mode sementara memerlukan peristiwa, zona pemicu, atau aturan yang dikonfigurasi.\nPastikan variabel dan satuan pada pustaka, periksa status pengambilan native atau sumber, lalu klik Simpan dan Terapkan setelah mengubah pengaturan.",
+      "Pembacaan yang tidak tersedia tetap --; format tidak dapat memperbaiki sensor yang tidak dapat diakses atau ekspresi tidak valid. Periksa jalur JSON, autentikasi API, dan izin pengambilan platform sesuai masalahnya. Jangan memasang driver Windows untuk memperbaiki antarmuka native. Kotak centang peringatan hanya membisukan variabel yang tercantum dalam peringatan itu, tetap mengaktifkan peringatan variabel lain, dan tidak memperbaiki atau menghentikan pengumpulan."
+    ]
+  },
+  "macos": {
+    "sources": [
+      "Konfigurasi sumber data",
+      "Hubungkan DeepSeek dan layanan HTTP JSON.",
+      "Buka Pengelolaan data → Konfigurasi sumber data, lalu masukkan kunci API DeepSeek.\nUntuk HTTP, atur nama, URL GET, header, interval penyegaran, dan pemetaan bidang JSON; aktifkan sumbernya.\nKlik Simpan dan Terapkan, lalu salin custom.<source>.<variable> dari Pustaka variabel ke profil.",
+      "Periode sibuk DeepSeek mengikuti waktu Beijing dan kalender hari libur Tiongkok; akhir pekan tetap di luar jam sibuk meskipun dijadikan hari kerja pengganti. Interval penyegaran HTTP mengatur cache secara terpisah dari pengambilan sampel global. Setelah kegagalan, periksa custom.<source>.status dan custom.<source>.error; kode 401/403 biasanya memerlukan pemeriksaan autentikasi dan akses. Jalur JSON harus sesuai dengan respons sebenarnya. ${env:MY_API_KEY} membaca variabel lingkungan proses. PawnIO dan antarmuka desktop AIDA64 hanya tersedia di Windows."
+    ],
+    "media": [
+      "Sesi media",
+      "Build native saat ini tidak memiliki pengumpul sesi media.",
+      "Buka Pengelolaan data → Pustaka variabel dan periksa bidang yang tersedia.\nPilih profil dengan variabel yang didukung pada komputer ini.\nGanti bidang media yang tidak tersedia dengan pengukuran lain yang didukung, lalu klik Simpan dan Terapkan.",
+      "Build ini tidak menyediakan sesi pemutar native. Mengimpor profil media Windows tidak mengaktifkan pengumpul native. Judul, linimasa, atau progres yang tidak ada tetap tidak tersedia, bukan diisi dengan data buatan. Model izin sesi media Windows tidak berlaku di sini."
+    ],
+    "hardware": [
+      "Data perangkat keras pada macOS",
+      "Baca pengukuran yang disediakan sistem dan perhatikan keterbatasan perangkat.",
+      "Buka Pengelolaan data → Data perangkat keras dan segarkan deteksi.\nCari perangkat dan bidang yang terdeteksi, lalu salin variabel yang didukung ke profil.\nJika data tidak ada, periksa status dan ekspor diagnostik; jangan menganggap hak administrator dapat menciptakan API sensor.",
+      "Statistik CPU dan memori memakai Mach atau sysctl; informasi baterai berasal dari antarmuka daya native. Penyimpanan memakai statistik volume APFS Data dan dapat berbagi kapasitas dalam satu kontainer. Nilai GPU bergantung pada antarmuka Metal/sistem yang benar-benar tersedia. Anggaran memori GPU bukan VRAM fisik khusus. Suhu atau nilai daya yang tidak disediakan perangkat keras dan OS tetap --. Build ini tidak memakai PawnIO atau antarmuka AIDA64 Windows."
+    ],
+    "special": [
+      "Profil waktu, jaringan, dan FPS",
+      "Pilih satuan dan target yang sesuai dengan sumber data native.",
+      "Pilih offset UTC Jam dunia atau waktu target harian pada profil.\nUntuk lalu lintas jaringan, pilih satuan byte otomatis atau Mbps dan atur acuan cincin.\nUntuk FPS, segarkan daftar jendela/layar, pilih target yang aktif, dan atur laju bingkai yang mewakili 100%; lalu klik Simpan dan Terapkan.",
+      "Jam dunia memakai offset UTC tetap tanpa perubahan waktu musim panas otomatis. 1 MB/s setara dengan 8 Mbps; bandwidth acuan cincin menentukan skala dan tidak membatasi kecepatan jaringan. ICMP mengabaikan port; probe TCP/UDP memakai port yang dikonfigurasi. Probe yang gagal tidak membuktikan seluruh perangkat sedang luring. macOS memakai bingkai lengkap ScreenCaptureKit dan memerlukan izin Perekaman Layar. Bingkai tidak aktif, kosong, dan ditangguhkan tidak dihitung. Jika pengambilan ditolak atau target hilang, periksa statusnya; jangan menganggap laju penyegaran layar sebagai FPS."
+    ],
+    "maintenance": [
+      "Konfigurasi, cadangan, dan penyimpanan rahasia native",
+      "Cadangkan pengaturan dan pahami isi berkas konfigurasi.",
+      "Sebelum perubahan besar, ekspor pengaturan atau buat cadangan pada Tentang → Pengaturan dan pemeliharaan.\nImpor konfigurasi untuk memulihkannya; buka folder konfigurasi dari bilah atas dan log dari Tentang.\nSetelah memuat nilai bawaan, klik Simpan dan Terapkan untuk menerapkannya; periksa status pembaruan sebelum menyimpulkan build sudah terkini.",
+      "Kunci API disimpan dalam macOS Keychain; konfigurasi menyimpan rujukan, bukan salinan rahasia yang dapat dipindahkan. Mengimpor konfigurasi ke akun atau komputer berbeda mungkin memerlukan pemasukan kunci API lagi. Izinkan permintaan akses Keychain yang sah jika diminta sistem. Pemeriksaan pembaruan yang gagal atau versi jarak jauh yang tidak tersedia tidak memastikan Anda memakai versi terbaru. Simpan status sumber dan diagnostik perangkat keras lokal saat menyelidiki kegagalan."
+    ],
+    "troubleshooting": [
+      "HUD dan pembacaan yang hilang",
+      "Bedakan masalah visibilitas, sumber, dan izin native.",
+      "Periksa Sakelar utama HUD, penyembunyian melalui pintasan, layar target, koordinat, dan opasitas.\nGunakan Selalu tampil untuk HUD permanen; mode sementara memerlukan peristiwa, zona pemicu, atau aturan yang dikonfigurasi.\nPastikan variabel dan satuan pada pustaka, periksa status pengambilan native atau sumber, lalu klik Simpan dan Terapkan setelah mengubah pengaturan.",
+      "Pembacaan yang tidak tersedia tetap --; format tidak dapat memperbaiki sensor yang tidak dapat diakses atau ekspresi tidak valid. Periksa jalur JSON, autentikasi API, dan izin pengambilan platform sesuai masalahnya. Jangan memasang driver Windows untuk memperbaiki antarmuka native. Kotak centang peringatan hanya membisukan variabel yang tercantum dalam peringatan itu, tetap mengaktifkan peringatan variabel lain, dan tidak memperbaiki atau menghentikan pengumpulan."
+    ]
+  },
+  "android": {
+    "start": [
+      "Memulai pada Android",
+      "Mulai HUD dengan izin yang dibutuhkan keluaran pilihan Anda.",
+      "Buka Beranda dan periksa Izin; izinkan tampilan di atas aplikasi lain untuk hamparan serta notifikasi saat diminta.\nPilih profil pada Konten HUD dan mode pada Tampilan dan posisi; aktifkan Sakelar utama HUD.\nKembali ke Beranda dan tekan Mulai HUD; gunakan Hentikan HUD di sana untuk menghentikan layanan.",
+      "Pengaturan umum disimpan otomatis. Penyuntingan profil memiliki tindakan Simpan sendiri; mengedit profil bawaan membuat salinan khusus. Hamparan yang berjalan dan pembaruan langsung asli adalah keluaran berbeda dengan kemampuan OS yang berbeda. Membuka aplikasi saja tidak memastikan layanan HUD latar depan sedang berjalan."
+    ],
+    "display": [
+      "Tampilan, posisi, dan tampilan global",
+      "Atur hamparan atau pembaruan langsung yang dikendalikan sistem.",
+      "Pada Tampilan dan posisi, pilih Hamparan atau Pembaruan langsung asli yang didukung.\nUntuk hamparan, pilih Selalu tampil, titik acuan beserta offset atau koordinat khusus; atur ukuran, opasitas, penghindaran potongan layar, dan penerusan sentuhan.\nBuka Bahasa → Ukuran font dan skala UI global untuk mengubah skala pengaturan dan HUD dari 75% hingga 200%; reset ke 100% memulihkan faktor global.",
+      "Penerusan sentuhan mengirim sentuhan ke aplikasi di bawah. Mulai saat boot tunduk pada pembatasan awal latar belakang Android dan izin keluaran yang dipilih. Pembaruan langsung asli membutuhkan versi Android yang didukung serta kelayakan dari sistem; Android mengatur tata letak dan ukuran teksnya. Gaya hamparan tidak dapat memaksa notifikasi sistem memakai geometri yang sama. Ukuran masing-masing HUD dikalikan dengan skala UI global."
+    ],
+    "profiles": [
+      "Profil dan konten HUD",
+      "Edit teks, ikon, ekspresi, dan cincin progres.",
+      "Pilih profil bawaan atau buat profil khusus pada Konten HUD.\nEdit teks pengantar, judul, teks utama/tambahan, nilai kanan, akhiran, ikon, dan warna aksen; periksa pratinjau.\nTetapkan variabel progres atau ekspresi yang dimulai dengan =, pilih batas minimum dan maksimum, lalu Simpan profil.",
+      "Mengedit profil bawaan menyimpan salinan khusus, bukan menimpa prasetel aslinya. Cincin memetakan nilai saat ini pada rentang yang ditentukan dan membatasi hasilnya ke 0–100%; pembacaan teks asli tidak berubah. Gunakan satuan dan nilai skala penuh yang sesuai. Aturan warna bersyarat memakai satuan pengukuran asli; data yang tidak tersedia bukan hasil pengukuran nol."
+    ],
+    "variables": [
+      "Variabel, token, dan ekspresi",
+      "Salin bidang yang didukung Android dan pertahankan kode.",
+      "Buka Pengelolaan data → Pustaka variabel dan cari nama atau kunci.\nBaca arti, satuan, ketersediaan, dan catatan sumber Android; salin variabel atau token ke profil.\nGunakan {cpu.usage|0} untuk teks berformat, atau = (cpu.usage + gpu.usage) / 2 untuk ekspresi angka; periksa pratinjau lalu Simpan.",
+      "Kunci variabel, nama fungsi, dan pipeline format adalah kode yang tidak diterjemahkan. bytes dan speed memformat ukuran/laju byte; gb:2 memakai pangkat 1024, sedangkan duration memformat detik. Fungsi ekspresi menangani aritmetika, kondisi, teks, dan nilai hilang. Data yang tidak dapat dikumpulkan tetap tidak tersedia. Variabel desktop mungkin memiliki alias Android atau tidak memiliki pembaca Android; periksa pustaka sebenarnya, jangan menganggap kunci impor didukung."
+    ],
+    "hardware": [
+      "Data perangkat keras dan Root opsional",
+      "Baca kemampuan Android yang nyata tanpa menggantinya dengan driver desktop.",
+      "Buka Pengelolaan data → Data perangkat keras untuk melihat bidang yang terdeteksi dan ketersediaannya.\nJika ponsel sudah di-root, buka Fitur eksperimental → Gunakan Root untuk pengumpulan pembacaan dan tentukan apakah ECP diizinkan dalam pengelola Root.\nSegarkan deteksi, periksa status sumber yang dihasilkan, lalu salin bidang yang didukung atau ekspor diagnostik.",
+      "Akses Root bersifat opsional dan tidak melakukan root pada ponsel. Akses ini menambah izin baca simpul CPU/GPU, suhu, dan memori vendor; perangkat tanpa simpul yang cocok tetap tidak memiliki pembacaan. Pengumpul baterai dan memori biasa tetap bekerja tanpa Root. Nilai hilang tidak tersedia, bukan nol buatan. PawnIO dan antarmuka AIDA64 Windows tidak berjalan di Android. Energi baterai saat penuh dapat diperkirakan dari energi terukur dan persentase pengisian; nilai itu bukan kapasitas desain terukur."
+    ],
+    "sources": [
+      "Sumber DeepSeek dan HTTP JSON",
+      "Atur layanan dan periksa status respons sebenarnya.",
+      "Buka Pengelolaan data → Konfigurasi sumber data dan masukkan kunci API DeepSeek; simpan dengan tindakan penyimpanan kunci.\nUntuk sumber HTTP, isi nama, URL GET JSON, header, interval, dan jalur bidang; aktifkan sumber yang sudah disiapkan.\nCari custom.<source>.<variable> dalam pustaka; jika gagal, periksa custom.<source>.status dan custom.<source>.error.",
+      "Kunci API dienkripsi dengan Android Keystore; ekspor konfigurasi bukan cadangan rahasia yang dapat dipindahkan. Masukkan kunci lagi jika instalasi lain tidak dapat membacanya. Periode DeepSeek mengikuti waktu Beijing dan kalender hari libur Tiongkok; hari kerja pengganti pada akhir pekan tetap di luar jam sibuk. Cache HTTP mengikuti interval tiap sumber. Cocokkan jalur JSON dengan respons nyata dan periksa autentikasi untuk 401/403. ${env:MY_API_KEY} hanya bekerja jika variabel lingkungan proses itu ada. Contoh JSON awalnya dinonaktifkan; ganti URL dan pemetaannya sebelum mengaktifkan."
+    ],
+    "cycle": [
+      "Rotasi otomatis dan animasi",
+      "Urutkan profil dan pilih transisi hamparan.",
+      "Simpan profil yang ingin dirotasi, lalu tambahkan ke Antrean rotasi pada Konten HUD.\nGunakan Naik dan Turun untuk mengubah urutan, atau Hapus untuk mengeluarkan entri dari antrean.\nAktifkan rotasi otomatis, atur interval 3 hingga 3600 detik, lalu pilih Sederhana atau Lengkap untuk transisi hamparan.",
+      "Mengeluarkan entri antrean tidak menghapus profilnya. Transisi rotasi menggantikan animasi masing-masing profil. Antrean kosong memakai profil aktif; satu entri tidak dapat berpindah ke profil berbeda. Android saat ini menyediakan transisi hamparan Sederhana dan Lengkap; Gulir ke atas pada desktop bukan transisi Android. Pembaruan langsung asli dirender oleh Android, bukan mesin animasi hamparan."
+    ],
+    "summons": [
+      "Menampilkan dan menghentikan HUD Android",
+      "Gunakan kontrol Android, bukan pintasan desktop atau zona pemicu mouse.",
+      "Gunakan Beranda → Mulai HUD untuk menjalankan keluaran pilihan dan Beranda → Hentikan HUD untuk menghentikannya.\nUntuk hamparan permanen, aktifkan Selalu tampil pada Tampilan dan posisi.\nUntuk hamparan yang muncul saat diperlukan, matikan Selalu tampil dan periksa perilaku peristiwa daya serta durasi tampilan yang didukung.",
+      "UI Android tidak memiliki pintasan keyboard global tampil/sembunyi atau editor zona pemicu mouse milik desktop. Mengimpor pengaturan tersebut dari desktop tidak menciptakan kontrol Android. Sakelar utama HUD menekan keluaran; layanan latar belakang dan notifikasi latar depannya mungkin memiliki status berjalan sendiri. Gunakan Hentikan HUD untuk menghentikan layanan."
+    ],
+    "triggers": [
+      "Aturan peristiwa dan batas Android",
+      "Periksa perilaku yang didukung sebelum mengandalkan aturan impor.",
+      "Periksa variabel dan nilai terkininya dalam Pengelolaan data sebelum mengatur profil.\nGunakan rotasi otomatis Android atau tampilan peristiwa daya yang didukung untuk perilaku otomatis yang tersedia.\nPastikan keadaan HUD sebenarnya di Beranda dan biarkan Selalu tampil aktif jika memerlukan tampilan permanen.",
+      "UI pengaturan Android ini tidak menyediakan editor Aturan pemicu desktop atau antrean aturan per instansnya. Mengimpor aturan ambang/perubahan desktop tidak membuat fitur itu tersedia. Peringatan data adalah pemberitahuan kegagalan sumber, bukan aturan ambang otomatis. Jangan mengandalkan aturan yang belum diimplementasikan untuk pengingat."
+    ],
+    "special": [
+      "Waktu, jaringan, dan FPS Android",
+      "Pilih pengukuran nyata dan target yang didukung.",
+      "Atur offset UTC Jam dunia atau target harian; offset tetap tidak otomatis mengikuti perubahan waktu musim panas.\nPilih satuan byte otomatis atau Mbps untuk lalu lintas jaringan, lalu atur target serta port ICMP/TCP/UDP sesuai kebutuhan.\nUntuk FPS, izinkan Root bila diperlukan, segarkan target, pilih lapisan SurfaceFlinger atau layar, dan atur laju bingkai yang mewakili 100%.",
+      "1 MB/s setara dengan 8 Mbps. Acuan cincin menentukan skala tanpa membatasi bandwidth. ICMP mengabaikan port; kegagalan target TCP/UDP/ICMP tidak membuktikan seluruh jaringan putus. FPS jendela berasal dari stempel waktu bingkai yang benar-benar ditampilkan pada lapisan SurfaceFlinger pilihan. FPS layar memerlukan penghitung bingkai komposisi vendor dan tidak dapat diatribusikan jika beberapa layar menimbulkan ambiguitas. Data bingkai yang tidak didukung atau hilang tetap tidak tersedia; laju penyegaran tidak pernah digunakan sebagai pengganti."
+    ],
+    "media": [
+      "Ketersediaan sesi media",
+      "Build Android saat ini tidak memiliki sumber sesi pemutar.",
+      "Periksa bidang yang didukung pada Pustaka variabel Android.\nPilih profil yang memakai bidang tersebut, seperti waktu, baterai, atau memori.\nGanti bidang media desktop yang diimpor sebelum menyimpan profil untuk Android.",
+      "Build ini tidak membaca judul pemutar, artis, atau linimasa pemutaran dari sesi media Android. Izin hamparan atau notifikasi tidak menyediakan pengumpul media yang belum diimplementasikan aplikasi. Kunci media impor tetap tidak tersedia, bukan menampilkan lagu atau nilai progres buatan."
+    ],
+    "instances": [
+      "Beberapa HUD dan cakupan seluler",
+      "Android saat ini mengendalikan satu keluaran HUD aktif.",
+      "Pilih profil aktif pada Konten HUD.\nGunakan antrean rotasi jika beberapa profil ingin memakai keluaran itu secara bergantian.\nGunakan skala font dan UI global untuk pengaturan serta HUD; gunakan kontrol ukuran hamparan untuk ukuran masing-masing HUD.",
+      "Editor multi-instans desktop dan jendela HUD dengan posisi independen belum diimplementasikan dalam UI Android ini. Mengimpor daftar instans desktop tidak membuat beberapa jendela hamparan Android. Hamparan dan Pembaruan langsung asli adalah mode keluaran yang dipilih, bukan dua instans desktop dengan konfigurasi independen. Bahasa dan faktor tampilan global berlaku di seluruh aplikasi."
+    ],
+    "maintenance": [
+      "Konfigurasi, diagnostik, dan pembaruan",
+      "Gunakan pemilih berkas Android dan pertahankan informasi sumber kegagalan.",
+      "Sebelum perubahan besar, gunakan Fitur eksperimental untuk mengekspor konfigurasi melalui pemilih berkas sistem.\nImpor konfigurasi JSON yang disimpan untuk memulihkan, atau ekspor log dan diagnostik untuk menyelidiki kegagalan.\nPeriksa versi aplikasi dan status pembaruan di Tentang; gunakan Reset hanya jika ingin memulihkan nilai bawaan instalasi pertama.",
+      "Kunci API dilindungi Android Keystore dan bukan bidang rahasia teks biasa yang dapat dipindahkan dalam ekspor konfigurasi. Instalasi atau akun berbeda mungkin memerlukan pemasukan kunci lagi. Setelah konfirmasi, Reset memulihkan profil, sumber, interval penyegaran, dan pengaturan tampilan. Pemeriksaan pembaruan jarak jauh yang gagal tidak memastikan versi terpasang sudah terbaru. Pengambilan sampel melambat saat tersembunyi atau layar mati sesuai interval yang dikonfigurasi."
+    ],
+    "troubleshooting": [
+      "Visibilitas, data hilang, dan cakupan peringatan",
+      "Periksa izin Android dan status pengumpul yang sebenarnya.",
+      "Periksa Beranda → Izin serta status berjalan, kemudian Sakelar utama HUD dan mode keluaran pilihan.\nUntuk hamparan, periksa Selalu tampil, koordinat, opasitas, dan izin hamparan; untuk pembaruan langsung, periksa status kelayakan sistem.\nUntuk pembacaan --, periksa sumber variabel, ketersediaan Root bila berlaku, autentikasi API atau jalur JSON, lalu ekspor diagnostik.",
+      "Data hilang bukan nol, dan format teks tidak dapat memperbaiki sensor atau ekspresi. Beberapa batas vendor/SELinux tetap berlaku meskipun hamparan diizinkan. Kotak centang peringatan secara permanen membisukan hanya variabel yang sudah tercantum dalam peringatan itu; variabel lain tetap diperingatkan. Menutup tanpa kotak centang hanya mengakui kejadian tersebut. Pembisuan tidak memperbaiki sumber atau menghentikan pengumpulan."
+    ]
+  }
+}

@@ -17,6 +17,7 @@ public sealed partial class CustomHudRuntime : IDisposable
     private readonly bool _ownsVariables;
     private readonly string _warningScope=Guid.NewGuid().ToString("N");
     private readonly DispatcherTimer _timer;
+    private readonly DispatcherTimer _observationTimer;
     private readonly SemaphoreSlim _operation = new(1,1);
     private CancellationTokenSource _revision = new();
     private CancellationToken _activeToken;
@@ -88,10 +89,17 @@ public sealed partial class CustomHudRuntime : IDisposable
         _variables=variables ?? new();
         _ownsVariables=variables is null;
         _hud = hud;
+        _hud.ShouldHoldTransient=()=>_appSettings.TransientHoverHold && !_appSettings.AlwaysVisible && WindowsSystemProbe.TryGetCursorPosition(out var point) && (_hud.IsPointInConfiguredHotZone(point) || _hud.IsPointInsideVisibleHud(point));
         _hud.HudClicked += OnHudClicked;
+        _hud.HudScrolled += OnHudScrolled;
+        _hud.RadialProfilesProvider=GetRadialProfiles;
+        _hud.RadialOpened+=OnRadialOpened;
+        _hud.RadialFinished+=OnRadialFinished;
         // 100 ms：用于屏幕顶边热点检测和墙钟秒边界同步。重型指标仍按需采样。
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
-        _timer.Tick += (_, _) => { ObserveHotZone();_ = RunSerializedAsync(TickAsync); };
+        _timer.Tick += (_, _) => { _ = RunSerializedAsync(TickAsync); };
+        _observationTimer=new DispatcherTimer { Interval=TimeSpan.FromMilliseconds(100) };
+        _observationTimer.Tick+=(_,_)=>{ObserveHotZone();_ = ObserveTriggerRulesAsync();};
         _hud.Closed += OnHudClosed;
     }
 
@@ -105,6 +113,7 @@ public sealed partial class CustomHudRuntime : IDisposable
     private void ConfigureSettings(AppSettings settings)
     {
         _pendingSettings = null;
+        if(_settings.AutoCycle!=(settings?.CustomHud?.AutoCycle??false))_cyclePaused=false;
         _appSettings = settings ?? new AppSettings();
         SyncInstances(_appSettings);
         _variables.SamplingIntervalSeconds = _appSettings.SamplingIntervalSeconds;
@@ -212,9 +221,10 @@ public sealed partial class CustomHudRuntime : IDisposable
     {
         if (_disposed || _running) return;
         _running=true;
+        _observationTimer.Start();
         RunSerializedAsync(RunStartupPresentationAsync,wait:true);
     }
-    public void Stop() { _running=false; _timer.Stop(); CancelRevision(); }
+    public void Stop() { _running=false; _timer.Stop();_observationTimer.Stop(); CancelRevision();ResetTriggerRules(); }
 
     private async Task RunStartupPresentationAsync()
     {
@@ -292,7 +302,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private async Task TickAsync()
     {
-        if (_disposed || IsUserHidden) return;
+        if (_disposed || IsUserHidden || _hud.IsRadialOpen) return;
         if (Volatile.Read(ref _settingsTransitionBusy) != 0) return;
         KeepFrameCaptureAlive();
 
@@ -337,6 +347,9 @@ public sealed partial class CustomHudRuntime : IDisposable
             return;
         }
 
+        // Direct pointer interaction takes precedence over repeatable background rules.
+        if(await TryShowHotZoneAsync())return;
+
         PollDeepSeekPeriodTransition();
         if (_pendingDeepSeekPeriodTransition && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
         {
@@ -351,11 +364,14 @@ public sealed partial class CustomHudRuntime : IDisposable
             _pendingDeepSeekPeriodTransition = false;
         }
 
-        if(await TickTriggerRulesAsync()) return;
+        bool cycleDue=_settings.AutoCycle && !_cyclePaused && DateTime.UtcNow>=_nextPersistentCycle;
+        // Alternate due automatic rotation and rules so a sustained threshold
+        // cannot keep automatic rotation permanently waiting either.
+        if((!cycleDue || !_lastTransientWasRule) && await TickTriggerRulesAsync())return;
 
         // Each transient carousel entry follows its normal show/hold/hide lifecycle.
         // A busy animation delays the next entry instead of skipping queued profiles.
-        if (_settings.AutoCycle && DateTime.UtcNow >= _nextPersistentCycle
+        if (_settings.AutoCycle && !_cyclePaused && DateTime.UtcNow >= _nextPersistentCycle
             && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
         {
             var queue = ResolveCycleProfiles();
@@ -363,23 +379,12 @@ public sealed partial class CustomHudRuntime : IDisposable
             {
                 int next = (_profileIndex + 1) % queue.Count;
                 _nextPersistentCycle = DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds, 3, 3600));
-                if (await TriggerTransientProfileAsync(ApplyCycleAnimationMode(queue[next]))) _profileIndex = next;
+                if (await TriggerTransientProfileAsync(ApplyCycleAnimationMode(queue[next]))) {_profileIndex = next;_lastTransientWasRule=false;}
                 return;
             }
         }
 
-        if (!_hotZone.Ready(Environment.TickCount64,_appSettings.HotZoneDwellMilliseconds) || _hud.IsHudBusy || Volatile.Read(ref _busy) != 0)
-            return;
-
-        var hotQueue=ResolveCycleProfiles();
-        int hotNext=_appSettings.HotZoneAdvanceQueue && hotQueue.Count>0 ? (_eventCycleIndex+1)%hotQueue.Count : -1;
-        var active = hotNext<0 ? ResolveActiveProfile() : ApplyCycleAnimationMode(hotQueue[hotNext]);
-        if (active is null)
-            return;
-
-        _hotZone.Presented();
-        if (await TriggerTransientProfileAsync(active)) { if(hotNext>=0)_eventCycleIndex=hotNext; }
-        else _hotZone.Reset();
+        await TickTriggerRulesAsync();
     }
 
     private void ObserveHotZone()
@@ -490,7 +495,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private async Task TickPersistentAsync()
     {
-        if (_disposed || IsUserHidden) return;
+        if (_disposed || IsUserHidden || _hud.IsRadialOpen) return;
         var profiles = _settings.AutoCycle
             ? ResolveCycleProfiles().ToList()
             : _settings.Profiles.ToList();
@@ -517,7 +522,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
         var nowUtc = DateTime.UtcNow;
 
-        if (_settings.AutoCycle && nowUtc >= _nextPersistentCycle && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
+        if (_settings.AutoCycle && !_cyclePaused && nowUtc >= _nextPersistentCycle && !_hud.IsHudBusy && Volatile.Read(ref _busy) == 0)
         {
             if (_persistentShown)
             {
@@ -597,10 +602,14 @@ public sealed partial class CustomHudRuntime : IDisposable
                 return HudProfileRenderer.Render(renderProfile, latest);
             };
 
-            if (profileChanged || deepSeekPeriodChanged)
+            if(_instantSettingsRefresh)
             {
-                if (profileChanged && !deepSeekPeriodChanged && _settings.CycleAnimationMode=="Roll")
-                    await _hud.RollToPersistentAsync(data,refresh);
+                _hud.ShowPersistentImmediate(data);_instantSettingsRefresh=false;_persistentShown=true;
+            }
+            else if (profileChanged || deepSeekPeriodChanged)
+            {
+                if (profileChanged && !deepSeekPeriodChanged && (_manualRollDirection!=0 || _settings.CycleAnimationMode=="Roll"))
+                    await _hud.RollToPersistentAsync(data,refresh,_manualRollDirection==0?-1:_manualRollDirection);
                 else
                 {
                     await _hud.HideAnimatedAsync();
@@ -620,14 +629,16 @@ public sealed partial class CustomHudRuntime : IDisposable
             }
 
             _activeToken.ThrowIfCancellationRequested();
+            if(_manualProfileId==profile.Id)_manualRollDirection=0;
             _persistentProfileId = profile.Id;
             _nextPersistentRefresh = clockAccurate ? DateTime.MinValue : DateTime.UtcNow.AddSeconds(NextSamplingInterval(profile,vars));
             if (clockAccurate)
                 _lastRenderedLocalSecond = DateTime.Now.Ticks / TimeSpan.TicksPerSecond;
         }
         catch (OperationCanceledException) { throw; }
-        catch
+        catch(Exception ex)
         {
+            System.Diagnostics.Trace.WriteLine("Persistent HUD refresh failed: "+ex);
             _nextPersistentRefresh = DateTime.UtcNow.AddSeconds(2);
         }
         finally
@@ -712,22 +723,45 @@ public sealed partial class CustomHudRuntime : IDisposable
         return 0;
     }
 
-    private void OnHudClicked()
+    private bool _cyclePaused;
+    public bool IsAutoCyclePaused=>_cyclePaused;
+    public Task PreviewAllAsync()=>Task.WhenAll(new[]{PreviewActiveAsync()}.Concat(_instances.Values.Select(i=>i.Runtime.PreviewActiveAsync())));
+    public void ToggleAutoCyclePaused()
     {
-        if (_disposed || !_appSettings.AlwaysVisible || !_appSettings.ClickToCycle) return;
+        SetCyclePaused(!_cyclePaused);
+        foreach(var child in _instances.Values)child.Runtime.SetCyclePaused(_cyclePaused);
+    }
+    private void SetCyclePaused(bool paused){_cyclePaused=paused;_nextPersistentCycle=DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds,3,3600));}
+    public void StepProfiles(int delta)
+    {
+        SwitchProfile(delta);
+        foreach(var child in _instances.Values)child.Runtime.SwitchProfile(delta);
+    }
+    private void OnHudClicked(){if(_appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(1);}
+    private void OnHudScrolled(int delta)
+    {
+        if(_appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(delta,true);
+    }
+    internal void SwitchProfile(int delta,bool directed=false)
+    {
+        if(_disposed || delta==0)return;
         var queue=ResolveCycleProfiles();
-        if (queue.Count<2) return;
+        if(queue.Count<2)return;
         string current=string.IsNullOrEmpty(_manualProfileId)
-            ? (string.IsNullOrEmpty(_persistentProfileId) ? ResolveActiveProfile()?.Id ?? "" : _persistentProfileId)
-            : _manualProfileId;
-        int index=queue.ToList().FindIndex(p => string.Equals(p.Id,current,StringComparison.OrdinalIgnoreCase));
-        _manualProfileId=queue[(index+1)%queue.Count].Id;
-        _profileIndex=_settings.AutoCycle ? (index+1)%queue.Count : ResolveActiveProfileIndex();
+            ? (string.IsNullOrEmpty(_persistentProfileId)?ResolveActiveProfile()?.Id??"":_persistentProfileId):_manualProfileId;
+        int index=queue.ToList().FindIndex(p=>string.Equals(p.Id,current,StringComparison.OrdinalIgnoreCase));
+        if(index<0)index=delta>0?-1:0;
+        int next=((index+delta)%queue.Count+queue.Count)%queue.Count;
+        _manualProfileId=queue[next].Id;
+        _manualRollDirection=directed?Math.Sign(delta):0;
+        NotifyProfileSelected(_manualProfileId);
+        _profileIndex=_settings.AutoCycle?next:ResolveActiveProfileIndex();
         _nextPersistentCycle=DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds,3,3600));
-        _nextPersistentRefresh=DateTime.MinValue; _lastRenderedLocalSecond=-1;
-        // Interrupt an obsolete sample/animation and retain the latest requested profile.
+        _nextPersistentRefresh=DateTime.MinValue;_lastRenderedLocalSecond=-1;
         CancelRevision();
-        RunSerializedAsync(TickAsync,wait:true);
+        if(IsUserHidden)return;
+        if(_appSettings.AlwaysVisible || _editingPreview)RunSerializedAsync(TickAsync,wait:true);
+        else RunSerializedAsync(async()=>{await TriggerTransientProfileAsync(ApplyCycleAnimationMode(queue[next]));},wait:true);
     }
 
     private async Task<Dictionary<string,object?>> SnapshotProfileAsync(HudProfile profile, IEnumerable<string> required, CancellationToken ct=default)
@@ -746,9 +780,12 @@ public sealed partial class CustomHudRuntime : IDisposable
     {
         if (_disposed) return;
         _disposed=true; _running=false;
-        _timer.Stop(); _revision.Cancel(); _hud.CancelPresentation();
+        _timer.Stop();_observationTimer.Stop(); _revision.Cancel(); _hud.CancelPresentation();
         ProfileDataWarnings.Forget(_warningScope);
+        _hud.ShouldHoldTransient=null;
         _hud.HudClicked -= OnHudClicked;
+        _hud.HudScrolled -= OnHudScrolled;
+        _hud.RadialOpened-=OnRadialOpened;_hud.RadialFinished-=OnRadialFinished;_hud.RadialProfilesProvider=null;_hud.CancelRadial();
         _hud.Closed -= OnHudClosed;
         DisposeInstances();
         if (!_isChild) FrameRateBackend.Stop();

@@ -46,7 +46,8 @@ public partial class SettingsWindow
         var editButton = InstanceText(new Button(),"定位并编辑所选 HUD", "Locate and edit selected HUD");
         var add = InstanceText(new Button { Name="AddHudInstanceButton" },"新增 HUD", "Add HUD");
         var remove = InstanceText(new Button(),"删除所选实例", "Remove selected instance");
-        var buttons = new StackPanel { Orientation=Orientation.Horizontal, Spacing=10 };
+        var buttons = new WrapPanel { Orientation=Orientation.Horizontal };
+        foreach(var button in new[]{add,remove,editButton})button.Margin=new Thickness(0,0,10,8);
         buttons.Children.Add(add); buttons.Children.Add(remove); buttons.Children.Add(editButton);
         ExperimentalPanel.Children.Add(InstanceText(new TextBlock { FontSize=18 },"多实例 HUD", "Multiple HUD instances"));
         ExperimentalPanel.Children.Add(InstanceText(new TextBlock { TextWrapping=TextWrapping.Wrap },
@@ -141,7 +142,10 @@ public partial class SettingsWindow
     private void ApplySettingsToControls(AppSettings settings)
     {
         HudHotkeyBox.Text=settings.HudToggleHotkey;
+        LoadQuickHotkeys(settings);
         HudHotkeyAnimationCombo.SelectedIndex=settings.HudHotkeyShowAnimation=="Simple" ? 0 : 1;
+        _workspaceDraft=WorkspacePreferences.Normalize(settings.Workspace);
+        if (_workspaceReady) { WorkspaceTheme.Apply(this,_workspaceDraft); RefreshQuickActionsLocalization(); }
         _rootSettings=settings; _persistedRootSettings=settings; _selectedInstanceId=""; ApplyEditorControls(settings); RefreshInstanceEditor(); _=RefreshEditingHighlightAsync();
         GlobalAppearance.Apply(this,settings.GlobalFontScale,settings.GlobalUiScale);
         RefreshHudHotkeyRegistrationStatus();
@@ -158,10 +162,11 @@ public partial class SettingsWindow
                 HudInstances=_rootSettings.HudInstances.Select(i => i.Id==_selectedInstanceId ? i with {
                     Settings=editor, Name=string.IsNullOrWhiteSpace(_instanceName?.Text) ? i.Name : _instanceName.Text.Trim() } : i).ToList() };
         _rootSettings=_rootSettings with { HudToggleHotkey=HudHotkeyBox.Text?.Trim() ?? "",
+            QuickHotkeys=CollectQuickHotkeys(),
             HudHotkeyShowAnimation=HudHotkeyAnimationCombo.SelectedIndex==0 ? "Simple" : "Full",
-            SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,UiLanguage=editor.UiLanguage,
+            Workspace=editor.Workspace,SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,UiLanguage=editor.UiLanguage,
             HudInstances=_rootSettings.HudInstances.Select(i=>i with { Settings=i.Settings with {
-                SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,
+                Workspace=editor.Workspace,SamplingIntervalSeconds=editor.SamplingIntervalSeconds,ClickToCycle=editor.ClickToCycle,
                 GlobalFontScale=_rootSettings.GlobalFontScale,GlobalUiScale=_rootSettings.GlobalUiScale } }).ToList() };
         return _rootSettings;
     }

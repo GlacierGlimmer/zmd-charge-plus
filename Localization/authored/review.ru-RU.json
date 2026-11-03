@@ -1,0 +1,12 @@
+{
+  "shared": {
+    "AC": "Conventional alternating-current abbreviation in power telemetry, retained as a technical label.",
+    "NiCd": "Language-independent chemical abbreviation for nickel-cadmium batteries.",
+    "NiMH": "Language-independent chemical abbreviation for nickel-metal-hydride batteries.",
+    "X / px": "X-coordinate label with the standard pixel unit.",
+    "Y / px": "Y-coordinate label with the standard pixel unit."
+  },
+  "notes": [
+    "All 2313 active keys authored and the old partial pack reviewed against complete Chinese definitions. Mechanical term composition was rewritten; source counters, format arguments, API identifiers and permission/platform limitations were preserved. All 14 native manual chapters were reviewed, with current scale and save semantics added. Independent crossreview and visual/platform checks remain required."
+  ]
+}

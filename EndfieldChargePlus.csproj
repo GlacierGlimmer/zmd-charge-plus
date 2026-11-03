@@ -10,13 +10,13 @@
     <AssemblyName>EndfieldChargePlus</AssemblyName>
     <Product>Endfield Charge Plus</Product>
     <Title>Endfield Charge Plus</Title>
-    <Company>GlacierGlimmer_冰川雪貓</Company>
-    <Authors>GlacierGlimmer_冰川雪貓</Authors>
-    <Copyright>© 2026 GlacierGlimmer_冰川雪貓</Copyright>
+    <Company>GlacierGlimmer冰川雪貓</Company>
+    <Authors>GlacierGlimmer冰川雪貓</Authors>
+    <Copyright>© 2026 GlacierGlimmer冰川雪貓</Copyright>
     <Description>Configurable Endfield-style HUD for Windows</Description>
-    <Version>0.1.2</Version>
-    <AssemblyVersion>0.1.2.0</AssemblyVersion>
-    <FileVersion>0.1.2.0</FileVersion>
+    <Version>0.2.0</Version>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\tray_bolt.ico</ApplicationIcon>
     <NoWarn>$(NoWarn);AVLN3001</NoWarn>
@@ -30,6 +30,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.1" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
     <PackageReference Include="System.Management" Version="10.0.2" />
@@ -41,18 +42,29 @@
     <Compile Remove="Tests\**;artifacts\**;publish\**;packaging\**;scripts\localization\catalog\**" />
     <Compile Remove="Customization\Linux*.cs;Interop\LinuxDesktop.cs" />
     <AvaloniaResource Include="Assets\tray_bolt.png" />
+    <AvaloniaResource Include="Assets/Platforms/*.svg" />
+    <AvaloniaResource Include="Assets/About/*.svg" />
     <AvaloniaResource Include="Assets\Fonts\*.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Localization/reviewed-language-catalog.json" WithCulture="false" LogicalName="EndfieldChargePlus.LanguageCatalog" />
-    <EmbeddedResource Include="Localization/*.json" Exclude="Localization/reviewed-*.json" WithCulture="false" LogicalName="EndfieldChargePlus.Localization.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Localization/platform-fields.json" WithCulture="false" LogicalName="EndfieldChargePlus.PlatformFields" />
+    <EmbeddedResource Include="Localization/reviewed-release-requirements.json" WithCulture="false" LogicalName="EndfieldChargePlus.LocaleReleaseRequirements" />
+    <EmbeddedResource Include="Localization/reviewed-shared-words.json" Condition="Exists('Localization/reviewed-shared-words.json')" WithCulture="false" LogicalName="EndfieldChargePlus.LocaleSharedWords" />
+    <EmbeddedResource Include="Localization/*.lang" WithCulture="false" LogicalName="EndfieldChargePlus.lang.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Localization/*.lang.sha256" WithCulture="false" LogicalName="EndfieldChargePlus.lang.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Localization/manual.*.json" WithCulture="false" LogicalName="EndfieldChargePlus.Localization.%(Filename)%(Extension)" />
     <EmbeddedResource Include="Assets/china-holidays.json" LogicalName="EndfieldChargePlus.china-holidays.json" />
     <EmbeddedResource Include="Assets/PresentMon/ECPFrames-x64.exe" LogicalName="EndfieldChargePlus.PresentMon" />
     <EmbeddedResource Include="Assets/PresentMon/ECPFrames-arm64.exe" LogicalName="EndfieldChargePlus.PresentMon.Arm64" />
     <EmbeddedResource Include="Assets/PresentMon/LICENSE.txt" LogicalName="EndfieldChargePlus.PresentMon.License" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Licenses/*-LICENSE.txt" Link="licenses/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Licenses/Filee-MIT.txt" Link="licenses/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <None Update="Assets/Fonts/OFL-NotoSerifTibetan.txt" Link="licenses/NotoSerifTibetan-OFL.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Assets/Fonts/OFL-NotoSansGothic.txt" Link="licenses/NotoSansGothic-OFL.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="Assets/Fonts/OFL-NotoSansDeseret.txt" Link="licenses/NotoSansDeseret-OFL.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

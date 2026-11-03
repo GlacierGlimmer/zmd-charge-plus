@@ -65,7 +65,7 @@ internal sealed class LanguageSelectionWindow : Window
     private void Refresh()
     {
         Title=_heading.Text="Language / "+LocalizationManager.CurrentLanguage.LanguageWord;
-        _search.Watermark=T("搜索语言、地区或语言代码","Search languages, regions or language codes");
+        _search.Watermark=T("搜索语言","Search languages, regions or language codes");
         AutomationProperties.SetName(_search,_search.Watermark?.ToString());
         _appearance.Content=new TextBlock {Text=T("全局字体大小和UI缩放","Global font size and UI scale"),TextWrapping=TextWrapping.Wrap,TextAlignment=TextAlignment.Center};
         _done.Content=T("完成","Done");
@@ -92,8 +92,8 @@ internal sealed class LanguageSelectionWindow : Window
     private async Task OpenAppearanceAsync()
     {
         var settings=_settings();
-        var font=new NumericUpDown {Name="GlobalFontScaleBox",Minimum=75,Maximum=200,Increment=5,Value=(decimal)(100*GlobalAppearance.NormalizeScale(settings.GlobalFontScale)),FormatString="0'%'"};
-        var ui=new NumericUpDown {Name="GlobalUiScaleBox",Minimum=75,Maximum=200,Increment=5,Value=(decimal)(100*GlobalAppearance.NormalizeScale(settings.GlobalUiScale)),FormatString="0'%'"};
+        var font=new NumericUpDown {Name="GlobalFontScaleBox",Minimum=80,Maximum=125,Increment=5,Value=(decimal)(100*GlobalAppearance.NormalizeFontScale(settings.GlobalFontScale)),FormatString="0'%'"};
+        var ui=new NumericUpDown {Name="GlobalUiScaleBox",Minimum=80,Maximum=150,Increment=5,Value=(decimal)(100*GlobalAppearance.NormalizeUiScale(settings.GlobalUiScale)),FormatString="0'%'"};
         var panel=new StackPanel {Spacing=14,Margin=new Thickness(24),MinWidth=400};
         panel.Children.Add(new TextBlock {Text=T("全局字体大小和UI缩放","Global font size and UI scale"),FontSize=20,TextWrapping=TextWrapping.Wrap});
         panel.Children.Add(new TextBlock {Text=T("字体缩放","Font scale")});panel.Children.Add(font);

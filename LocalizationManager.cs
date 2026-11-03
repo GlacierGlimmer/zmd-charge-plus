@@ -4,33 +4,9 @@ using System.Globalization;
 using System.Linq;
 using Avalonia.Controls;
 using Avalonia.LogicalTree;
+using Avalonia.VisualTree;
 
 namespace EndfieldChargePlus;
-
-public enum AppLanguage
-{
-    SimplifiedChinese,
-    English,
-    TraditionalChinese,
-    Japanese,
-    Korean,
-    German,
-    French,
-    Spanish,
-    Portuguese,
-    Russian,
-    Arabic,
-    Hindi,
-    Bengali,
-    Urdu,
-    Indonesian,
-    Vietnamese,
-    Thai,
-    Turkish,
-    Italian,
-    Persian,
-    Tibetan,
-}
 
 /// <summary>
 /// Runtime UI/HUD language state. "Auto" resolves the system UI culture through the
@@ -73,7 +49,7 @@ public static partial class LocalizationManager
         ["快捷键显示动画"] = "Shortcut show animation",
         ["触发规则"] = "Trigger rules",
         ["事件呼出"] = "Event summons",
-        ["仅在关闭“一直显示”时生效。满足规则后按轮播队列呼出下一项；空队列使用当前方案。首次采样和数据恢复只建立基线。"] = "Active when Always Visible is off. Matching rules summon the next carousel item, or the current profile if the queue is empty. Initial and recovered samples only establish a baseline.",
+        ["仅在关闭“一直显示”时生效。满足规则后按轮播队列呼出下一项；空队列使用当前方案。首次采样和数据恢复只建立基线。鼠标热区优先响应；热区和规则各自推进队列。HUD 展示期间仍按全局与数据源设置的间隔采样，忙碌时检测到的触发会合并保留。"] = "Active when Always Visible is off. Matching rules summon the next carousel item, or the current profile if the queue is empty. Initial and recovered samples only establish a baseline.",
         ["添加规则"] = "Add rule",
         ["删除所选规则"] = "Remove selected rule",
         ["启用这条规则"] = "Enable this rule",
@@ -270,7 +246,7 @@ public static partial class LocalizationManager
         return LanguageForCulture(preference) is { } language ? PreferenceFor(language) : "Auto";
     }
 
-    public static string PreferenceFor(AppLanguage language) => SupportedLanguages.First(l=>l.Language==language).Code;
+    public static string PreferenceFor(AppLanguage language) => SupportedLanguages.FirstOrDefault(l=>l.Language==language)?.Code ?? "Auto";
 
     public static void SetLanguage(AppLanguage language)
     {
@@ -308,6 +284,12 @@ public static partial class LocalizationManager
                     if (box.Watermark is string watermark) box.Watermark = TranslateControlLiteral(box,"Watermark",watermark);
                     break;
                 case TextBlock text when text.Text is not null:
+                    // A string Content/Header owns its generated caption. Writing
+                    // that TextBlock directly breaks the presenter's binding and
+                    // can leave it showing a previous language or an ambiguous key.
+                    if(text.GetVisualParent() is Avalonia.Controls.Presenters.ContentPresenter presenter
+                        && ReferenceEquals(presenter.Child,text) && presenter.Content is string)
+                        break;
                     text.Text = TranslateControlLiteral(text,"Text",text.Text);
                     break;
                 case ContentControl content when content.Content is string s:
@@ -315,5 +297,13 @@ public static partial class LocalizationManager
                     break;
             }
         }
+        if(root.GetVisualRoot() is Window {IsVisible:true})
+            Avalonia.Threading.Dispatcher.UIThread.Post(()=>
+            {
+                if(!root.IsEffectivelyVisible)return;
+                foreach(var layout in root.GetVisualDescendants().OfType<Control>().Reverse())
+                    layout.InvalidateMeasure();
+                root.InvalidateMeasure();
+            },Avalonia.Threading.DispatcherPriority.Loaded);
     }
 }

@@ -1,4 +1,4 @@
-# Endfield Charge Plus · 终末地风格状态栏HUD+
+﻿# Endfield Charge Plus · 终末地风格状态栏HUD+
 
 下载与每版更新说明请查看本仓库 [Releases](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)。README 保留通用安装和使用说明。
 
@@ -47,16 +47,16 @@ winget install --id 9P3PLD3LX7W6 --source msstore --exact
 
 ### Windows：GitHub 便携版
 
-需要免安装版本时，前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载适合你设备的便携版 ZIP。解压后直接运行其中的 `EndfieldChargePlus.exe`，无需安装，也无需另装 .NET 运行时。
+需要免安装版本时，前往 [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) 下载适合你设备的便携版 ZIP。完整解压后，进入版本文件夹运行同名 EXE，无需安装，也无需另装 .NET 运行时。顶层只保留主程序及 `Runtime`、`Documents`、`Licenses`；依赖集中在 `Runtime`，请完整保留整个文件夹。
 
 **首次使用只需几步：**
 
-1. 通过 Microsoft Store 或 winget 安装并启动 ECP；使用 GitHub 便携版时，将 ZIP 解压到固定目录后运行 `EndfieldChargePlus.exe`。程序通过系统托盘驻留。
+1. 通过 Microsoft Store 或 winget 安装并启动 ECP；使用 GitHub 便携版时，将 ZIP 完整解压到固定目录，再运行版本文件夹中的主 EXE。程序通过系统托盘驻留。
 2. 从托盘菜单打开**设置**，在「显示与位置」中选择目标显示器、HUD 位置和显示方式。
-3. 进入「HUD 内容与数据」，选择内置方案，或创建自己的 HUD；点击**预览**查看效果。
+3. 进入「HUD显示内容」，选择内置方案，或创建自己的 HUD；点击**预览**查看效果。变量、硬件和数据源设置位于「数据管理」。
 4. 点击**保存并应用**。配置自动保存，重新启动后继续使用；可按需开启 Windows 开机启动。
 
-默认会以**系统 - 内存**方案启动；首次界面语言跟随 Windows：中文系统使用简体中文，其他系统使用 English，也可以手动切换。
+默认会以**系统 - 内存**方案启动。首次界面语言跟随系统，在支持的 20 种语言中匹配；繁体中文按脚本/地区识别，不支持的语言回退 English。手动选择语言后会保存偏好，可再次选择跟随系统。
 
 ### Linux：独立仓库 Releases
 
@@ -92,7 +92,7 @@ winget install --id 9P3PLD3LX7W6 --source msstore --exact
 | **网络包探测** | 指定 IPv4 / IPv6 / 域名及端口，使用 ICMP、TCP 或 UDP 探测，查看延迟、丢包等状态。 |
 | **DeepSeek API** | 配置自己的 API Key 后显示余额、当前高峰 / 低谷、时段进度与倒计时；以北京时间判定，并提供本地时区切换时间变量。 |
 | **HTTP / JSON 数据源** | 配置请求地址、Header、刷新间隔和 JSON 字段映射，把自有接口数据接入 HUD。 |
-| **日常维护** | 中英双语、托盘操作、开机启动、配置导入 / 导出 / 备份、日志和 GitHub 更新检查。 |
+| **日常维护** | 20 种界面语言、分章节使用手册、托盘操作、开机启动、配置导入 / 导出 / 备份、日志和本平台 GitHub 更新检查。 |
 
 ### 🧩 变量与自定义示例
 
@@ -112,30 +112,36 @@ DeepSeek API 需要用户自行提供 Key；HTTP/JSON 接口由用户自行配�
 ## 💻 Windows 运行要求与源码构建
 
 - **系统：** Windows 10 / 11，支持 x64、x86 和 ARM64。
-- **Portable 包：** ZIP 内只有自包含的 `EndfieldChargePlus.exe`，不需要另行安装 .NET。首次启动时自动解压内置原生依赖。
+- **Portable 包：** x64、x86、ARM64 各提供 `-portable.zip`。压缩包内为 `EndfieldChargePlus0.1.2/`，顶层主程序为 `EndfieldChargePlus0.1.2.exe`；`Runtime/` 保存 DLL 和完整运行库，`Documents/` 保存说明，`Licenses/` 保存许可。不需要另行安装 .NET。
+- **个人数据：** 配置、备份、日志及应用缓存使用 `%LOCALAPPDATA%\EndfieldChargePlus`，不自动写入解压目录。商店版使用对应应用的 LocalState；手动导出使用用户选择的位置。
 - **自行编译：** Windows 环境及 [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)。
 
 ```powershell
 # 编译源码
 dotnet build EndfieldChargePlus.csproj -c Release
 
-# 示例：发布 x64 自包含单文件
+# 发布全部三种架构的目录便携版，每种同时生成 ZIP（需要 7-Zip）
+./scripts/package-windows.ps1
+
+# 只发布 x64
 ./scripts/package-windows.ps1 -Runtime win-x64
 ```
 
-构建 x86 或 ARM64 时将 `win-x64` 换为 `win-x86` 或 `win-arm64`。所有架构均输出单个 EXE；帧率采集器根据 Windows 系统架构选择内置 x64 或 ARM64 版本。
+构建 x86 或 ARM64 时将 `win-x64` 换为 `win-x86` 或 `win-arm64`。版本文件夹与主 EXE 的名称由项目版本自动生成。帧率采集器根据 Windows 系统架构选择内置 x64 或 ARM64 版本。当前阶段暂停提供 Setup；安装器实验资料不属于本仓库。目录结构、升级及开机启动说明见 [Windows 便携版](docs/windows-portable.md)。
 
-
-微软商店提交包固定包含 **x64 与 x86（32 位）**，不包含 ARM64。ARM64 作为独立单文件 EXE / portable ZIP 提供。先发布 x64/x86 单文件，再运行：
+微软商店提交包包含 **x64、x86、ARM64** 的分类散文件，和 v0.1.1 一样只注册 **Endfield Charge Plus** 本体，保留原有界面及 StartupTask 标识；卸载由 Windows／微软商店管理。可直接运行以下命令，或显式指定三个已构建的完整 payload 目录：
 
 ```powershell
 ./scripts/package-store.ps1
 ```
 
-该脚本使用 Windows SDK MakeAppx 校验并导出 MSIXBUNDLE / MSIXUPLOAD；每次使用全新暂存目录，避免旧 ARM64 包混入。商店包版本参数独立于产品显示版本，版本修改仍需用户明确要求。
+脚本使用 Windows SDK MakeAppx 校验并导出 MSIXBUNDLE／MSIXUPLOAD；商店包版本按软件 `a.b.c → (a+1).b.c.0` 生成；当前软件 `0.1.2` 对应商店包 `1.1.2.0`。例如软件 1.0.0 对应商店包 2.0.0.0；正式提交前仍需高于后台已上传的最高适用版本。涉及提权功能的 `allowElevation` 能力仍需微软商店审核。商店打包资料位于 `packaging/windows-store`，不依赖 Setup 项目。
 
 ## 📄 来源与许可
 
 ECP 基于 **[QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge)** 修改与扩展。感谢原作者 **QinAnze** 的开源工作；原项目的来源和许可在此明确保留。本项目新增贡献采用 [MIT License](LICENSE)。详情参见 [NOTICE.md](NOTICE.md)，数据处理说明参见 [PRIVACY.md](PRIVACY.md)。
 
-© 2026 GlacierGlimmer_冰川雪貓
+© 2026 GlacierGlimmer冰川雪貓
+
+
+Windows 正式 GitHub Release 仅附三架构 `-portable.zip`。本地仍可构建 ZIP；商店提交文件不混入 GitHub 下载附件。`scripts/prepare-github-windows.ps1` 只筛选 ZIP 到本地目录，不上传或发布。

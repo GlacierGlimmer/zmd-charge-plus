@@ -54,9 +54,8 @@ public static class VariableLocalization
     {
         if(LocalizationManager.UsesChineseSource)return SourceDefinition(item);
         var en=SourceDefinition(item);
-        if(LocalizationManager.IsEnglish)return en;
         string T(string value)=>LocalizationManager.TranslateEnglish(value);
-        string name=T(en.Name),description=T(en.Description);
+        string name=ContextualVariableText.Name(item,T(en.Name)),description=T(en.Description);
         if(description==en.Description)
         {
             if(en.Description=="Custom value mapped from an HTTP / JSON data source.")
@@ -74,6 +73,7 @@ public static class VariableLocalization
             else if(en.ValueType=="Boolean" && en.Description==$"Whether {en.Name.ToLowerInvariant()} is active or true.")
                 description=LocalizationManager.Formatted($"{name} 是否启用或为真。",$"Whether {name} is active or true.");
         }
+        description=ContextualVariableText.Description(item,description);
         return en with {Name=name,Category=T(en.Category),Description=description,ValueType=T(en.ValueType),RecommendedUse=T(en.RecommendedUse),RecommendedFormats=en.RecommendedFormats=="None" ? T("None") : en.RecommendedFormats};
     }
 

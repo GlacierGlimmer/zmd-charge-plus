@@ -1,0 +1,8 @@
+{
+  "shared": {},
+  "notes": [
+    "Work in progress. Greek/Hebrew messages are individually authored from full Chinese source meanings in indexed TSV batches; existing navigation drafts were reviewed as they were encountered.",
+    "Only exact identical complete Chinese meanings may reuse an authored complete message. Technical format samples, APIs, placeholders and variable IDs remain code.",
+    "No translation service, phrase assembly, generic prose skeleton, native-speaker claim, visual signoff or release approval."
+  ]
+}

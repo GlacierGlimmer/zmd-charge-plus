@@ -1,0 +1,162 @@
+[
+  {
+    "code": "en",
+    "title": "Endfield Charge Plus — Unable to start",
+    "instructions": "This EXE cannot run alone. Required accompanying files are missing, incomplete or inaccessible.\n\n1. Put the EXE back in its original version folder, keeping Runtime and all accompanying files in their original structure.\n2. Fully extract the original ZIP again. For the Microsoft Store edition, repair or reinstall the app.\n3. To start from the desktop or elsewhere, create a shortcut instead of moving or copying just the EXE.\n\nSettings remain in your user data folder; extracting the ZIP again does not erase them.",
+    "location": "EXE location:",
+    "runtime": "Expected Runtime folder:",
+    "details": "Missing/incomplete files or startup details:"
+  },
+  {
+    "code": "zh-CN",
+    "title": "Endfield Charge Plus — 无法启动",
+    "instructions": "这个 EXE 不能单独运行。配套文件缺失、不完整或无法访问。\n\n1. 将 EXE 放回原来的版本文件夹，保留 Runtime 和全部配套文件的原有目录结构。\n2. 重新完整解压原始 ZIP；微软商店版请使用“修复”或重新安装。\n3. 想从桌面或其他位置启动，请创建快捷方式，不要只移动或复制 EXE。\n\n个人配置保存在用户数据目录，重新解压 ZIP 不会清除配置。",
+    "location": "当前 EXE 位置：",
+    "runtime": "应有的 Runtime 文件夹：",
+    "details": "缺失、不完整的文件或启动详情："
+  },
+  {
+    "code": "zh-TW",
+    "title": "Endfield Charge Plus — 無法啟動",
+    "instructions": "這個 EXE 無法單獨執行。配套檔案遺失、不完整或無法存取。\n\n1. 將 EXE 放回原本的版本資料夾，保留 Runtime 及所有配套檔案的原有目錄結構。\n2. 重新完整解壓縮原始 ZIP；Microsoft Store 版請使用「修復」或重新安裝。\n3. 想從桌面或其他位置啟動，請建立捷徑，不要只移動或複製 EXE。\n\n個人設定儲存在使用者資料目錄，重新解壓縮 ZIP 不會清除設定。",
+    "location": "目前 EXE 位置：",
+    "runtime": "預期的 Runtime 資料夾：",
+    "details": "遺失、不完整的檔案或啟動詳情："
+  },
+  {
+    "code": "ja",
+    "title": "Endfield Charge Plus — 起動できません",
+    "instructions": "この EXE は単独では実行できません。付属ファイルが存在しない、不完全、またはアクセスできない状態です。\n\n1. EXE を元のバージョンフォルダーに戻し、Runtime とすべての付属ファイルの配置を保ってください。\n2. 元の ZIP をすべて展開し直してください。Microsoft Store 版は修復または再インストールしてください。\n3. デスクトップなどから起動するには、EXE だけを移動・コピーせず、ショートカットを作成してください。\n\n設定はユーザーデータフォルダーに保存されます。ZIP を展開し直しても設定は消えません。",
+    "location": "EXE の場所：",
+    "runtime": "必要な Runtime フォルダー：",
+    "details": "存在しない・不完全なファイル、または起動の詳細："
+  },
+  {
+    "code": "ko",
+    "title": "Endfield Charge Plus — 시작할 수 없음",
+    "instructions": "이 EXE는 단독으로 실행할 수 없습니다. 동봉 파일이 없거나 불완전하거나 접근할 수 없습니다.\n\n1. EXE를 원래 버전 폴더에 다시 넣고 Runtime 및 모든 동봉 파일의 원래 폴더 구조를 유지하세요.\n2. 원본 ZIP 전체를 다시 압축 해제하세요. Microsoft Store 버전은 복구하거나 다시 설치하세요.\n3. 바탕 화면이나 다른 위치에서 실행하려면 EXE만 이동하거나 복사하지 말고 바로 가기를 만드세요.\n\n설정은 사용자 데이터 폴더에 저장됩니다. ZIP을 다시 압축 해제해도 설정은 삭제되지 않습니다.",
+    "location": "EXE 위치:",
+    "runtime": "필요한 Runtime 폴더:",
+    "details": "누락되거나 불완전한 파일 또는 시작 세부 정보:"
+  },
+  {
+    "code": "de",
+    "title": "Endfield Charge Plus — Start nicht möglich",
+    "instructions": "Diese EXE kann nicht allein ausgeführt werden. Begleitdateien fehlen, sind unvollständig oder nicht zugänglich.\n\n1. Legen Sie die EXE zurück in den ursprünglichen Versionsordner. Behalten Sie Runtime und alle Begleitdateien in ihrer ursprünglichen Ordnerstruktur.\n2. Entpacken Sie die ursprüngliche ZIP vollständig erneut. Reparieren Sie die Microsoft-Store-Version oder installieren Sie sie neu.\n3. Erstellen Sie zum Starten vom Desktop oder anderswo eine Verknüpfung, statt nur die EXE zu verschieben oder zu kopieren.\n\nEinstellungen liegen im Benutzerdatenordner. Erneutes Entpacken löscht sie nicht.",
+    "location": "Speicherort der EXE:",
+    "runtime": "Erwarteter Runtime-Ordner:",
+    "details": "Fehlende/unvollständige Dateien oder Startdetails:"
+  },
+  {
+    "code": "fr",
+    "title": "Endfield Charge Plus — Démarrage impossible",
+    "instructions": "Cet EXE ne peut pas fonctionner seul. Des fichiers fournis sont absents, incomplets ou inaccessibles.\n\n1. Replacez l’EXE dans son dossier de version d’origine. Conservez Runtime et tous les fichiers fournis dans leur arborescence d’origine.\n2. Extrayez de nouveau la totalité du ZIP d’origine. Pour la version Microsoft Store, réparez ou réinstallez l’application.\n3. Pour démarrer depuis le Bureau ou ailleurs, créez un raccourci au lieu de déplacer ou copier l’EXE seul.\n\nLes paramètres restent dans le dossier de données utilisateur. Extraire de nouveau le ZIP ne les efface pas.",
+    "location": "Emplacement de l’EXE :",
+    "runtime": "Dossier Runtime attendu :",
+    "details": "Fichiers absents/incomplets ou détails du démarrage :"
+  },
+  {
+    "code": "es",
+    "title": "Endfield Charge Plus — No se puede iniciar",
+    "instructions": "Este EXE no puede ejecutarse solo. Faltan archivos incluidos, están incompletos o no se puede acceder a ellos.\n\n1. Devuelva el EXE a su carpeta de versión original. Mantenga Runtime y todos los archivos incluidos en su estructura original.\n2. Vuelva a extraer todo el ZIP original. Para la versión de Microsoft Store, repare o reinstale la aplicación.\n3. Para iniciar desde el escritorio u otro lugar, cree un acceso directo en vez de mover o copiar solo el EXE.\n\nLa configuración permanece en la carpeta de datos del usuario. Extraer el ZIP de nuevo no la elimina.",
+    "location": "Ubicación del EXE:",
+    "runtime": "Carpeta Runtime esperada:",
+    "details": "Archivos ausentes/incompletos o detalles del inicio:"
+  },
+  {
+    "code": "pt",
+    "title": "Endfield Charge Plus — Não foi possível iniciar",
+    "instructions": "Este EXE não pode ser executado sozinho. Há ficheiros em falta, incompletos ou inacessíveis.\n\n1. Volte a colocar o EXE na pasta original desta versão. Mantenha Runtime e todos os ficheiros fornecidos na estrutura original.\n2. Extraia novamente todo o ZIP original. Na versão da Microsoft Store, repare ou reinstale a aplicação.\n3. Para iniciar a partir do ambiente de trabalho ou de outro local, crie um atalho em vez de mover ou copiar apenas o EXE.\n\nAs definições ficam na pasta de dados do utilizador. Extrair novamente o ZIP não as apaga.",
+    "location": "Localização do EXE:",
+    "runtime": "Pasta Runtime esperada:",
+    "details": "Ficheiros em falta/incompletos ou detalhes do arranque:"
+  },
+  {
+    "code": "ru",
+    "title": "Endfield Charge Plus — Не удалось запустить",
+    "instructions": "Этот EXE не работает отдельно. Прилагаемые файлы отсутствуют, неполны или недоступны.\n\n1. Верните EXE в исходную папку этой версии. Сохраните Runtime и все прилагаемые файлы в исходной структуре.\n2. Полностью распакуйте исходный ZIP заново. Версию из Microsoft Store восстановите или переустановите.\n3. Для запуска с рабочего стола или из другого места создайте ярлык, а не перемещайте и не копируйте только EXE.\n\nНастройки остаются в папке данных пользователя. Повторная распаковка ZIP их не удалит.",
+    "location": "Расположение EXE:",
+    "runtime": "Ожидаемая папка Runtime:",
+    "details": "Отсутствующие/неполные файлы или сведения о запуске:"
+  },
+  {
+    "code": "ar",
+    "title": "Endfield Charge Plus — تعذر البدء",
+    "instructions": "لا يمكن تشغيل EXE هذا بمفرده. بعض الملفات المرفقة مفقودة أو غير مكتملة أو يتعذر الوصول إليها.\n\n1. أعد EXE إلى مجلد الإصدار الأصلي مع الحفاظ على بنية Runtime وجميع الملفات المرفقة.\n2. استخرج ZIP الأصلي بالكامل مرة أخرى. لإصدار Microsoft Store، أصلح التطبيق أو أعد تثبيته.\n3. للتشغيل من سطح المكتب أو مكان آخر، أنشئ اختصارًا بدلًا من نقل EXE وحده أو نسخه.\n\nتبقى الإعدادات في مجلد بيانات المستخدم. استخراج ZIP مرة أخرى لا يحذفها.",
+    "location": "موقع EXE:",
+    "runtime": "مجلد Runtime المتوقع:",
+    "details": "الملفات المفقودة أو غير المكتملة أو تفاصيل بدء التشغيل:"
+  },
+  {
+    "code": "hi",
+    "title": "Endfield Charge Plus — शुरू नहीं हो सका",
+    "instructions": "यह EXE अकेले नहीं चल सकता। साथ दी गई फ़ाइलें गायब हैं, अधूरी हैं या उन तक पहुँच नहीं है।\n\n1. EXE को मूल संस्करण फ़ोल्डर में वापस रखें। Runtime और सभी साथ दी गई फ़ाइलों की मूल फ़ोल्डर संरचना बनाए रखें।\n2. मूल ZIP को फिर से पूरी तरह निकालें। Microsoft Store संस्करण की मरम्मत करें या उसे फिर से इंस्टॉल करें।\n3. डेस्कटॉप या किसी अन्य जगह से चलाने के लिए शॉर्टकट बनाएँ; केवल EXE को न ले जाएँ और न कॉपी करें।\n\nसेटिंग उपयोगकर्ता डेटा फ़ोल्डर में रहती हैं। ZIP को फिर से निकालने से वे नहीं मिटेंगी।",
+    "location": "EXE का स्थान:",
+    "runtime": "अपेक्षित Runtime फ़ोल्डर:",
+    "details": "गायब/अधूरी फ़ाइलें या शुरू होने का विवरण:"
+  },
+  {
+    "code": "bn",
+    "title": "Endfield Charge Plus — চালু করা যাচ্ছে না",
+    "instructions": "এই EXE একা চালানো যায় না। সঙ্গে দেওয়া ফাইল অনুপস্থিত, অসম্পূর্ণ অথবা ব্যবহার করা যাচ্ছে না।\n\n1. EXE-কে মূল সংস্করণ ফোল্ডারে ফিরিয়ে রাখুন। Runtime ও সঙ্গে দেওয়া সব ফাইলের মূল ফোল্ডার কাঠামো অক্ষত রাখুন।\n2. মূল ZIP আবার সম্পূর্ণভাবে নিষ্কাশন করুন। Microsoft Store সংস্করণ হলে মেরামত করুন বা আবার ইনস্টল করুন।\n3. ডেস্কটপ বা অন্য জায়গা থেকে চালাতে শর্টকাট তৈরি করুন; শুধু EXE সরাবেন না বা কপি করবেন না।\n\nসেটিংস ব্যবহারকারীর ডেটা ফোল্ডারে থাকে। ZIP আবার নিষ্কাশন করলে সেগুলো মুছে যাবে না।",
+    "location": "EXE-এর অবস্থান:",
+    "runtime": "প্রত্যাশিত Runtime ফোল্ডার:",
+    "details": "অনুপস্থিত/অসম্পূর্ণ ফাইল বা চালুর বিবরণ:"
+  },
+  {
+    "code": "ur",
+    "title": "Endfield Charge Plus — شروع نہیں ہو سکا",
+    "instructions": "یہ EXE اکیلا نہیں چل سکتا۔ ساتھ دی گئی کچھ فائلیں غائب، نامکمل یا ناقابلِ رسائی ہیں۔\n\n1. EXE کو اصل ورژن والے فولڈر میں واپس رکھیں۔ Runtime اور تمام ساتھ دی گئی فائلوں کی اصل ساخت برقرار رکھیں۔\n2. اصل ZIP کو دوبارہ مکمل طور پر نکالیں۔ Microsoft Store والے ورژن کی مرمت کریں یا دوبارہ انسٹال کریں۔\n3. ڈیسک ٹاپ یا دوسری جگہ سے چلانے کے لیے شارٹ کٹ بنائیں؛ صرف EXE کو منتقل یا کاپی نہ کریں۔\n\nترتیبات صارف کے ڈیٹا فولڈر میں رہتی ہیں۔ ZIP دوبارہ نکالنے سے وہ حذف نہیں ہوں گی۔",
+    "location": "EXE کا مقام:",
+    "runtime": "متوقع Runtime فولڈر:",
+    "details": "غائب یا نامکمل فائلیں، یا آغاز کی تفصیلات:"
+  },
+  {
+    "code": "id",
+    "title": "Endfield Charge Plus — Tidak dapat dimulai",
+    "instructions": "EXE ini tidak dapat berjalan sendiri. Berkas pendamping hilang, tidak lengkap, atau tidak dapat diakses.\n\n1. Kembalikan EXE ke folder versi aslinya. Pertahankan Runtime dan semua berkas pendamping dalam struktur aslinya.\n2. Ekstrak kembali seluruh ZIP asli. Untuk edisi Microsoft Store, perbaiki atau instal ulang aplikasi.\n3. Untuk menjalankan dari desktop atau tempat lain, buat pintasan alih-alih memindahkan atau menyalin EXE saja.\n\nPengaturan tetap di folder data pengguna. Mengekstrak ulang ZIP tidak menghapusnya.",
+    "location": "Lokasi EXE:",
+    "runtime": "Folder Runtime yang diperlukan:",
+    "details": "Berkas hilang/tidak lengkap atau rincian mulai:"
+  },
+  {
+    "code": "vi",
+    "title": "Endfield Charge Plus — Không thể khởi động",
+    "instructions": "EXE này không thể chạy riêng. Tệp đi kèm bị thiếu, không đầy đủ hoặc không thể truy cập.\n\n1. Đưa EXE về thư mục phiên bản ban đầu. Giữ nguyên cấu trúc Runtime và toàn bộ tệp đi kèm.\n2. Giải nén lại toàn bộ ZIP gốc. Với bản Microsoft Store, hãy sửa chữa hoặc cài đặt lại ứng dụng.\n3. Để chạy từ màn hình nền hoặc nơi khác, hãy tạo lối tắt thay vì chỉ di chuyển hay sao chép EXE.\n\nCài đặt vẫn nằm trong thư mục dữ liệu người dùng. Giải nén lại ZIP không xóa cài đặt.",
+    "location": "Vị trí EXE:",
+    "runtime": "Thư mục Runtime cần có:",
+    "details": "Tệp bị thiếu/không đầy đủ hoặc chi tiết khởi động:"
+  },
+  {
+    "code": "th",
+    "title": "Endfield Charge Plus — ไม่สามารถเริ่มทำงานได้",
+    "instructions": "EXE นี้ไม่สามารถทำงานเพียงไฟล์เดียวได้ ไฟล์ที่ให้มาด้วยบางส่วนหายไป ไม่สมบูรณ์ หรือไม่สามารถเข้าถึงได้\n\n1. ย้าย EXE กลับไปยังโฟลเดอร์เวอร์ชันเดิม เก็บ Runtime และไฟล์ที่ให้มาทั้งหมดตามโครงสร้างเดิม\n2. แตก ZIP ต้นฉบับทั้งหมดอีกครั้ง สำหรับรุ่น Microsoft Store ให้ซ่อมแซมหรือติดตั้งแอปใหม่\n3. หากต้องการเรียกใช้จากเดสก์ท็อปหรือที่อื่น ให้สร้างทางลัดแทนการย้ายหรือคัดลอกเฉพาะ EXE\n\nการตั้งค่ายังคงอยู่ในโฟลเดอร์ข้อมูลผู้ใช้ การแตก ZIP อีกครั้งจะไม่ลบการตั้งค่า",
+    "location": "ตำแหน่ง EXE:",
+    "runtime": "โฟลเดอร์ Runtime ที่ต้องมี:",
+    "details": "ไฟล์ที่หายไป/ไม่สมบูรณ์ หรือรายละเอียดการเริ่มทำงาน:"
+  },
+  {
+    "code": "tr",
+    "title": "Endfield Charge Plus — Başlatılamadı",
+    "instructions": "Bu EXE tek başına çalışamaz. Eşlik eden dosyalar eksik, tamamlanmamış veya erişilemez durumda.\n\n1. EXE’yi özgün sürüm klasörüne geri koyun. Runtime ve tüm eşlik eden dosyaların özgün klasör yapısını koruyun.\n2. Özgün ZIP’in tamamını yeniden çıkarın. Microsoft Store sürümünü onarın veya yeniden yükleyin.\n3. Masaüstünden veya başka bir yerden başlatmak için yalnızca EXE’yi taşımak ya da kopyalamak yerine bir kısayol oluşturun.\n\nAyarlar kullanıcı verileri klasöründe kalır. ZIP’i yeniden çıkarmak bunları silmez.",
+    "location": "EXE konumu:",
+    "runtime": "Beklenen Runtime klasörü:",
+    "details": "Eksik/tamamlanmamış dosyalar veya başlatma ayrıntıları:"
+  },
+  {
+    "code": "it",
+    "title": "Endfield Charge Plus — Avvio non riuscito",
+    "instructions": "Questo EXE non può funzionare da solo. I file forniti sono mancanti, incompleti o inaccessibili.\n\n1. Riporta l’EXE nella cartella della versione originale. Mantieni Runtime e tutti i file forniti nella struttura originale.\n2. Estrai di nuovo l’intero ZIP originale. Per la versione Microsoft Store, ripara o reinstalla l’app.\n3. Per avviare dal desktop o altrove, crea un collegamento invece di spostare o copiare soltanto l’EXE.\n\nLe impostazioni rimangono nella cartella dei dati utente. Estrarre di nuovo lo ZIP non le elimina.",
+    "location": "Posizione dell’EXE:",
+    "runtime": "Cartella Runtime prevista:",
+    "details": "File mancanti/incompleti o dettagli dell’avvio:"
+  },
+  {
+    "code": "fa",
+    "title": "Endfield Charge Plus — راه‌اندازی نشد",
+    "instructions": "این EXE به‌تنهایی اجرا نمی‌شود. فایل‌های همراه وجود ندارند، ناقص‌اند یا در دسترس نیستند.\n\n1. EXE را به پوشهٔ اصلی همین نسخه برگردانید. ساختار اصلی Runtime و همهٔ فایل‌های همراه را حفظ کنید.\n2. ZIP اصلی را دوباره به‌طور کامل استخراج کنید. نسخهٔ Microsoft Store را تعمیر یا دوباره نصب کنید.\n3. برای اجرا از دسکتاپ یا جای دیگر، میان‌بر بسازید؛ فقط EXE را جابه‌جا یا کپی نکنید.\n\nتنظیمات در پوشهٔ داده‌های کاربر باقی می‌مانند. استخراج دوبارهٔ ZIP آن‌ها را پاک نمی‌کند.",
+    "location": "محل EXE:",
+    "runtime": "پوشهٔ Runtime مورد انتظار:",
+    "details": "فایل‌های گمشده یا ناقص، یا جزئیات راه‌اندازی:"
+  }
+]

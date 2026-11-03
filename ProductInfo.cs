@@ -2,8 +2,25 @@ namespace EndfieldChargePlus;
 
 internal static class ProductInfo
 {
+    internal const string BuildDate = "2026.11.03";
     internal const string LinuxName = "Endfield Charge Plus For Linux";
-    internal static string Name => OperatingSystem.IsLinux() ? LinuxName : "Endfield Charge Plus";
+    internal const string WindowsName = "Endfield Charge Plus";
+    // Product name comes from the shared language resource (windows.title / linux.title).
+    internal static string Name
+    {
+        get
+        {
+            try
+            {
+                var localized=LocalizationManager.PlatformTitle;
+                return string.IsNullOrWhiteSpace(localized) ? (OperatingSystem.IsLinux() ? LinuxName : WindowsName) : localized;
+            }
+            catch
+            {
+                return OperatingSystem.IsLinux() ? LinuxName : WindowsName;
+            }
+        }
+    }
     internal static string Brand(string value)
     {
         if (!OperatingSystem.IsLinux()) return value;

@@ -1,0 +1,10 @@
+{
+  "shared": {},
+  "notes": [
+    "Authored directly from all 2313 Chinese full meanings. No online translation service or metric-summary draft was used.",
+    "721 missing entries were translated; prior source-specific descriptions were compared with Chinese, including collection APIs, Windows counters, hardware support and permissions.",
+    "CPU/GPU native additions were kept distinct. SystemClock.elapsedRealtime()/1000. includes deep sleep.",
+    "All 14 Japanese manual chapters were reviewed and retained with the global 75-200 percent UI/HUD scale relationship added. Coverage and syntax checks are bounded checks, not native-speaker certification.",
+    "Reviewed all 1492 short-source entries together; corrected 431 labels or exact Chinese synonyms to restore CPU/GPU, application, disk/partition, elapsed time, capacity and rate context omitted by old nominal composition."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "shared": {
+    "Status": "Established Portuguese computing noun for the current state, identical in spelling to English.",
+    "AC": "Conventional alternating-current abbreviation used in power-source telemetry.",
+    "Adelaide, Darwin": "Proper names of the Australian cities retained in Brazilian Portuguese.",
+    "Auckland, Fiji": "Proper names of the city and country retained in Brazilian Portuguese.",
+    "Backup": "Established Portuguese computing loanword for a configuration backup.",
+    "Bytes": "Established Portuguese plural for the computing unit byte.",
+    "Dubai, Abu Dhabi": "Proper city names retained in Brazilian Portuguese.",
+    "Eucla": "Australian locality name retained in Brazilian Portuguese.",
+    "Interface": "Native Portuguese technical noun for an interface, identical in spelling to English.",
+    "Islamabad, Karachi": "Proper names of these cities retained in Brazilian Portuguese.",
+    "NiCd": "Language-independent chemical abbreviation for nickel-cadmium batteries.",
+    "NiMH": "Language-independent chemical abbreviation for nickel-metal-hydride batteries.",
+    "Nukuʻalofa, Apia": "Proper names of these Pacific cities retained in Brazilian Portuguese.",
+    "Sydney, Brisbane": "Proper names of these Australian cities retained in Brazilian Portuguese.",
+    "X / px": "X-coordinate label with the standard pixel unit.",
+    "Y / px": "Y-coordinate label with the standard pixel unit.",
+    "d": "Portuguese compact duration abbreviation for dia.",
+    "{0}d {1:00}:{2:00}:{3:00}": "Compact duration pattern using Portuguese d for dias and unchanged numeric format arguments."
+  },
+  "notes": [
+    "Completed all 2313 active keys and 14 native manual chapters. Rewrote mechanical term composition and reviewed the old partial pack, API identifiers, exact format arguments, permission conditions, sample counters and platform limitations. Authored coverage does not authorize distribution."
+  ]
+}

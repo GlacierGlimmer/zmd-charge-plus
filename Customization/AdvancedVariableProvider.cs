@@ -197,7 +197,7 @@ internal sealed partial class AdvancedVariableProvider : IDisposable
         PutIfNumber(v, "cpu.dpc_time", _perfOs.DpcTimePercent);
         PutIfNumber(v, "cpu.instructions_per_second", _perfOs.InstructionsRetiredPerSec);
 
-        EnsureHardware();
+        EnsureHardware(1);
         PutIfNumber(v, "cpu.temperature", _hardware.CpuTemperatureMax);
         PutIfNumber(v, "cpu.temperature_c", _hardware.CpuTemperatureMax);
         PutIfNumber(v, "cpu.temperature_max", _hardware.CpuTemperatureMax);
@@ -225,7 +225,7 @@ internal sealed partial class AdvancedVariableProvider : IDisposable
 
     private void AddGpuAdvanced(IDictionary<string, object?> v)
     {
-        EnsureHardware();
+        EnsureHardware(2);
         string selectedName = Text(v, "gpu.name");
         var g = _hardware.Gpus.FirstOrDefault(x => SimilarName(x.Name, selectedName))
                 ?? (_hardware.Gpus.Count == 1 ? _hardware.Gpus[0] : null);
@@ -661,8 +661,24 @@ internal sealed partial class AdvancedVariableProvider : IDisposable
         _memoryStatic = s;
     }
 
-    private void EnsureHardware()
+    private int _enabledHardwareScope;
+    private long _lastCpuSensorDemand,_lastGpuSensorDemand,_lastOtherSensorDemand,_lastSensorDemand;
+    private void EnsureHardware(int scope=7)
     {
+        long now=Environment.TickCount64;
+        _lastSensorDemand=now;
+        if((scope&1)!=0)_lastCpuSensorDemand=now;
+        if((scope&2)!=0)_lastGpuSensorDemand=now;
+        if((scope&4)!=0)_lastOtherSensorDemand=now;
+        int needed=scope;
+        if(_lastCpuSensorDemand>0 && now-_lastCpuSensorDemand<30000)needed|=1;
+        if(_lastGpuSensorDemand>0 && now-_lastGpuSensorDemand<30000)needed|=2;
+        if(_lastOtherSensorDemand>0 && now-_lastOtherSensorDemand<30000)needed|=4;
+        if(needed!=_enabledHardwareScope)
+        {
+            lock(_gate){try{_computer?.Close();}catch{} _computer=null;_enabledHardwareScope=needed;}
+            _nextHardwareRead=DateTime.MinValue;
+        }
         if (DateTime.UtcNow < _nextHardwareRead) return;
         _nextHardwareRead = DateTime.UtcNow.AddMilliseconds(900);
         var result = new HardwareSnapshot { CpuLowLevelReady=Interop.HardwareSensorDriver.Inspect().Status=="Ready" };
@@ -674,16 +690,16 @@ internal sealed partial class AdvancedVariableProvider : IDisposable
                 {
                     _computer = new Computer
                     {
-                        IsCpuEnabled = true,
-                        IsGpuEnabled = true,
-                        IsMotherboardEnabled = true,
-                        IsControllerEnabled = true,
-                        IsStorageEnabled = true,
-                        IsMemoryEnabled = true,
-                        IsPsuEnabled = true,
-                        IsBatteryEnabled = true,
-                        IsNetworkEnabled = true,
-                        IsPowerMonitorEnabled = true
+                        IsCpuEnabled = (_enabledHardwareScope&1)!=0,
+                        IsGpuEnabled = (_enabledHardwareScope&2)!=0,
+                        IsMotherboardEnabled = (_enabledHardwareScope&4)!=0,
+                        IsControllerEnabled = (_enabledHardwareScope&4)!=0,
+                        IsStorageEnabled = (_enabledHardwareScope&4)!=0,
+                        IsMemoryEnabled = (_enabledHardwareScope&4)!=0,
+                        IsPsuEnabled = (_enabledHardwareScope&4)!=0,
+                        IsBatteryEnabled = (_enabledHardwareScope&4)!=0,
+                        IsNetworkEnabled = (_enabledHardwareScope&4)!=0,
+                        IsPowerMonitorEnabled = (_enabledHardwareScope&4)!=0
                     };
                     try { _computer.Open(); }
                     catch (Exception ex)
@@ -705,6 +721,20 @@ internal sealed partial class AdvancedVariableProvider : IDisposable
         HardwareSensorCatalog.PublishFans(result.Fans);
         HardwareTelemetryCatalog.Publish(result.Sensors);
         HardwareTelemetryCatalog.Publish(result.Properties);
+    }
+
+    internal Task ReleaseIdleHardwareAsync()
+    {
+        if(_computer is null || Environment.TickCount64-_lastSensorDemand<30000)return Task.CompletedTask;
+        return Task.Run(()=>
+        {
+            lock(_gate)
+            {
+                if(Environment.TickCount64-_lastSensorDemand<30000)return;
+                try{_computer?.Close();}catch{}
+                _computer=null;_enabledHardwareScope=0;_nextHardwareRead=DateTime.MinValue;
+            }
+        });
     }
 
     private static void ReadHardware(IHardware hw, HardwareSnapshot output)

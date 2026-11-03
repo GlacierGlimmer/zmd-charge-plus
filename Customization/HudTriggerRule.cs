@@ -36,7 +36,7 @@ internal sealed class HudTriggerEvaluator
         foreach(var rule in rules.Where(r=>r.Enabled && !string.IsNullOrWhiteSpace(r.Variable)))
         {
             values.TryGetValue(rule.Variable,out var value);
-            bool valid=Valid(value);
+            bool valid=IsUsable(rule,value);
             _states.TryGetValue(rule.Id,out var previous);
             bool hit=previous is { Valid:true } && valid && (rule.Mode switch {
                 "Change"=>!Equal(previous.Value,value),
@@ -54,7 +54,9 @@ internal sealed class HudTriggerEvaluator
         foreach(var rule in rules)
             if(_states.TryGetValue(rule.Id,out var state)) _states[rule.Id]=state with { NextAllowed=now+(long)rule.CooldownSeconds*1000 };
     }
-    private static bool Valid(object? value)=>value is not null && !(value is double d && !double.IsFinite(d)) && !(value is float f && !float.IsFinite(f))
+    internal static bool IsUsable(HudTriggerRule rule,object? value)=>Valid(value) && (rule.Mode switch {
+        "Change"=>true,"BecomesTrue"=>Boolean(value,out _),_=>Number(value,out _) });
+    internal static bool Valid(object? value)=>value is not null && !(value is double d && !double.IsFinite(d)) && !(value is float f && !float.IsFinite(f))
         && !(value is string s && (string.IsNullOrWhiteSpace(s) || s is "--" or "N/A"));
     private static bool Number(object? value,out double number)=>double.TryParse(Convert.ToString(value,CultureInfo.InvariantCulture),NumberStyles.Float,CultureInfo.InvariantCulture,out number) && double.IsFinite(number);
     private static bool Boolean(object? value,out bool result)

@@ -9,7 +9,7 @@ public partial class SettingsWindow
     private DesktopGlobalHotkey? _hudHotkey;
     private string? _hotkeyStatusZh, _hotkeyStatusEn;
     private object?[]? _hotkeyStatusArguments;
-    internal bool IsRecordingHudHotkey => HudHotkeyBox.IsFocused;
+    internal bool IsRecordingHudHotkey => HudHotkeyBox.IsFocused || _quickHotkeyBoxes.Values.Any(b=>b.IsFocused);
 
     private void InitializeHudHotkeyEditor()
     {
@@ -47,7 +47,7 @@ public partial class SettingsWindow
         string requested = _persistedRootSettings.HudToggleHotkey;
         if (string.IsNullOrWhiteSpace(requested))
             SetHudHotkeyStatus("未设置快捷键。", "No shortcut configured.");
-        else if (_hudHotkey?.Gesture == requested)
+        else if ((_quickHotkeys?.BindingFor("toggle") ?? _hudHotkey?.Gesture) == requested)
             SetHudHotkeyStatus($"已启用：{requested}", (System.FormattableString)$"Enabled: {requested}");
         else
             SetHudHotkeyStatus("快捷键未能注册，可能已被其他应用占用。请更换后保存并应用。", "Could not register the shortcut; another app may be using it. Choose another and Save & Apply.");
@@ -68,6 +68,7 @@ public partial class SettingsWindow
 
     private void RefreshHudHotkeyLocalization()
     {
+        RefreshQuickHotkeyLabels();
         RebuildHotkeyAnimationChoices();
         if (_hotkeyStatusZh is not null && _hotkeyStatusEn is not null)
             HudHotkeyStatusText.Text = _hotkeyStatusArguments is null ? LocalizationManager.Text(_hotkeyStatusZh, _hotkeyStatusEn)
@@ -85,6 +86,12 @@ public partial class SettingsWindow
 
     private void SaveSettingsWithHudHotkey(AppSettings settings)
     {
+        if(_quickHotkeys is not null)
+        {
+            if(_quickHotkeys.TryApply(settings,()=>SettingsManager.Save(settings)))return;
+            SetHudHotkeyStatus("无法注册此快捷键，可能已被占用。原有快捷键未更改，请更换组合键。", "Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.");
+            throw new InvalidOperationException(HudHotkeyStatusText.Text+" "+_quickHotkeys.ErrorGesture);
+        }
         string previous = _hudHotkey?.Gesture ?? "";
         if (_hudHotkey is null ? !string.IsNullOrWhiteSpace(settings.HudToggleHotkey) : !_hudHotkey.TryUpdate(settings.HudToggleHotkey))
         {

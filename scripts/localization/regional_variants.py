@@ -4,7 +4,7 @@ import json
 import re
 from pathlib import Path
 
-PROTECTED=re.compile(r"\bv(?=\{[0-9])|\$\{[^{}]*\}|\{[^{}]*\}|(?:https?://|avares://)\S+|\b[a-z_][a-z0-9_-]*(?:\.[a-z0-9_<>-]+)+|\b[a-z]+[A-Z][A-Za-z0-9]*\b|\b(?:Ctrl|Alt|Shift|F\d+|HUD|CPU|GPU|UI|API|JSON|HTTP|WMI|ID|Windows|Linux|macOS|Android|AIDA64|PawnIO|DeepSeek|Endfield Charge Plus)\b|\b(?:duration-long|duration|bytes|speed|upper|lower|auto:[0-9]+|(?:kb|mb|gb|tb):[0-9]+|time:[A-Za-z:]+|math:[a-z]+(?::[-0-9.]+)?|sub:[0-9:]+|replace:[^\s,;]+)\b")
+PROTECTED=re.compile(r"\bv(?=\{[0-9])|\$\{[^{}]*\}|\{[^{}]*\}|(?:https?://|avares://)\S+|(?<![\w/])/(?:[A-Za-z0-9_.*-]+/)*[A-Za-z0-9_.*-]+|\b[A-Z]:\\[^\s,;]*|\b(?:yyyy-MM-dd(?: HH:mm:ss)?|HH:mm:ss|HH:MM:SS)\b|\b(?:docker ps -q|docker images -q|java -version|go version|node --version|rustc --version|python/py --version|wsl -l -q|nvidia-smi power\.limit)\b|\b[A-Za-z_][A-Za-z0-9_-]*(?:\.[A-Za-z0-9_<>-]+)+|\b(?:[a-z]+[A-Z]|[A-Z][a-z]+[A-Z])[A-Za-z0-9]*\b|\b[A-Z][A-Z0-9_]{1,}\b|\b(?:Ctrl|Alt|Shift|F\d+|HUD|CPU|GPU|UI|API|JSON|HTTP|WMI|ID|Windows|Linux|macOS|Android|AIDA64|PawnIO|DeepSeek|Endfield Charge Plus|System|Memory|Success|Connected|Response|TimedOut)\b|\b(?:duration-long|duration|bytes|speed|upper|lower|auto:[0-9]+|(?:kb|mb|gb|tb):[0-9]+|time:[A-Za-z:]+|math:[a-z]+(?::[-0-9.]+)?|sub:[0-9:]+|replace:[^\s,;]+)\b")
 
 def transform_prose(text, transform):
     output=[];position=0

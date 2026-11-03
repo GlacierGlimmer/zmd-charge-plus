@@ -1,0 +1,41 @@
+{
+  "shared": {
+    "Adelaide, Darwin": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Alaska": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Athens, Cairo, Helsinki": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Auckland, Fiji": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Bangkok, Hanoi, Jakarta": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Berlin, Paris, Rome": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Buenos Aires, Brasilia": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Dhaka, Thimphu": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Dubai, Abu Dhabi": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Eucla": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Hawaii": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Islamabad, Karachi": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Kabul": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Kathmandu": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Moscow, Riyadh": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "New Delhi, Mumbai": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Newfoundland": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Nukuʻalofa, Apia": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Sydney, Brisbane": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Tehran": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Tokyo, Seoul": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "Yangon": "ས་མིང་རང་གི་རྒྱལ་སྤྱིའི་སྐྱེ་མིང་སྦྱོར་སྟངས་སོར་བཞག་བྱས།",
+    "AC": "གློག་ཁུངས་ཀྱི་སྤེལ་རེས་གློག་རྒྱུན་མཚོན་རྟགས།",
+    "NiCd": "ནི་ཁེལ་ཀེད་མི་ཡམ་གློག་རྫས་ཀྱི་རྫས་འགྱུར་ཨང་ཡིག་སོར་བཞག",
+    "NiMH": "ནི་ཁེལ་ལྕགས་རིགས་ཆིང་འདྲེས་གློག་རྫས་ཀྱི་རྫས་འགྱུར་ཨང་ཡིག་སོར་བཞག",
+    "X / px": "X མདའ་རྟགས་དང་བརྙན་རྡུལ་གྱི་རྒྱལ་སྤྱིའི་འཇལ་བྱེད་སོར་བཞག",
+    "Y / px": "Y མདའ་རྟགས་དང་བརྙན་རྡུལ་གྱི་རྒྱལ་སྤྱིའི་འཇལ་བྱེད་སོར་བཞག"
+  },
+  "notes": [
+    "Full 2314 active-key authored coverage, with 1255 explicit native entries recorded in bo-native-complete.tsv and bo-native-review.tsv. Full technical definitions preserve collection interfaces, permission conditions, cache timing, sample windows and unavailable behavior.",
+    "All 14 native manual chapters were inspected; twelve parts were refined in bo-native-manual-review.json for actual save/apply behavior, scales, queue and rule scope, media timeline and maintenance.",
+    "Wired RAM means locked/nonpageable memory; uppercase Duration/Speed are translated UI labels while lowercase format pipes remain code. SystemClock.elapsedRealtime includes deep sleep.",
+    "Independent semantic cross-check, platform-specific manual adaptation and visual review remain integration tasks. Authored coverage and these notes do not authorize distribution.",
+    "Resumed to 2336 messages with 24 current frame-collector human statuses. Both the current window definition and legacy long FPS hint now use the selected window dominant stream and separate other windows in the same process.",
+    "Root review reopened 310 inherited mechanical separator constructions. Each was rewritten from the full Chinese meaning in bo-resume-natural-captions.tsv; source/old/new proof is saved. This supersedes the earlier blanket semantic-completion wording.",
+    "Full native Linux/macOS/Android platform sidecar authored with 109 translated fields. Platform behavior follows the frozen native English schema including lack of media collectors, storage limitations, secret stores, Root and capture permissions.",
+    "This authoring pass is not independent linguistic or visual approval and does not authorize distribution."
+  ]
+}

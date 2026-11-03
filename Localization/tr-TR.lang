@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (Değiştirildi)
+ CPU
+ FPS
+ GHz
+ kopya
+ {time.utc_offset}
+ · Birincil
+%
+'{0}' sayısal değil
+(Çeviriler %100 doğru olmayabilir)
+(değiştirildi)
+Pozitif X sağa, pozitif Y aşağı yönelir.
+Pozitif X sağa, pozitif Y aşağı yönelir.
++X sağa, +Y aşağı. Hazır konumu değiştirmek iki kaydırmayı sıfırlar.
+-- geçerli bir okuma veya ifade başarısızlığı anlamına gelmez.Kütüphanede anlam ve birimleri kontrol edin, ardından sürücü, API doğrulama, JSON yolu veya FPS durumu.Formatlama kayıp verileri gerçek bir ölçüme dönüştüremez.MB/s, Mbps, GiB ve °C'yi ayırt edin.
+, geçersiz ifadeler ve birimler --
+/ GB
+/// Pil
+/// CPU
+/// DEEPSEEK API
+/// Ekran FPS
+/// GPU
+/// Bellek
+/// Ağ
+/// Ağ yoklaması
+/// Sistem diski
+/// Saat
+/// Pencere FPS
+/// Dünya saati
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 veya 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0,4–1,4×. Bırakıldığında uygulanır.
+GPU (1): {0}
+Listede tek profil var; gösterilmeye devam eder.
+%10–%100. Bırakıldığında uygulanır.
+%100 referans hızı
+%100 tamamen opaktır.
+%100 referans hızı
+Yerleşik profilden bir kopya oluşturuldu; özgün profil değişmedi.
+Ön plan hizmeti HUD'yi çalışır tutar; bu hizmet olmadan sistem örneklemeyi durdurur.
+Medya HUD şablonu
+Yapılandırılmış HTTP/JSON kaynağından eşlenen gerçek alan.
+Şebeke gücü
+Güç bağlı
+Harici güç bağlantısı
+Güç bağlı
+AIDA64 verileri kullanılabilir mi?
+AIDA64 dış uygulamaları
+AIDA64 veri arabirimi
+DeepSeek API gecikmesi (ms)
+API düzeyi
+API durumu
+API isteği başarısız
+Hakkında
+Versiyon, mimarlık ve güncellemenin kontrol sonucu hakkında gösteriler. Ağ hataları veya mevcut olmayan uzaktan sürümler güncel olduğunuzu onaylamaz. Durumu kontrol edin ve tekrar deneyin. Gelişim paketleri halka açık sürüm numarasını saklayabilir; onları tanımlamak için teslimat notlarını kullanın.
+Vurgu rengi
+Vurgu rengi
+Etkin ağ arabirimi sayısı
+Etkin profil
+Etkin profil
+Sürekli görünüm kapalıyken çalışır. Kural sonraki öğeyi, liste boşsa mevcut profili çağırır. İlk ve geri dönen örnekler yalnız temel oluşturur. Etkin bölge istekleri önceliklidir; bölge ve kurallar kuyrukta birbirinden bağımsız ilerler. HUD gösterilirken genel ve veri kaynağı aralıklarına göre örnekleme sürer. Meşgulken algılanan olaylar birleştirilip saklanır.
+ActivityManager.MemoryInfo.lowMemory: sistem bellek sıkışıklığı bildiriyor.
+ROOT ile SurfaceFlinger gerçek birleştirilmiş kare sayacının değişim hızı; yenileme hızı değildir. Birden fazla ekran ayırt edilemiyorsa kullanılamaz.
+Gerçek toplama durumu ve kullanılamama nedeni.
+Gerçek veri toplama durumu.
+Windows medya oturumu bilgileri. Oynatırken konum tahmin edilir; desteklenmeyen alanlar kullanılamaz.
+GPU aygıt kimliği
+Ekle
+HUD ekle
+Bir kural ekleyin
+HUD İçeriği → Çıkartma Kuralları altında bir kural ekle ve etkinleştir. Değişken anahtarı girin ve Eğit, Değiştir veya Doğru Olur seçin; Eğitler için operatörü ve değeri yapılandırın. Bir soğutma ayarını ayarlayın, Her zaman görünürünü kapatın, sonra Kaydet & Uygulayın.
+Bir değişken/öperatör/eğlence ekleyin => bir satır başına renk kuralı. Kurallar yük, sıcaklık ve diğer değerlere göre aksanı değiştirir. Eğlence değerleri değişkenin orijinal birimini kullanır. Geçerli renk değerlerini kullanın; eksik ölçümler sıfır olarak değerlendirilmez.
+Sıraya profiller ekleyin ve onları sipariş etmek için Move Up/Down kullanın.Sıradan çıkarmak profilini silmez.Atomatik bisiklet sürüşü yapılandırılmış aralığında ilerler.Barsı bir kuyruk aktif profil kullanır; tek bir öğe kuyruk farklı bir öğeye geçemez.
+Kural ekle
+Kuyruğa ekle
+Adres
+Adelaide, Darwin
+Her profil için özel seçenekleri ayarlayın.
+Her alan çağrısında listeyi ilerlet
+Toplama işlevleri: min, max, avg, sum. Aralık ve hassasiyet: clamp(value, min, max), round(value, digits), floor, ceil, abs, sign. Matematik: sqrt, pow, log, log10, exp, sin, cos, tan. percent(value, total) bir yüzde döndürür; between(value, min, max) iki sınırı da içeren bir aralığı denetler.
+Alaska
+Albüm
+Tüm kategoriler
+Tüm HUD'lar bir örnekleme aralığını paylaşır; daha kısa aralıklar daha fazla kaynak kullanır. Saatler saniyelerle güncellenirken, HTTP ve denge kaynakları kendi yenilenme/kaş aralıklarını korur.
+Tüm kategoriler
+Sistem ayarlarında diğer uygulamaların üzerinde gösterime izin verin.
+Daha önce istendi; sistem ayarlarından yeniden etkinleştirin.
+Her zaman görünür
+Her zaman görünür, HUD’u ekranın en üst katmanında veya masaüstünde tutar. Bu seçenek kapalıyken güç olayları, farenin etkin bölgesi veya tetikleme kuralları HUD’u geçici olarak gösterir; görüntüleme süresi dolunca HUD geri çekilir. Ana anahtarı kapatmak geçerli oturumdaki görüntülemeyi durdurur; uygulama yeniden başlatıldığında anahtar tekrar açılır.
+Her zaman üstte
+Her zaman görünür
+AMD Adrenalin kullanılabilir mi?
+Amerikan Samoası
+Shizuku gibi yükseltilmiş yetkili bir hizmet gerekir.
+Ek izin veya özel erişim gerekiyor.
+İçe aktarma hemen uygulanır; yedek istiyorsanız önce mevcut yapılandırmayı dışa aktarın.
+Kalıcı bir bildirim görünür kalmalıdır.
+Bir güncelleme var.
+Android 13 ve üzeri, HUD'nin kalıcı bildirimi için bildirim izni gerektirir; izin yalnızca HUD başlatılırken istenir.
+Android 16 veya daha yenisi gerekir.
+Android EXTRA_HEALTH durum kodu (GOOD/OVERHEAT/DEAD/...); yüzde olarak pil sağlığı için battery.health_percent kullanın.
+Android EXTRA_PLUGGED: AC / USB / WIRELESS / bağlı değil.
+Android EXTRA_STATUS sayısal değeri (CHARGING/DISCHARGING/FULL/NOT_CHARGING).
+Android SoC modeli (Build.SOC_MODEL, API 31+); masaüstü kataloğundaki eşdeğer anahtar cpu.name değeridir.
+Android sürümü
+Android sıradan uygulamaların tüm donanım ölçümlerini okumasına izin vermez: GPU yükü, CPU sıcaklığı ve bazı pil akımı değerleri çoğu cihazda kullanılamaz. ECP yalnızca gerçekten okuduğu değerleri gösterir, kalanını desteklenmiyor olarak işaretler ve değer uydurmaz.
+Android bunun için genel bir API sunmuyor.
+Android bu ölçüm için bir okuma arayüzü sağlamaz; uygulama bu veriyi toplamaz ve kullanılamaz olarak gösterir.
+Android yerel canlı güncelleme
+Android notu
+Android genel bir GPU yük API'si sunmuyor.
+Android sistemi
+Android v{0}, sürümler sayfasında yayımlandı.
+Animasyon
+Uygulama işlemi
+Uygulama güncellemeleri
+Tüm ayarlara ve bütün HUD’lara uygulanır. Her HUD’un boyutu genel arayüz ölçeğiyle çarpılır.
+Tüm sürekli HUD'lar için. Tıklama yalnız kendi listesini geçiş animasyonuyla ilerletir ve sayacını yeniler; otomatik geçiş kapalıyken de çalışır.
+Uygulanıyor…
+Rastgele görünümlere izin verilmez; yalnız resmî şablonlar kullanılabilir.
+Mimari
+Sanatçı
+Sanatçı - parça adı
+Değere göre
+En fazla 600 kayıt ve 3 günlük dosyası tutulur; HUD uzun süre çalışsa da depolamayı doldurmaz.
+Atina, Kahire, Helsinki
+Atlantik Saati (Kanada)
+Auckland, Fiji
+Kimlik doğrulama başarısız; API anahtarını denetleyin.
+Yazar
+Henüz yetki verilmedi.
+Otomatik / hedef seçin
+Otomatik geçiş
+Liste boş. En az bir profil ekleyin.
+Otomatik geçiş açık; {0} profil sırayla gösterilir.
+Otomatik seçim
+Otomatik geçiş
+Otomatik birimler ve boru hattları
+Kullanılabilir
+Kullanılabilir bayt
+DeepSeek API kullanılabilirlik metni
+StatFs ile okunan kullanılabilir alanın toplam kapasiteye oranı.
+Uygulamaya açık mantıksal CPU çekirdekleri
+Yalnız sürekli modda. Otomatik geçiş kapalı olsa da tıklama liste animasyonuyla ilerler. Boş veya tek öğe geçiş yapmaz.
+Geçerli sensör sayısı
+Bölümün kullanılabilir alan oranı
+Sürekli görünüm kapalıyken kullanılabilir. Hedef ekranın tümünde konum, boyut ve beklemeyi ayarlayın.
+Ortalama gecikme (ms)
+Ekran çentiğinden kaçın
+BIOS tarihi
+GPU VBIOS sürümü
+Arka plan işlemi sayısı
+Yedekle
+Yedekleme başarısız. Günlüklere bakın.
+Bakiye
+Bakiye / dönem
+Bakiyenin para birimi
+DeepSeek toplam bakiye metni
+Bakiye sorguları ve yoğun/yoğun olmayan saatler; API anahtarı Android Keystore ile şifrelenerek saklanır.
+Bakiye sorgusu durum metni; anahtar eksikse veya istek başarısızsa nedenini belirtir.
+Bangkok, Hanoi, Cakarta
+API temel URL adresi
+Temel çizgiler, soğukluk ve kuyruk 
+Pil
+Pil akımı
+Pil sağlık durum kodu
+Pil durum kodu
+Pil sıcaklığı
+Pil akımı
+Pil doluluk oranı
+Pil istatistikleri kullanılamıyor veya sistem tarafından kısıtlanmış.
+Pil sıcaklığı
+Android pil sıcaklığı, °C; masaüstü kataloğundaki eşdeğer anahtar battery.temperature değeridir.
+Pil gerilimi
+Önce BatteryManager enerji sayacı okunur; yoksa kalan enerji gerçek yük sayacı ve voltajdan tahmin edilir.
+Doğruya dönüşür
+Pekin Saati (UTC+08:00)
+Pekin, Hong Kong, Singapur
+Berlin, Paris, Roma
+BitLocker şifreleme ilerlemesi
+Sistem diskinin BitLocker durumu
+Mantıksal
+Sistemin açılış zamanı
+Başlangıç izni bildirilmiş; ayarlardan otomatik başlatmayı açın.
+Alt orta (görev çubuğu / Dock üstü)
+Sol alt (görev çubuğu / Dock üstü)
+Sağ alt (görev çubuğu / Dock üstü)
+Alt orta
+Sol alt
+Sağ alt
+Sekme
+Buenos Aires, Brasilia
+Derleme 2026.10.27
+Derleme {0}
+Bir karusel kuyruk oluşturun
+Derleme tarihi
+Build.MANUFACTURER tarafından bildirilen üretici.
+Build.MODEL tarafından bildirilen cihaz modeli.
+Yerleşik profiller silinemez
+Yerleşik profiller silinemez
+Yerleşik profil · değişiklikler kaydedilirken kopya oluşturulur
+Yerleşik profil · saat dilimi ve günlük hedef ayarlanabilir; içerik değişiklikleri kopya oluşturur
+CPU veri yolu/BCLK hızı
+Bayt
+C: etkinlik oranı
+C: dosya sistemi
+C: kullanılabilir alan
+C: disk sağlığı durumu
+C: anlık toplam G/Ç hızı
+C: birim etiketi
+C: ilişkili bölüm sayısı
+C: açık kalma süresi
+C: kuyruk uzunluğu
+C: anlık okuma hızı
+C: depolama çalışma durumu
+C: disk sıcaklığı
+C: toplam kapasite
+C: TRIM durumu
+C: kullanım oranı
+C: kullanılan alan
+C: anlık yazma hızı
+CPU
+Fiziksel CPU çekirdek sayısı
+CPU modeli
+CPU sıcaklığı
+Uygulamanın birikmiş CPU süresi
+CPU frekansı
+Çekirdek başına CPU
+CPU sensörü kullanılamıyor: donanım veya sürücü geçerli bir sıcaklık döndürmedi.
+CPU sıcaklığı
+CPU sıcaklık ölçüm durumu
+CPU sıcaklığı hala gösterir --
+CPU sıcaklığı; Android genel bir API sağlamaz (androidNote bölümüne bakın).
+Toplam CPU kullanım oranı
+CPU kullanım oranı
+Ara: CPU kullanımı / cpu.usage
+Sistem önbellek belleği
+Android önbelleğe alınmış/geri kazanılabilir bellek; masaüstü kataloğundaki eşdeğer anahtar memory.cache_bytes değeridir.
+Sistem önbellek belleği
+Cihaz saati ve profil ayarlarından hesaplanır.
+İptal
+Windows başlangıç görevi okunamadı. Günlüklere bakın.
+Yetenek açıklaması
+Kapasite ve zaman biçimleri
+Kapasite, frekans, hız, bakiye ve saat gibi ana değerler.
+Yeşil Burun Adaları
+Yakalama hedefi
+Orta
+Orta (çalışma alanı)
+Sol orta (çalışma alanı)
+Sağ orta (çalışma alanı)
+Sol orta
+Sağ orta
+Merkez Saati (ABD ve Kanada)
+Her HUD'dan ayarlanır, uygulandığında ortak olur. Saatler her saniye, API'ler kendi aralıklarında güncellenir.
+Değiştiriliyor
+Elektrik yükü sayacı
+Şarj gücü (W)
+Şarj oluyor
+Chatham Adaları
+Chatham Adaları yaz saati farkı
+Güncellemeleri denetle
+Ayarlar → Veri yönetimi → Donanım verileri\nDüşük düzey sıcaklık, güç ve gerilim için PawnIO ve yönetici gerekir. AIDA64 Tercihler → Donanım izleme → Haricî uygulamalar altında paylaşılan bellek, kayıt defteri veya WMI açın. Tüm dışa aktarımlar burada; eksikler --.
+Güncellemeleri kontrol edin
+İzinleri, cihaz desteğini ve veri kaynaklarını denetleyin. Onay kutusu yalnızca bu pencerede listelenen verilerin uyarılarını kalıcı olarak kapatır. Diğer değişkenler için uyarılar gösterilmeye devam eder.
+Ana anahtarı ve kısayol baskı kontrol edin, sonra da sürekli vs geçici modunu onaylayın. geçici mod bir olay, sıcak bölge veya kurallara ihtiyaç duyar. Hedef gösterisini, koordinatları, bulanıklığı ve sıcak bölge anahtarını kontrol edin. Kaydet ve uygula olmadan bir profil kaydetmek, HUD'u eski ayarlarında bırakır.
+Ayarlar → Veri yönetimi → Donanım verileri\nDüşük düzey sıcaklık, güç ve gerilim için PawnIO ve yönetici gerekir. AIDA64 Tercihler → Donanım izleme → Haricî uygulamalar altında paylaşılan bellek, kayıt defteri veya WMI açın. Tüm dışa aktarımlar burada; eksikler --.
+Güncellemeleri denetle
+Android yerel canlı güncellemeleri denetleniyor…
+GitHub bağlantısı kuruluyor…
+İzinler ve yerel canlı güncelleme desteği denetleniyor…
+Denetleniyor…
+Her başlangıçta bir kez denetlenir; elle de denetleyebilirsiniz.
+Kimyasal tür
+Çince (Basitleştirilmiş)
+Kısa yoldan Tam veya Basit'i seçin; saklanmak bir geri çekim animasyonu oynar. Tüm HUD'ları profillerini ve konumlarını korurken etkilemektedir. Geçici modda bir kez çağrılır, ardından etkinlik davranışını yeniden başlatır. En son hızlı istek kazanır. Kısa yoldan silinme seans boyunca geçerlidir.
+Üst çubuktan bir dil seçin veya sistem dilini izleme seçeneğini kullanın. Dil tercihi hemen kaydedilir; bekleyen diğer değişiklikler için Kaydet ve uygula düğmesine basılması gerekir. Desteklenmeyen sistem dillerinde İngilizce kullanılır. Ayarlar, yerleşik profiller, veri uyarıları ve bu kılavuz seçilen dili izler. Değişken anahtarları, formüller ve API JSON verileri değişmez.
+Yüklü yazı tipini seçin; eksik karakterleri sistem tamamlar.
+Birden çok GPU varsa bu profil için birini seçin.
+Gösterilecek profili seçin; yerleşik profili kaydetmek bir kopya oluşturur.
+HUD'un gösterdiği ve görünüşünü seçin.
+Temizle
+Aramayı temizle
+Kısayolu temizle
+Değiştirmek için sürekli bir HUD'u tıklayın
+Sürekli HUD'a tıklayarak profil değiştir
+Tıklayın ve kısayola basın
+Tıklamaları alttaki uygulamaya geçir
+Pano
+Daraltılmış: 
+Renk
+Her satıra renk kuralı: değişken işleç değer => renk
+Renk
+Tüm etkin arayüzlerin toplam hızı.
+Kalan bellek taahhüt sınırı
+Bellek taahhüt sınırı
+Bellek taahhüt kullanım oranı
+Taahhüt edilmiş bellek
+Biçimler
+Ortak simge biçimleri
+Karşılaştırma işleci
+Tamamen boş fiziksel bellek (MemFree); masaüstü macOS sürümünde de aynı ad kullanılır.
+Koşul
+Koşul modu
+Şartlı renkler
+Ayarlar ve bakım
+Ayarlar klasörü
+Ayarlar yedeklendi: {0}
+Ayarlar dışa aktarıldı.
+Ayarlar içe aktarıldı ve uygulandı.
+Ayarlar uygulandı; önceki yedek: {0}.
+Yapılandırmayı içe ve dışa aktarma
+Yapılandırma, yedekleme ve bakım 
+HTTP / JSON'u yapılandırın
+Bakiye ve yoğun saatleri ayarlayın. API anahtarı mevcut Windows kullanıcısı için şifrelenir.
+Hot-zone pozisyonunu yapılandırın ve kalın.
+Veri yönetimi → Kaynak ayarları → DeepSeek API altında anahtar ve saatleri girin. Anahtarsız bakiye alınamaz.
+Önce Veri kaynakları → DeepSeek API bölümünde DeepSeek API anahtarını ayarlayın. Yoğun/yoğun olmayan saatler de bu kaynakta belirlenir. Anahtar yoksa bakiye verileri kullanılamaz.
+Profilde ayarlanmış günlük hedef saati, hh:mm:ss; masaüstü kataloğundaki eşdeğer anahtar time.target.value değeridir.
+DeepSeek, HTTP JSON ve AIDA64'ü bağlayın.
+Bağlı
+Bağlantı başarısız
+Bağlantı kuruldu.
+İçindekiler
+Bağlam değişimi
+Profillerin nasıl değişeceğini kontrol edin.
+Tüm HUD görüntüleme işlevlerini yönetir.
+Tüm HUD'ları yönetir. Gizliyken otomatik çağrılar durur. Tekrar basmak modu, yeniden başlatmak görünürlüğü geri getirir.
+Bekleme / sn
+Eşgüdümlü Evrensel Zaman
+Kopyalandı: {0}
+Anahtarı kopyala
+Şablonu kopyala
+Örneği kopyala
+Kitaptan kopyala ve sonra okuyabilir HUD metnini oluştur.
+Anahtarı kopyala
+Adları kitaplıktan kopyalayın. Ağ testi listedeki yoklama profilini, yoksa mevcut profili kullanır.
+Seçili değişkeni kopyala
+Şablonu kopyala
+Kopya edilebilir JSON yapısı
+GPU çekirdek frekansı
+Ortalama çekirdek sıcaklığı (özet)
+CPU çekirdek gerilimi
+Çekirdekler
+Günlük klasörü açılamadı. Günlüklere bakın.
+GitHub bağlantısı kurulamadı; daha sonra yeniden deneyin.
+Güncelleme bilgileri okunamadı; yeniden deneyin.
+Kısayol kaydedilemedi; başka uygulama kullanıyor olabilir. Değiştirip kaydedin ve uygulayın.
+Kaydedilemedi; önceki kısayol korunur. Başka birleşim seçin.
+Tercih kaydedilemedi. Yeniden deneyin.
+HUD hizmeti başlatılamadı; Gelişmiş sayfasındaki günlüğe bakın.
+Dinamik ada uygunluğu doğrulanamadı
+Sayı
+Boşta kalan kareleri dışlayarak gerçek içerik güncelleme karelerini sayar. Ekran Kaydı izni gerekir; görüntü kaydedilmez. Uygulamanın iç işleme/sunum FPS değerinden farklı olabilir; sabit içerik 0 FPS olabilir.
+Yarat, kaydet, sil ve ön izleme
+Teşekkürler
+Yerel ayar
+Bakiye para birimi kodu, genellikle CNY; döviz kuru uydurulmaz.
+Geçerli saat (24 saat)
+Geçerli saat (12 saat)
+Up durumundaki, geri döngü olmayan ağ arayüzlerinin sayısı.
+Geçerli HUD profilinin dahili kimliği.
+Seçili GPU için kararlı dahili tanımlayıcı.
+Hedef adı çözümlendikten sonra gerçekten denenen veya yanıt veren IP adresi.
+İşlemci mimarisi, örneğin x64 / ARM64.
+Şu anda kullanılabilir fiziksel bellek.
+Kullanılabilirlik durumundan üretilen «Kullanılabilir / Kullanılamaz» metni.
+Win32_BIOS tarafından bildirilen ReleaseDate.
+Destekleniyorsa nvidia-smi tarafından bildirilen VBIOS sürümü.
+Ana pencere tanıtıcısı olmayan geçerli işlem sayısı.
+¥0.00 biçimindeki toplam bakiye metni.
+DeepSeek API hesabının Çin yuanı cinsinden toplam bakiyesi.
+Android anlık pil akımı; şarj/deşarj yönü akımın işaretine göre değil, EXTRA_STATUS ile belirlenir.
+Sistem biriminin EncryptionPercentage değeri.
+Windows Volume Encryption arayüzünün bildirdiği sistem sürücüsü koruma durumu.
+Sistemin çalışma süresinden tahmin edilen geçerli Windows açılış zamanı.
+Donanım izleme sensörlerinin bildirdiği Bus/BCLK frekansı.
+C: sürücüsünün Windows PercentDiskTime sayacı.
+C: sürücüsünün dosya sistemi.
+C: sürücüsündeki kullanılabilir alan.
+C: birimini içeren fiziksel diskin Windows Storage HealthStatus değeri; Storage arabirimi destekliyorsa kullanılabilir.
+C: sürücüsünün anlık toplam okuma ve yazma hızı.
+C: sürücüsünün birim etiketi.
+C: mantıksal biriminin Win32_LogicalDiskToPartition üzerinden ilişkili olduğu bölüm sayısı.
+C: birimini içeren diskin PowerOnHours değeri; aygıt destekliyorsa kullanılabilir.
+C: sürücüsünün CurrentDiskQueueLength sayacı.
+C: mantıksal biriminin Windows performans sayaçlarından alınan anlık okuma hızı.
+C: birimini içeren fiziksel diskin Windows Storage OperationalStatus değeri.
+C: birimini içeren diskin Storage Reliability Counter sıcaklığı; aygıt destekliyorsa kullanılabilir.
+C: sürücüsünün toplam kapasitesi.
+C: dosya sisteminin Windows DisableDeleteNotify durumu.
+C: sürücüsündeki alanın kullanım oranı.
+C: sürücüsünde kullanılan alan.
+C: mantıksal biriminin Windows performans sayaçlarından alınan anlık yazma hızı.
+Geçerli uygulama işleminin birikmiş işlemci süresi.
+Windows performans sayaçlarının bildirdiği sistem önbelleği boyutu, bayt.
+Android BatteryManager yük sayacı; desteklenmediğinde Integer.MIN_VALUE döner ve eksik veri olarak işlenir.
+Geçerli şarj gücü; şarj olmuyorsa genellikle 0.
+Win32_Battery tarafından bildirilen pil kimyası, örneğin lityum iyon/lityum polimer.
+Taahhüt edilen bellek sınırının hâlâ kullanılabilir bölümü.
+Geçerli Windows taahhüt edilen bellek sınırı; genellikle fiziksel bellek ve disk belleği dosyasına bağlıdır.
+Taahhüt edilen belleğin taahhüt sınırına oranı.
+Sistemin taahhüt ettiği bellek miktarı.
+Windows System performans sayaçlarından Context Switches/sec.
+Seçili GPU çekirdeğinin gerçek zamanlı frekansı.
+Kullanılabilir CPU çekirdek sıcaklığı sensörlerinin güncel ortalaması.
+Donanım sensörlerinin bildirdiği CPU çekirdek/en yüksek etkin voltajı.
+Sistemin şu anda algıladığı fiziksel GPU sayısı.
+Geçerli işlemin kültür adı, ör. zh-CN.
+AM/PM içeren 12 saatlik biçimde geçerli yerel saat.
+HH:mm:ss biçiminde geçerli yerel saat.
+Ürün yazılımı/sürücü tarafından sağlanan pil döngü sayısı; bazı cihazlar 0 döndürebilir.
+D: sürücüsünün Windows PercentDiskTime sayacı.
+D: sürücüsünün dosya sistemi.
+D: sürücüsündeki kullanılabilir alan.
+D: birimini içeren fiziksel diskin Windows Storage HealthStatus değeri; Storage arabirimi destekliyorsa kullanılabilir.
+D: sürücüsünün anlık toplam okuma ve yazma hızı.
+D: sürücüsünün birim etiketi.
+D: mantıksal biriminin Win32_LogicalDiskToPartition üzerinden ilişkili olduğu bölüm sayısı.
+D: birimini içeren diskin PowerOnHours değeri; aygıt destekliyorsa kullanılabilir.
+D: sürücüsünün CurrentDiskQueueLength sayacı.
+D: mantıksal biriminin Windows performans sayaçlarından alınan anlık okuma hızı.
+D: birimini içeren fiziksel diskin Windows Storage OperationalStatus değeri.
+D: birimini içeren diskin Storage Reliability Counter sıcaklığı; aygıt destekliyorsa kullanılabilir.
+D: sürücüsünün toplam kapasitesi.
+D: dosya sisteminin Windows DisableDeleteNotify durumu.
+D: sürücüsündeki alanın kullanım oranı.
+D: sürücüsünde kullanılan alan.
+D: mantıksal biriminin Windows performans sayaçlarından alınan anlık yazma hızı.
+Hedef alan adıysa geçerli deneme çevriminin DNS çözümleme süresi; doğrudan IP için 0.
+Etkin ağ arayüzlerinde yapılandırılmış DNS sunucusu adresleri.
+Windows Processor Information sayaçlarından % DPC Time.
+Bu cihazın geçerli tarihi.
+Bu cihazın geçerli tarih ve saati.
+Geçerli günün başlangıcından beri geçen saniye.
+Haftanın geçerli gününün İngilizce adı.
+Haftanın geçerli gününün Çince adı.
+Geçerli tarihin yıl içindeki gün numarası.
+Bugün 00:00:00 ile yarın 00:00:00 arasında geçen yüzde.
+Yarın 00:00:00 olana kadar kalan saniye.
+Geçerli ayın günü.
+Seçili GPU ayrılmış video belleğinin toplam kapasitesi.
+Kullanılan ayrılmış video belleğinin toplam ayrılmış belleğe oranı.
+Seçili GPU ayrılmış video belleğinin gerçek zamanlı kullanımı.
+Etkin ağ arayüzlerinde yapılandırılmış ağ geçidi adresleri.
+En son hızlı/tam taramanın (Quick/Full Scan) bitiş zamanı.
+Windows Defender WMI tarafından bildirilen etkinlik ve gerçek zamanlı koruma durumu.
+MSFT_MpThreat tarafından şu anda listelenen tehdit sayısı.
+Geçerli tam şarj kapasitesinin tasarım kapasitesine oranı; pil sağlığına eşittir.
+Wh birimine dönüştürülmüş tasarım kapasitesi.
+Pilin fabrika tasarım kapasitesi.
+Win32_PnPEntity içindeki USB PNP cihaz sayısı.
+Şu anda listelenen USB PNP cihaz adları.
+Geçerli deşarj gücü; deşarj olmuyorsa genellikle 0.
+Geçerli ağ profilinde seçilen birimle üretilen indirme hızı metni.
+Seçili ekranın gerçek sunum/görüntü güncelleme hızı; veri toplama kapsamı platforma göre değişir. Sabit yenileme hızı değildir.
+Gerçek FPS değerinin profilde %100 için ayarlanan FPS değerine oranı.
+Saat profilinin halka ilerlemesi; hedef saat modunda kalan oranı gösterir.
+Normal modda günün ilerlemesi; hedef saat modunda «Kalan: %??» metni.
+Gerçek toplama durumu ve kullanılamama nedeni.
+Geçerli ağ profilinde seçilen birimle üretilen yükleme hızı metni.
+Docker CLI kullanılabiliyorsa docker ps -q tarafından döndürülen çalışan kapsayıcı sayısı.
+docker images -q çıktısındaki benzersiz görüntü kimliği sayısı.
+Bağlı ve geri döngü olmayan tüm ağ arayüzlerinin toplam anlık indirme hızı.
+Mbps birimine dönüştürülmüş toplam sistem indirme hızı.
+Win32_VideoController tarafından bildirilen sürücü tarihi.
+Win32_VideoController tarafından bildirilen seçili GPU sürücüsü sürümü.
+ICMP için hedef adresi; TCP / UDP için adres:port.
+En son başarısız denemenin alt düzey durumu veya hatası.
+Windows güç yönetiminin pilin tükenmesine kadar tahmin ettiği saniye; sistem tahmin edemiyorsa kullanılamaz.
+Kalan kapasite, tam şarj kapasitesi ve anlık şarj gücünden hesaplanan tahmini dolum süresi; yalnız şarj gücü biliniyorsa sağlanır.
+Algılanan ayrı fan sensörü sayısı.
+LibreHardwareMonitor içinde görülebilen fanların en yüksek geçerli RPM değeri.
+Control türündeki donanım sensörlerinin en yüksek yüzdesi.
+CF_HDROP kopyalanmış dosya listesindeki dosya sayısı.
+Etkin güvenlik duvarı profili: etki alanı/özel/genel.
+Etkin Windows Firewall Policy yapılandırmasının durumu.
+Şu anda hazır sabit disk birimlerinin sayısı.
+Tüm hazır sabit disk birimlerinin toplam kullanılabilir alanı.
+Hazır sabit disklerin sürücü harfleri.
+Tüm hazır sabit disk birimlerinin toplam kapasitesi.
+Tüm sabit disklerin kullanılan alanının toplam kapasiteye oranı.
+Tüm hazır sabit disk birimlerinin toplam kullanılan alanı.
+Bellek modülünün FormFactor değeri, örneğin DIMM / SODIMM.
+Geçerli işlemin kullandığı .NET FrameworkDescription.
+Kullanılabilir fiziksel belleğin toplam fiziksel belleğe oranı.
+Windows performans verilerinin bildirdiği geçerli etkin CPU frekansı.
+MHz cinsinden geçerli etkin CPU frekansı.
+Etkin CPU frekansının en yüksek frekansa yüzdesi; turbo sırasında %100 değerini aşabilir.
+Windows tarafından tahmin edilen tam pil çalışma süresi; kullanılamıyorsa 0.
+Gecikme halkası 999 ms değerinde %100 olur.
+Wh birimine dönüştürülmüş tam şarj kapasitesi.
+Pilin şu anda tamamen şarj edilebildiği kapasite.
+GPU Engine performans sayaçlarından toplanan işlem başına GPU kullanımı.
+GPU Engine performans sayaçlarına göre geçerli Endfield Charge Plus işleminin GPU kullanımı.
+XInput pil düzeyinden dönüştürülen yaklaşık pil yüzdesi.
+XInput 0–3 yuvalarında bağlı oyun kumandası sayısı.
+Uygulamanın geçerli çalışma dizini bir Git deposuysa geçerli Git dalı.
+Geçerli çalışma dizinindeki son işlemenin kısa karması ve başlığı.
+Geçerli çalışma dizininin Git durumu: temiz veya değişiklik sayısı.
+PATH içinde bulunan go version çıktısı.
+DeepSeek API hesabının hediye bakiyesi.
+Geçerli uygulama işleminin açtığı Windows tanıtıcılarının sayısı.
+Takılı fiziksel bellek kapasitesi eksi Windows tarafından kullanılabilen toplam fiziksel bellek.
+Tam şarj kapasitesinin tasarım kapasitesine yüzdesi.
+Donanım sensörlerinin bildirdiği GPU sıcak nokta sıcaklığı.
+Geçerli saat (0–23).
+Windows OptionalFeature içinde Microsoft-Hyper-V-All yüklü ve etkin mi.
+Etkin ağ arayüzlerinin tek noktaya yayın IPv4 adresleri.
+Etkin ağ arayüzlerinin tek noktaya yayın IPv6 adresleri.
+CPU zamanının boşta geçen oranı.
+DIB veya DIBV5 görüntüsü çözümlenebiliyorsa görüntünün genişlik × yüksekliği.
+Windows Processor Information sayaçlarından InstructionsRetiredPersec; yalnız sistem bu sayacı sunuyorsa kullanılabilir.
+Virgülle ayrılmış tüm etkin ağ arayüzlerinin adları.
+Etkin ağ arayüzü türleri, örneğin Wireless80211 / Ethernet.
+Windows Processor Information sayaçlarından Interrupts/sec.
+Geçerli yerel saatin ISO 8601 gösterimi.
+PATH içinde bulunan java -version çıktısının ilk satırı.
+Ardışık başarılı örneklerin gecikme farklarının mutlak ortalaması; gecikme değişiminin yaklaşık ölçümü.
+Boşta geçen süre hariç, CPU zamanının çekirdek modunda geçen oranı.
+İşlemcinin bildirdiği L2 önbellek kapasitesi.
+İşlemcinin bildirdiği L3 önbellek kapasitesi.
+Ollama, LM Studio ve llama-server gibi yaygın yerel model işlemlerinin algılanması.
+Geçerli yapılandırmayla yapılan son başarılı denemenin yerel saati.
+Uygulamanın Clipboard Sequence Number değişimini gözlemlediği yerel saat.
+Tüm etkin ağ arayüzlerinin bildirdiği bağlantı hızlarının toplamı.
+Sistemin görebildiği toplam mantıksal işlemci sayısı.
+Geçerli adres, protokol ve port birleşiminin son 20 denemesindeki hata/zaman aşımı yüzdesi.
+Geçerli hedef için son kayan istatistik penceresindeki başarısız/zaman aşımına uğramış deneme sayısı.
+İşlemci üreticisi.
+Win32_Processor tarafından bildirilen en yüksek frekans.
+MHz cinsinden en yüksek frekans.
+Etkin ağ arayüzleri arasındaki en yüksek tekil bağlantı hızı.
+GPU video belleğinin anlık frekansı.
+Donanım sensörlerinin bildirdiği video belleği veya bellek birleşim sıcaklığı.
+Varsayılan HUD tarafından kullanılan toplam ayrılmış video belleği kapasitesi.
+Varsayılan HUD tarafından gösterilen kullanılan ayrılmış video belleği.
+Geçerli milisaniye.
+Geçerli dakika.
+Windows Modified Page List Bytes değeri.
+Windows tarafından şu anda algılanan ekran sayısı.
+Geçerli ayda geçen saniye.
+Bu ayın ilk günü 00:00 ile gelecek ayın ilk günü 00:00 arasında geçen yüzde.
+Gelecek ayın ilk gününe kadar kalan saniye.
+Geçerli ay numarası.
+Win32_BaseBoard tarafından bildirilen üretici.
+Win32_BaseBoard tarafından bildirilen Product değeri.
+LibreHardwareMonitor tarafından okunabilen en yüksek anakart sıcaklığı.
+PATH içinde bulunan node --version çıktısı.
+Windows çekirdeğinin sayfalanmayan havuz belleği.
+Geçerli Windows kurulumunun mimarisi, örneğin X64 / Arm64.
+Geçerli Windows derleme numarası.
+.NET RuntimeInformation tarafından sağlanan Windows açıklaması.
+Windows işletim sistemi sürüm numarası.
+nvidia-smi Current PCIe Link Generation değeri; NVIDIA donanımında nvidia-smi çalışabiliyorsa sağlanır.
+nvidia-smi Current PCIe Link Width değeri.
+Geçerli uygulama işleminin kimliği.
+Etkin ağ arayüzlerinin birikmiş alınan tek noktaya yayın paket sayısı.
+Etkin ağ arayüzlerinin birikmiş gönderilen tek noktaya yayın paket sayısı.
+Windows çekirdeğinin sayfalı havuz belleği.
+Geçerli kalan pil yüzdesi.
+Geçerli Windows yerel saat dilimi kimliği ve sonraki dönem değişimindeki UTC farkı; yaz saati farkı değişim tarihine göre hesaplanır.
+Geçerli dönemin Çince adı: yoğun veya yoğun olmayan.
+Sonraki yoğun/yoğun olmayan dönem değişiminin geçerli Windows kullanıcısının yerel saat dilimine çevrilmiş tarih ve saati; yyyy-MM-dd HH:mm:ss biçimi ve yerel yaz saati kuralları kullanılır.
+Sonraki yoğun/yoğun olmayan dönem değişiminin yyyy-MM-dd HH:mm:ss biçiminde Pekin tarih ve saati.
+Sonraki yoğun/yoğun olmayan dönem değişiminin geçerli Windows kullanıcısının yerel saat dilimine çevrilmiş saati; HH:mm:ss biçimi ve yerel yaz saati kuralları kullanılır.
+Sonraki yoğun/yoğun olmayan dönem değişiminin HH:mm:ss biçiminde Pekin saati.
+«Yoğun dönemin %?? kadarı geçti» veya «Yoğun olmayan dönemin %?? kadarı geçti» gibi metin.
+Geçerli yoğun veya yoğun olmayan dönemin geçen yüzdesi.
+Sonraki yoğun/yoğun olmayan dönem değişimine kadar kalan saniye.
+«Yoğun dönemden kalan ??:??:??» veya «Yoğun olmayan dönemden kalan ??:??:??» gibi metin.
+DeepSeek yoğun/yoğun olmayan dönem kurallarının sabit referans saat dilimi: Pekin saati, UTC+08:00.
+Tüm işlemci yuvalarındaki toplam fiziksel çekirdek sayısı.
+Windows GPU performans sayaçlarına karşılık gelen fiziksel GPU dizini.
+TCP / UDP deneme portu; ICMP modunda 0.
+nvidia-smi power.limit ile okunan NVIDIA GPU güç sınırı; güvenilir bir güç sınırı arayüzü olmayan diğer GPU'larda kullanılamaz.
+LibreHardwareMonitor tarafından sağlanan en yüksek geçerli anlık CPU güç okuması.
+powercfg tarafından bildirilen etkin güç planı GUID değeri.
+Geçerli güç kaynağı: şebeke veya pil.
+LibreHardwareMonitor anlık güç sensörü değeri; yalnız donanım veya sürücü sağlıyorsa kullanılabilir.
+Fazla boşluklar kaldırıldıktan sonra pano metninin ilk 80 karakteri.
+EnumDisplaySettings tarafından döndürülen BitsPerPel.
+Windows birincil ekranının yüksekliği.
+Geçerli ekran modunun yenileme hızı.
+Windows birincil ekranının genişliği.
+Geçerli uygulama işleminin özel belleği.
+Geçerli Endfield Charge Plus işleminin mimarisi.
+Environment.ProcessorCount.
+Geçerli ağ profilinin yüzdesini hesaplamak için gerçekten kullandığı hız.
+Geçerli profilin yüzde modu: toplam, indirme, yükleme veya büyük yön.
+Moda göre «50%», «↓ 50%» veya «↑ 50%» gibi metin; büyük yön modunda ok yoktur.
+Profilin seçili modu ve %100 için ayarlanan hızdan hesaplanan yüzde.
+Geçerli deneme protokolü: ICMP, TCP veya UDP.
+Geçerli kullanıcı için yapılandırılmış ProxyServer.
+Geçerli kullanıcının Internet Settings içindeki ProxyEnable durumu.
+api.ipify.org üzerinden sorgulanan ve 5 dakika önbelleğe alınan genel IPv4; yalnız bu değişken kullanılırken sorgulanır.
+api6.ipify.org üzerinden sorgulanan ve 5 dakika önbelleğe alınan genel IPv6; IPv6 bağlantısı yoksa kullanılamaz.
+PATH içinde bulunan python veya py --version çıktısı.
+Geçerli şarj/deşarj gücünün mutlak değeri; bazı modeller sağlamaz.
+Etkin ağ arayüzlerinin birikmiş alma hataları.
+Geçerli hedef için son kayan istatistik penceresindeki başarılı deneme sayısı.
+Wh birimine dönüştürülmüş geçerli kalan pil kapasitesi.
+Geçerli kalan pil kapasitesi.
+Protokol denemesinin döndürdüğü alt düzey durum, örneğin Success / Connected / Response / TimedOut.
+PATH içinde bulunan rustc --version çıktısı.
+Sistem DPI değerinden hesaplanan ekran ölçek yüzdesi.
+Geçerli saniye (s).
+İkinci ekranın geçerli yenileme hızı.
+İkinci ekranın geçerli çözünürlüğü.
+Etkin ağ arayüzlerinin birikmiş gönderme hataları.
+Geçerli hedef için son kayan istatistik penceresindeki deneme örneği sayısı.
+Geçerli GPU için kullanılabilir en yüksek paylaşılan sistem belleği.
+Kullanılan paylaşılan GPU belleğinin paylaşılan bellek sınırına oranı.
+Geçerli GPU tarafından kullanılan paylaşılan sistem belleği.
+Windows WLAN sinyal kalitesinden dönüştürülmüş yaklaşık dBm; Wi-Fi bağlantısı varsa sağlanır.
+Win32_PhysicalMemoryArray tarafından bildirilen toplam bellek yuvası sayısı.
+Şu anda listelenen fiziksel bellek modüllerinin sayısı.
+Windows Gezgini SmartScreenEnabled yapılandırması.
+Sistemdeki işlemci yuvası sayısı.
+Win32_PhysicalMemory tarafından bildirilen en yüksek ConfiguredClockSpeed veya Speed.
+Windows Memory sayaçlarından Standby Cache Core, Normal ve Reserve toplamı.
+Geçerli uygulama işleminin başlangıç zamanı.
+Güç durumundan üretilen «Şarj oluyor / Pil kullanılıyor / Güç bağlı / Bilinmiyor» gibi metin.
+DriveType.Removable türündeki hazır birim sayısı.
+Geçerli çıkarılabilir depolama birimlerinin sürücü harfleri.
+Toplam takas alanı.
+Kullanılan takas alanı.
+Sistem sürücüsü için performans sayaçlarının bildirdiği etkin süre yüzdesi.
+macOS sürümündeki tanıma göre sistem biriminde normal kullanıcının kullanabildiği alan.
+Windows System performans sayaçlarından System Calls/sec.
+Windows sistem DPI değeri.
+Sistem sürücüsünün dosya sistemi, örneğin NTFS.
+Windows sistem sürücüsündeki kullanılabilir alan.
+Sistem sürücüsündeki boş alanın toplam kapasiteye oranı.
+Sistem sürücüsünün toplam okuma ve yazma hızı.
+Sistem sürücüsünün birim etiketi.
+Sistem sürücüsünün geçerli disk kuyruğu uzunluğu.
+Windows mantıksal disk performans sayaçlarından sistem sürücüsü okuma hızı.
+Windows sistem dizinini içeren sürücünün kökü, örneğin C:\\.
+Windows sistem sürücüsünün toplam kapasitesi.
+Sistem sürücüsünde kullanılan alanın toplam kapasiteye oranı.
+Windows sistem sürücüsünde kullanılan alan.
+Windows mantıksal disk performans sayaçlarından sistem sürücüsü yazma hızı.
+TCP modunda bağlantı başlatılmasından başarılı olmasına kadar geçen süre.
+IPGlobalProperties tarafından döndürülen etkin TCP bağlantısı sayısı.
+Win32_Tpm tarafından bildirilen SpecVersion.
+Günlük hedef saat döngüsünün geçen oranı.
+Sonraki hedef saate kalan sürenin 24 saate yüzdesi.
+Sonraki günlük hedef saate kalan saniye.
+«Kalan: %??» biçimindeki hedef saat durum metni.
+Geçerli saat profilinde ayarlanan günlük hedef saat.
+Geçerli paket denemesinin kullandığı IPv4, IPv6 veya ana bilgisayar adı.
+CPU sensörü sıcaklığı; cihaz, sürücü veya geçerli izinler desteklemiyorsa kullanılamaz.
+LibreHardwareMonitor tarafından okunan en yüksek geçerli CPU sıcaklığı; donanım veya sürücü desteklemiyorsa kullanılamaz.
+CPU sensörü sıcaklığı; cihaz, sürücü veya geçerli izinler desteklemiyorsa kullanılamaz.
+Geçerli pano metninin karakter sayısı.
+Endfield Charge Plus tarafından kullanılan geçerli tema.
+Geçerli uygulama işleminin iş parçacığı sayısı.
+Windows tarafından tahmin edilen kalan pil çalışma süresi; tahmin yoksa 0.
+HH:MM:SS biçiminde tahmini kalan çalışma süresi; tahmin yoksa «Bilinmiyor».
+Bu cihazın saniye hassasiyetindeki geçerli saati.
+Tek bir ICMP, TCP veya UDP denemesinin yanıt zaman aşımı.
+Geçerli yerel saat diliminin kimliği.
+En çok CPU kullanan işlemin PID değeri.
+TotalProcessorTime değişiminden hesaplanan işlem CPU kullanımı.
+En yüksek disk G/Ç hızına sahip işlemin PID değeri.
+Bu işlemin saniyede bayt cinsinden geçerli toplam G/Ç hızı.
+En büyük çalışma kümesine sahip işlemin PID değeri.
+En büyük çalışma kümesine sahip işlemin geçerli Working Set değeri.
+DeepSeek API hesabının yüklenen bakiyesi.
+Sistemin toplam indirme ve yükleme hızının toplamı.
+Toplam fiziksel bellek kapasitesi.
+Mbps birimine dönüştürülmüş toplam indirme ve yükleme hızı.
+Toplam ayrılmış video belleği artı paylaşılan bellek sınırı.
+Kullanılan toplam GPU belleğinin toplam kullanılabilir bellek sınırına oranı.
+Kullanılan ayrılmış video belleği artı kullanılan paylaşılan GPU belleği.
+Geçerli açılıştan beri tüm etkin ağ arayüzlerinin aldığı toplam bayt.
+Geçerli açılıştan beri tüm etkin ağ arayüzlerinin gönderdiği toplam bayt.
+Birikmiş alınan ve gönderilen trafiğin toplamı.
+Son başarılı ICMP yanıtının TTL değeri; TCP / UDP için 0.
+SMBIOS tarafından bildirilen bellek türü, örneğin DDR4 / DDR5 / LPDDR5.
+Kayıt defterindeki EnableLUA durumu.
+IPGlobalProperties tarafından döndürülen etkin UDP dinleme uç noktası sayısı.
+Geçerli saat diliminin saat cinsinden UTC farkı.
+Geçerli UTC farkı veya dünya saatinde seçilen sabit fark.
+Geçerli Unix zaman damgası, milisaniye (ms).
+Geçerli Unix zaman damgası, saniye (s).
+Win32_QuickFixEngineering içindeki en yeni InstalledOn değeri.
+Bağlı ve geri döngü olmayan tüm ağ arayüzlerinin toplam anlık yükleme hızı.
+Mbps birimine dönüştürülmüş toplam sistem yükleme hızı.
+Geçerli Windows açılışından beri geçen saniye.
+Sistem çalışma süresinin okunabilir metni.
+Seçili GPU 3D motorlarının en yüksek anlık kullanımı.
+Bu değişken etkinleştirildiğinden beri son 15 dakikanın kayan CPU kullanımı ortalaması.
+Bu değişken etkinleştirildiğinden beri son dakikanın kayan CPU kullanımı ortalaması.
+Bu değişken etkinleştirildiğinden beri son 5 dakikanın kayan CPU kullanımı ortalaması.
+Seçili GPU hesaplama motorlarının en yüksek anlık kullanımı.
+Seçili GPU kopyalama motorlarının en yüksek anlık kullanımı.
+En fazla 15 dakikalık örnekleme penceresinde gözlenen en yüksek CPU kullanımı.
+Seçili GPU video çözme motorlarının en yüksek anlık kullanımı.
+Seçili GPU video kodlama motorlarının en yüksek anlık kullanımı.
+Bilgisayarın tümünün geçerli toplam CPU kullanımı.
+Şu anda kullanılan fiziksel bellek.
+Geçerli kullanıcıyla ilişkili Windows etki alanı veya bilgisayar adı.
+CPU zamanının kullanıcı modu kodunda geçen oranı.
+Toplam sistem aktarım hızının etkin arayüzlerin toplam bağlantı hızına yaklaşık oranı.
+Etkin Tunnel/PPP/WireGuard/Wintun gibi ağ arayüzlerinden VPN etkinliğini algılar.
+Seçili GPU ayrılmış video belleğinin toplam kapasitesi.
+Endfield Charge Plus ürün sürümü.
+Sistemde şu anda kullanılabilir sanal adres alanı.
+Tüm etkin CoreGraphics ekranlarının mantıksal nokta cinsinden birleştirilmiş sınırları.
+Çoklu ekran sanal masaüstünün toplam yüksekliği.
+Geçerli uygulama işleminin sanal bellek boyutu.
+Sistemin bildirdiği toplam sanal adres alanı.
+Kullanılan sanal belleğin toplam sanal belleğe oranı.
+Sistemde şu anda kullanılan sanal adres alanı.
+Tüm etkin CoreGraphics ekranlarının mantıksal nokta cinsinden birleştirilmiş sınırları.
+Çoklu ekran sanal masaüstünün toplam genişliği.
+Mantıksal nokta cinsinden CoreGraphics genel masaüstü koordinatı.
+Çoklu ekran sanal masaüstünün sol sınır koordinatı.
+Mantıksal nokta cinsinden CoreGraphics genel masaüstü koordinatı.
+Çoklu ekran sanal masaüstünün üst sınır koordinatı.
+Windows pil arayüzünün bildirdiği anlık voltaj; bazı modeller sağlamaz.
+Donanım sensörlerinin bildirdiği GPU çekirdek voltajı.
+Geçerli kullanıcıya kayıtlı WSL dağıtımı sayısı.
+wsl -l -q tarafından döndürülen dağıtım listesi.
+vmmemWSL/vmmem toplam çalışma kümesi.
+WSL yürütülebilir dosyasını ve kayıtlı dağıtımları algılar.
+Bu haftanın pazartesi başlangıcından beri geçen saniye.
+ISO biçimindeki geçerli hafta numarası.
+Bu pazartesi 00:00 ile gelecek pazartesi 00:00 arasında geçen yüzde.
+Gelecek pazartesiye kalan saniye.
+Geçerli WLAN arayüzünün bandı; yeni sistemler Band değerini doğrudan okur, eskilerde mümkünse çıkarım yapılır.
+Geçerli WLAN arayüzünün kablosuz kanalı.
+Geçerli WLAN Radio type, örneğin 802.11ax.
+Seçili pencerenin ölçülen sunum veya görüntü güncelleme hızı. Windows bu pencerenin baskın sunum akışını sayar; aynı işlemdeki diğer pencereler ayrı ayrı sayılır.
+Gerçek FPS değerinin profilde %100 için ayarlanan FPS değerine oranı.
+Gerçek toplama durumu ve kullanılamama nedeni.
+Microsoft.Update.Session tarafından bulunan, yüklenmemiş ve gizlenmemiş güncelleme sayısı.
+Yeniden başlatma bekleme işaretleri ve kullanılabilir güncelleme aramasından üretilen durum.
+Endfield Charge Plus geçerli çalışma kümesi belleği.
+Windows China Standard Time ile gerçek zamanlı dönüştürülen saat.
+Windows GMT Standard Time ile gerçek zamanlı dönüştürülen saat.
+Windows Eastern Standard Time ile gerçek zamanlı dönüştürülen saat.
+Windows Tokyo Standard Time ile gerçek zamanlı dönüştürülen saat.
+Geçerli yılda geçen saniye.
+Bu yılın 1 Ocak günü ile gelecek yılın 1 Ocak günü arasında geçen yüzde.
+Gelecek yılın 1 Ocak gününe kalan saniye.
+Geçerli yıl.
+Geçerli gecikme
+Geçerli yerel UTC farkı; dünya saati seçilen sabit farkı kullanır.
+Geçerli paket kaybı
+Geçerli dönem
+Geçerli durum
+Geçerli saat
+Geçerli aktarım türü: WIFI / CELLULAR / ETHERNET / VPN / NONE.
+Geçerli sürüm
+Geçerli haftanın günü adı; masaüstü kataloğundaki eşdeğer anahtarlar time.day_of_week / time.day_of_week_en değerleridir.
+Güncel değer: {0}. Birim: {1}.
+Güncel değer: {0}.
+Güncel sürüm: v0.1.2
+Geçerli: v0.1.3
+Güncel sürüm: v{0}
+Şu anda etkin
+Düzenleniyor
+Özel veri
+Özel koordinatlar
+Özel veri
+Özel profil
+Özel profil {0}
+Özel koordinatlar
+HTTP / JSON kaynağından eşlenen özel değer.
+Geçiş animasyonu
+Pil döngü sayısı
+Geçiş listesi
+Profilleri alttaki sırayla değiştirir.
+Geçiş listesi
+Profil geçiş animasyonu
+Kuyruğu sırayla dolaşır; kuyruk yalnız mevcut profillere başvurur.
+Yukarıdan aşağıya, sonra başa döner. Liste mevcut profillere başvurur.
+Bisiklet, tıklamalar ve animasyonlar
+D: etkinlik oranı
+D: dosya sistemi
+D: kullanılabilir alan
+D: disk sağlığı durumu
+D: anlık toplam G/Ç hızı
+D: birim etiketi
+D: ilişkili bölüm sayısı
+D: açık kalma süresi
+D: kuyruk uzunluğu
+D: anlık okuma hızı
+D: depolama çalışma durumu
+D: disk sıcaklığı
+D: toplam kapasite
+D: TRIM durumu
+D: kullanım oranı
+D: kullanılan alan
+D: anlık yazma hızı
+Sistem DNS çözümleme süresi (ms)
+DNS çözümleme süresi
+DNS sunucuları
+DPC süresi oranı
+Günlük hedef
+Günlük hedef saat (HH:mm:ss)
+Koyu
+Veri bölümünün kullanılabilir alanı
+Veri yönetimi
+Veri özellikleri
+Veri kaynağı ayarları
+Veri kaynakları
+Veri bölümünün toplam kapasitesi
+Veri bölümünün kullanım oranı
+Veri bölümünün kullanılan alanı
+«{0}» verileri kullanılamıyor veya geçersiz. ROOT/izinleri, cihaz desteğini, seçili pencereyi ve veri kaynağı ayarlarını denetleyin.
+Bu HUD profillerinin verileri kullanılamıyor veya geçersiz:
+Veri örnekleme aralığı / ms
+Veri toplama aralığı / sn
+Toplama aralığı / sn (tüm HUD'lar)
+Veri kaynağı eklendi.
+Veri kaynağı yapılandırması
+Veri kaynağı kaldırıldı.
+Tarih
+Tarih ve saat
+Gün
+Günün geçen süresi
+Haftanın günü
+Haftanın günü (İngilizce)
+Yılın günü
+Gün ilerlemesi
+Günün kalan süresi
+Ayrılmış video belleğinin toplam kapasitesi
+Ayrılmış video belleği kullanım oranı
+Kullanılan ayrılmış video belleği
+DeepSeek API
+DeepSeek API
+DeepSeek bakiyesi
+DeepSeek dengesi ve zirve dönemlerini araştırın
+Resmî DeepSeek yoğun saatleri (Pekin)
+DeepSeek {deepseek.period.name}
+Varsayılan ağ geçitleri
+Varsayılan vurgu rengi ve koşullu renk kuralları.
+Varsayılanlar geri yüklendi.
+Defender son tarama zamanı
+Microsoft Defender durumu
+Defender geçerli tehdit sayısı
+Sil
+Tasarım kapasitesine göre pil sağlığı
+Tasarım enerjisi (Wh)
+Tasarım enerjisi
+Masaüstü katmanı
+Masaüstü sürümü deposu
+Ayrıntılı
+Algılanıyor…
+Geliştirici araçları
+Aygıt
+USB aygıtı sayısı
+USB aygıtları listesi
+Aygıt üreticisi
+Aygıt modeli
+Açılıştan beri geçen süre
+Dakka, Thimphu
+Tanılama raporu
+Devre dışı
+Değişiklikleri at
+Deşarj gücü
+Boşalıyor
+Disk
+Anladım
+Ekran
+Görünüm ve konum
+Görünüm ve konum: görünürlük, yerleştirme, görünüm ve örnekleme. HUD içeriği: profiller, bisiklet sürüşü ve tetikleme kuralları. Veriler yönetimi: Değişken kütüphanesi, donanım verileri ve veri kaynağı yapılandırması. Deneysel özellikler: birden fazla HUD. Hakkında: güncellemeler, yedekleme ve bakım.
+Gösterilen içerik
+Profilin indirme hızı metni
+Ekran FPS
+Ekran FPS (Yönetici olarak çalıştır)
+Ekran kare hızı oranı
+Ekran kare hızı durumu
+Görünüm modu
+Kare hızı hedef ekranının adı
+Ekran kare hızı oranı
+Zaman profilinin görüntülenen ilerlemesi
+Ekran kare hızı durumu
+Zaman profilinin durum metni
+Profilin yükleme hızı metni
+HUD'da Windows medya oturumunu görüntüleyin.
+Ekran kare hızı seçenekleri
+Görünüm modu
+Ekran {0} · {1}×{2}{3}
+Görünüm, konum ve biçim
+Çalışan Docker kapsayıcısı sayısı
+Docker imajı sayısı
+Docker çalışıyor mu?
+Etki alanı
+Bu veri için tekrar uyarma
+Bitti
+Aşağı
+İndirme
+Sistemin toplam indirme hızı
+Sistemin toplam indirme hızı (Mbps)
+Yalnız indirme
+İndirme hızı
+Resmî sürücü indiriliyor; doğrulamadan sonra yükleyici açılır.
+Serbestçe sürüklendi · seçili çapaya dön
+Diğer uygulamaların üzerinde göstermeye izin veriliyor.
+GPU sürücü tarihi
+GPU sürücü sürümü
+Sürücü kuruldu. ECP'den tamamen çıkıp yönetici olarak açın.
+Dubai, Abu Dabi
+Çoğalt
+Süre
+Süre / sn
+ECP uygulaması
+Her HUD'ın profil, geçiş, yazı tipi, boyut, görünüm ve ekranı bağımsızdır. Seçip ilk iki sekmede düzenleyin; Konum yerleşimi açar. Turuncu çerçeve ayarlar açıkken seçili HUD'ı belirtir, kapanınca kalkar. Ekleme/silme sonrası kaydedip uygulayın. Toplama aralığı ve tıklama geçişi ortak, dil ve başlangıç geneldir. En fazla 16 HUD.
+Doğu Saati (ABD ve Kanada)
+Düzenleniyor: 
+Bugün 00:00 ile yarın 00:00 arasında geçen oran; masaüstü kataloğundaki eşdeğer anahtar time.day.progress değeridir.
+Durumları etkinleştirin ve seçin
+Otomatik döngüyü etkinleştir
+Her HUD kendi örneğini ilerletir ve döngü zamanlayıcıyı yeniden ayarlar. Şeffaf alanlar tıklayarak devam eder. Boş veya tek öğe kuyruklar değişmez.
+Fare alanıyla çağırmayı aç
+Birden çok HUD'ı etkinleştir
+Deneysel Özellikler altında birden fazla HUD'u etkinleştirin, bir ikincil HUD ekleyin/ad verin ve düzenleme için seçin.Seçilmiş HUD vurgulanmıştır.Önce görüntülenmeden önce yeni bir örnek kaydetin ve uygulayın.İkinci bir örnek kaldırmak, ana HUD'u çıkarmaz.
+Uygulama için bildirim iznini etkinleştirin.
+Denemeyi etkinleştir
+Görünüm ve konum altında HUD ana anahtarı'i etkinleştirin; sürekli bir HUD için Her Zaman Görünürü etkinleştirin. HUD İçeriği → HUD Yapılandırması altında bir içe gömülü profil seçin ve ön izleyin. Ayaklamaları çalışkan HUD'a uygulamak için sağ üstteki Kaydet ve uygula'i tıklayın.
+Bu kuralı etkinleştir
+Etkin
+Etkin: {0}
+Şifreli depolama kullanılamıyor; API anahtarı güvenle kaydedilemiyor.
+Şifreli depolama kullanılamıyor; API anahtarı kaydedilmedi.
+Endfield Charge Plus Ayarlar
+Endfield Charge Plus çalışıyor
+Endfield Charge Plus güncellemesi var
+Endfield tarzı durum HUD'ı
+Uç nokta
+İngilizce
+#RRGGBB veya #AARRGGBB girin.
+Bir DeepSeek API anahtarını Veri yönetimi → Veri kaynağı ayarları altında girin, sonra Kaydet ve uygula. Anahtarlar mevcut Windows kullanıcısı için şifreli ve başka bir hesap veya makine için yeniden girilmesi gerekebilir. Peak pencereleri Pekin zamanı ve Çin tatil takvimini kullanır; hafta sonları makyaj çalışma günleri off-peak kalır.
+Bir sayı girin.
+00:00:00 ile 23:59:59 arasında bir saat girin.
+Bir tam sayı girin.
+Önce bir API anahtarı girin.
+JSON döndüren bir HTTP/HTTPS GET adresi girin ve kaynağa bir ad verin.\nYanıttaki data.value veya players[0].name gibi yolları değişken adlarıyla eşleştirin.\nGerekli başlıkları ve yenileme aralığını saniye olarak ayarlayın, kaynağı etkinleştirin ve Kaydet ve uygula düğmesine basın.\nDeğişken kitaplığında custom.<source>.<variable> değişkenini bulun ve bir profilde kullanın.
+Bir http/https URL'si girin.
+Hata
+Pilin tükenmesine kalan tahmini süre
+Tam şarja kalan tahmini süre
+Tahmini tam şarj enerjisi
+Eucla
+Olayla çağırma
+Olay tetikleyici kuralları
+Çıkış
+Deneysel özellikler
+Deneysel çoklu HUD'lar
+Dışa aktar
+Dışa aktar Endfield Charge Plus
+Dışa aktar
+Dışa aktarma başarısız.
+Dışa aktarma başarısız. Günlüklere bakın.
+Donanım tanısını dışa aktar
+Yapılandırmaları ihraç edin veya Hakkında → Configuration & Maintenance altında yedekleme oluşturun.İhraç, tam bir ayarı geri getirir.Kesin değişikliklerden önce yedekleme yapın.Şimdiki kullanıcı için şifreli gizli bilgiler farklı bir makine veya hesabda yeniden girilmesi gerekebilir.
+Dışarı çıkarmak, ithal etmek ve yedeklemek
+Dışa aktarıldı.
+İfade
+İfade böleni 0 olamaz
+İfade hatası
+İfade hatası (konum {0}): {1}
+İfade işlevleri: len, contains, startswith, endswith, upper, lower, concat. Türleri number, string veya bool ile dönüştürün; değerleri isnull, isempty ve isnan ile denetleyin. Belirteç biçimlendirme zincirleri upper/lower, sıfırdan başlayan dizinlerle sub:start:length, replace:old:new ve math:add/sub/mul/div/round/floor/ceil/abs seçeneklerini destekler.
+FPS ve GPU hedefleri
+Seçili SurfaceFlinger katmanındaki gösterilmiş karelerin gerçek zaman damgalarından hesaplanan FPS.
+Kare hızı hedef ekranının adı
+Ölçülen FPS değerinin profilde %100’e karşılık gelen kare hızına oranı.
+Kare hızı hedef penceresinin adı
+Başarısız
+Okunabilen fan sayısı
+Fan hızı (özet)
+Fan hızı yüzdesi (özet)
+Hızlı örnekleme (gecikme)
+Alan eşlemesi (değişken = JSON yolu, her satırda bir tane)
+Panodaki dosya sayısı
+Değişken bir değişken bul ve kopyalayın
+Doğru sayfayı bul
+Yanlıştan doğruya geçişte tetiklenir. true/false ve sıfır/sıfır dışı kabul edilir.
+Karşılaştırma sağlanınca tetiklenir; sürerse bekleme sonrası tekrarlar.
+Değer değişiminde tetiklenir; işleç ve eşik yok sayılır. Eksik veri ve ilk dönen örnek tetiklemez.
+Güvenlik duvarı profili
+Windows güvenlik duvarı durumu
+İlk ayarlar yüklendi. Kaydet ve uygula ile onaylayın.
+Sabit disk sayısı
+Tüm sabit disklerin kullanılabilir alanı
+Sabit diskler listesi
+Tüm sabit disklerin toplam kapasitesi
+Tüm sabit disklerin toplam kullanım oranı
+Tüm sabit disklerin kullanılan alanı
+Kısa yolu kutusunu odaklayın ve bir harf, rakam veya işlev anahtarı ile Ctrl veya Alt'ı basın, sonra Kaydet ve uygula. F12 ve rezerve kombinasyonları reddedilmektedir. Kayıt çatışmaları varsa, önceki kısa yolu aktif kalır.
+Sistem dili
+Yazı ölçeği
+Ön plan hizmeti
+HUD için ön plan hizmeti izni bildirilmiştir ve HUD çalışırken kullanılır.
+Biçim etmeni
+Biçimler
+v{0} bulundu. Sürümleri görmek için dokunun.
+{0} bulundu. Güncelleme ayrıntıları için Hakkında bölümüne bakın.
+%100 kare hızı / FPS
+FPS hedefi
+.NET sürümü
+Boş fiziksel bellek
+Boş bellek oranı
+Frekans GHz
+Frekans MHz
+CPU frekans oranı
+Yapılandırılmış HTTP/JSON kaynağından; alan eşlemesi değişkenin anlamını tanımlar.
+Tam
+Tam dolu pilin tahmini kullanım süresi
+%100'e karşılık gelen gecikme (ms)
+Tam şarj enerjisi (Wh)
+Tam şarj enerjisi
+Tam şarj enerjisi kalan enerji ve şarj yüzdesinden tahmin edilir; anma tasarım kapasitesi değildir.
+Tam: öncekini kapatır, sonrakini başlık ve dalgayla açar.
+Tam: son HUD'dan önce başlık, dalga ve biçim geçişi.
+clamp işlevi min <= max gerektirir
+sign işlevi NaN kabul etmez
+{0} işlevi 1–2 bağımsız değişken gerektirir
+{0} işlevi en az {1} bağımsız değişken gerektirir
+{0} işlevi {1} bağımsız değişken gerektirir
+GET adresi
+GPU
+GPU aygıtı
+GPU frekansı
+GPU modeli
+GPU sıcaklığı
+GPU'yu en çok kullanan işlem
+En yoğun işlemin GPU kullanım oranı
+Bu uygulamanın GPU kullanım oranı
+GPU frekansı
+GPU frekansı; Android genel API sağlamaz, üretici düğümleri cihazlar arasında taşınabilir değildir.
+GPU video belleği
+Üreticinin KGSL düğümünden okunan GPU modeli; kullanılabilirlik cihaza ve Root yetkilendirmesine bağlıdır.
+GPU sıcaklığı
+GPU sıcaklığı; Android genel bir API sağlamaz (androidNote bölümüne bakın).
+GPU kullanım oranı
+Oyun kumandasının pil düzeyi
+XInput oyun kumandası sayısı
+Oyun kumandasının adı
+Ekranda bir HUD alın, sonra özelleştirin.
+Başlamak için başlamak
+Geçerli Git dalı
+Son Git kaydı
+Git çalışma alanı durumu
+Her HUD'a kendi içeriğini ve konumunu verin.
+Global Scale tüm HUD boyutunu değiştirir; açıklık görünürlüğünü kontrol eder. Fonte seçimi metin gösterimini değiştirir, eksik olan glifler için sistem geri dönüşü ile. Ekran süresi geçici bekleme süresini kontrol eder; sıçrama ve dalga kontrolleri hareket görünümünü değiştirir. Reset Size & Animation bu değer grubunu geri getirir; Kaydet ve uygula kullanın.
+Genel yazı boyutu ve arayüz ölçeği
+Go sürümü
+Erişim izni ver
+İzin verildi
+DeepSeek hediye bakiyesi
+EGL ile okunan grafik bağdaştırıcısı adı; masaüstü kataloğundaki eşdeğer anahtar gpu.name değeridir.
+İşleve göre: önce durum ve canlı değerler, sonra ayrıntılar. Ad, anahtar veya kategoriyle arayın.
+HTTP / JSON kaynakları
+HTTP alanı
+HTTP/JSON alan eşlemesi
+HUD ayarları
+HUD içeriği
+HUD içeriği
+HUD ana anahtarı
+HUD opaklığı
+HUD ayarları
+HUD AYARLARI
+HUD ölçeği
+Tetikleme kuralları
+HUD içeriği / kurallar
+HUD veri uyarısı
+HUD veri uyarıları
+HUD yazı tipi
+HUD ana anahtarı
+HUD opaklığı
+HUD ölçeği
+HUD hizmeti
+HUD durumu
+Uygulamanın tanıtıcı sayısı
+Donanım verileri
+Donanım bilgileri
+Donanıma ayrılmış bellek
+Donanım sensörleri
+Donanım özellikleri
+Donanım yetenekleri henüz taranmadı.
+Donanım yetenekleri yeniden algılandı.
+Donanım toplama aralığı / sn
+Hardware sensörleri ve sürücüler
+Hardware değişkenleri ve miras anahtarları
+Pano görüntü içeriyor mu?
+Pano metin içeriyor mu?
+Hawaii
+Üstbilgiler (Key: Value, her satırda bir tane)
+Üstbilgiler ve alan eşlemeleri null olamaz.
+Pil sağlığı
+Yüksek yük: cpu.usage, Eğitme >= 90, soğutma 30 saniye. İzleme değişiklikleri: değişim modusu ve uygun soğutma ile media.title. Bir tetikleyiciye güvenmeden önce değişkenin geçerli verileri döndüğünü onaylayın.
+Tatil takviminin güncellenmesi gerekiyor
+Ana bilgisayar adı
+Ana makineye ulaşılamıyor
+Her zaman görünür olan kapanış ile sıcak bölgeleri kullanılabilir. Anker, boyut, ofset ve kalıcılık sürelerini ayarlayın. Bölge tam hedef ekran sınırlarını kullanır ve ekrana bağlanır. Çağırmak için seçilen ara boyunca kalın; tekrar kollamak için çıkın ve tekrar girin. Her çağrıda karusel ilerleyebilirsiniz.
+Alan X kaydırma / px
+Alan Y kaydırma / px
+Alanda bekleme süresi
+Alan yüksekliği / px
+Alan konumu
+Alan genişliği / px
+GPU sıcak nokta sıcaklığı
+Saat
+Hyper-V durumu
+ICMP tercih edilir; kısıtlı ağlarda TCP / UDP kullanılır. Hedef ve port etkin profilden alınır.
+ICMP Ping kullanır; TCP bağlantı gecikmesini ölçer; UDP veri gönderip hizmet yanıtını bekler.
+Yapılandırılmış hedefe ICMP, TCP veya UDP denemesi; başarısız istek bilinmeyen durum bildirir.
+Yerel IPv4 adresleri
+IPv4 sorgusu başarısız
+IPv4, IPv6 veya ana bilgisayar adı.
+IPv4, IPv6 veya ana bilgisayar adı; port yalnız TCP / UDP tarafından kullanılır.
+IPv4, IPv6 veya ana makine adı.
+Yerel IPv6 adresleri
+IPv6 sorgusu başarısız
+Simgeler ve ilerleme halkası
+Simgeler ve ilerleme halkası
+IDE çalışıyor mu?
+Boşta örnekleme
+CPU boşta kalma oranı
+Pano görüntüsünün boyutları
+Hemen
+İçe aktar
+İçe aktar Endfield Charge Plus
+İçe aktar
+İçe aktarma başarısız. Günlüklere bakın.
+İçe aktarma başarısız: dosya geçersiz veya okunamıyor.
+İçe alınan başlangıç ayarı uygulanamadı. Windows başlangıç uygulamalarını denetleyin.
+AIDA64 Tercihleri → Hardware Monitoring → Dış Uygulamalarda, öğeleri seçin ve paylaşılan bellek, kayıt veya WMI etkinleştirin. AIDA64'i çalıştırın, ardından ECP Hardware Verilerini yenilentilendirin. ECP, numaralar, zamanlamalar ve metin dahil olmak üzere tüm gerçek ihracatları okuyor; ihracat edilmemiş veya lisans sınırlı alanlar mevcut değildir.
+Geliştiriciyle paylaşılabilecek cihaz, yetenek, izin ve yapılandırma bilgilerini içerir.
+Bağımsız ve paylaşılan ayarlar
+Bireysel sensörler ve özetler
+Bilgi
+İlk ve geri alınan örnekler ortaya çıkmadan bir başlangıç çizgisi oluşturur. Her kuralın kendi soğutma süresi vardır; süresi dolduğunda devamlı bir eşiğin tekrar tetiklenebileceği bir sınır vardır. Uygunlaşan kurallar, bu örneğin kuyrukundaki bir sonraki öğeyi veya boş bir kuyruk için aktif profilü çağırır. Kurallar sadece geçici modda çalışır. Etkin bölge istekleri önceliklidir; bölge ve kurallar kuyrukta birbirinden bağımsız ilerler. HUD gösterilirken genel ve veri kaynağı aralıklarına göre örnekleme sürer. Meşgulken algılanan olaylar birleştirilip saklanır.
+Değişken ekle
+Gerçek okumaları kontrol edin ve sürücü sorunlarını çözün.
+Denetleme, arama, kopyalama ve ihracat
+PawnIO yükle / güncelle
+Örnek adı
+CPU'nun saniyede tamamladığı komut sayısı
+Tam sayı
+Arayüz
+Etkin ağ arabirimlerinin adları
+Etkin ağ arabirimlerinin türleri
+Arayüz dili
+Arabirim dili ve sistem öntanımlılığı
+Geçerli varsayılan ağın arayüz adı (LinkProperties.interfaceName).
+Uluslararası Tarih Çizgisinin Batısı
+Kesme
+Aralık / sn
+{0}. satırda geçersiz renk kuralı. Örnek: cpu.usage >= 80 => #FF4D4F
+Geçersiz sayı: {0}
+Geçersiz yol
+Geçersiz kaynaklar; son geçerli ayar korunuyor:
+Geçersiz hedef
+Hafta sonu
+Duraklatıldı
+Oynatılıyor
+İslamabad, Karaçi
+ISO tarih ve saat
+JSON ayarı
+JSON yolu eksik: 
+JSON değeri null
+Java sürümü
+Gecikme değişkenliği
+KB/s / MB/s (Otomatik)
+KB/s · MB/s (otomatik)
+Kabil
+Katmandu
+Yapılandırmalarınızı koruyun ve başarısızlıkları kontrol edin.
+Endfield Charge Plus yüzen HUD'ının çalışmasını sürdürür.
+Sabitlenmiş HUD'ı durum çubuğundan ve ekran çentiğinden uzak tutar.
+CPU çekirdek kipinde kullanım oranı
+Klavye adı
+CPU L2 önbelleği
+CPU L3 önbelleği
+Yerel LLM durumu
+Büyük yön
+max(İndirme, Yükleme)
+Uzun aralık donanımı daha az günceller; saatler her saniye sürer.
+Son başarı zamanı
+Panonun son değişme zamanı
+Son hata
+Yoklama gecikmesi
+Gecikme ilerlemesi
+Yoklama gecikmesi metni
+Daha sonra
+Son deneme durumu; masaüstü kataloğundaki eşdeğer anahtar probe.status_text değeridir.
+En son sürüm
+Son sürüm: Denetim başarısız
+Son sürüm: Denetlenmedi
+Son sürüm: Süre doldu; yeniden deneyin
+Son sürüm: Kullanılamıyor
+Son sürüm: v{0}
+Katman
+Kurşun-asit
+Sol simge
+Soldaki ana bilgi
+Sol simge
+Soldaki ana bilgi
+Soldaki ana bilgi / Başlık
+Soldaki ana bilgi
+Soldaki ana bilgi
+Kalan {0:0}%
+Kalan: %{0}
+HUD'ın diğer uygulamaların üzerinde çizilmesini sağlar; yalnız yüzen HUD etkinleştirildiğinde istenir.
+Lityum iyon
+Lityum polimer
+Lisans
+Line Adaları
+Toplam bağlantı hızı
+Canlı önizleme
+Canlı güncelleme API'si
+Canlı güncellemeler bu cihazda desteklenmiyor veya yetkilendirilmemiş.
+{0} HTTP kaynağı yüklendi
+Son başarılı bakiye sorgusunun yerel saati.
+Seçili HUD'ı bul ve düzenle
+Günlük
+Runtime.availableProcessors tarafından uygulamaya sunulan mantıksal CPU sayısı; güç veya işlem sınırları sayıyı etkileyebilir.
+CPU mantıksal işlemci sayısı
+Günlükler
+Günlükler ve yeniden ayarlamalar
+Günlük klasörü açıldı.
+Lord Howe Adası
+Paket kaybı oranı
+Kayıp {probe.loss_percent|0}
+Kaybolan
+Bellek yetersiz
+Düşük düzey sıcaklık, güç ve gerilim için PawnIO ve yönetici gerekir. AIDA64 Tercihler → Donanım izleme → Haricî uygulamalar altında paylaşılan bellek, kayıt defteri veya WMI açın. Tüm dışa aktarımlar burada; eksikler --.
+Bilgisayar adı
+Solda ana bilgiler, sağda yüzde, ilerleme veya durum.
+Üretici
+GET JSON alanlarını custom.source.variable ile eşleyin; üstbilgiler ortam değişkeni kullanabilir.
+Markiz Adaları
+CPU en yüksek frekansı
+CPU en yüksek frekansı (MHz)
+En yüksek gecikme
+Tek arabirimdeki en yüksek bağlantı hızı
+En yüksek
+Mbps megabit/sn'dir; KB/s ve MB/s hıza göre değişir.
+Son resmî /user/balance isteğinin HTTP gidiş-dönüş süresi; bakiye istekleri 1 dakika önbelleğe alınır.
+Ping yanıtının gerçek IP adresi; ana bilgisayar adları için son adres başarılı ad çözümlemesinden sonra görünür.
+Geçerli deneme yapılandırmasının son 20 başarılı örneğinin ortalama gecikmesi.
+Yerel sistemin one.one.one.one adını çözümleme süresi; DNS önbelleğinden etkilenebilir.
+Uyumluluk değişkeni: geçerli adres ve port birleşimi.
+Son başarısız denemenin hata veya durum açıklaması.
+Ping halkasında %100 değerine karşılık gelen gecikme; sabit 999 ms.
+Geçerli hedefin son ardışık başarılı örnekleri arasındaki mutlak gecikme farkının ortalaması; ağ gecikme değişiminin yaklaşık ölçümü.
+Geçerli hedeften alınan son başarılı yanıtın yerel saati.
+Son başarılı denemenin gidiş-dönüş/bağlantı gecikmesi; başarısız deneme 999 ms olarak değerlendirilir.
+0 ms için %0, 999 ms ve üzeri için %100; gecikme halkası için uygundur.
+Başarılıysa «20ms» gibi metin; başarısızsa zaman aşımı/hata durumu.
+Geçerli hedefin son 20 denemesindeki paket kaybı yüzdesi.
+Geçerli hedefin son kayan istatistik penceresindeki başarısız/zaman aşımına uğramış Ping örneklerinin sayısı.
+Geçerli deneme yapılandırmasının son 20 başarılı örneğindeki en yüksek gecikme.
+Geçerli deneme yapılandırmasının son 20 başarılı örneğindeki en düşük gecikme.
+Son ICMP Ping başarılı mı.
+Uyumluluk değişkeni: TCP / UDP portu; ICMP için 0.
+Gecikmeden dönüştürülen halka ilerlemesi: 0 ms için %0, 999 ms ve üzeri için %100; zaman aşımı/hata için %100.
+Uyumluluk değişkeni: geçerli ICMP, TCP veya UDP deneme protokolü.
+Geçerli hedefin son kayan istatistik penceresindeki başarılı Ping örneklerinin sayısı.
+System.Net.NetworkInformation.IPStatus tarafından döndürülen özgün durum adı.
+Geçerli hedefin son kayan istatistik penceresindeki Ping örneklerinin sayısı.
+«Çevrimiçi», «Zaman aşımı» veya «Erişilemiyor» gibi son deneme durumu.
+Geçerli profilin denediği IP adresi veya alan adı.
+Tek bir Ping için yanıt zaman aşımı.
+En son başarılı yanıttan dönen TTL.
+Ölçüm: {0} ({1}).
+Ölçülen değer: {0}.
+Medya
+Medya oturumu var mı?
+Medya bilgileri ve ilerleme 
+Medyanın kaynak uygulaması
+Medya bilgileri kullanılamıyor
+Bellek
+GPU video belleği frekansı
+GPU video belleği jonksiyon sıcaklığı
+GPU video belleğinin toplam kapasitesi
+GPU'nun anlık video belleği kullanımı
+Bellek ayrıntıları
+Bellek kullanım oranı
+Milisaniye
+En düşük gecikme
+En düşük
+Dakika
+'{0}' eksik
+Kapanış tırnak işareti eksik
+Değiştirilmiş bellek sayfaları
+Değiştirilmiş kopya oluşturuldu; yerleşik profil korunur.
+Mod işleminin böleni 0 olamaz
+Çin tatilleri dışında pazartesi–cuma; telafi iş günlerinde bile hafta sonu sakin dönemdir.
+Ekran sayısı
+Ay
+Bu ayın geçen süresi
+Ayın adı
+Bu ayın ilerlemesi
+Bu ayın kalan süresi
+Diğer
+Moskova, Riyad
+Anakart üreticisi
+Anakart modeli
+Anakart sıcaklığı (özet)
+Dağ Saati (ABD ve Kanada)
+Fare adı
+Oturum açıldığında başlatmayı etkinleştirmeden önce uygulamayı Applications klasörüne taşıyın.
+Birden çok HUD örneği
+Ad
+Ad (değişken öneki)
+Geçerli FPS ölçüm hedefi ekranı.
+GPU Engine performans sayaçlarına göre en çok GPU kullanan işlemin adı.
+Şu anda algılanan XInput kumanda yuvasının adı.
+DNS ana bilgisayar adı.
+Win32_Keyboard tarafından bildirilen ilk klavye cihazının adı.
+Windows bilgisayar adı.
+Geçerli bölgesel ayara göre ay adı.
+Win32_PointingDevice tarafından bildirilen ilk işaretleme cihazının adı.
+İşlemcinin tam model adı.
+Geçerli dönem PEAK veya OFF-PEAK değeridir.
+Etkin Windows güç planının adı.
+Şu anda seçili HUD profilinin görünen adı.
+Windows etkin görüntü cihazının adı.
+İkinci etkin görüntü cihazı algılandığında sağlanır.
+Geçerli yerel saat diliminin görünen adı.
+Son örneklemede en çok CPU kullanan işlemin adı.
+Windows PerfProc IODataBytesPersec değeri en yüksek olan işlemin adı.
+En büyük çalışma kümesine sahip işlemin adı.
+Geçerli Windows kullanıcısının adı.
+Şu anda algılanan etkin VPN arayüzünün adı.
+Geçerli FPS ölçüm hedefi penceresi.
+Yerel dinamik ada
+Yerel canlı bildirim başlatıldı
+Yerel canlı bildirim başlatılmadı
+İç içe süslü parantezler desteklenmiyor.
+Ağ
+Ağ bağlı
+Ağ arabirimi adı
+Ağ yoklaması
+Ağ türü
+Ağ birimi
+Ağ erişimi
+Ağ görüntüleme birimi ve yüzde hesaplama temeli.
+Ağ hatası
+Ağ seçenekleri
+Ağ profilleri otomatik bayt birimlerini veya Mbps'leri kullanabilir; 1 MB/s 8 Mbps'e eşittir. Yüzük toplam, indirme, yükleme veya daha büyük yönü referans bant genişliğinizle karşılaştırır. Referans %100 ölçeği belirler ve ağı sınırlandırmaz veya değerlendirme etmez.
+Ağ aktarım hızları
+Ağ aktarım hızı
+Ağ türü
+Ağa ulaşılamıyor
+Yeni
+Yeni Delhi, Mumbai
+Yeni kural
+Newfoundland
+Sonraki →
+Nikel-kadmiyum
+Nikel-metal hidrit
+Hayır
+GPU algılanmadı
+Etkin profil yok
+Kaydedilecek değişiklik yok
+Yedeklenecek ayar dosyası yok.
+Özel yerleşim desteklenmez
+Henüz veri kaynağı yapılandırılmadı.
+Henüz veri yok
+Sabit birim yok
+Yok
+Dinamik ada çıktısı yok
+Sol/sağ ayrımı desteklenmez
+Henüz günlük kaydı yok.
+Eşleşen bölüm yok
+Eşleşen değişken yok.
+Şu anda kullanılabilir ağ yok.
+Yayımlanmış sürüm bulunamadı.
+Henüz kural yok.
+Henüz örnek toplanmadı.
+Henüz profil yüklenmedi.
+Kısayol ayarlanmamış.
+Node.js sürümü
+Yok
+Sayfalanmayan bellek havuzu
+Etkin değil
+Bu protokole uygulanmaz
+Yetkilendirilmedi
+Bu cihazda desteklenmiyor
+Bu cihazda veya senaryoda kullanılamaz
+Henüz denetlenmedi.
+İzin verilmedi
+Korunmuyor
+Çalışmıyor
+Desteklenmiyor
+Sistem tarafından desteklenmiyor
+Hiçbir şey çalmıyor
+Kaydedilecek değişiklik yok.
+Bilgilendirme
+Bildirim izni
+Bildirim izni istendi; HUD'ın kalıcı bildirimi için gereklidir.
+Bildirimlere izin veriliyor.
+Bildirimler kapalı
+Nukuʻalofa, Apia
+Sayı
+Sayısal fonksiyon referansı
+nvidia-smi kullanılabilir mi?
+Tamam
+İşletim sistemi mimarisi
+Windows derleme numarası
+İşletim sistemi adı
+İşletim sistemi sürümü
+Devre dışı
+Kapalı: bugünün ilerlemesini gösterir. Açık: günlük hedef saate kalan oranı gösterir.
+Sakin dönem
+Kapalı: günün geçen oranı. Açık: sonraki günlük hedefe kalan oran.
+Resmî yoğun saatler (Pekin saati)
+Açık
+Android'de diğer uygulamaların üzerinde gösterme ve bildirim izinlerini verin, ardından Ana Sayfa'dan HUD'yi başlatın. Ayarlar otomatik kaydedilir. Donanım okumaları sistem erişimine bağlıdır. PawnIO ve AIDA64 masaüstü arayüzü yalnızca Windows içindir. Bildirim düzenini ve yazı boyutunu Android yönetir.
+Pille çalışıyor
+Pille çalışıyor
+Açık: HUD sürekli görünür. Kapalı: güç değişimi pili gösterir; hedef ekrandaki fare alanına giriş mevcut profili çağırır.
+Açık: HUD sürekli görünür.\nKapalı: güç bağlantısı değiştiğinde Pil gösterilir; etkin profili çağırmak için işaretçiyi hedef ekranın üst orta kenarına götürün.
+Eşdeğer donanım alanları keşfedildikten sonra, mevcut profiller çalışmaya devam ederken, kopyalanan eski girişler kütüphaneden ayrılır. Yeni anahtarlar belirli bir cihaz ve sensörü tanımlar. En yüksek/ortalama özetlerin farklı anlamları vardır ve ayrı kalırlar. -- yani geçerli bir değer mevcut değildir.
+Bir CPU/GPU, paket, çekirdek, hotspot, bellek ve birden fazla güç kanalını ortaya çıkarabilir. Benzer isimler farklı ölçümleri temsil edebilir. Sensör min/max değerleri, donanım sınırları değil, oturum tarihi. SMBIOS modül bilgisi firmware'den gelir ve tam bir SPD/XMP/EXPO zamanlama tablosu değildir.
+Her satırda bir tane: değişken işleç değer => renk, örneğin cpu.usage >= 90 => #FF4D4F
+Çevrimiçi
+Yalnız tek satırlık metin desteklenir.
+Yalnızca platformun gerçekten sağladığı ölçümler kullanılabilir olarak gösterilir.
+Bu ölçüm yalnızca kısmen okunabilir.
+Yalnızca “Açılışta başlat” seçeneğini kendiniz açtıktan sonra kullanılır.
+Aç
+Gezinmeyi aç
+Sürümler sayfasını aç
+Ayarları aç
+Ayarları aç →
+Sistem ayarlarını aç
+Başta bulunan bardan yapılandırma klasörünü ve hakkında olan günlükler klasörünü açın. Sorun çözme sırasında kaynak durumunu veya donanım teşhislerini koruyun. İlk çalıştırma öntanımlılarını yeniden yükle; Kaydet ve uygula onları çalıştırılan uygulamaya bağlar.
+Hazır
+İşleç
+Operatörler ve koşullar
+Normal saatler yerel zamanı kullanır. Dünya Saati otomatik DST olmadan sabit bir UTC ofset kullanır. Gündelik hedef modunda seçilen bölgedeki bir sonraki hedef saatiye kadar kalan bölümü gösterir; kapatıldığında, geçen günün ilerlemesini gösterir.
+Diğer
+Üst katman
+Yüzen pencere gizli
+Diğer uygulamaların üzerinde gösterme izni
+Yüzen pencere izni eksik: sistem ayarları açıldı. «Diğer uygulamaların üzerinde göster» iznini verin.
+Yüzen pencere izni henüz verilmedi; etkinleştirmek sistem ayarları sayfasını açar.
+Yüzen pencere konumu ve görünümü
+Yüzen pencere görünür
+GPU PCIe nesli
+GPU PCIe hat sayısı
+PID
+Pasifik Saati (ABD ve Kanada)
+Paket
+Ağ yoklaması
+Ağ yoklaması
+Alınan toplam paket sayısı
+Gönderilen toplam paket sayısı
+Sayfalanan bellek havuzu
+Android StatFs ile alınan bölüm kapasitesi; kullanılabilir alan sistemin ayırdığı blokları içermez.
+Duraklatıldı
+Durgun, canlı ve eksik alanlar
+PawnIO kurulu, ECP yönetici olarak çalışıyor; desteklenen sensörler okunabilir.
+PawnIO erişilemiyor (hata {0}); yüklemeyi denetleyin veya kurulumu onarın.
+PawnIO yüklü. Düşük düzeyli sensörleri okumak için ECP’yi yönetici olarak çalıştırın.
+PawnIO eksik. CPU sıcaklığı, güç tüketimi, voltaj ve bazı anakart sensörleri bu sürücüyü gerektirir.
+Yoğun dönem
+Yoğun ücretlendirme dönemi mi?
+Çekirdek başına CPU kullanımı
+Yüzde
+Yüzde temeli
+Yüzde temeli
+Yoğun olmayan dönem mi?
+Yoğun dönem mi?
+Kullanıcının yerel saat dilimi
+Geçerli dönem adı (İngilizce)
+Geçerli dönem adı (Çince)
+Sonraki geçişin tarih ve saati (Pekin saati)
+Sonraki geçişin tarih ve saati (yerel)
+Sonraki geçiş zamanı (Pekin saati)
+Sonraki geçiş zamanı (yerel)
+Geçerli dönemin geçen ilerlemesi
+Dönemin geçen ilerlemesi metni
+Dönem geçişine kalan süre
+Dönemin kalan süresi metni
+DeepSeek yoğun dönemlerinin temel saat dilimi
+İzin denetimi başarısız; bu sayfayı yeniden açın.
+İzin gerekiyor
+İzinler
+İzinler yalnızca bunlara ihtiyaç duyan özelliği açtığınızda istenir.
+Sürekli
+Sürekli ve geçici modlar
+CPU fiziksel çekirdek sayısı
+GPU fiziksel dizini
+Fiziksel çekirdek sayısı; masaüstü kataloğundaki eşdeğer anahtar cpu.physical_cores değeridir.
+Ping (Uyumluluk)
+Anahtarı birer çubuklara yerleştirin, ardından birer kelime ve bir görüntü biçimi. tam sayılar için 0 ve sabit onluklar için 0.0 / 0.00 kullanın.
+Oynatılan saniye sayısı
+Geçen oynatma süresi
+Oynatma ilerlemesi
+Oynatma ilerlemesi metni
+Oynatma durumu
+Çalıyor
+Oyun ilerlemeyi bildirilen zaman çizelgesi ve oranı izler; duraklı zaman çizelgeleri ekstrapolasyon yapmaz. Süresi olmayan canlı seansların geçerli bir yüzdesi yoktur ve gösterim --. Kayıtlı seanslar veya eksik sanatçı / albüm metadataları olmayan oyuncular bu alanları kullanılamaz bırakır.
+Güç bağlantısı türü
+Port
+Bağlantı noktası ulaşılamıyor
+Konum
+Konumlandırma
+GPU güç sınırı
+En yüksek güç (özet)
+Güç planı
+Güç planının adı
+Güç kaynağı
+GPU anlık gücü
+Tercih edilen Android ABI değeri (Build.SUPPORTED_ABIS); masaüstü kataloğundaki eşdeğer anahtar cpu.architecture değeridir.
+Build.SUPPORTED_ABIS üzerinden tercih edilen sistem ABI değeri.
+Hazır ayar
+Hazır ayar + Kaydırma
+Hazır ayar + Kaydırma
+Geçerli profilin adı
+HUD önizlemesi
+HUD önizlemesi
+Önizleme başarısız. Günlüklere bakın.
+Ana değer
+Birincil ekranın renk derinliği
+Ana ekran (otomatik)
+Ana HUD
+Birincil ekranın yüksekliği
+Birincil görüntü aygıtının adı
+Birincil ekranın yenileme hızı
+Birincil ekranın genişliği
+Ana ekran (otomatik)
+Birincil harici depolamanın kullanılabilir alanı
+Birincil harici depolamanın boş alan oranı
+Birincil harici depolamanın toplam kapasitesi
+Birincil harici depolamanın kullanım oranı
+Birincil harici depolamanın kullanılan alanı
+Ana değer
+Ana değer / Başlık
+Özel
+Uygulamanın özel belleği
+ICMP yoklaması
+Yoklama durumu
+TCP yoklaması
+Yoklama hedefi
+UDP yoklaması
+Yoklama gecikmesi
+Sınama tamamlanmadı
+Yoklama seçenekleri
+Yoklama hedefi
+Probe hedefleri ve protokollerini 
+Uygulama işleminin mimarisi
+İşlemler
+Sistemin mantıksal işlemci sayısı
+Profil yönetimi
+Profil adı
+Profilin ağ yüzdesi
+Yüzde hesabında kullanılan aktarım hızı
+Ağ yüzdesi hesaplama kipi
+Profilin ağ yüzdesi metni
+Profil kaydetme ile Kaydet ve uygula arasındaki fark
+Profil kaydedildi
+Profiller ve HUD içerikleri
+Profiller, pozisyonlar, kuyruklar, tetikleme kuralları ve sıcak bölgeler her bir örnekten gelir.HUD'e tıklayarak sadece kuyruk ilerler.Önceleme aralığı, küresel kısayol ve tıklama döngüsü ana ayar paylaşıldır.Kaydet ve uygula tüm yapılandırmayı devreye alıyor.
+İlerleme
+İlerleme değeri
+İlerleme ifadesi
+İlerleme değeri
+Proje ve lisans
+GitHub projesi
+Proje ve lisans
+Korunuyor
+Protokol
+Android sistem API'leri tarafından sağlanır; okunamayan veri kullanılamaz olarak bildirilir.
+Sistem vekil sunucusu adresi
+Vekil sunucu etkin mi?
+Sistem vekil sunucusu durumu
+Genel
+Genel IPv4 adresi
+Genel IPv6 adresi
+Yayımlama başarısız
+Python sürümü
+Hızlı bağlantılar
+Çıkış
+3–3600 saniye aralığı.
+Aralık {0} – {1}
+Pil anlık gücü
+Ham oynatma durumu
+Yenile
+Yenile
+/proc/stat, /proc/cpuinfo, cpufreq veya CPU sıcaklık bölgelerinden okunur. Yetkili Root, kısıtlı düğümleri okuyabilir. Geçerli örnek yoksa kullanılamaz.
+Android Build ve cihazın sistem API'lerinden okunur.
+Android pil yayınlarından veya BatteryManager'dan okunur; cihaz değeri sağlamıyorsa kullanılamaz.
+Android bellek API'lerinden veya /proc/meminfo'dan okunur; yalnızca cihazın sağladığı değerler yayımlanır.
+KGSL, Mali, devfreq veya GPU sıcaklık bölgelerinden okunur. Yetkili Root ek erişim sağlayabilir. Cihaz düğüm sağlamıyorsa kullanılamaz.
+DeepSeek kaynak yapılandırmasından okunur veya hesaplanır; bakiye istekleri kullanıcının API anahtarını gerektirir.
+PawnIO'nun sürücü durumunu yukarıda okuyun. Eğer PawnIO eksikse, onu yükle/yanginle ve Windows UAC'ı tamamla; sonrasında tamamen ECP'den çık. ECP'yi yöneticisi olarak yeniden başlat ve tekrar kontrol et. Yeniden başlat düğmesi eski işlemin çıkmasını bekler. Eğer mevcut değilse, erişilemez sürücü durumunu hiçbir veri iade etmeyen donanımdan ayırt edin ve sonra teşhisleri ihraç edin.
+TrafficStats veya Android ağ API'leri üzerinden okunur; kullanılabilirlik işletim sistemi sürümüne ve izinlere bağlıdır.
+Yalnızca okunarak veri toplanır; sistem ayarları değiştirilmez. Root yöneticinizde ECP'ye izin verip vermeyeceğinizi seçin.
+Yalnızca sistem uygulamaları okuyabilir (gizli API).
+Yalnızca üretici uygulamaları okuyabilir.
+Veriler okunuyor…
+Wi-Fi adını okumak için konum izni gerekir.
+X11/XWayland Present tamamlanma olaylarını okur. Yerel Wayland, Present kullanmayan uygulamalar veya libxpresent1 yokken ölçüm yapılamaz. Boyama işlemi sayıları ve sabit yenileme hızları kullanılmaz.
+Gerçek FPS'yi okur, yenileme hızıyla değiştirmez. Pencereler SurfaceFlinger katmanlarına karşılık gelir ve ROOT gerektirir; ekranlarda üreticinin kare sayacı desteği gerekir. Ekranlara açıkça atanamayan çoklu ekran sayaçları kullanılamaz.
+Seçili pencerenin ölçülen sunum veya görüntü güncelleme hızı. Windows bu pencerenin baskın sunum akışını sayar; aynı işlemdeki diğer pencereler ayrı ayrı sayılır. Ekranlar kendi baskın sunum akışını kullanır. Ölçüm gerçekten gösterilen kare olaylarını sayar ve performans günlüğü erişimi gerektirir; ekranın sabit yenileme hızı değildir.
+Gerçek zamanlı koruma kapalı
+Alma hataları
+Alınan
+Önerilen
+Önerilen kullanım
+Etkinleştirildiğinde daha ayrıntılı çalışma bilgisi kaydeder.
+Referans birimi
+Yenile
+Yenileme aralığı / sn
+Pencere/ekran hedefini yenilenti ve seçin, sonra %100'e ait olan FPS'yi ayarlayın. Pencere FPS seçilen pencereye ait baskın sunum akışını kullanır; aynı süreçte diğer pencereler ayrı olarak sayılır. Display FPS ekranın baskın sunum akışını kullanır. Bunlar görüntü yenilenti oranı değil, ölçülen çerçeve oranlarıdır. Kayıp olaylar veya izinler durum bilgileri üretir; yöneticilerle erişmeye ihtiyaç duyulabilir. Normal GPU profilleri bir adaptör seçebilir, çürük sensör anahtarları ise belirtilen cihazlarını tanımlar.
+Şimdi yenile
+Hedefleri yenile
+Pencere/ekran listesini yenile
+Pilin kalan enerjisi (Wh)
+Pilin kalan enerjisi
+Kaldır
+Seçili örneği kaldır
+Seçili kuralı sil
+Ham yoklama durumu
+Bildirilen ad: {0}.
+Yetkilendirme iste
+İstek başarısız: {0}
+İstek başarısız; ağı, URL adresini ve kimlik bilgilerini denetleyin.
+Önceden Root yapılmış telefon gerekir; kısıtlı CPU, GPU, sıcaklık ve bellek düğümlerini okumayı sağlar.
+Canlı güncellemeleri göstermek için sistem desteği ve izin gerekir.
+Platformun renklendirilmiş biçimini gerektirir
+Sıfırla
+Tümünü sıfırla
+Tümünü sıfırla
+Tüm ayarlar varsayılana sıfırlansın mı?
+%100’e sıfırla
+Yönetici olarak yeniden başlat
+Yeniden başlatma bekliyor
+Sistemin kısıtladığı kullanım senaryoları
+Yetkilendirmeyi yeniden iste
+Sağ simge
+Sağdaki durum
+Sağ simge
+Sağdaki durum
+Sağdaki durum / Halka
+Sağdaki durum / Başlık
+Sağdaki durum / Halka
+Sağdaki durum / Başlık
+Halka
+Yüzük değişken ve aralığı
+Dalga yayılımı
+Dalga şiddeti
+Yukarı kaydır
+Root erişimi gerekir.
+Root izni verildi; okunabilen değerler bu cihazın düğümlerine bağlıdır.
+Root ile donanım ölçümleri
+Root kullanılamıyor veya reddedildi; normal okumalar sürer.
+Kural adı
+Yönetici olarak çalıştır
+Çalışıyor
+Yönetici olarak çalışıyor
+Rust sürümü
+İstatistik penceresi / örnekler
+Örnekleme çalışıyor
+Örnekleme ve tazelik
+Örnekleme ve yenileme
+Kaydet
+Kaydet ve uygula
+Yeni HUD'ı önizleme veya konumdan önce kaydedip uygulayın.
+Kısayolu kapatmak için kaydedip uygulayın.
+Kısayolu açmak için kaydedip uygulayın.
+Yeni HUD'ı önizleme veya konumdan önce kaydedip uygulayın.
+Profilin yanında düzenlenen profil kaydedilir; bir yapılandırılmış düzenleme özel bir kopya oluşturur. Önbellek mevcut düzenlemeyi gösterir. Kaydet ve uygula'ın sağ üst kısmında bulunan tüm ayarları kaydetir ve HUD'e uyguluyor.
+Kopyayı farklı kaydet
+Kaydetme başarısız
+Günlüğü kaydet
+Raporu kaydet
+Kaydedildi
+Pil tasarrufu durumu
+Sistem ölçek oranı
+Profil oluşturuldu.
+Profil silindi.
+Profil yönetimi
+Profil adı
+Profil kaydedildi
+Profiller, veri kaynakları, yenileme aralıkları ve görüntüleme ayarları ilk çalıştırma varsayılanlarına döner. Bu işlem geri alınamaz.
+Bu veriler hakkında tekrar uyarı yapmayın 
+Kapsamlı depolama, okunabilecek verileri sınırlar.
+Ekran: Alt orta
+Ekran: Sol alt
+Ekran: Sağ alt
+Ekran parlaklığı
+Ekran: Orta
+Ekran: Sol orta
+Ekran: Sağ orta
+Ekran durumu
+Ekran: Üst orta
+Ekran: Sol üst
+Ekran: Sağ üst
+Ekran kapalıyken örnekleme
+Ad, anahtar veya kategoride arama yapın Veri yönetimi → Değişken kitaplığı altında. Bir değişkenin anlamını, türünü, birimini ve biçimlerini görmek için seçin. Copy Variable Key yüzükler ve kurallar için yararlıdır; Copy Template metin alanları için bağlamaları içerir.
+İşleve göre: önce durum ve canlı değerler, sonra ayrıntılar. Ad, anahtar veya kategoriyle arayın.
+Bölüm veya anahtar ara
+Dil ara
+Ad, kaynak kimliği veya değişken ara
+Değişken ara
+Ara: CPU kullanımı / cpu.usage
+Saniye
+Ek değer / Not
+Ek değer / Not
+İkinci ekranın adı
+İkinci ekranın yenileme hızı
+İkinci ekranın çözünürlüğü
+Ek değer / Not
+Gizli değerler ${env:VARIABLE_NAME} yer tutucularını kullanabilir.
+Güvenli Önyükleme
+Güvenlik
+Değişken seçin
+Anlamı, birimi ve kullanımı görmek için soldan değişken seçin.
+Anlamı, birimi ve kullanımı görmek için soldan değişken seçin.
+Hedef pencere…
+Seçilen profil etkin olur. Yerleşiği düzenlemek kopya oluşturur ve aslı korur.
+Seçili SurfaceFlinger katmanı.
+Seçili ekran.
+Gönderme hataları
+Sensör sürücüsü kurulu
+Sensör sürücüsü durumu
+Sensör sürücüsü sürümü
+Gönderilen
+API anahtarını ayarlayın
+Bir gösterim/kaşın kısayolunu ayarlayın
+Etkin yap
+Ayarlar
+Settings.System.SCREEN_BRIGHTNESS (0–255); yüzde olduğu varsayılmaz.
+Paylaş
+Uygulama bilgilerini paylaş
+Yapılandırmayı paylaş
+Cihaz ve yetenek bilgilerini paylaş
+Tanılama günlüğünü paylaş
+Tanılama raporunu paylaş
+Günlüğü paylaş
+Paylaşılan GPU belleği üst sınırı
+Paylaşılan GPU belleği kullanım oranı
+Kullanılan paylaşılan GPU belleği
+Kısa ad
+Kısayolla gösterme animasyonu
+Tüm HUD'ları gösterme/gizleme kısayolu
+Kısa yolu ve fare sıcak bölgeler
+Kısa aralık hızlıdır ama daha çok kaynak tüketir. Saatler saniyelik, API'ler kendi aralıklarında.
+İlk HUD'unuzu gösterin.
+Sensör ve donanım yazılımı dahil {0} öğe.
+Sistem ve sürücülerin gerçekten sağladığı donanım okumalarını gösterir. Sunulmayan veya erişilemeyen sensörler -- gösterir. Ayrıntılar için tanı verilerini dışa aktarın. PawnIO ve AIDA64 arayüzü yalnızca Windows'ta kullanılabilir.
+Cihaz ve sistem tarafından gerçekten sağlanan okumaları gösterir. Kullanılamayan öğelerde -- ve nedeni görüntülenir.
+Wi-Fi sinyal gücü
+Basit
+Basit sunumu kısaltır; Tam sunumu kullanır. Roll Up, penceresini ve katmanını korurken sabit bir kapsülün içindeki simgeler, değerler ve yüzükleri hareket ettirir. Roll sürekli anahtarlara uygulanır; başlangıç ve geçici sunumlar normal gösteri / geri çekim yaşam döngüsünü korur. DeepSeek zirve geçişleri Tam animasyonu korur.
+Basit: son HUD'ı hızlıca gösterir.
+Basit: öncekini kapatır, sonrakini hızla gösterir.
+Boyut ve animasyon
+Boyut, açıklık, şifre ve hareket 
+Toplam bellek yuvası sayısı
+Kullanılan bellek yuvası sayısı
+Yavaş
+SmartScreen durumu
+CPU yuva sayısı
+Solomon Adaları, Yeni Kaledonya
+Bazı ağlar ICMP'yi engeller; deneme TCP kullanır.
+Kaynak
+Kaynak adları benzersiz olmalı; yalnız harf, rakam, alt çizgi veya kısa çizgi içermelidir.
+Kaynaklar bir JSON dizisi olmalıdır.
+Güney Georgia
+Hız
+Bellek çalışma frekansı
+Bekleme listesindeki önbellek
+Windows oturumundan sonra Endfield Charge Plus'ı başlat.
+HUD'ı başlat
+Uygulamanın başlatılma zamanı
+Yapılmış bir profilden başlayın ve özel bir kopya oluşturmak için Save'e başlayın veya yeni bir profil oluşturun. Delete, orijinal ön ayarlar kalırken özel profilleri kaldırır. Preview mevcut düzenleme ve gerçek verileri kullanır; Kaydet ve uygula, çalışmakta olan HUD'a bağlar.
+Cihaz açıldığında başlat
+Windows ile başlat
+HUD'ı başlatmak, kalıcı bildirimi için bildirim izni gerektirir.
+Başlangıç sistem ilkesiyle yönetiliyor.
+Durum
+Durum / Koşul
+Durum / Koşul
+Pil durumu metni
+Durum hesaplaması
+Durum, önbelleği ve hatalar
+Durum: Denetim başarısız
+Durum: GitHub…
+Durum: yerel sürüm çevrimiçinden yeni
+Durum: ağ isteği başarısız ({0})
+Durum: yayımlanmış sürüm bulunamadı; depo henüz herkese açık olmayabilir
+Durum: Denetlenmedi
+Durum: sürüm bulundu ama biçimi karşılaştırılamıyor
+Durum: güncel
+Durum: güncelleme var
+Durum: Süre doldu; yeniden deneyin
+HUD'ı durdur
+Durduruldu
+Depolama
+Çıkarılabilir depolama aygıtı sayısı
+Çıkarılabilir depolama aygıtları listesi
+Arka planda başlatma sınırlarına ve seçili görüntüleme modunun izinlerine tabidir.
+Son ek
+Veriler bir kuralı karşıladığında bir HUD çağırın.
+HUD'u çağırın veya geçici olarak saklayın.
+Destekleniyor
+Toplam takas alanı
+Kullanılan takas alanı
+Sidney, Brisbane
+Sistem
+Sistem diskinin etkinlik süresi
+Sistem biriminin kullanıcıya açık alanı
+Sistem çağrıları
+Sistem diski
+Sistem DPI değeri
+Sistem diskinin dosya sistemi
+Sistem diskinin kullanılabilir alanı
+Sistem diskinin boş alan oranı
+Sistem diskinin toplam G/Ç hızı
+Sistem diskinin birim etiketi
+Sistem diskinin kuyruk uzunluğu
+Sistem diskinin okuma hızı
+Sistem diskinin sürücü harfi
+Sistem durumu
+Sistem diskinin toplam kapasitesi
+Sistem diskinin kullanım oranı
+Sistem diskinin kullanılan alanı
+Sistem diskinin yazma hızı
+Sistem varsayılanı
+Sistem ölçümü durumu
+Sistem ilerleme çubuğu
+Sistem durumu
+Sistem depolama kullanım oranı
+SystemClock.elapsedRealtime()/1000. Derin uyku dahil, açılıştan beri geçen saniye.
+TCP bağlantısı kurma süresi
+Etkin TCP bağlantısı sayısı
+TPM var mı?
+TPM sürümü
+TTL süresi doldu
+Üst metin
+Etiket, başlık, ana/dörtüncü metin ve sağ taraf değerleri, sözcük metni ve değişken işaretleri karıştırır. %, °C veya GHz gibi birimler için doğru eksi kullanın. İkonlar içeriği tanımlar; vurgu rengi kapsül ve yüzük rengini belirler.
+Hedef
+Hedef ekran
+Hedef zaman döngüsünün geçen oranı
+Hedef zamana kalan oran
+Hedef zamana kalan süre
+Hedef zamana kalan süre metni
+Hedef zaman
+Hedef kapatıldı
+Hedef pencere
+Hedef saat modu
+Hedef saat modu
+Hedefler, hostname, IPv4 veya IPv6 olabilir. ICMP portunu görmezden gelir; TCP/UDP onu kullanır. Başarısızlık, hedef/protokolu başarıyla yanıtlamadığını, tüm PC'nin çevrimdışı olması anlamına gelmez.Serverler ICMP'yi engelleyebilir veya UDP'ye yanıt vermeyebilir.
+Tahran
+Sıcaklık
+CPU sıcaklığı (°C)
+En yüksek sıcaklık (özet)
+Şablon
+Değişkenler, şablonlar ve ifadeler: {variable|format}  {= expression | format}\nİşlev ve biçim başvurusu: + - * / % ^  > >= < <= == !=  && / || / !  ?:  ??  if() min/max/avg/sum/clamp/round\nİlerleme değeri: = expression\nÖrnek: {= if(memory.usage >= 80, 'High', 'OK')}
+Terminal çalışıyor mu?
+Bağlantıyı sına
+Sınanıyor…
+Metin
+Pano metninin uzunluğu
+Metin bölgeleri ve simgeler
+Metin, türler ve boru hattı referansı
+Özgün açık kaynak çalışması için QinAnze'ye, ayrıca Avalonia ve Jetpack Compose projelerine teşekkürler.
+API kullanılabilir; adanın gösterilip gösterilmeyeceğine sistem karar verir.
+API anahtarı kaldırıldı.
+API anahtarı şifrelenerek kaydedildi.
+Durum çubuğu çevresinde HUD içeriği göstermek için kullanılan Android canlı güncelleme/dinamik ada API'si.
+Android sürümü bu API için çok eski.
+HUD başlatıldı.
+HUD durduruldu.
+Uygulamanın açılışta başlatma izni eksik.
+Uygulamanın ön plan hizmeti izni eksik.
+Uygulamanın ağ erişim izni eksik.
+Yetkilendirme ekranı açıldı; dönüşte kullanılabilirlik yeniden denetlenir.
+Temel URL adresi geçersiz.
+Süslü parantezler eşleşmiyor.
+Denetim zaman aşımına uğradı; yeniden deneyin.
+Onay kutusu yalnızca bu uyarı penceresinde zaten listelenen değişkenlerin uyarılarını kalıcı olarak susturur. Diğer değişkenler uyarı vermeye devam eder. Pencereyi normal kapatmak yalnızca geçerli olayı onaylar. Birden fazla HUD aynı uyarı penceresini paylaşabilir; ifade hataları profil ve ifadeye göre ayrılır. Uyarıyı susturmak veriyi düzeltmez veya toplamayı durdurmaz.
+Ayarlar içe aktarıldı ve uygulandı.
+Döngü animasyonu her profilin kendi animasyon modunu geçersiz kılar.
+Liste boş. En az bir profil ekleyin.
+Cihaz ilgili çekirdek düğümünü sunmuyor.
+Cihazda bu sensör yok.
+Sürücü yükleyicisi sağlama toplamı geçersiz.
+Sürücü yüklendi. ECP’den çıkıp yeniden başlatın.
+Uç nokta HTTP {0} döndürdü.
+Dışa aktarılan JSON masaüstü sürümleriyle uyumludur; içe aktarma geçerli yapılandırmanın yerine geçmeden önce doğrulanır.
+İfade boş.
+Yüzen HUD etkin. Ayarları açmak için dokunun.
+Yükleyici {0} koduyla çıktı.
+Günlük temizlendi.
+En yüksek değer en düşük değerden büyük olmalıdır; aksi halde halka her zaman 0 olur.
+Ad boş olamaz.
+Ağ bağlı.
+Ağa şu anda erişilemiyor.
+Ağ isteği başarısız.
+Bildirim kanalı kapalı
+Yüzen pencere gerçek bir sistem uygulama penceresi kullanır; dinamik ada Android yerel canlı güncelleme API'sini kullanır.
+Platform bu API'yi yayımlamıyor.
+Ana değer ve notu; {variable|format} ve {= expression} desteklenir.
+Deneme hedefi boş olamaz.
+Listede tek profil var; gösterilmeye devam eder.
+Kuyruk boş.
+Uzak etiket karşılaştırılamıyor; sürümler sayfasına bakın.
+Rapor hiçbir zaman API anahtarını veya istek üstbilgisi değerlerini içermez.
+Yanıt geçerli JSON değil.
+Halka, yapılandırılan aralıkta (değer − minimum) oranını gösterir ve sonucu 0–100% ile sınırlar. Bir değişken anahtarı veya = ile başlayan sayısal ifade kullanın. Sıcaklık, ağ trafiği veya FPS için makul bir tam ölçek değeri belirleyin. Aralık, metinde gösterilen ham ölçümü değiştirmez.
+Seçili profil etkindir; her zaman biri seçilidir.
+Seçilen hız bu değerde %100 olur; hesap öncesi Byte/s'ye çevrilir.
+Sistem canlı güncelleme bildirimlerine izin veriyor.
+Yerleşimi, görünümü ve uygunluğu sistem belirler; okumalar en sık 5 saniyede bir güncellenir.
+Sistem bu özelliğe zaten izin vermiş.
+Sistem güncelleme sıklığını sınırlar
+Değişken adı boş.
+Tema
+Bu API simge gösteremez.
+Bu API ilerleme gösteremez.
+Bu altyapı deneyseldir.
+Bu derlemede bu platform için yerel medya oturumu veri kaynağı bulunmuyor. Medya alanları kullanılamaz durumda kalır.
+Bu veri kaynağı kapalı.
+Bu cihaz veya çekirdek veri kaynağını sağlamıyor.
+Bu, bildirim içeriğinin önizlemesidir; görünümü ve yerleşimi sistem denetler.
+Bu proje QinAnze/zmd-charge türevidir ve MIT Lisansı kapsamında dağıtılır.
+Bu örnek yapı devre dışıdır. URL alanına gerçek hizmet adresinizi yazın, yolları yanıt yapısına göre ayarlayın ve hazır olduğunuzda enabled değerini true yapın. ${env:MY_API_KEY}, gizli değeri doğrudan JSON içine yazmak yerine işlemin ortam değişkenini okur.
+Uygulamanın iş parçacığı sayısı
+Üç döngü animasyonları
+Eşik
+Gizliyken sıklığı azalt
+Ekran kapalıyken sıklığı azalt
+Saat
+Kalan tahmini kullanım süresi
+Kalan tahmini kullanım süresi metni
+Zaman seçenekleri
+Saat seçenekleri doğrudan kaydedilir; içeriği veya adı düzenlemek bir kopya oluşturur.
+Kalan süre
+Zaman bölgesi ve günlük hedef
+Zaman, ağ ve FPS profilleri
+Süre doldu
+Zaman çizelgesi bilgisi var mı?
+Tek deneme zaman aşımı / ms
+Tek yoklama zaman aşımı
+Saat dilimi kimliği
+Saat dilimi adı
+Başlık
+Başlık / Koşul
+Başlık / Soldaki ana bilgi
+Başlık / Sağdaki durum
+Başlık / Koşul
+Başlık / Soldaki ana bilgi
+Başlık aşaması
+Tokyo, Seul
+CPU'yu en çok kullanan işlem
+CPU'yu en çok kullanan işlemin PID değeri
+En yoğun işlemin CPU kullanım oranı
+Üst orta (çalışma alanı)
+Disk G/Ç'si en yüksek işlem
+Disk G/Ç'si en yüksek işlemin PID değeri
+En yoğun işlemin disk G/Ç'si
+Sol üst (çalışma alanı)
+Belleği en çok kullanan işlem
+Belleği en çok kullanan işlemin PID değeri
+En yoğun işlemin bellek kullanımı
+Sağ üst (çalışma alanı)
+Üst orta
+Sol üst
+Sağ üst
+DeepSeek yüklenen bakiye
+Toplam (İndirme + Yükleme)
+Sistemin toplam veri aktarım hızı
+Toplam bayt
+Birikmiş indirme
+Sistemin toplam veri aktarım hızı (Mbps)
+GPU kullanılabilir toplam bellek üst sınırı
+GPU toplam bellek kullanım oranı
+GPU toplam bellek kullanımı
+Alınan toplam veri
+Gönderilen toplam veri
+Aktarılan toplam veri
+Birikmiş yükleme
+StatFs ile uygulama veri biriminin toplam kapasitesi; masaüstü eşdeğer anahtarı disk.system.total_bytes değeridir.
+Toplam veri aktarım hızı
+Parçanın toplam saniye sayısı
+Toplam parça süresi
+Parça adı
+Trafik birimleri ve halka referansı
+TrafficStats ile açılıştan beri alınan toplam bayt; masaüstü eşdeğer anahtarı network.total_received_bytes değeridir.
+TrafficStats ile açılıştan beri gönderilen toplam bayt; masaüstü eşdeğer anahtarı network.total_sent_bytes değeridir.
+Tetikleme kuralları
+Sorun çözme ve uyarılar
+Bölüm veya anahtar ara / Aramayı temizle
+ICMP TTL
+Yüzen HUD'ı etkinleştirmeden önce «Diğer uygulamaların üzerinde göster» iznini açın.
+Devre dışı
+İki faydalı örnek
+Tür
+Tür {0}
+UAC durumu
+UDP dinleme uç noktası sayısı
+Arayüz ölçeği
+USB / Aygıt
+Kılavuz / Bölüm {0:00}
+UTC saat farkı
+UTC farkı (saat)
+UTC saat dilimi
+HUD konumu bulunamadı:
+Kullanılamıyor
+Kullanılamaz durumu genellikle platformun genel API sağlamadığını, cihazda sensör olmadığını veya henüz örnek gelmediğini belirtir.
+Donanım veya kaynak sağlamıyorsa kullanılamaz.
+Görüntü modlarını ve ekran koordinatlarını anlayın.
+İfade beklenmedik biçimde sona erdi
+Birim
+Unix zaman damgası (milisaniye)
+Unix zaman damgası (saniye)
+Unix zaman damgası
+Saniye cinsinden Unix zaman damgası; masaüstü eşdeğer anahtarı time.unix_seconds değeridir.
+Bilinmiyor
+Ulaşılamıyor
+Tanınmayan karakter '{0}'
+Tanınmayan içerik: {0}
+Desteklenmiyor
+Desteklenmeyen işlev: {0}
+Yukarı
+Son güncellemenin kurulma tarihi
+Windows güncellemesi bekliyor
+Güncelleme var
+Bakiye güncelleme zamanı
+Güncellemeler var
+Yükleme
+Sistemin toplam yükleme hızı
+Sistemin toplam yükleme hızı (Mbps)
+Yalnız yükleme
+Özgün proje GitHub
+Üst proje
+Sistemin çalışma süresi
+Sistemin çalışma süresi metni
+Kullanım
+GPU 3D kullanım oranı
+CPU'nun 15 dakikalık ortalama kullanım oranı
+CPU'nun 1 dakikalık ortalama kullanım oranı
+CPU'nun 5 dakikalık ortalama kullanım oranı
+GPU hesaplama motoru kullanım oranı
+GPU kopyalama motoru kullanım oranı
+CPU'nun yakın zamandaki en yüksek kullanım oranı
+GPU video çözme kullanım oranı
+GPU video kodlama kullanım oranı
+Kullanım, kalan oran veya geçen ilerleme; halkayı da sürebilir.
+Kullanım, kalan oran ve ilerleme; halkayı da yönetebilir.
+Toplama, çıkarma, çarpma ve bölme için +, -, *, /; kalan için %; üs için ^ ve parantez kullanın. Karşılaştırmalar >, >=, <, <=, == ve != destekler. Mantıksal işleçler &&, ||, ! ve and/or/not içerir. Koşullarda test ? yes : no veya if(test, yes, no) kullanılır. ?? boş ya da null değerler için yedek değer sağlar.
+Ctrl veya Alt ile harf, sayı ya da F1–F24 (F12 hariç), isteğe bağlı Shift. Kaydedin; boş bırakmak kapatır.
+Ctrl veya Alt ile harf, sayı ya da F1–F24 (F12 hariç), isteğe bağlı Shift. Kaydedin; boş bırakmak kapatır.
+Veri Yönetimi → Hardware Verileri kullanarak sensörleri ve firmware alanlarını denetleyin. Temerate, bellek modülü, cihaz adı veya orijinal kimliği ile arama yapın. Tokeni kopyalamak için bir satır seçin. Export Diagnostics, mevcut durum ve okumaların yerel bir JSON anketini kaydeder.
+Okumalar için Root kullan
+Hazır tutturma ve kaydırmalar kullanın veya özel koordinatlar belirtin.
+Kaynağın durumunu ve hatalarını görmek için custom.<source>.status / error kullanın. Genel örnekleme daha hızlı olsa bile önbelleği kaynağın yenileme aralığı belirler. 401/403 hatalarında kimlik doğrulamayı ve erişim izinlerini kontrol edin. JSON yolları gerçek yanıt yapısıyla eşleşmelidir.
+Doğru ayarları bulmak için semptom kullanın.
+Kullanılan bayt
+TCP/UDP kullanır; ICMP yok sayar.
+Ağ hızları, paket denemesi, DeepSeek bakiyesi ve özel HTTP kaynakları için kullanılır.
+Uygulama veri biriminin kullanılan oranı (1 - available/total, df ile aynı hesaplama).
+Uygulama veri biriminin kullanılan alanı (StatFs).
+Geçerli kullanıcının etki alanı
+Kullanım kılavuzu
+Geçerli kullanıcı adı
+CPU kullanıcı kipinde kullanım oranı
+Uygulama veri biriminde kullanıcıya açık alan (StatFs.availableBytes).
+GPU ağırlıklı olarak paylaşılan bellek mi kullanıyor?
+Yaz saati olmadan sabit UTC farkı; günlük hedef de bu bölgeyi kullanır.
+Tüm etkin arayüzler. Yüzde toplam, indirme, yükleme veya büyük yönden hesaplanır.
+Sistemin yerel donanım arayüzleri kullanılır. Kullanılabilir veriler donanıma, sürücülere ve izinlere bağlıdır; PawnIO gerekli değildir.
+Ağ bağlantısı kullanım oranı
+VPN etkinliği
+VPN adı
+VPN durumu
+Ayrılmış GPU video belleği toplamı
+Değer
+Değer değişimi
+Değer kullanılamıyor
+Değerler milisaniyedir; HUD gizliyken veya ekran kapalıyken örnekleme yavaşlar.
+Değişken
+Değişken adı
+Değişken kitaplığı
+Değişkenler
+Okuması alınmış değişkenler
+Değişkenler, işaretler ve ifadeler
+Üretici incelemesi ve yetkilendirmesi gerekir
+Ayrıntılı günlük kaydı
+Sürüm
+Güncellemeyi görüntüle
+Kullanılabilir sanal bellek
+Masaüstünün toplam yüksekliği
+Sanal masaüstünün yüksekliği
+Uygulamanın sanal belleği
+Toplam sanal bellek
+Sanal bellek kullanım oranı
+Kullanılan sanal bellek
+Masaüstünün toplam genişliği
+Sanal masaüstünün genişliği
+Masaüstünün sol sınırı
+Sanal masaüstünün X başlangıcı
+Masaüstünün üst sınırı
+Sanal masaüstünün Y başlangıcı
+CPU aygıt yazılımı sanallaştırması
+Görünümlü animasyon ve kapsam 
+Pil gerilimi (mV)
+GPU çekirdek gerilimi
+VS Code çalışıyor mu?
+WSL dağıtımları listesi
+WSL dağıtımı sayısı
+WSL bellek kullanımı
+WSL çalışıyor mu?
+WSL durumu
+Bekleniyor
+Root yetkilendirmesi bekleniyor…
+Uyarı
+İzlenen değişken
+Web sitesi
+Bu haftanın geçen süresi
+Yılın haftası
+Bu haftanın ilerlemesi
+Bu haftanın kalan süresi
+Haftanın günü
+Hafta içi yoğun saatler (Pekin; noktalı virgülle ayırın)
+Otomatik geçişte bu animasyon her profilin ayarını geçersiz kılar.
+Kapalıyken hiçbir HUD çıktısı gösterilmez.
+Kapalıyken HUD gerektiğinde görünür (güç olayları veya gösterme tetikleyicisi).
+Açıkken HUD dokunuşları yakalamaz; giriş alttaki uygulamaya gider.
+Şu anda harici güç bağlı mı.
+AMD Radeon Software işlemlerini veya varsayılan kurulum yolunu algılar.
+Windows en az bir kullanılabilir ağ bağlantısı algılıyor mu; İnternet erişimini garanti etmez.
+Pil şu anda şarj oluyor mu.
+Pil şu anda deşarj oluyor mu.
+Docker Desktop / dockerd arka plan işlemlerini algılar.
+Geçerli panoda Bitmap/DIB görüntüsü var mı.
+Geçerli Windows panosunda Unicode metin var mı.
+VS Code, Visual Studio, Rider, IntelliJ/PyCharm gibi yaygın IDE işlemlerini algılar.
+Geçerli tarih cumartesi veya pazar mı.
+Sistemde çalıştırılabilir nvidia-smi.exe var mı.
+Son ağ denemesi başarılı mı.
+Şu anda yoğun olmayan dönem mi.
+Şu anda yoğun dönem mi.
+network.proxy_status ile aynı kaynaktan sistem proxy durumu.
+Windows pil tasarrufu açık mı.
+Kayıt defterindeki UEFISecureBootEnabled durumu.
+Windows Terminal / PowerShell / cmd işlemlerini algılar.
+ConnectivityManager geçerli varsayılan ağın kullanılabilir olduğunu bildiriyor mu.
+Şu anda DeepSeek yoğun faturalandırma dönemi mi; masaüstü eşdeğer anahtarı deepseek.period.is_peak değeridir.
+Win32_Tpm listelenebiliyor mu.
+Kullanılabilir Windows güncellemelerini ve Windows Update / Component Based Servicing yeniden başlatma beklentilerini algılar.
+Tipik tümleşik/birleşik bellekli cihazları ayrık ekran kartlarından ayıran sezgisel işaret.
+Ürün yazılımında sanallaştırma etkin mi; WMI desteği gerekir.
+network.vpn_status ile aynı kaynaktan etkin VPN algılaması.
+Code / Code - Insiders işlemlerini algılar.
+wsl/wslhost/vmmemWSL işlemlerini algılar.
+{0} etkin veya doğru mu.
+HUD'un neden görünmez olması
+Wi-Fi bandı
+Wi-Fi kanalı
+Wi-Fi ağının adı
+Wi-Fi standardı
+Pencere FPS
+Pencere FPS (Yönetici olarak çalıştır)
+Pencere kare hızı oranı
+Pencere kare hızı durumu
+Kare hızı hedef penceresinin adı
+Pencere kare hızı oranı
+Pencere kare hızı durumu
+Pencere kare hızı seçenekleri
+Kurulmayı bekleyen güncelleme sayısı
+Windows Update durumu
+Windows başlangıcı kapattı. Başlangıç uygulamalarında tekrar açın.
+Windows medya değişkenleri, medya oynatıcısının kaydettiği oturumları okur. Başlık ve sanatçıyı ana metin, süreleri ek metin ve media.progress değişkenini 0–100 aralığındaki halka için kullanın.
+İş alanı vs. tam ekran 
+İş alanı ön ayarları görev çubuğundan, doklardan ve rezerve bölgelerden kaçınır. Ekran ön ayarları tam görüntü sınırlarını kullanır. Ofsetler bir ön ayarı hareket ettirir; özel koordinatlar doğrudan pozisyonu belirtir. Önce hedef görüntü seçin. Negatif koordinatlar ana görüntüden sol veya üstteki görüntüler için normaldir.
+Uygulamanın çalışma kümesi
+Pekin saati
+Dünya saati
+Londra saati
+New York saati
+Tokyo saati
+X koordinatı / px
+X kaydırma / px
+X kaydırma / px
+Y koordinatı / px
+Y kaydırma / px
+Y kaydırma / px
+Yangon
+Yıl
+Bu yılın geçen süresi
+Bu yılın ilerlemesi
+Bu yılın kalan süresi
+Evet
+En güncel sürümü kullanıyorsunuz.
+Yerel sürümünüz yayımlanandan daha yeni.
+Çinko-hava
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 birimleri değişkene göre seçer; aynı birimi iki kez eklemeyin. Biçimlendirme zincirleri soldan sağa çalışır ve sayıları dönüştürebilir veya metni kısaltabilir. Metin içindeki ifadeler için {= ...} kullanın ya da halka ifadesini = ile başlatın.
+bytes / gb:1
+bytes / speed, bayt cinsinden boyut veya aktarım hızı birimlerini otomatik ekler. kb:n, mb:n, gb:n ve tb:n değerleri 1024 kuvvetlerine böler ve n ondalık basamak gösterir; istediğiniz birimi profile ekleyin. duration / duration-long saniye cinsindeki değerleri biçimlendirir. Tarih ve saat alanları time:<date format> seçeneğini destekler; time:relative göreli zamanı veya süreyi biçimlendirir.
+kopya
+cpu.usage veya = (cpu.usage + gpu.usage) / 2
+g
+duration
+duration / duration-long
+örneğin 1.1.1.1 veya example.com
+Örnek: 1.1.1.1, 2606:4700:4700::1111, example.com
+Örn. Sunucum – Çevrimiçi durum
+örneğin value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+{0} sonra
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (Özel profil)
+{0} / {1} bölüm · Çevrimdışı
+{0} GPU
+{0} önce
+{0} kalan {1}
+{1} ölçümden {0} tanesi destekleniyor
+{0} profil eklendi; otomatik geçişi açın.
+{0} v{1} Ayarlar
+{0}: %{1:0} tamamlandı
+{0}: %{1} tamamlandı
+{0}: mutlak bir HTTP/HTTPS URL adresi girin.
+{0}: değişken adlarını ve JSON yollarını belirtin.
+{0}g {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Önceki
+↓ {network.display_download}
+API anahtarı
+Kare yakalama etkin
+Kare örnekleri bekleniyor
+64 bit Windows gerekir
+Çalışan bir pencere seçin
+Hedef pencere kapandı; başka bir pencere seçin
+Ekran bağlantısı kesildi
+Görüntü kaynağı eşlemesi kullanılamıyor veya birden fazla GPU arasında belirsiz
+Bu hedef için geçerli kare olayı yok
+Kare olayları bekleniyor; yönetici yetkisi gerekebilir
+Erişim reddedildi; uygulamayı yönetici olarak çalıştırın
+Present kare olayları bekleniyor
+X11/XWayland oturumu gerekir
+X sunucusu Present uzantısını desteklemiyor
+libxpresent1 paketini yükleyin
+Present yakalama arayüzü kullanılamıyor
+macOS gerekir
+Kare yakalama kullanılamıyor; uygulama bileşenlerini ve Ekran Kaydı iznini denetleyin
+Seçili hedef kullanılamıyor
+Ekran Kaydı izni gerekir; izin verdikten sonra uygulamayı yeniden başlatın
+macOS 12.3 veya daha yenisi gerekir
+Kare yakalama başarısız: {0}
+Kare yakalama sonlandı ({0})
+Bakiye uç noktasının döndürdüğü hesap kullanılabilirliği durumu.
+Uygulama işleminin adı
+Uygulamanın çalışma süresi
+Uygulamanın çalışma süresi metni
+Geçerli uygulamanın çalışma süresinin okunabilir metin biçimi.
+Ortalama Ping gecikmesi
+Ortalama yoklama gecikmesi
+Geçerli hedefin son 20 başarılı Ping yoklamasının ortalama gecikmesi.
+Geçerli yoklama yapılandırmasının son 20 başarılı örneğinin ortalama gecikmesi.
+Pil durumu metni
+Pil gerilimi (V)
+Sistem biriminin BitLocker ProtectionStatus değeri.
+BitLocker durumu
+CPU adı
+CPU kullanım oranı
+CPU sensör sıcaklığı. Aygıt, sürücü veya geçerli izinler desteklemediğinde kullanılamaz.
+Bu bilgisayardaki geçerli tarih ve saat.
+Bu bilgisayardaki geçerli tarih.
+Geçerli yerel tarih ve saat.
+yyyy-MM-dd biçiminde geçerli yerel tarih.
+Bilgisayarın tamamındaki anlık toplam CPU kullanım oranı.
+DeepSeek API kullanılabilirliği
+Windows Defender WMI tarafından bildirilen etkinlik ve gerçek zamanlı koruma durumları.
+Başarısız yoklama örneği sayısı
+İşlemcinin tam model adı.
+GPU çekirdek sıcaklığı
+GPU çekirdek gerilimi
+GPU adı
+GPU VBIOS sürümü
+Donanım izleme sensörlerinin bildirdiği GPU çekirdek sıcaklığı. Donanım veya sürücü sunmadığında kullanılamaz.
+Donanım izleme sensörlerinin bildirdiği GPU çekirdek gerilimi.
+Geçerli hedefin son 20 başarılı Ping yoklamasındaki en yüksek gecikme.
+Geçerli yoklama yapılandırmasının son 20 başarılı örneğindeki en yüksek gecikme.
+ICMP TTL
+Son başarılı Ping zamanı
+Son başarılı yoklama zamanı
+Volt birimine dönüştürülmüş anlık pil gerilimi.
+Seçili GPU'nun en yoğun motoru temel alınarak hesaplanan anlık kullanım oranı.
+Kaybolan Ping sayısı
+Geçerli hedefin son 20 başarılı Ping yoklamasındaki en düşük gecikme.
+Geçerli yoklama yapılandırmasının son 20 başarılı örneğindeki en düşük gecikme.
+En yüksek Ping gecikmesi
+En yüksek yoklama gecikmesi
+Bellek kullanım oranı
+Microsoft Defender durumu
+En düşük Ping gecikmesi
+En düşük yoklama gecikmesi
+Son yoklamanın durumu; örneğin “Çevrimiçi”, “Zaman aşımı” veya “Bağlantı noktasına erişilemiyor”.
+Geçerli Endfield Charge Plus işleminin adı.
+Geçerli profilin seçtiği görüntü bağdaştırıcısının adı.
+Ağ kullanılabilirliği
+Ping hatası
+Ping gecikme değişkenliği
+Ping gecikmesi
+Ping gecikmesi metni
+Ping için %100'e karşılık gelen gecikme
+Ping paket kaybı oranı
+Ping yanıt adresi
+Ping durumu metni
+Ping hedefi çevrimiçi mi?
+Ping TTL
+Ping hedefi
+Ping zaman aşımı süresi
+Ping/yoklama uç noktası
+Ping/yoklama bağlantı noktası
+Ping/yoklama protokolü
+Yoklama uç noktası
+Yoklama hatası
+Yoklama gecikmesi
+Yoklama gecikmesinin değişkenliği
+Yoklama gecikmesi metni
+Yoklama için %100'e karşılık gelen gecikme
+Yoklama paket kaybı oranı
+Yoklama bağlantı noktası
+Yoklama protokolü
+Yoklama yanıt adresi
+Yoklama örneği sayısı
+Yoklama durumu metni
+Yoklama başarılı mı?
+Ham Ping durumu
+Ham yoklama durumu
+Windows BatteryTemperature arabiriminden okunur; yalnızca sürücü veya aygıt yazılımı veri sağlıyorsa kullanılabilir.
+Windows Defender WMI tarafından bildirilen gerçek zamanlı koruma durumu.
+Son başarılı Ping'in gidiş-dönüş gecikmesi. Başarısızlık, ilerleme hesabına 999 ms olarak katılır.
+Son başarılı yoklamanın gidiş-dönüş veya bağlantı gecikmesi. Başarısız yoklama 999 ms olarak değerlendirilir.
+Win32_BIOS tarafından bildirilen SMBIOSBIOSVersion değeri.
+Windows'un bu açılışından itibaren geçen saniye sayısı.
+Geçerli uygulama işlemi başlatıldığından beri geçen saniye sayısı.
+Gönderilen Ping sayısı
+Tek yoklama zaman aşımı süresi
+Etkin Windows Firewall Policy yapılandırmasının durumu.
+Başarılı Ping sayısı
+Başarılı yoklama örneği sayısı
+Sistem diskinin BitLocker durumu
+Sistemin çalışma süresi
+Sistemin çalışma süresi metni
+Windows Volume Encryption arabiriminin bildirdiği sistem diski koruma durumu.
+Sistemin çalışma süresinin okunabilir metin biçimi.
+Güç durumundan üretilen “Şarj oluyor”, “Pille çalışıyor”, “Güce bağlı” veya “Bilinmiyor” gibi metinler.
+Başarılı olduğunda “20ms” gibi bir metin; başarısız olduğunda zaman aşımı veya hata durumu.
+Başarılı olduğunda “20ms” gibi bir metin; zaman aşımı veya erişilemezlik durumunda ilgili durum metni.
+Toplam GPU kullanım oranı
+Kullanılan fiziksel belleğin toplam fiziksel belleğe oranı.
+Desteklendiğinde nvidia-smi tarafından bildirilen VBIOS sürümü.
+Windows'un en az bir kullanılabilir ağ bağlantısı algılayıp algılamadığı. İnternet erişimini garanti etmez.
+Etkin Windows Firewall yapılandırmasının açık olup olmadığı.
+Windows güvenlik duvarı durumu
+/proc/meminfo; kullanılabilir bellek için MemAvailable değeri kullanılır
+/proc/stat, /proc/cpuinfo, cpufreq veya hwmon
+/sys/class/power_supply; kapasite mWh / Wh birimlerine dönüştürülür
+Linux işlemlerinden veya yerel olarak kurulu araçlardan yapılan gerçek sorgular
+Kullanılabilir takas alanı
+Şarj ve deşarj birlikte
+DRM/hwmon veya NVIDIA nvidia-smi
+Şu anda tahmin edilemiyor
+Geçerli bağlama noktasının dosya sistemi istatistikleri veya /sys/dev/block/*/stat
+Linux çekirdek sürümü
+Linux procfs, sysfs veya geçerli çalışma durumu
+Linux sysfs veya /proc/bus/input/devices
+Linux sysfs veya EFI değişkenleri
+Şarj olmuyor
+Deşarj olmuyor
+Toplam işlem sayısı
+Geçerli kullanıcının /proc içinde okuyabildiği işlemler; CPU kullanımı mantıksal işlemci sayısına göre normalize edilir
+Geçerli X11/XWayland oturumunun Avalonia ekran bilgilerinden okunur.
+Geçerli grafik oturumunun gerçek panosu okunur. Güncelleme zamanı, ECP'nin içerik değişikliğini ilk fark ettiği andır.
+Geçerli bir API anahtarı gerekir. Yapılandırma eksikse veya istek başarısızsa sahte bakiye yerine açık durum bilgisi gösterilir.
+Takas alanı kullanımı
+Sistemin yeniden başlatılması gerekiyor
+Toplam takas alanı
+Kullanılan takas alanı
+Geçerli profilin gerçek ICMP/TCP/UDP yoklamalarını kullanır. Başarısız veya uygulanamayan yoklamalarda durum metni gösterilir.
+{0}. Veri kaynağı: {1}. Yalnızca bu aygıt ve geçerli izinler veri toplamayı destekliyorsa listelenir.
+Etkin bellek
+sysctl vm.swapusage tarafından bildirilen gerçek kullanılabilir takas alanı.
+sysctl vm.swapusage tarafından bildirilen gerçek kullanılan takas alanı.
+CoreGraphics yerel piksel çözünürlüğü / AppKit Retina backingScaleFactor; masaüstü koordinatları mantıksal noktalardır ve DPI, 96 ile ölçek çarpanının çarpımıdır
+macOS en* fiziksel arabirimlerinin 64 bit sayaç farkları; yinelenen VPN/loopback trafiği hariç tutulur. Ayrıca uygulanmış genel IP sorguları ve profil hesaplamaları
+Mach CPU zaman sayaçlarının farkları veya sysctl
+Boş fiziksel bellek
+IOPowerSources şarj süresi tahmini; yalnızca sistem tahmin sağlıyorsa gösterilir.
+IOPowerSources; dahili pil yoksa kaldırılır ve yalnızca sistem veri sağladığında listelenir
+Etkin olmayan bellek
+Düşük güç tüketimli GPU
+Metal isLowPower tarafından bildirilen düşük güç tüketimi durumu.
+Mach VM / sysctl; kullanılan = etkin + sabitlenmiş + sıkıştırılmış bellek, kullanılabilir = toplam eksi kullanılan; bu değer bellek baskısı değildir
+Mach active_count ile sistem sayfa boyutunun çarpımı.
+Mach free_count ile sistem sayfa boyutunun çarpımı.
+Mach inactive_count ile sistem sayfa boyutunun çarpımı.
+Mach wire_count ile sistem sayfa boyutunun çarpımı.
+Metal önerilen çalışma kümesi üst sınırı
+Metal aygıt bilgileri; sistem sunmuyorsa genel GPU kullanımı, sıcaklık ve video belleği kullanımı verilemez
+Metal hasUnifiedMemory. Birleşik bellek, ayrılmış video belleği olarak sayılmaz.
+Metal recommendedMaxWorkingSetSize: bir bütçedir; video belleği kapasitesi veya kullanılan GPU belleği değildir.
+Çıkarılabilir GPU
+Metal isRemovable tarafından bildirilen çıkarılabilir aygıt durumu.
+Tam şarja kalan süre
+Sistemin dinamik olarak ayırdığı toplam takas alanı; sysctl vm.swapusage üzerinden okunur.
+Birleşik bellek mimarisi
+Kullanıcının kullanabileceği disk alanı
+Sabitlenmiş bellek
+macOS / .NET veya bu profilin gerçek yapılandırması ve sorgu sonuçları
+macOS panosu; güncelleme zamanı, ECP'nin son içerik değişikliğini fark ettiği andır
+APFS Data birimi için statfs f_bavail; sistemin ayırdığı alan hariçtir.
+APFS Data biriminin statfs istatistikleri; kapasite aynı APFS kapsayıcısındaki paylaşılan alanı da içerir
+{0}. Veri kaynağı: {1}.
+Endfield Charge Plus
+Endfield Charge Plus For Linux
+Endfield Charge Plus For MacOS
+Endfield Charge Plus for Android
+Profil yönetimi
+Dairesel seçici
+Hızlı işlemler
+HUD üzerinde orta fare düğmesini basılı tutun, bir profile doğru sürükleyin ve geçiş yapmak için bırakın.
+İptal etmek için merkezde veya halkanın dışında bırakın.
+Basılı tutma süresi
+Sürükleme eşiği
+Halka boyutu
+Dairesel geçişi etkinleştir
+Halkadaki profiller
+Tüm profilleri kullan
+Halkayı önizle
+Seçili profil
+Kullanılabilir profil yok
+Önceki sayfa
+Sonraki sayfa
+Sayfa {0} / {1}
+Görünüm
+Açık
+Klasik
+Yumuşak
+Köşe yarıçapı
+Halka opaklığı
+Temayı sıfırla
+Tema önizlemesi
+HUD hareketleri
+Orta düğmeyi basılı tutma
+Sol tıklama
+Değişiklikler «Kaydet ve uygula» düğmesine bastıktan sonra uygulanır.
+İptal etmek için Esc tuşuna basın.
+Profil değiştirme
+Yalnızca önizleme
+Halkaya ekle
+Halkadan kaldır
+Sorun takibi
+Pencereyi küçült
+Pencereyi büyüt
+Pencere boyutunu geri yükle
+Pencereyi kapat
+Geçerli sistem
+Yazılım kullanımı
+Tüm mantıksal işlemciler genelinde sistem CPU yükü.
+Kullanılan fiziksel RAM miktarının toplam fiziksel RAM miktarına oranı.
+Kullanılan ayrılmış VRAM miktarının tüm GPU’lardaki toplam ayrılmış VRAM miktarına oranı. Paylaşılan bellek hariçtir.
+Endfield Charge Plus CPU süresinin geçen süreye ve mantıksal işlemci sayısına bölünmesi.
+Endfield Charge Plus yerleşik RAM miktarının toplam fiziksel RAM miktarına oranı. Yerleşik paylaşılan sayfalar dahildir.
+Endfield Charge Plus için ayrılan VRAM miktarının toplam ayrılmış VRAM miktarına oranı. Paylaşılan GPU belleği hariçtir.
+Endfield Charge Plus işleminin tamamı: ayarlar ve tüm HUD’lar. CPU kullanımı tüm mantıksal işlemcilere göre hesaplanır.
+Endfield Charge Plus işleminin (ayarlar ve tüm HUD’lar) yerleşik RAM’i; yerleşik paylaşılan sayfalar dahildir. Değer: MiB/GiB; yay: fiziksel RAM içindeki pay.
+Endfield Charge Plus işleminin (ayarlar ve tüm HUD’lar) ayrılmış VRAM’i; paylaşılan GPU belleği hariçtir. Değer: MiB/GiB; yay: toplam ayrılmış VRAM içindeki pay.
+Geliştiricinin BiliBili kanalı
+Geliştiricinin YouTube kanalı
+Renkler
+Profil ara
+Tıklayarak veya kaydırarak profil değiştir
+Geçiş aralığı / sn
+Önceki profil için yukarı, sonraki profil için aşağı kaydırın.
+Kullanılabilir profiller
+Önceki profil
+Sonraki profil
+Otomatik geçişi duraklat/sürdür
+Geçerli profili önizle
+Ayarları aç
+Klavye kısayolları yalnızca bu uygulama odaktayken çalışır.
+İşaretçi HUD veya etkin bölge üzerindeyken HUD'u görünür tut

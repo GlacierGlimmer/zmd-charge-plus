@@ -1,0 +1,24 @@
+Endfield Charge Plus
+许可文件索引 / License file index
+
+LICENSE.txt
+  本项目自有贡献的 MIT 许可，含 GlacierGlimmer冰川雪貓 署名。
+  MIT license for this project's own contributions and its original attribution.
+
+DotNet/LICENSE.TXT、DotNet/THIRD-PARTY-NOTICES.TXT
+  本架构随包分发的 Microsoft .NET 运行环境许可与第三方声明。
+  Original license and third-party notices supplied with the bundled .NET runtime.
+
+PresentMon-LICENSE.txt
+  Windows 帧率采集器所用 PresentMon 的原始许可和署名。
+  Original PresentMon license and attribution used by the Windows frame collector.
+
+Fonts/
+  字体来源说明及 Noto Serif Tibetan、Noto Sans Gothic、Noto Sans Deseret 的 OFL 原文。
+  Font sources and original OFL texts for the bundled Noto fallback fonts.
+
+其他组件、上游项目与许可索引见 Documents/NOTICE.md。
+See Documents/NOTICE.md for additional components, sources and applicable license references.
+
+请保留原始版权、许可和声明。此索引不替代任何许可原文。
+Retain original copyright, licenses and notices. This index does not replace their terms.

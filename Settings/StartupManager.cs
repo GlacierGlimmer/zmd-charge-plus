@@ -17,6 +17,18 @@ public static class StartupManager
     private const string RunKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
     private const string ValueName = "Endfield Charge Plus";
     private const int ErrorInsufficientBuffer = 122;
+    private static UnpackagedStartup Unpackaged => new(StartupExecutablePath);
+
+    // Store registers only the ordinary App entry. Portable builds retain the
+    // exact versioned EXE path from which the user enabled startup.
+    internal static string StartupExecutablePath
+        => Environment.ProcessPath ?? throw new InvalidOperationException("Process path unavailable.");
+
+    internal static StartupApplyResult ReadUnpackagedAtLaunch()
+    {
+        try {return Unpackaged.Read();}
+        catch(Exception ex){AppLog.Error("Unable to read unpackaged startup state.",ex);return new(false,false,false,"ReadError");}
+    }
 
     [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
     private static extern int GetCurrentPackageFullName(ref int length, IntPtr fullName);
@@ -50,7 +62,7 @@ public static class StartupManager
     public static async Task<StartupApplyResult> ReadStatusAsync()
     {
         if (!IsPackaged)
-            return new StartupApplyResult(false, IsPortableEnabled(), true, "Portable");
+            return ReadUnpackagedAtLaunch();
 
         try
         {
@@ -70,8 +82,8 @@ public static class StartupManager
     {
         if (!IsPackaged)
         {
-            bool ok = ApplyPortable(enabled);
-            return new StartupApplyResult(false, IsPortableEnabled(), ok, ok ? "Portable" : "WriteError");
+            try {return Unpackaged.SetEnabled(enabled);}
+            catch(Exception ex){AppLog.Error("Unable to update unpackaged startup.",ex);return new(false,false,false,"WriteError");}
         }
 
         try
@@ -124,20 +136,7 @@ public static class StartupManager
         if (!OperatingSystem.IsWindows()) return false;
         try
         {
-            using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath, writable: true)
-                            ?? Registry.CurrentUser.CreateSubKey(RunKeyPath, writable: true);
-            if (key is null) return false;
-
-            if (!enabled)
-            {
-                key.DeleteValue(ValueName, throwOnMissingValue: false);
-                return true;
-            }
-
-            string? path = Environment.ProcessPath;
-            if (string.IsNullOrWhiteSpace(path)) return false;
-            key.SetValue(ValueName, $"\"{path}\" --autostart", RegistryValueKind.String);
-            return true;
+            return Unpackaged.SetEnabled(enabled).Succeeded;
         }
         catch (Exception ex)
         {

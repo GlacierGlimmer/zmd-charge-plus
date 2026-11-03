@@ -143,7 +143,12 @@ internal static class NextVersionRegressionChecks
         check(context.Settings.ActiveProfileId==active.Id && context.Active?.FrameWindowId=="active-window" && context.Active.GpuAdapterId=="active-gpu" && context.Probe?.Id==probe.Id,"Probe rules retain their queue target without replacing the active GPU or frame-capture context.");
         runtime.ApplySettings(options);
         var poll=typeof(CustomHudRuntime).GetMethod("TickTriggerRulesAsync",Private)!;
-        Task<bool> Poll() {typeof(CustomHudRuntime).GetField("_nextTriggerPoll",Private)!.SetValue(runtime,0L);return (Task<bool>)poll.Invoke(runtime,null)!;}
+        async Task<bool> Poll()
+        {
+            typeof(CustomHudRuntime).GetField("_nextTriggerPoll",Private)!.SetValue(runtime,0L);
+            await (Task)typeof(CustomHudRuntime).GetMethod("ObserveTriggerRulesAsync",Private)!.Invoke(runtime,null)!;
+            return await (Task<bool>)poll.Invoke(runtime,null)!;
+        }
         try
         {
             check(!await Poll() && !hud.IsVisible,"A real HTTP trigger source establishes its baseline without summoning.");

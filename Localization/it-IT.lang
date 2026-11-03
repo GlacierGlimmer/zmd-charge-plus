@@ -1,0 +1,2536 @@
+#20261102$2535
+  {deepseek.period.remaining_text}
+  ↑ {network.display_upload}
+ (modificato)
+ CPU
+ FPS
+ GHz
+ copia
+ {time.utc_offset}
+ · Principale
+%
+«{0}» non è un numero
+(Le traduzioni potrebbero non essere accurate al 100%)
+(modificato)
+X è positivo verso destra, Y verso il basso.
+X è positivo verso destra, Y verso il basso.
+X è positivo verso destra, Y verso il basso. Cambiare posizione predefinita azzera entrambe le correzioni X/Y.
+-- significa che non c'è lettura valida o un fallimento di espressione. Controlla il significato e le unità nella libreria, quindi il driver, l'autenticazione API, il percorso JSON o lo stato FPS. Il formattazione non può trasformare i dati mancanti in una misurazione reale.
+, espressioni e unità non valide --
+/ GB
+/// Batteria
+/// CPU
+/// DEEPSEEK API
+/// FPS dello schermo
+/// GPU
+/// Memoria
+/// Rete
+/// Sonda di rete
+/// Disco di sistema
+/// Ora
+/// FPS della finestra
+/// Orologio mondiale
+/{battery.full_mwh|0}
+/{disk.system.total_bytes|gb:1} GB
+/{gpu.memory_total_bytes|gb:1} GB
+/{memory.total_bytes|gb:1} GB
+0
+0 / 0.0
+0 oppure 0.0
+0.0
+0.0 / 0.00
+0.00
+0.000
+0,4–1,4×. Applicato al rilascio.
+1 GPU rilevata: {0}
+È configurato 1 profilo nella sequenza.
+10%–100%. Applicato al rilascio.
+Velocità di riferimento al 100%
+100% indica opacità completa.
+Velocità di riferimento al 100%
+È stata creata una copia del profilo integrato; il modello originale resta invariato.
+Un servizio in primo piano mantiene attivo l’HUD; senza di esso il sistema interrompe il campionamento.
+Un modello HUD media
+Mappatura effettiva di un campo della sorgente HTTP/JSON configurata.
+Rete elettrica
+Alimentazione collegata
+Alimentazione esterna collegata
+Alimentazione collegata
+Dati AIDA64 disponibili
+AIDA64 applicazioni esterne
+Interfaccia dati AIDA64
+Latenza dell’API DeepSeek
+Livello API
+Stato dell’API
+Richiesta API non riuscita
+Informazioni
+Un errore di rete o una versione remota non disponibile non confermano che tu sia aggiornato. Controlla lo stato e riprova. I pacchetti di sviluppo possono mantenere il numero di versione pubblica; usa le loro note di consegna per identificarli.
+Colore di risalto
+Colore di risalto
+Numero di interfacce di rete attive
+Profilo attivo
+Profilo attivo
+Attivo solo quando Sempre visibile è disattivato. Una regola soddisfatta richiama il prossimo elemento della sequenza, oppure il profilo attuale se la sequenza è vuota. Il primo campione e il primo dopo il ripristino dei dati stabiliscono solo il riferimento. Le richieste della zona attiva hanno priorità; zona e regole avanzano nella coda in modo indipendente. Il campionamento continua durante la visualizzazione dell’HUD secondo gli intervalli globali e delle fonti. Gli eventi rilevati durante un’operazione vengono raggruppati e conservati.
+ActivityManager.MemoryInfo.lowMemory: il sistema segnala memoria insufficiente.
+Velocità di variazione del contatore effettivo dei fotogrammi composti da SurfaceFlinger con ROOT; non è la frequenza di aggiornamento. Non disponibile se non è possibile distinguere più schermi.
+Stato reale della raccolta e motivo dell’indisponibilità.
+Stato effettivo della raccolta dati.
+Informazioni effettive dalle sessioni multimediali Windows. La posizione viene calcolata dalla cronologia segnalata durante la riproduzione; i campi non supportati restano non disponibili.
+ID del dispositivo GPU
+Aggiungi
+Aggiungi HUD
+Aggiungi una regola
+Aggiungi e attiva una regola sotto Contenuto HUD → Regole di attivazione. Inserisci una chiave variabile e scegli Soglia, Cambiamento o Diventa Vero; configuri l'operatore e il valore per le soglie. Imposta un cooldown, spegni Sempre visibile, quindi Salva & Applica.
+Aggiungi una variabile/operatore/soglia => regola di colore per riga. Le regole cambiano l'accento in base al carico, alla temperatura e ad altri valori. Le soglie utilizzano l'unità originale della variabile. Utilizzare valori di colore validi; le misurazioni mancanti non vengono trattate come zero.
+Aggiungi i profili alla coda e usa Move Up/Down per ordinarli.Rimuovere dalla coda non elimina il profilo.Il ciclismo automatico avanza all'intervallo configurato.Una coda vuota utilizza il profilo attivo; una coda a singolo elemento non può passare ad un altro elemento.
+Aggiungi regola
+Aggiungi alla sequenza
+Indirizzo effettivo di risposta
+Adelaide, Darwin
+Aggiusta le opzioni specifiche di ciascun profilo.
+Passa al prossimo profilo a ogni richiamo dall’area sensibile
+Aggregazione: min, max, avg, sum. Intervallo e precisione: clamp(value, min, max), round(value, digits), floor, ceil, abs, sign. Matematica: sqrt, pow, log, log10, exp, sin, cos, tan. percent(value, total) restituisce una percentuale; between(value, min, max) verifica un intervallo che include entrambi gli estremi.
+Alaska
+Album
+Tutte le categorie
+Tutti gli HUD condividono un intervallo di campionamento; intervalli più brevi utilizzano più risorse. Gli orologi si aggiornano a secondi, mentre le fonti HTTP e di equilibrio mantengono i loro intervalli di aggiornamento/cache.
+Tutte le categorie
+Consenti la visualizzazione sopra le altre app nelle impostazioni di sistema.
+Già richiesta una volta; riattivala nelle impostazioni di sistema.
+Sempre visibile
+Sempre visibile mantiene l’HUD sullo schermo, sopra le altre finestre o sul desktop. Quando l’opzione è disattivata, gli eventi di alimentazione, l’area di attivazione del mouse o le regole richiamano temporaneamente l’HUD; terminata la durata di visualizzazione, l’HUD si ritrae. Disattivare l’interruttore principale arresta la visualizzazione per la sessione attuale; al successivo avvio dell’app viene riattivato.
+Sempre in primo piano
+Sempre visibile
+AMD Adrenalin disponibile
+Samoa Americane
+È necessario un servizio con privilegi elevati, come Shizuku.
+È necessaria un’autorizzazione aggiuntiva o un accesso speciale.
+L’importazione ha effetto immediato. Per conservare una copia, esportare prima la configurazione attuale.
+Una notifica permanente deve restare visibile.
+È disponibile una nuova versione.
+Android 13 o successivo richiede l’autorizzazione alle notifiche per la notifica permanente dell’HUD; viene richiesta solo all’avvio dell’HUD.
+È richiesto Android 16 o successivo.
+Codice di stato Android EXTRA_HEALTH (GOOD/OVERHEAT/DEAD/...). Per la salute in percentuale usare battery.health_percent.
+Android EXTRA_PLUGGED: AC / USB / WIRELESS / non collegato.
+Valore Android EXTRA_STATUS (CHARGING/DISCHARGING/FULL/NOT_CHARGING).
+Modello del SoC Android (Build.SOC_MODEL, API 31+). La chiave equivalente su desktop è cpu.name.
+Versione Android
+Android non consente a un’app normale di leggere tutte le metriche hardware: carico GPU, temperatura CPU e alcune correnti della batteria non sono disponibili sulla maggior parte dei dispositivi. ECP mostra solo i valori effettivamente letti, indica gli altri come non supportati e non inventa valori.
+Android non offre un’API pubblica per questa funzione.
+Android non rende pubblica un’interfaccia di lettura per questa misura. L’app non la raccoglie e la indica come non disponibile.
+Isola nativa Android
+Nota su Android
+Android non offre un’API pubblica per il carico della GPU.
+Sistema Android
+Android v{0} è disponibile. Aprire la pagina delle versioni per aggiornare.
+Animazione
+Processo dell’app
+Aggiornamenti dell’app
+Si applica a tutte le impostazioni e a tutti gli HUD. Le dimensioni di ogni HUD vengono moltiplicate per la scala globale dell’interfaccia.
+Si applica a tutti gli HUD permanenti, incluse le istanze sperimentali. Un clic fa avanzare solo l’HUD selezionato nella propria sequenza con la relativa animazione, anche se la rotazione automatica è disattivata. Dopo il clic riparte il timer della rotazione automatica di quell’HUD.
+Applicazione…
+Non sono consentite viste arbitrarie; si possono usare solo i modelli ufficiali.
+Architettura della CPU
+Artista
+Artista - titolo
+Secondo il valore
+Vengono conservate al massimo 600 voci e 3 file di registro, evitando che un HUD attivo a lungo riempia lo spazio di archiviazione.
+Atene, Il Cairo, Helsinki
+Ora dell’Atlantico (Canada)
+Auckland, Figi
+Autenticazione non riuscita. Controllare la chiave API.
+Autore
+L’autorizzazione non è ancora stata concessa.
+Automatico / scegli destinazione
+Rotazione automatica
+La rotazione automatica è attiva, ma la sequenza è vuota. Aggiungere almeno un profilo.
+Rotazione attiva: {0} profili in sequenza.
+Selezione automatica
+Rotazione automatica
+Unità automatiche e condutture
+Disponibile
+Memoria fisica disponibile
+Disponibilità dell’API DeepSeek in testo
+Spazio disponibile letto tramite StatFs, diviso per la capacità totale.
+Numero di core logici disponibili della CPU
+Disponibile solo con Sempre visibile attivo. Ogni clic passa al prossimo profilo della sequenza con l’animazione di transizione, anche se la rotazione automatica è disattivata. Con zero o un solo elemento non avviene alcun cambio.
+Numero di sensori disponibili
+Quota disponibile della partizione
+Disponibile quando Sempre visibile è disattivato. L’area sensibile usa l’intera superficie dello schermo scelto; regolare posizione, dimensioni e tempo di permanenza del puntatore.
+Latenza media
+Evita tacca / foro dello schermo
+Data del BIOS
+Versione VBIOS della GPU
+Numero di processi in background
+Crea backup della configurazione
+Backup non riuscito. Consulta i registri.
+Saldo
+Saldo / periodo
+Valuta del saldo
+Saldo totale DeepSeek in testo
+Consultazione del saldo e fasce di punta/ridotte. La chiave API viene salvata cifrata tramite Android Keystore.
+Testo di stato della consultazione del saldo. Una chiave mancante o una richiesta non riuscita produce un motivo esplicito.
+Bangkok, Hanoi, Giacarta
+Indirizzo dell’API
+Baselines, cooldown e coda
+Batteria
+Corrente della batteria
+Codice di salute della batteria
+Codice di stato della batteria
+Temperatura della batteria
+Corrente della batteria
+Livello della batteria
+L’interfaccia delle statistiche della batteria non è disponibile o è limitata dal sistema.
+Temperatura della batteria
+Temperatura della batteria Android in gradi Celsius. La chiave equivalente nel catalogo desktop è battery.temperature.
+Tensione della batteria
+Legge prima il contatore energetico di BatteryManager; in assenza di questo, stima l’energia residua dal contatore effettivo di carica e dalla tensione.
+Diventa vero
+Ora di Pechino (UTC+08:00)
+Pechino, Hong Kong, Singapore
+Berlino, Parigi, Roma
+Avanzamento della cifratura BitLocker
+Stato BitLocker del disco di sistema
+Booleano
+Ora di avvio del sistema
+Il permesso di avvio è dichiarato; è possibile attivare l’avvio automatico nelle impostazioni.
+In basso al centro (sopra la barra delle applicazioni / Dock)
+In basso a sinistra (sopra la barra delle applicazioni / Dock)
+In basso a destra (sopra la barra delle applicazioni / Dock)
+In basso al centro
+In basso a sinistra
+In basso a destra
+Rimbalzo
+Buenos Aires, Brasilia
+Build 2026.10.27
+Build {0}
+Costruisci una coda di carousel
+Data di compilazione
+Produttore indicato da Build.MANUFACTURER.
+Modello del dispositivo indicato da Build.MODEL.
+I profili integrati non si possono eliminare
+I profili integrati non si possono eliminare
+Integrato · le modifiche creano una copia
+Profilo integrato · fuso e ora obiettivo configurabili; modificare il contenuto crea una copia
+Frequenza bus/BCLK della CPU
+Byte
+C: tempo di attività
+C: file system
+C: spazio disponibile
+C: stato di salute del disco
+C: velocità totale di E/S
+C: etichetta del volume
+C: numero di partizioni associate
+C: ore di accensione
+C: lunghezza della coda
+C: velocità di lettura
+C: stato operativo dello storage
+C: temperatura del disco
+C: capacità totale
+C: stato TRIM
+C: percentuale di spazio usato
+C: spazio usato
+C: velocità di scrittura
+CPU
+Numero di core fisici della CPU
+Modello della CPU
+Temperatura della CPU
+Tempo CPU cumulativo dell’app
+Frequenza della CPU
+CPU per ciascun core
+Sensore CPU non disponibile: l’hardware o il driver non ha restituito una temperatura valida.
+Temperatura della CPU
+Stato della raccolta della temperatura CPU
+La temperatura del CPU mostra ancora --
+Temperatura della CPU; Android non espone un’API pubblica (vedere androidNote).
+Utilizzo totale della CPU
+Utilizzo della CPU
+Utilizzo CPU / cpu.usage
+Memoria cache di sistema
+Memoria Android in cache/recuperabile. La chiave equivalente nel catalogo desktop è memory.cache_bytes.
+Memoria cache di sistema
+Calcolato dall’ora del dispositivo e dalle impostazioni del profilo.
+Annulla
+Impossibile leggere l’attività di avvio Windows. Consulta i registri.
+Informazioni sulle capacità disponibili
+Formati di capacità e tempo
+Valori principali: capacità, frequenza, velocità, saldo e ora.
+Capo Verde
+Destinazione della raccolta
+Al centro
+Al centro (area di lavoro)
+Al centro a sinistra (area di lavoro)
+Al centro a destra (area di lavoro)
+Al centro a sinistra
+Al centro a destra
+Ora centrale (USA e Canada)
+Modificabile durante l’editing di qualsiasi HUD. Dopo Salva e applica, tutti gli HUD usano lo stesso intervallo di campionamento. Gli orologi si aggiornano ogni secondo; le API esterne mantengono il proprio intervallo di aggiornamento.
+Cambio in corso
+Contatore di carica elettrica
+Potenza di carica
+In carica
+Isole Chatham
+Scostamento estivo delle isole Chatham
+Controlla aggiornamenti
+Controllare driver e sensori in Impostazioni → Gestione dati → Dati hardware.
+Controlla gli aggiornamenti
+Controlla autorizzazioni, compatibilità del dispositivo e sorgenti dati. La casella disattiva definitivamente gli avvisi solo per i dati elencati in questa finestra. Le altre variabili continuano a generare avvisi.
+Controlla il Master Switch e la soppressione di scorciatoie, quindi conferma la modalità persistente vs. transitorio. La modalità transitorio richiede un evento, una hot zone o una regola. Controlla l'immagine di destinazione, le coordinate, l'opacità e il switch di hot zone. Salvare un profilo senza Salva e applica può lasciare l'HUD in esecuzione nelle sue vecchie impostazioni.
+Controllare questo sensore o la condivisione AIDA64 in Impostazioni → Gestione dati → Dati hardware.
+Controlla aggiornamenti
+Verifica dell’isola nativa Android…
+Connessione a GitHub…
+Verifica dei permessi e del supporto all’isola nativa…
+Controllo…
+Controlla automaticamente una volta a ogni avvio; è possibile controllare anche manualmente.
+Composizione chimica
+Cinese semplificato
+Scegliere Completa o Semplice rivela animazione per la scorciatoia; nascondere riproduce un'animazione di ritiro. Influisce su tutti gli HUD mantenendo i loro profili e posizioni. In modalità transitori, richiama una volta, quindi riprende il comportamento dell'evento. La richiesta rapida più recente vince.
+Scegliere una lingua nella barra superiore oppure usare la lingua del sistema. La preferenza viene salvata subito; le altre modifiche in sospeso richiedono ancora Salva e applica. Se la lingua del sistema non è supportata, viene usato l’inglese. Impostazioni, profili integrati, avvisi sui dati e questa guida seguono la lingua scelta. Le chiavi delle variabili, le formule e il JSON delle API restano invariati.
+Scegliere un font installato; il sistema integra automaticamente i caratteri cinesi mancanti.
+Quando vengono rilevate più GPU, scegliere quale scheda grafica mostrare in questo profilo.
+Scegliere il profilo da visualizzare. Salvare un profilo integrato ne crea una copia.
+Scegliete cosa mostra l'HUD e come appare.
+Svuota
+Cancella ricerca
+Cancella scorciatoia
+Clicca su un HUD persistente per passare da un altro all'altro
+Cambia profilo facendo clic sul HUD permanente
+Fai clic e premi la scorciatoia
+Lascia passare i tocchi
+Appunti
+Compatto: 
+Colore
+Una regola per riga: variabile operatore valore => colore
+Colore
+Velocità complessiva di tutte le interfacce attive.
+Margine disponibile di memoria impegnata
+Limite di memoria impegnata
+Percentuale di memoria impegnata
+Memoria impegnata
+Formati comuni
+Formati comuni di token
+Operatore di confronto
+Memoria fisica completamente libera (MemFree). La versione desktop macOS usa lo stesso nome.
+Condizione
+Tipo di condizione
+Colori condizionali
+Impostazioni e manutenzione
+Cartella della configurazione
+Impostazioni salvate: {0}
+Impostazioni esportate.
+Impostazioni importate e applicate.
+Importate e applicate; copia precedente: {0}.
+Importazione ed esportazione della configurazione
+Configurazione, backup e manutenzione
+Configurazione HTTP / JSON
+Configurare la consultazione del saldo e le fasce di punta/ridotte. La chiave API viene cifrata per l’utente Windows attuale.
+Configurazione di posizione hot-zone e dwell
+Configurare prima la chiave API DeepSeek in Gestione dati → Configurazione sorgenti → DeepSeek API. Le fasce di punta/ridotte si impostano nella stessa sorgente. Senza una chiave API non sono disponibili i dati del saldo.
+Configurare prima la chiave API DeepSeek in Sorgenti dati → DeepSeek API. Le fasce di punta/ridotte si impostano nella stessa sorgente. Senza una chiave API non sono disponibili i dati del saldo.
+Ora obiettivo giornaliera hh:mm:ss impostata nel profilo. La chiave equivalente nel catalogo desktop è time.target.value.
+Connettere DeepSeek, HTTP JSON e AIDA64.
+Connesso
+Connessione fallita
+Connessione riuscita.
+Indice
+Frequenza dei cambi di contesto
+Controlla come i profili si alternano.
+Controlla tutte le funzioni di visualizzazione HUD.
+Controlla insieme l’HUD principale e le istanze aggiuntive. I richiami automatici sono sospesi durante il mascheramento. Premere di nuovo per ripristinare la modalità precedente; il riavvio ripristina la visibilità.
+Attesa / s
+Tempo coordinato universale
+Copiato: {0}
+Copia chiave
+Copia modello
+Copia esempio
+Copia dalla biblioteca, quindi costruisci testo HUD leggibile.
+Copia chiave
+Copiare i nomi dalla libreria delle variabili. Le sonde di rete usano destinazione e protocollo del profilo Sonda di pacchetti presente nella sequenza, oppure quelli del profilo attuale se non c’è un profilo sonda nella sequenza.
+Copia variabile selezionata
+Copia modello
+La struttura JSON copiabile
+Frequenza del core GPU
+Temperatura media dei core CPU
+Tensione del core CPU
+Numero di core
+Impossibile aprire la cartella dei registri. Consulta i registri.
+Impossibile raggiungere GitHub. Riprovare più tardi.
+Impossibile leggere le informazioni di aggiornamento. Riprovare.
+Impossibile registrare la scorciatoia, forse occupata da un’altra app. Sceglierne un’altra, quindi salvare e applicare.
+Impossibile registrare questa scorciatoia: potrebbe essere già in uso. La precedente resta invariata. Scegliere un’altra combinazione.
+Impossibile salvare. Riprova.
+Impossibile avviare il servizio HUD. Consultare il registro nella pagina Avanzate.
+Impossibile verificare l’idoneità dell’isola
+Numero di GPU
+Conta i fotogrammi con aggiornamenti effettivi del contenuto, escludendo quelli inattivi. Richiede l’autorizzazione alla registrazione dello schermo; non salva immagini. Può differire dagli FPS interni di rendering/presentazione dell’app; il contenuto statico può risultare in 0 FPS.
+Crea, salva, cancella e preview
+Ringraziamenti
+Impostazioni locali
+Codice della valuta del saldo, normalmente CNY. Non viene inventato alcun tasso di cambio.
+Ora attuale a 24 ore
+Ora attuale a 12 ore
+Numero di interfacce di rete attualmente nello stato Up, escluse quelle di loopback.
+ID interno del profilo HUD attuale.
+Identificatore interno stabile della GPU selezionata.
+Indirizzo IP effettivamente usato dal controllo o che restituisce una risposta dopo la risoluzione della destinazione.
+Architettura del processore, ad esempio x64 / ARM64.
+Memoria fisica attualmente disponibile.
+Genera «Disponibile / Non disponibile» in base allo stato di disponibilità.
+ReleaseDate di Win32_BIOS.
+Versione VBIOS indicata da nvidia-smi, se supportata.
+Numero di processi senza handle di una finestra principale.
+Testo del saldo totale già formattato come «¥0.00».
+Saldo totale in yuan del conto API DeepSeek.
+Corrente istantanea della batteria Android. Il verso di carica/scarica è determinato da EXTRA_STATUS e non dal segno.
+EncryptionPercentage del volume di sistema.
+Stato di protezione del disco di sistema indicato dall’interfaccia Windows Volume Encryption.
+Ora stimata dell’avvio attuale di Windows, ricavata dal tempo di attività del sistema.
+Frequenza Bus/BCLK indicata dai sensori di monitoraggio hardware.
+Valore PercentDiskTime di C:.
+File system dell’unità C:.
+Spazio disponibile dell’unità C:.
+HealthStatus di Windows Storage per il disco fisico che contiene C:; disponibile se supportato dall’interfaccia Storage.
+Somma delle velocità attuali di lettura e scrittura di C:.
+Etichetta del volume dell’unità C:.
+Numero di partizioni associate al volume logico C: tramite Win32_LogicalDiskToPartition.
+PowerOnHours del disco che contiene C:; disponibile se supportato dal dispositivo.
+Valore CurrentDiskQueueLength di C:.
+Velocità di lettura in tempo reale del volume logico C:, indicata dai contatori prestazioni di Windows.
+OperationalStatus di Windows Storage per il disco fisico che contiene C:.
+Temperatura del disco che contiene C:, fornita da Storage Reliability Counter; disponibile se supportata dal dispositivo.
+Capacità totale dell’unità C:.
+Stato Windows DisableDeleteNotify per il file system di C:.
+Percentuale di spazio utilizzato sull’unità C:.
+Spazio utilizzato sull’unità C:.
+Velocità di scrittura in tempo reale del volume logico C:, indicata dai contatori prestazioni di Windows.
+Tempo processore cumulativo consumato dal processo attuale dell’app.
+Byte della cache di sistema indicati dai contatori prestazioni di Windows.
+Contatore di carica di Android BatteryManager. Il valore Integer.MIN_VALUE restituito quando non è supportato viene trattato come dato mancante.
+Potenza di carica attuale; normalmente 0 quando la batteria non è in carica.
+Composizione chimica della batteria indicata da Win32_Battery, ad esempio ioni di litio/polimeri di litio.
+Quantità ancora disponibile nel limite di memoria impegnata.
+Limite attuale della memoria impegnata in Windows, normalmente influenzato dalla memoria fisica e dal file di paging.
+Quota della memoria impegnata rispetto al limite di impegno.
+Quantità di memoria impegnata dal sistema.
+Contatore prestazioni Context Switches/sec di Windows System.
+Frequenza attuale in tempo reale del core della GPU.
+Media in tempo reale dei sensori disponibili di temperatura dei core.
+Tensione del core CPU o massima tensione valida indicata dai sensori di monitoraggio hardware.
+Numero di GPU fisiche attualmente rilevate dal sistema.
+Nome delle impostazioni cultura del processo attuale, ad esempio zh-CN.
+Ora locale attuale nel formato a 12 ore, con AM/PM.
+Ora locale attuale nel formato HH:mm:ss.
+Cicli della batteria forniti dal firmware/driver; alcuni dispositivi possono restituire 0.
+Valore PercentDiskTime di D:.
+File system dell’unità D:.
+Spazio disponibile dell’unità D:.
+HealthStatus di Windows Storage per il disco fisico che contiene D:; disponibile se supportato dall’interfaccia Storage.
+Somma delle velocità attuali di lettura e scrittura di D:.
+Etichetta del volume dell’unità D:.
+Numero di partizioni associate al volume logico D: tramite Win32_LogicalDiskToPartition.
+PowerOnHours del disco che contiene D:; disponibile se supportato dal dispositivo.
+Valore CurrentDiskQueueLength di D:.
+Velocità di lettura in tempo reale del volume logico D:, indicata dai contatori prestazioni di Windows.
+OperationalStatus di Windows Storage per il disco fisico che contiene D:.
+Temperatura del disco che contiene D:, fornita da Storage Reliability Counter; disponibile se supportata dal dispositivo.
+Capacità totale dell’unità D:.
+Stato Windows DisableDeleteNotify per il file system di D:.
+Percentuale di spazio utilizzato sull’unità D:.
+Spazio utilizzato sull’unità D:.
+Velocità di scrittura in tempo reale del volume logico D:, indicata dai contatori prestazioni di Windows.
+Tempo di risoluzione DNS nel ciclo di controllo attuale quando la destinazione è un dominio; 0 per un indirizzo IP diretto.
+Elenco degli indirizzi dei server DNS configurati per le interfacce di rete attive.
+% DPC Time di Windows Processor Information.
+Data attuale di questo dispositivo.
+Data e ora attuali di questo dispositivo.
+Secondi trascorsi oggi.
+Nome inglese del giorno attuale della settimana.
+Nome cinese del giorno attuale della settimana.
+Numero del giorno attuale nell’anno.
+Percentuale trascorsa da oggi alle 00:00:00 a domani alle 00:00:00.
+Secondi restanti fino a domani alle 00:00:00.
+Giorno attuale del mese.
+Capacità della memoria video dedicata della GPU selezionata.
+Quota della memoria video dedicata utilizzata rispetto alla capacità totale.
+Memoria video dedicata utilizzata in tempo reale dalla GPU selezionata.
+Elenco degli indirizzi dei gateway configurati per le interfacce di rete attive.
+Ora di completamento dell’ultima scansione Quick/Full Scan.
+Stato di attivazione e protezione in tempo reale indicato da Windows Defender WMI.
+Numero di minacce attualmente enumerate da MSFT_MpThreat.
+Rapporto tra capacità attuale a piena carica e capacità di progetto, equivalente allo stato di salute della batteria.
+Capacità di progetto convertita in Wh.
+Capacità di progetto della batteria all’uscita dalla fabbrica.
+Numero di dispositivi USB PNP in Win32_PnPEntity.
+Elenco dei nomi dei dispositivi USB PNP attualmente enumerati.
+Potenza di scarica attuale; normalmente 0 quando la batteria non si sta scaricando.
+Testo della velocità di download nell’unità scelta dal profilo di rete attuale.
+Velocità effettiva di presentazione/aggiornamento delle immagini sullo schermo selezionato. L’ambito della raccolta varia per piattaforma; non è la frequenza fissa di aggiornamento.
+FPS effettivi divisi per gli FPS impostati come 100% nel profilo.
+Avanzamento usato dall’anello del profilo orario; in modalità ora obiettivo indica la quota restante.
+In modalità normale mostra l’avanzamento del giorno; in modalità ora obiettivo mostra «??% restante».
+Stato reale della raccolta e motivo dell’indisponibilità.
+Testo della velocità di upload nell’unità scelta dal profilo di rete attuale.
+Numero di contenitori in esecuzione restituiti da docker ps -q, se la CLI Docker è disponibile.
+Numero di ID univoci delle immagini restituiti da docker images -q.
+Velocità totale di download in tempo reale di tutte le interfacce connesse, escluse quelle di loopback.
+Velocità totale di download del sistema, convertita in Mbps.
+Data del driver indicata da Win32_VideoController.
+Versione del driver della GPU selezionata indicata da Win32_VideoController.
+ICMP mostra l’indirizzo della destinazione; TCP / UDP mostrano «indirizzo:porta».
+Stato sottostante o errore dell’ultimo controllo non riuscito.
+Secondi stimati prima dell’esaurimento della batteria dalla gestione energetica di Windows. Non disponibile se il sistema non può stimarli.
+Tempo stimato alla carica completa calcolato da capacità residua, capacità a piena carica e potenza di carica attuale. Disponibile solo se è disponibile la potenza di carica.
+Numero di sensori indipendenti delle ventole rilevati.
+RPM massimi delle ventole attualmente visibili in LibreHardwareMonitor.
+Percentuale massima dei sensori di monitoraggio hardware di tipo Control.
+Numero di file nell’elenco di copia CF_HDROP.
+Profilo firewall attivo: dominio/privato/pubblico.
+Stato della configurazione attualmente attiva di Windows Firewall Policy.
+Numero di volumi di dischi fissi attualmente pronti.
+Somma dello spazio disponibile su tutti i volumi di dischi fissi pronti.
+Elenco delle lettere dei dischi fissi pronti.
+Capacità totale di tutti i volumi di dischi fissi pronti.
+Quota dello spazio utilizzato su tutti i dischi fissi rispetto alla capacità totale.
+Somma dello spazio utilizzato su tutti i volumi di dischi fissi pronti.
+FormFactor dei moduli di memoria, ad esempio DIMM / SODIMM.
+.NET FrameworkDescription usato dal processo attuale.
+Quota della memoria fisica disponibile rispetto alla memoria fisica totale.
+Frequenza effettiva attuale in tempo reale indicata dai dati prestazionali di Windows.
+Frequenza effettiva attuale in tempo reale, in MHz.
+Frequenza effettiva attuale in percentuale della massima; può superare il 100% con il turbo.
+Autonomia stimata a piena carica indicata da Windows; 0 se non disponibile.
+Il 100% dell’anello della latenza corrisponde a 999 ms.
+Capacità a piena carica convertita in Wh.
+Capacità a cui la batteria può attualmente essere caricata completamente.
+Utilizzo GPU del processo aggregato dai contatori prestazioni GPU Engine.
+Utilizzo del processo attuale di Endfield Charge Plus nel contatore prestazioni GPU Engine.
+Percentuale approssimativa ricavata dal livello di batteria XInput.
+Numero di controller collegati negli slot XInput 0-3.
+Restituisce il ramo se la cartella di lavoro attuale dell’app è un repository Git.
+Hash breve e titolo dell’ultimo commit nella cartella di lavoro attuale.
+Stato Git della cartella di lavoro attuale: clean o numero di modifiche.
+Risultato di go version tramite PATH.
+Saldo omaggio del conto API DeepSeek.
+Numero di handle Windows aperti dal processo attuale dell’app.
+Differenza tra la capacità dei moduli di memoria installati e la memoria fisica totale utilizzabile da Windows.
+Rapporto tra capacità a piena carica e capacità di progetto.
+Temperatura GPU Hot Spot/punto caldo del core indicata dai sensori di monitoraggio hardware.
+Ora attuale (0–23).
+Indica se Microsoft-Hyper-V-All è installato e attivo in Windows OptionalFeature.
+Elenco degli indirizzi unicast IPv4 delle interfacce di rete attive.
+Elenco degli indirizzi unicast IPv6 delle interfacce di rete attive.
+Quota attuale del tempo di inattività della CPU.
+Mostra larghezza×altezza quando l’immagine DIB/DIBV5 può essere analizzata.
+Contatore prestazioni InstructionsRetiredPersec di Windows Processor Information; disponibile solo se il sistema fornisce questo contatore.
+Nomi di tutte le interfacce di rete attive, separati da virgole.
+Elenco dei tipi di interfaccia di rete attivi, ad esempio Wireless80211 / Ethernet.
+Contatore prestazioni Interrupts/sec di Windows Processor Information.
+Ora locale attuale nel formato ISO 8601.
+Prima riga del risultato di java -version tramite PATH.
+Media dei valori assoluti delle differenze di latenza tra campioni riusciti consecutivi, usata come approssimazione del jitter.
+Quota del tempo CPU in modalità kernel, escluso il tempo di inattività.
+Capacità della cache L2 indicata dal processore.
+Capacità della cache L3 indicata dal processore.
+Rileva processi comuni di modelli locali come Ollama, LM Studio e llama-server.
+Ora locale dell’ultimo controllo riuscito con la configurazione attuale.
+Ora locale in cui l’app ha osservato una variazione di Clipboard Sequence Number.
+Somma delle velocità di collegamento indicate da tutte le interfacce di rete attive.
+Numero totale di processori logici visibili al sistema.
+Quota di errori/timeout degli ultimi 20 controlli della combinazione attuale di indirizzo, protocollo e porta.
+Numero di errori/timeout della destinazione attuale nell’ultima finestra statistica mobile.
+Produttore del processore.
+Frequenza di clock massima indicata da Win32_Processor.
+Frequenza di clock massima in MHz.
+Velocità massima di un singolo collegamento tra tutte le interfacce di rete attive.
+Frequenza attuale in tempo reale della memoria video della GPU.
+Temperatura della memoria video/Memory Junction indicata dai sensori di monitoraggio hardware.
+Capacità totale della memoria video dedicata usata dall’HUD predefinito.
+Memoria video dedicata occupata e usata dall’HUD predefinito.
+Millisecondo attuale.
+Minuto attuale.
+Memoria delle pagine modificate indicata dal contatore Windows Modified Page List Bytes.
+Numero di schermi attualmente rilevati da Windows.
+Secondi trascorsi nel mese attuale.
+Percentuale trascorsa dal giorno 1 di questo mese alle 00:00 al giorno 1 del mese successivo alle 00:00.
+Secondi restanti fino al giorno 1 del mese successivo.
+Numero del mese attuale.
+Manufacturer di Win32_BaseBoard.
+Product di Win32_BaseBoard.
+Temperatura massima dei sensori della scheda madre leggibili da LibreHardwareMonitor.
+Risultato di node --version tramite PATH.
+Memoria del pool non di paging del kernel Windows.
+Architettura attuale di Windows, ad esempio X64 / Arm64.
+Numero di build attuale di Windows.
+Descrizione del sistema operativo Windows fornita da .NET RuntimeInformation.
+Numero di versione del sistema operativo Windows.
+PCIe Link Generation attuale fornita da nvidia-smi; disponibile per GPU NVIDIA se nvidia-smi è utilizzabile.
+PCIe Link Width attuale fornita da nvidia-smi.
+ID del processo attuale dell’app.
+Numero cumulativo di pacchetti unicast ricevuti dalle interfacce di rete attive.
+Numero cumulativo di pacchetti unicast inviati dalle interfacce di rete attive.
+Memoria del pool di paging del kernel Windows.
+Percentuale attuale di carica residua della batteria.
+ID del fuso locale attuale di Windows e scostamento UTC al prossimo cambio di fascia. Nelle regioni con ora legale, lo scostamento viene calcolato automaticamente in base alla data del cambio.
+Nome cinese della fascia attuale: «高峰» o «低谷».
+Data e ora locali del prossimo cambio tra fascia di punta/ridotta, convertite nel fuso attuale dell’utente Windows. Formato yyyy-MM-dd HH:mm:ss; l’ora legale locale viene considerata automaticamente.
+Data e ora di Pechino del prossimo cambio tra fascia di punta/ridotta, nel formato yyyy-MM-dd HH:mm:ss.
+Ora locale del prossimo cambio tra fascia di punta/ridotta, convertita nel fuso attuale dell’utente Windows. Formato HH:mm:ss; l’ora legale locale viene considerata automaticamente.
+Ora di Pechino del prossimo cambio tra fascia di punta/ridotta, nel formato HH:mm:ss.
+Testo come «Fascia di punta: ??% trascorso» o «Fascia ridotta: ??% trascorso».
+Percentuale trascorsa della fascia di punta/ridotta attuale.
+Secondi restanti prima del prossimo cambio tra fascia di punta/ridotta.
+Testo come «Fascia di punta: ??:??:?? restanti» o «Fascia ridotta: ??:??:?? restanti».
+Fuso di riferimento fisso delle fasce DeepSeek: ora di Pechino UTC+08:00.
+Numero totale di core fisici di tutti i socket del processore.
+Indice fisico della GPU corrispondente ai contatori prestazioni GPU di Windows.
+Porta del controllo TCP / UDP; restituisce 0 in modalità ICMP.
+Per le GPU NVIDIA viene letto con nvidia-smi power.limit. Non viene fornito per altre GPU senza un’interfaccia affidabile per il limite di potenza.
+Valore massimo valido dei sensori di potenza CPU attuali di LibreHardwareMonitor.
+GUID del piano energetico attualmente attivo indicato da powercfg.
+Sorgente di alimentazione attuale: «Rete elettrica» o «Batteria».
+Valore del sensore di potenza in tempo reale di LibreHardwareMonitor; disponibile solo se fornito dall’hardware/driver.
+Primi 80 caratteri del testo attuale degli appunti, dopo la rimozione degli spazi superflui.
+BitsPerPel restituito da EnumDisplaySettings.
+Altezza dello schermo principale di Windows.
+Frequenza di aggiornamento della modalità di visualizzazione attuale.
+Larghezza dello schermo principale di Windows.
+Memoria privata del processo attuale dell’app.
+Architettura del processo attuale di Endfield Charge Plus.
+Numero di processori fornito da Environment.ProcessorCount.
+Velocità effettivamente usata per calcolare la percentuale nel profilo di rete attuale.
+Modalità percentuale del profilo attuale: Total / Download / Upload / Max.
+Genera testi come «50% / ↓ 50% / ↑ 50%» in base alla modalità; la modalità del valore maggiore non mostra frecce.
+Calcolato dalla modalità percentuale scelta nel profilo e dalla velocità corrispondente al 100%.
+Protocollo di controllo attualmente usato: ICMP, TCP o UDP.
+ProxyServer configurato dall’utente attuale.
+Stato di ProxyEnable in Internet Settings dell’utente attuale.
+IPv4 pubblico richiesto a api.ipify.org, con cache di 5 minuti. La richiesta parte solo quando viene usata questa variabile.
+IPv6 pubblico richiesto a api6.ipify.org, con cache di 5 minuti. La variabile non è disponibile in assenza di IPv6.
+Risultato di python/py --version tramite PATH.
+Valore assoluto della potenza attuale di carica o scarica; alcuni dispositivi possono non fornirlo.
+Numero cumulativo di errori di ricezione delle interfacce di rete attive.
+Numero di controlli riusciti della destinazione attuale nell’ultima finestra statistica mobile.
+Capacità residua attuale della batteria, convertita in Wh.
+Capacità residua attuale della batteria.
+Stato sottostante restituito dal controllo del protocollo, ad esempio Success, Connected, Response o TimedOut.
+Risultato di rustc --version tramite PATH.
+Percentuale di ridimensionamento dello schermo ricavata dai DPI di sistema.
+Secondo attuale (s).
+Frequenza di aggiornamento attuale del secondo schermo.
+Risoluzione attuale del secondo schermo.
+Numero cumulativo di errori di invio delle interfacce di rete attive.
+Numero di campioni di controllo della destinazione attuale nell’ultima finestra statistica mobile.
+Limite di memoria di sistema condivisa utilizzabile dalla GPU attuale.
+Quota della memoria GPU condivisa usata rispetto al limite condiviso.
+Memoria di sistema condivisa usata dalla GPU attuale.
+Valore approssimativo in dBm ricavato dalla qualità del segnale WLAN di Windows; disponibile con una connessione Wi-Fi.
+Numero totale di slot per dispositivi di memoria indicato da Win32_PhysicalMemoryArray.
+Numero di moduli di memoria fisica attualmente enumerati.
+Configurazione SmartScreenEnabled di Windows Explorer.
+Numero di socket del processore presenti nel sistema.
+Massimo valore ConfiguredClockSpeed/Speed indicato da Win32_PhysicalMemory.
+Somma di Standby Cache Core/Normal/Reserve nei contatori prestazioni Windows Memory.
+Ora di avvio del processo attuale dell’app.
+Testo generato dallo stato di alimentazione, come «In carica / A batteria / Collegato alla rete elettrica / Sconosciuto».
+Numero di volumi DriveType.Removable attualmente pronti.
+Elenco attuale delle lettere delle unità rimovibili.
+Spazio di swap totale.
+Spazio di swap utilizzato.
+Percentuale di attività del disco indicata dal contatore prestazioni del disco di sistema.
+Spazio del volume di sistema disponibile per un utente normale, secondo la definizione della versione macOS.
+Contatore prestazioni System Calls/sec di Windows System.
+DPI di sistema di Windows.
+File system del disco di sistema, ad esempio NTFS.
+Spazio disponibile sul disco di sistema di Windows.
+Quota dello spazio disponibile sul disco di sistema rispetto alla capacità totale.
+Somma della velocità di lettura e scrittura del disco di sistema.
+Etichetta del volume del disco di sistema.
+Lunghezza attuale della coda del disco di sistema.
+Velocità di lettura del disco di sistema indicata dai contatori prestazioni dei dischi logici di Windows.
+Percorso radice dell’unità che contiene la cartella di sistema di Windows, ad esempio C:\\.
+Capacità totale del disco di sistema di Windows.
+Quota dello spazio utilizzato sul disco di sistema rispetto alla capacità totale.
+Spazio utilizzato sul disco di sistema di Windows.
+Velocità di scrittura del disco di sistema indicata dai contatori prestazioni dei dischi logici di Windows.
+Tempo tra l’avvio e il completamento riuscito della connessione in modalità TCP.
+Numero di connessioni TCP attive restituito da IPGlobalProperties.
+SpecVersion di Win32_Tpm.
+Quota trascorsa del ciclo dell’ora obiettivo giornaliera.
+Tempo restante fino alla prossima ora obiettivo in percentuale di 24 ore.
+Secondi restanti prima della prossima ora obiettivo giornaliera.
+Testo di stato dell’ora obiettivo generato come «??% restante».
+Ora obiettivo giornaliera impostata nel profilo orario attuale.
+IPv4, IPv6 o dominio usato dalla sonda di pacchetti di rete attuale.
+Temperatura del sensore CPU. Non disponibile quando dispositivo, driver o permessi non la supportano.
+Temperatura CPU massima attuale letta da LibreHardwareMonitor; non disponibile se hardware/driver non la supportano.
+Temperatura del sensore CPU. Non disponibile quando dispositivo, driver o permessi non la supportano.
+Numero di caratteri del testo attuale degli appunti.
+Tema attualmente usato da Endfield Charge Plus.
+Numero di thread del processo attuale dell’app.
+Autonomia residua della batteria stimata da Windows; 0 quando non è possibile stimarla.
+Autonomia residua stimata nel formato HH:MM:SS; mostra «Sconosciuto» se non è possibile stimarla.
+Ora attuale di questo dispositivo, precisa al secondo.
+Timeout di attesa della risposta per un singolo controllo ICMP/TCP/UDP.
+ID del fuso orario locale attuale.
+PID del processo con l’utilizzo CPU più elevato.
+Utilizzo CPU calcolato dalla differenza di TotalProcessorTime del processo.
+PID del processo con il maggior traffico di E/S su disco.
+Velocità attuale totale in byte delle E/S del processo.
+PID del processo con il working set maggiore.
+Working Set attuale del processo con il working set maggiore.
+Saldo ricaricato del conto API DeepSeek.
+Somma delle velocità totali di download e upload del sistema.
+Capacità totale della memoria fisica.
+Somma di download e upload, convertita in Mbps.
+Somma della memoria video dedicata totale e del limite di memoria condivisa.
+Quota della memoria GPU totale utilizzata rispetto al limite totale disponibile.
+Somma della memoria video dedicata occupata e della memoria GPU condivisa occupata.
+Somma dei byte ricevuti cumulativamente da tutte le interfacce di rete attive dall’avvio attuale.
+Somma dei byte inviati cumulativamente da tutte le interfacce di rete attive dall’avvio attuale.
+Somma del traffico cumulativo ricevuto e inviato.
+TTL dell’ultima risposta ICMP riuscita; 0 per TCP/UDP.
+Tipo di memoria indicato da SMBIOS, ad esempio DDR4 / DDR5 / LPDDR5.
+Stato del registro EnableLUA.
+Numero di endpoint UDP attivi in ascolto restituito da IPGlobalProperties.
+Scostamento in ore del fuso attuale rispetto a UTC.
+Scostamento UTC attuale; nell’orologio mondiale è lo scostamento fisso selezionato.
+Timestamp Unix attuale in millisecondi (ms).
+Timestamp Unix attuale in secondi (s).
+InstalledOn più recente in Win32_QuickFixEngineering.
+Velocità totale di upload in tempo reale di tutte le interfacce connesse, escluse quelle di loopback.
+Velocità totale di upload del sistema, convertita in Mbps.
+Secondi trascorsi dall’avvio attuale di Windows.
+Tempo di attività del sistema in testo leggibile.
+Utilizzo massimo in tempo reale dei motori 3D della GPU selezionata.
+Quando la variabile è attiva, raccoglie statistiche mobili dell’utilizzo CPU sugli ultimi 15 minuti.
+Quando la variabile è attiva, raccoglie statistiche mobili dell’utilizzo CPU sull’ultimo minuto.
+Quando la variabile è attiva, raccoglie statistiche mobili dell’utilizzo CPU sugli ultimi 5 minuti.
+Utilizzo massimo in tempo reale dei motori di calcolo della GPU selezionata.
+Utilizzo massimo in tempo reale dei motori di copia della GPU selezionata.
+Utilizzo CPU massimo osservato nell’ultima finestra di campionamento di massimo 15 minuti.
+Utilizzo massimo in tempo reale dei motori di decodifica video della GPU selezionata.
+Utilizzo massimo in tempo reale dei motori di codifica video della GPU selezionata.
+Utilizzo CPU totale attuale dell’intero computer.
+Memoria fisica attualmente utilizzata.
+Dominio Windows/nome del computer a cui appartiene l’utente attuale.
+Quota del tempo CPU dedicata al codice in modalità utente.
+Rapporto approssimativo tra traffico totale del sistema e velocità totale dei collegamenti delle interfacce attive.
+Rileva una VPN attiva dalle interfacce di rete attive, come Tunnel/PPP/WireGuard/Wintun.
+Capacità totale della memoria video dedicata della GPU selezionata.
+Versione del prodotto Endfield Charge Plus.
+Spazio di indirizzamento virtuale attualmente disponibile nel sistema.
+Unione dei limiti di tutti gli schermi CoreGraphics attivi, in punti logici.
+Altezza totale del desktop virtuale con più schermi.
+Dimensione della memoria virtuale del processo attuale dell’app.
+Spazio totale di indirizzamento virtuale indicato dal sistema.
+Quota di memoria virtuale usata rispetto alla memoria virtuale totale.
+Spazio di indirizzamento virtuale attualmente utilizzato dal sistema.
+Unione dei limiti di tutti gli schermi CoreGraphics attivi, in punti logici.
+Larghezza totale del desktop virtuale con più schermi.
+Coordinate globali del desktop CoreGraphics, in punti logici.
+Coordinata del limite sinistro del desktop virtuale con più schermi.
+Coordinate globali del desktop CoreGraphics, in punti logici.
+Coordinata del limite superiore del desktop virtuale con più schermi.
+Tensione in tempo reale indicata dall’interfaccia batteria di Windows; alcuni dispositivi possono non fornirla.
+Tensione del core GPU indicata dai sensori di monitoraggio hardware.
+Numero di distribuzioni WSL registrate per l’utente attuale.
+Elenco delle distribuzioni restituito da wsl -l -q.
+Somma dei working set di vmmemWSL/vmmem.
+Rileva l’eseguibile WSL e le distribuzioni registrate.
+Secondi trascorsi dal lunedì della settimana attuale.
+Numero della settimana attuale in stile ISO.
+Percentuale trascorsa da lunedì di questa settimana alle 00:00 a lunedì prossimo alle 00:00.
+Secondi restanti prima del lunedì prossimo.
+Banda dell’interfaccia WLAN attuale. I sistemi recenti leggono direttamente Band; quelli precedenti la deducono quando possibile.
+Canale radio dell’interfaccia WLAN attuale.
+Radio type WLAN attuale, ad esempio 802.11ax.
+Frequenza misurata di presentazione o aggiornamento dell’immagine della finestra selezionata. Windows conta il flusso di presentazione dominante di quella finestra; le altre finestre dello stesso processo sono conteggiate separatamente.
+FPS effettivi divisi per gli FPS impostati come 100% nel profilo.
+Stato reale della raccolta e motivo dell’indisponibilità.
+Numero di aggiornamenti non installati e non nascosti trovati da Microsoft.Update.Session.
+Stato generato combinando gli indicatori di riavvio in attesa e la ricerca degli aggiornamenti disponibili.
+Memoria del working set attuale di Endfield Charge Plus.
+Conversione in tempo reale secondo Windows China Standard Time.
+Conversione in tempo reale secondo Windows GMT Standard Time.
+Conversione in tempo reale secondo Windows Eastern Standard Time.
+Conversione in tempo reale secondo Windows Tokyo Standard Time.
+Secondi trascorsi nell’anno attuale.
+Percentuale trascorsa dal 1º gennaio di quest’anno al 1º gennaio dell’anno successivo.
+Secondi restanti fino al 1º gennaio dell’anno successivo.
+Anno attuale.
+Latenza attuale
+Scostamento UTC locale attuale; l’orologio mondiale usa lo scostamento fisso selezionato.
+Perdita di pacchetti attuale
+Fascia attuale
+Stato attuale
+Ora attuale
+Tipo di trasporto attuale: WIFI / CELLULAR / ETHERNET / VPN / NONE.
+Versione attuale
+Nome del giorno attuale della settimana. Le chiavi equivalenti nel catalogo desktop sono time.day_of_week / time.day_of_week_en.
+Valore attuale: {0}. Unità: {1}.
+Valore attuale: {0}.
+Versione attuale: v0.1.2
+Versione attuale: v0.1.3
+Versione attuale: v{0}
+Attualmente in uso
+In modifica
+Personalizzato
+Coordinate personalizzate
+Dati personalizzati
+Profilo personalizzato
+Profilo personalizzato {0}
+Coordinate personalizzate
+Valore personalizzato da una fonte HTTP / JSON.
+Animazione di cambio
+Numero di cicli della batteria
+Elenco di rotazione
+Alterna i profili nell’ordine dell’elenco.
+Elenco di rotazione
+Animazione del cambio nella sequenza
+Passa ciclicamente tra i profili nell’ordine della sequenza; questa fa riferimento solo ai profili ancora esistenti.
+Passa dall’alto al basso e ricomincia dal primo elemento. La sequenza fa riferimento solo a profili ancora esistenti.
+Ciclismo, clic e animazioni
+D: tempo di attività
+D: file system
+D: spazio disponibile
+D: stato di salute del disco
+D: velocità totale di E/S
+D: etichetta del volume
+D: numero di partizioni associate
+D: ore di accensione
+D: lunghezza della coda
+D: velocità di lettura
+D: stato operativo dello storage
+D: temperatura del disco
+D: capacità totale
+D: stato TRIM
+D: percentuale di spazio usato
+D: spazio usato
+D: velocità di scrittura
+Tempo di risoluzione DNS del sistema
+Tempo di risoluzione DNS
+Server DNS
+Quota del tempo DPC
+Obiettivo giornaliero
+Ora obiettivo giornaliera (HH:mm:ss)
+Scuro
+Spazio disponibile della partizione dati
+Gestione dati
+Proprietà dei dati
+Configura sorgenti
+Fonti dati
+Capacità totale della partizione dati
+Percentuale di spazio usato della partizione dati
+Spazio usato della partizione dati
+I dati del profilo «{0}» non sono disponibili o validi. Controllare ROOT/permessi, supporto del dispositivo, finestra selezionata e impostazioni delle sorgenti dati.
+I dati dei seguenti profili HUD non sono disponibili o non sono validi:
+Intervallo di campionamento dei dati / ms
+Intervallo di raccolta / s
+Intervallo / s (tutti i HUD)
+Sorgente dati aggiunta.
+Configurazione della fonte di dati
+Sorgente dati eliminata.
+Data
+Data e ora
+Giorno
+Tempo trascorso oggi
+Giorno della settimana in cinese
+Giorno della settimana in inglese
+Giorno dell’anno
+Avanzamento del giorno
+Tempo restante oggi
+Capacità totale di memoria video dedicata
+Percentuale di memoria video dedicata usata
+Memoria video dedicata usata
+DeepSeek API
+Sorgente dati API DeepSeek
+Saldo DeepSeek
+Profondizzare il rapporto di equilibrio e i periodi di picco
+Fasce di punta ufficiali DeepSeek (Pechino)
+DeepSeek {deepseek.period.name}
+Gateway predefiniti
+Colore di accento predefinito e regole di colore condizionale.
+Impostazioni predefinite ripristinate.
+Ultima scansione Defender
+Stato di Microsoft Defender
+Numero di minacce attuali di Defender
+Elimina
+Salute rispetto alla capacità di progetto
+Capacità di progetto in Wh
+Capacità di progetto
+Livello desktop, senza primo piano forzato
+Repository della versione desktop
+Dettagliato
+Rilevamento in corso…
+Strumenti sviluppatore
+Dispositivo
+Numero di dispositivi USB
+Elenco dei dispositivi USB
+Produttore del dispositivo
+Modello del dispositivo
+Tempo dall’avvio del dispositivo
+Dacca, Thimphu
+Rapporto diagnostico
+Disattivo
+Scarta modifiche
+Potenza di scarica
+In scarica
+Disco
+Capito
+Schermo
+Visualizzazione e posizione
+Visualizzazione e posizione: visibilità, posizionamento, aspetto e campionamento. Contenuto HUD: profili, ciclismo e regole di trigger. Gestione dei dati: Variabile Library, Dati hardware e Configurazione di Data Source. Caratteristiche sperimentali: più HUD. Informazioni: aggiornamenti, backup e manutenzione.
+Contenuto visualizzato
+Velocità di download del profilo in testo
+FPS dello schermo
+FPS dello schermo (Esegui come amministratore)
+Proporzione degli FPS dello schermo
+Stato degli FPS dello schermo
+Modalità di visualizzazione
+Nome dello schermo misurato per gli FPS
+Proporzione degli FPS dello schermo
+Avanzamento visualizzato dal profilo orario
+Stato degli FPS dello schermo
+Stato del profilo orario in testo
+Velocità di upload del profilo in testo
+Visualizzare una sessione di Windows media nell'HUD.
+Opzioni FPS dello schermo
+Modalità di visualizzazione
+Schermo {0} · {1}×{2}{3}
+Display, posizione e aspetto
+Numero di contenitori Docker in esecuzione
+Numero di immagini Docker
+Docker in esecuzione
+Dominio
+Non avvisare più per questi dati
+Fatto
+Giù
+Solo download
+Velocità totale di download del sistema
+Velocità totale di download in Mbps
+Solo download
+Velocità di download
+Download del programma ufficiale di installazione del driver; dopo la verifica si aprirà la procedura guidata.
+Spostato liberamente · Ripristina l’ancoraggio selezionato
+La visualizzazione sopra le altre app è consentita.
+Data del driver GPU
+Versione del driver GPU
+Driver installato. Chiudi ECP completamente e riaprilo come amministratore.
+Dubai, Abu Dhabi
+Duplica
+Durata
+Durata / s
+App ECP
+Ogni HUD può avere profili, sequenza, font, dimensioni, modalità permanente e schermo diversi. Selezionare un’istanza e modificarla nelle prime due schede; Individua apre le impostazioni di posizione. Finché le impostazioni sono aperte, un bordo arancione e l’etichetta In modifica indicano l’istanza selezionata. Salvare e applicare dopo aggiunte o rimozioni; chiudere le impostazioni rimuove l’evidenziazione. Intervallo di campionamento e attivazione del cambio con clic sono condivisi e modificabili da qualsiasi istanza; lingua e avvio sono globali. Massimo 16 HUD.
+Ora orientale (USA e Canada)
+In modifica: 
+Quota trascorsa da oggi alle 00:00 a domani alle 00:00. La chiave equivalente nel catalogo desktop è time.day.progress.
+Abilitare e selezionare le istanze
+Attiva sequenza automatica
+Abilitare il click cycling per avanzare attraverso la coda anche con il cycling off automatico. Ogni HUD avanza la propria istanza e riprende il timer del ciclo. le aree trasparenti rimangono cliccate. le code vuote o singole non si svolgono.
+Attiva richiamo dall’area sensibile del mouse
+Attiva più HUD
+Abilitare più HUD sotto le caratteristiche sperimentali, aggiungere/chiamare un HUD secondario e selezionarlo per l'editing. L'HUD selezionato è evidenziato. Salvare & applicare una nuova istanza prima di prevedere. Rimuovere un'istanza secondaria non rimuove l'HUD primario.
+È necessario attivare il permesso per le notifiche dell’app.
+Attiva sonda
+Abilita l'Attiva HUD sotto Visualizzazione e posizione; attiva Sempre visibile per un HUD persistente. Scegli un profilo integrato sotto Contenuto HUD → HUD Configuration e visualizza in anteprima. Clicca su Salva e applica in alto a destra per applicare le impostazioni all'HUD in esecuzione.
+Attiva questa regola
+Attivo
+Attivo: {0}
+Archivio cifrato non disponibile; impossibile salvare la chiave API in modo sicuro.
+Archivio cifrato non disponibile; impossibile salvare la chiave API.
+Impostazioni di Endfield Charge Plus
+Endfield Charge Plus è in esecuzione
+Nuova versione di Endfield Charge Plus disponibile
+HUD di stato in stile Endfield
+Endpoint della sonda
+Inglese
+Inserire #RRGGBB o #AARRGGBB.
+Inserisci una chiave API DeepSeek sotto Gestione dati → Configura sorgenti, quindi Salva e applica. Le chiavi sono crittografate per l'utente attuale di Windows e potrebbero dover essere rientrate per un altro account o macchina. Le finestre di punta utilizzano l'ora di Pechino e il calendario delle vacanze cinesi; i giorni di lavoro di trucco del fine settimana rimangono off-peak.
+Inserisci un numero.
+Inserire un’ora tra 00:00:00 e 23:59:59.
+Inserisci un numero intero.
+Inserisci prima una chiave API.
+Immettere un URL HTTP/HTTPS GET che restituisce JSON e nome la fonte. Mappa percorsi di risposta come data.value o player[0].name di nomi variabili. Imposta i titoli e i secondi di aggiornamento richiesti, attiva la fonte, quindi Salva & Apply. Trova custom.<source>.<variable> nella biblioteca e usa questo in un profilo.
+Inserisci un URL http/https.
+Errore
+Tempo stimato fino all’esaurimento
+Tempo stimato alla carica completa
+Energia stimata a piena carica
+Eucla
+Richiamo per evento
+Le regole del trigger di eventi
+Esci
+Funzioni sperimentali
+Esperimental multiple HUDs
+Esporta
+Esporta configurazione di Endfield Charge Plus
+Esporta
+Esportazione non riuscita.
+Esportazione fallita. Consulta i registri.
+Esporta diagnostica hardware
+Esportare le impostazioni o creare un backup sotto Informazioni → Configuration & Maintenance. Import ripristina una configurazione completa. Backup prima di modifiche sostanziali. Segreti criptati per l'utente attuale potrebbero dover essere ri-inseriti su una macchina o un account diverso.
+Esportare, importare e backup
+Esportato.
+Espressione
+Il divisore dell’espressione non può essere 0
+Errore nell’espressione
+Errore nell’espressione (posizione {0}): {1}
+Funzioni delle espressioni: len, contains, startswith, endswith, upper, lower, concat. Convertire i tipi con number, string o bool; verificare i valori con isnull, isempty e isnan. Le sequenze di formattazione dei segnaposto supportano upper/lower, sub:start:length con indici da zero, replace:old:new e math:add/sub/mul/div/round/floor/ceil/abs.
+FPS e GPU target
+FPS calcolati dai tempi dei fotogrammi effettivamente visualizzati del livello SurfaceFlinger selezionato.
+Nome dello schermo misurato per gli FPS
+Proporzione rispetto agli FPS impostati come 100% nel profilo.
+Nome della finestra misurata per gli FPS
+Non riuscito
+Numero di ventole leggibili
+Velocità massima delle ventole
+Percentuale di controllo delle ventole
+Campionamento rapido (latenza)
+Mappatura campi (una variabile = percorso JSON per riga)
+Numero di file negli appunti
+Trova e copia una variabile
+Trova la pagina giusta
+Si attiva una volta al passaggio da falso a vero. Accetta true/false e valori numerici zero/diversi da zero.
+Si attiva quando il confronto è soddisfatto; se la condizione persiste, può attivarsi di nuovo dopo il tempo di attesa.
+Si attiva quando il valore cambia, senza confrontare operatore e soglia. Dati mancanti e primo campione ripristinato non attivano la regola.
+Profilo firewall
+Stato di Windows Firewall
+Valori predefiniti del primo avvio caricati; fare clic su Salva e applica in alto a destra per renderli attivi.
+Numero di dischi fissi
+Spazio disponibile di tutti i dischi fissi
+Elenco dei dischi fissi
+Capacità totale di tutti i dischi fissi
+Percentuale complessiva di spazio usato dei dischi fissi
+Spazio usato di tutti i dischi fissi
+Concentrate la casella di scorciatoie e premete Ctrl o Alt con una lettera, una cifra o un tasto di funzione, quindi Salva e applica. F12 e le combinazioni riservate vengono respinte. Se le registrazioni si contraddistinguono, la scorciatoia precedente rimane attiva.
+Lingua di sistema
+Scala del testo
+Servizio in primo piano
+Il permesso per il servizio in primo piano è configurato e viene usato quando l’HUD è attivo.
+Formato
+Formati
+Trovata v{0}. Toccare per visualizzare l’aggiornamento.
+Trovato {0}. Controllare lo stato dell’aggiornamento nella pagina Informazioni.
+Frequenza al 100% / FPS
+Obiettivo FPS
+Versione .NET
+Memoria fisica libera
+Percentuale di memoria libera
+Frequenza attuale della CPU in GHz
+Frequenza attuale della CPU in MHz
+Proporzione della frequenza CPU
+Proviene dalla sorgente HTTP/JSON configurata; il significato della variabile dipende dalla mappatura dei campi.
+Completa
+Autonomia stimata a piena carica
+Latenza corrispondente al 100%
+Capacità a piena carica in Wh
+Capacità a piena carica
+Energia a piena carica stimata da energia residua e percentuale di carica; non rappresenta la capacità di progetto nominale.
+Completa: ritrae l’elemento precedente e richiama il successivo con l’intera sequenza di titolo, onde e trasformazione.
+Completa: mostra titolo, onde e trasformazione prima di passare all’HUD finale.
+La funzione clamp richiede min <= max
+La funzione sign non accetta NaN
+La funzione {0} richiede 1–2 argomenti
+La funzione {0} richiede almeno {1} argomenti
+La funzione {0} richiede {1} argomenti
+URL della richiesta GET
+GPU
+Dispositivo GPU
+Frequenza della GPU
+Modello della GPU
+Temperatura della GPU
+Processo che usa maggiormente la GPU
+Utilizzo GPU del processo più attivo
+Utilizzo GPU di questa app
+Frequenza della GPU
+Frequenza della GPU; Android non espone un’API pubblica e i nodi del produttore non sono portabili.
+Memoria video della GPU
+Legge il nodo del modello GPU KGSL del produttore; la disponibilità dipende dal dispositivo e dall’autorizzazione Root.
+Temperatura della GPU
+Temperatura della GPU; Android non espone un’API pubblica (vedere androidNote).
+Utilizzo della GPU
+Livello della batteria del controller
+Numero di controller XInput
+Nome del controller
+Ottieni un HUD sullo schermo, quindi personalizzalo.
+Iniziando
+Ramo Git attuale
+Ultimo commit Git
+Stato dell’area di lavoro Git
+Date a ciascun HUD il suo contenuto e posizione.
+La scala globale cambia l'intero formato HUD; l'opacità ne controlla la visibilità. La selezione di caratteri cambia il rendere del testo, con il sistema fallback per gli glifili mancanti. La durata del display controlla il tempo di ritardo transitorio; i controlli di rimbalzo e ripiego modificano l'aspetto del movimento. Reset Size & Animation ripristina questo gruppo di valori; usa Salva e applica dopo.
+Dimensione del testo e scala globale dell’interfaccia
+Versione di Go
+Concedi accesso
+Concesso
+Saldo omaggio DeepSeek
+Nome della scheda grafica letto tramite EGL. La chiave equivalente su desktop è gpu.name.
+Raggruppate per funzione; in ogni categoria vengono prima stati comuni e misure in tempo reale, poi i dettagli. Cercare per nome, chiave o categoria.
+Sorgenti HTTP / JSON
+Campo HTTP
+Mappatura dei campi HTTP/JSON
+Configurazione HUD
+Contenuto HUD
+Contenuto e dati dell’HUD
+Attiva HUD
+Opacità HUD
+Profili HUD
+IMPOSTAZIONI HUD
+Scala HUD
+Contenuto HUD / trigger di eventi
+Contenuto HUD / regole
+Avviso dati HUD
+Avvisi sui dati dell’HUD
+Carattere HUD
+Attiva HUD
+Opacità HUD
+Scala HUD
+Servizio HUD
+Stato dell’HUD
+Numero di handle dell’app
+Dati hardware
+Informazioni hardware
+Memoria riservata all’hardware
+Sensori hardware
+Capacità hardware
+Le capacità hardware non sono ancora state rilevate.
+Le capacità hardware sono state rilevate di nuovo.
+Intervallo hardware / s
+Sensori hardware e driver
+Le variabili hardware e le chiavi legacy
+Immagine presente negli appunti
+Testo presente negli appunti
+Hawaii
+Intestazioni della richiesta (una coppia Key: Value per riga)
+Le intestazioni e le mappature dei campi non possono essere null.
+Salute della batteria
+Alta carica: cpu.usage, soglia >= 90, raffreddamento di 30 secondi. Modifiche di traccia: media.title con modalità Change e un adeguato raffreddamento. Confirma che la variabile restituisca dati validi prima di fare affidamento su un trigger.
+Il calendario delle festività deve essere aggiornato
+Nome host
+Host irraggiungibile
+Le zone calde sono disponibili con Sempre visibile off. Imposta l'ancora, le dimensioni, gli offset e il tempo di permanenza. La regione utilizza i limiti completi del target-display e è fissata allo schermo. Residui per l'intervallo scelto per convocare; lascia e entra di nuovo per ri-armarsi. Puoi avanzare il carosello su ogni convocazione.
+Spostamento X area / px
+Spostamento Y area / px
+Tempo di permanenza
+Altezza area / px
+Posizione dell’area
+Larghezza area / px
+Temperatura del punto caldo della GPU
+Ora
+Stato di Hyper-V
+ICMP ha la priorità; su reti con limitazioni vengono usati automaticamente TCP / UDP. Destinazione e porta provengono dal profilo attuale.
+ICMP usa un Ping standard; TCP misura la latenza di connessione alla porta; UDP invia dati di prova e attende una risposta dal servizio di destinazione.
+Esegue un controllo di rete ICMP, TCP o UDP sulla destinazione configurata; una richiesta non riuscita mostra uno stato sconosciuto.
+Indirizzi IPv4 locali
+Ricerca IPv4 non riuscita
+IPv4, IPv6 o nome host.
+Supporta IPv4, IPv6 o domini; la porta viene usata solo da TCP / UDP.
+IPv4, IPv6 o nome host.
+Indirizzi IPv6 locali
+Ricerca IPv6 non riuscita
+Icone e anello di avanzamento
+Icone e anello di avanzamento
+IDE in esecuzione
+Campionamento in inattività
+Percentuale di inattività della CPU
+Dimensioni dell’immagine negli appunti
+Immediato
+Importa
+Importa configurazione di Endfield Charge Plus
+Importa
+Importazione fallita. Consulta i registri.
+Importazione non riuscita: file non valido o illeggibile.
+Impossibile applicare l’impostazione di avvio importata. Controllare le app di avvio di Windows.
+In AIDA64 Preferences → Hardware Monitoring → External Applications, selezionare gli elementi e abilitare la memoria condivisa, Registro o WMI. Mantene AIDA64 in esecuzione, quindi aggiornare i dati hardware ECP. ECP legge tutte le esportazioni effettive, compresi numeri, tempi e testo; campi non esportati o con licenza limitata rimangono indisponbili.
+Comprende un riepilogo di dispositivo, capacità, permessi e configurazione, condivisibile con lo sviluppatore.
+Impostazioni indipendenti e condivise
+I singoli sensori e i riassunti
+Informazioni
+I campioni iniziali e recuperati stabiliscono una linea di riferimento senza apparire.Ogni regola ha il suo cooldown; una soglia sostenuta può essere attivata di nuovo dopo la scadenza.Le regole di abbinamento richiamano il prossimo elemento nella coda di quell'istanza, o il profilo attivo per una coda vuota.Le regole funzionano solo in modalità transitorio. Le richieste della zona attiva hanno priorità; zona e regole avanzano nella coda in modo indipendente. Il campionamento continua durante la visualizzazione dell’HUD secondo gli intervalli globali e delle fonti. Gli eventi rilevati durante un’operazione vengono raggruppati e conservati.
+Inserisci variabile
+Controllare le letture reali e risolvere i problemi del driver.
+Ispezionare, cercare, copiare ed esportare
+Installa / aggiorna PawnIO
+Nome istanza
+Istruzioni CPU completate al secondo
+Intero
+Interfaccia
+Nomi delle interfacce di rete attive
+Tipi delle interfacce di rete attive
+Lingua dell’interfaccia
+Il linguaggio di interfaccia e il sistema di default
+Nome dell’interfaccia della rete predefinita attuale (LinkProperties.interfaceName).
+A ovest della linea internazionale del cambio di data
+Frequenza degli interrupt hardware
+Intervallo / s
+Regola di colore non valida alla riga {0}. Esempio: cpu.usage >= 80 => #FF4D4F
+Numero non valido: {0}
+Percorso non valido
+Fonti non valide; mantenuta l’ultima configurazione valida:
+Destinazione non valida
+Fine settimana
+In pausa
+In riproduzione
+Islamabad, Karachi
+Data e ora ISO
+Configurazione JSON
+Percorso JSON mancante: 
+Il valore JSON è null
+Versione Java
+Jitter della latenza
+KB/s / MB/s (Automatico)
+KB/s · MB/s (automatico)
+Kabul
+Katmandu
+Mantenete la vostra configurazione e ispezionate i fallimenti.
+Mantiene attivo l’HUD sovrapposto di Endfield Charge Plus.
+Durante l’ancoraggio dell’HUD evita la barra di stato e l’area della tacca o del foro dello schermo.
+Utilizzo CPU in modalità kernel
+Nome della tastiera
+Cache L2 della CPU
+Cache L3 della CPU
+Stato del LLM locale
+Valore maggiore
+max(Download, Caricamento)
+Valori maggiori aggiornano i dati hardware meno spesso; gli orologi continuano ad aggiornarsi ogni secondo.
+Ultimo controllo riuscito
+Ultima modifica degli appunti
+Ultimo errore
+Latenza della sonda
+Avanzamento della latenza
+Latenza della sonda in testo
+Più tardi
+Stato dell’ultimo controllo. La chiave equivalente nel catalogo desktop è probe.status_text.
+Ultima versione
+Ultima versione: controllo non riuscito
+Ultima versione: non ancora controllata
+Ultima versione: tempo del controllo scaduto
+Ultima versione: non acquisita
+Ultima versione: v{0}
+Livello
+Piombo-acido
+Icona sinistra
+Informazioni principali a sinistra
+Icona sinistra
+Informazioni principali a sinistra
+Informazioni principali a sinistra / Titolo
+Informazioni principali a sinistra
+Informazioni principali a sinistra
+Resta {0:0}%
+Restante: {0}%
+Consente all’HUD di apparire sopra le altre app. Viene richiesto solo quando si attiva l’HUD sovrapposto.
+Ioni di litio
+Polimeri di litio
+Licenza
+Isole della Linea
+Velocità totale dei collegamenti
+Anteprima in tempo reale
+Interfaccia delle notifiche in tempo reale
+Questo dispositivo non supporta le notifiche in tempo reale o non è ancora stato autorizzato.
+Caricate {0} fonti HTTP
+Ora locale dell’ultima consultazione riuscita del saldo.
+Individua e modifica l’HUD scelto
+Registro
+Numero di core logici accessibili all’app tramite Runtime.availableProcessors. Il risparmio energetico o i limiti del processo possono influire sul conteggio.
+Numero di processori logici della CPU
+Registri
+Log e ripristino
+Cartella dei registri aperta.
+Isola di Lord Howe
+Tasso di perdita di pacchetti
+Perdita {probe.loss_percent|0}
+Numero di campioni non riusciti
+Memoria insufficiente
+Temperature, potenza e tensioni di basso livello richiedono PawnIO e l’avvio come amministratore. In AIDA64, Preferenze → Monitoraggio hardware → Applicazioni esterne permette di attivare memoria condivisa, registro o WMI; ECP legge tutti gli elementi effettivamente esportati. I sensori non forniti mostrano --.
+Nome del computer
+A sinistra vengono mostrate le informazioni principali; a destra percentuali, avanzamento o valori di stato.
+Produttore
+Mappare i campi JSON di una richiesta GET su custom.source.variable; le intestazioni possono usare variabili d’ambiente.
+Isole Marchesi
+Frequenza massima della CPU in GHz
+Frequenza massima della CPU in MHz
+Latenza massima
+Velocità massima di un singolo collegamento di rete
+Massimo
+Mbps mostra megabit al secondo; KB/s / MB/s passa automaticamente da un’unità all’altra in base alla velocità.
+Tempo di andata e ritorno HTTP dell’ultima richiesta ufficiale /user/balance. Le richieste di saldo hanno una cache di 1 minuto.
+Indirizzo IP effettivo restituito dalla risposta Ping. Per un dominio, l’indirizzo finale è visibile dopo la risoluzione riuscita.
+Latenza media degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+Tempo impiegato dal sistema locale per risolvere one.one.one.one; può essere influenzato dalla cache DNS.
+Variabile di compatibilità: combinazione attuale di indirizzo e porta.
+Errore o descrizione dello stato dell’ultimo controllo non riuscito.
+Latenza corrispondente al 100% dell’anello Ping, fissata a 999 ms.
+Media dei valori assoluti delle differenze di latenza tra campioni riusciti consecutivi recenti della destinazione attuale, come approssimazione del jitter di rete.
+Ora locale dell’ultima risposta riuscita della destinazione attuale.
+Latenza di andata e ritorno/connessione dell’ultimo controllo riuscito; un errore viene trattato come 999 ms.
+0 ms corrisponde allo 0%, 999 ms o più al 100%. Adatto all’anello della latenza.
+Mostra «20ms» in caso di successo, oppure uno stato di timeout o errore in caso di fallimento.
+Perdita di pacchetti degli ultimi 20 controlli della destinazione attuale.
+Numero di campioni Ping con errore/timeout della destinazione attuale nell’ultima finestra statistica mobile.
+Latenza massima degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+Latenza minima degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+Indica se l’ultimo Ping ICMP è riuscito.
+Variabile di compatibilità: porta TCP / UDP; 0 per ICMP.
+Avanzamento dell’anello ricavato dalla latenza: 0 ms è 0%, 999 ms o più è 100%; timeout/errori sono 100%.
+Variabile di compatibilità: protocollo di controllo di rete attuale ICMP, TCP o UDP.
+Numero di campioni Ping riusciti della destinazione attuale nell’ultima finestra statistica mobile.
+Nome dello stato grezzo restituito da System.Net.NetworkInformation.IPStatus.
+Numero di campioni Ping della destinazione attuale nell’ultima finestra statistica mobile.
+Stato dell’ultimo controllo, come «Online», «Timeout» o «Non raggiungibile».
+Indirizzo IP o dominio attualmente controllato dal profilo.
+Timeout di attesa della risposta per un singolo Ping.
+TTL restituito dall’ultima risposta riuscita.
+Misura: {0} ({1}).
+Misura di {0}.
+Contenuti multimediali
+Sessione multimediale disponibile
+Informazioni sui media e progressi
+App sorgente del contenuto multimediale
+Informazioni multimediali non disponibili
+Memoria
+Frequenza della memoria video della GPU
+Temperatura di giunzione della memoria video
+Capacità totale della memoria video GPU
+Memoria video attualmente usata dalla GPU
+Dettaglio della memoria
+Percentuale di memoria utilizzata
+Millisecondo
+Latenza minima
+Minimo
+Minuto
+«{0}» mancante
+Virgolette di chiusura mancanti
+Memoria delle pagine modificate
+Creata copia modificata; il profilo integrato resta invariato.
+Il divisore del modulo non può essere 0
+Dal lunedì al venerdì, escluse le festività cinesi. I fine settimana restano nella fascia ridotta anche se sono giorni lavorativi di recupero.
+Numero di schermi
+Mese
+Tempo trascorso nel mese
+Nome del mese
+Avanzamento del mese
+Tempo restante nel mese
+Altro
+Mosca, Riad
+Produttore della scheda madre
+Modello della scheda madre
+Temperatura massima della scheda madre
+Ora delle Montagne Rocciose (USA e Canada)
+Nome del mouse
+Spostare prima l’app nella cartella Applications, quindi attivare l’avvio all’accesso.
+Più istanze HUD
+Nome della CPU
+Nome (prefisso delle variabili)
+Schermo attualmente selezionato per la misura dei fotogrammi.
+Nome del processo con l’utilizzo GPU più elevato nel contatore prestazioni GPU Engine.
+Nome dello slot del controller XInput attualmente rilevato.
+Nome host DNS.
+Nome del primo dispositivo tastiera indicato da Win32_Keyboard.
+Nome del computer Windows.
+Nome del mese nelle impostazioni locali attuali.
+Nome del primo dispositivo di puntamento indicato da Win32_PointingDevice.
+Nome completo del modello del processore.
+Attualmente PEAK o OFF-PEAK.
+Nome del piano energetico attualmente attivo di Windows.
+Nome visualizzato del profilo HUD attualmente selezionato.
+Nome del dispositivo di visualizzazione attualmente attivo di Windows.
+Fornito quando viene rilevato un secondo dispositivo di visualizzazione attivo.
+Nome visualizzato del fuso orario locale attuale.
+Nome del processo con l’utilizzo CPU più elevato nell’ultimo campionamento.
+Nome del processo con il valore IODataBytesPersec maggiore in Windows PerfProc.
+Nome del processo con il working set maggiore.
+Nome dell’utente Windows attuale.
+Nome dell’interfaccia VPN attiva attualmente rilevata.
+Finestra attualmente selezionata per la misura dei fotogrammi.
+Isola nativa
+Notifica nativa in tempo reale avviata
+Notifica nativa in tempo reale non avviata
+Le parentesi graffe annidate non sono supportate.
+Rete
+Rete connessa
+Nome dell’interfaccia di rete
+Sonda di rete
+Tipo di rete
+Unità di rete
+Accesso alla rete
+Unità di visualizzazione della rete e base della percentuale.
+Errore di rete
+Opzioni di rete
+I profili di rete possono utilizzare unità di byte automatiche o Mbps; 1 MB/s equivale a 8 Mbps. L'anello confronta il totale, il download, l'upload o la direzione più grande con la tua larghezza di banda di riferimento. Il riferimento imposta la scala del 100% e non limita o conteggi la rete.
+Velocità di rete
+Velocità di rete
+Tipo di rete
+Rete irraggiungibile
+Nuovo
+Nuova Delhi, Mumbai
+Nuova regola
+Terranova
+Successivo →
+NiCd
+NiMH
+No
+Nessuna GPU rilevata
+Nessun profilo selezionato
+Nessuna modifica da salvare
+Nessun file di configurazione da salvare.
+Layout personalizzato non supportato
+Non è ancora configurata alcuna sorgente dati.
+Nessun dato disponibile
+Nessuna unità fissa
+Nessuna formattazione
+Non usare l’isola
+Visualizzazione separata sinistra/destra non supportata
+Nessuna voce nel registro.
+Nessun capitolo trovato
+Nessuna variabile corrispondente.
+Al momento non è disponibile alcuna rete.
+Nessuna versione pubblicata trovata.
+Nessuna regola presente.
+Non è stato ancora raccolto alcun campione.
+Nessun profilo ancora caricato.
+Nessuna scorciatoia impostata.
+Versione Node.js
+Nessuno
+Memoria del pool non di paging
+Non in uso
+Non applicabile al protocollo attuale
+Non ancora autorizzato
+Non supportato dal dispositivo
+Non disponibile su questo dispositivo o in questa situazione
+Non ancora verificato.
+Non concesso
+Non protetto
+Non in esecuzione
+Non supportato
+Non supportato dal sistema
+Nessuna riproduzione in corso
+Nessuna modifica da salvare.
+Avviso
+Permesso notifiche
+Permesso notifiche richiesto: serve all’HUD per mostrare la notifica permanente.
+Le notifiche sono consentite.
+Notifiche disattivate
+Nukuʻalofa, Apia
+Numero
+Referenza di funzione numerica
+nvidia-smi disponibile
+OK
+Architettura del sistema operativo
+Numero di build Windows
+Nome del sistema operativo
+Versione del sistema operativo
+Disattivo
+Disattivato: mostra l’avanzamento del giorno. Attivato: mostra la quota restante fino all’ora obiettivo.
+Fascia non di punta
+Disattivato: mostra l’avanzamento trascorso del giorno. Attivato: mostra la quota restante fino alla prossima ora obiettivo giornaliera.
+Fasce di punta ufficiali (ora di Pechino)
+Attivo
+Su Android, consenti la visualizzazione sopra altre app e le notifiche, poi avvia l’HUD dalla pagina iniziale. Le impostazioni vengono salvate automaticamente. Le letture hardware dipendono dall’accesso al sistema. PawnIO e l’interfaccia desktop di AIDA64 sono disponibili solo su Windows. Android controlla disposizione e dimensione del testo delle notifiche.
+A batteria
+A batteria
+Attivato: l’HUD resta sempre visibile.\nDisattivato: collegare o scollegare l’alimentazione mostra la batteria; entrare nell’area sensibile configurata sullo schermo scelto richiama il profilo attuale.
+Attivato: l’HUD rimane visibile.\nDisattivato: collegare o scollegare l’alimentazione mostra la batteria; portare il puntatore al centro del bordo superiore dello schermo scelto per richiamare il profilo attuale.
+Una volta che vengono scoperti campi hardware equivalenti, le voci legacy duplicate lasciano la biblioteca mentre i profili esistenti continuano a funzionare.Le nuove chiavi identificano un dispositivo e un sensore specifici.I riassunti più alti/medie hanno significati diversi e rimangono separati. -- significa che non esiste un valore valido attualmente disponibile.
+Un CPU/GPU può esporre pacchetto, core, hotspot, memoria e più canali di alimentazione. nomi simili possono rappresentare diverse misurazioni. valori min/max del sensore sono i dati delle sessioni, non i limiti hardware. le informazioni sul modulo SMBIOS provengono dal firmware e non sono una tabella di tempo completa SPD/XMP/EXPO.
+Una regola per riga: variabile operatore valore => colore, ad esempio cpu.usage >= 90 => #FF4D4F
+Online
+È supportata solo una riga di testo.
+Solo le metriche effettivamente fornite dalla piattaforma sono indicate come disponibili.
+Questa metrica può essere letta solo in parte.
+Usato solo dopo aver attivato personalmente “Avvia all’accensione”.
+Apri
+Apri navigazione
+Apri pagina delle versioni
+Apri impostazioni
+Apri impostazioni →
+Apri impostazioni di sistema
+Apri la cartella di configurazione dalla barra superiore e la cartella di registri da Informazioni.Guardate lo stato della fonte o la diagnosi hardware durante la risoluzione dei problemi.Risettare carica i default di prima esecuzione; Salva e applica li impegna nell'app in esecuzione.
+Pronto
+Operatore
+Operatori e condizioni
+Gli orologi ordinari utilizzano l'ora locale. World Clock utilizza un'offset UTC fissa senza DST automatico. Il modo target giornaliero mostra la frazione rimanente fino al prossimo target di tempo nella zona scelta; con esso spento, mostra il progresso del giorno trascorso.
+Altro
+Sovrapposizione
+Sovrapposizione nascosta
+Permesso di sovrapposizione
+Manca il permesso di sovrapposizione. Sono state aperte le impostazioni di sistema; consentire «Mostra sopra altre app».
+Il permesso di sovrapposizione non è ancora concesso. Attivare la sovrapposizione apre la pagina delle impostazioni di sistema.
+Posizione e aspetto della sovrapposizione
+Sovrapposizione visibile
+Generazione PCIe della GPU
+Numero di linee PCIe della GPU
+PID
+Ora del Pacifico (USA e Canada)
+Nome del pacchetto dell’app
+Sonda di rete
+Sonda di rete
+Numero cumulativo di pacchetti ricevuti
+Numero cumulativo di pacchetti inviati
+Memoria del pool di paging
+Capacità della partizione letta con Android StatFs; lo spazio disponibile esclude i blocchi riservati al sistema.
+In pausa
+Pause, live e campi mancanti
+PawnIO è installato ed ECP è in esecuzione come amministratore; è possibile leggere i sensori effettivamente forniti dall’hardware.
+PawnIO inaccessibile (errore {0}); controlla il caricamento o ripara l’installazione.
+PawnIO è installato. Esegui ECP come amministratore per leggere i sensori di basso livello.
+PawnIO non è installato: temperatura, potenza e tensione della CPU e alcuni sensori della scheda madre richiedono questo driver.
+Fascia di punta
+Fascia di punta attiva
+Utilizzo della CPU per core
+Livello della batteria
+Base della percentuale
+Base della percentuale
+Fascia ridotta attiva
+Fascia di punta attiva
+Fuso orario locale dell’utente
+Nome della fascia in inglese
+Nome della fascia in cinese
+Data e ora del prossimo cambio, ora di Pechino
+Data e ora locali del prossimo cambio
+Ora del prossimo cambio, ora di Pechino
+Ora locale del prossimo cambio
+Avanzamento della fascia attuale
+Avanzamento della fascia in testo
+Tempo al prossimo cambio di fascia
+Tempo restante della fascia in testo
+Fuso di riferimento delle fasce DeepSeek
+Impossibile completare la verifica dei permessi. Riaprire questa pagina.
+Permesso mancante
+Autorizzazioni
+Le autorizzazioni vengono richieste solo quando attivi la funzione che ne ha bisogno.
+Permanente
+Modi persistenti e transitori
+Numero di core fisici della CPU
+Indice fisico della GPU
+Numero di core fisici. La chiave equivalente nel catalogo desktop è cpu.physical_cores.
+Ping (Compatibilità)
+Metti il tasto in bracci, seguito da ̊ e un formato di visualizzazione.Utilizzare 0 per enti interi e 0.0 / 0.00 per decimali fissi.Il testo letterale può circondare i token.Le modifiche di formato sono visualizzabili solo.
+Posizione di riproduzione in secondi
+Tempo di riproduzione trascorso
+Avanzamento della riproduzione
+Avanzamento della riproduzione in testo
+Stato di riproduzione
+In riproduzione
+Il progresso di gioco segue la cronologia e il tasso riportati; i tempi in pausa non estrapolatano. Le sessioni dal vivo senza durata non hanno una percentuale valida e mostrano --. I giocatori senza sessioni registrate o metadati mancati di artista/album lasciano quei campi indisponibbili.
+Tipo di collegamento all’alimentazione
+Porta
+Porta irraggiungibile
+Posizione
+Posizionamento
+Limite di potenza della GPU
+Potenza della CPU
+GUID del piano energetico
+Nome del piano energetico
+Fonte di alimentazione
+Potenza attuale della GPU
+ABI preferita di Android (Build.SUPPORTED_ABIS). La chiave equivalente nel catalogo desktop è cpu.architecture.
+ABI preferita del sistema letta tramite Build.SUPPORTED_ABIS.
+Preimpostazione
+Preimpostazione + Spostamento
+Preimpostazione + Spostamento
+Nome del profilo attuale
+Anteprima HUD
+Anteprima HUD
+Anteprima fallita. Consulta i registri.
+Valore principale
+Profondità colore dello schermo principale
+Schermo principale (automatico)
+HUD principale
+Altezza dello schermo principale
+Nome dello schermo principale
+Frequenza di aggiornamento dello schermo principale
+Larghezza dello schermo principale
+Schermo principale (automatico)
+Spazio disponibile della memoria esterna principale
+Percentuale libera della memoria esterna principale
+Capacità totale della memoria esterna principale
+Percentuale usata della memoria esterna principale
+Spazio usato della memoria esterna principale
+Valore principale
+Valore principale / Titolo
+Privato
+Memoria privata dell’app
+Sonda ICMP
+Stato della sonda
+Sonda TCP
+Destinazione sonda
+Sonda UDP
+Latenza della sonda
+Verifica incompleta
+Opzioni della sonda
+Destinazione sonda
+Scopri obiettivi e protocolli della sonda
+Architettura del processo dell’app
+Processi
+Numero di processori logici del sistema
+Gestione profili
+Nome profilo
+Percentuale di rete del profilo
+Velocità usata per calcolare la percentuale
+Modalità percentuale di rete
+Percentuale di rete del profilo in testo
+Salva profilo e Salva e applica a confronto
+Profilo salvato
+Profili e contenuti HUD
+Profili, posizioni, code, regole di scatto e zone calde appartengono a ciascuna istanza. Fare clic su un HUD avanza solo la sua coda. L'intervallo di campionamento, il scorciatoio globale e la configurazione master di click-cycling sono condivisi. Salva e applica impegna l'intera configurazione.
+Avanzamento della latenza Ping
+Valore di avanzamento
+Espressione avanzamento
+Valore di avanzamento
+Progetto e licenza
+Progetto GitHub
+Progetto e licenza
+Protetto
+Protocollo
+Fornito dalle interfacce di sistema Android; i dati illeggibili vengono indicati come non disponibili.
+Indirizzo del proxy di sistema
+Proxy attivo
+Stato del proxy di sistema
+Pubblico
+IPv4 pubblico
+IPv6 pubblico
+Pubblicazione non riuscita
+Versione Python
+Accessi rapidi
+Esci
+Intervallo da 3 a 3600 secondi.
+Intervallo {0}–{1}
+Potenza istantanea della batteria
+Stato grezzo di riproduzione
+Aggiorna
+Aggiorna
+Letto da /proc/stat, /proc/cpuinfo, cpufreq o dalle zone termiche della CPU. Root autorizzato può leggere i nodi limitati. Non disponibile senza un campione valido.
+Letto tramite Android Build e le API di sistema del dispositivo.
+Letto dai broadcast della batteria Android o da BatteryManager; non disponibile se il dispositivo non fornisce il dato.
+Letto dalle API di memoria Android o da /proc/meminfo; vengono pubblicati solo i valori forniti dal dispositivo.
+Letto da KGSL, Mali, devfreq o dalle zone termiche della GPU. Root autorizzato può ampliare l’accesso. Non disponibile se il dispositivo non fornisce un nodo.
+Letto o calcolato dalla configurazione della sorgente DeepSeek; le richieste di saldo richiedono una chiave API fornita dall’utente.
+Leggi lo stato del driver in alto. Se PawnIO è mancante, installa/aggiornamento e completare Windows UAC; uscire completamente ECP dopo. Ripartire ECP come amministratore e controllare di nuovo. Il pulsante di riavvio aspetta che l'antico processo esci. Se rimane indisponibile, distinguere lo stato del driver inaccessibile da hardware che non restituisce dati, quindi esportare diagnosi.
+Letto tramite TrafficStats o le API di rete Android; la disponibilità dipende dalla versione del sistema e dalle autorizzazioni.
+Raccolta in sola lettura; le impostazioni di sistema non vengono modificate. Scegli se consentire ECP nel gestore Root.
+Leggibile solo dalle app di sistema (API nascosta).
+Leggibile solo dalle applicazioni del produttore.
+Lettura dei dati…
+Per leggere il nome Wi-Fi serve il permesso di localizzazione.
+Legge gli eventi di completamento Present di X11/XWayland. Non può misurare Wayland nativo, app senza Present o sistemi senza libxpresent1. Non usa il conteggio delle operazioni di disegno né frequenze di aggiornamento fisse.
+Legge gli FPS effettivi senza sostituirli con la frequenza di aggiornamento. Le finestre corrispondono a livelli SurfaceFlinger e richiedono ROOT; gli schermi richiedono contatori di fotogrammi del produttore. I contatori multi-schermo ambigui non sono disponibili.
+Frequenza misurata di presentazione o aggiornamento dell’immagine della finestra selezionata. Windows conta il flusso di presentazione dominante di quella finestra; le altre finestre dello stesso processo sono conteggiate separatamente. Gli schermi usano il proprio flusso di presentazione dominante. Le misurazioni contano eventi di fotogrammi effettivamente visualizzati e richiedono l’accesso alla registrazione delle prestazioni; non rappresentano la frequenza di aggiornamento fissa dello schermo.
+Protezione in tempo reale disattivata
+Errori di ricezione
+Numero di campioni riusciti
+Consigliato
+Uso consigliato
+Registra informazioni di funzionamento più dettagliate.
+Unità di riferimento
+Aggiorna
+Intervallo di aggiornamento / secondi
+Raggiornare e selezionare un target finestra/display, quindi impostare il FPS rappresentato da 100%. Window FPS utilizza il flusso di presentazione dominante della finestra selezionata; altre finestre nello stesso processo vengono contate separatamente. Display FPS utilizza il flusso di presentazione dominante del display. Questi sono tassi di fotogrammi misurati, non il tasso di aggiornamento del display. Eventi o permessi mancanti producono informazioni di stato; l'accesso all'amministratore può essere necessario. Profili GPU ordinari possono selezionare un adattatore, mentre le chiavi di sensore grezzo identificano il dispositivo indicato.
+Aggiorna ora
+Aggiorna elenco destinazioni
+Aggiorna finestre/schermi
+Energia residua della batteria in Wh
+Energia residua della batteria
+Rimuovi
+Elimina istanza selezionata
+Elimina regola selezionata
+Stato grezzo della sonda
+Nome riportato: {0}.
+Richiedi autorizzazione
+Richiesta non riuscita: {0}
+Richiesta non riuscita. Controllare rete, indirizzo e credenziali.
+Richiede un telefono già con Root; consente di leggere i nodi limitati di CPU, GPU, temperatura e memoria.
+Richiede supporto del sistema e autorizzazione a mostrare le notifiche in tempo reale dell’app.
+Richiede la forma colorata della piattaforma
+Ripristina
+Ripristina tutto
+Ripristina tutto
+Ripristinare tutte le impostazioni predefinite?
+Ripristina al 100%
+Riavvia come amministratore
+Riavvio in attesa
+Il sistema limita gli scenari d’uso
+Richiedi nuovamente l’autorizzazione
+Icona destra
+Stato a destra
+Icona destra
+Stato a destra
+Stato a destra / Anello
+Stato a destra / Titolo
+Stato a destra / Anello
+Stato a destra / Titolo
+Anello
+Variabile anello e range
+Diffusione dell’onda
+Intensità dell’onda
+Scorrimento verso l’alto
+Sarebbe necessario l’accesso Root.
+Root consentito; le letture dipendono dai nodi di questo dispositivo.
+Raccolta hardware con Root
+Root non disponibile o negato; le letture ordinarie restano attive.
+Nome regola
+Esegui come amministratore
+In esecuzione
+In esecuzione come amministratore
+Versione Rust
+Finestra statistica in campioni
+Campionamento in esecuzione
+Prove e freschezza
+Campionamento e aggiornamento
+Salva
+Salva e applica
+Salvare e applicare prima la nuova istanza.
+Salvare e applicare per disattivare la scorciatoia.
+Salvare e applicare per attivare questa scorciatoia.
+Salvare e applicare per mostrare il nuovo HUD prima di individuarlo.
+Accanto al profilo si registra il profilo modificato; modificando un'edizione integrata si crea una copia personalizzata. Preview mostra l'edizione corrente. Salva e applica in alto a destra salva le impostazioni complete e le applica all'HUD in esecuzione.
+Nome della copia da salvare
+Salvataggio fallito
+Salva registro
+Salva rapporto
+Salvato
+Risparmio batteria attivo
+Scala di sistema
+Profilo creato.
+Profilo eliminato.
+Gestione profili
+Nome profilo
+Profilo salvato
+Profili, sorgenti dati, intervalli di aggiornamento e impostazioni di visualizzazione tornano ai valori della prima installazione. L’operazione non può essere annullata.
+Scope of Non avvertire di nuovo di questi dati
+L’archiviazione con ambito limita i dati leggibili.
+Schermo: In basso al centro
+Schermo: In basso a sinistra
+Schermo: In basso a destra
+Luminosità dello schermo
+Schermo: Al centro
+Schermo: Al centro a sinistra
+Schermo: Al centro a destra
+Stato dello schermo
+Schermo: In alto al centro
+Schermo: In alto a sinistra
+Schermo: In alto a destra
+Campionamento a schermo spento
+Cerca per nome, chiave o categoria sotto Gestione dati → Libreria variabili. Seleziona una variabile per vedere il suo significato, tipo, unità e formati. Copy Variable Key è utile per anelli e regole; Copy Template include supporti per campi di testo.
+Cercare per nome, chiave o categoria; selezionare una variabile per leggerne la descrizione completa.
+Cerca capitoli o chiavi
+Cerca lingue
+Cerca nome, ID fonte o variabile
+Cerca variabili
+Cerca: uso CPU / cpu.usage
+Secondo
+Valore secondario / Nota
+Valore secondario / Nota
+Nome del secondo schermo
+Frequenza di aggiornamento del secondo schermo
+Risoluzione del secondo schermo
+Valore secondario a sinistra
+Per i valori sensibili è possibile usare il segnaposto ${env:VARIABLE_NAME}.
+Avvio protetto
+Sicurezza
+Scegli variabile
+Selezionare una variabile nell’elenco a sinistra per visualizzarne significato e suggerimenti d’uso.
+Selezionare una variabile nell’elenco a sinistra per visualizzarne significato, unità e utilizzo consigliato.
+Finestra di destinazione…
+Scegliere il profilo da mostrare. Modificare un profilo integrato crea una copia personalizzata; il modello originale resta invariato.
+Livello SurfaceFlinger selezionato.
+Schermo selezionato.
+Errori di invio
+Driver dei sensori installato
+Stato del driver dei sensori
+Versione del driver dei sensori
+Numero di campioni della sonda
+Configurare la chiave API
+Imposta un scorciatoia show/hide
+Imposta come attuale
+Impostazioni
+Settings.System.SCREEN_BRIGHTNESS (0-255); non viene considerato una percentuale.
+Condividi
+Condividi informazioni sull’app
+Condividi configurazione
+Condividi informazioni su dispositivo e capacità
+Condividi registro diagnostico
+Condividi rapporto diagnostico
+Condividi registro
+Limite di memoria GPU condivisa
+Percentuale di memoria GPU condivisa usata
+Memoria GPU condivisa usata
+Nome breve
+Animazione di comparsa con scorciatoia
+Scorciatoia mostra/nascondi tutti i HUD
+Racconti e hot zone del mouse
+Intervalli più brevi campionano più rapidamente e consumano più risorse. Gli orologi si aggiornano ogni secondo; le API esterne mantengono i propri intervalli di aggiornamento.
+Mostra il tuo primo HUD
+{0} elementi, inclusi sensori e firmware.
+Mostra le letture hardware effettivamente fornite dal sistema e dai driver. I sensori non esposti o inaccessibili mostrano --. Esporta la diagnostica per i dettagli. PawnIO e l’interfaccia AIDA64 sono disponibili solo su Windows.
+Mostra le letture effettivamente fornite dal dispositivo e dal sistema. Le voci non disponibili mostrano -- e il motivo.
+Potenza del segnale Wi-Fi in dBm
+Semplice
+Semplice accorcia la presentazione; Completa utilizza la chiamata completa. Roll Up muove icone, valori e anello all'interno di una capsula persistente mantenendo la sua finestra e strato. Roll si applica a interruttori persistenti; presentazioni iniziali e transitorie mantengono il loro normale ciclo di vita show/retract. DeepSeek peak transitions mantengono Completa animation.
+Semplice: mostra rapidamente l’HUD finale.
+Semplice: ritira il precedente e mostra subito il successivo.
+Dimensioni e animazione
+Dimensione, opacità, font e movimento
+Numero totale di slot di memoria
+Slot di memoria occupati
+Campionamento lento
+Stato di SmartScreen
+Numero di socket CPU
+Isole Salomone, Nuova Caledonia
+Alcune reti bloccano ICMP; il controllo passa automaticamente a TCP.
+Fonte
+I nomi delle sorgenti devono essere univoci e contenere solo lettere, numeri, trattini bassi e trattini.
+Le sorgenti devono essere un array JSON.
+Georgia del Sud
+Velocità
+Frequenza operativa della memoria
+Memoria cache in standby
+Avvia Endfield Charge Plus dopo l’accesso a Windows.
+Avvia HUD
+Ora di avvio dell’app
+Inizia da un profilo integrato e salva per creare una copia personalizzata o creare un nuovo profilo. delete rimuove i profili personalizzati mentre rimangono i preset originali. preview utilizza l'edizione corrente e i dati reali; Salva e applica lo impegna all'HUD in esecuzione.
+Avvio automatico all’accensione
+Avvia con Windows
+Avviare l’HUD richiede il permesso notifiche per mostrare la notifica permanente.
+L’avvio è gestito dai criteri di sistema.
+Stato
+Stato / Condizione
+Stato / Condizione
+Stato della batteria in testo
+Calcolo dello stato
+Status, cache e errori
+Stato: si è verificato un errore durante la ricerca di aggiornamenti
+Stato: connessione a GitHub per cercare aggiornamenti…
+Stato: versione locale più recente di quella online
+Stato: richiesta di rete fallita ({0})
+Stato: nessuna versione pubblicata trovata; il repository potrebbe non essere ancora pubblico
+Stato: non ancora controllato
+Stato: versione trovata ma formato non confrontabile
+Stato: aggiornato
+Stato: aggiornamento disponibile
+Stato: tempo del controllo scaduto; riprovare più tardi
+Arresta HUD
+Arrestato
+Archiviazione
+Numero di unità rimovibili
+Elenco delle unità rimovibili
+Soggetto alle limitazioni di avvio in background e ai permessi richiesti dalla modalità di visualizzazione attuale.
+Suffisso
+Chiamare un HUD quando i dati soddisfano una regola.
+Invocare o nascondere temporaneamente l'HUD.
+Supportato
+Spazio di swap totale
+Spazio di swap usato
+Sydney, Brisbane
+Sistema
+Tempo di attività del disco di sistema
+Spazio disponibile del volume di sistema
+Frequenza delle chiamate di sistema
+Disco di sistema
+DPI di sistema
+File system del disco di sistema
+Spazio disponibile del disco di sistema
+Percentuale libera del disco di sistema
+Velocità totale di E/S del disco di sistema
+Etichetta del volume di sistema
+Lunghezza della coda del disco di sistema
+Velocità di lettura del disco di sistema
+Lettera del disco di sistema
+Stato del sistema
+Capacità totale del disco di sistema
+Percentuale usata del disco di sistema
+Spazio usato del disco di sistema
+Velocità di scrittura del disco di sistema
+Predefinito di sistema
+Stato delle misure di sistema
+Barra di avanzamento di sistema
+Stato del sistema
+Percentuale usata dello storage di sistema
+SystemClock.elapsedRealtime()/1000. Secondi dall’avvio, inclusa la sospensione profonda.
+Tempo di connessione TCP
+Numero di connessioni TCP attive
+TPM presente
+Versione TPM
+TTL scaduto
+Testo introduttivo
+Tagline, titolo, testo primario/secondio e il valore di lato destro possono mescolare testo letterale e token variabili.Utilizzare il suffisso giusto per unità come %, °C o GHz.Icon identificano il contenuto; il colore dell'accento imposta la capsula e il colore dell'anello.
+Destinazione
+Schermo di destinazione
+Quota trascorsa fino all’ora obiettivo
+Quota restante fino all’ora obiettivo
+Tempo all’ora obiettivo
+Tempo restante all’ora obiettivo in testo
+Ora obiettivo
+La destinazione è chiusa
+Finestra di destinazione
+Modalità ora obiettivo
+Modalità ora obiettivo
+I bersagli possono essere hostname, IPv4 o IPv6. ICMP ignora la porta; TCP/UDP la utilizza. Il fallimento significa che il bersaglio/protocolo non ha risposto con successo, non necessariamente che l'intero PC sia offline. I server possono bloccare ICMP o non rispondere all'UDP.
+Teheran
+Temperatura
+Temperatura CPU in °C
+Temperatura massima della CPU
+Modello
+I modelli usano {variable|format}. Le espressioni avanzate usano {= expression | format} e supportano + - * / % ^, confronti, && / || / !, ?:, ?? e funzioni come if(), min/max/avg/sum/clamp/round. Anche il valore di avanzamento può essere una = expression. Esempio: {= if(memory.usage >= 80, 'High', 'OK')}.
+Terminale in esecuzione
+Verifica connessione
+Verifica in corso…
+Testo
+Lunghezza del testo negli appunti
+Regioni di testo e icone
+Testi, tipi e riferimento pipeline
+Grazie a QinAnze per il lavoro open source originale e ai progetti open source come Avalonia e Jetpack Compose.
+L’interfaccia è disponibile; la visualizzazione dell’isola è decisa dal sistema.
+Chiave API eliminata.
+Chiave API salvata cifrata.
+Interfaccia Android per notifiche in tempo reale/isola, usata per mostrare il contenuto HUD nella barra di stato.
+La versione del sistema è troppo vecchia e non dispone dell’interfaccia richiesta.
+HUD avviato.
+HUD arrestato.
+All’app manca il permesso di avvio all’accensione.
+All’app manca il permesso per il servizio in primo piano.
+All’app manca il permesso di accesso alla rete.
+Pagina di autorizzazione aperta; la disponibilità verrà verificata di nuovo automaticamente al ritorno.
+Indirizzo dell’API non valido.
+Le parentesi graffe non corrispondono.
+Tempo della verifica scaduto. Riprovare.
+La casella disattiva permanentemente solo gli avvisi delle variabili già elencate in questa finestra. Le altre variabili continuano a generare avvisi. La chiusura normale conferma solo l’evento attuale. Più HUD possono condividere la stessa finestra; gli errori delle espressioni si distinguono per profilo ed espressione. Disattivare gli avvisi non corregge i dati e non interrompe la raccolta.
+Impostazioni importate e applicate.
+L’animazione della sequenza sostituisce la modalità di animazione dei singoli profili.
+La sequenza è vuota. Aggiungere i profili prima di attivare la rotazione automatica.
+Il dispositivo non espone il nodo del kernel corrispondente.
+Il dispositivo non dispone di questo sensore.
+Checksum dell’installatore non valido.
+Il driver è installato. Chiudi e riavvia ECP.
+L’endpoint ha restituito HTTP {0}.
+Il JSON esportato è compatibile con le versioni desktop; l’importazione viene prima verificata e poi sostituisce la configurazione attuale.
+L’espressione è vuota.
+HUD sovrapposto attivo. Toccare per aprire le impostazioni.
+Il programma di installazione è uscito con codice {0}.
+Registro svuotato.
+Il massimo deve essere maggiore del minimo; altrimenti l’anello di avanzamento resta sempre a 0.
+Il nome non può essere vuoto.
+La rete è connessa.
+La rete attuale non è raggiungibile.
+Richiesta di rete non riuscita.
+Canale delle notifiche disattivato
+La sovrapposizione usa una finestra applicativa a livello di sistema; l’isola usa l’interfaccia nativa Android delle notifiche in tempo reale.
+La piattaforma non pubblica questa API.
+Valore principale e testo aggiuntivo; supporta {variable|format} e {= expression}.
+L’indirizzo di controllo non può essere vuoto.
+L’elenco contiene un profilo, che rimane visualizzato.
+La sequenza è vuota.
+L’etichetta remota non può essere confrontata. Consultare la pagina delle versioni.
+Il rapporto non contiene mai la chiave API né i valori delle intestazioni delle richieste.
+La risposta non è un JSON valido.
+L’anello rappresenta la proporzione di (valore − minimo) nell’intervallo configurato, limitandola a 0–100%. Usare una chiave di variabile o un’espressione numerica che inizi con =. Impostare un fondo scala ragionevole per temperatura, traffico di rete o FPS. L’intervallo non cambia il valore originale mostrato nel testo.
+Il profilo selezionato è attivo; ne resta sempre uno selezionato.
+Quando la velocità scelta dalla modalità percentuale raggiunge questo valore, viene mostrato 100%. Prima del calcolo viene convertita in Byte/s.
+Il sistema consente l’interfaccia delle notifiche in tempo reale.
+Posizione, aspetto e idoneità alla visualizzazione sono decisi dal sistema. Le misure si aggiornano al massimo una volta ogni 5 secondi.
+Il sistema ha già autorizzato questa funzione.
+Il sistema limita la frequenza di aggiornamento
+Il nome della variabile è vuoto.
+Tema
+Questa interfaccia non supporta le icone.
+Questa interfaccia non supporta l’avanzamento.
+Questo motore è sperimentale.
+Questa build non dispone di una sorgente nativa per le sessioni multimediali su questa piattaforma. I campi multimediali restano non disponibili.
+Questa sorgente dati è disattivata.
+Il dispositivo o il kernel non fornisce la sorgente dati.
+Anteprima del contenuto della notifica; aspetto e posizione effettivi sono decisi dal sistema.
+Questo progetto deriva da QinAnze/zmd-charge ed è distribuito con licenza MIT.
+Questa struttura è disattivata. Sostituire l’URL con l’indirizzo reale del servizio, adattare i percorsi alla risposta e impostare enabled su true quando tutto è pronto. ${env:MY_API_KEY} legge una variabile d’ambiente del processo, evitando di scrivere il segreto direttamente nel JSON.
+Numero di thread dell’app
+Tre cicli di animazioni.
+Soglia
+Riduci il campionamento quando l’HUD è nascosto
+Riduci il campionamento a schermo spento
+Ora
+Autonomia residua stimata
+Autonomia residua stimata in testo
+Opzioni orarie
+Le opzioni orarie vengono salvate direttamente; modificare contenuto o nome del profilo crea una copia.
+Tempo restante
+Zona oraria e obiettivo giornaliero
+Tempo, rete e profili FPS
+Tempo scaduto
+Informazioni di avanzamento disponibili
+Timeout per singola sonda / ms
+Timeout per singola sonda
+ID del fuso orario
+Nome del fuso orario
+Titolo
+Titolo / Condizione
+Titolo / Informazioni principali a sinistra
+Titolo / Stato a destra
+Titolo / Condizione
+Titolo / Informazioni principali a sinistra
+Fase del titolo
+Tokyo, Seul
+Processo che usa maggiormente la CPU
+PID del processo che usa maggiormente la CPU
+Utilizzo CPU del processo più attivo
+In alto al centro (area di lavoro)
+Processo con più E/S su disco
+PID del processo con più E/S su disco
+Velocità E/S del processo più attivo
+In alto a sinistra (area di lavoro)
+Processo che usa più memoria
+PID del processo che usa più memoria
+Memoria usata dal processo più esigente
+In alto a destra (area di lavoro)
+In alto al centro
+In alto a sinistra
+In alto a destra
+Saldo ricaricato DeepSeek
+Totale (Download + Caricamento)
+Velocità complessiva del sistema
+Capacità totale di memoria fisica
+Download cumulativo
+Velocità complessiva del sistema in Mbps
+Limite totale di memoria disponibile alla GPU
+Percentuale totale di memoria GPU usata
+Memoria totale usata dalla GPU
+Traffico cumulativo ricevuto
+Traffico cumulativo inviato
+Traffico cumulativo totale
+Upload cumulativo
+Capacità totale della partizione dati dell’app (StatFs). La chiave equivalente su desktop è disk.system.total_bytes.
+Velocità complessiva
+Durata della traccia in secondi
+Durata totale della traccia in testo
+Titolo della traccia
+Unità del traffico di rete e riferimento dell’anello
+Byte cumulativi ricevuti da TrafficStats dall’avvio. La chiave equivalente nel catalogo desktop è network.total_received_bytes.
+Byte cumulativi inviati da TrafficStats dall’avvio. La chiave equivalente nel catalogo desktop è network.total_sent_bytes.
+Regole di attivazione
+Risoluzione dei problemi e avvertimenti
+Provare un nome di variabile o funzione, oppure cancellare la ricerca per tornare all’indice.
+TTL ICMP
+Consentire «Mostra sopra altre app» prima di attivare l’HUD sovrapposto.
+Disattivo
+Due esempi utili
+Tipo
+Tipo {0}
+Stato UAC
+Numero di endpoint UDP in ascolto
+Scala dell’interfaccia
+USB / periferiche
+Manuale / Capitolo {0:00}
+Scostamento UTC
+Scostamento UTC in ore
+Fuso UTC
+Impossibile individuare l’HUD:
+Non disponibile
+Non disponibile significa normalmente che il sistema non espone l’interfaccia, il dispositivo non ha quel sensore o non è ancora stato raccolto alcun campione.
+Non disponibile se hardware o fonte non lo forniscono.
+Comprendere le modalità di visualizzazione e le coordinate dello schermo.
+Fine inattesa dell’espressione
+Unità
+Timestamp Unix in millisecondi
+Timestamp Unix in secondi
+Timestamp Unix
+Timestamp Unix in secondi. La chiave equivalente nel catalogo desktop è time.unix_seconds.
+Sconosciuto
+Irraggiungibile
+Carattere non riconosciuto «{0}»
+Contenuto non riconosciuto: {0}
+Non supportato
+Funzione non supportata: {0}
+Su
+Data dell’ultimo aggiornamento installato
+Aggiornamento Windows in attesa
+Nuova versione rilevata
+Ora di aggiornamento del saldo
+Aggiornamenti disponibili
+Caricamento
+Velocità totale di upload del sistema
+Velocità totale di upload in Mbps
+Caricamento
+Progetto originale GitHub
+Progetto originale
+Tempo di attività del sistema
+Tempo di attività del sistema in testo
+Utilizzo CPU
+Utilizzo del motore 3D della GPU
+Utilizzo medio CPU su 15 min
+Utilizzo medio CPU su 1 min
+Utilizzo medio CPU su 5 min
+Utilizzo del motore Compute della GPU
+Utilizzo del motore Copy della GPU
+Utilizzo massimo recente della CPU
+Utilizzo della decodifica video della GPU
+Utilizzo della codifica video della GPU
+Informazioni di stato come utilizzo, quota restante e avanzamento trascorso; possono controllare l’anello di avanzamento.
+Informazioni di stato come utilizzo, quota restante e avanzamento trascorso; possono controllare l’anello di avanzamento.
+Usare +, -, *, /, % per il resto, ^ per la potenza e le parentesi. I confronti supportano >, >=, <, <=, == e !=. Gli operatori booleani includono &&, ||, ! e and/or/not. Le condizioni usano test ? yes : no oppure if(test, yes, no). ?? fornisce un valore alternativo per valori nulli o vuoti.
+Usare Ctrl o Alt con una lettera, una cifra o un tasto funzione, tranne F12.
+Usare Ctrl o Alt, eventualmente Shift, con una lettera, una cifra o F1–F24, tranne F12. Salvare per applicare; lasciare vuoto per disattivare.
+Utilizzare Gestione dati → Dati hardware per ispezionare sensori e campi di firmware. Cerca per temperatura, modulo di memoria, nome del dispositivo o ID originale. Seleziona una riga per copiare il suo token. Export Diagnostics salva un'istantanea locale JSON dello stato corrente e delle letture.
+Raccogli dati con Root
+Usare un ancoraggio predefinito con correzioni, oppure specificare coordinate personalizzate.
+Utilizzare custom.<source>.status / error per lo stato di sorgente e le falle. L'intervallo di aggiornamento controlla la cache, anche con campionamento globale più veloce. Per 401/403, controllare l'autenticazione e l'accesso. I percorsi JSON devono corrispondere alla struttura di risposta effettiva.
+Usa il sintomo per trovare la giusta impostazione.
+Memoria fisica usata
+Usato da TCP/UDP, ignorato da ICMP.
+Usato per velocità di rete, controlli di perdita di pacchetti, saldo DeepSeek e sorgenti HTTP personalizzate.
+Quota usata della partizione dati (1 - available/total, stesso criterio di df).
+Spazio usato della partizione dati dell’app (StatFs).
+Dominio dell’utente attuale
+Manuale utente
+Nome dell’utente attuale
+Utilizzo CPU in modalità utente
+Spazio disponibile all’utente nella partizione dati dell’app (StatFs.availableBytes).
+GPU che usa principalmente memoria condivisa
+Usa uno scostamento UTC fisso senza passaggio automatico all’ora legale. Anche l’ora obiettivo viene calcolata nel fuso scelto.
+Usa il traffico di tutte le interfacce di rete attive del sistema. La percentuale a destra può basarsi sul traffico totale, sul solo download, sul solo upload o sul maggiore dei due.
+Utilizza le interfacce hardware native del sistema. I dati disponibili dipendono da hardware, driver e autorizzazioni; PawnIO non è necessario.
+Utilizzo del collegamento di rete
+VPN attiva
+Nome VPN
+Stato VPN
+Capacità totale della memoria video dedicata
+Valore
+Variazione del valore
+Valore non disponibile
+Valori in millisecondi; il campionamento rallenta automaticamente quando l’HUD è nascosto o lo schermo è spento.
+Variabile
+Nome variabile
+Libreria variabili
+Libreria delle variabili
+Variabili con un valore acquisito
+Variabili, token e espressioni
+Richiede verifica e autorizzazione del produttore
+Registrazione dettagliata
+Versione
+Visualizza aggiornamento
+Memoria virtuale disponibile
+Altezza totale del desktop in punti
+Altezza del desktop virtuale in pixel
+Memoria virtuale dell’app
+Capacità totale della memoria virtuale
+Percentuale di memoria virtuale usata
+Memoria virtuale usata
+Larghezza totale del desktop in punti
+Larghezza del desktop virtuale in pixel
+Limite sinistro del desktop in punti
+Origine X del desktop virtuale in pixel
+Limite superiore del desktop in punti
+Origine Y del desktop virtuale in pixel
+Virtualizzazione CPU attiva nel firmware
+Visibilità animazione e scopo visibilità
+Tensione della batteria in mV
+Tensione del core GPU
+VS Code in esecuzione
+Elenco delle distribuzioni WSL
+Numero di distribuzioni WSL
+Memoria usata da WSL
+WSL in esecuzione
+Stato WSL
+In attesa
+In attesa dell’autorizzazione Root…
+Avviso
+Variabile monitorata
+Sito web
+Tempo trascorso nella settimana
+Settimana dell’anno
+Avanzamento della settimana
+Tempo restante nella settimana
+Giorno della settimana
+Fasce di punta feriali (Pechino, separate da punto e virgola)
+Con rotazione automatica questa animazione sostituisce quella dei profili.
+Quando disattivato, non viene mostrato alcun output HUD.
+Quando disattivato, l’HUD appare su richiesta (eventi di alimentazione o trigger di visualizzazione).
+Quando attivato, l’HUD non intercetta i tocchi; l’input passa all’app sottostante.
+Indica se è attualmente collegata un’alimentazione esterna.
+Rileva il processo AMD Radeon Software o il suo percorso di installazione predefinito.
+Indica se Windows rileva almeno una connessione di rete disponibile. Non garantisce l’accesso a Internet.
+Indica se la batteria è attualmente in carica.
+Indica se il dispositivo sta attualmente usando la batteria, scaricandola.
+Rileva i processi in background Docker Desktop / dockerd.
+Indica se gli appunti attuali contengono un’immagine Bitmap/DIB.
+Indica se gli appunti Windows attuali contengono testo Unicode.
+Rileva processi IDE comuni come VS Code, Visual Studio, Rider e IntelliJ/PyCharm.
+Indica se la data attuale è sabato o domenica.
+Indica se nel sistema è presente un nvidia-smi.exe eseguibile.
+Indica se l’ultimo controllo di rete è riuscito.
+Indica se è attualmente attiva la fascia ridotta.
+Indica se è attualmente attiva la fascia di punta.
+Stato del proxy di sistema con la stessa sorgente di network.proxy_status.
+Indica se il risparmio batteria di Windows è attivo.
+Stato del registro UEFISecureBootEnabled.
+Rileva i processi Windows Terminal / PowerShell / cmd.
+Indica se la rete predefinita attuale è disponibile secondo ConnectivityManager.
+Indica se l’ora attuale rientra in una fascia tariffaria di punta DeepSeek. La chiave equivalente su desktop è deepseek.period.is_peak.
+Indica se Win32_Tpm può essere enumerato.
+Rileva gli aggiornamenti Windows disponibili e gli stati di riavvio in attesa di Windows Update / Component Based Servicing.
+Indicatore euristico per distinguere comuni GPU integrate/dispositivi con memoria unificata dalle schede grafiche dedicate.
+Indica se la virtualizzazione nel firmware è attiva; dipende dal supporto WMI.
+Rilevamento di VPN attiva con la stessa sorgente di network.vpn_status.
+Rileva i processi Code / Code - Insiders.
+Rileva i processi associati a wsl/wslhost/vmmemWSL.
+Se {0} è attivo o vero.
+Perché l'HUD non è visibile
+Banda Wi-Fi
+Canale Wi-Fi
+Nome della rete Wi-Fi
+Standard Wi-Fi
+FPS della finestra
+FPS della finestra (Esegui come amministratore)
+Proporzione degli FPS della finestra
+Stato degli FPS della finestra
+Nome della finestra misurata per gli FPS
+Proporzione degli FPS della finestra
+Stato degli FPS della finestra
+Opzioni FPS della finestra
+Numero di aggiornamenti Windows da installare
+Stato di Windows Update
+L’avvio di questa app è stato disattivato nelle app di avvio di Windows. Riattivarlo manualmente in quella pagina.
+Le variabili multimediali di Windows leggono le sessioni registrate da un lettore multimediale. Usare titolo e artista come testo principale, i tempi come testo secondario e media.progress per un anello con intervallo 0–100.
+Area di lavoro vs. schermo pieno
+I preset dell'area di lavoro evitano le barre di lavoro, i Docks e le regioni riservate. I preset dello schermo utilizzano limiti di visualizzazione completi. Gli offset spostano un preset; le coordinate personalizzate specificano direttamente la posizione. Selezionate prima il display di destinazione. Le coordinate negative sono normali per gli display a sinistra o sopra il display primario.
+Working set dell’app
+Ora di Pechino
+Orologio mondiale
+Ora di Londra
+Ora di New York
+Ora di Tokyo
+X / px
+Spostamento X / px
+Spostamento X / px
+Y / px
+Spostamento Y / px
+Spostamento Y / px
+Yangon
+Anno
+Tempo trascorso nell’anno
+Avanzamento dell’anno
+Tempo restante nell’anno
+Sì
+La versione è aggiornata.
+La versione locale è più recente di quella pubblicata.
+Zinco-aria
+auto:1
+auto:1 / gb:1
+auto:1 / mb:0
+auto:1 / mb:1
+auto:1 / speed
+auto:1 sceglie le unità in base alla variabile; evitare di aggiungere due volte la stessa unità. Le sequenze di formattazione procedono da sinistra a destra e possono trasformare numeri o abbreviare il testo. Usare {= ...} per le espressioni nel testo oppure iniziare un’espressione dell’anello con =.
+bytes / gb:1
+bytes / speed aggiungono automaticamente le unità per dimensioni o velocità di trasferimento in byte. kb:n, mb:n, gb:n e tb:n dividono per potenze di 1024 e mostrano n cifre decimali; aggiungere l’unità desiderata nel profilo. duration / duration-long formattano valori in secondi. I campi di data e ora supportano time:<date format>; time:relative formatta tempi relativi o durate.
+Copia
+cpu.usage o = (cpu.usage + gpu.usage) / 2
+g
+duration
+duration / duration-long
+ad esempio 1.1.1.1 o example.com
+Esempio: 1.1.1.1, 2606:4700:4700::1111, example.com
+Es. Il mio server – Stato online
+ad esempio value = data.items[0].value
+gb:1 / bytes
+gb:1 / gb:2 / bytes
+gb:1 / mb:0 / bytes
+tra {0}
+mb:0 / bytes
+mb:1 / bytes
+speed
+sub:0:80
+time:HH:mm:ss
+time:relative
+{0} (modificato)
+{0} / {1} capitoli · Offline
+{0} GPU rilevate
+{0} fa
+{0}: tempo restante {1}
+{0} misure supportate su {1}
+Aggiunti {0} profili; attiva la rotazione automatica.
+Impostazioni di {0} v{1}
+{0}: {1:0}% trascorso
+{0}: {1}% trascorso
+{0}: inserire un indirizzo HTTP/HTTPS completo.
+{0}: indicare i nomi delle variabili e i percorsi JSON.
+{0}g {1:00}:{2:00}:{3:00}
+{battery.percent|0}
+{battery.remaining_mwh|0}
+{cpu.frequency_ghz|0.00}
+{cpu.usage|0}
+{deepseek.balance_text}
+{deepseek.period.progress_text}
+{disk.system.usage|0}
+{disk.system.used_bytes|gb:1}
+{frame.display.fps|0.0}
+{frame.display.percent|0}
+{frame.window.fps|0.0}
+{frame.window.percent|0}
+{gpu.memory_used_bytes|gb:1}
+{gpu.usage|0}
+{memory.usage|0}
+{memory.used_bytes|gb:1}
+{network.profile_percent_text}
+{probe.latency_ms|0}ms
+{probe.latency_text}
+{time.current}
+{time.display.status_text}
+¥{deepseek.balance|0.00}
+← Precedente
+↓ {network.display_download}
+Chiave API
+Acquisizione dei fotogrammi attiva
+In attesa di campioni di fotogrammi
+Richiede Windows a 64 bit
+Seleziona una finestra aperta
+La finestra di destinazione è chiusa; selezionane un’altra
+Schermo scollegato
+Associazione della sorgente video non disponibile o ambigua tra più GPU
+Nessun evento di fotogramma valido per questa destinazione
+In attesa di eventi dei fotogrammi; potrebbero servire privilegi di amministratore
+Accesso negato; avvia l’app come amministratore
+In attesa di eventi dei fotogrammi Present
+È necessaria una sessione X11/XWayland
+Il server X non supporta l’estensione Present
+Installa libxpresent1
+Interfaccia di acquisizione Present non disponibile
+Richiede macOS
+Acquisizione dei fotogrammi non disponibile; controlla i componenti dell’app e il permesso di registrazione dello schermo
+La destinazione selezionata non è disponibile
+È necessario il permesso di registrazione dello schermo; riavvia l’app dopo averlo concesso
+Richiede macOS 12.3 o successivo
+Acquisizione dei fotogrammi non riuscita: {0}
+Acquisizione dei fotogrammi terminata ({0})
+Stato di disponibilità del conto restituito dall’endpoint del saldo.
+Nome del processo dell’app
+Tempo di attività dell’app
+Tempo di attività dell’app in testo
+Tempo di attività attuale dell’app in testo leggibile.
+Latenza Ping media
+Latenza media
+Latenza media degli ultimi 20 controlli Ping riusciti della destinazione attuale.
+Latenza media degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+Stato della batteria in testo
+Tensione della batteria (V)
+BitLocker ProtectionStatus del volume di sistema.
+Stato BitLocker
+Nome della CPU
+Utilizzo CPU
+Temperatura del sensore CPU. Non disponibile quando dispositivo, driver o permessi non la supportano.
+Data e ora attuali del computer.
+Data attuale del computer.
+Data e ora locali attuali.
+Data locale attuale nel formato yyyy-MM-dd.
+Utilizzo CPU totale attuale dell’intero computer.
+Disponibilità dell’API DeepSeek
+Stato di attivazione e protezione in tempo reale indicato da Windows Defender WMI.
+Numero di campioni non riusciti
+Nome completo del modello del processore.
+Temperatura del core GPU
+Tensione del core GPU
+Nome della GPU
+Versione VBIOS della GPU
+Temperatura GPU Core indicata dai sensori di monitoraggio hardware. La variabile non è disponibile se hardware o driver non la forniscono.
+Tensione del core GPU indicata dai sensori di monitoraggio hardware.
+Latenza massima degli ultimi 20 controlli Ping riusciti della destinazione attuale.
+Latenza massima degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+TTL ICMP
+Ultimo Ping riuscito
+Ora dell’ultimo controllo riuscito
+Tensione della batteria in tempo reale, convertita in volt.
+Utilizzo in tempo reale della GPU selezionata, ricavato dal motore più occupato.
+Numero di Ping persi
+Latenza minima degli ultimi 20 controlli Ping riusciti della destinazione attuale.
+Latenza minima degli ultimi 20 campioni riusciti della configurazione di controllo attuale.
+Latenza Ping massima
+Latenza massima
+Percentuale di memoria utilizzata
+Stato di Microsoft Defender
+Latenza Ping minima
+Latenza minima
+Stato dell’ultimo controllo, come «Online», «Timeout» o «Porta non raggiungibile».
+Nome del processo attuale di Endfield Charge Plus.
+Nome della scheda grafica selezionata dal profilo attuale.
+Disponibilità della rete
+Informazioni sull’errore Ping
+Jitter Ping
+Latenza Ping
+Latenza Ping in testo
+Latenza Ping corrispondente al 100%
+Perdita di pacchetti Ping
+Indirizzo di risposta effettivo del Ping
+Stato Ping in testo
+Successo del Ping
+TTL Ping
+Destinazione Ping
+Timeout Ping
+Endpoint Ping/sonda
+Porta Ping/sonda
+Protocollo Ping/sonda
+Endpoint della sonda
+Errore della sonda
+Latenza della sonda
+Jitter della latenza
+Latenza della sonda in testo
+Latenza corrispondente al 100%
+Tasso di perdita di pacchetti
+Porta di controllo
+Protocollo di controllo
+Indirizzo effettivo di risposta
+Numero di campioni della sonda
+Stato della sonda in testo
+Successo della sonda
+Stato Ping grezzo
+Stato grezzo della sonda
+Letto tramite l’interfaccia Windows BatteryTemperature; disponibile solo se fornito dal driver/firmware.
+Stato di protezione in tempo reale di Windows Defender WMI.
+Latenza di andata e ritorno dell’ultimo Ping riuscito. Un errore conta come 999 ms per l’avanzamento.
+Latenza di andata e ritorno/connessione dell’ultima sonda riuscita. Un errore viene trattato come 999 ms.
+SMBIOSBIOSVersion indicata da Win32_BIOS.
+Secondi trascorsi dall’avvio attuale di Windows.
+Secondi trascorsi dall’avvio del processo attuale dell’app.
+Numero di Ping inviati
+Timeout di una singola sonda
+Stato della configurazione attualmente attiva di Windows Firewall Policy.
+Numero di Ping riusciti
+Numero di campioni riusciti
+Stato BitLocker del disco di sistema
+Tempo di attività del sistema
+Tempo di attività del sistema in testo
+Stato di protezione del disco di sistema indicato dall’interfaccia Windows Volume Encryption.
+Tempo di attività del sistema in testo leggibile.
+Testo generato dallo stato di alimentazione, come «In carica / A batteria / Collegato alla rete elettrica / Sconosciuto».
+Mostra «20ms» in caso di successo, oppure uno stato di timeout o errore in caso di fallimento.
+Mostra un testo come «20ms» in caso di successo e lo stato corrispondente in caso di timeout o destinazione non raggiungibile.
+Utilizzo totale della GPU
+Quota della memoria fisica utilizzata rispetto alla memoria fisica totale.
+Versione VBIOS indicata da nvidia-smi, quando supportata.
+Indica se Windows rileva almeno una connessione di rete disponibile. Non garantisce l’accesso a Internet.
+Indica se la configurazione attiva di Windows Firewall è abilitata.
+Stato di Windows Firewall
+/proc/meminfo; la memoria disponibile usa MemAvailable
+/proc/stat, /proc/cpuinfo, cpufreq o hwmon
+/sys/class/power_supply; le capacità vengono convertite in mWh / Wh
+Risultati effettivi delle interrogazioni sui processi Linux o sugli strumenti installati localmente
+Spazio di swap disponibile
+Carica e scarica combinate
+DRM/hwmon o NVIDIA nvidia-smi
+Stima attualmente non disponibile
+Statistiche del file system del punto di montaggio attuale o /sys/dev/block/*/stat
+Versione del kernel Linux
+Linux procfs, sysfs o stato di esecuzione attuale
+Linux sysfs o /proc/bus/input/devices
+Linux sysfs o variabili EFI
+Non in carica
+Non in scarica
+Numero totale di processi
+Processi di /proc leggibili dall’utente attuale; l’utilizzo CPU è normalizzato per il numero di processori logici
+Letto dalle informazioni sullo schermo di Avalonia nella sessione X11/XWayland attuale.
+Legge gli appunti effettivi della sessione grafica attuale. L’ora di aggiornamento è quando ECP osserva per la prima volta un cambiamento di contenuto.
+È necessaria una chiave API valida. Una configurazione mancante o una richiesta non riuscita produce uno stato esplicito, mai un saldo inventato.
+Utilizzo dello spazio di swap
+Riavvio del sistema necessario
+Spazio di swap totale
+Spazio di swap utilizzato
+Proviene da sonde ICMP/TCP/UDP effettive del profilo attuale. Sonde fallite o protocolli non applicabili mostrano un testo di stato.
+{0}. Sorgente dati: {1}. Elencato solo se la raccolta è supportata dal dispositivo e dai permessi attuali.
+Memoria attiva
+Valore effettivo dello swap disponibile tramite sysctl vm.swapusage.
+Valore effettivo dello swap utilizzato tramite sysctl vm.swapusage.
+Risoluzione nativa in pixel CoreGraphics / AppKit Retina backingScaleFactor; le coordinate desktop usano punti logici e i DPI sono 96 × fattore di scala
+Differenze dei contatori a 64 bit delle interfacce fisiche macOS en*, escluse le duplicazioni del traffico VPN/loopback; oppure richieste di IP pubblico e calcoli dei profili effettivamente implementati
+Differenze dei tick CPU Mach o sysctl
+Memoria fisica libera
+Stima del tempo di carica IOPowerSources, mostrata solo se il sistema fornisce una stima.
+IOPowerSources; omesso senza batteria integrata ed elencato solo quando il sistema fornisce dati
+Memoria inattiva
+GPU a basso consumo
+Stato di basso consumo del dispositivo tramite Metal isLowPower.
+Mach VM / sysctl; usata = active + wired + compressed, disponibile = totale meno usata. Non è la pressione della memoria
+Mach active_count × dimensione della pagina di sistema.
+Mach free_count × dimensione della pagina di sistema.
+Mach inactive_count × dimensione della pagina di sistema.
+Mach wire_count × dimensione della pagina di sistema.
+Limite del working set consigliato da Metal
+Informazioni sul dispositivo Metal; utilizzo globale della GPU, temperatura e uso della memoria video non sono forniti se il sistema non li espone
+Metal hasUnifiedMemory. La memoria unificata non è considerata memoria video dedicata.
+Metal recommendedMaxWorkingSetSize: è un budget, non la capacità della memoria video né la memoria GPU utilizzata.
+GPU rimovibile
+Stato rimovibile del dispositivo tramite Metal isRemovable.
+Tempo restante alla carica completa
+Swap totale da sysctl vm.swapusage, allocato dinamicamente dal sistema.
+Architettura a memoria unificata
+Spazio su disco disponibile per l’utente
+Memoria residente non paginabile
+macOS / .NET oppure configurazione e risultati effettivi delle interrogazioni di questo profilo
+Appunti macOS; ora dell’ultimo cambiamento di contenuto osservato da ECP
+statfs f_bavail del volume APFS Data, escluso lo spazio riservato al sistema.
+statfs del volume APFS Data; la capacità comprende lo spazio condiviso dello stesso contenitore APFS
+{0}. Sorgente dati: {1}.
+Endfield Charge Plus
+Endfield Charge Plus For Linux
+Endfield Charge Plus For MacOS
+Endfield Charge Plus for Android
+Gestione profili
+Selettore radiale
+Azioni rapide
+Tieni premuto il pulsante centrale del mouse sull’HUD, trascina verso un profilo e rilascia per passare a quel profilo.
+Rilascia al centro o all’esterno dell’anello per annullare.
+Durata della pressione prolungata
+Soglia di trascinamento
+Dimensione dell’anello
+Attiva la selezione radiale
+Profili nell’anello
+Usa tutti i profili
+Anteprima dell’anello
+Profilo selezionato
+Nessun profilo disponibile
+Pagina precedente
+Pagina successiva
+Pagina {0} / {1}
+Aspetto
+Chiaro
+Classico
+Morbido
+Raggio degli angoli
+Opacità dell’anello
+Reimposta tema
+Anteprima del tema
+Gesti sull’HUD
+Pressione prolungata del pulsante centrale
+Clic sinistro
+Le modifiche hanno effetto dopo aver premuto «Salva e applica».
+Premi Esc per annullare.
+Cambio profilo
+Solo anteprima
+Aggiungi all’anello
+Rimuovi dall’anello
+Segnalazione problemi
+Riduci a icona
+Ingrandisci finestra
+Ripristina finestra
+Chiudi finestra
+Sistema attuale
+Utilizzo del software
+Carico CPU del sistema su tutti i processori logici.
+RAM fisica utilizzata divisa per la RAM fisica totale.
+VRAM dedicata utilizzata divisa per la VRAM dedicata totale di tutte le GPU. La memoria condivisa è esclusa.
+Tempo CPU di Endfield Charge Plus diviso per il tempo trascorso e il numero di processori logici.
+RAM residente di Endfield Charge Plus divisa per la RAM fisica totale. Include le pagine condivise residenti.
+VRAM dedicata assegnata a Endfield Charge Plus divisa per la VRAM dedicata totale. La memoria GPU condivisa è esclusa.
+Intero processo Endfield Charge Plus: impostazioni e tutti gli HUD. CPU normalizzata su tutti i processori logici.
+RAM residente dell’intero Endfield Charge Plus (impostazioni e tutti gli HUD), incluse le pagine condivise residenti. Valore: MiB/GiB; arco: quota della RAM fisica.
+VRAM dedicata dell’intero Endfield Charge Plus (impostazioni e tutti gli HUD), esclusa la memoria GPU condivisa. Valore: MiB/GiB; arco: quota della VRAM dedicata totale.
+Canale BiliBili dell’autore
+Canale YouTube dell’autore
+Colori
+Cerca profili
+Cambia profilo con un clic o la rotellina
+Intervallo di rotazione / s
+Scorri verso l’alto per il profilo precedente e verso il basso per il successivo.
+Profili disponibili
+Profilo precedente
+Profilo successivo
+Sospendi/riprendi la rotazione automatica
+Anteprima del profilo attuale
+Apri impostazioni
+Le scorciatoie da tastiera funzionano quando questa app è attiva.
+Mantieni visibile l’HUD quando il puntatore è sopra l’HUD o la zona di attivazione

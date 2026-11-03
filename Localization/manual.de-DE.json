@@ -8,15 +8,15 @@
   ],
   "start": [
     "Erste Schritte",
-    "Den ersten HUD anzeigen und anschließend anpassen.",
-    "Aktivieren Sie den HUD unter Anzeige & Position. Für eine dauerhafte Anzeige aktivieren Sie Immer sichtbar.\nWählen Sie unter HUD-Inhalte ein integriertes Profil und starten Sie die Vorschau.\nÜbernehmen Sie die Einstellungen mit der Schaltfläche oben im Fenster.",
-    "Speichern neben dem Profil übernimmt dessen Inhalt in den Editor. Änderungen an integrierten Profilen erzeugen eine eigene Kopie. Die Vorschau ersetzt die laufende Konfiguration nicht. Erst Übernehmen speichert sämtliche Einstellungen und wendet sie auf den laufenden HUD an."
+    "Das erste HUD anzeigen und anschließend anpassen.",
+    "Aktivieren Sie das HUD unter Anzeige & Position. Für eine dauerhafte Anzeige aktivieren Sie Immer sichtbar.\nWählen Sie unter HUD-Inhalte ein integriertes Profil und starten Sie die Vorschau.\nÜbernehmen Sie die Einstellungen mit der Schaltfläche oben im Fenster.",
+    "Speichern neben dem Profil übernimmt dessen Inhalt in den Editor. Änderungen an integrierten Profilen erzeugen eine eigene Kopie. Die Vorschau ersetzt die laufende Konfiguration nicht. Erst Übernehmen speichert sämtliche Einstellungen und wendet sie auf den laufendas HUD an."
   ],
   "display": [
     "Anzeige, Position und Aussehen",
     "Sichtbarkeit, Bildschirm und Darstellung einstellen.",
     "Wählen Sie den Zielbildschirm und eine vorgegebene Position oder eigene Koordinaten.\nStellen Sie Größe, Deckkraft und Schrift ein.\nWählen Sie die dauerhafte oder vorübergehende Anzeige und übernehmen Sie die Einstellungen.",
-    "Arbeitsbereichspositionen berücksichtigen die Taskleiste. Bildschirmpositionen nutzen den gesamten Bildschirm; negative Koordinaten sind bei mehreren Monitoren normal. Im vorübergehenden Modus blendet ein Ereignis den HUD ein; danach zieht er sich zurück. Das Messintervall gilt für alle HUDs. Uhren und externe Datenquellen behalten ihre eigenen Aktualisierungsintervalle.\n\nOben wählen Sie eine Sprache oder die Systemsprache. Die Sprachwahl wird sofort gespeichert, andere ungespeicherte Eingaben bleiben im Editor. Bei nicht unterstützten Sprachen oder fehlenden Texten erscheint Englisch. Eigene Texte und Variablennamen bleiben erhalten."
+    "Arbeitsbereichspositionen berücksichtigen die Taskleiste. Bildschirmpositionen nutzen den gesamten Bildschirm; negative Koordinaten sind bei mehreren Monitoren normal. Im vorübergehenden Modus blendet ein Ereignis das HUD ein; danach zieht er sich zurück. Das Messintervall gilt für alle HUDs. Uhren und externe Datenquellen behalten ihre eigenen Aktualisierungsintervalle.\n\nOben wählen Sie eine Sprache oder die Systemsprache. Die Sprachwahl wird sofort gespeichert, andere ungespeicherte Eingaben bleiben im Editor. Bei nicht unterstützten Sprachen oder fehlenden Texten erscheint Englisch. Eigene Texte und Variablennamen bleiben erhalten.\nIm Sprachmenü können Sie die globale Schrift- und UI-Skalierung separat von 75% bis 200% einstellen. Die individuelle HUD-Skalierung wird mit der globalen UI-Skalierung multipliziert."
   ],
   "profiles": [
     "Profile und HUD-Inhalte",
@@ -34,7 +34,7 @@
     "Hardwaresensoren und Treiber",
     "Messwerte prüfen und fehlende Temperaturen untersuchen.",
     "Öffnen Sie Datenverwaltung → Hardwaredaten und prüfen Sie den Treiberstatus.\nInstallieren Sie bei Bedarf PawnIO, bestätigen Sie die Windows-Abfrage und beenden Sie ECP vollständig.\nStarten Sie ECP als Administrator neu und aktualisieren Sie die Messwerte.\nSuchen Sie einen Sensor, kopieren Sie seine Variable oder exportieren Sie die Diagnose.",
-    "Administratorrechte ersetzen keinen fehlenden Treiber. Nicht unterstützte Messwerte bleiben unverfügbar. Kern-, Gehäuse-, Hotspot- und Speichertemperatur sind unterschiedliche Messungen. Minimum und Maximum stammen aus der laufenden Messsitzung und sind keine Hardwaregrenzen. SMBIOS-Speicherdaten ersetzen keine vollständigen SPD/XMP/EXPO-Tabellen."
+    "Administratorrechte ersetzen keinen fehlenden Treiber. Nicht unterstützte Messwerte bleiben unverfügbar. Kern-, Paket-, Hotspot- und Speichertemperatur sind unterschiedliche Messungen. Minimum und Maximum stammen aus der laufenden Messsitzung und sind keine Hardwaregrenzen. SMBIOS-Speicherdaten ersetzen keine vollständigen SPD/XMP/EXPO-Tabellen."
   ],
   "sources": [
     "Datenquellen einrichten",
@@ -46,7 +46,7 @@
     "Profilwechsel, Klicks und Animationen",
     "Mehrere Profile der Reihe nach anzeigen.",
     "Fügen Sie Profile zur Wechselliste hinzu und ordnen Sie sie an.\nAktivieren Sie bei Bedarf den automatischen Wechsel und stellen Sie das Intervall ein.\nWählen Sie eine einfache, vollständige oder nach oben rollende Animation.\nAktivieren Sie den Profilwechsel per Klick für die manuelle Bedienung.",
-    "Das Entfernen aus der Liste löscht kein Profil. Eine leere Liste verwendet das aktuelle Profil; ein einzelner Eintrag wechselt nicht zu einem anderen Profil. Die Rollanimation bewegt den Inhalt eines dauerhaft sichtbaren HUDs. Jeder HUD verwendet seine eigene Liste und startet seinen Timer beim Klick neu. DeepSeek-Zeitwechsel behalten die vollständige Animation."
+    "Das Entfernen aus der Liste löscht kein Profil. Eine leere Liste verwendet das aktuelle Profil; ein einzelner Eintrag wechselt nicht zu einem anderen Profil. Die Rollanimation bewegt den Inhalt eines dauerhaft sichtbaren HUDs. Jedes HUD verwendet seine eigene Liste und startet seinen Timer beim Klick neu. DeepSeek-Zeitwechsel behalten die vollständige Animation."
   ],
   "summons": [
     "Tastenkürzel und Mausbereiche",
@@ -56,7 +56,7 @@
   ],
   "triggers": [
     "Auslöseregeln",
-    "Bei passenden Daten vorübergehend einen HUD anzeigen.",
+    "Bei passenden Daten vorübergehend ein HUD anzeigen.",
     "Fügen Sie unter HUD-Inhalte eine Regel hinzu und aktivieren Sie sie.\nWählen Sie Variable, Schwellenwert, Wertänderung oder Wechsel zu wahr.\nLegen Sie die Abklingzeit fest, deaktivieren Sie die dauerhafte Anzeige und übernehmen Sie die Einstellungen.",
     "Die erste Messung und die Rückkehr fehlender Daten setzen nur die Ausgangsbasis. Ein anhaltend erfüllter Schwellenwert kann nach Ablauf der Abklingzeit erneut auslösen. Regeln und Listen gelten je HUD. Beispiele: cpu.usage >= 90 mit 30 Sekunden Abstand oder eine Änderung von media.title beim Titelwechsel."
   ],
@@ -76,7 +76,7 @@
     "Experimentell: mehrere HUDs",
     "Mehrere Anzeigen unabhängig einrichten.",
     "Aktivieren Sie mehrere HUDs in den experimentellen Funktionen.\nFügen Sie einen Neben-HUD hinzu, benennen Sie ihn und wählen Sie ihn zur Bearbeitung.\nÜbernehmen Sie neue Instanzen, bevor Sie deren Vorschau verwenden.",
-    "Der bearbeitete HUD wird hervorgehoben. Profile, Position, Liste, Regeln und Mausbereiche werden je Instanz festgelegt. Messintervall, globales Kürzel und die allgemeine Klickoption sind gemeinsam. Ein Klick schaltet nur den betroffenen HUD weiter. Das Entfernen einer Nebeninstanz entfernt nicht den Haupt-HUD."
+    "Das bearbeitete HUD wird hervorgehoben. Profile, Position, Liste, Regeln und Mausbereiche werden je Instanz festgelegt. Messintervall, globales Kürzel und die allgemeine Klickoption sind gemeinsam. Ein Klick schaltet nur den betroffenen HUD weiter. Das Entfernen einer Nebeninstanz entfernt nicht den Haupt-HUD."
   ],
   "maintenance": [
     "Konfiguration, Sicherung und Wartung",

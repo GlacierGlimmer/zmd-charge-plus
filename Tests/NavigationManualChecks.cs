@@ -61,9 +61,9 @@ internal static class NavigationManualChecks
         try
         {
             var tabs=window.FindControl<TabControl>("MainSettingsTabs")!;var dataTabs=window.FindControl<TabControl>("DataManagementTabs")!;var editor=window.FindControl<HudCustomizerView>("Customizer")!;
-            check(tabs.Items.OfType<TabItem>().Select(t=>t.Header?.ToString()).SequenceEqual(new[]{"显示与位置","HUD显示内容","数据管理","实验性功能","使用手册","关于"}),"The six top-level tabs match the requested wording and order.");
+            check(window.FindControl<ListBox>("WorkspaceNavigation")!.Items.OfType<ListBoxItem>().Select(t=>t.Tag?.ToString()).SequenceEqual(new[]{"display","hud","ring","cycle","rules","variables","hardware","sources","quick","experimental","manual","about"}),"The flat sidebar follows the requested section order.");
             check(dataTabs.Items.OfType<TabItem>().Select(t=>t.Header?.ToString()).SequenceEqual(new[]{"变量库","硬件数据","数据源配置"}),"Data Management owns Variable Library, Hardware Data and Data Sources in that order.");
-            check(editor.FindControl<TabControl>("CustomizerTabs")!.Items.Count==2,"HUD Content only retains profile editing and trigger rules.");
+            check(editor.FindControl<TabControl>("CustomizerTabs")!.Items.Count==4,"The content host contains profiles, radial switching, cycling and rules with no visible secondary tab strip.");
             window.NavigateToSettingsSection("sources");await Task.Delay(250);
             check(tabs.SelectedItem==window.FindControl<TabItem>("DataManagementPage") && dataTabs.SelectedIndex==2,"Settings navigation selects the real nested data-source page.");
             var http=editor.FindControl<TextBox>("HttpSourcesJsonBox")!;http.Text=UserManualContent.HttpExample;
@@ -88,7 +88,7 @@ internal static class NavigationManualChecks
             check(dataTabs.SelectedItem==window.FindControl<TabItem>("HardwarePage") && tabs.SelectedItem==window.FindControl<TabItem>("DataManagementPage"),"A manual action opens the corresponding real settings page.");
             window.NavigateToSettingsSection("manual");manual.Navigate("start");await Task.Delay(200);Capture(window,"manual-zh.png");
             LocalizationManager.SetLanguage(AppLanguage.English);typeof(SettingsWindow).GetMethod("ApplyLocalization",BindingFlags.NonPublic|BindingFlags.Instance)!.Invoke(window,null);await Task.Delay(250);
-            check(tabs.Items.OfType<TabItem>().Select(t=>t.Header?.ToString()).SequenceEqual(new[]{"Display & Position","HUD Content","Data Management","Experimental Features","User Manual","About"}),"All top-level pages localize in the requested order.");
+            check(window.FindControl<ListBox>("WorkspaceNavigation")!.GetVisualDescendants().OfType<TextBlock>().Any(t=>t.Text=="Profile management"),"The flat sidebar localizes after language switching.");
             check(dataTabs.Items.OfType<TabItem>().Select(t=>t.Header?.ToString()).SequenceEqual(new[]{"Variable Library","Hardware Data","Data Source Configuration"}),"Relocated data pages localize through the main settings window.");
             check(http.Text==UserManualContent.HttpExample && key.Text=="unsaved-ui-only","Language changes do not discard relocated source edits.");
             check(manual.CurrentChapterId=="start" && manual.GetLogicalDescendants().OfType<TextBlock>().Any(t=>t.Text=="Getting started"),"Manual language switching retains the current chapter.");
@@ -99,7 +99,7 @@ internal static class NavigationManualChecks
                 var save=minimum.FindControl<Button>("SaveBtn")!;var savePoint=save.TranslatePoint(default,minimum)!.Value;
                 var manualPoint=minimumManual.TranslatePoint(default,minimum)!.Value;
                 Console.WriteLine($"Minimum layout: client={minimum.ClientSize}; tabs={minimumTabs.Bounds}; manual={minimumManual.Bounds}; save={savePoint}");
-                check(minimumTabs.Items.OfType<TabItem>().All(t=>t.Bounds.Width>0 && t.Bounds.Right<=minimumTabs.Bounds.Width+1),"All six English main headers fit at the minimum window width.");
+                check(minimum.FindControl<ListBox>("WorkspaceNavigation")!.Bounds.Width>180,"The sidebar remains readable at the minimum window width.");
                 check(savePoint.X+save.Bounds.Width<=minimum.ClientSize.Width && manualPoint.X+minimumManual.Bounds.Width<=minimum.ClientSize.Width && manualPoint.Y+minimumManual.Bounds.Height<=minimum.ClientSize.Height,"The save button and complete manual reading area fit inside the minimum viewport.");
                 Capture(minimum,"manual-en-minimum.png");
             }

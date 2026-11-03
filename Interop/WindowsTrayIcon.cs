@@ -21,6 +21,10 @@ internal sealed class WindowsTrayIcon : IDisposable
     private const uint NimAdd = 0x00000000;
     private const uint NimModify = 0x00000001;
     private const uint NimDelete = 0x00000002;
+    private const uint NimSetVersion = 0x00000004;
+    private const uint NinSelect = 0x0400;
+    private const uint NinKeySelect = 0x0401;
+    private const uint NifShowTip = 0x00000080;
     private const uint NifMessage = 0x00000001;
     private const uint NifIcon = 0x00000002;
     private const uint NifTip = 0x00000004;
@@ -44,6 +48,8 @@ internal sealed class WindowsTrayIcon : IDisposable
     private ushort _classAtom;
     private bool _added;
     private bool _disposed;
+    private bool _version4, _suppressSelect;
+    private readonly DispatcherTimer _singleClick = new();
 
     public WindowsTrayIcon(Action clicked, Action doubleClicked, string tooltip)
     {
@@ -52,6 +58,8 @@ internal sealed class WindowsTrayIcon : IDisposable
 
         _clicked = clicked ?? throw new ArgumentNullException(nameof(clicked));
         _doubleClicked = doubleClicked ?? throw new ArgumentNullException(nameof(doubleClicked));
+        _singleClick.Interval = TimeSpan.FromMilliseconds(GetDoubleClickTime());
+        _singleClick.Tick += (_, _) => { _singleClick.Stop(); if (!_disposed) _clicked(); };
         _wndProc = WindowProc;
         _className = $"EndfieldChargePlus.Tray.{Guid.NewGuid():N}";
         _instance = GetModuleHandleW(null);
@@ -146,6 +154,8 @@ internal sealed class WindowsTrayIcon : IDisposable
         _added = Shell_NotifyIconW(NimAdd, ref data);
         if (!_added)
             throw new InvalidOperationException($"Shell_NotifyIconW(NIM_ADD) failed: {Marshal.GetLastWin32Error()}");
+        data.uTimeoutOrVersion = 4;
+        _version4 = Shell_NotifyIconW(NimSetVersion, ref data);
     }
 
     private NotifyIconData CreateNotifyData(string tooltip) => new()
@@ -153,10 +163,10 @@ internal sealed class WindowsTrayIcon : IDisposable
         cbSize = (uint)Marshal.SizeOf<NotifyIconData>(),
         hWnd = _hwnd,
         uID = 1,
-        uFlags = NifMessage | NifIcon | NifTip,
+        uFlags = NifMessage | NifIcon | NifTip | NifShowTip,
         uCallbackMessage = TrayCallbackMessage,
         hIcon = _hIcon,
-        szTip = string.IsNullOrWhiteSpace(tooltip) ? "Endfield Charge Plus" : tooltip,
+        szTip = string.IsNullOrWhiteSpace(tooltip) ? ProductInfo.Name : tooltip,
         szInfo = string.Empty,
         szInfoTitle = string.Empty,
     };
@@ -166,20 +176,33 @@ internal sealed class WindowsTrayIcon : IDisposable
         if (!_disposed && msg == TrayCallbackMessage)
         {
             uint mouseMessage = unchecked((uint)lParam.ToInt64()) & 0xFFFFu;
-            if (mouseMessage == WmLButtonDblClk)
-            {
-                Dispatcher.UIThread.Post(_doubleClicked, DispatcherPriority.Input);
-                return IntPtr.Zero;
-            }
-
-            if (mouseMessage is WmLButtonUp or WmRButtonUp or WmContextMenu)
-            {
-                Dispatcher.UIThread.Post(_clicked, DispatcherPriority.Input);
-                return IntPtr.Zero;
-            }
+            if (mouseMessage == WmLButtonDblClk || mouseMessage == WmContextMenu || mouseMessage == NinKeySelect ||
+                mouseMessage == (_version4 ? NinSelect : WmLButtonUp) || !_version4 && mouseMessage == WmRButtonUp)
+                Dispatcher.UIThread.Post(() => HandleMouseMessage(mouseMessage), DispatcherPriority.Input);
+            return IntPtr.Zero;
         }
 
         return DefWindowProcW(hwnd, msg, wParam, lParam);
+    }
+
+    internal void HandleMouseMessage(uint message)
+    {
+        if (_disposed) return;
+        // v4 emits semantic NIN_SELECT/WM_CONTEXTMENU as well as raw button
+        // notifications. Handling both toggled the menu twice on one click.
+        if (message == WmLButtonDblClk)
+        {
+            _singleClick.Stop(); _suppressSelect=true; _doubleClicked();
+        }
+        else if (message == WmContextMenu || message == NinKeySelect || !_version4 && message == WmRButtonUp)
+        {
+            _singleClick.Stop(); _suppressSelect=false; _clicked();
+        }
+        else if (message == (_version4 ? NinSelect : WmLButtonUp))
+        {
+            if (_suppressSelect) { _suppressSelect=false; return; }
+            _singleClick.Stop(); _singleClick.Start();
+        }
     }
 
     public void ShowNotification(string title, string message)
@@ -187,7 +210,7 @@ internal sealed class WindowsTrayIcon : IDisposable
         if (_disposed || !_added || _hwnd == IntPtr.Zero)
             return;
 
-        var data = CreateNotifyData("Endfield Charge Plus");
+        var data = CreateNotifyData(ProductInfo.Name);
         data.uFlags = NifInfo;
         data.szInfoTitle = TrimForNotify(title, 63);
         data.szInfo = TrimForNotify(message, 255);
@@ -208,10 +231,11 @@ internal sealed class WindowsTrayIcon : IDisposable
     {
         if (_disposed) return;
         _disposed = true;
+        _singleClick.Stop();
 
         if (_added && _hwnd != IntPtr.Zero)
         {
-            var data = CreateNotifyData("Endfield Charge Plus");
+            var data = CreateNotifyData(ProductInfo.Name);
             try { Shell_NotifyIconW(NimDelete, ref data); }
             catch { }
             _added = false;
@@ -331,4 +355,6 @@ internal sealed class WindowsTrayIcon : IDisposable
 
     [DllImport("user32.dll")]
     private static extern bool DestroyIcon(IntPtr hIcon);
+    [DllImport("user32.dll")]
+    private static extern uint GetDoubleClickTime();
 }

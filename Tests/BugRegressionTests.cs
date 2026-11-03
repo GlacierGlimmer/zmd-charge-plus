@@ -31,6 +31,9 @@ internal class BugRegressionTests
             builder.SetupWithoutStarting();
             if(args.Length>0 && args[0]=="--core-async") {SynchronizationContext.SetSynchronizationContext(null);RunAsync().GetAwaiter().GetResult();Console.WriteLine($"PASS {_checks} asynchronous core checks");return 0;}
             if(args.Length>0 && args[0]=="--appearance") {AppearanceLanguageChecks.Run(Check);Console.WriteLine($"PASS {_checks} appearance/language checks");return 0;}
+            if(args.Length>0 && args[0]=="--window-frame") {WindowFrameChecks.Run(Check);Console.WriteLine($"PASS {_checks} window frame/language checks");return 0;}
+            if(args.Length>0 && args[0]=="--language-layout") {LanguageSwitchLayoutChecks.Run(Check);Console.WriteLine($"PASS {_checks} language switch layout checks");return 0;}
+            if(args.Length>0 && args[0]=="--profile-scroll") {ProfileScrollChecks.Run(Check);Console.WriteLine($"PASS {_checks} profile scroll checks");return 0;}
             if(args.Length>0 && args[0]=="--localization") {LocalizationRegressionChecks.Run(Check);Console.WriteLine($"PASS {_checks} localization checks");return 0;}
             if(args.Length>0 && args[0]=="--localization-models") {LocalizationRegressionChecks.Run(Check,gui:false);Console.WriteLine($"PASS {_checks} localization model checks");return 0;}
             if(args.Length>0 && args[0]=="--navigation") {NavigationManualChecks.Run(Check);Console.WriteLine($"PASS {_checks} settings navigation/manual checks");return 0;}

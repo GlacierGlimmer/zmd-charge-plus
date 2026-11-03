@@ -1,4 +1,4 @@
-# Endfield Charge Plus · Endfield-style Status HUD+
+﻿# Endfield Charge Plus · Endfield-style Status HUD+
 
 See this repository’s [Releases](https://github.com/GlacierGlimmer/zmd-charge-plus/releases) for current downloads and per-version changes. This README covers installation and general usage.
 
@@ -47,16 +47,16 @@ This installs the same app from the Microsoft Store source. Review any prompts s
 
 ### Windows: GitHub portable downloads
 
-For a version that needs no installation, get the Portable ZIP for your device from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract it to a folder and run `EndfieldChargePlus.exe`. No installer or separately installed .NET runtime is required.
+For a version that needs no installation, download the ZIP for x64, x86 or ARM64 from [**GitHub Releases**](https://github.com/GlacierGlimmer/zmd-charge-plus/releases). Extract the entire archive and run the versioned EXE in its version folder. The top level contains that EXE plus Runtime, Documents and Licenses. Keep the whole folder intact; no separately installed .NET runtime is required.
 
 **Getting started:**
 
-1. Install and launch ECP through Microsoft Store or winget. For the GitHub portable version, extract the ZIP to a permanent folder and run `EndfieldChargePlus.exe`. ECP stays available in the system tray.
+1. Install and launch ECP through Microsoft Store or winget. For the portable version, extract the ZIP to a permanent location and run the top-level versioned EXE. ECP stays available in the system tray.
 2. Open **Settings** from the tray. Choose the display, position and visibility mode under **Display & Position**.
-3. Under **HUD Content & Data**, select a built-in profile or make your own, then use **Preview**.
+3. Under **HUD Content**, select a built-in profile or make your own, then use **Preview**. Variables, hardware and data sources are under **Data Management**.
 4. Click **Save & Apply**. Settings persist across restarts; enable Windows auto-start if you want it.
 
-The default profile is **System – Memory**. On first launch, Windows UI language selects Simplified Chinese for Chinese locales and English for others; you can switch manually.
+The default profile is **System – Memory**. First launch follows the system UI language among the 20 supported languages, with Traditional Chinese script/region matching and an English fallback. A manual language choice is saved; you can select system language again later.
 
 ### Linux: independent Releases
 
@@ -92,7 +92,7 @@ Other platform versions are distributed by their respective repositories; their 
 | **Network probe** | Probe IPv4/IPv6/hostnames over ICMP, TCP or UDP; display latency and loss. |
 | **DeepSeek API** | With your own API key: balance, peak/off-peak, progress and countdown. Beijing Time drives the schedule; local-time switch variables are available. |
 | **HTTP / JSON** | Configure an endpoint, headers, refresh interval and JSON field mappings to display your own data. |
-| **Everyday controls** | Chinese/English UI, tray, auto-start, import/export/backup, logs and GitHub update checks. |
+| **Everyday controls** | 20 UI languages, chapter-based User Manual, tray, startup, import/export/backup, logs and this platform's GitHub update checks. |
 
 ### 🧩 Variables in action
 
@@ -112,30 +112,37 @@ DeepSeek requires your API key; custom HTTP/JSON requests target endpoints you c
 ## 💻 Windows requirements & build
 
 - **OS:** Windows 10 / 11, x64, x86 and ARM64.
-- **Portable packages:** each ZIP contains only a self-contained `EndfieldChargePlus.exe`; no separately installed .NET runtime. Embedded native dependencies are extracted automatically on first launch.
+- **Portable packages:** x64, x86 and ARM64 each have ZIP archives. The top-level versioned EXE starts the application directly from Runtime; Documents contains the guide/privacy/notices and Licenses retains the license texts. No runtime extraction or separate .NET installation is required.
+- **User data:** settings, backups, logs and application caches use `%LOCALAPPDATA%\EndfieldChargePlus`, outside the extracted program folder. The Store edition uses its package LocalState. Explicit exports use the location selected by the user.
 - **Building:** Windows and the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 
 ```powershell
 # Build from source
 dotnet build EndfieldChargePlus.csproj -c Release
 
-# Example: publish a self-contained x64 executable
+# Publish all three directory portable builds, each as ZIP (requires 7-Zip)
+./scripts/package-windows.ps1
+
+# Publish x64 only
 ./scripts/package-windows.ps1 -Runtime win-x64
 ```
 
-Replace `win-x64` with `win-x86` or `win-arm64` for the other architectures. Every build produces one EXE. Frame capture selects the embedded x64 or ARM64 collector according to the Windows OS architecture.
+Replace `win-x64` with `win-x86` or `win-arm64` for the other architectures. The folder and entry point use the project version automatically; all dependencies remain under Runtime. Move the entire program folder together and re-enable startup from the new location if needed. See [Windows portable layout](docs/windows-portable.md). Frame capture selects the embedded x64 or ARM64 collector according to the Windows OS architecture.
 
 
-Microsoft Store submission bundles contain **x64 and x86 (32-bit)** only. ARM64 is distributed as a separate single-file EXE / portable ZIP. Publish the x64/x86 executables first, then run:
+Setup production is paused; its experimental implementation is outside this source repository. Microsoft Store submission bundles independently contain the full **x64, x86 and ARM64** application/runtime payloads. Build them with:
 
 ```powershell
 ./scripts/package-store.ps1
 ```
 
-The script uses Windows SDK MakeAppx to validate and export MSIXBUNDLE / MSIXUPLOAD, with a fresh staging directory for each build so older ARM64 packages cannot enter the bundle. The Store package version is separate from the displayed product version; version changes still require an explicit user request.
+The script uses Windows SDK MakeAppx to validate and export MSIXBUNDLE/MSIXUPLOAD with fresh staging. As in v0.1.1, Store installation registers only Endfield Charge Plus itself and retains the original App/StartupTask identity. Windows/Microsoft Store handles uninstall; there are no separate administrator or uninstall application icons. Store approval for elevation and installed-package acceptance are separate from build validation. The user version policy maps software a.b.c to Store (a+1).b.c.0 (currently 0.1.2 to 1.1.2.0). A software major-version increment also increases the Store major component; submission still must exceed the highest applicable uploaded version.
 
 ## 📄 Origin & license
 
 ECP is a modified derivative of **[QinAnze/zmd-charge](https://github.com/QinAnze/zmd-charge)**. Thanks to **QinAnze** for the original open-source work. New ECP contributions are under [MIT License](LICENSE); upstream code/assets retain applicable terms. See [NOTICE.md](NOTICE.md) and [PRIVACY.md](PRIVACY.md).
 
-© 2026 GlacierGlimmer_冰川雪貓
+© 2026 GlacierGlimmer冰川雪貓
+
+
+Windows GitHub Releases attach only the three architecture-specific portable ZIPs. Local builds also generate only ZIP files. `scripts/prepare-github-windows.ps1` stages only ZIPs locally and never uploads or publishes them.

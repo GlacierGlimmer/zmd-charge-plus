@@ -1,43 +1,60 @@
-# Privacy / 隐私说明
+# Endfield Charge Plus
 
-Endfield Charge Plus v0.1.0 does not implement advertising, analytics telemetry, an application account system, or an application-operated cloud backend.
+隐私与本地数据说明 / Privacy and local data — Windows
 
-Endfield Charge Plus v0.1.0 本身不包含广告、分析遥测、应用账户系统，也没有由本项目运营的云端后端服务。
+## 1. 数据处理原则 / Data handling
 
-## Local data / 本地数据
+Endfield Charge Plus 未集成广告、产品分析遥测、应用账号系统或开发者运营的用户数据云端后台。HUD、预览、变量库和硬件页面所需的数据在本机读取和处理；内置更新检查不会上传 HUD 变量值、剪贴板内容、设备传感器读数或用户配置。
 
-The application stores settings, backups, and logs under the current Windows user's local application-data directory (`%LOCALAPPDATA%\EndfieldChargePlus`).
+Endfield Charge Plus does not implement advertising, product analytics telemetry, an application account system or a developer-operated user-data cloud backend. HUD, preview, variable-library and hardware-page data is processed locally. Built-in update checks do not upload HUD values, clipboard content, sensor readings or user settings.
 
-应用的设置、备份和日志保存在当前 Windows 用户的本地应用数据目录：`%LOCALAPPDATA%\EndfieldChargePlus`。
+## 2. 配置与存储 / Settings and storage
 
-A configured DeepSeek API key is protected with Windows DPAPI using the current-user scope before it is written to settings. Exported configuration therefore contains the protected value rather than the plaintext key. A protected value may not be usable under a different Windows user or on a different Windows installation.
+本平台默认用户数据位置：`%LOCALAPPDATA%\EndfieldChargePlus`。配置、备份、日志和应用缓存使用用户数据位置，不自动写入解压后的程序目录。程序文件和用户数据相互独立；移动或替换程序文件不会自动清除个人设置。手动导出只写入用户选择的位置。
 
-配置的 DeepSeek API Key 在写入设置前会使用 Windows DPAPI 的当前用户范围进行保护；导出的配置中保存的是受保护值而不是明文 Key。该受保护值换到其他 Windows 用户或其他 Windows 安装后可能无法解密。
+微软商店版使用 `%LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState\EndfieldChargePlus`。卸载由 Windows／微软商店管理，按系统的应用数据删除规则处理；需要保留数据时可先手动导出。
 
-When a selected variable needs it, the application may read local Windows/device state such as hardware and sensor information, battery status, network-interface data (including local IP/MAC/SSID when exposed by Windows), host/user names, process statistics/names, security/update status, and clipboard metadata or text. These values are used locally for HUD variables and are not uploaded by Endfield Charge Plus through its built-in update, public-IP, or DeepSeek balance requests.
+Default data location: `%LOCALAPPDATA%\EndfieldChargePlus`. Settings, backups, logs and application caches use the user data location, independently of the extracted program folder. Moving/replacing application files does not automatically delete personal settings. Explicit exports are written to the location selected by the user. The Microsoft Store edition uses %LOCALAPPDATA%\Packages\<PackageFamilyName>\LocalState\EndfieldChargePlus. Windows/Microsoft Store handles removal using the normal package-data rules; explicitly export data first if you want to retain it.
 
-当所选变量需要时，应用可能读取本机 Windows / 设备状态，例如硬件与传感器、电池状态、网络接口信息（包括 Windows 能提供时的本地 IP / MAC / SSID）、主机名/用户名、进程名称与统计、安全/更新状态，以及剪贴板的类型、尺寸、文件数量或文本。这些信息用于本地 HUD 变量，Endfield Charge Plus 不会通过内置的更新检查、公网 IP 查询或 DeepSeek 余额请求上传这些本地变量值。
+## 3. 密钥与导出 / Secrets and exports
 
-Custom HTTP/JSON request headers are stored exactly as the user configures them. For secrets, use the supported `${env:VARIABLE_NAME}` form so the saved/exported configuration stores the environment-variable reference instead of the secret itself. If a secret is typed directly into a custom header, that literal value will also be present in settings and exported configuration.
+Windows 使用当前用户范围的 DPAPI 保护 DeepSeek API Key。配置及导出文件保存受保护值；更换 Windows 用户或系统后通常需要重新输入。
 
-自定义 HTTP/JSON 请求头会按用户输入的内容保存。敏感值建议使用支持的 `${env:VARIABLE_NAME}` 形式，这样设置与导出配置保存的是环境变量引用，而不是密钥本身；如果直接把密钥写入自定义 Header，该明文也会随设置保存并出现在导出的配置中。
+Windows protects the DeepSeek API key with current-user DPAPI. Settings and exports contain the protected value; another Windows account or installation normally requires the key to be entered again.
 
-## Network access / 网络访问
+自定义 HTTP/JSON 的 URL、参数和请求头可能包含密码、令牌或其他个人信息，并随配置保存或导出。支持环境变量引用的桌面配置可使用 `${env:VARIABLE_NAME}`，以保存引用代替直接填写秘密值。共享配置、备份或日志前，请先检查敏感内容；密钥加密不代表整个配置文件都已加密。
 
-The application may make the following outbound requests:
+Custom HTTP/JSON URLs, parameters and headers may contain credentials or personal information and can be saved/exported with settings. Desktop configuration that supports environment references can use `${env:VARIABLE_NAME}` instead of storing a literal secret. Review settings, backups and logs before sharing them. Protecting an API key does not encrypt the entire configuration file.
 
-- GitHub API: startup/manual update checks for `GlacierGlimmer/zmd-charge-plus`.
-- `api.ipify.org` / `api6.ipify.org`: only when public-IP variables are actually requested; results are cached.
-- DeepSeek API: only when the user configures an API key and uses the related data source/profile.
-- Custom HTTP/JSON sources: only endpoints explicitly configured by the user.
+## 4. 网络访问 / Network access
 
-应用可能进行以下出站网络请求：
+- 更新检查：启动时或手动访问 GitHub API，查询 `zmd-charge-plus` 对应的 `GlacierGlimmer/zmd-charge-plus` 已发布版本。
+- 公网 IP：请求相应变量时访问 `api.ipify.org` 或 `api6.ipify.org`，结果会缓存。
+- DeepSeek：启用相关数据源并配置 Key 后，向 API 发起余额等功能请求。默认接口为 `api.deepseek.com`。
+- 节假日日历：相关时段功能可从 `cdn.jsdelivr.net` 或 `raw.githubusercontent.com` 获取公开的 `NateScarlet/holiday-cn` 年度数据，不发送 DeepSeek Key。
+- HTTP/JSON 和网络探测：访问用户启用的数据源地址或探测目标。请求头、URL 中的参数和鉴权值按配置发给该目标。
 
-- GitHub API：启动时或手动检查 `GlacierGlimmer/zmd-charge-plus` 更新。
-- `api.ipify.org` / `api6.ipify.org`：仅当实际使用公网 IP 变量时请求，并进行缓存。
-- DeepSeek API：仅当用户配置 API Key 并使用相关数据源/方案时请求。
-- 自定义 HTTP/JSON 数据源：仅请求用户自己明确配置的地址。
+Outbound connections are made for update checks, DeepSeek requests, public holiday-calendar refreshes, enabled custom HTTP/JSON sources and configured probe targets. Desktop public-IP variables additionally use api.ipify.org/api6.ipify.org. Update checks use only this platform's GitHub repository: GlacierGlimmer/zmd-charge-plus. Calendar refreshes request public holiday-cn data from jsDelivr or GitHub Raw without a DeepSeek key. DeepSeek credentials go to the API endpoint used by that platform; Android also allows a user-configured base URL.
 
-These external services receive normal connection metadata such as the source IP address as part of ordinary network communication and are governed by their own privacy policies.
+外部服务会在正常连接中获得来源 IP 等连接信息，并获得该请求明确包含的数据；其处理方式受各自政策约束。打开项目、更新或帮助链接会交给系统浏览器，不代表浏览器和外部网站也由 ECP 控制。
 
-这些外部服务在正常网络通信过程中会获得来源 IP 等连接元数据，并受各自隐私政策约束。
+External services receive normal connection metadata such as the source IP and data explicitly included in a request, subject to their own policies. Project/update/help links open external services in the system browser; their behavior is outside ECP's control.
+
+## 5. 本机数据与权限 / Local data and permissions
+
+为实现所选功能，软件可能读取设备/硬件状态、电池、网络接口、运行进程或窗口、媒体状态以及系统允许的其他指标。剪贴板内容在请求相应变量时读取。数据能否读取取决于系统权限、设备、驱动和接口支持，无法读取时会显示不可用。
+
+Windows 的部分硬件传感器和真实 FPS 采集可能需要管理员权限。只有主动选择驱动安装功能时，才会从 PawnIO 官方 GitHub Releases 下载安装程序、校验后交由系统确认安装；ECP 不把该驱动嵌入便携包。AIDA64 接入读取用户启用的本机导出数据。
+
+Features may read device/hardware status, battery/network state, processes/windows, media status and other system-permitted metrics. Clipboard content is read for requested clipboard variables. Availability depends on permissions, hardware, drivers and supported interfaces; unavailable data is reported as unavailable.
+
+Some Windows sensors and real FPS collection require administrative rights. The explicit driver-install action downloads PawnIO from its official GitHub Releases, verifies the download and leaves installation approval to Windows. The portable package does not embed that driver. AIDA64 integration reads locally enabled exports.
+
+## 6. 日志、清理与反馈 / Logs, removal and feedback
+
+日志用于本地诊断，可能包含错误详情、路径、功能状态或自定义服务返回的信息。ECP 不会自动将诊断文件提交给开发者；请在主动分享前检查内容。清理前请退出软件，并按需要保留配置和密钥；删除密钥可能使原有受保护值无法使用。
+
+Logs are local diagnostics and may include error details, paths, feature status or custom-service responses. ECP does not automatically submit diagnostic files to the developer. Review them before sharing. Exit the app before clearing data and retain settings/keys as needed; deleting a protection key can make saved protected values unusable.
+
+开发与维护 / Developer and maintainer: **GlacierGlimmer冰川雪貓**  
+源码与反馈 / Source and issues: https://github.com/GlacierGlimmer/zmd-charge-plus

@@ -12,10 +12,14 @@ def serbian(value):
 
 BELARUSIAN=dict(zip('АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯ','A B V H D Je Jo Ž Z I J K Ł M N O P R S T U Ŭ F Ch C Č Š Y _ E Ju Ja'.split()))
 BELARUSIAN.update({k.lower():v.lower() for k,v in list(BELARUSIAN.items())})
+# A soft sign becomes Latin i/e behaviour, not a literal underscore; original
+# underscores in identifiers must survive the transliteration untouched.
+BELARUSIAN['Ь']=''
+BELARUSIAN['ь']=''
 def belarusian(value):
     soft={'ль':'l','сь':'ś','зь':'ź','ць':'ć','нь':'ń','Ль':'L','Сь':'Ś','Зь':'Ź','Ць':'Ć','Нь':'Ń'}
     for original,changed in soft.items():value=value.replace(original,changed)
-    return ''.join(BELARUSIAN.get(char,char).replace('_','') for char in value)
+    return ''.join(BELARUSIAN.get(char,char) for char in value)
 
 def old_indonesian(value):
     spelling={'sy':'sj','ny':'nj','kh':'ch','u':'oe','j':'dj','c':'tj','y':'j'}

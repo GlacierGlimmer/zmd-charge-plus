@@ -15,9 +15,11 @@ public sealed record AppSettings
     public bool HudEnabled { get; init; } = true;
     public bool StartWithWindows { get; init; } = false;
     public string HudToggleHotkey { get; init; } = "";
+    public Dictionary<string,string> QuickHotkeys {get;init;}=new();
     public string HudHotkeyShowAnimation { get; init; } = "Full";
     // Auto or a supported BCP-47 language code. Auto follows the Windows UI language.
     public string UiLanguage { get; init; } = "Auto";
+    public WorkspacePreferences Workspace { get; init; } = new();
 
     public double GlobalScale { get; init; } = DefaultGlobalScale;
     // Independent accessibility preferences, shared by Settings and all HUD instances.
@@ -37,6 +39,7 @@ public sealed record AppSettings
     public bool ClickToCycle { get; init; } = false;
 
     public bool AlwaysVisible { get; init; } = false;
+    public bool TransientHoverHold {get;init;}=true;
     public bool HotZoneEnabled { get; init; } = true;
     public HudPosition HotZonePosition { get; init; } = HudPosition.TopCenter;
     public int HotZoneWidth { get; init; } = 240;
