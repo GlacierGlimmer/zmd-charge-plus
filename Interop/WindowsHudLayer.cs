@@ -27,6 +27,13 @@ internal sealed class WindowsHudLayer : IDisposable
     internal void Apply(bool desktop,bool topmost)
         => Apply(desktop,topmost,refreshDesktop:false);
 
+    internal void Raise()
+    {
+        if(!OperatingSystem.IsWindows() || _disposed) return;
+        SetWindowPos(_handle,new IntPtr(-1),0,0,0,0,0x0001|0x0002|0x0010);
+        _topmost=true;
+    }
+
     private void Apply(bool desktop,bool topmost,bool refreshDesktop)
     {
         if(!OperatingSystem.IsWindows() || _disposed) return;

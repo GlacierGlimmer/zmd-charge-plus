@@ -80,6 +80,10 @@ public sealed partial class CustomHudRuntime : IDisposable
     private bool _pendingPowerEvent;
     private bool _pendingAcOnline;
 
+    private WindowsUsbDeviceWatcher? _usbWatcher;
+    private UsbDeviceChange? _pendingUsbChange;
+    private HudWindow? _usbNoticeHud;
+
     private DateTime _nextDeepSeekPeriodPoll = DateTime.MinValue;
     private string? _lastDeepSeekPeriod;
     private bool _pendingDeepSeekPeriodTransition;
@@ -140,6 +144,57 @@ public sealed partial class CustomHudRuntime : IDisposable
 
         if (!_appSettings.AlwaysVisible || !_appSettings.HudEnabled)
             _persistentShown = false;
+
+        if (!_appSettings.HudEnabled || !_appSettings.UsbInsertNotificationEnabled)
+        {
+            _pendingUsbChange = null;
+            _usbNoticeHud?.CancelPresentation();
+            if (_usbNoticeHud?.IsVisible == true) _usbNoticeHud.Hide();
+        }
+        ConfigureUsbWatcher();
+    }
+
+    private void ConfigureUsbWatcher()
+    {
+        if (_isChild || _disposed) return;
+        if (_running && _appSettings.UsbInsertNotificationEnabled)
+        {
+            _usbWatcher ??= new WindowsUsbDeviceWatcher(OnUsbDeviceChanged);
+            _usbWatcher.Start();
+        }
+        else
+        {
+            _usbWatcher?.Stop();
+            _pendingUsbChange = null;
+        }
+    }
+
+    private void OnUsbDeviceChanged(UsbDeviceChange change)
+    {
+        if (_disposed) return;
+        try
+        {
+            Dispatcher.UIThread.Post(() =>
+            {
+                if (_disposed || !_appSettings.UsbInsertNotificationEnabled) return;
+                if (!_appSettings.HudEnabled || IsUserHidden || _editingPreview) return;
+                if (!UsbScopeIncludes(_appSettings.UsbInsertNotificationScope, change.Category)) return;
+                _pendingUsbChange = change;
+            });
+        }
+        catch
+        {
+            // The dispatcher may already be shutting down.
+        }
+    }
+
+    private static bool UsbScopeIncludes(string? scope, UsbDeviceCategory category)
+    {
+        if (string.Equals(scope, "Storage", StringComparison.OrdinalIgnoreCase))
+            return category == UsbDeviceCategory.Storage;
+        if (string.Equals(scope, "Peripheral", StringComparison.OrdinalIgnoreCase))
+            return category == UsbDeviceCategory.Peripheral;
+        return true;
     }
 
     public Task ApplySettingsWithTransitionAsync(AppSettings settings)
@@ -222,9 +277,19 @@ public sealed partial class CustomHudRuntime : IDisposable
         if (_disposed || _running) return;
         _running=true;
         _observationTimer.Start();
+        ConfigureUsbWatcher();
         RunSerializedAsync(RunStartupPresentationAsync,wait:true);
     }
-    public void Stop() { _running=false; _timer.Stop();_observationTimer.Stop(); CancelRevision();ResetTriggerRules(); }
+    public void Stop()
+    {
+        _running=false;
+        _timer.Stop();_observationTimer.Stop();
+        ConfigureUsbWatcher();
+        _pendingUsbChange=null;
+        _usbNoticeHud?.CancelPresentation();
+        if (_usbNoticeHud?.IsVisible == true) _usbNoticeHud.Hide();
+        CancelRevision();ResetTriggerRules();
+    }
 
     private async Task RunStartupPresentationAsync()
     {
@@ -315,6 +380,16 @@ public sealed partial class CustomHudRuntime : IDisposable
                 _persistentProfileId = "";
             }
             return;
+        }
+
+        if (_editingPreview)
+        {
+            _pendingUsbChange = null;
+        }
+        else if (_pendingUsbChange is { } usbChange && !_hud.IsHudBusy)
+        {
+            _pendingUsbChange = null;
+            if (await ShowUsbNotificationAsync(usbChange)) return;
         }
 
         if (_appSettings.AlwaysVisible || _editingPreview)
@@ -491,6 +566,123 @@ public sealed partial class CustomHudRuntime : IDisposable
         {
             Interlocked.Exchange(ref _busy, 0);
         }
+    }
+
+    internal async Task<bool> ShowUsbNotificationAsync(UsbDeviceChange change)
+    {
+        if (_disposed || !_appSettings.UsbInsertNotificationEnabled) return false;
+        try
+        {
+            var hud = EnsureUsbNoticeHud();
+            // A wider persistent capsule must not peek out from behind the notification.
+            hud.MinimumContentWidth = _appSettings.AlwaysVisible && _hud.IsVisible ? _hud.VisibleContentWidth : 0;
+            hud.ApplySettings(_appSettings);
+            // The notification must fully cover a persistent HUD underneath it.
+            hud.Opacity = 1.0;
+            var task = hud.ShowCustomAsync(BuildUsbNotificationData(
+                change,
+                _appSettings.UsbInsertNotificationTagline,
+                _appSettings.UsbInsertNotificationTitle));
+            hud.RaiseAboveAll();
+            await task;
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _usbNoticeHud?.CancelPresentation();
+            if (_usbNoticeHud?.IsVisible == true) _usbNoticeHud.Hide();
+            EndfieldChargePlus.Diagnostics.AppLog.Error("Unable to show the USB notification.", ex);
+            return false;
+        }
+    }
+
+    private HudWindow EnsureUsbNoticeHud()
+    {
+        if (_usbNoticeHud is { IsClosed: false }) return _usbNoticeHud;
+        _usbNoticeHud?.Close();
+        _usbNoticeHud = new HudWindow { SuppressRadialInput = true };
+        _usbNoticeHud.ApplySettings(_appSettings);
+        return _usbNoticeHud;
+    }
+
+    internal static HudRenderData BuildUsbNotificationData(
+        UsbDeviceChange change,
+        string? customTagline = null,
+        string? customTitle = null)
+    {
+        bool storage = change.Category == UsbDeviceCategory.Storage;
+        bool removal = change.Kind == UsbDeviceChangeKind.Removal;
+
+        string name = string.IsNullOrWhiteSpace(change.Name)
+            ? LocalizationManager.Text(storage ? "USB 存储设备" : "USB 设备",
+                storage ? "USB storage device" : "USB device")
+            : change.Name.Trim();
+        if (name.Length > 18) name = name[..17] + "…";
+
+        string defaultTitle = removal
+            ? LocalizationManager.Text(storage ? "USB 存储设备已移除" : "USB 设备已移除",
+                storage ? "USB storage removed" : "USB device removed")
+            : LocalizationManager.Text(storage ? "USB 存储设备已连接" : "USB 设备已连接",
+                storage ? "USB storage connected" : "USB device connected");
+        string defaultTagline = storage
+            ? (removal ? "/// USB STORAGE REMOVED" : "/// USB STORAGE")
+            : (removal ? "/// USB REMOVED" : "/// USB DEVICE");
+
+        string right;
+        string suffix = "";
+        double progress;
+        string usedText = "";
+        if (removal)
+        {
+            right = LocalizationManager.Text("已移除", "Removed");
+            progress = 0;
+        }
+        else if (storage && change.UsedPercent is { } used)
+        {
+            usedText = Math.Round(used).ToString("0");
+            right = usedText;
+            suffix = "%";
+            progress = Math.Clamp(used / 100d, 0d, 1d);
+        }
+        else
+        {
+            right = "USB";
+            progress = 1.0;
+        }
+
+        string Expand(string template)
+        {
+            string action = removal
+                ? LocalizationManager.Text("已移除", "removed")
+                : LocalizationManager.Text("已连接", "connected");
+            string type = storage
+                ? LocalizationManager.Text("USB 存储设备", "USB storage device")
+                : LocalizationManager.Text("USB 设备", "USB device");
+            return template
+                .Replace("{device}", name, StringComparison.OrdinalIgnoreCase)
+                .Replace("{drive}", change.DriveLetter ?? "", StringComparison.OrdinalIgnoreCase)
+                .Replace("{used}", usedText, StringComparison.OrdinalIgnoreCase)
+                .Replace("{action}", action, StringComparison.OrdinalIgnoreCase)
+                .Replace("{type}", type, StringComparison.OrdinalIgnoreCase);
+        }
+
+        string tagline = string.IsNullOrWhiteSpace(customTagline) ? defaultTagline : Expand(customTagline.Trim());
+        string title = string.IsNullOrWhiteSpace(customTitle) ? defaultTitle : Expand(customTitle.Trim());
+        if (string.IsNullOrWhiteSpace(tagline)) tagline = defaultTagline;
+        if (string.IsNullOrWhiteSpace(title)) title = defaultTitle;
+
+        return new HudRenderData(
+            Tagline: tagline,
+            Title: title,
+            PrimaryText: name,
+            SecondaryText: "",
+            RightText: right,
+            RightSuffix: suffix,
+            Progress: progress,
+            LeftIcon: storage ? "disk" : "link",
+            RightIcon: storage ? "disk" : "link",
+            AccentColor: removal ? "#FFB84D" : "#C6CA4C",
+            SimpleAnimation: false);
     }
 
     private async Task TickPersistentAsync()
@@ -781,6 +973,9 @@ public sealed partial class CustomHudRuntime : IDisposable
         if (_disposed) return;
         _disposed=true; _running=false;
         _timer.Stop();_observationTimer.Stop(); _revision.Cancel(); _hud.CancelPresentation();
+        _usbWatcher?.Dispose(); _usbWatcher=null;
+        _pendingUsbChange=null;
+        _usbNoticeHud?.Close(); _usbNoticeHud=null;
         ProfileDataWarnings.Forget(_warningScope);
         _hud.ShouldHoldTransient=null;
         _hud.HudClicked -= OnHudClicked;

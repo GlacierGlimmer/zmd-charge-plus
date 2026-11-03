@@ -26,6 +26,9 @@ public sealed partial class CustomHudRuntime
         _hotZone.Reset();
         _pendingPowerEvent = false;
         _pendingDeepSeekPeriodTransition = false;
+        _pendingUsbChange = null;
+        _usbNoticeHud?.CancelPresentation();
+        if (hidden && _usbNoticeHud?.IsVisible == true) _usbNoticeHud.Hide();
         ResetTriggerRules();
         var children = _instances.Values.Select(i => i.Runtime.SetUserHiddenAsync(hidden)).ToList();
         if (hidden)
