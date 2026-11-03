@@ -43,6 +43,7 @@ internal class BugRegressionTests
             if(args.Length>0 && args[0]=="--next") { NextVersionRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} next-version checks"); return 0; }
             if(args.Length>0 && args[0]=="--hotkey") { HotkeyRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} HUD shortcut checks"); return 0; }
             if(args.Length>0 && args[0]=="--warnings") { DataWarningRegressionChecks.Run(Check); Console.WriteLine($"PASS {_checks} variable warning checks"); return 0; }
+            if(args.Length>0 && args[0]=="--usb") { UsbNotificationChecks.Run(Check); Console.WriteLine($"PASS {_checks} USB notification checks"); return 0; }
             if(args.Length>0 && args[0]=="--desktop-shell") { DesktopShellChecks.Run(Check); Console.WriteLine($"PASS {_checks} actual Explorer desktop checks"); return 0; }
             if(args.Length>0 && args[0]=="--rendering") { NativeRenderingChecks.Run(Check); Console.WriteLine($"PASS {_checks} native rendering checks"); return 0; }
             if(args.Length>0 && args[0]=="--interaction") { InteractionRegressionChecks.Standalone(Check); Console.WriteLine($"PASS {_checks} interaction checks"); return 0; }
@@ -53,6 +54,7 @@ internal class BugRegressionTests
             Check(face.GlyphTypeface.GetGlyph('A') != 0, "ECP-4: bundled Inter must resolve without an installed font.");
             NativeWindowChecks();
             FeatureRegressionChecks.Run(Check);
+            UsbNotificationChecks.Run(Check);
             FrameCollectorResourceChecks.Run(Check);
             SettingsFeatureChecks();
             RuntimeRegressionChecks.Run(Check);
