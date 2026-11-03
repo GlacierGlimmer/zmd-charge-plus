@@ -191,6 +191,9 @@ public static class SettingsManager
             HudToggleHotkey = HudHotkeyGesture.TryParse(settings.HudToggleHotkey, out var hotkey) ? hotkey.Text : "",
             QuickHotkeys = HudQuickHotkeys.Normalize(settings.QuickHotkeys),
             HudHotkeyShowAnimation = string.Equals(settings.HudHotkeyShowAnimation,"Simple",StringComparison.OrdinalIgnoreCase) ? "Simple" : "Full",
+            UsbInsertNotificationScope = NormalizeUsbScope(settings.UsbInsertNotificationScope),
+            UsbInsertNotificationTagline = (settings.UsbInsertNotificationTagline ?? "").Trim(),
+            UsbInsertNotificationTitle = (settings.UsbInsertNotificationTitle ?? "").Trim(),
             HotZonePosition=(HudPosition)Math.Clamp((int)settings.HotZonePosition,0,8),
             HotZoneWidth=Math.Clamp(settings.HotZoneWidth,8,8192),HotZoneHeight=Math.Clamp(settings.HotZoneHeight,2,8192),
             HotZoneOffsetX=Math.Clamp(settings.HotZoneOffsetX,-32768,32768),HotZoneOffsetY=Math.Clamp(settings.HotZoneOffsetY,-32768,32768),
@@ -198,6 +201,14 @@ public static class SettingsManager
             ClickToCycle = settings.ClickToCycle,
             UiLanguage = LocalizationManager.NormalizePreference(settings.UiLanguage),
             CustomHud = HudSettingsNormalizer.Normalize(settings.CustomHud ?? CustomHudSettings.CreateDefault()),
+        };
+
+    private static string NormalizeUsbScope(string? value)
+        => value?.Trim().ToLowerInvariant() switch
+        {
+            "storage" => "Storage",
+            "peripheral" => "Peripheral",
+            _ => "All",
         };
 
     private static void BackupCorruptFile(string path)

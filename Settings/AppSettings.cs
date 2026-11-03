@@ -14,6 +14,12 @@ public sealed record AppSettings
     // turned off temporarily during the current session from the settings window.
     public bool HudEnabled { get; init; } = true;
     public bool StartWithWindows { get; init; } = false;
+    public bool UsbInsertNotificationEnabled { get; init; } = false;
+    // All | Storage | Peripheral
+    public string UsbInsertNotificationScope { get; init; } = "All";
+    // Empty uses the built-in per-state text. Supports {device}, {drive}, {used}, {action}, {type}.
+    public string UsbInsertNotificationTagline { get; init; } = "";
+    public string UsbInsertNotificationTitle { get; init; } = "";
     public string HudToggleHotkey { get; init; } = "";
     public Dictionary<string,string> QuickHotkeys {get;init;}=new();
     public string HudHotkeyShowAnimation { get; init; } = "Full";

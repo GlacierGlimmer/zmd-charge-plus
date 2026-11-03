@@ -164,6 +164,28 @@
                     <ToggleSwitch x:Name="StartupSwitch" Grid.Column="1" VerticalAlignment="Center" />
                   </Grid>
                   <TextBlock x:Name="StartupStatusText" IsVisible="False" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpAccent}" />
+                  <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Spacing="3" Margin="0,0,18,0">
+                      <TextBlock Text="USB 插拔提示" FontSize="12.5" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                      <TextBlock Text="插入或移除 USB 设备时在 HUD 上叠加显示提示。" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <ToggleSwitch x:Name="UsbNoticeSwitch" Grid.Column="1" VerticalAlignment="Center" />
+                  </Grid>
+                  <StackPanel x:Name="UsbNoticeOptionsPanel" IsVisible="False" Spacing="6">
+                    <TextBlock Text="提示范围" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                    <ComboBox x:Name="UsbNoticeScopeCombo" MinWidth="280" MaxWidth="420" MinHeight="34" HorizontalAlignment="Left" />
+                    <Grid ColumnDefinitions="*,*" Margin="0,6,0,0">
+                      <StackPanel Spacing="4" Margin="0,0,8,0">
+                        <TextBlock Text="上行文字" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <TextBox x:Name="UsbNoticeTaglineBox" MaxLength="80" MinHeight="34" Watermark="留空使用内置文案" />
+                      </StackPanel>
+                      <StackPanel Grid.Column="1" Spacing="4" Margin="8,0,0,0">
+                        <TextBlock Text="主标题" FontSize="12" Foreground="{DynamicResource EcpMuted}" TextWrapping="Wrap" />
+                        <TextBox x:Name="UsbNoticeTitleBox" MaxLength="80" MinHeight="34" Watermark="留空使用内置文案" />
+                      </StackPanel>
+                    </Grid>
+                    <TextBlock x:Name="UsbNoticePlaceholderHint" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
+                  </StackPanel>
                   <Border Height="1" Background="{DynamicResource EcpBorder}" />
                 </StackPanel>
               </Border>
