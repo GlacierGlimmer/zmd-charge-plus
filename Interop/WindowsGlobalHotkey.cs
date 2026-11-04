@@ -14,6 +14,7 @@ internal sealed class WindowsGlobalHotkey : IDisposable
     private ushort _atom;
     private IntPtr _window;
     private int _registration;
+    private WindowsObservedShortcut? _observed;
     private bool _disposed;
     internal string Gesture { get; private set; } = "";
     internal int LastError { get; private set; }
@@ -45,10 +46,18 @@ internal sealed class WindowsGlobalHotkey : IDisposable
             if (_registration != 0) UnregisterHotKey(_window, _registration);
             _registration = 0;
             Gesture = "";
+            _observed?.Dispose();_observed=null;
             return true;
         }
         if (!HudHotkeyGesture.TryParse(text, out var gesture)) return false;
         if (Gesture == gesture.Text) return true;
+        if(gesture.IsMouse || gesture.IsModifier || gesture.VirtualKey==0x7B)
+        {
+            var observed=new WindowsObservedShortcut(gesture,_pressed);
+            if(!observed.Available){observed.Dispose();LastError=5;return false;}
+            if(_registration!=0)UnregisterHotKey(_window,_registration);_registration=0;
+            _observed?.Dispose();_observed=observed;Gesture=gesture.Text;return true;
+        }
         // Register the replacement first: a conflict must leave the old shortcut usable.
         int next = _registration == 1 ? 2 : 1;
         if (!RegisterHotKey(_window, next, gesture.Modifiers | 0x4000, gesture.VirtualKey))
@@ -57,6 +66,7 @@ internal sealed class WindowsGlobalHotkey : IDisposable
             return false;
         }
         if (_registration != 0) UnregisterHotKey(_window, _registration);
+        _observed?.Dispose();_observed=null;
         _registration = next;
         Gesture = gesture.Text;
         return true;
@@ -86,6 +96,7 @@ internal sealed class WindowsGlobalHotkey : IDisposable
     {
         if (_disposed) return;
         _disposed = true;
+        _observed?.Dispose();_observed=null;
         if (_registration != 0) UnregisterHotKey(_window, _registration);
         if (_window != IntPtr.Zero) DestroyWindow(_window);
         if (_atom != 0) UnregisterClassW(_className, _instance);

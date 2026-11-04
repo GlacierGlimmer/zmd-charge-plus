@@ -7,6 +7,9 @@ internal static class WorkspaceManualContent
         ManualText Text(string key)=>new(key,key,WorkspaceStrings.Get(key));
         ManualBlock Block(string id,string key,string body,string target)=>new(id,Text(key),new(body,body,body),Kind:"steps",Target:target);
         var result=chapters.ToList();
+        string keyboardHelp=LocalizationManager.Text("支持键盘和鼠标按键，可搭配 Ctrl、Alt、Shift 或 Win/Command。系统保留按键可能不可用。","Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.");
+        string captureHelp=LocalizationManager.Text("按下键盘或鼠标按键；Esc 清除此绑定。","Press a key or mouse button. Esc clears the binding.");
+        for(int i=0;i<result.Count;i++)if(result[i].Id=="summons")result[i]=result[i] with{Blocks=result[i].Blocks.Select(b=>b.Id=="shortcut"?b with{Body=new ManualText("","",keyboardHelp+"\n"+captureHelp+"\n"+WorkspaceStrings.Get("Your changes apply after Save & Apply.")),Target="quick"}:b).ToArray()};
         result.Add(new("workspace",Text("Quick actions"),Text("Your changes apply after Save & Apply."),new[]{
             Block("guide","Radial switcher",WorkspaceStrings.Get("Hold the middle mouse button on the HUD, drag to a profile, then release to switch.")+"\n"+WorkspaceStrings.Get("Release in the centre or outside the ring to cancel.")+"\n"+WorkspaceStrings.Get("Press Esc to cancel."),"ring"),
             Block("gesture","HUD gestures",WorkspaceStrings.Get("Hold delay")+" / ms · "+WorkspaceStrings.Get("Drag threshold")+" / px · "+WorkspaceStrings.Get("Ring size")+" / px","quick"),

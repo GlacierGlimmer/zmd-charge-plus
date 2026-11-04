@@ -9,31 +9,19 @@ public partial class SettingsWindow
     private DesktopGlobalHotkey? _hudHotkey;
     private string? _hotkeyStatusZh, _hotkeyStatusEn;
     private object?[]? _hotkeyStatusArguments;
-    internal bool IsRecordingHudHotkey => HudHotkeyBox.IsFocused || _quickHotkeyBoxes.Values.Any(b=>b.IsFocused);
+    internal bool IsRecordingHudHotkey => _recordingShortcut is not null;
 
     private void InitializeHudHotkeyEditor()
     {
         RebuildHotkeyAnimationChoices();
-        HudHotkeyBox.AddHandler(KeyDownEvent, OnHudHotkeyKeyDown, RoutingStrategies.Tunnel);
+        var warning=new Avalonia.Controls.TextBlock{TextWrapping=Avalonia.Media.TextWrapping.Wrap,FontSize=12,IsVisible=false};
+        if(HudHotkeyBox.Parent?.Parent is Avalonia.Controls.StackPanel panel)panel.Children.Insert(2,warning);
+        ConfigureShortcutRecorder("toggle",HudHotkeyBox,warning);InitializeShortcutPointerRecorder();
         ClearHudHotkeyBtn.Click += (_, _) =>
         {
             HudHotkeyBox.Text = "";
             SetHudHotkeyStatus("保存并应用后关闭快捷键。", "Save & Apply to disable the shortcut.");
         };
-    }
-
-    private void OnHudHotkeyKeyDown(object? sender, KeyEventArgs e)
-    {
-        if (e.Key == Key.Tab && (e.KeyModifiers & ~KeyModifiers.Shift) == 0) return;
-        e.Handled = true;
-        if (e.Key is Key.LeftCtrl or Key.RightCtrl or Key.LeftAlt or Key.RightAlt or Key.LeftShift or Key.RightShift or Key.LWin or Key.RWin) return;
-        if (HudHotkeyGesture.TryCapture(e.Key, e.KeyModifiers, out var gesture))
-        {
-            HudHotkeyBox.Text = gesture.Text;
-            SetHudHotkeyStatus("保存并应用后启用此快捷键。", "Save & Apply to enable this shortcut.");
-        }
-        else
-            SetHudHotkeyStatus("请使用 Ctrl 或 Alt 加字母、数字或功能键（F12 除外）。", "Use Ctrl or Alt with a letter, digit or function key (except F12).");
     }
 
     internal void AttachHudHotkey(DesktopGlobalHotkey? hotkey)
@@ -86,9 +74,11 @@ public partial class SettingsWindow
 
     private void SaveSettingsWithHudHotkey(AppSettings settings)
     {
+        if(!RefreshShortcutValidation())throw new InvalidOperationException(LocalizationManager.Text("快捷键冲突：{0}","Shortcut conflict: {0}").Replace("{0}",string.Join(", ",_shortcutEditors.Values.Where(x=>x.Hint.IsVisible).Select(x=>x.Box.Text))));
         if(_quickHotkeys is not null)
         {
             if(_quickHotkeys.TryApply(settings,()=>SettingsManager.Save(settings)))return;
+            _registrationErrorChord=_quickHotkeys.ErrorGesture;RefreshShortcutValidation();
             SetHudHotkeyStatus("无法注册此快捷键，可能已被占用。原有快捷键未更改，请更换组合键。", "Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.");
             throw new InvalidOperationException(HudHotkeyStatusText.Text+" "+_quickHotkeys.ErrorGesture);
         }

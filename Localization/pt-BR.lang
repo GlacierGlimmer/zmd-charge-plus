@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modificado)
@@ -2067,7 +2067,7 @@ Uso, proporção restante ou progresso decorrido; também pode controlar o anel.
 Uso, proporção restante, progresso decorrido e outros valores de estado; pode controlar o anel de progresso.
 Use +, -, *, /, % para resto, ^ para potência e parênteses. As comparações aceitam >, >=, <, <=, == e !=. Os operadores booleanos são &&, ||, ! e and/or/not. Condições usam test ? yes : no ou if(test, yes, no). ?? fornece um valor alternativo para valores nulos ou vazios.
 Use Ctrl ou Alt com uma letra, dígito ou tecla de função, exceto F12.
-Use Ctrl ou Alt e, opcionalmente, Shift com uma letra, dígito ou F1–F24, exceto F12. Salve para aplicar; deixe vazio para desativar.
+São aceitas teclas e botões do mouse, também com Ctrl, Alt, Shift ou Win/Command. Teclas reservadas pelo sistema podem estar indisponíveis.
 Use Gerenciamento de dados → Dados de hardware para inspecionar sensores e campos de firmware. Procure por temperatura, módulo de memória, nome do dispositivo ou ID original. Selecione uma linha para copiar seu token. Export Diagnostics salva um snapshot local JSON do status atual e leituras.
 Usar Root para leituras
 Use uma âncora predefinida com deslocamentos ou especifique coordenadas personalizadas.
@@ -2534,3 +2534,7 @@ Pré-visualizar o perfil atual
 Abrir definições
 Os atalhos de teclado funcionam enquanto esta aplicação tem o foco.
 Manter o HUD visível enquanto o cursor estiver sobre ele ou a zona de ativação
+Pressione uma tecla ou um botão do mouse. Esc remove esta atribuição.
+Conflito de atalhos: {0}
+Atalho indisponível: {0}
+São aceitas teclas e botões do mouse, também com Ctrl, Alt, Shift ou Win/Command. Teclas reservadas pelo sistema podem estar indisponíveis.

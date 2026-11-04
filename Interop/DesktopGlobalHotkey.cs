@@ -8,6 +8,7 @@ internal sealed class DesktopGlobalHotkey : IDisposable
     private readonly WindowsGlobalHotkey? _windows;
     private readonly UnixHotkey? _unix;
     internal string Gesture=>_windows?.Gesture ?? _unix?.Gesture ?? "";
+    internal static bool ClaimsMouse(uint key)=>OperatingSystem.IsWindows()?WindowsObservedShortcut.Matches(key,WindowsObservedShortcut.CurrentModifiers):UnixRadialInput.ClaimsMouse(key);
     internal int LastError=>_windows?.LastError ?? _unix?.LastError ?? -1;
     internal DesktopGlobalHotkey(WindowsGlobalHotkey service)=>_windows=service;
     internal DesktopGlobalHotkey(Action pressed)
@@ -29,6 +30,7 @@ internal sealed class DesktopGlobalHotkey : IDisposable
         private int _key;
         private uint _mods,_id;
         private bool _down,_disposed;
+        private IDisposable? _mouse;
         internal string Gesture {get;private set;}="";
         internal int LastError {get;private set;}
         internal UnixHotkey(Action pressed)
@@ -54,27 +56,30 @@ internal sealed class DesktopGlobalHotkey : IDisposable
             if(text.Length==0){Clear();return true;}
             if(!HudHotkeyGesture.TryParse(text,out var chord))return false;
             if(chord.Text==Gesture)return true;
+            if(chord.IsMouse){var lease=UnixRadialInput.TryBindMouse(chord,_pressed);if(lease is null){LastError=-4;return false;}Clear();_mouse=lease;Gesture=chord.Text;return true;}
             if(OperatingSystem.IsMacOS())
             {
                 if(_eventHandler==IntPtr.Zero || !MacKeys.TryGetValue(chord.VirtualKey,out uint key)){LastError=-2;return false;}
-                uint mods=((chord.Modifiers&2)!=0 ? 4096u : 0)|((chord.Modifiers&1)!=0 ? 2048u : 0)|((chord.Modifiers&4)!=0 ? 512u : 0);
+                uint mods=((chord.Modifiers&2)!=0 ? 4096u : 0)|((chord.Modifiers&1)!=0 ? 2048u : 0)|((chord.Modifiers&4)!=0 ? 512u : 0)|((chord.Modifiers&8)!=0 ? 256u : 0);
                 uint id=_id+1;
                 LastError=RegisterEventHotKey(key,mods,new HotKeyId(0x45435048,id),GetApplicationEventTarget(),0,out var next);
                 if(LastError!=0)return false;
                 Clear();_carbonRef=next;_id=id;Gesture=chord.Text;return true;
             }
             if(_display==IntPtr.Zero){LastError=-3;return false;}
-            string name=chord.VirtualKey is >= 0x70 and <=0x87 ? "F"+(chord.VirtualKey-0x70+1) : ((char)chord.VirtualKey).ToString().ToLowerInvariant();
+            string name=chord.X11KeyName;
             int nextKey=XKeysymToKeycode(_display,XStringToKeysym(name));
-            uint nextMods=((chord.Modifiers&2)!=0 ? 4u : 0)|((chord.Modifiers&1)!=0 ? 8u : 0)|((chord.Modifiers&4)!=0 ? 1u : 0);
+            uint nextMods=((chord.Modifiers&2)!=0 ? 4u : 0)|((chord.Modifiers&1)!=0 ? 8u : 0)|((chord.Modifiers&4)!=0 ? 1u : 0)|((chord.Modifiers&8)!=0 ? 64u : 0);
             if(nextKey==0){LastError=-2;return false;}
-            int error=0;IntPtr previous=IntPtr.Zero;
+            int error=0;IntPtr previous=IntPtr.Zero;Delegate? previousHandler=null;bool forwarding=false;
             XErrorHandler handler=(display,evt)=>{
                 if(display==_display){error=Marshal.ReadByte(evt,32);return 0;}
-                return previous==IntPtr.Zero ? 0 : Marshal.GetDelegateForFunctionPointer<XErrorHandler>(previous)(display,evt);
+                if(forwarding || previousHandler is null)return 0;
+                try{forwarding=true;return (int)(previousHandler.DynamicInvoke(display,evt)??0);}catch{return 0;}finally{forwarding=false;}
             };
             // X errors are asynchronous: force receipt before deciding whether to replace.
             previous=XSetErrorHandler(Marshal.GetFunctionPointerForDelegate(handler));
+            if(previous!=IntPtr.Zero)previousHandler=Marshal.GetDelegateForFunctionPointer(previous,typeof(XErrorHandler));
             try
             {
                 foreach(uint locks in LockMasks)XGrabKey(_display,nextKey,nextMods|locks,_root,false,1,1);
@@ -91,8 +96,9 @@ internal sealed class DesktopGlobalHotkey : IDisposable
             while(XPending(_display)>0)
             {
                 XNextEvent(_display,out var e);
-                if(e.KeyCode!=_key || (e.State&~18u)!=_mods)continue;
+                if(e.KeyCode!=_key)continue;
                 if(e.Type==3){_down=false;continue;}
+                if((e.State&(1u|4u|8u|64u))!=_mods)continue;
                 if(e.Type==2 && !_down){_down=true;_pressed();}
             }
         }
@@ -105,6 +111,7 @@ internal sealed class DesktopGlobalHotkey : IDisposable
         }
         private void Clear()
         {
+            _mouse?.Dispose();_mouse=null;
             if(_carbonRef!=IntPtr.Zero){UnregisterEventHotKey(_carbonRef);_carbonRef=IntPtr.Zero;}
             if(_display!=IntPtr.Zero && _key!=0)foreach(uint locks in LockMasks)XUngrabKey(_display,_key,_mods|locks,_root);
             _key=0;_down=false;Gesture="";
@@ -124,7 +131,9 @@ internal sealed class DesktopGlobalHotkey : IDisposable
             for(uint i=0;i<26;i++)keys['A'+i]=letters[i];
             uint[] digits={29,18,19,20,21,23,22,26,28,25};for(uint i=0;i<10;i++)keys['0'+i]=digits[i];
             uint[] functions={122,120,99,118,96,97,98,100,101,109,103,111,105,107,113,106,64,79,80,90};
-            for(uint i=0;i<functions.Length;i++)keys[0x70+i]=functions[i];return keys;
+            for(uint i=0;i<functions.Length;i++)keys[0x70+i]=functions[i];
+            foreach(var (vk,code) in new (uint,uint)[]{(8,51),(9,48),(13,36),(19,113),(20,57),(27,53),(32,49),(33,116),(34,121),(35,119),(36,115),(37,123),(38,126),(39,124),(40,125),(44,105),(45,114),(46,117),(91,55),(92,54),(93,110),(144,71),(145,107),(160,56),(161,60),(162,59),(163,62),(164,58),(165,61),(186,41),(187,24),(188,43),(189,27),(190,47),(191,44),(192,50),(219,33),(220,42),(221,30),(222,39),(226,10),(96,82),(97,83),(98,84),(99,85),(100,86),(101,87),(102,88),(103,89),(104,91),(105,92),(106,67),(107,69),(109,78),(110,65),(111,75)})keys[vk]=code;
+            return keys;
         }
         [StructLayout(LayoutKind.Sequential)] private readonly record struct EventType(uint Class,uint Kind);
         [StructLayout(LayoutKind.Sequential)] private readonly record struct HotKeyId(uint Signature,uint Id);

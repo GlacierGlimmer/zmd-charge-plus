@@ -12,5 +12,6 @@ public sealed partial class CustomHudRuntime
         return target is null?"":!string.IsNullOrEmpty(target._manualProfileId)?target._manualProfileId:
             !string.IsNullOrEmpty(target._persistentProfileId)?target._persistentProfileId:target._settings.ActiveProfileId;
     }
-    private void NotifyProfileSelected(string id)=>(_selectionOwner??this).ProfileSelected?.Invoke(_selectionInstanceId,id);
+    private string _lastNotifiedProfileId="";
+    private void NotifyProfileSelected(string id){if(id==_lastNotifiedProfileId)return;_lastNotifiedProfileId=id;(_selectionOwner??this).ProfileSelected?.Invoke(_selectionInstanceId,id);}
 }

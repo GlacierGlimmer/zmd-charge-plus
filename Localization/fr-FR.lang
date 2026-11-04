@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (modifié)
@@ -2067,7 +2067,7 @@ Informations d’état telles que utilisation, part restante et progression éco
 Informations d’état telles que le taux d’utilisation, la part restante ou la progression écoulée ; elles peuvent piloter l’anneau de progression.
 Utilisez +, -, *, /, % pour le reste, ^ pour la puissance et les parenthèses. Les comparaisons prennent en charge >, >=, <, <=, == et !=. Les opérateurs booléens comprennent &&, ||, ! et and/or/not. Les conditions utilisent test ? yes : no ou if(test, yes, no). ?? fournit une valeur de remplacement pour les valeurs nulles ou vides.
 Utilisez Ctrl ou Alt avec une lettre, un chiffre ou une touche de fonction, sauf F12.
-Ctrl ou Alt avec lettre, chiffre ou F1–F24 sauf F12 ; Shift facultatif. Enregistrez pour appliquer, vide pour désactiver.
+Les touches du clavier et les boutons de souris sont pris en charge, avec Ctrl, Alt, Maj ou Win/Command en option. Les touches réservées au système peuvent être indisponibles.
 Utilisez Gestion des données → Données matérielles pour examiner les capteurs et les champs du micrologiciel. Recherchez par température, module mémoire, nom d'appareil ou identifiant d'origine. Sélectionnez une ligne pour copier son jeton. Exporter les diagnostics enregistre localement un instantané JSON de l'état et des mesures actuels.
 Collecter les mesures avec Root
 Utilisez un ancrage prédéfini avec ajustements ou indiquez des coordonnées personnalisées.
@@ -2534,3 +2534,7 @@ Aperçu du profil actuel
 Ouvrir les paramètres
 Les raccourcis clavier fonctionnent lorsque cette application est au premier plan.
 Garder le HUD visible lorsque le pointeur survole le HUD ou la zone d’activation
+Appuyez sur une touche ou un bouton de souris. Échap efface cette affectation.
+Conflit de raccourci : {0}
+Raccourci indisponible : {0}
+Les touches du clavier et les boutons de souris sont pris en charge, avec Ctrl, Alt, Maj ou Win/Command en option. Les touches réservées au système peuvent être indisponibles.

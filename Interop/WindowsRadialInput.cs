@@ -148,6 +148,7 @@ internal sealed class WindowsRadialInput : IDisposable
         internal bool ProcessMessage(int msg,PixelPoint point,int wheel)
         {
             if(_stopping)return false;
+            if(msg==0x207 && WindowsObservedShortcut.Matches(4,WindowsObservedShortcut.CurrentModifiers))return false;
             if(msg==0x20A && _active is null)
             {
                 var entries=Volatile.Read(ref _entries);

@@ -7,7 +7,7 @@ public sealed partial class CustomHudRuntime
     {
         if ((!_appSettings.HudEnabled && !_editingPreview) || DateTime.UtcNow<_nextFrameHeartbeat) return;
         _nextFrameHeartbeat=DateTime.UtcNow.AddSeconds(1);
-        var profile=_settings.AutoCycle ? ResolveCycleProfiles().ElementAtOrDefault(_profileIndex) ?? ResolveActiveProfile() : ResolveActiveProfile();
+        var profile=_settings.Profiles.FirstOrDefault(p=>p.Id==_manualProfileId) ?? (_settings.AutoCycle ? ResolveCycleProfiles().ElementAtOrDefault(_profileIndex) ?? ResolveActiveProfile() : ResolveActiveProfile());
         if(profile is null) return;
         var keys=HudProfileRenderer.GetRequiredVariables(profile);
         foreach(string kind in new[] { "display","window" })

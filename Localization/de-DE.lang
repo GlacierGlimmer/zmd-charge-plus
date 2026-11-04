@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (geändert)
@@ -2067,7 +2067,7 @@ Statusinformationen wie Auslastung, verbleibender Anteil und verstrichener Forts
 Statuswerte wie Auslastung, Restanteil und Fortschritt; auch für den Ring nutzbar.
 Verwenden Sie +, -, *, /, % für den Rest, ^ für Potenzen und Klammern. Vergleiche unterstützen >, >=, <, <=, == und !=. Boolesche Operatoren sind &&, ||, ! und and/or/not. Bedingungen verwenden test ? yes : no oder if(test, yes, no). ?? liefert einen Ersatzwert für null oder leere Werte.
 Verwenden Sie Ctrl oder Alt mit einem Buchstaben, einer Ziffer oder einer Funktionstaste (außer F12).
-Ctrl oder Alt mit Buchstabe, Ziffer oder F1–F24 außer F12; Shift optional. Speichern zum Anwenden, leer zum Deaktivieren.
+Tastatur- und Maustasten werden unterstützt, auch zusammen mit Strg, Alt, Umschalt oder Win/Command. Vom System reservierte Tasten sind unter Umständen nicht verfügbar.
 Prüfen Sie Sensoren und Firmwarefelder unter Datenverwaltung → Hardwaredaten. Suchen Sie nach Temperatur, Speichermodul, Gerätename oder ursprünglicher ID. Wählen Sie eine Zeile, um ihr Token zu kopieren. Diagnose exportieren speichert lokal einen JSON-Schnappschuss des aktuellen Status und der Messwerte.
 Werte mit Root erfassen
 Verwenden Sie einen vorgegebenen Anker mit Versatz oder geben Sie eigene Koordinaten an.
@@ -2534,3 +2534,7 @@ Aktuelles Profil anzeigen
 Einstellungen öffnen
 Tastenkürzel funktionieren nur, solange diese App den Fokus hat.
 HUD beim Zeigen auf das HUD oder die Aktivierungszone sichtbar halten
+Eine Taste oder Maustaste drücken. Esc hebt die Belegung auf.
+Tastenkonflikt: {0}
+Tastenkürzel nicht verfügbar: {0}
+Tastatur- und Maustasten werden unterstützt, auch zusammen mit Strg, Alt, Umschalt oder Win/Command. Vom System reservierte Tasten sind unter Umständen nicht verfügbar.

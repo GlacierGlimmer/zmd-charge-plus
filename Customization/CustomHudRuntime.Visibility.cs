@@ -11,6 +11,7 @@ public sealed partial class CustomHudRuntime
     {
         if (_disposed) return Task.CompletedTask;
         IsUserHidden = hidden;
+        _instantSettingsRefresh=false;_settingsProfileTransition=false;
         _hud.CancelRadial();
         CancelRevision();
         // A shortcut may interrupt Save & Apply's retract animation.
@@ -40,14 +41,16 @@ public sealed partial class CustomHudRuntime
         return Task.WhenAll(children);
     }
 
-    private async Task ShowFromHotkeyAsync()
+    private Task ShowFromHotkeyAsync()=>ShowSelectedProfileAsync(true);
+
+    private async Task ShowSelectedProfileAsync(bool hotkeyAnimation)
     {
         if (_disposed || IsUserHidden || (!_appSettings.HudEnabled && !_editingPreview)) return;
         var queue=ResolveCycleProfiles();
         var profile=_settings.Profiles.FirstOrDefault(p=>p.Id==_manualProfileId)
             ?? (_settings.AutoCycle && queue.Count>0 ? queue[Math.Clamp(_profileIndex,0,queue.Count-1)] : ResolveActiveProfile());
         if (profile is null) return;
-        profile=profile with { AnimationMode=_appSettings.HudHotkeyShowAnimation };
+        profile=profile with { AnimationMode=hotkeyAnimation?_appSettings.HudHotkeyShowAnimation:(_settings.AutoCycle?ApplyCycleAnimationMode(profile).AnimationMode:profile.AnimationMode) };
         if (!_appSettings.AlwaysVisible && !_editingPreview)
         {
             await TriggerTransientProfileAsync(profile);

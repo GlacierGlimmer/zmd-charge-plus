@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modified)
@@ -2534,3 +2534,7 @@ Preview current profile
 Open Settings
 Keyboard shortcuts work while this app is focused.
 Keep HUD visible while hovering over it or the hot zone
+Press a key or mouse button. Esc clears the binding.
+Shortcut conflict: {0}
+Unavailable shortcut: {0}
+Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.

@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (modificato)
@@ -2067,7 +2067,7 @@ Informazioni di stato come utilizzo, quota restante e avanzamento trascorso; pos
 Informazioni di stato come utilizzo, quota restante e avanzamento trascorso; possono controllare l’anello di avanzamento.
 Usare +, -, *, /, % per il resto, ^ per la potenza e le parentesi. I confronti supportano >, >=, <, <=, == e !=. Gli operatori booleani includono &&, ||, ! e and/or/not. Le condizioni usano test ? yes : no oppure if(test, yes, no). ?? fornisce un valore alternativo per valori nulli o vuoti.
 Usare Ctrl o Alt con una lettera, una cifra o un tasto funzione, tranne F12.
-Usare Ctrl o Alt, eventualmente Shift, con una lettera, una cifra o F1–F24, tranne F12. Salvare per applicare; lasciare vuoto per disattivare.
+Sono supportati i tasti e i pulsanti del mouse, anche con Ctrl, Alt, Maiusc o Win/Command. I tasti riservati al sistema potrebbero non essere disponibili.
 Utilizzare Gestione dati → Dati hardware per ispezionare sensori e campi di firmware. Cerca per temperatura, modulo di memoria, nome del dispositivo o ID originale. Seleziona una riga per copiare il suo token. Export Diagnostics salva un'istantanea locale JSON dello stato corrente e delle letture.
 Raccogli dati con Root
 Usare un ancoraggio predefinito con correzioni, oppure specificare coordinate personalizzate.
@@ -2534,3 +2534,7 @@ Anteprima del profilo attuale
 Apri impostazioni
 Le scorciatoie da tastiera funzionano quando questa app è attiva.
 Mantieni visibile l’HUD quando il puntatore è sopra l’HUD o la zona di attivazione
+Premi un tasto o un pulsante del mouse. Esc elimina questa assegnazione.
+Conflitto di scorciatoie: {0}
+Scorciatoia non disponibile: {0}
+Sono supportati i tasti e i pulsanti del mouse, anche con Ctrl, Alt, Maiusc o Win/Command. I tasti riservati al sistema potrebbero non essere disponibili.

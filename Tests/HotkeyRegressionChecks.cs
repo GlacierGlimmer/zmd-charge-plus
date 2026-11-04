@@ -29,8 +29,8 @@ internal static class HotkeyRegressionChecks
     }
     private static async Task CheckAsync(Action<bool, string> check)
     {
-        check(!HudHotkeyGesture.TryParse("H", out _) && !HudHotkeyGesture.TryParse("Shift+H", out _), "Typing and Shift-only shortcuts cannot be registered.");
-        check(!HudHotkeyGesture.TryParse("Ctrl+F12", out _) && !HudHotkeyGesture.TryParse("Ctrl+Ctrl+H", out _) && !HudHotkeyGesture.TryParse("Win+H", out _), "Reserved and malformed shortcuts are rejected.");
+        check(HudHotkeyGesture.TryParse("H", out _) && HudHotkeyGesture.TryParse("Shift+H", out _), "Bare and Shift-only keyboard bindings are supported.");
+        check(HudHotkeyGesture.TryParse("Ctrl+F12", out _) && !HudHotkeyGesture.TryParse("Ctrl+Ctrl+H", out _) && HudHotkeyGesture.TryParse("Win+H", out _), "Extended syntax is accepted; duplicate modifier syntax is rejected.");
         check(HudHotkeyGesture.TryParse(" alt + SHIFT + ctrl + f23 ", out var gesture) && gesture.Text == "Ctrl+Alt+Shift+F23", "Shortcut syntax normalizes consistently.");
         check(HudHotkeyGesture.TryCapture(Key.D3, KeyModifiers.Control | KeyModifiers.Shift, out gesture) && gesture.Text == "Ctrl+Shift+3", "Recording preserves digits and modifiers.");
         check(JsonSerializer.Deserialize<AppSettings>("{}")!.HudToggleHotkey == "" && JsonSerializer.Deserialize<AppSettings>(JsonSerializer.Serialize(new AppSettings { HudToggleHotkey="Ctrl+Alt+H" }))!.HudToggleHotkey=="Ctrl+Alt+H", "Existing settings stay unbound; configured shortcuts round trip.");
@@ -89,6 +89,7 @@ internal static class HotkeyRegressionChecks
             check(!hud.IsVisible && !runtime.IsUserHidden, "Transient mode restores event-based behavior.");
             LocalizationManager.Initialize("zh-CN"); window=new SettingsWindow(options,hud,runtime); window.AttachHudHotkey(new DesktopGlobalHotkey(first));
             var box=window.FindControl<TextBox>("HudHotkeyBox")!;
+            window.BeginShortcutRecording(box);
             box.RaiseEvent(new KeyEventArgs { RoutedEvent=InputElement.KeyDownEvent, Key=Key.H, KeyModifiers=KeyModifiers.Control|KeyModifiers.Alt });
             check(box.Text=="Ctrl+Alt+H" && first.Gesture==options.HudToggleHotkey, "Recording does not register unsaved changes.");
             typeof(SettingsWindow).GetMethod("ApplyEditorControls",Private)!.Invoke(window,new object[] { childOptions });

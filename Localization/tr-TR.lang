@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Değiştirildi)
@@ -2067,7 +2067,7 @@ Kullanım, kalan oran veya geçen ilerleme; halkayı da sürebilir.
 Kullanım, kalan oran ve ilerleme; halkayı da yönetebilir.
 Toplama, çıkarma, çarpma ve bölme için +, -, *, /; kalan için %; üs için ^ ve parantez kullanın. Karşılaştırmalar >, >=, <, <=, == ve != destekler. Mantıksal işleçler &&, ||, ! ve and/or/not içerir. Koşullarda test ? yes : no veya if(test, yes, no) kullanılır. ?? boş ya da null değerler için yedek değer sağlar.
 Ctrl veya Alt ile harf, sayı ya da F1–F24 (F12 hariç), isteğe bağlı Shift. Kaydedin; boş bırakmak kapatır.
-Ctrl veya Alt ile harf, sayı ya da F1–F24 (F12 hariç), isteğe bağlı Shift. Kaydedin; boş bırakmak kapatır.
+Klavye tuşları ve fare düğmeleri, isteğe bağlı Ctrl, Alt, Shift veya Win/Command ile desteklenir. Sisteme ayrılmış tuşlar kullanılamayabilir.
 Veri Yönetimi → Hardware Verileri kullanarak sensörleri ve firmware alanlarını denetleyin. Temerate, bellek modülü, cihaz adı veya orijinal kimliği ile arama yapın. Tokeni kopyalamak için bir satır seçin. Export Diagnostics, mevcut durum ve okumaların yerel bir JSON anketini kaydeder.
 Okumalar için Root kullan
 Hazır tutturma ve kaydırmalar kullanın veya özel koordinatlar belirtin.
@@ -2534,3 +2534,7 @@ Geçerli profili önizle
 Ayarları aç
 Klavye kısayolları yalnızca bu uygulama odaktayken çalışır.
 İşaretçi HUD veya etkin bölge üzerindeyken HUD'u görünür tut
+Bir klavye tuşuna veya fare düğmesine basın. Esc bu atamayı temizler.
+Kısayol çakışması: {0}
+Kısayol kullanılamıyor: {0}
+Klavye tuşları ve fare düğmeleri, isteğe bağlı Ctrl, Alt, Shift veya Win/Command ile desteklenir. Sisteme ayrılmış tuşlar kullanılamayabilir.

@@ -419,7 +419,7 @@
                     <TextBox x:Name="HudHotkeyBox" IsReadOnly="True" Watermark="点击后按下组合键" MinHeight="34" />
                     <Button x:Name="ClearHudHotkeyBtn" Grid.Column="1" Content="清除快捷键" Margin="10,0,0,0" />
                   </Grid>
-                  <TextBlock Text="使用 Ctrl 或 Alt，可加 Shift；支持字母、数字和 F1–F24（F12 除外）。保存后生效，留空关闭。" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
+                  <TextBlock Text="支持键盘和鼠标按键，可搭配 Ctrl、Alt、Shift 或 Win/Command。系统保留按键可能不可用。" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
                   <TextBlock Text="同时控制主 HUD 与附加实例。隐藏期间暂停自动呼出，再按一次恢复原有显示模式；重启后恢复显示。" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpMuted}" />
                   <TextBlock x:Name="HudHotkeyStatusText" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource EcpAccent}" />
                   <Grid ColumnDefinitions="*,180">

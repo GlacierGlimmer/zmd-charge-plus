@@ -7,7 +7,7 @@ namespace EndfieldChargePlus.Interop;
 
 // Desktop-native middle-button capture. Neither backend grabs keyboard input or
 // posts synthetic events. X11 replays presses outside a HUD to their original owner.
-internal sealed class UnixRadialInput : IDisposable
+internal sealed partial class UnixRadialInput : IDisposable
 {
     private readonly Func<PixelPoint,bool> _hit;
     private readonly Action<int,PixelPoint,int> _input;
@@ -18,7 +18,7 @@ internal sealed class UnixRadialInput : IDisposable
     private static IntPtr _display,_tap,_source,_mode;
     private static readonly TapCallback TapRoot=OnMacEvent;
     private static readonly XErrorCallback ErrorRoot=OnXError;
-    private static XErrorCallback? _previousXError;
+    private static Delegate? _previousXError;
     private static bool _xErrorInstalled;
     [ThreadStatic] private static bool _forwardingXError;
     private static bool _escape;
@@ -28,7 +28,7 @@ internal sealed class UnixRadialInput : IDisposable
         _hit=hit;_input=input;Entries.Add(this);
         try {
             if(OperatingSystem.IsMacOS() && _tap==IntPtr.Zero) {
-                _tap=CGEventTapCreate(1,0,0,(1UL<<25)|(1UL<<26)|(1UL<<27)|(1UL<<22),TapRoot,IntPtr.Zero);
+                _tap=CGEventTapCreate(1,0,0,(1UL<<1)|(1UL<<3)|(1UL<<25)|(1UL<<26)|(1UL<<27)|(1UL<<22),TapRoot,IntPtr.Zero);
                 if(_tap!=IntPtr.Zero) {
                     _mode=CFStringCreateWithCString(IntPtr.Zero,"kCFRunLoopCommonModes",0x08000100);
                     _source=CFMachPortCreateRunLoopSource(IntPtr.Zero,_tap,0);CFRunLoopAddSource(CFRunLoopGetCurrent(),_source,_mode);CGEventTapEnable(_tap,true);
@@ -36,19 +36,21 @@ internal sealed class UnixRadialInput : IDisposable
             } else if(OperatingSystem.IsLinux() && _display==IntPtr.Zero) {
                 XInitThreads();_display=XOpenDisplay(IntPtr.Zero);
                 if(_display!=IntPtr.Zero) {
-                    if(!_xErrorInstalled) {var old=XSetErrorHandler(ErrorRoot);if(old!=IntPtr.Zero)_previousXError=Marshal.GetDelegateForFunctionPointer<XErrorCallback>(old);_xErrorInstalled=true;}
+                    if(!_xErrorInstalled) {var old=XSetErrorHandler(ErrorRoot);if(old!=IntPtr.Zero)_previousXError=Marshal.GetDelegateForFunctionPointer(old,typeof(XErrorCallback));_xErrorInstalled=true;}
                     XGrabButton(_display,2,1u<<15,XDefaultRootWindow(_display),false,4|8|64,0,1,IntPtr.Zero,IntPtr.Zero);XSync(_display,false);Poll.Start();
                 }
             }
-        } catch(Exception ex) {AppLog.Error("Native radial input is unavailable.",ex);}
+        } catch(Exception ex) {if(_display!=IntPtr.Zero){XCloseDisplay(_display);_display=IntPtr.Zero;}Poll.Stop();AppLog.Error("Native radial input is unavailable.",ex);}
     }
     internal static bool EscapePressed=>OperatingSystem.IsMacOS() ? CGEventSourceKeyState(0,53) : _escape;
     private static int OnXError(IntPtr display,IntPtr error)
     {
-        if(display==_display || _forwardingXError)return 0;
+        if(display==_display){_lastShortcutGrabError=Marshal.ReadByte(error,32);return 0;}
+        if(_forwardingXError)return 0;
         // X11 error handlers are process-wide. Another client may chain back to
         // us; never recursively forward the same native error until stack overflow.
-        try{_forwardingXError=true;return _previousXError?.Invoke(display,error) ?? 0;}
+        try{_forwardingXError=true;return (int)(_previousXError?.DynamicInvoke(display,error) ?? 0);}
+        catch{return 0;}
         finally{_forwardingXError=false;}
     }
     private static void PumpX11()
@@ -59,6 +61,7 @@ internal sealed class UnixRadialInput : IDisposable
             // Drain a bounded batch so metrics/rendering retain UI thread time.
             for(int i=0;i<128 && XPending(_display)>0;i++) {
                 XNextEvent(_display,memory);var e=Marshal.PtrToStructure<XButtonEvent>(memory);var point=new PixelPoint(e.RootX,e.RootY);
+                if(e.Type==4 && InvokeMouseShortcut(e.Button,XModifiers(e.State))){XAllowEvents(_display,2,UIntPtr.Zero);XFlush(_display);continue;}
                 if(e.Type==4 && e.Button==2) {
                     _active=Entries.LastOrDefault(entry=>HitSafe(entry,point));
                     XAllowEvents(_display,_active is null ? 2 : 0,UIntPtr.Zero);XFlush(_display);
@@ -81,6 +84,9 @@ internal sealed class UnixRadialInput : IDisposable
     {
         try {
             if(type>=0xFFFFFFFE) {if(_tap!=IntPtr.Zero)CGEventTapEnable(_tap,true);return value;}
+            uint button=type==1?1u:type==3?3u:type==25?(CGEventGetIntegerValueField(value,3) switch{2=>2u,3=>8u,4=>9u,_=>0}):0;
+            ulong flags=CGEventGetFlags(value);uint modifiers=((flags&(1UL<<18))!=0?2u:0)|((flags&(1UL<<19))!=0?1u:0)|((flags&(1UL<<17))!=0?4u:0)|((flags&(1UL<<20))!=0?8u:0);
+            if(button!=0 && InvokeMouseShortcut(button,modifiers))return value;
             var location=CGEventGetLocation(value);var point=new PixelPoint((int)Math.Round(location.X),(int)Math.Round(location.Y));
             if(type==25 && CGEventGetIntegerValueField(value,3)==2) {
                 _active=Entries.LastOrDefault(entry=>HitSafe(entry,point));if(_active is not null){_active._input(0,point,0);return IntPtr.Zero;}
@@ -107,6 +113,7 @@ internal sealed class UnixRadialInput : IDisposable
     [DllImport(CG)]private static extern IntPtr CGEventTapCreate(uint tap,uint place,uint options,ulong mask,TapCallback callback,IntPtr context);
     [DllImport(CG)]private static extern void CGEventTapEnable(IntPtr tap,[MarshalAs(UnmanagedType.I1)]bool enabled);
     [DllImport(CG)]private static extern CGPoint CGEventGetLocation(IntPtr value);
+    [DllImport(CG)]private static extern ulong CGEventGetFlags(IntPtr value);
     [DllImport(CG)]private static extern long CGEventGetIntegerValueField(IntPtr value,uint field);
     [DllImport(CG)][return:MarshalAs(UnmanagedType.I1)]private static extern bool CGEventSourceKeyState(int state,ushort key);
     [DllImport(CF)]private static extern IntPtr CFStringCreateWithCString(IntPtr allocator,string value,uint encoding);

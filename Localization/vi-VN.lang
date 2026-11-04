@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Đã sửa đổi)
@@ -2067,7 +2067,7 @@ Mức sử dụng, tỷ lệ còn lại hoặc tiến trình đã qua; có thể
 Trạng thái: mức dùng, phần còn lại, tiến độ; có thể điều khiển vòng.
 Dùng +, -, *, /, % để lấy phần dư, ^ để tính lũy thừa và dấu ngoặc đơn. Phép so sánh hỗ trợ >, >=, <, <=, == và !=. Toán tử lôgic gồm &&, ||, ! và and/or/not. Điều kiện dùng test ? yes : no hoặc if(test, yes, no). ?? cung cấp giá trị thay thế khi giá trị là null hoặc rỗng.
 Dùng Ctrl hoặc Alt cùng chữ cái, chữ số hoặc phím chức năng (trừ F12).
-Ctrl hoặc Alt cùng chữ, số hoặc F1–F24 trừ F12; Shift tùy chọn. Lưu để áp dụng, để trống để tắt.
+Hỗ trợ các phím và nút chuột, có thể kết hợp với Ctrl, Alt, Shift hoặc Win/Command. Các phím dành riêng cho hệ thống có thể không dùng được.
 Sử dụng Quản lý dữ liệu → Dữ liệu phần cứng để kiểm tra cảm biến và các trường firmware. Tìm kiếm theo nhiệt độ, mô-đun bộ nhớ, tên thiết bị hoặc ID gốc. Chọn một hàng để sao chép mã thông báo của nó. Export Diagnostics lưu một bản chụp nhanh JSON địa phương về tình trạng và độ đọc hiện tại.
 Dùng Root để đọc dữ liệu
 Dùng điểm neo có sẵn cùng độ lệch, hoặc nhập tọa độ tùy chỉnh.
@@ -2534,3 +2534,7 @@ Xem trước hồ sơ hiện tại
 Mở cài đặt
 Phím tắt chỉ hoạt động khi ứng dụng này có tiêu điểm.
 Giữ HUD hiển thị khi trỏ chuột lên HUD hoặc vùng kích hoạt
+Nhấn một phím hoặc nút chuột. Esc xóa gán phím này.
+Xung đột phím tắt: {0}
+Phím tắt không khả dụng: {0}
+Hỗ trợ các phím và nút chuột, có thể kết hợp với Ctrl, Alt, Shift hoặc Win/Command. Các phím dành riêng cho hệ thống có thể không dùng được.

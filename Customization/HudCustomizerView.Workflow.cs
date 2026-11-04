@@ -72,7 +72,9 @@ public partial class HudCustomizerView
         },Avalonia.Interactivity.RoutingStrategies.Bubble);
         _workflowProfiles.SelectionChanged+=(_,_)=>{if(!_workflowSync && _workflowProfiles.SelectedItem is ListBoxItem {Tag:string id})ProfileCombo.SelectedIndex=_profiles.FindIndex(p=>p.Id==id);};
         _workflowSearch.TextChanged+=(_,_)=>RefreshWorkflowProfiles();
-        var actions=new WrapPanel{Orientation=Orientation.Horizontal,Children={AddProfileBtn,DeleteProfileBtn}};AddProfileBtn.Margin=new(0,0,6,6);
+        var actions=new Grid{Name="ProfileLibraryActions",ColumnDefinitions=new("*,6,*"),Margin=new(0,8,0,0)};
+        foreach(var button in new[]{AddProfileBtn,DeleteProfileBtn}){button.Margin=new(0);button.HorizontalAlignment=HorizontalAlignment.Stretch;button.VerticalAlignment=VerticalAlignment.Stretch;button.MinWidth=0;button.MinHeight=36;}
+        actions.Children.Add(AddProfileBtn);Grid.SetColumn(DeleteProfileBtn,2);actions.Children.Add(DeleteProfileBtn);
         var library=new Grid{RowDefinitions=new("Auto,Auto,*,Auto")};library.Children.Add(WorkflowText("方案管理","Profile management",16));_workflowSearch.Margin=new(0,12,0,10);Grid.SetRow(_workflowSearch,1);library.Children.Add(_workflowSearch);Grid.SetRow(_workflowProfiles,2);library.Children.Add(_workflowProfiles);Grid.SetRow(actions,3);library.Children.Add(actions);
         var layout=new Grid{Name="ProfileWorkspaceColumns",ColumnDefinitions=new("220,*"),Margin=new(4,12,4,4)};var left=WorkflowCard(library);left.Margin=new(0,0,10,0);layout.Children.Add(left);
         var editorScroll=new ScrollViewer{Content=editor,VerticalScrollBarVisibility=Avalonia.Controls.Primitives.ScrollBarVisibility.Auto};Grid.SetColumn(editorScroll,1);layout.Children.Add(editorScroll);page.Content=layout;

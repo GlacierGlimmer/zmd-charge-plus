@@ -92,7 +92,7 @@ internal static partial class Audit
             Check(ReferenceEquals(window.GetVisualAt(point),gauges[i]),"full gauge hit region "+i);
         }
         window.NavigateToSettingsSection("quick");await Task.Delay(50);
-        var recorder=window.GetVisualDescendants().OfType<TextBox>().Single(b=>b.Name=="Shortcut_next");recorder.Focus();
+        var recorder=window.GetVisualDescendants().OfType<TextBox>().Single(b=>b.Name=="Shortcut_next");window.BeginShortcutRecording(recorder);
         Check(window.CaptureRegisteredShortcut("Ctrl+Alt+J") && recorder.Text=="Ctrl+Alt+J","already registered shortcuts are captured without firing their action");
         foreach(var language in LocalizationManager.SupportedLanguages.Select(l=>l.Code))
         foreach(var scale in new[]{(.8,.8),(1d,1d),(1.25,1.5)})

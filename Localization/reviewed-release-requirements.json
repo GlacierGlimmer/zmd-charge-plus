@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "sourceSha256": "2f10f185e0e39e2006024b207107c217837bd138d9b28c2cf92b2004fbff29ec",
+  "sourceSha256": "9bdaecab9639150cd8d4600cfa2ca1b512b81ef980944c9eca38f27ca4e6e719",
   "platformManualSourceSha256": "dc8d5222686c54478ea7d03071d1b2e2eb0411cddfc0dc0b8b439d9159c97854",
   "requiredKeys": [
     "  {deepseek.period.remaining_text}",
@@ -2351,7 +2351,11 @@
     "Preview current profile",
     "Open Settings",
     "Keyboard shortcuts work while this app is focused.",
-    "Keep HUD visible while hovering over it or the hot zone"
+    "Keep HUD visible while hovering over it or the hot zone",
+    "Press a key or mouse button. Esc clears the binding.",
+    "Shortcut conflict: {0}",
+    "Unavailable shortcut: {0}",
+    "Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable."
   ],
   "sourceTokens": {
     "  {deepseek.period.remaining_text}": {

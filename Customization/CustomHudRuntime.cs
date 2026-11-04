@@ -119,8 +119,10 @@ public sealed partial class CustomHudRuntime : IDisposable
         _variables.SamplingIntervalSeconds = _appSettings.SamplingIntervalSeconds;
         _settings = HudSettingsNormalizer.Normalize(_appSettings.CustomHud ?? CustomHudSettings.CreateDefault());
         RestoreInstanceHighlight();
-        _manualProfileId="";
-        _profileIndex = _settings.AutoCycle ? 0 : ResolveActiveProfileIndex();
+        _manualProfileId=_settings.AutoCycle?_settings.ActiveProfileId:"";
+        var queue=ResolveCycleProfiles();
+        int cycleIndex=queue.ToList().FindIndex(p=>p.Id==_settings.ActiveProfileId);
+        _profileIndex = _settings.AutoCycle ? (cycleIndex>=0?cycleIndex:Math.Max(0,queue.Count-1)) : ResolveActiveProfileIndex();
         _nextPersistentRefresh = DateTime.MinValue;
         _nextPersistentCycle = DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds, 3, 3600));
         _lastRenderedLocalSecond = -1;
@@ -170,9 +172,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             if (IsUserHidden || !settings.HudEnabled)
                 return;
 
-            var profile = _settings.AutoCycle
-                ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
-                : ResolveActiveProfile();
+            var profile = ResolveActiveProfile() ?? ResolveCycleProfiles().FirstOrDefault();
             if (profile is null)
                 return;
 
@@ -196,6 +196,7 @@ public sealed partial class CustomHudRuntime : IDisposable
                 _persistentShown = true;
                 _activeToken.ThrowIfCancellationRequested();
             _persistentProfileId = profile.Id;
+            _settingsProfileTransition=false;
                 _nextPersistentRefresh = DateTime.MinValue;
                 _lastRenderedLocalSecond = -1;
             }
@@ -239,9 +240,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             // Every process start presents the currently effective scheme once through
             // its normal summon animation. If AlwaysVisible is enabled, the same animation
             // lands in the persistent C-state and live monitoring continues from there.
-            var profile = _settings.AutoCycle
-                ? ResolveCycleProfiles().FirstOrDefault() ?? ResolveActiveProfile()
-                : ResolveActiveProfile();
+            var profile = ResolveActiveProfile() ?? ResolveCycleProfiles().FirstOrDefault();
             if (profile is null)
                 return;
 
@@ -265,6 +264,7 @@ public sealed partial class CustomHudRuntime : IDisposable
                 _persistentShown = true;
                 _activeToken.ThrowIfCancellationRequested();
             _persistentProfileId = profile.Id;
+            _settingsProfileTransition=false;
                 _nextPersistentRefresh = DateTime.MinValue;
                 _lastRenderedLocalSecond = -1;
                 _nextPersistentCycle = DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds, 3, 3600));
@@ -548,7 +548,7 @@ public sealed partial class CustomHudRuntime : IDisposable
         }
 
         if (_profileIndex >= profiles.Count) _profileIndex = 0;
-        var profile = profiles[_profileIndex];
+        var profile = _settings.Profiles.FirstOrDefault(p=>p.Id==_manualProfileId) ?? profiles[_profileIndex];
         bool clockAccurate = HudProfileRenderer.NeedsSecondAccurateClock(profile);
 
         if (clockAccurate)
@@ -592,7 +592,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             // animation mode and ignore each scheme's own AnimationMode.
             var renderProfile = deepSeekPeriodChanged
                 ? profile with { AnimationMode = "Full" }
-                : (_settings.AutoCycle || !string.IsNullOrWhiteSpace(_manualProfileId) ? ApplyCycleAnimationMode(profile) : profile);
+                : (!_settingsProfileTransition && (_settings.AutoCycle || !string.IsNullOrWhiteSpace(_manualProfileId)) ? ApplyCycleAnimationMode(profile) : profile);
             _activeToken.ThrowIfCancellationRequested();
             var data = HudProfileRenderer.Render(renderProfile, vars);
 
@@ -608,7 +608,7 @@ public sealed partial class CustomHudRuntime : IDisposable
             }
             else if (profileChanged || deepSeekPeriodChanged)
             {
-                if (profileChanged && !deepSeekPeriodChanged && (_manualRollDirection!=0 || _settings.CycleAnimationMode=="Roll"))
+                if (profileChanged && !deepSeekPeriodChanged && (_manualRollDirection!=0 || (!_settingsProfileTransition && _settings.AutoCycle && _settings.CycleAnimationMode=="Roll")))
                     await _hud.RollToPersistentAsync(data,refresh,_manualRollDirection==0?-1:_manualRollDirection);
                 else
                 {
@@ -631,6 +631,8 @@ public sealed partial class CustomHudRuntime : IDisposable
             _activeToken.ThrowIfCancellationRequested();
             if(_manualProfileId==profile.Id)_manualRollDirection=0;
             _persistentProfileId = profile.Id;
+            _settingsProfileTransition=false;
+            NotifyProfileSelected(profile.Id);
             _nextPersistentRefresh = clockAccurate ? DateTime.MinValue : DateTime.UtcNow.AddSeconds(NextSamplingInterval(profile,vars));
             if (clockAccurate)
                 _lastRenderedLocalSecond = DateTime.Now.Ticks / TimeSpan.TicksPerSecond;
@@ -725,7 +727,7 @@ public sealed partial class CustomHudRuntime : IDisposable
 
     private bool _cyclePaused;
     public bool IsAutoCyclePaused=>_cyclePaused;
-    public Task PreviewAllAsync()=>Task.WhenAll(new[]{PreviewActiveAsync()}.Concat(_instances.Values.Select(i=>i.Runtime.PreviewActiveAsync())));
+    public Task PreviewAllAsync()=>Task.WhenAll(new[]{this}.Concat(_instances.Values.Select(i=>i.Runtime)).Where(r=>r._appSettings.HudEnabled || r._editingPreview).Select(r=>r.PreviewActiveAsync()));
     public void ToggleAutoCyclePaused()
     {
         SetCyclePaused(!_cyclePaused);
@@ -734,13 +736,13 @@ public sealed partial class CustomHudRuntime : IDisposable
     private void SetCyclePaused(bool paused){_cyclePaused=paused;_nextPersistentCycle=DateTime.UtcNow.AddSeconds(Math.Clamp(_settings.CycleSeconds,3,3600));}
     public void StepProfiles(int delta)
     {
-        SwitchProfile(delta);
-        foreach(var child in _instances.Values)child.Runtime.SwitchProfile(delta);
+        if(_appSettings.HudEnabled)SwitchProfile(delta);
+        foreach(var child in _instances.Values)if(child.Runtime._appSettings.HudEnabled)child.Runtime.SwitchProfile(delta);
     }
-    private void OnHudClicked(){if(_appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(1);}
+    private void OnHudClicked(){if(!IsUserHidden && _appSettings.HudEnabled && !EndfieldChargePlus.Interop.DesktopGlobalHotkey.ClaimsMouse(1) && _appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(1);}
     private void OnHudScrolled(int delta)
     {
-        if(_appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(delta,true);
+        if(!IsUserHidden && _appSettings.HudEnabled && _appSettings.AlwaysVisible && _appSettings.ClickToCycle)SwitchProfile(delta,true);
     }
     internal void SwitchProfile(int delta,bool directed=false)
     {
@@ -752,6 +754,7 @@ public sealed partial class CustomHudRuntime : IDisposable
         int index=queue.ToList().FindIndex(p=>string.Equals(p.Id,current,StringComparison.OrdinalIgnoreCase));
         if(index<0)index=delta>0?-1:0;
         int next=((index+delta)%queue.Count+queue.Count)%queue.Count;
+        _instantSettingsRefresh=false;_settingsProfileTransition=false;
         _manualProfileId=queue[next].Id;
         _manualRollDirection=directed?Math.Sign(delta):0;
         NotifyProfileSelected(_manualProfileId);

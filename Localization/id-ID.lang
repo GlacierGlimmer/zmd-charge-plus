@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Diubah)
@@ -2067,7 +2067,7 @@ Informasi status seperti penggunaan, bagian tersisa atau kemajuan berlalu, yang 
 Informasi status seperti penggunaan, bagian tersisa dan kemajuan berlalu; dapat mengendalikan cincin kemajuan.
 Gunakan +, -, *, /, % untuk sisa pembagian, ^ untuk pangkat, serta tanda kurung. Perbandingan mendukung >, >=, <, <=, ==, dan !=. Operator boolean mencakup &&, ||, !, dan and/or/not. Kondisi memakai test ? yes : no atau if(test, yes, no). ?? memberikan nilai pengganti untuk nilai null atau kosong.
 Gunakan Ctrl atau Alt bersama huruf, digit atau tombol fungsi (kecuali F12).
-Gunakan Ctrl atau Alt, dengan Shift bila perlu, bersama huruf, angka, atau F1–F24 (kecuali F12). Simpan untuk menerapkan; kosongkan untuk menonaktifkan.
+Tombol keyboard dan mouse didukung, termasuk kombinasi Ctrl, Alt, Shift, atau Win/Command. Tombol yang dicadangkan sistem mungkin tidak tersedia.
 Gunakan Pengelolaan data → Data perangkat keras untuk memeriksa sensor dan bidang firmware. Carilah berdasarkan suhu, modul memori, nama perangkat atau ID asli. Pilih baris untuk menyalin tokennya. Export Diagnostics menyimpan snapshot JSON lokal dari status dan pembacaan saat ini.
 Gunakan Root untuk pengumpulan pembacaan
 Gunakan jangkar prasetel dengan offset, atau tentukan koordinat khusus.
@@ -2534,3 +2534,7 @@ Pratinjau profil saat ini
 Buka pengaturan
 Pintasan keyboard berfungsi saat aplikasi ini memiliki fokus.
 Biarkan HUD terlihat saat penunjuk berada di atas HUD atau area aktif
+Tekan tombol keyboard atau mouse. Esc menghapus penetapan ini.
+Konflik pintasan: {0}
+Pintasan tidak tersedia: {0}
+Tombol keyboard dan mouse didukung, termasuk kombinasi Ctrl, Alt, Shift, atau Win/Command. Tombol yang dicadangkan sistem mungkin tidak tersedia.

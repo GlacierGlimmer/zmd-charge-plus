@@ -1,4 +1,4 @@
-#20261102$2535
+#20261104$2539
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modified)
@@ -2067,7 +2067,7 @@ Usage, remaining share or elapsed progress, optionally driving the ring.
 Usage, remaining share, elapsed progress, and other status values; can drive the progress ring.
 Use +, -, *, /, % remainder, ^ power and parentheses. Comparisons support >, >=, <, <=, == and !=. Boolean operators include &&, ||, ! and and/or/not. Conditions use test ? yes : no or if(test, yes, no). ?? supplies a fallback for null/empty values.
 Use Ctrl or Alt with a letter, digit or function key (except F12).
-Use Ctrl or Alt, optionally Shift, with a letter, digit or F1–F24 (except F12). Save to apply; leave blank to disable.
+Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.
 Use Data Management → Hardware Data to inspect sensors and firmware fields. Search by temperature, memory module, device name or original ID. Select a row to copy its token. Export Diagnostics saves a local JSON snapshot of the current status and readings.
 Use Root for readings
 Use a preset anchor with offsets, or specify custom coordinates.
@@ -2534,3 +2534,7 @@ Preview current profile
 Open Settings
 Keyboard shortcuts work while this app is focused.
 Keep HUD visible while hovering over it or the hot zone
+Press a key or mouse button. Esc clears the binding.
+Shortcut conflict: {0}
+Unavailable shortcut: {0}
+Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.
