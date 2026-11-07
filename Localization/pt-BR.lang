@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modificado)
@@ -2538,3 +2538,16 @@ Pressione uma tecla ou um botão do mouse. Esc remove esta atribuição.
 Conflito de atalhos: {0}
 Atalho indisponível: {0}
 São aceitas teclas e botões do mouse, também com Ctrl, Alt, Shift ou Win/Command. Teclas reservadas pelo sistema podem estar indisponíveis.
+Rolar para baixo
+Um clique passa ao próximo perfil com uma animação para baixo. Role para cima para o perfil anterior e para baixo para o próximo, com a animação na mesma direção.
+A troca manual e a alternância automática usam esta fila. A troca manual funciona mesmo com a alternância automática desativada e reinicia o intervalo.
+Há {0} perfis na fila; a troca manual e a alternância automática seguem esta ordem.
+Copiar detalhes do erro
+A execução anterior terminou inesperadamente.
+Primeiro plano reforçado (experimental)
+Área de trabalho: atrás das janelas comuns. Sempre no topo: usa a camada superior normal.
+O primeiro plano reforçado recoloca o HUD acima de outras janelas prioritárias sem tomar o foco. Ele cede espaço enquanto configurações, menus ou diálogos do ECP estiverem abertos.
+Windows: tenta ficar acima de janelas prioritárias, como o Gerenciador de Tarefas. Camadas protegidas do sistema e tela cheia exclusiva ainda podem cobrir o HUD.
+macOS: usa o nível das janelas de status do sistema. Telas protegidas do sistema podem continuar acima.
+Linux: reforça a ordem das janelas X11. No Wayland, o comportamento depende do compositor.
+Android: usa a camada de sobreposição mais alta permitida para este aplicativo. Barras do sistema, teclado e telas protegidas continuam acima.

@@ -181,8 +181,13 @@ public partial class HudCustomizerView : UserControl
     private CustomHudSettings _loaded = CustomHudSettings.CreateDefault();
     private int _selectedIndex = -1;
     private bool _loading;
-    private readonly VariableHub _previewVariables = new();
-    public void SetSamplingInterval(double seconds) => _previewVariables.SamplingIntervalSeconds=seconds;
+    private readonly System.Threading.CancellationTokenSource _previewLifetime=new();
+    private bool _resourcesReleased;
+    private VariableHub? _previewVariables;
+    private double _previewSamplingSeconds=1;
+    private VariableHub PreviewVariables=>_previewVariables??=new VariableHub{SamplingIntervalSeconds=_previewSamplingSeconds};
+    public void SetSamplingInterval(double seconds){_previewSamplingSeconds=seconds;if(_previewVariables is {} preview)preview.SamplingIntervalSeconds=seconds;}
+    internal void ReleaseResources(){if(_resourcesReleased)return;_resourcesReleased=true;_previewLifetime.Cancel();_previewLifetime.Dispose();_triggerCheckCts?.Cancel();_triggerCheckCts?.Dispose();_triggerCheckCts=null;_previewVariables?.Dispose();_previewVariables=null;}
 
     public HudCustomizerView()
     {
@@ -261,9 +266,10 @@ public partial class HudCustomizerView : UserControl
         AnimationModeCombo.Items.Add(LocalizationManager.Text("完整", "Full"));
 
         CycleAnimationModeCombo.Items.Clear();
-        CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("简洁", "Simple"));
         CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("完整", "Full"));
+        CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("简洁", "Simple"));
         CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("向上翻滚", "Roll Up"));
+        CycleAnimationModeCombo.Items.Add(LocalizationManager.Text("向下翻滚", "Roll Down"));
 
         NetworkDisplayUnitCombo.Items.Clear();
         NetworkDisplayUnitCombo.Items.Add("Mbps");
@@ -385,7 +391,7 @@ public partial class HudCustomizerView : UserControl
         LoadTriggerRules(_loaded.Triggers);
         AutoCycleSwitch.IsChecked = _loaded.AutoCycle;
         CycleSecondsBox.Value = _loaded.CycleSeconds;
-        CycleAnimationModeCombo.SelectedIndex = _loaded.CycleAnimationMode switch { "Simple"=>0,"Full"=>1,_=>2 };
+        CycleAnimationModeCombo.SelectedIndex = _loaded.CycleAnimationMode switch { "Full"=>0,"Roll"=>2,"RollDown"=>3,_=>1 };
         DeepSeekKeyBox.Text = SecretStore.Unprotect(_loaded.DeepSeekApiKeyProtected);
         DeepSeekWindowsBox.Text = DeepSeekPeriodCalendar.OfficialWindows;
 
@@ -429,7 +435,7 @@ public partial class HudCustomizerView : UserControl
             CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
             CycleProfileIds = GetSanitizedCycleProfileIds(),
             RadialProfileIds = _radialProfileIds?.Where(id => _profiles.Any(p => p.Id == id)).ToList(),
-            CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
+            CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Full",2=>"Roll",3=>"RollDown",_=>"Simple" },
             ActiveProfileId = _selectedIndex >= 0 && _selectedIndex < _profiles.Count
                 ? _profiles[_selectedIndex].Id
                 : (_profiles.FirstOrDefault(p => string.Equals(p.Id, _loaded.ActiveProfileId, StringComparison.OrdinalIgnoreCase))?.Id
@@ -490,6 +496,7 @@ public partial class HudCustomizerView : UserControl
     private string? _requestedProfileId;
     private void CommitProfileSelection()
     {
+        if(!_profileSelectionPending)return;
         _profileSelectionPending=false;
         string? requested=_requestedProfileId;
         if(_loading || requested is null || !_profiles.Any(p=>p.Id==requested))return;
@@ -982,7 +989,7 @@ public partial class HudCustomizerView : UserControl
                 : LocalizationManager.Text("已配置 1 个轮播方案。", "1 profile is in the cycle queue."),
             _ => enabled
                 ? LocalizationManager.Formatted($"已启用自动轮播，将按上方顺序循环 {_cycleProfileIds.Count} 个方案。", (System.FormattableString)$"Auto cycle is on; {_cycleProfileIds.Count} profiles will rotate in order.")
-                : LocalizationManager.Formatted($"已配置 {_cycleProfileIds.Count} 个轮播方案；开启自动轮播后生效。", (System.FormattableString)$"{_cycleProfileIds.Count} profiles are queued; enable auto cycle to use them.")
+                : LocalizationManager.Formatted($"队列中有 {_cycleProfileIds.Count} 个方案；手动切换和自动轮播共用此顺序。", (System.FormattableString)$"{_cycleProfileIds.Count} profiles are queued; manual switching and auto cycle share this order.")
         };
         UpdateCycleButtons();
         _refreshCycleWorkspace?.Invoke();
@@ -1071,7 +1078,7 @@ public partial class HudCustomizerView : UserControl
         bool wasBuiltIn = _profiles[_selectedIndex].IsBuiltIn;
         bool changed;
         try { changed = SaveCurrentProfile(); }
-        catch (FormatException ex) { ProfileStatusText.Text = ex.Message; return; }
+        catch (Exception ex) { ProfileStatusText.Text = ex.Message; if(TopLevel.GetTopLevel(this) is Window owner)_ = EndfieldChargePlus.Settings.SaveErrorDialog.Show(owner,ex); return; }
         if (wasBuiltIn && changed)
             ProfileStatusText.Text = LocalizationManager.Text("已基于内置方案创建修改副本，原预设保持不变", "Modified copy created; the built-in preset is unchanged.");
         else
@@ -1117,7 +1124,7 @@ public partial class HudCustomizerView : UserControl
                 CycleSeconds = (int)Math.Clamp(CycleSecondsBox.Value ?? 10, 3, 3600),
                 CycleProfileIds = GetSanitizedCycleProfileIds(),
             RadialProfileIds = _radialProfileIds?.Where(id => _profiles.Any(p => p.Id == id)).ToList(),
-                CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Simple",1=>"Full",_=>"Roll" },
+                CycleAnimationMode = CycleAnimationModeCombo.SelectedIndex switch { 0=>"Full",2=>"Roll",3=>"RollDown",_=>"Simple" },
                 ActiveProfileId = _profiles[_selectedIndex].Id,
                 DeepSeekApiKeyProtected = SecretStore.Protect(DeepSeekKeyBox.Text),
                 DeepSeekPeakWindows = DeepSeekPeriodCalendar.OfficialWindows,
@@ -1127,14 +1134,19 @@ public partial class HudCustomizerView : UserControl
             var profile = BuildEditedProfile(_profiles[_selectedIndex]);
             settings=settings with { Profiles=settings.Profiles.Select(p=>p.Id==profile.Id ? profile : p).ToList() };
             var required = HudProfileRenderer.GetRequiredVariables(profile);
-            var vars = await _previewVariables.SnapshotAsync(settings, required, profile.GpuAdapterId, profile.PingTarget, profile.ProbeProtocol, profile.ProbePort);
+            var previewVariables=PreviewVariables;
+            var previewLifetime=_previewLifetime.Token;
+            var vars = await previewVariables.SnapshotAsync(settings, required, profile.GpuAdapterId, profile.PingTarget, profile.ProbeProtocol, profile.ProbePort, previewLifetime);
+            previewLifetime.ThrowIfCancellationRequested();
             ProfileDataWarnings.Check(profile,vars,"preview");
             var data = HudProfileRenderer.Render(profile, vars);
             ProfileStatusText.Text = "";
 
             Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<HudRenderData>> refresh = async ct =>
             {
-                var latest = await _previewVariables.SnapshotAsync(settings, required, profile.GpuAdapterId, profile.PingTarget, profile.ProbeProtocol, profile.ProbePort, ct);
+                using var linked=System.Threading.CancellationTokenSource.CreateLinkedTokenSource(ct,previewLifetime);
+                var latest = await previewVariables.SnapshotAsync(settings, required, profile.GpuAdapterId, profile.PingTarget, profile.ProbeProtocol, profile.ProbePort, linked.Token);
+                linked.Token.ThrowIfCancellationRequested();
                 ProfileDataWarnings.Check(profile,latest,"preview");
                 return HudProfileRenderer.Render(profile, latest);
             };
@@ -1144,6 +1156,7 @@ public partial class HudCustomizerView : UserControl
         }
         catch (Exception ex)
         {
+            if(_resourcesReleased && ex is OperationCanceledException)return;
             Diagnostics.AppLog.Error("HUD preview failed.",ex);
             ProfileStatusText.Text = LocalizationManager.Text("预览失败，请查看日志。","Preview failed. See logs.");
         }
@@ -1209,9 +1222,7 @@ public partial class HudCustomizerView : UserControl
             // Do not re-sort localized names alphabetically: that made Chinese/English lists inconsistent.
             .ToList();
 
-        VariableList.Items.Clear();
-        foreach (var item in filtered)
-            VariableList.Items.Add(item);
+        VariableList.ItemsSource=filtered;
 
         if (!string.IsNullOrWhiteSpace(selectedKey))
         {

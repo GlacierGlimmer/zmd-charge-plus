@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (modificato)
@@ -2538,3 +2538,16 @@ Premi un tasto o un pulsante del mouse. Esc elimina questa assegnazione.
 Conflitto di scorciatoie: {0}
 Scorciatoia non disponibile: {0}
 Sono supportati i tasti e i pulsanti del mouse, anche con Ctrl, Alt, Maiusc o Win/Command. I tasti riservati al sistema potrebbero non essere disponibili.
+Scorri verso il basso
+Un clic passa al profilo successivo con uno scorrimento verso il basso. Scorri verso l’alto per il precedente e verso il basso per il successivo; l’animazione segue la stessa direzione.
+Il cambio manuale e il ciclo automatico usano questa coda. Il cambio manuale funziona anche con il ciclo automatico disattivato e riavvia l’intervallo.
+Ci sono {0} profili in coda; il cambio manuale e il ciclo automatico seguono questo ordine.
+Copia dettagli dell’errore
+L’esecuzione precedente è terminata in modo imprevisto.
+Primo piano avanzato (sperimentale)
+Desktop: dietro le finestre normali. Sempre in primo piano: usa il normale livello superiore.
+La modalità avanzata riporta l’HUD sopra le altre finestre in primo piano senza acquisire il focus. Lascia spazio a impostazioni, menu e finestre di dialogo di ECP aperti.
+Windows: tenta di restare sopra finestre in primo piano come Gestione attività. I livelli di sistema protetti e lo schermo intero esclusivo possono ancora coprire l’HUD.
+macOS: usa il livello delle finestre di stato del sistema. Le schermate di sistema protette possono restare sopra.
+Linux: migliora l’ordine delle finestre X11. In Wayland il comportamento dipende dal compositore.
+Android: usa il livello di sovrapposizione più alto consentito per questa app. Barre di sistema, tastiera e schermate protette restano sopra.

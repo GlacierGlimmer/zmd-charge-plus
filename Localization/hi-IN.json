@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "पूरे Endfield Charge Plus (सेटिंग्स और सभी HUD) की निवासी RAM, साझा निवासी पृष्ठों सहित। मान: MiB/GiB; चाप: कुल भौतिक RAM में हिस्सा।",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "पूरे Endfield Charge Plus (सेटिंग्स और सभी HUD) की समर्पित VRAM, साझा GPU मेमोरी के बिना। मान: MiB/GiB; चाप: कुल समर्पित VRAM में हिस्सा।",
   "Author's BiliBili channel": "लेखक का BiliBili चैनल",
-  "Author's YouTube channel": "लेखक का YouTube चैनल"
+  "Author's YouTube channel": "लेखक का YouTube चैनल",
+  "Copy error details": "त्रुटि का विवरण कॉपी करें",
+  "The previous run ended unexpectedly.": "पिछली बार ऐप अप्रत्याशित रूप से बंद हो गया था।",
+  "Super Topmost (Experimental)": "सबसे ऊपर दिखाने का उन्नत मोड (प्रायोगिक)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "डेस्कटॉप: सामान्य विंडो के पीछे। हमेशा ऊपर: सामान्य सबसे ऊपरी परत का उपयोग करता है।",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "उन्नत मोड फ़ोकस छीने बिना HUD को दूसरी सबसे ऊपर रखी विंडो के ऊपर वापस लाता है। ECP की सेटिंग, मेन्यू या संवाद खुले होने पर यह उन्हें जगह देता है।",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: टास्क मैनेजर जैसी सबसे ऊपर रखी विंडो के ऊपर रहने की कोशिश करता है। सुरक्षित सिस्टम परतें और एक्सक्लूसिव फ़ुलस्क्रीन फिर भी HUD को ढक सकते हैं।",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: सिस्टम की स्थिति विंडो के स्तर का उपयोग करता है। सुरक्षित सिस्टम स्क्रीन इसके ऊपर रह सकती हैं।",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: X11 विंडो क्रम को मज़बूत करता है। Wayland पर व्यवहार कंपोज़िटर पर निर्भर करता है।",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: इस ऐप के लिए अनुमत सबसे ऊँची ओवरले परत का उपयोग करता है। सिस्टम बार, कीबोर्ड और सुरक्षित स्क्रीन इसके ऊपर रहते हैं।"
 }

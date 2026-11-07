@@ -2489,5 +2489,14 @@
   "Pause / resume auto cycle": "Pause / resume auto cycle",
   "Preview current profile": "Preview current profile",
   "Open Settings": "Open Settings",
-  "Keep HUD visible while hovering over it or the hot zone": "Keep HUD visible while hovering over it or the hot zone"
+  "Keep HUD visible while hovering over it or the hot zone": "Keep HUD visible while hovering over it or the hot zone",
+  "Copy error details": "Copy error details",
+  "The previous run ended unexpectedly.": "The previous run ended unexpectedly.",
+  "Super Topmost (Experimental)": "Super Topmost (Experimental)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: uses the system status-window level. Protected system screens may remain above it.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it."
 }

@@ -23,9 +23,9 @@ internal static class NextVersionRegressionChecks
     }
     private static void Models(Action<bool,string> check)
     {
-        foreach(string mode in new[] {"Simple","Full","Roll"})
+        foreach(string mode in new[] {"Simple","Full","Roll","RollDown"})
             check(HudSettingsNormalizer.Normalize(CustomHudSettings.CreateDefault() with {CycleAnimationMode=mode}).CycleAnimationMode==mode,"Explicit carousel animation survives migration: "+mode);
-        check(CustomHudSettings.CreateDefault().CycleAnimationMode=="Roll","New configurations default to the in-place roll animation.");
+        check(CustomHudSettings.CreateDefault().CycleAnimationMode=="Simple","New configurations default to Simple animation.");
         var original=new AppSettings {HudHotkeyShowAnimation="Simple",HotZonePosition=HudPosition.BottomRight,HotZoneWidth=300,HotZoneHeight=45,HotZoneDwellMilliseconds=700,
             CustomHud=CustomHudSettings.CreateDefault() with {Triggers=new(){new(){Mode="Change",Variable="media.title"}}}};
         var restored=JsonSerializer.Deserialize<AppSettings>(JsonSerializer.Serialize(original))!;

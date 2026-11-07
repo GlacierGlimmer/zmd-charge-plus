@@ -22,6 +22,7 @@ internal static class GlobalAppearance
         public required Control Root;
         public double FontScale=1,UiScale=1,MinWidth,MinHeight;
         public bool Applying,Scheduled;
+        public bool ForceFonts;
     }
     private static readonly ConditionalWeakTable<Control,Original> Originals=new();
     private sealed class OriginalColumn(GridLength width) {public GridLength Width=width;}
@@ -54,9 +55,12 @@ internal static class GlobalAppearance
                 MinWidth=Math.Max(content.MinWidth,window.MinWidth-32-content.Margin.Left-content.Margin.Right),
                 MinHeight=Math.Max(content.MinHeight,window.MinHeight-32-(bodyHost is not null ? 92 : 0)-content.Margin.Top-content.Margin.Bottom) };
             Windows.Add(window,state);created=true;RegisteredWindows.Add(new(window));
+            EndfieldChargePlus.Diagnostics.PerformanceMaintenance.Track(window);
             window.LayoutUpdated+=(_,_)=>ScheduleFonts(window,state);
+            window.Closed+=(_,_)=>{Windows.Remove(window);RegisteredWindows.RemoveAll(w=>!w.TryGetTarget(out var target)||ReferenceEquals(target,window));};
         }
         if(!created && state.FontScale==fontScale && state.UiScale==uiScale)return;
+        state.ForceFonts=state.FontScale!=fontScale;
         state.FontScale=fontScale;state.UiScale=uiScale;
         state.Transform.LayoutTransform=new ScaleTransform(uiScale,uiScale);
         ApplyFonts(window,state);
@@ -101,10 +105,12 @@ internal static class GlobalAppearance
                 if(!double.IsFinite(height) || height<=0)height=window.ClientSize.Height;
                 state.Root.Width=Math.Max(state.MinWidth*Math.Max(1,state.FontScale),
                     width/state.UiScale-state.Root.Margin.Left-state.Root.Margin.Right);
-                state.Root.Height=state.Root is StackPanel || state.Root is Border {Child:StackPanel}
+                state.Root.Height=window.SizeToContent!=SizeToContent.Manual || state.Root is StackPanel || state.Root is Border {Child:StackPanel}
                     ? double.NaN : Math.Max(state.MinHeight,
                         height/state.UiScale-state.Root.Margin.Top-state.Root.Margin.Bottom);
             }
+            if(state.FontScale==1 && !state.ForceFonts)return;
+            state.ForceFonts=false;
             foreach(var c in state.Root.GetVisualDescendants().OfType<Control>().Prepend(state.Root))
             {
                 if(c is Grid grid && grid.TemplatedParent is null)

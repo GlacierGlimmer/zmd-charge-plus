@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "Endfield Charge Plus işleminin (ayarlar ve tüm HUD’lar) yerleşik RAM’i; yerleşik paylaşılan sayfalar dahildir. Değer: MiB/GiB; yay: fiziksel RAM içindeki pay.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "Endfield Charge Plus işleminin (ayarlar ve tüm HUD’lar) ayrılmış VRAM’i; paylaşılan GPU belleği hariçtir. Değer: MiB/GiB; yay: toplam ayrılmış VRAM içindeki pay.",
   "Author's BiliBili channel": "Geliştiricinin BiliBili kanalı",
-  "Author's YouTube channel": "Geliştiricinin YouTube kanalı"
+  "Author's YouTube channel": "Geliştiricinin YouTube kanalı",
+  "Copy error details": "Hata ayrıntılarını kopyala",
+  "The previous run ended unexpectedly.": "Önceki çalışma beklenmedik şekilde sona erdi.",
+  "Super Topmost (Experimental)": "Gelişmiş en üstte tutma (deneysel)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Masaüstü: normal pencerelerin arkasında. Her zaman üstte: normal en üst pencere katmanını kullanır.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Gelişmiş mod, odağı almadan HUD’ı diğer üstte tutulan pencerelerin üzerine geri getirir. ECP ayarları, menüleri veya iletişim kutuları açıkken onlara yer verir.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: Görev Yöneticisi gibi üstte tutulan pencerelerin üzerinde kalmayı dener. Korumalı sistem katmanları ve özel tam ekran modu HUD’ı yine de örtebilir.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: sistem durum penceresi düzeyini kullanır. Korumalı sistem ekranları daha üstte kalabilir.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: X11 pencere sıralamasını güçlendirir. Wayland’da davranış birleştiriciye bağlıdır.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: bu uygulamaya izin verilen en yüksek kaplama katmanını kullanır. Sistem çubukları, klavye ve korumalı ekranlar üstte kalır."
 }

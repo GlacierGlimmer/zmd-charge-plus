@@ -6,18 +6,36 @@ using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Styling;
 using Avalonia.Layout;
+using System.Diagnostics;
+using Avalonia.Media;
+using Avalonia.Threading;
 namespace EndfieldChargePlus.Settings;
 internal static class WorkspaceMotion
 {
-    private sealed class State { public CancellationTokenSource? Token; public Thickness Margin; }
-    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<Control,State> States=new();
-    internal static async void Reveal(Control control)
+    private sealed class State
     {
-        var state=States.GetValue(control,c=>new(){Margin=c.Margin});state.Token?.Cancel();state.Token?.Dispose();
-        var token=state.Token=new CancellationTokenSource();var m=state.Margin;
-        var animation=new Animation{Duration=TimeSpan.FromMilliseconds(280),Easing=new CubicEaseOut(),Children={
-            new KeyFrame{Cue=new Cue(0),Setters={new Setter(Visual.OpacityProperty,0d),new Setter(Layoutable.MarginProperty,new Thickness(m.Left,m.Top+10,m.Right,m.Bottom-10))}},
-            new KeyFrame{Cue=new Cue(1),Setters={new Setter(Visual.OpacityProperty,1d),new Setter(Layoutable.MarginProperty,m)}}}};
-        try {await animation.RunAsync(control,token.Token);}catch(OperationCanceledException){}
+        internal readonly TranslateTransform Offset=new();
+        internal readonly Stopwatch Clock=new();
+        internal readonly DispatcherTimer Timer=new(){Interval=TimeSpan.FromMilliseconds(16)};
+        internal double Opacity;
+    }
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<Control,State> States=new();
+    internal static void Reveal(Control control)
+    {
+        var state=States.GetValue(control,c=>{
+            var value=new State{Opacity=c.Opacity};
+            c.RenderTransform=c.RenderTransform is {} previous ? new TransformGroup {Children={previous as Transform??new MatrixTransform(previous.Value),value.Offset}} : value.Offset;
+            void Finish(){value.Timer.Stop();value.Offset.Y=0;c.Opacity=value.Opacity;}
+            value.Timer.Tick+=(_,_)=>
+            {
+                double progress=Math.Clamp(value.Clock.Elapsed.TotalMilliseconds/280,0,1);
+                double eased=1-Math.Pow(1-progress,3);
+                value.Offset.Y=10*(1-eased);c.Opacity=value.Opacity*eased;
+                if(progress>=1)Finish();
+            };
+            c.DetachedFromVisualTree+=(_,_)=>Finish();
+            return value;
+        });
+        state.Clock.Restart();state.Offset.Y=10;control.Opacity=0;state.Timer.Start();
     }
 }

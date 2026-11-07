@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "RAM résidente de tout le processus Endfield Charge Plus (paramètres et tous les HUD), pages partagées résidentes incluses. Valeur : MiB/GiB ; arc : part de la RAM physique.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "VRAM dédiée de tout le processus Endfield Charge Plus (paramètres et tous les HUD), mémoire GPU partagée exclue. Valeur : MiB/GiB ; arc : part de la VRAM dédiée totale.",
   "Author's BiliBili channel": "Chaîne BiliBili de l’auteur",
-  "Author's YouTube channel": "Chaîne YouTube de l’auteur"
+  "Author's YouTube channel": "Chaîne YouTube de l’auteur",
+  "Copy error details": "Copier les détails de l’erreur",
+  "The previous run ended unexpectedly.": "L’exécution précédente s’est terminée de manière inattendue.",
+  "Super Topmost (Experimental)": "Premier plan renforcé (expérimental)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Bureau : derrière les fenêtres ordinaires. Toujours au premier plan : utilise le niveau supérieur habituel.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Le premier plan renforcé replace le HUD au-dessus des autres fenêtres prioritaires sans prendre le focus. Il cède la place aux paramètres, menus et boîtes de dialogue d’ECP.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows : tente de rester au-dessus des fenêtres prioritaires, comme le Gestionnaire des tâches. Les couches système protégées et le plein écran exclusif peuvent encore masquer le HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS : utilise le niveau des fenêtres d’état du système. Les écrans système protégés peuvent rester au-dessus.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux : renforce l’ordre des fenêtres X11. Sous Wayland, le comportement dépend du compositeur.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android : utilise la couche de superposition la plus élevée autorisée pour cette application. Les barres système, le clavier et les écrans protégés restent au-dessus."
 }

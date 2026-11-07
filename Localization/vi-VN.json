@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "RAM thường trú của toàn bộ Endfield Charge Plus (cài đặt và tất cả HUD), gồm các trang dùng chung thường trú. Giá trị: MiB/GiB; cung tròn: tỷ lệ RAM vật lý.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "VRAM chuyên dụng của toàn bộ Endfield Charge Plus (cài đặt và tất cả HUD), không gồm bộ nhớ GPU dùng chung. Giá trị: MiB/GiB; cung tròn: tỷ lệ tổng VRAM chuyên dụng.",
   "Author's BiliBili channel": "Kênh BiliBili của tác giả",
-  "Author's YouTube channel": "Kênh YouTube của tác giả"
+  "Author's YouTube channel": "Kênh YouTube của tác giả",
+  "Copy error details": "Sao chép chi tiết lỗi",
+  "The previous run ended unexpectedly.": "Lần chạy trước đã kết thúc ngoài dự kiến.",
+  "Super Topmost (Experimental)": "Luôn trên cùng nâng cao (thử nghiệm)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Màn hình nền: phía sau cửa sổ thông thường. Luôn trên cùng: dùng lớp trên cùng thông thường.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Chế độ nâng cao đưa HUD trở lại phía trên các cửa sổ trên cùng khác mà không chiếm tiêu điểm. Chế độ này nhường chỗ khi cài đặt, menu hoặc hộp thoại ECP đang mở.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: cố gắng giữ HUD phía trên các cửa sổ trên cùng như Trình quản lý tác vụ. Các lớp hệ thống được bảo vệ và chế độ toàn màn hình độc quyền vẫn có thể che HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: dùng cấp cửa sổ trạng thái của hệ thống. Màn hình hệ thống được bảo vệ có thể vẫn nằm phía trên.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: tăng cường thứ tự xếp cửa sổ X11. Trên Wayland, hành vi phụ thuộc vào trình tổng hợp.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: dùng lớp phủ cao nhất được phép cho ứng dụng này. Thanh hệ thống, bàn phím và màn hình được bảo vệ vẫn nằm phía trên."
 }

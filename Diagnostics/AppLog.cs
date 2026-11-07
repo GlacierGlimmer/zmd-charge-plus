@@ -11,6 +11,7 @@ namespace EndfieldChargePlus.Diagnostics;
 /// </summary>
 public static class AppLog
 {
+    internal static event Action<string,Exception,bool>? ErrorRecorded;
     private static readonly object Gate = new();
     private static bool _initialized;
 
@@ -64,6 +65,8 @@ public static class AppLog
         {
             // Logging must never crash the HUD.
         }
+        if(exception is not null && level is "ERROR" or "FATAL")
+            try { ErrorRecorded?.Invoke(message,exception,level=="FATAL"); } catch { }
     }
 
     private static void CleanupOldLogs_NoThrow()

@@ -71,7 +71,11 @@ public partial class SettingsWindow
             if(_hardwareList.SelectedItem is HardwareRow row && Clipboard is { } clipboard)await clipboard.SetTextAsync("{"+row.Key+"}");
         };
         Closed+=(_,_)=>{_hardwareTimer.Stop();_hardwareLifetime.Cancel();_hardwareLifetime.Dispose();};
-        _hardwareTimer.Start();ApplyHardwareLocalization();
+        void UpdatePolling(){if(IsVisible && WindowState!=WindowState.Minimized && HardwarePage.IsSelected && DataManagementPage.IsSelected)_hardwareTimer.Start();else _hardwareTimer.Stop();}
+        PropertyChanged+=(_,e)=>{if(e.Property==IsVisibleProperty || e.Property==WindowStateProperty)UpdatePolling();};
+        HardwarePage.PropertyChanged+=(_,e)=>{if(e.Property==TabItem.IsSelectedProperty)UpdatePolling();};
+        DataManagementPage.PropertyChanged+=(_,e)=>{if(e.Property==TabItem.IsSelectedProperty)UpdatePolling();};
+        ApplyHardwareLocalization();
     }
     private void ApplyHardwareLocalization()
     {

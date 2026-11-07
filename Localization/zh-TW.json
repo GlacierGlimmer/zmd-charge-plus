@@ -2477,5 +2477,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "整個 Endfield Charge Plus 處理程序（設定介面和所有 HUD）的常駐記憶體，包含常駐共用頁。數值顯示 MiB/GiB；圓弧表示占實體記憶體總量的比例。",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "整個 Endfield Charge Plus 處理程序（設定介面和所有 HUD）的專用顯示記憶體，不含共用 GPU 記憶體。數值顯示 MiB/GiB；圓弧表示占專用總量的比例。",
   "Author's BiliBili channel": "作者BiliBili頻道",
-  "Author's YouTube channel": "作者YouTube頻道"
+  "Author's YouTube channel": "作者YouTube頻道",
+  "Copy error details": "複製異常詳細資料",
+  "The previous run ended unexpectedly.": "上次執行異常結束。",
+  "Super Topmost (Experimental)": "超級置頂（實驗性）",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "桌面層：位於一般視窗後方。永遠置頂：使用一般置頂層級。",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "超級置頂：不搶奪焦點，被其他置頂視窗遮住時會恢復位置。ECP 設定、選單或對話框開啟時會暫時讓位。",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows：嘗試保持在工作管理員等置頂視窗上方；受保護的系統層與獨佔全螢幕仍可能遮住 HUD。",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS：使用系統狀態視窗層級；受保護的系統畫面仍可能位於其上方。",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux：增強 X11 置頂；Wayland 下的效果取決於桌面合成器。",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android：使用此應用程式獲准的最高懸浮層；無法覆蓋系統列、鍵盤或受保護的畫面。"
 }

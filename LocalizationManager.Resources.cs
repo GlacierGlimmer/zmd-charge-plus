@@ -119,6 +119,22 @@ public static partial class LocalizationManager
         if(next==Current)return;
         Current=next;LanguageChanged?.Invoke();
     }
+    internal static void TrimUnusedResources()
+    {
+        lock(ResourceGate)
+        {
+            var keep=new HashSet<string>(new[]{"en-US","zh-CN",PreferenceFor(Current)},StringComparer.Ordinal);
+            foreach(var code in Resources.Keys.Where(c=>!keep.Contains(c)).ToArray())Resources.Remove(code);
+            lock(ValueCacheGate)foreach(var code in ValueCache.Keys.Where(c=>!keep.Contains(c)).ToArray())ValueCache.Remove(code);
+            if(IndexedLiteralLanguages.Any(c=>!keep.Contains(c)))
+            {
+                var index=LiteralKeys.Value;index.Clear();
+                foreach(var item in BuildLiteralKeys())index.TryAdd(item.Key,item.Value);
+                foreach(var item in ReadResource(PreferenceFor(Current)))index.TryAdd(item.Value,item.Key);
+                IndexedLiteralLanguages.Clear();IndexedLiteralLanguages.Add(PreferenceFor(Current));
+            }
+        }
+    }
     internal static IReadOnlyDictionary<string,string> ReadResource(string code)
     {
         lock(ResourceGate)

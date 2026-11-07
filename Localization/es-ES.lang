@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modificado)
@@ -2538,3 +2538,16 @@ Pulsa una tecla o un botón del ratón. Esc elimina esta asignación.
 Conflicto de atajos: {0}
 Atajo no disponible: {0}
 Se admiten teclas y botones del ratón, también con Ctrl, Alt, Mayús o Win/Command. Las teclas reservadas por el sistema pueden no estar disponibles.
+Desplazar hacia abajo
+Un clic pasa al siguiente perfil con una animación hacia abajo. Desplaza la rueda hacia arriba para ir al anterior y hacia abajo para ir al siguiente, con la animación en el mismo sentido.
+El cambio manual y el ciclo automático usan esta lista. El cambio manual funciona aunque el ciclo automático esté desactivado y reinicia el intervalo.
+Hay {0} perfiles en la lista; el cambio manual y el ciclo automático comparten este orden.
+Copiar detalles del error
+La ejecución anterior terminó de forma inesperada.
+Primer plano reforzado (experimental)
+Escritorio: detrás de las ventanas normales. Siempre encima: usa el nivel superior habitual.
+El primer plano reforzado devuelve el HUD sobre otras ventanas prioritarias sin tomar el foco. Cede el paso mientras estén abiertos los ajustes, menús o diálogos de ECP.
+Windows: intenta mantenerse sobre ventanas prioritarias como el Administrador de tareas. Las capas protegidas del sistema y la pantalla completa exclusiva aún pueden ocultar el HUD.
+macOS: usa el nivel de las ventanas de estado del sistema. Las pantallas protegidas pueden permanecer encima.
+Linux: refuerza el orden de las ventanas X11. En Wayland, el comportamiento depende del compositor.
+Android: usa la capa de superposición más alta permitida para esta aplicación. Las barras del sistema, el teclado y las pantallas protegidas permanecen encima.

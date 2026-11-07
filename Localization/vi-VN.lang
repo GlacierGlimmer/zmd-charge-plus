@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Đã sửa đổi)
@@ -2538,3 +2538,16 @@ Nhấn một phím hoặc nút chuột. Esc xóa gán phím này.
 Xung đột phím tắt: {0}
 Phím tắt không khả dụng: {0}
 Hỗ trợ các phím và nút chuột, có thể kết hợp với Ctrl, Alt, Shift hoặc Win/Command. Các phím dành riêng cho hệ thống có thể không dùng được.
+Cuộn xuống
+Nhấp để chuyển sang hồ sơ tiếp theo bằng hiệu ứng cuộn xuống. Cuộn lên để về hồ sơ trước và cuộn xuống để tới hồ sơ tiếp theo; hiệu ứng chạy cùng chiều cuộn.
+Chuyển thủ công và luân phiên tự động dùng chung hàng đợi này. Chuyển thủ công vẫn hoạt động khi tắt luân phiên tự động và bắt đầu lại thời gian chờ.
+Có {0} hồ sơ trong hàng đợi; chuyển thủ công và luân phiên tự động dùng chung thứ tự này.
+Sao chép chi tiết lỗi
+Lần chạy trước đã kết thúc ngoài dự kiến.
+Luôn trên cùng nâng cao (thử nghiệm)
+Màn hình nền: phía sau cửa sổ thông thường. Luôn trên cùng: dùng lớp trên cùng thông thường.
+Chế độ nâng cao đưa HUD trở lại phía trên các cửa sổ trên cùng khác mà không chiếm tiêu điểm. Chế độ này nhường chỗ khi cài đặt, menu hoặc hộp thoại ECP đang mở.
+Windows: cố gắng giữ HUD phía trên các cửa sổ trên cùng như Trình quản lý tác vụ. Các lớp hệ thống được bảo vệ và chế độ toàn màn hình độc quyền vẫn có thể che HUD.
+macOS: dùng cấp cửa sổ trạng thái của hệ thống. Màn hình hệ thống được bảo vệ có thể vẫn nằm phía trên.
+Linux: tăng cường thứ tự xếp cửa sổ X11. Trên Wayland, hành vi phụ thuộc vào trình tổng hợp.
+Android: dùng lớp phủ cao nhất được phép cho ứng dụng này. Thanh hệ thống, bàn phím và màn hình được bảo vệ vẫn nằm phía trên.

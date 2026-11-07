@@ -38,28 +38,8 @@ public partial class SettingsWindow
         Customizer.WorkspacePreferences = () => _workspaceDraft;
         Customizer.WorkspacePreferencesChanged = value => { _workspaceDraft=WorkspacePreferences.Normalize(value); RefreshQuickActionsLocalization(); };
         Customizer.InitializeRadialEditor();
-        var click = Customizer.DetachClickAction();
-        QuickActionsPanel.Children.Add(Card(click));
         Customizer.InitializeWorkflowEditors();
         InitializeQuickHotkeyEditors();
-        _middleAction = new CheckBox { IsChecked = _workspaceDraft.RadialEnabled };
-        var middle = _middleAction;
-        var middlePanel = new StackPanel { Spacing = 10, Children = { middle, Label(WorkspaceStrings.Get("Hold the middle mouse button on the HUD, drag to a profile, then release to switch.")) } };
-        middle.Content = WorkspaceStrings.Get("Middle button hold");
-        middle.IsCheckedChanged += (_, _) => _workspaceDraft = _workspaceDraft with { RadialEnabled = middle.IsChecked == true };
-        QuickActionsPanel.Children.Add(Card(middlePanel));
-        _middleHint = (TextBlock)middlePanel.Children[1];
-        foreach (var item in new[] { ("Hold delay",120d,800d,(double)_workspaceDraft.HoldMilliseconds), ("Drag threshold",6d,40d,_workspaceDraft.DragDistance), ("Ring size",280d,480d,_workspaceDraft.RingDiameter) })
-        {
-            string key=item.Item1;
-            var label=Label("",true); var number=new NumericUpDown { Minimum=(decimal)item.Item2, Maximum=(decimal)item.Item3, Value=(decimal)item.Item4, Increment=key=="Hold delay" ? 20 : 2, Width=180, HorizontalAlignment=HorizontalAlignment.Left };
-            _gestureLabels.Add((label,key));
-            number.ValueChanged+=(_,_)=>_workspaceDraft=WorkspacePreferences.Normalize(key switch {
-                "Hold delay"=>_workspaceDraft with {HoldMilliseconds=(int)(number.Value ?? 220)},
-                "Drag threshold"=>_workspaceDraft with {DragDistance=(int)(number.Value ?? 12)},
-                _=>_workspaceDraft with {RingDiameter=(int)(number.Value ?? 360)} });
-            QuickActionsPanel.Children.Add(Card(new StackPanel {Spacing=10,Children={label,number}}));
-        }
         RefreshQuickActionsLocalization();
         RefreshWorkspaceLocalization();
         WorkspaceNavigation.SelectionChanged += (_, _) => {
@@ -70,14 +50,8 @@ public partial class SettingsWindow
         SyncWorkspaceNavigation();
     }
 
-    private CheckBox? _middleAction;
-    private TextBlock? _middleHint;
-    private readonly List<(TextBlock Label,string Key)> _gestureLabels=new();
     private void RefreshQuickActionsLocalization()
     {
-        if (_middleAction is not null) { _middleAction.Content=WorkspaceStrings.Get("Middle button hold"); _middleAction.IsChecked=_workspaceDraft.RadialEnabled; }
-        if (_middleHint is not null) _middleHint.Text=WorkspaceStrings.Get("Hold the middle mouse button on the HUD, drag to a profile, then release to switch.");
-        foreach(var (label,key) in _gestureLabels) label.Text=WorkspaceStrings.Get(key)+(key=="Hold delay" ? " / ms" : " / px");
         OpenIssueTrackerBtn.Content=WorkspaceStrings.Get("Issue tracker");
     }
 

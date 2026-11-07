@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "ذاكرة RAM المقيمة لعملية Endfield Charge Plus كاملة (الإعدادات وجميع شاشات HUD)، بما فيها الصفحات المشتركة المقيمة. القيمة: MiB/GiB؛ القوس: النسبة من RAM الفعلية.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "ذاكرة VRAM المخصصة لعملية Endfield Charge Plus كاملة (الإعدادات وجميع شاشات HUD)، دون ذاكرة GPU المشتركة. القيمة: MiB/GiB؛ القوس: النسبة من إجمالي VRAM المخصصة.",
   "Author's BiliBili channel": "قناة المطوّر على BiliBili",
-  "Author's YouTube channel": "قناة المطوّر على YouTube"
+  "Author's YouTube channel": "قناة المطوّر على YouTube",
+  "Copy error details": "نسخ تفاصيل الخطأ",
+  "The previous run ended unexpectedly.": "انتهى التشغيل السابق بشكل غير متوقع.",
+  "Super Topmost (Experimental)": "تعزيز الظهور في المقدمة (تجريبي)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "سطح المكتب: خلف النوافذ العادية. دائمًا في المقدمة: يستخدم الطبقة العلوية المعتادة.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "يعيد وضع المقدمة المعزّز واجهة HUD فوق النوافذ العلوية الأخرى دون سرقة التركيز. ويتراجع مؤقتًا عند فتح إعدادات ECP أو قوائمه أو مربعات حواره.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: يحاول البقاء فوق النوافذ العلوية مثل إدارة المهام. وقد تظل طبقات النظام المحمية ووضع ملء الشاشة الحصري تحجب واجهة HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: يستخدم مستوى نوافذ حالة النظام. وقد تبقى شاشات النظام المحمية فوقه.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: يعزّز ترتيب نوافذ X11. ويعتمد السلوك في Wayland على مدير التركيب.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: يستخدم أعلى طبقة تراكب مسموحة لهذا التطبيق. وتبقى أشرطة النظام ولوحة المفاتيح والشاشات المحمية فوقه."
 }

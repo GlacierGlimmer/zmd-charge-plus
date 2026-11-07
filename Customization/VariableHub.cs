@@ -221,7 +221,9 @@ public sealed class VariableHub : IDisposable
                             FrameRateMetrics.Add(vars,kind,FrameRateBackend.Read(kind,kind=="display" ? frameProfile.FrameDisplayId : frameProfile.FrameWindowId),frameProfile.FrameFullScaleFps);
                 });
         }
-        if (_samples.Count>64) _samples.Clear();
+        long expiresBefore=Environment.TickCount64-(long)Math.Max(10000,interval*2000);
+        foreach(var key in _samples.Where(p=>p.Value.At<expiresBefore).Select(p=>p.Key).ToArray())_samples.Remove(key);
+        if (_samples.Count>=32) _samples.Remove(_samples.MinBy(p=>p.Value.At).Key);
         _samples[sampleKey]=(Environment.TickCount64,new Dictionary<string,object?>(vars,StringComparer.OrdinalIgnoreCase));
         return vars;
         }
@@ -1803,7 +1805,7 @@ public sealed class VariableHub : IDisposable
     private async Task DisposeAfterSamplingAsync()
     {
         await _snapshotGate.WaitAsync().ConfigureAwait(false);
-        try { _advanced.Dispose(); _media.Dispose(); _samples.Clear(); }
+        try { _advanced.Dispose(); _media.Dispose(); _samples.Clear();_httpCache.Clear();lock(_pingGate)_pingStates.Clear(); }
         finally { _snapshotGate.Release(); }
     }
 }

@@ -2,8 +2,16 @@ namespace EndfieldChargePlus.Customization;
 
 public sealed partial class CustomHudRuntime
 {
-    private IReadOnlyList<HudProfile> GetRadialProfiles()=>_settings.RadialProfileIds is null ? _settings.Profiles :
-        _settings.RadialProfileIds.Select(id=>_settings.Profiles.FirstOrDefault(p=>p.Id==id)).OfType<HudProfile>().ToList();
+    private object? _radialSourceProfiles,_radialSourceIds;
+    private IReadOnlyList<HudProfile> _radialCached=Array.Empty<HudProfile>();
+    private IReadOnlyList<HudProfile> GetRadialProfiles()
+    {
+        if(_settings.RadialProfileIds is null)return _settings.Profiles;
+        if(ReferenceEquals(_radialSourceProfiles,_settings.Profiles) && ReferenceEquals(_radialSourceIds,_settings.RadialProfileIds))return _radialCached;
+        _radialSourceProfiles=_settings.Profiles;_radialSourceIds=_settings.RadialProfileIds;
+        var byId=_settings.Profiles.ToDictionary(p=>p.Id);
+        return _radialCached=_settings.RadialProfileIds.Where(byId.ContainsKey).Select(id=>byId[id]).ToArray();
+    }
     private void OnRadialOpened()=>CancelRevision();
     private void OnRadialFinished(string? id)
     {

@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "Резидентная память всего Endfield Charge Plus (настройки и все HUD), включая общие резидентные страницы. Значение: MiB/GiB; дуга: доля физической ОЗУ.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "Выделенная видеопамять всего Endfield Charge Plus (настройки и все HUD), без общей памяти GPU. Значение: MiB/GiB; дуга: доля всей выделенной видеопамяти.",
   "Author's BiliBili channel": "Канал автора на BiliBili",
-  "Author's YouTube channel": "Канал автора на YouTube"
+  "Author's YouTube channel": "Канал автора на YouTube",
+  "Copy error details": "Скопировать сведения об ошибке",
+  "The previous run ended unexpectedly.": "Предыдущий запуск завершился неожиданно.",
+  "Super Topmost (Experimental)": "Усиленное закрепление поверх окон (экспериментально)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Рабочий стол: позади обычных окон. Поверх окон: стандартный верхний слой.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Усиленное закрепление возвращает HUD поверх других закреплённых окон, не перехватывая фокус. При открытых настройках, меню или диалогах ECP он временно уступает им место.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: пытается оставаться поверх закреплённых окон, например Диспетчера задач. Защищённые системные слои и монопольный полноэкранный режим могут по-прежнему закрывать HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: использует системный уровень окон состояния. Защищённые системные экраны могут оставаться выше.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: усиленное управление порядком окон X11. В Wayland поведение зависит от композитора.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: использует самый высокий слой наложения, разрешённый приложению. Системные панели, клавиатура и защищённые экраны остаются выше."
 }

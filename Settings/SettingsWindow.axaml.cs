@@ -122,6 +122,7 @@ public partial class SettingsWindow : Window
         AlwaysVisibleSwitch.IsCheckedChanged += (_, _) => UpdateModeUi();
         PositionModeCombo.SelectionChanged += (_, _) => UpdateModeUi();
         PositionCombo.SelectionChanged += OnPositionPresetChanged;
+        PersistentLayerCombo.SelectionChanged+=(_,_)=>RefreshLayerDescription();
         SaveBtn.Click += OnSave;
         OpenSettingsFolderBtn.Click += OnOpenSettingsFolder;
         ResetSizeAnimationBtn.Click += OnResetSizeAnimation;
@@ -180,8 +181,10 @@ public partial class SettingsWindow : Window
             int positionIndex = PositionCombo.SelectedIndex;
 
             PersistentLayerCombo.Items.Clear();
-            PersistentLayerCombo.Items.Add(LocalizationManager.Text("始终置顶", "Always on Top"));
             PersistentLayerCombo.Items.Add(LocalizationManager.Text("桌面层（不置顶）", "Desktop Layer"));
+            PersistentLayerCombo.Items.Add(LocalizationManager.Text("始终置顶", "Always on Top"));
+            PersistentLayerCombo.Items.Add(LocalizationManager.Text("超级置顶（实验性）", "Super Topmost (Experimental)"));
+            RefreshLayerDescription();
 
             PositionModeCombo.Items.Clear();
             PositionModeCombo.Items.Add(LocalizationManager.Text("预设位置 + 微调", "Preset + Offset"));
@@ -220,6 +223,7 @@ public partial class SettingsWindow : Window
         {
             Diagnostics.AppLog.Error("Unable to save the language preference.",ex);
             MaintenanceStatusText.Text=ex.Message;
+            _ = SaveErrorDialog.Show(this,ex);
             ToolTip.SetTip(LanguageButton,ex.Message);
         }
 
@@ -408,7 +412,7 @@ public partial class SettingsWindow : Window
             HudEnabledSwitch.IsChecked = settings.HudEnabled;
             StartupSwitch.IsChecked = settings.StartWithWindows;
             AlwaysVisibleSwitch.IsChecked = settings.AlwaysVisible;
-            PersistentLayerCombo.SelectedIndex = settings.PersistentLayer == PersistentHudLayer.Desktop ? 1 : 0;
+            PersistentLayerCombo.SelectedIndex = settings.PersistentLayer == PersistentHudLayer.Desktop ? 0 : settings.PersistentLayer == PersistentHudLayer.SuperTopmost ? 2 : 1;
             PositionModeCombo.SelectedIndex = settings.PositionMode == HudPositionMode.CustomCoordinates ? 1 : 0;
             PositionCombo.SelectedIndex = PositionToIndex(settings.HudPosition);
             OffsetXBox.Value = settings.HudOffsetX;
@@ -456,9 +460,7 @@ public partial class SettingsWindow : Window
             HotZoneWidth=(int)(HotZoneWidthBox.Value ?? 240),HotZoneHeight=(int)(HotZoneHeightBox.Value ?? 20),
             HotZoneOffsetX=(int)(HotZoneOffsetXBox.Value ?? 0),HotZoneOffsetY=(int)(HotZoneOffsetYBox.Value ?? 0),
             HotZoneDwellMilliseconds=(int)HotZoneDwellSlider.Value,HotZoneAdvanceQueue=HotZoneAdvanceCheck.IsChecked==true,
-            PersistentLayer = PersistentLayerCombo.SelectedIndex == 1
-                ? PersistentHudLayer.Desktop
-                : PersistentHudLayer.Topmost,
+            PersistentLayer = PersistentLayerCombo.SelectedIndex == 0 ? PersistentHudLayer.Desktop : PersistentLayerCombo.SelectedIndex == 2 ? PersistentHudLayer.SuperTopmost : PersistentHudLayer.Topmost,
 
             PositionMode = PositionModeCombo.SelectedIndex == 1
                 ? HudPositionMode.CustomCoordinates
@@ -475,10 +477,12 @@ public partial class SettingsWindow : Window
 
     private async void OnSave(object? sender, RoutedEventArgs e)
     {
+        if (!SaveBtn.IsEnabled) return;
         try
         {
-        if (!SaveBtn.IsEnabled) return;
         SaveBtn.IsEnabled=false;
+        SaveBtn.Content=LocalizationManager.Text("应用中…","Applying…");
+        LanguageButton.IsEnabled=false;
         var editorTabs=this.GetLogicalDescendants().OfType<TabControl>().FirstOrDefault();
         if(editorTabs is not null) editorTabs.IsEnabled=false;
         _settings = CollectSettingsFromUi();
@@ -486,6 +490,10 @@ public partial class SettingsWindow : Window
         // Store uses StartupTask; Setup/portable copies use the owned HKCU entry.
         bool requestedStartup = _settings.StartWithWindows;
         StartupApplyResult startup = await StartupManager.ApplyAsync(requestedStartup);
+        if(startup.Error is not null)throw new InvalidOperationException(LocalizationManager.Text("保存失败","Save failed"),startup.Error);
+        if(!startup.Succeeded && !startup.IsPackaged)throw new InvalidOperationException(startup.State=="DisabledByUser"
+            ? LocalizationManager.Text("Windows 已禁用此应用开机启动，请到「设置 → 应用 → 启动」手动开启。","Windows disabled startup for this app. Enable it in Settings > Apps > Startup.")
+            : LocalizationManager.Text("未能更改开机启动状态。请检查 Windows 启动应用与日志。","Could not change startup state. Check Windows Startup Apps and logs."));
         {
             _settings = _settings with { StartWithWindows = startup.IsEnabled };
             StartupSwitch.IsChecked = startup.IsEnabled;
@@ -499,7 +507,7 @@ public partial class SettingsWindow : Window
                         : "Could not change startup state. Check Windows Startup Apps and logs.");
             else SetStartupStatus(null, null);
         }
-        SaveSettingsWithHudHotkey(_settings);
+        await SaveSettingsWithHudHotkeyAsync(_settings);
         _persistedRootSettings=_settings;
         RefreshHudHotkeyRegistrationStatus();
 
@@ -534,8 +542,10 @@ public partial class SettingsWindow : Window
             foreach(var tabs in this.GetLogicalDescendants().OfType<TabControl>()) tabs.IsEnabled=true;
             SaveBtn.Content = LocalizationManager.Text("保存失败", "Save failed");
             MaintenanceStatusText.Text = ex.Message;
+            _ = SaveErrorDialog.Show(this,ex);
             EndfieldChargePlus.Diagnostics.AppLog.Error("Unable to apply settings.", ex);
         }
+        finally {LanguageButton.IsEnabled=true;}
     }
 
     private async void OnExportSettings(object? sender, RoutedEventArgs e)
@@ -559,6 +569,7 @@ public partial class SettingsWindow : Window
         catch (Exception ex)
         {
             AppLog.Error("Failed to export settings from the settings UI.", ex);
+            _ = SaveErrorDialog.Show(this,ex);
             SetMaintenanceStatus($"导出失败：{ex.Message}", "Export failed. See logs.");
         }
     }
@@ -603,6 +614,7 @@ public partial class SettingsWindow : Window
         catch (Exception ex)
         {
             AppLog.Error("Failed to import settings from the settings UI.", ex);
+            _ = SaveErrorDialog.Show(this,ex);
             SetMaintenanceStatus($"导入失败：{ex.Message}", "Import failed. See logs.");
         }
     }
@@ -625,6 +637,7 @@ public partial class SettingsWindow : Window
         catch (Exception ex)
         {
             AppLog.Error("Failed to create a manual settings backup.", ex);
+            _ = SaveErrorDialog.Show(this,ex);
             SetMaintenanceStatus($"备份失败：{ex.Message}", "Backup failed. See logs.");
         }
     }

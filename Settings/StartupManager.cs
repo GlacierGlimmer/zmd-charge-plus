@@ -8,7 +8,7 @@ using Windows.ApplicationModel;
 namespace EndfieldChargePlus.Settings;
 
 public readonly record struct StartupApplyResult(
-    bool IsPackaged, bool IsEnabled, bool Succeeded, string State);
+    bool IsPackaged, bool IsEnabled, bool Succeeded, string State,Exception? Error=null);
 
 public static class StartupManager
 {
@@ -74,7 +74,7 @@ public static class StartupManager
         catch (Exception ex)
         {
             AppLog.Error("Unable to read packaged startup-task status.", ex);
-            return new StartupApplyResult(true, false, false, "ReadError");
+            return new StartupApplyResult(true, false, false, "ReadError",ex);
         }
     }
 
@@ -83,7 +83,7 @@ public static class StartupManager
         if (!IsPackaged)
         {
             try {return Unpackaged.SetEnabled(enabled);}
-            catch(Exception ex){AppLog.Error("Unable to update unpackaged startup.",ex);return new(false,false,false,"WriteError");}
+            catch(Exception ex){AppLog.Error("Unable to update unpackaged startup.",ex);return new(false,false,false,"WriteError",ex);}
         }
 
         try
@@ -106,7 +106,7 @@ public static class StartupManager
         {
             AppLog.Error("Unable to apply packaged startup task. Check the MSIX manifest.", ex);
             // Never claim the startup toggle worked when Windows rejected the call.
-            return new StartupApplyResult(true, false, false, "ApplyError");
+            return new StartupApplyResult(true, false, false, "ApplyError",ex);
         }
     }
 

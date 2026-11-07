@@ -62,6 +62,27 @@ public partial class HudCustomizerView
         var selected=new StackPanel{Spacing=8,Children={Text(WorkspaceStrings.Get("Profiles in the ring"),14),selectedList,orderButtons}};
         var available=new StackPanel{Spacing=8,Children={Text(WorkspaceStrings.Get("Add to ring"),14),query,new ScrollViewer{Content=pool,MaxHeight=430}}};
         var layout=new Grid{Name="RadialEditorColumns",ColumnDefinitions=new("170,*,180")};layout.Children.Add(Card(selected));var middle=Card(center);middle.Margin=new(10,0);Grid.SetColumn(middle,1);layout.Children.Add(middle);var right=Card(available);Grid.SetColumn(right,2);layout.Children.Add(right);RadialEditorPanel.Children.Add(layout);
+        var gestureOptions=new StackPanel{Name="RadialGestureOptions",Spacing=10};
+        foreach(var item in new[]{("Hold delay",120m,800m,(decimal)preferences.HoldMilliseconds),
+            ("Drag threshold",6m,40m,(decimal)preferences.DragDistance),("Ring size",280m,480m,(decimal)preferences.RingDiameter)})
+        {
+            string key=item.Item1;
+            string name=key=="Hold delay"?"RadialHoldDelayBox":key=="Drag threshold"?"RadialDragDistanceBox":"RadialDiameterBox";
+            var number=new NumericUpDown{Name=name,Minimum=item.Item2,Maximum=item.Item3,Value=item.Item4,
+                Increment=key=="Hold delay"?20:2,MinWidth=140,HorizontalAlignment=HorizontalAlignment.Stretch};
+            var row=new Grid{ColumnDefinitions=new("*,180")};
+            row.Children.Add(Text(WorkspaceStrings.Get(key)+(key=="Hold delay"?" / ms":" / px"),14));Grid.SetColumn(number,1);row.Children.Add(number);gestureOptions.Children.Add(row);
+            number.ValueChanged+=(_,_)=>
+            {
+                var current=WorkspacePreferences?.Invoke()??preferences;
+                var updated=EndfieldChargePlus.Settings.WorkspacePreferences.Normalize(key switch {
+                    "Hold delay"=>current with{HoldMilliseconds=(int)(number.Value??220)},
+                    "Drag threshold"=>current with{DragDistance=(int)(number.Value??12)},
+                    _=>current with{RingDiameter=(int)(number.Value??360)}});
+                WorkspacePreferencesChanged?.Invoke(updated);preview.Preferences=updated;
+            };
+        }
+        RadialEditorPanel.Children.Add(Card(gestureOptions));
         RadialEditorPanel.Children.Add(all);
         RadialEditorPanel.Children.Add(Text(WorkspaceStrings.Get("Your changes apply after Save & Apply."),12));
         Refresh();

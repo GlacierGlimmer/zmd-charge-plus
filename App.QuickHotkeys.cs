@@ -12,6 +12,7 @@ public partial class App
         {
             _quickHotkeys=new HudQuickHotkeys(action=>
             {
+                if(_exiting)return;
                 if(_settingsWindow?.CaptureRegisteredShortcut(_quickHotkeys?.BindingFor(action)??"")==true || _runtime is null)return;
                 switch(action)
                 {

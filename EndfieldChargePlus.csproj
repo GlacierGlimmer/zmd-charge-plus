@@ -27,6 +27,7 @@
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
+  <ItemGroup><RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="5" /></ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.1" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />

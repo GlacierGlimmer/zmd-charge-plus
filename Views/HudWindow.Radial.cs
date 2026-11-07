@@ -44,7 +44,7 @@ public partial class HudWindow
             PointerReleased+=(_,e)=>{if(e.InitialPressMouseButton==MouseButton.Middle && _middleHeld){HandleRadialInput(2,this.PointToScreen(e.GetPosition(this)),0);e.Handled=true;}};
             PointerCaptureLost+=(_,_)=>CancelRadial();
         }
-        PropertyChanged+=(_,e)=>{if(e.Property==IsVisibleProperty){if(!IsVisible)CancelRadial();EnsureRadialRegistration();}};
+        PropertyChanged+=(_,e)=>{if(e.Property==IsVisibleProperty){if(!IsVisible){CancelRadial();_inputRegionTimer.Stop();}EnsureRadialRegistration();}};
     }
     private void EnsureRadialRegistration()
     {

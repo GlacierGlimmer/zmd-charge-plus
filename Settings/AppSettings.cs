@@ -63,8 +63,9 @@ public sealed record AppSettings
 
 public enum PersistentHudLayer
 {
-    Topmost,
-    Desktop,
+    Topmost = 0,
+    Desktop = 1,
+    SuperTopmost = 2,
 }
 
 public enum HudPositionMode

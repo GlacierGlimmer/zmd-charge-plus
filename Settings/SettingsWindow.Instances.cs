@@ -108,7 +108,7 @@ public partial class SettingsWindow
             });
         };
         Opened += async (_,_) => { _settingsEditorOpen=true; await RefreshEditingHighlightAsync(); };
-        Closed += (_,_) => { _settingsEditorOpen=false; ProfileDataWarnings.Forget("preview");_runtime.EndInstanceEditing(); };
+        Closed += (_,_) => { _settingsEditorOpen=false; ProfileDataWarnings.Forget("preview");_runtime.EndInstanceEditing();Customizer.ReleaseResources(); };
         RefreshInstanceEditor();
     }
 

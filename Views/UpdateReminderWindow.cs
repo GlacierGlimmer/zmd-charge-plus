@@ -32,7 +32,7 @@ internal sealed class UpdateReminderPresenter
 internal sealed class UpdateReminderWindow : Window
 {
     private readonly SettingsWindow.UpdateCheckResult _result;
-    private readonly TextBlock _title = new() { Name = "UpdateReminderTitle", FontSize = 17, FontWeight = FontWeight.SemiBold, TextWrapping = TextWrapping.Wrap };
+    private readonly TextBlock _title = new() { Name = "UpdateReminderTitle", FontSize = 22, Foreground=Brush.Parse("#FFFA00"), FontWeight = FontWeight.SemiBold, TextWrapping = TextWrapping.Wrap };
     private readonly TextBlock _message = new() { Name = "UpdateReminderMessage", TextWrapping = TextWrapping.Wrap };
     private readonly TextBlock _viewLabel = new() { TextWrapping = TextWrapping.Wrap };
     private readonly TextBlock _laterLabel = new() { TextWrapping = TextWrapping.Wrap };
@@ -43,7 +43,7 @@ internal sealed class UpdateReminderWindow : Window
         Background = Brush.Parse("#242426");
         Width = 520; Height = 280; MinWidth = 300; MinHeight = 220;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        var panel = new StackPanel { Margin = new Thickness(22), Spacing = 18 };
+        var panel = new StackPanel { Spacing = 18 };
         panel.Children.Add(_title); panel.Children.Add(_message);
         var buttons = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*") };
         var view = new Button { Name = "ViewUpdateButton", Content = _viewLabel, HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0,0,8,0) };
@@ -59,7 +59,8 @@ internal sealed class UpdateReminderWindow : Window
         };
         later.Click += (_, _) => Close();
         buttons.Children.Add(view); Grid.SetColumn(later, 1); buttons.Children.Add(later);
-        panel.Children.Add(buttons); Content = panel;
+        panel.Children.Add(buttons); PromptStyle.Apply(this,panel);
+        ShowInTaskbar=true;ShowActivated=false;
         RefreshLanguage();
         LocalizationManager.LanguageChanged += RefreshLanguage;
         Closed += (_, _) => LocalizationManager.LanguageChanged -= RefreshLanguage;

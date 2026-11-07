@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "Endfield Charge Plus 全体（設定画面と全 HUD）の常駐メモリです。常駐共有ページを含みます。数値は MiB/GiB、円弧は物理メモリ総量に対する割合です。",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "Endfield Charge Plus 全体（設定画面と全 HUD）の専用 VRAM です。共有 GPU メモリは含みません。数値は MiB/GiB、円弧は専用 VRAM 総量に対する割合です。",
   "Author's BiliBili channel": "作者の BiliBili チャンネル",
-  "Author's YouTube channel": "作者の YouTube チャンネル"
+  "Author's YouTube channel": "作者の YouTube チャンネル",
+  "Copy error details": "エラーの詳細をコピー",
+  "The previous run ended unexpectedly.": "前回の実行は予期せず終了しました。",
+  "Super Topmost (Experimental)": "最前面表示の強化（実験的）",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "デスクトップ層：通常のウィンドウの背面に表示します。常に最前面：通常の最前面レイヤーを使います。",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "最前面表示の強化は、フォーカスを奪わずに HUD を他の最前面ウィンドウの上へ戻します。ECP の設定、メニュー、ダイアログの表示中は一時的に譲ります。",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows：タスク マネージャーなどの最前面ウィンドウより上への表示を試みます。保護されたシステムレイヤーや排他的全画面では HUD が隠れる場合があります。",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS：システムのステータスウィンドウレベルを使います。保護されたシステム画面より上には表示できない場合があります。",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux：X11 の最前面表示を強化します。Wayland での動作はコンポジターに依存します。",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android：このアプリに許可された最上位のオーバーレイを使います。システムバー、キーボード、保護された画面より上には表示しません。"
 }

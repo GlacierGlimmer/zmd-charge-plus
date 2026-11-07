@@ -99,14 +99,16 @@ public static class ProfileDataWarnings
         var ignore = new CheckBox { Name = "IgnoreCurrentDataWarningCheckBox", Content = new TextBlock { Text = LocalizationManager.Text("此数据不再提示", "Don't warn about this data again"), TextWrapping = Avalonia.Media.TextWrapping.Wrap }, HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Center, Margin = new Avalonia.Thickness(0,0,16,0) };
         var error = new TextBlock { IsVisible = false, TextWrapping = Avalonia.Media.TextWrapping.Wrap };
         _details = new TextBlock { Text = body, TextWrapping = Avalonia.Media.TextWrapping.Wrap };
-        var panel = new StackPanel { Margin = new Avalonia.Thickness(22), Spacing = 16 };
+        var panel = new StackPanel { Spacing = 16 };
+        panel.Children.Add(EndfieldChargePlus.Settings.PromptStyle.Heading(LocalizationManager.Text("HUD 数据提示","HUD data warning")));
         panel.Children.Add(new TextBlock { Text = LocalizationManager.Text("以下 HUD 方案的数据不可用或无效：", "Data is unavailable or invalid for these HUD profiles:"), FontSize = 16, TextWrapping = Avalonia.Media.TextWrapping.Wrap });
         panel.Children.Add(new ScrollViewer { Content = _details, MaxHeight = 460, VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto });
         panel.Children.Add(new TextBlock { Text = LocalizationManager.Text("请检查权限、设备支持和数据源。勾选后只永久关闭当前窗口列出的数据提示，其他变量仍会正常提示。", "Check permissions, device support and data sources. The checkbox permanently silences only the data listed in this window; other variables still produce warnings."), TextWrapping = Avalonia.Media.TextWrapping.Wrap });
         var footer = new Grid { ColumnDefinitions = new ColumnDefinitions("*,Auto"),FlowDirection=Avalonia.Media.FlowDirection.LeftToRight };
         footer.Children.Add(ignore); Grid.SetColumn(close, 1); footer.Children.Add(close);
         panel.Children.Add(footer); panel.Children.Add(error);
-        var dialog = new Window { Title = LocalizationManager.Text("HUD 数据提示", "HUD data warning"), Width = 620, SizeToContent = SizeToContent.Height, MaxHeight = 720, Content = panel, CanResize = true, Topmost = true, WindowStartupLocation = WindowStartupLocation.CenterScreen };
+        var dialog = new Window { Title = LocalizationManager.Text("HUD 数据提示", "HUD data warning"), Width = 620, SizeToContent = SizeToContent.Height, MaxHeight = 720, CanResize = false, ShowInTaskbar = true, ShowActivated = false, WindowStartupLocation = WindowStartupLocation.CenterScreen };
+        EndfieldChargePlus.Settings.PromptStyle.Apply(dialog,panel);
         void UpdateLanguage()
         {
             close.Content=LocalizationManager.Text("知道了","OK");
@@ -142,6 +144,7 @@ public static class ProfileDataWarnings
             {
                 ignore.IsChecked = false; error.IsVisible = true;
                 error.Text = LocalizationManager.Text("未能保存不再提示设置，请重试。", "Could not save this preference. Please try again.");
+                _ = EndfieldChargePlus.Settings.SaveErrorDialog.Show(dialog,ex);
                 EndfieldChargePlus.Diagnostics.AppLog.Error("Unable to suppress HUD data warnings.", ex);
             }
         };

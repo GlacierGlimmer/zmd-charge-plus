@@ -52,5 +52,32 @@ internal sealed class HudQuickHotkeys : IDisposable
         }
         finally{foreach(var registration in staged.Values)registration.Dispose();}
     }
+    internal async Task<bool> TryApplyAsync(AppSettings settings,Func<Task> persist)
+    {
+        if(_disposed)return false;ErrorGesture="";
+        var wanted=Actions.ToDictionary(a=>a.Id,a=>settings.QuickHotkeys?.GetValueOrDefault(a.Id)??"");wanted["toggle"]=settings.HudToggleHotkey;
+        var routes=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
+        foreach(var (id,text) in wanted)
+        {
+            if(string.IsNullOrWhiteSpace(text))continue;
+            if(!HudHotkeyGesture.TryParse(text,out var chord) || !routes.TryAdd(chord.Text,id)){ErrorGesture=text;return false;}
+        }
+        var staged=new Dictionary<string,IDisposable>(StringComparer.OrdinalIgnoreCase);
+        try
+        {
+            foreach(var chord in routes.Keys.Where(c=>!_registrations.ContainsKey(c)))
+            {
+                var key=chord;var registration=_bind(key,()=>{if(!_disposed && _routes.TryGetValue(key,out var action))_execute(action);});
+                if(registration is null){ErrorGesture=key;return false;}staged.Add(key,registration);
+            }
+            await persist();
+            if(_disposed)return false;
+            foreach(var item in staged)_registrations.Add(item.Key,item.Value);
+            staged.Clear();_routes=routes;
+            foreach(var key in _registrations.Keys.Where(c=>!routes.ContainsKey(c)).ToArray()){_registrations[key].Dispose();_registrations.Remove(key);}
+            return true;
+        }
+        finally{foreach(var registration in staged.Values)registration.Dispose();}
+    }
     public void Dispose(){if(_disposed)return;_disposed=true;foreach(var item in _registrations.Values)item.Dispose();_registrations.Clear();_routes.Clear();}
 }

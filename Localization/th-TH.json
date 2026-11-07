@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "RAM ที่อยู่ในหน่วยความจำของ Endfield Charge Plus ทั้งหมด (การตั้งค่าและ HUD ทั้งหมด) รวมหน้าหน่วยความจำร่วมที่อยู่ในหน่วยความจำ ค่า: MiB/GiB; ส่วนโค้ง: สัดส่วนของ RAM จริงทั้งหมด",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "VRAM เฉพาะของ Endfield Charge Plus ทั้งหมด (การตั้งค่าและ HUD ทั้งหมด) ไม่รวมหน่วยความจำ GPU ร่วม ค่า: MiB/GiB; ส่วนโค้ง: สัดส่วนของ VRAM เฉพาะทั้งหมด",
   "Author's BiliBili channel": "ช่อง BiliBili ของผู้พัฒนา",
-  "Author's YouTube channel": "ช่อง YouTube ของผู้พัฒนา"
+  "Author's YouTube channel": "ช่อง YouTube ของผู้พัฒนา",
+  "Copy error details": "คัดลอกรายละเอียดข้อผิดพลาด",
+  "The previous run ended unexpectedly.": "การทำงานครั้งก่อนสิ้นสุดลงโดยไม่คาดคิด",
+  "Super Topmost (Experimental)": "อยู่บนสุดแบบเพิ่มประสิทธิภาพ (ทดลอง)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "เดสก์ท็อป: อยู่หลังหน้าต่างทั่วไป อยู่บนสุดเสมอ: ใช้ชั้นบนสุดตามปกติ",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "โหมดเพิ่มประสิทธิภาพจะนำ HUD กลับมาอยู่เหนือหน้าต่างบนสุดอื่นโดยไม่แย่งโฟกัส และจะหลีกทางขณะเปิดการตั้งค่า เมนู หรือกล่องโต้ตอบของ ECP",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: พยายามอยู่เหนือหน้าต่างบนสุด เช่น ตัวจัดการงาน แต่ชั้นระบบที่ได้รับการป้องกันและโหมดเต็มหน้าจอแบบเอกสิทธิ์ยังอาจบัง HUD ได้",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: ใช้ระดับหน้าต่างสถานะของระบบ หน้าจอระบบที่ได้รับการป้องกันอาจยังอยู่เหนือ HUD",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: เพิ่มประสิทธิภาพลำดับหน้าต่าง X11 ส่วน Wayland ขึ้นอยู่กับตัวจัดการภาพรวม",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: ใช้ชั้นภาพซ้อนทับสูงสุดที่แอปนี้ได้รับอนุญาต แถบระบบ แป้นพิมพ์ และหน้าจอที่ได้รับการป้องกันยังอยู่เหนือ HUD"
 }

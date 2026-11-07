@@ -24,8 +24,10 @@ public partial class SettingsWindow
             // caption. Keep the Shell's taskbar menu and standard window commands
             // without adding a visible title bar. Avalonia reapplies this callback
             // whenever it updates styles (including minimize/restore).
+            Win32Properties.AddWndProcHookCallback(this,ResizeWindowHitTest);
+            Closed+=(_,_)=>Win32Properties.RemoveWndProcHookCallback(this,ResizeWindowHitTest);
             Win32Properties.AddWindowStylesCallback(this, (style, extendedStyle) =>
-                (style | 0x00080000u, extendedStyle));
+                ((style & ~0x00050000u) | 0x000A0000u | (CanResize ? 0x00050000u : 0u), extendedStyle));
         }
         InitializeStatusBar();
         MinimizeWindowButton.Click += (_, _) => WindowState = WindowState.Minimized;
@@ -38,7 +40,7 @@ public partial class SettingsWindow
             else BeginMoveDrag(e);
             e.Handled = true;
         };
-        AddHandler(PointerPressedEvent, OnWindowFramePressed, RoutingStrategies.Tunnel);
+        AddHandler(PointerPressedEvent, OnWindowFramePressed, RoutingStrategies.Tunnel,handledEventsToo:true);
         LayoutUpdated += (_, _) =>
         {
             // Continue the two content surfaces through the caption, even after UI scaling.
@@ -49,7 +51,7 @@ public partial class SettingsWindow
                 if (Math.Abs(TitleBarSidebarBackground.Width - width) > .1) TitleBarSidebarBackground.Width = width;
             }
         };
-        PointerMoved += (_, e) => Cursor = ResizeEdgeAt(e.GetPosition(this)) is { } edge ? ResizeCursors[edge] : null;
+        AddHandler(PointerMovedEvent,(_, e)=>Cursor=ResizeEdgeAt(e.GetPosition(this)) is {} edge ? ResizeCursors[edge] : null,RoutingStrategies.Tunnel,handledEventsToo:true);
         PropertyChanged += (_, e) =>
         {
             if (e.Property == WindowStateProperty) RefreshWindowChrome();
@@ -65,12 +67,24 @@ public partial class SettingsWindow
     private WindowEdge? ResizeEdgeAt(Point point)
     {
         if (!CanResize || WindowState != WindowState.Normal) return null;
-        const double edge = 6;
+        const double edge = 8;
         bool left = point.X <= edge, right = point.X >= Bounds.Width - edge;
         bool top = point.Y <= edge, bottom = point.Y >= Bounds.Height - edge;
         if (top) return left ? WindowEdge.NorthWest : right ? WindowEdge.NorthEast : WindowEdge.North;
         if (bottom) return left ? WindowEdge.SouthWest : right ? WindowEdge.SouthEast : WindowEdge.South;
         return left ? WindowEdge.West : right ? WindowEdge.East : null;
+    }
+
+    private IntPtr ResizeWindowHitTest(IntPtr hwnd,uint message,IntPtr wParam,IntPtr lParam,ref bool handled)
+    {
+        if(message!=0x0084 || !IsVisible)return IntPtr.Zero; // WM_NCHITTEST
+        long packed=lParam.ToInt64();
+        var point=this.PointToClient(new PixelPoint(unchecked((short)(packed&0xffff)),unchecked((short)((packed>>16)&0xffff))));
+        if(ResizeEdgeAt(point) is not {} edge)return IntPtr.Zero;
+        handled=true;
+        return (IntPtr)(edge switch {WindowEdge.West=>10,WindowEdge.East=>11,WindowEdge.North=>12,
+            WindowEdge.NorthWest=>13,WindowEdge.NorthEast=>14,WindowEdge.South=>15,
+            WindowEdge.SouthWest=>16,WindowEdge.SouthEast=>17,_=>1});
     }
 
     private void OnWindowFramePressed(object? sender, PointerPressedEventArgs e)

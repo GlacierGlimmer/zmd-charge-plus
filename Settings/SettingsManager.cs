@@ -89,8 +89,11 @@ public static class SettingsManager
     public static AppSettings CreateDefaults()
         => Normalize(new AppSettings());
 
+    private static readonly object SaveGate=new();
     public static void Save(AppSettings settings)
     {
+        lock(SaveGate)
+        {
         settings = Normalize(settings);
         Directory.CreateDirectory(SettingsDirectory);
         Directory.CreateDirectory(BackupsDirectory);
@@ -116,16 +119,20 @@ public static class SettingsManager
             AppLog.Error("Failed to save settings.", ex);
             throw;
         }
+        }
     }
 
     internal static void SaveImmediatePreferences(AppSettings preferences)
     {
+        lock(SaveGate)
+        {
         // A data warning may have saved ignored keys since Settings was opened.
         // Read the latest file, and merge only the three immediate UI preferences.
         var latest=File.Exists(SettingsPath) ? Normalize(DeserializeFile(SettingsPath)) : preferences;
         Save(latest with {UiLanguage=preferences.UiLanguage,GlobalFontScale=preferences.GlobalFontScale,GlobalUiScale=preferences.GlobalUiScale,
             HudInstances=latest.HudInstances.Select(i=>i with {Settings=i.Settings with {
                 GlobalFontScale=preferences.GlobalFontScale,GlobalUiScale=preferences.GlobalUiScale}}).ToList()});
+        }
     }
 
     public static void ExportToFile(string destinationPath, AppSettings settings)

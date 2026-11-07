@@ -59,5 +59,18 @@ internal sealed class StatusGauge : Control
         }
         Draw(context,Label,new Point(33,2),11,Color.Parse("#A1A1A1"));Draw(context,DisplayValue,new Point(33,16),12,!HasReading?Color.Parse("#A1A1A1"):Color.Parse("#F2F2F2"));
     }
-    private void Draw(DrawingContext c,string value,Point at,double size,Color colour)=>c.DrawText(new FormattedText(value,CultureInfo.CurrentUICulture,FlowDirection.LeftToRight,new Typeface(FontFamily.Default,FontStyle.Normal,FontWeight.Medium),size,new SolidColorBrush(colour)){MaxTextWidth=Math.Max(1,Width-33),MaxTextHeight=16,Trimming=TextTrimming.CharacterEllipsis},at);
+    private FormattedText? _labelLayout,_valueLayout;
+    private string? _labelKey,_valueKey;
+    private static readonly IBrush LabelBrush=new SolidColorBrush(Color.Parse("#A1A1A1")),ValueBrush=new SolidColorBrush(Color.Parse("#F2F2F2"));
+    private void Draw(DrawingContext c,string value,Point at,double size,Color colour)
+    {
+        string key=value+"|"+CultureInfo.CurrentUICulture.Name+"|"+Width+"|"+colour;
+        bool label=size==11;var layout=label?_labelLayout:_valueLayout;
+        if((label?_labelKey:_valueKey)!=key || layout is null)
+        {
+            layout=new FormattedText(value,CultureInfo.CurrentUICulture,FlowDirection.LeftToRight,new Typeface(FontFamily.Default,FontStyle.Normal,FontWeight.Medium),size,colour==Color.Parse("#F2F2F2")?ValueBrush:LabelBrush){MaxTextWidth=Math.Max(1,Width-33),MaxTextHeight=16,Trimming=TextTrimming.CharacterEllipsis};
+            if(label){_labelLayout=layout;_labelKey=key;}else{_valueLayout=layout;_valueKey=key;}
+        }
+        c.DrawText(layout,at);
+    }
 }

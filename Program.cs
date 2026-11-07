@@ -26,6 +26,8 @@ internal static class Program
             System.IO.File.WriteAllText(args[1],System.Text.Json.JsonSerializer.Serialize(new {executable=Environment.ProcessPath,assembly=typeof(Program).Assembly.Location,programBase=AppContext.BaseDirectory,architecture=System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString(),startupExecutable=Settings.StartupManager.StartupExecutablePath,dataDirectory=Interop.AppPaths.DataDirectory,settingsPath=Settings.SettingsManager.SettingsPath,backupsDirectory=Settings.SettingsManager.BackupsDirectory,logsDirectory=AppLog.LogsDirectory,elevated=new System.Security.Principal.WindowsPrincipal(System.Security.Principal.WindowsIdentity.GetCurrent()).IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator)}));
             return;
         }
+        if(ApplicationErrors.TryShowRecovery(args))return;
+        ApplicationErrors.Initialize();
         int restartIndex=Array.IndexOf(args,"--restart-from");
         if(restartIndex>=0)
         {
@@ -117,7 +119,7 @@ internal static class Program
         catch (Exception ex)
         {
             AppLog.Fatal("Application terminated by an unhandled startup/runtime exception.", ex);
-            throw;
+            Environment.ExitCode=1;
         }
         finally
         {
@@ -135,7 +137,13 @@ internal static class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+            .With(new Win32PlatformOptions
+            {
+                // This small 2D HUD needs no dedicated D3D device or swap chain.
+                CompositionMode=new[]{Win32CompositionMode.RedirectionSurface},
+                RenderingMode=new[]{Win32RenderingMode.Software}
+            })
             .WithInterFont()
-            .With(LocalizationManager.FontOptions)
+            .With(new SkiaOptions {MaxGpuResourceSizeBytes=24L*1024*1024}).With(LocalizationManager.FontOptions)
             .LogToTrace();
 }

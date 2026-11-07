@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (modifié)
@@ -2538,3 +2538,16 @@ Appuyez sur une touche ou un bouton de souris. Échap efface cette affectation.
 Conflit de raccourci : {0}
 Raccourci indisponible : {0}
 Les touches du clavier et les boutons de souris sont pris en charge, avec Ctrl, Alt, Maj ou Win/Command en option. Les touches réservées au système peuvent être indisponibles.
+Défilement vers le bas
+Un clic passe au profil suivant avec un défilement vers le bas. La molette vers le haut passe au précédent, et vers le bas au suivant, avec une animation dans le même sens.
+Le changement manuel et le défilement automatique utilisent cette liste. Le changement manuel fonctionne même si le défilement automatique est désactivé et réinitialise le délai.
+{0} profils sont dans la liste ; les changements manuels et automatiques suivent cet ordre.
+Copier les détails de l’erreur
+L’exécution précédente s’est terminée de manière inattendue.
+Premier plan renforcé (expérimental)
+Bureau : derrière les fenêtres ordinaires. Toujours au premier plan : utilise le niveau supérieur habituel.
+Le premier plan renforcé replace le HUD au-dessus des autres fenêtres prioritaires sans prendre le focus. Il cède la place aux paramètres, menus et boîtes de dialogue d’ECP.
+Windows : tente de rester au-dessus des fenêtres prioritaires, comme le Gestionnaire des tâches. Les couches système protégées et le plein écran exclusif peuvent encore masquer le HUD.
+macOS : utilise le niveau des fenêtres d’état du système. Les écrans système protégés peuvent rester au-dessus.
+Linux : renforce l’ordre des fenêtres X11. Sous Wayland, le comportement dépend du compositeur.
+Android : utilise la couche de superposition la plus élevée autorisée pour cette application. Les barres système, le clavier et les écrans protégés restent au-dessus.

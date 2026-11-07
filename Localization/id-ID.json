@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "RAM residen seluruh Endfield Charge Plus (pengaturan dan semua HUD), termasuk halaman bersama yang residen. Nilai: MiB/GiB; busur: bagian dari RAM fisik.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "VRAM khusus seluruh Endfield Charge Plus (pengaturan dan semua HUD), tidak termasuk memori GPU bersama. Nilai: MiB/GiB; busur: bagian dari total VRAM khusus.",
   "Author's BiliBili channel": "Kanal BiliBili pengembang",
-  "Author's YouTube channel": "Kanal YouTube pengembang"
+  "Author's YouTube channel": "Kanal YouTube pengembang",
+  "Copy error details": "Salin detail kesalahan",
+  "The previous run ended unexpectedly.": "Pengoperasian sebelumnya berakhir secara tak terduga.",
+  "Super Topmost (Experimental)": "Selalu teratas yang ditingkatkan (eksperimental)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "Desktop: di belakang jendela biasa. Selalu di atas: menggunakan lapisan teratas normal.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "Mode teratas yang ditingkatkan mengembalikan HUD di atas jendela teratas lain tanpa mengambil fokus. Mode ini mengalah saat pengaturan, menu, atau dialog ECP terbuka.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: mencoba tetap di atas jendela teratas seperti Pengelola Tugas. Lapisan sistem terlindungi dan layar penuh eksklusif masih dapat menutupi HUD.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: menggunakan tingkat jendela status sistem. Layar sistem yang terlindungi dapat tetap berada di atasnya.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: meningkatkan penumpukan jendela X11. Di Wayland, perilakunya bergantung pada kompositor.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: menggunakan lapisan overlay tertinggi yang diizinkan untuk aplikasi ini. Bilah sistem, keyboard, dan layar terlindungi tetap berada di atasnya."
 }

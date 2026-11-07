@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "설정 화면과 모든 HUD를 포함한 Endfield Charge Plus 전체의 상주 메모리입니다. 상주 공유 페이지를 포함합니다. 값은 MiB/GiB, 원호는 전체 물리 RAM 대비 비율입니다.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "설정 화면과 모든 HUD를 포함한 Endfield Charge Plus 전체의 전용 VRAM입니다. 공유 GPU 메모리는 제외합니다. 값은 MiB/GiB, 원호는 전체 전용 VRAM 대비 비율입니다.",
   "Author's BiliBili channel": "제작자의 BiliBili 채널",
-  "Author's YouTube channel": "제작자의 YouTube 채널"
+  "Author's YouTube channel": "제작자의 YouTube 채널",
+  "Copy error details": "오류 세부 정보 복사",
+  "The previous run ended unexpectedly.": "이전 실행이 예기치 않게 종료되었습니다.",
+  "Super Topmost (Experimental)": "최상단 표시 강화(실험적)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "바탕 화면 계층: 일반 창 뒤에 표시합니다. 항상 위: 일반적인 최상위 계층을 사용합니다.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "최상단 표시 강화는 포커스를 빼앗지 않고 HUD를 다른 최상위 창 위로 복원합니다. ECP 설정, 메뉴 또는 대화 상자가 열려 있으면 일시적으로 양보합니다.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: 작업 관리자 같은 최상위 창 위에 표시를 시도합니다. 보호된 시스템 계층이나 독점 전체 화면은 여전히 HUD를 가릴 수 있습니다.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: 시스템 상태 창 계층을 사용합니다. 보호된 시스템 화면은 더 위에 표시될 수 있습니다.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: X11 창 쌓기 순서를 강화합니다. Wayland에서의 동작은 컴포지터에 따라 달라집니다.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: 앱에 허용된 가장 높은 오버레이 계층을 사용합니다. 시스템 표시줄, 키보드, 보호된 화면은 더 위에 표시됩니다."
 }

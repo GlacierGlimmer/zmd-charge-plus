@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (Modified)
@@ -2538,3 +2538,16 @@ Press a key or mouse button. Esc clears the binding.
 Shortcut conflict: {0}
 Unavailable shortcut: {0}
 Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.
+Roll Down
+Click switches to the next profile with a downward roll. Scroll up for the previous profile and down for the next, using the same animation direction.
+Manual switching and auto cycle use this queue. Manual switching works while auto cycle is off and restarts the interval.
+{0} profiles are queued; manual switching and auto cycle share this order.
+Copy error details
+The previous run ended unexpectedly.
+Super Topmost (Experimental)
+Desktop: behind ordinary windows. Always on Top: the normal topmost layer.
+Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.
+Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.
+macOS: uses the system status-window level. Protected system screens may remain above it.
+Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.
+Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.

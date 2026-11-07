@@ -2347,5 +2347,14 @@
   "Resident RAM of the entire Endfield Charge Plus process (Settings and all HUDs), including shared resident pages. Value: MiB/GiB; arc: share of physical RAM.": "RAM مقیم کل Endfield Charge Plus (تنظیمات و تمام HUDها)، شامل صفحه‌های اشتراکی مقیم. مقدار: MiB/GiB؛ کمان: سهم از RAM فیزیکی.",
   "Dedicated VRAM of the entire Endfield Charge Plus process (Settings and all HUDs), excluding shared GPU memory. Value: MiB/GiB; arc: share of total dedicated VRAM.": "VRAM اختصاصی کل Endfield Charge Plus (تنظیمات و تمام HUDها)، بدون حافظهٔ اشتراکی GPU. مقدار: MiB/GiB؛ کمان: سهم از کل VRAM اختصاصی.",
   "Author's BiliBili channel": "کانال BiliBili سازنده",
-  "Author's YouTube channel": "کانال YouTube سازنده"
+  "Author's YouTube channel": "کانال YouTube سازنده",
+  "Copy error details": "کپی جزئیات خطا",
+  "The previous run ended unexpectedly.": "اجرای قبلی به‌طور غیرمنتظره پایان یافت.",
+  "Super Topmost (Experimental)": "حالت همیشه‌بالای تقویت‌شده (آزمایشی)",
+  "Desktop: behind ordinary windows. Always on Top: the normal topmost layer.": "میزکار: پشت پنجره‌های عادی. همیشه بالا: از لایهٔ بالایی معمول استفاده می‌کند.",
+  "Super Topmost restores the HUD above other topmost windows without taking focus. It yields while ECP settings, menus or dialogs are open.": "حالت تقویت‌شده بدون گرفتن تمرکز، HUD را دوباره بالای پنجره‌های همیشه‌بالای دیگر قرار می‌دهد. هنگام باز بودن تنظیمات، منوها یا کادرهای گفت‌وگوی ECP موقتاً کنار می‌رود.",
+  "Windows: attempts to stay above topmost windows such as Task Manager. Protected system layers and exclusive fullscreen may still cover the HUD.": "Windows: تلاش می‌کند بالای پنجره‌هایی مانند مدیر وظیفه بماند. لایه‌های محافظت‌شدهٔ سیستم و تمام‌صفحهٔ انحصاری همچنان ممکن است HUD را بپوشانند.",
+  "macOS: uses the system status-window level. Protected system screens may remain above it.": "macOS: از سطح پنجره‌های وضعیت سیستم استفاده می‌کند. صفحه‌های محافظت‌شدهٔ سیستم ممکن است بالاتر بمانند.",
+  "Linux: enhanced X11 stacking. Under Wayland, behavior depends on the compositor.": "Linux: ترتیب پنجره‌های X11 را تقویت می‌کند. در Wayland رفتار به ترکیب‌گر بستگی دارد.",
+  "Android: uses the highest overlay layer allowed for this app. System bars, the keyboard and protected screens remain above it.": "Android: از بالاترین لایهٔ شناور مجاز برای این برنامه استفاده می‌کند. نوارهای سیستم، صفحه‌کلید و صفحه‌های محافظت‌شده بالاتر می‌مانند."
 }

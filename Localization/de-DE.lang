@@ -1,4 +1,4 @@
-#20261104$2539
+#20261106$2552
   {deepseek.period.remaining_text}
   ↑ {network.display_upload}
  (geändert)
@@ -2538,3 +2538,16 @@ Eine Taste oder Maustaste drücken. Esc hebt die Belegung auf.
 Tastenkonflikt: {0}
 Tastenkürzel nicht verfügbar: {0}
 Tastatur- und Maustasten werden unterstützt, auch zusammen mit Strg, Alt, Umschalt oder Win/Command. Vom System reservierte Tasten sind unter Umständen nicht verfügbar.
+Nach unten rollen
+Ein Klick wechselt mit einer Abwärtsbewegung zum nächsten Profil. Nach oben scrollen wechselt aufwärts zum vorherigen, nach unten scrollen abwärts zum nächsten Profil.
+Manueller Wechsel und automatischer Wechsel verwenden diese Liste. Der manuelle Wechsel funktioniert auch ohne Automatik und startet das Intervall neu.
+{0} Profile stehen in der Liste; manueller und automatischer Wechsel verwenden diese Reihenfolge.
+Fehlerdetails kopieren
+Die vorherige Ausführung wurde unerwartet beendet.
+Verstärkt im Vordergrund (experimentell)
+Desktop: hinter normalen Fenstern. Immer im Vordergrund: die normale oberste Fensterebene.
+Der verstärkte Vordergrundmodus bringt das HUD ohne Fokuswechsel über andere Vordergrundfenster zurück. Solange ECP-Einstellungen, Menüs oder Dialoge geöffnet sind, tritt es zurück.
+Windows: versucht, über Vordergrundfenstern wie dem Task-Manager zu bleiben. Geschützte Systemebenen und exklusives Vollbild können das HUD weiterhin verdecken.
+macOS: verwendet die Ebene für Systemstatusfenster. Geschützte Systemansichten können darüber liegen.
+Linux: verstärkte X11-Fensterstapelung. Unter Wayland hängt das Verhalten vom Compositor ab.
+Android: verwendet die höchste für diese App erlaubte Overlay-Ebene. Systemleisten, Tastatur und geschützte Ansichten bleiben darüber.

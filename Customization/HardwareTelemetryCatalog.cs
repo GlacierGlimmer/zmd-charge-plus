@@ -7,7 +7,7 @@ namespace EndfieldChargePlus.Customization;
 internal sealed record HardwareReading(string Source,string Id,string Device,string Name,string Type,string Unit,
     object? Value,double? Minimum=null,double? Maximum=null)
 {
-    internal string Key => "sensor."+Source+"."+Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(Id)))[..24].ToLowerInvariant();
+    internal string Key {get;} = "sensor."+Source+"."+Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(Id)))[..24].ToLowerInvariant();
     internal bool Numeric => Value is not string;
 }
 
@@ -17,7 +17,8 @@ internal static class HardwareTelemetryCatalog
 {
     private static readonly object Gate=new();
     private static readonly Dictionary<string,VariableDefinition> Known=new(StringComparer.OrdinalIgnoreCase);
-    internal static IReadOnlyList<VariableDefinition> Definitions { get { lock(Gate)return Known.Values.ToArray(); } }
+    private static VariableDefinition[]? _snapshot;
+    internal static IReadOnlyList<VariableDefinition> Definitions { get { lock(Gate)return _snapshot??=Known.Values.ToArray(); } }
     internal static void Publish(IEnumerable<HardwareReading> readings)
     {
         lock(Gate)
@@ -31,10 +32,12 @@ internal static class HardwareTelemetryCatalog
             Add(r.Key+".name",name+" / Name","文本","");
             Add(r.Key+".id",name+" / ID","文本","");
             Add(r.Key+".unit",name+" / Unit","文本","");
-            void Add(string key,string label,string type,string unit) => Known[key]=new(key,label,
+            void Add(string key,string label,string type,string unit) { var next=new VariableDefinition(key,label,
                 r.Source=="aida64" ? "AIDA64" : r.Source=="inventory" ? "硬件信息" : "硬件传感器",
                 $"{r.Source}: {r.Id} ({TypeLabel(r.Type)}). "+Topic(r)+" "+LocalizationManager.Text("硬件或数据源不提供时不可用。","Unavailable when the hardware or source does not provide it."),
                 type,unit,"按数据含义决定",type=="数值" ? "0 / 0.0 / 0.00" : "无需格式化");
+                if(!Known.TryGetValue(key,out var previous) || previous!=next){Known[key]=next;_snapshot=null;}
+            }
         }
     }
     private static string TypeLabel(string type)=>type switch {

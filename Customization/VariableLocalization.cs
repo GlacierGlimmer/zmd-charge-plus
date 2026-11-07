@@ -50,7 +50,20 @@ public static class VariableLocalization
         ["exe"] = "EXE", ["msix"] = "MSIX", ["utc"] = "UTC", ["cny"] = "CNY",
     };
 
+    private sealed record Localized(AppLanguage Language,VariableDefinition Value);
+    private static readonly object LocalizedGate=new();
+    private static System.Runtime.CompilerServices.ConditionalWeakTable<VariableDefinition,Localized> LocalizedValues=new();
+    private static AppLanguage? CachedLanguage;
     public static VariableDefinition Localize(VariableDefinition item)
+    {
+        lock(LocalizedGate)
+        {
+            var language=LocalizationManager.Current;
+            if(CachedLanguage!=language){LocalizedValues=new();CachedLanguage=language;}
+            return LocalizedValues.GetValue(item,d=>new(language,LocalizeCore(d))).Value;
+        }
+    }
+    private static VariableDefinition LocalizeCore(VariableDefinition item)
     {
         if(LocalizationManager.UsesChineseSource)return SourceDefinition(item);
         var en=SourceDefinition(item);

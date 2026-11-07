@@ -84,7 +84,7 @@ public static class HudSettingsNormalizer
                 .ToList();
         }
 
-        string cycleAnimationMode = source.CycleAnimationMode?.ToUpperInvariant() switch { "SIMPLE"=>"Simple", "FULL"=>"Full", _=>"Roll" };
+        string cycleAnimationMode = source.CycleAnimationMode?.ToUpperInvariant() switch { "FULL"=>"Full", "ROLL" or "ROLLUP"=>"Roll", "ROLLDOWN"=>"RollDown", _=>"Simple" };
 
         return source with
         {

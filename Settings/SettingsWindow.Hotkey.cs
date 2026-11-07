@@ -91,4 +91,23 @@ public partial class SettingsWindow
         try { SettingsManager.Save(settings); }
         catch { _hudHotkey?.TryUpdate(previous); throw; }
     }
+    private async Task SaveSettingsWithHudHotkeyAsync(AppSettings settings)
+    {
+        if(!RefreshShortcutValidation())throw new InvalidOperationException(LocalizationManager.Text("快捷键冲突：{0}","Shortcut conflict: {0}").Replace("{0}",string.Join(", ",_shortcutEditors.Values.Where(x=>x.Hint.IsVisible).Select(x=>x.Box.Text))));
+        if(_quickHotkeys is not null)
+        {
+            if(await _quickHotkeys.TryApplyAsync(settings,()=>Task.Run(()=>SettingsManager.Save(settings))))return;
+            _registrationErrorChord=_quickHotkeys.ErrorGesture;RefreshShortcutValidation();
+            SetHudHotkeyStatus("无法注册此快捷键，可能已被占用。原有快捷键未更改，请更换组合键。", "Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.");
+            throw new InvalidOperationException(HudHotkeyStatusText.Text+" "+_quickHotkeys.ErrorGesture);
+        }
+        string previous = _hudHotkey?.Gesture ?? "";
+        if (_hudHotkey is null ? !string.IsNullOrWhiteSpace(settings.HudToggleHotkey) : !_hudHotkey.TryUpdate(settings.HudToggleHotkey))
+        {
+            SetHudHotkeyStatus("无法注册此快捷键，可能已被占用。原有快捷键未更改，请更换组合键。", "Could not register this shortcut; it may be in use. The previous shortcut is unchanged. Choose another combination.");
+            throw new InvalidOperationException(LocalizationManager.Text(_hotkeyStatusZh!, _hotkeyStatusEn!));
+        }
+        try { await Task.Run(()=>SettingsManager.Save(settings)); }
+        catch { _hudHotkey?.TryUpdate(previous); throw; }
+    }
 }

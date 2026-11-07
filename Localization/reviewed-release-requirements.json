@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "sourceSha256": "9bdaecab9639150cd8d4600cfa2ca1b512b81ef980944c9eca38f27ca4e6e719",
+  "sourceSha256": "09bd5e8a5871235e2c142bf562ef95d444c0d4f9885259c78ca8a5cd2c3e5eb1",
   "platformManualSourceSha256": "dc8d5222686c54478ea7d03071d1b2e2eb0411cddfc0dc0b8b439d9159c97854",
   "requiredKeys": [
     "  {deepseek.period.remaining_text}",
@@ -2355,7 +2355,11 @@
     "Press a key or mouse button. Esc clears the binding.",
     "Shortcut conflict: {0}",
     "Unavailable shortcut: {0}",
-    "Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable."
+    "Keyboard and mouse buttons are supported, with optional Ctrl, Alt, Shift or Win/Command. System-reserved keys may be unavailable.",
+    "Roll Down",
+    "Click switches to the next profile with a downward roll. Scroll up for the previous profile and down for the next, using the same animation direction.",
+    "Manual switching and auto cycle use this queue. Manual switching works while auto cycle is off and restarts the interval.",
+    "{0} profiles are queued; manual switching and auto cycle share this order."
   ],
   "sourceTokens": {
     "  {deepseek.period.remaining_text}": {
