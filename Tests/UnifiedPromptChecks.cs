@@ -57,8 +57,16 @@ internal static class UnifiedPromptChecks
             {
                 preferencesField.SetValue(null,new DataWarningPreferences(warningPath));
                 ProfileDataWarnings.Check(profile,new Dictionary<string,object?>(),"uniform-test");await Task.Delay(5100);
-                ProfileDataWarnings.Check(profile,new Dictionary<string,object?>(),"uniform-test");await Task.Delay(700);
-                notice=(Window?)typeof(ProfileDataWarnings).GetField("_dialog",Hidden)!.GetValue(null);
+                ProfileDataWarnings.Check(profile,new Dictionary<string,object?>(),"uniform-test");
+                // The warning merges on a dispatcher timer. Await the observable window,
+                // not a single frame deadline on a loaded native CI runner.
+                var warningWait=System.Diagnostics.Stopwatch.StartNew();
+                do
+                {
+                    notice=(Window?)typeof(ProfileDataWarnings).GetField("_dialog",Hidden)!.GetValue(null);
+                    if(notice?.IsVisible==true)break;
+                    await Task.Delay(50);
+                }while(warningWait.Elapsed<TimeSpan.FromSeconds(5));
                 check(notice?.IsVisible==true,"unavailable HUD data opens the real warning");Style(notice!,"HUD data prompt");
                 using(var image=new RenderTargetBitmap(new PixelSize((int)Math.Ceiling(notice!.ClientSize.Width),(int)Math.Ceiling(notice.ClientSize.Height))))
                 {image.Render(notice);image.Save(Path.Combine(output,"hud-data-prompt.png"));}
