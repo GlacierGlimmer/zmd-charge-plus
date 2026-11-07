@@ -1,3 +1,5 @@
+> v0.2.0 · 2026.11.07。当前功能、20 种离线语言及本平台发行说明见 [README](README.md)。下文保留 Linux 的详细安装与排错说明。
+
 # Endfield Charge Plus — Linux
 
 Linux 版本由独立仓库维护。本目录的 Windows 便携脚本不用于构建 Linux 安装包。

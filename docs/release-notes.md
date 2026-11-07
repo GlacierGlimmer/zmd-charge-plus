@@ -1,79 +1,72 @@
-# Endfield Charge Plus v0.2.0
+# ECP For Windows v0.2.0
 
-## v0.2.0 · 2026-11-07
+**v0.1.1 → v0.2.0 · 构建日期 2026.11.07**
 
-- 重新设计设置界面，保留深色风格与荧光黄强调色；提供方案管理、环形切换、自动轮播、触发规则、快捷操作和章节式使用手册。
-- 提供 20 种常用语言的离线 .lang 语言资源，默认跟随系统语言；产品名称保持不翻译。
-- 改善方案切换、错误详情、数据不可用提示、语言选择和窗口交互；按活动状态减少后台采样、重复布局和缓存分配，关闭设置时释放预览资源。
-- 更新检查使用各平台自己的 GitHub Releases 仓库。
+## 主要更新
 
-Windows：x64、x86、ARM64 三架构仅提供 portable.zip。完整解压后运行 EndfieldChargePlus0.2.0/EndfieldChargePlus0.2.0.exe，Runtime、Documents、Licenses 必须随主程序保留。配置存于用户数据目录。微软商店提供三架构散文件包，包版本 1.2.0.0；保留原应用与开机启动身份，不提供 Setup。
+- 重新设计的深色设置界面：左侧导航、荧光黄强调色和黄/绿/粉三色细节，区分当前系统与软件整体占用。
+- 方案管理、自定义模板、变量库、HTTP / JSON 数据源与按章节定位的使用手册。
+- 20 种随软件打包的离线语言，默认跟随系统语言；可手动选择并设置全局字体及 UI 缩放。
+- 统一的异常与数据提示，保留具体原因、复制详情、日志入口及逐变量“不再提示”。
+- 在 HUD 上长按鼠标中键，指向环形栏中的方案，松开切换；长按时间、拖动距离和圆盘大小可配置。
+- 自动轮播与手动切换共用队列：点击向下切换；滚轮向上/向下切换上一/下一方案，配合对应方向动画。
+- 轮播可选简洁、完整、向上翻滚、向下翻滚四种动画；快捷键可控制显示/隐藏、前后方案、暂停/继续、预览和设置。
+- 多实例 HUD 保留各自的方案、队列、位置、字体、显示器与层级；共享的全局设置统一管理。
 
-## English
+Windows 通过 LibreHardwareMonitor / PawnIO 读取受支持的底层传感器，并接入 AIDA64 导出的共享数据。温度、功耗等指标取决于硬件、驱动和权限；相关设置与诊断位于“硬件数据”。不提供 CPUID 专有 SDK。
 
-v0.2.0, built on 2026-11-07. Redesigned settings, offline language packs, profile switching, configurable cycling and shortcuts, clearer error reports, and reduced idle work. Updates are checked against this platform’s own repository. Preserve the complete package contents and existing user data.
+## 主要修复
 
----
+- 修复部分 CPU 温度和硬件数据无法获取的问题，加入驱动诊断、AIDA64 共享数据与按显卡区分的数据说明。
+- 修复托盘/任务栏入口点击与菜单悬停问题、列表高亮残留、语言选择器拖动与按钮对齐。
+- 修复切换方案仅使用简洁动画、方案管理未同步实际 HUD、保存操作后页面滚动偏移等问题。
+- 优化启动、保存并应用、隐藏状态采样、目录/语言缓存和设置关闭时的资源释放。
 
-# 历史发布说明 / Earlier release notes
+## 安装与升级
 
-以下为历史记录；当前版本与交付方式以上方 v0.2.0 说明为准。
+从 [v0.2.0 Releases](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/tag/v0.2.0) 下载与你的系统架构对应的 `portable.zip`。完整解压后运行：
 
-# 当前 Windows 打包方式（2026-10-27）
+```text
+EndfieldChargePlus0.2.0/
+├─ EndfieldChargePlus0.2.0.exe
+├─ Runtime/
+├─ Documents/
+└─ Licenses/
+```
 
-产品版本保持 v0.1.2。Windows 改为 x64、x86、ARM64 三架构自包含目录便携版，各提供 ZIP 和 7z。每个压缩包只有一层 `EndfieldChargePlus0.1.2` 文件夹，顶层主程序为 `EndfieldChargePlus0.1.2.exe`，DLL 和运行环境集中在 `Runtime`，说明在 `Documents`，许可在 `Licenses`；用户配置继续使用用户数据目录。当前暂停制作 Setup，其实验方案已归档到源码仓库外。详见 [Windows 便携版](windows-portable.md)。
+主程序依赖配套目录，请勿只移动 EXE。缺少文件时，启动器会给出恢复说明。软件配置位于系统用户数据目录，不存放在解压目录；更新时退出旧版，完整解压到新的空目录，原配置会继续使用。
 
-下面保留 v0.1.1 的历史发布说明；其中单文件 EXE 的说明不代表当前打包方式。
+也可以从 [Microsoft Store](https://apps.microsoft.com/detail/9p3pld3lx7w6) 安装，或使用：
 
-# ECP For Windows v0.1.1
+```powershell
+winget install --id 9P3PLD3LX7W6 --source msstore --exact
+```
 
-正式版 · v0.1.0 → v0.1.1 · 2026-10-13
+商店可用版本及更新时间以商店页面为准。v0.2.0 的 Windows 便携包仅提供 ZIP；不提供 Setup、7z 或独立单文件 EXE。商店包采用三架构散文件布局，保留原应用与开机启动身份。
 
-## 简体中文：本次变化
+**支持语言（20）：** 简体中文、English、繁體中文、日本語、한국어、Deutsch、Français、Español、Português、Русский、العربية、हिंदी、বাংলা、اردو、Bahasa Indonesia、Tiếng Việt、ไทย、Türkçe、Italiano、فارسی。
 
-- 新增可自定义数据采样间隔，多个 HUD 共用采样服务，避免重复采集；调整设置时保留各实例自己的配置。
-- 新增「实验性功能 → 多实例 HUD」：每个 HUD 可独立选择显示器、方案、位置、字体、缩放与显示层。设置窗口存在且有多个 HUD 时，正在编辑的实例持续显示边框和「当前正在设置」提示。
-- 修复多实例切换、关闭设置、删除实例时的状态与生命周期；各实例的常驻置顶／桌面层独立恢复。修复点击遮罩干扰、刷新闪烁及透明背景变黑。
-- 新增并修正常驻点击 HUD 切换方案：只响应 HUD 本体点击，对所有实例有效；按被点击实例的轮播队列及动画切换，点击后重新计时。无需开启自动轮播。
-- 修复字体选择不生效；增加工作区与屏幕绝对位置预设，切换锚点清除残留微调，避免 Y 意外保留 80。
-- 新增实际显示器／窗口 FPS 变量与方案、有效目标选择及满量程 FPS 设置；清除已失效的目标。无法获取的数据汇总到一个提示框，不以刷新率或虚假零值代替。
-- 设置窗口标题显示当前版本；实际提升权限后追加「（Endministrator Mode）」；中英文界面保持一致。
-- 新增「时间 - 世界时钟」，39 个中英文固定 UTC 偏移选项，保留原有目标时间模式；内置方案按系统、时间、探测、DeepSeek 等类别排序，保留用户轮播顺序。
-- DeepSeek 时段按官方通知与北京时间判断，周末和中国法定节假日为低谷；内置日历至 2030 年并支持后台更新。未公布年份只使用已确定的法定日期，不假定调休安排。
-- 修复 Win+D／Explorer 桌面变化后桌面层 HUD 被壁纸覆盖，同时保留其他 HUD 的置顶状态；稳定采样不反复重设窗口层级。发行版提供 x64、x86、ARM64 自包含单文件 EXE 和仅含该 EXE 的 ZIP。
+## English — changes since v0.1.1
 
-## English: changes since v0.1.0
+- Redesigned dark settings with a vertical navigation rail, a fluorescent-yellow accent and three-colour details. System usage and the application’s overall usage are shown separately.
+- Profile management, template variables, HTTP / JSON sources and a chapter-based offline manual.
+- Twenty bundled offline languages, system-language selection and adjustable global font/UI scale.
+- Consistent error and data prompts with concrete reasons, copyable details, log access and per-variable dismissal.
+- Hold the middle mouse button on the HUD, point to a profile and release to switch. Hold delay, drag distance and ring size are configurable.
+- Manual and automatic cycling share a queue. Clicking moves forward; scrolling up/down selects the previous/next profile with the corresponding transition direction.
+- Four cycle animations: Simple, Full, Roll Up and Roll Down. Bind show/hide, previous/next, pause/resume, preview and Settings actions.
+- Multiple desktop HUDs retain independent profiles, queues, placement, fonts, displays and layers while sharing global settings.
+- Improve CPU temperature and hardware-data collection, driver diagnostics, AIDA64 sharing and per-adapter GPU explanations.
+- Fix tray/taskbar interactions, menu and list hover feedback, language-window dragging and button alignment.
+- Fix profile animation selection, editor/HUD selection synchronization and unexpected scrolling after profile actions.
+- Reduce repeated startup/save work, idle sampling, catalogue and language allocations, and resources retained after Settings closes.
 
-- Add configurable sampling intervals shared by all HUDs, with independent instance settings.
-- Add Experimental features / Multiple HUDs with per-instance monitor, profile, position, font, scale and layer. The selected HUD stays outlined and labelled while Settings is open.
-- Fix instance lifecycle, layer restoration, click masks, refresh flicker and black transparency backgrounds.
-- Enable persistent-HUD click cycling for every instance. Only the visible capsule accepts clicks; each instance uses its own rotation order and transition, and resets its timer after a click. Automatic rotation can remain off.
-- Fix font application and stale position offsets; add work-area and absolute-screen anchors.
-- Add real display/window FPS profiles, current target lists and configurable full-scale FPS. Aggregate unavailable variables into one dialog; never substitute refresh rate or fabricated zeroes.
-- Show the version in Settings titles and append “（Endministrator Mode）” only for elevated sessions in both languages.
-- Add World clock with 39 bilingual fixed UTC offsets and the existing target-time modes. Group built-ins by category without rewriting saved rotation queues.
-- Use DeepSeek’s official Beijing-time schedule, excluding weekends and Chinese statutory holidays. Include calendars through 2030 plus validated background updates; unannounced years do not invent compensating-workday arrangements.
-- Keep desktop HUDs visible after Win+D/Explorer changes while retaining other HUDs’ independent topmost state. Stable sampling does not repeatedly rewrite native layers. Ship self-contained x64, x86 and ARM64 EXEs and single-EXE ZIPs.
+Download the matching x64, x86 or ARM64 `portable.zip` from [v0.2.0 Releases](https://github.com/GlacierGlimmer/zmd-charge-plus/releases/tag/v0.2.0). Extract the entire archive and run `EndfieldChargePlus0.2.0/EndfieldChargePlus0.2.0.exe`. Keep `Runtime`, `Documents` and `Licenses` beside the executable. The launcher explains how to recover missing companion files.
 
-## 运行与兼容性 / Requirements and compatibility
+Settings remain in the system user-data directory. To update, exit the old application and extract the complete new package into a new empty folder.
 
-实际 FPS 使用 Windows ETW 采集，需要管理员权限；硬件传感器依赖设备／驱动。ARM64 为交叉构建，尚未在物理 ARM64 电脑上验证。微软商店 x64/x86 包另行人工提交，本次 GitHub 发布不代表商店已经更新。
+[Microsoft Store](https://apps.microsoft.com/detail/9p3pld3lx7w6) and `winget install --id 9P3PLD3LX7W6 --source msstore --exact` are also available; the Store controls its own available version and rollout. Windows portable releases contain ZIP archives, with no Setup, 7z or standalone single-file executable. The three-architecture Store package retains the existing application and startup identities.
 
-Real FPS uses Windows ETW and needs administrator privileges. Sensors depend on hardware/drivers. ARM64 is cross-built and not physically tested. Microsoft Store submission is handled separately; this release does not imply the Store has updated.
+**Languages:** Simplified Chinese, English, Traditional Chinese, Japanese, Korean, German, French, Spanish, Portuguese, Russian, Arabic, Hindi, Bengali, Urdu, Indonesian, Vietnamese, Thai, Turkish, Italian, Persian.
 
-## 验证 / Validation
-
-Windows 回归检查 261 项、软件合成检查 6 项、真实 Win+D 桌面层检查 7 项及 DeepSeek 日历检查 201 项通过。单文件包已验证架构、内置采集器与 ZIP 内容。
-
-每个平台单独提供 SHA-256 校验文件。Use the platform-specific SHA256SUMS file to verify downloaded assets.
-
-[完整源码变化 / Source comparison](https://github.com/GlacierGlimmer/zmd-charge-plus/compare/v0.1.0...v0.1.1)
-
-## 各平台分别下载 / Separate platform downloads
-
-**每个平台在不同仓库的 Releases 单独下载，本仓库的新发行资源仅对应 Windows。Each platform publishes its own assets in its own repository’s Releases.**
-
-- [Windows Releases](https://github.com/GlacierGlimmer/zmd-charge-plus/releases)
-- [Linux Releases](https://github.com/GlacierGlimmer/zmd-charge-plus-for-linux/releases)
-- [MacOS Releases](https://github.com/GlacierGlimmer/zmd-charge-plus-for-macos/releases)
-- [Android Releases](https://github.com/GlacierGlimmer/zmd-charge-plus-for-android/releases)
+Hardware metrics depend on the platform, drivers and permissions. Check the SHA-256 file before installing. [Website](https://zmd-bar.x-neko.com/) · [Issues](https://ecp-bugs.x-neko.com/).
