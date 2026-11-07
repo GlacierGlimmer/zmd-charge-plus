@@ -1,3 +1,24 @@
+# Endfield Charge Plus v0.2.0
+
+## v0.2.0 · 2026-11-07
+
+- 重新设计设置界面，保留深色风格与荧光黄强调色；提供方案管理、环形切换、自动轮播、触发规则、快捷操作和章节式使用手册。
+- 提供 20 种常用语言的离线 .lang 语言资源，默认跟随系统语言；产品名称保持不翻译。
+- 改善方案切换、错误详情、数据不可用提示、语言选择和窗口交互；按活动状态减少后台采样、重复布局和缓存分配，关闭设置时释放预览资源。
+- 更新检查使用各平台自己的 GitHub Releases 仓库。
+
+Windows：x64、x86、ARM64 三架构仅提供 portable.zip。完整解压后运行 EndfieldChargePlus0.2.0/EndfieldChargePlus0.2.0.exe，Runtime、Documents、Licenses 必须随主程序保留。配置存于用户数据目录。微软商店提供三架构散文件包，包版本 1.2.0.0；保留原应用与开机启动身份，不提供 Setup。
+
+## English
+
+v0.2.0, built on 2026-11-07. Redesigned settings, offline language packs, profile switching, configurable cycling and shortcuts, clearer error reports, and reduced idle work. Updates are checked against this platform’s own repository. Preserve the complete package contents and existing user data.
+
+---
+
+# 历史发布说明 / Earlier release notes
+
+以下为历史记录；当前版本与交付方式以上方 v0.2.0 说明为准。
+
 # 当前 Windows 打包方式（2026-10-27）
 
 产品版本保持 v0.1.2。Windows 改为 x64、x86、ARM64 三架构自包含目录便携版，各提供 ZIP 和 7z。每个压缩包只有一层 `EndfieldChargePlus0.1.2` 文件夹，顶层主程序为 `EndfieldChargePlus0.1.2.exe`，DLL 和运行环境集中在 `Runtime`，说明在 `Documents`，许可在 `Licenses`；用户配置继续使用用户数据目录。当前暂停制作 Setup，其实验方案已归档到源码仓库外。详见 [Windows 便携版](windows-portable.md)。
